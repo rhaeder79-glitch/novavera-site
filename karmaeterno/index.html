@@ -38,20 +38,20 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
 .sidebar-logo{padding:28px 20px 24px;border-bottom:1px solid rgba(154,122,42,.15);text-align:center}
 .sidebar-logo .logo-glyph{font-size:28px;color:var(--gold);opacity:.7;display:block;margin-bottom:8px;animation:pulse-glyph 4s ease-in-out infinite}
 @keyframes pulse-glyph{0%,100%{opacity:.6;transform:scale(1)}50%{opacity:.9;transform:scale(1.05)}}
-.sidebar-logo h1{font-family:"Cinzel Decorative",serif;font-size:18px;font-weight:900;color:var(--blood-lt);letter-spacing:1px;line-height:1.1}
-.sidebar-logo p{font-family:"Cinzel",serif;font-size:8.5px;letter-spacing:4px;color:var(--gold-lt);text-transform:uppercase;margin-top:5px;opacity:.85}
+.sidebar-logo h1{font-family:"Cinzel Decorative",serif;font-size:21px;font-weight:900;color:var(--blood-lt);letter-spacing:1px;line-height:1.1}
+.sidebar-logo p{font-family:"Cinzel",serif;font-size:10.5px;letter-spacing:4px;color:var(--gold-lt);text-transform:uppercase;margin-top:5px;opacity:.85}
 .sidebar-nav{flex:1;padding:16px 0;overflow-y:auto}
-.nav-section{font-family:"Cinzel",serif;font-size:8px;letter-spacing:5px;color:var(--gold-lt);text-transform:uppercase;padding:12px 20px 5px;opacity:.75}
-.nav-item{display:flex;align-items:center;gap:11px;padding:10px 20px;cursor:pointer;transition:all .2s;position:relative;text-decoration:none;border:none;background:none;width:100%;text-align:left;color:rgba(212,192,154,.85);font-family:"Cinzel",serif;font-size:11.5px;letter-spacing:.8px}
+.nav-section{font-family:"Cinzel",serif;font-size:10px;letter-spacing:5px;color:var(--gold-lt);text-transform:uppercase;padding:12px 20px 5px;opacity:.75}
+.nav-item{display:flex;align-items:center;gap:11px;padding:10px 20px;cursor:pointer;transition:all .2s;position:relative;text-decoration:none;border:none;background:none;width:100%;text-align:left;color:rgba(212,192,154,.85);font-family:"Cinzel",serif;font-size:18.5px;letter-spacing:.8px}
 .nav-item:hover{color:var(--gold-lt);background:rgba(154,122,42,.07)}
 .nav-item.active{color:var(--gold-lt);background:rgba(107,15,15,.18)}
 .nav-item.active::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--blood)}
 .nav-item.active::after{content:"";position:absolute;right:0;top:50%;transform:translateY(-50%);width:5px;height:5px;background:var(--gold);transform:translateY(-50%) rotate(45deg)}
-.nav-icon{width:18px;font-size:16px;text-align:center;opacity:.9;flex-shrink:0}
+.nav-icon{width:18px;font-size:20px;text-align:center;opacity:.9;flex-shrink:0}
 .sidebar-footer{padding:16px 20px;border-top:1px solid rgba(154,122,42,.12)}
 .episode-badge{background:rgba(107,15,15,.3);border:1px solid rgba(107,15,15,.4);border-radius:2px;padding:8px 12px;text-align:center}
-.episode-badge p{font-family:"Cinzel",serif;font-size:8.5px;letter-spacing:3px;color:rgba(212,192,154,.75);text-transform:uppercase;margin-bottom:3px}
-.episode-badge span{font-family:"Cinzel Decorative",serif;font-size:16px;color:var(--blood-lt)}
+.episode-badge p{font-family:"Cinzel",serif;font-size:10.5px;letter-spacing:3px;color:rgba(212,192,154,.75);text-transform:uppercase;margin-bottom:3px}
+.episode-badge span{font-family:"Cinzel Decorative",serif;font-size:20px;color:var(--blood-lt)}
 
 /* ── MAIN CONTENT ──────────────────────────────────────────── */
 .main{flex:1;margin-left:var(--sidebar-w);min-height:100vh;display:flex;flex-direction:column}
@@ -61,9 +61,9 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
 
 /* ── PAGE HEADER ───────────────────────────────────────────── */
 .page-hdr{padding:40px 56px 32px;border-bottom:1px solid rgba(154,122,42,.15);background:linear-gradient(135deg,rgba(107,15,15,.08) 0%,transparent 60%)}
-.page-hdr .page-eyebrow{font-family:"Cinzel",serif;font-size:8px;letter-spacing:6px;color:var(--gold-dim);text-transform:uppercase;margin-bottom:10px;opacity:.8}
+.page-hdr .page-eyebrow{font-family:"Cinzel",serif;font-size:10px;letter-spacing:6px;color:var(--gold-dim);text-transform:uppercase;margin-bottom:10px;opacity:.8}
 .page-hdr h2{font-family:"Cinzel Decorative",serif;font-size:36px;font-weight:700;color:var(--blood-lt);text-shadow:1px 2px 0 rgba(0,0,0,.3);line-height:1.1}
-.page-hdr p{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:16px;color:rgba(212,192,154,.65);margin-top:8px}
+.page-hdr p{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:20px;color:rgba(212,192,154,.65);margin-top:8px}
 
 /* ── BOOK CARD (parchment container) ──────────────────────── */
 .book-card{background:var(--parch);background-image:radial-gradient(ellipse at 20% 10%,rgba(180,140,80,.15) 0%,transparent 60%),radial-gradient(ellipse at 80% 90%,rgba(100,60,20,.12) 0%,transparent 60%);box-shadow:-8px 0 40px rgba(0,0,0,.5),0 4px 30px rgba(0,0,0,.4);position:relative;overflow:hidden}
@@ -73,40 +73,40 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
 .book-inner.compact{padding:32px 48px}
 
 /* ── TYPOGRAPHY ────────────────────────────────────────────── */
-.t-eyebrow{font-family:"Cinzel",serif;font-size:8px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.8;margin-bottom:6px}
+.t-eyebrow{font-family:"Cinzel",serif;font-size:10px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.8;margin-bottom:6px}
 .t-title{font-family:"Cinzel Decorative",serif;font-size:32px;font-weight:700;color:var(--blood);line-height:1.15;margin-bottom:10px}
 .t-title.lg{font-size:42px}
-.t-sub{font-family:"IM Fell English",serif;font-style:italic;font-size:15px;color:var(--ash);opacity:.85}
-.t-body{font-family:"Cormorant Garamond",serif;font-size:19px;line-height:1.9;color:var(--ink-soft);text-align:justify;hyphens:auto;margin-bottom:16px}
+.t-sub{font-family:"IM Fell English",serif;font-style:italic;font-size:21px;color:var(--ash);opacity:.85}
+.t-body{font-family:"Cormorant Garamond",serif;font-size:22px;line-height:1.9;color:var(--ink-soft);text-align:justify;hyphens:auto;margin-bottom:16px}
 .t-body.dc::first-letter{font-family:"Cinzel Decorative",serif;font-size:76px;font-weight:900;float:left;line-height:.72;margin:10px 10px 0 -4px;color:var(--blood)}
-.t-label{font-family:"Cinzel",serif;font-size:8.5px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin:20px 0 5px;opacity:.85}
-.t-sec{font-family:"Cinzel",serif;font-size:18px;font-weight:600;color:var(--blood);letter-spacing:.5px;margin:42px 0 14px;padding-bottom:8px;border-bottom:1px solid rgba(107,15,15,.25);display:flex;align-items:center;gap:9px}
-.t-sec .g{color:var(--gold);opacity:.65;font-size:16px;font-family:serif;font-weight:400}
-.t-ss{font-family:"Cinzel",serif;font-size:12px;font-weight:700;color:var(--gold-lt);letter-spacing:3.5px;text-transform:uppercase;margin:28px 0 10px}
+.t-label{font-family:"Cinzel",serif;font-size:10.5px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin:20px 0 5px;opacity:.85}
+.t-sec{font-family:"Cinzel",serif;font-size:21px;font-weight:600;color:var(--blood);letter-spacing:.5px;margin:42px 0 14px;padding-bottom:8px;border-bottom:1px solid rgba(107,15,15,.25);display:flex;align-items:center;gap:9px}
+.t-sec .g{color:var(--gold);opacity:.65;font-size:20px;font-family:serif;font-weight:400}
+.t-ss{font-family:"Cinzel",serif;font-size:21px;font-weight:700;color:var(--gold-lt);letter-spacing:3.5px;text-transform:uppercase;margin:28px 0 10px}
 
 /* ── DIVIDERS ──────────────────────────────────────────────── */
-.div-orn{text-align:center;margin:36px 0;color:var(--gold);opacity:.5;font-size:17px;letter-spacing:12px;font-family:serif;position:relative}
+.div-orn{text-align:center;margin:36px 0;color:var(--gold);opacity:.5;font-size:21px;letter-spacing:12px;font-family:serif;position:relative}
 .div-orn::before,.div-orn::after{content:"";position:absolute;top:50%;width:18%;height:1px;background:linear-gradient(to var(--d,right),transparent,rgba(154,122,42,.3))}
 .div-orn::before{left:0;--d:right}.div-orn::after{right:0;--d:left}
 .div-slim{display:flex;align-items:center;gap:10px;margin:28px 0 22px;opacity:.38}
 .div-slim span{flex:1;height:1px;background:var(--gold)}
-.div-slim i{color:var(--gold);font-size:10px;font-style:normal}
+.div-slim i{color:var(--gold);font-size:21px;font-style:normal}
 
 /* ── BLOCKQUOTE ────────────────────────────────────────────── */
 .bq{margin:22px 14px;padding:18px 24px 18px 28px;border-left:3px solid var(--blood);background:linear-gradient(to right,rgba(107,15,15,.05),transparent);position:relative}
 .bq::before{content:"C";position:absolute;top:-6px;left:8px;font-family:"Cinzel Decorative",serif;font-size:54px;color:var(--blood);opacity:.15;line-height:1}
-.bq p{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:19.5px;line-height:1.75;color:var(--ink)}
+.bq p{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:22.5px;line-height:1.75;color:var(--ink)}
 
 /* ── WARN BOX ──────────────────────────────────────────────── */
 .warn-box{margin:26px 0;padding:20px 26px;border:1px solid rgba(107,15,15,.3);background:repeating-linear-gradient(-45deg,transparent,transparent 7px,rgba(107,15,15,.025) 7px,rgba(107,15,15,.025) 8px);position:relative}
-.warn-box::before{content:"⚠";position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--parch);padding:0 9px;color:var(--blood);font-size:15px;opacity:.65}
-.warn-lbl{font-family:"Cinzel",serif;font-size:8px;letter-spacing:5px;color:var(--blood);text-transform:uppercase;text-align:center;margin-bottom:8px;opacity:.75}
-.warn-txt{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:18px;line-height:1.8;color:var(--ink);text-align:center}
+.warn-box::before{content:"⚠";position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--parch);padding:0 9px;color:var(--blood);font-size:21px;opacity:.65}
+.warn-lbl{font-family:"Cinzel",serif;font-size:10px;letter-spacing:5px;color:var(--blood);text-transform:uppercase;text-align:center;margin-bottom:8px;opacity:.75}
+.warn-txt{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:21px;line-height:1.8;color:var(--ink);text-align:center}
 
 /* ── LISTS ─────────────────────────────────────────────────── */
 .ul{list-style:none;margin:12px 0 16px;padding:0}
-.ul li{font-family:"Cormorant Garamond",serif;font-size:18px;line-height:1.85;color:var(--ink-soft);padding:4px 0 4px 25px;position:relative}
-.ul li::before{content:"✦";position:absolute;left:0;color:var(--gold);opacity:.55;font-size:10px;top:8px}
+.ul li{font-family:"Cormorant Garamond",serif;font-size:21px;line-height:1.85;color:var(--ink-soft);padding:4px 0 4px 25px;position:relative}
+.ul li::before{content:"✦";position:absolute;left:0;color:var(--gold);opacity:.55;font-size:21px;top:8px}
 
 /* ── GRID LAYOUTS ──────────────────────────────────────────── */
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
@@ -116,18 +116,18 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
 /* ── CARDS (dark, on dark bg) ──────────────────────────────── */
 .card{background:rgba(255,255,255,.03);border:1px solid rgba(154,122,42,.18);padding:22px 24px;transition:all .25s;cursor:default}
 .card:hover{background:rgba(154,122,42,.06);border-color:rgba(154,122,42,.32)}
-.card-label{font-family:"Cinzel",serif;font-size:8px;letter-spacing:4px;color:var(--gold-dim);text-transform:uppercase;margin-bottom:6px}
-.card-title{font-family:"Cinzel",serif;font-size:14px;font-weight:700;color:var(--parch);margin-bottom:8px;letter-spacing:.5px}
-.card-body{font-family:"Cormorant Garamond",serif;font-size:16px;line-height:1.75;color:rgba(212,192,154,.8)}
+.card-label{font-family:"Cinzel",serif;font-size:10px;letter-spacing:4px;color:var(--gold-dim);text-transform:uppercase;margin-bottom:6px}
+.card-title{font-family:"Cinzel",serif;font-size:21px;font-weight:700;color:var(--parch);margin-bottom:8px;letter-spacing:.5px}
+.card-body{font-family:"Cormorant Garamond",serif;font-size:20px;line-height:1.75;color:rgba(212,192,154,.8)}
 
 /* ── NPC CARD ──────────────────────────────────────────────── */
 .npc-card{background:var(--parch);background-image:radial-gradient(ellipse at 20% 0%,rgba(180,140,80,.12) 0%,transparent 60%);box-shadow:0 2px 20px rgba(0,0,0,.3);position:relative;overflow:hidden;cursor:pointer;transition:transform .2s,box-shadow .2s}
 .npc-card:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,.4)}
 .npc-card-inner{padding:28px 32px}
-.npc-role{font-family:"Cinzel",serif;font-size:8px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.78;margin-bottom:4px}
+.npc-role{font-family:"Cinzel",serif;font-size:10px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.78;margin-bottom:4px}
 .npc-name{font-family:"Cinzel Decorative",serif;font-size:24px;font-weight:700;color:var(--blood-deep);line-height:1.1;margin-bottom:10px}
-.npc-tag{display:inline-block;font-family:"Cinzel",serif;font-size:8px;letter-spacing:3px;color:var(--blood);border:1px solid rgba(107,15,15,.3);padding:2px 8px;text-transform:uppercase;margin-bottom:10px}
-.npc-excerpt{font-family:"Cormorant Garamond",serif;font-size:15px;line-height:1.7;color:var(--ash)}
+.npc-tag{display:inline-block;font-family:"Cinzel",serif;font-size:10px;letter-spacing:3px;color:var(--blood);border:1px solid rgba(107,15,15,.3);padding:2px 8px;text-transform:uppercase;margin-bottom:10px}
+.npc-excerpt{font-family:"Cormorant Garamond",serif;font-size:21px;line-height:1.7;color:var(--ash)}
 .npc-sig{width:60px;height:60px;border:1px solid rgba(154,122,42,.35);display:flex;align-items:center;justify-content:center;position:absolute;top:24px;right:24px;background:rgba(107,15,15,.05)}
 .npc-sig::before{content:"";position:absolute;inset:4px;border:1px solid rgba(154,122,42,.14)}
 .npc-sig svg{width:34px;height:34px;fill:var(--blood);opacity:.38}
@@ -140,116 +140,116 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
 .npc-sigil::before{content:"";position:absolute;inset:4px;border:1px solid rgba(154,122,42,.15)}
 .npc-sigil svg{width:38px;height:38px;fill:var(--blood);opacity:.4}
 .npc-attrs{display:flex;flex-wrap:wrap;gap:3px 14px;margin-top:6px}
-.npc-attr{font-family:"Cinzel",serif;font-size:9px;color:var(--ash);letter-spacing:.5px}
-.npc-attr strong{color:var(--gold);letter-spacing:2px;text-transform:uppercase;font-size:7.5px}
+.npc-attr{font-family:"Cinzel",serif;font-size:11px;color:var(--ash);letter-spacing:.5px}
+.npc-attr strong{color:var(--gold);letter-spacing:2px;text-transform:uppercase;font-size:11.5px}
 
 /* ── EPISODE CARD ──────────────────────────────────────────── */
 .ep-card{background:var(--parch);background-image:radial-gradient(ellipse at 15% 0%,rgba(180,140,80,.1) 0%,transparent 55%);border-left:3px solid transparent;padding:24px 28px;cursor:pointer;transition:all .22s;position:relative}
 .ep-card:hover{background-image:radial-gradient(ellipse at 15% 0%,rgba(180,140,80,.18) 0%,transparent 55%);border-left-color:rgba(107,15,15,.4)}
 .ep-card.done{border-left-color:var(--blood)}
 .ep-card.current{border-left-color:var(--gold)}
-.ep-card.current::before{content:"EM ANDAMENTO";position:absolute;top:10px;right:14px;font-family:"Cinzel",serif;font-size:7px;letter-spacing:3px;color:var(--gold);opacity:.7}
+.ep-card.current::before{content:"EM ANDAMENTO";position:absolute;top:10px;right:14px;font-family:"Cinzel",serif;font-size:11px;letter-spacing:3px;color:var(--gold);opacity:.7}
 .ep-num{font-family:"Cinzel Decorative",serif;font-size:38px;font-weight:900;color:var(--blood);opacity:.15;position:absolute;top:12px;right:20px;line-height:1}
-.ep-label{font-family:"Cinzel",serif;font-size:8px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.75;margin-bottom:5px}
-.ep-title{font-family:"Cinzel",serif;font-size:15px;font-weight:700;color:var(--blood);margin-bottom:5px;letter-spacing:.5px}
-.ep-q{font-family:"IM Fell English",serif;font-style:italic;font-size:13px;color:var(--ash);margin-bottom:8px}
-.ep-body{font-family:"Cormorant Garamond",serif;font-size:15px;line-height:1.7;color:var(--ink-soft)}
+.ep-label{font-family:"Cinzel",serif;font-size:10px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.75;margin-bottom:5px}
+.ep-title{font-family:"Cinzel",serif;font-size:21px;font-weight:700;color:var(--blood);margin-bottom:5px;letter-spacing:.5px}
+.ep-q{font-family:"IM Fell English",serif;font-style:italic;font-size:21px;color:var(--ash);margin-bottom:8px}
+.ep-body{font-family:"Cormorant Garamond",serif;font-size:21px;line-height:1.7;color:var(--ink-soft)}
 .ep-detail{display:none;margin-top:18px;padding-top:18px;border-top:1px solid rgba(154,122,42,.22)}
 .ep-detail.open{display:block}
 .ep-status{display:flex;gap:8px;align-items:center;margin-top:12px}
-.ep-btn{font-family:"Cinzel",serif;font-size:8px;letter-spacing:3px;text-transform:uppercase;padding:5px 14px;border:1px solid;cursor:pointer;transition:all .2s;background:none}
+.ep-btn{font-family:"Cinzel",serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;padding:5px 14px;border:1px solid;cursor:pointer;transition:all .2s;background:none}
 .ep-btn.red{color:var(--blood);border-color:rgba(107,15,15,.4)}.ep-btn.red:hover{background:rgba(107,15,15,.12)}
 .ep-btn.gold{color:var(--gold);border-color:rgba(154,122,42,.35)}.ep-btn.gold:hover{background:rgba(154,122,42,.1)}
 
 /* ── DOCUMENT PROP ─────────────────────────────────────────── */
 .doc-prop{background:linear-gradient(135deg,#f0e4cc,#e8d5b0);border:1px solid rgba(90,74,48,.45);padding:24px 30px;position:relative;box-shadow:2px 4px 14px rgba(0,0,0,.15)}
 .doc-prop::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(180deg,transparent,transparent 22px,rgba(90,74,48,.05) 22px,rgba(90,74,48,.05) 23px);pointer-events:none}
-.doc-stamp{position:absolute;top:10px;right:12px;font-family:"Cinzel",serif;font-size:7px;letter-spacing:3px;color:var(--blood);opacity:.45;text-transform:uppercase;border:1px solid var(--blood);padding:2px 6px;transform:rotate(2.5deg)}
-.doc-hdr{font-family:"Cinzel",serif;font-size:10px;letter-spacing:3px;color:var(--ash);text-transform:uppercase;border-bottom:1px solid rgba(90,74,48,.35);padding-bottom:8px;margin-bottom:13px}
+.doc-stamp{position:absolute;top:10px;right:12px;font-family:"Cinzel",serif;font-size:11px;letter-spacing:3px;color:var(--blood);opacity:.45;text-transform:uppercase;border:1px solid var(--blood);padding:2px 6px;transform:rotate(2.5deg)}
+.doc-hdr{font-family:"Cinzel",serif;font-size:21px;letter-spacing:3px;color:var(--ash);text-transform:uppercase;border-bottom:1px solid rgba(90,74,48,.35);padding-bottom:8px;margin-bottom:13px}
 .doc-field{margin-bottom:6px;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
-.doc-fl{font-family:"Cinzel",serif;font-size:8px;letter-spacing:2px;color:var(--ash);text-transform:uppercase;flex-shrink:0;opacity:.75;min-width:110px}
-.doc-fv{font-family:"IM Fell English",serif;font-size:14.5px;color:var(--ink);line-height:1.45}
+.doc-fl{font-family:"Cinzel",serif;font-size:10px;letter-spacing:2px;color:var(--ash);text-transform:uppercase;flex-shrink:0;opacity:.75;min-width:110px}
+.doc-fv{font-family:"IM Fell English",serif;font-size:17.5px;color:var(--ink);line-height:1.45}
 .doc-note{margin-top:13px;padding:10px 13px;border-left:2px solid var(--blood);background:rgba(107,15,15,.04)}
-.doc-nl{font-family:"Cinzel",serif;font-size:7.5px;letter-spacing:3px;color:var(--blood);text-transform:uppercase;margin-bottom:4px;opacity:.75}
-.doc-nt{font-family:"IM Fell English",serif;font-style:italic;font-size:13.5px;color:var(--ink-soft);line-height:1.6}
+.doc-nl{font-family:"Cinzel",serif;font-size:11.5px;letter-spacing:3px;color:var(--blood);text-transform:uppercase;margin-bottom:4px;opacity:.75}
+.doc-nt{font-family:"IM Fell English",serif;font-style:italic;font-size:18.5px;color:var(--ink-soft);line-height:1.6}
 .redact{background:var(--ink);color:transparent;user-select:none;padding:0 3px;display:inline}
 
 /* ── DIARY ─────────────────────────────────────────────────── */
 .diary-prop{background:linear-gradient(160deg,#ede0c4,#e2d0a8);border:1px solid rgba(90,74,48,.45);padding:24px 30px;position:relative;box-shadow:2px 4px 14px rgba(0,0,0,.15)}
 .diary-prop::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(180deg,transparent,transparent 23px,rgba(90,74,48,.048) 23px,rgba(90,74,48,.048) 24px);pointer-events:none}
-.diary-hdr{font-family:"Cinzel",serif;font-size:9.5px;letter-spacing:4px;color:var(--ash);text-transform:uppercase;text-align:center;border-bottom:1px solid rgba(90,74,48,.32);padding-bottom:9px;margin-bottom:18px}
+.diary-hdr{font-family:"Cinzel",serif;font-size:11.5px;letter-spacing:4px;color:var(--ash);text-transform:uppercase;text-align:center;border-bottom:1px solid rgba(90,74,48,.32);padding-bottom:9px;margin-bottom:18px}
 .diary-entry{margin-bottom:22px;padding-bottom:18px;border-bottom:1px solid rgba(90,74,48,.16);position:relative;z-index:1}
 .diary-entry:last-child{border:none;margin:0;padding:0}
-.diary-date{font-family:"Cinzel",serif;font-size:9px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:7px;opacity:.8}
-.diary-txt{font-family:"IM Fell English",serif;font-size:14.5px;line-height:1.8;color:var(--ink-soft)}
+.diary-date{font-family:"Cinzel",serif;font-size:11px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:7px;opacity:.8}
+.diary-txt{font-family:"IM Fell English",serif;font-size:17.5px;line-height:1.8;color:var(--ink-soft)}
 .diary-txt em{color:var(--ink);font-style:italic}
 
 /* ── PRINT BUTTON ──────────────────────────────────────────── */
-.btn-print{display:inline-flex;align-items:center;gap:8px;font-family:"Cinzel",serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(154,122,42,.4);padding:9px 18px;cursor:pointer;background:none;transition:all .2s;margin:12px 0}
+.btn-print{display:inline-flex;align-items:center;gap:8px;font-family:"Cinzel",serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(154,122,42,.4);padding:9px 18px;cursor:pointer;background:none;transition:all .2s;margin:12px 0}
 .btn-print:hover{background:rgba(154,122,42,.1);border-color:rgba(154,122,42,.6)}
 .btn-print svg{width:14px;height:14px;fill:var(--gold);opacity:.7}
 
 /* ── NOTES / ANNOTATIONS ───────────────────────────────────── */
 .notes-wrapper{flex:1;display:flex;flex-direction:column;padding:0}
 .notes-tabs{display:flex;gap:0;border-bottom:1px solid rgba(154,122,42,.2);padding:0 24px;background:rgba(0,0,0,.2)}
-.notes-tab{font-family:"Cinzel",serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(154,122,42,.5);padding:12px 18px;cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;background:none;border-top:none;border-left:none;border-right:none}
+.notes-tab{font-family:"Cinzel",serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(154,122,42,.5);padding:12px 18px;cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;background:none;border-top:none;border-left:none;border-right:none}
 .notes-tab.active{color:var(--gold-lt);border-bottom-color:var(--blood)}
 .notes-tab:hover{color:var(--gold)}
 .notes-area{flex:1;display:flex;gap:0}
 .notes-sidebar{width:200px;border-right:1px solid rgba(154,122,42,.15);padding:16px 0;background:rgba(0,0,0,.15)}
-.notes-session-item{display:block;padding:10px 16px;font-family:"Cinzel",serif;font-size:9.5px;letter-spacing:.5px;color:rgba(212,192,154,.55);cursor:pointer;border:none;background:none;width:100%;text-align:left;transition:all .2s;border-left:2px solid transparent}
+.notes-session-item{display:block;padding:10px 16px;font-family:"Cinzel",serif;font-size:11.5px;letter-spacing:.5px;color:rgba(212,192,154,.55);cursor:pointer;border:none;background:none;width:100%;text-align:left;transition:all .2s;border-left:2px solid transparent}
 .notes-session-item:hover{color:var(--gold-lt);background:rgba(154,122,42,.06)}
 .notes-session-item.active{color:var(--gold-lt);border-left-color:var(--blood);background:rgba(107,15,15,.12)}
-.notes-add-btn{margin:8px 12px;width:calc(100% - 24px);font-family:"Cinzel",serif;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-dim);border:1px solid rgba(154,122,42,.2);padding:7px;cursor:pointer;background:none;transition:all .2s}
+.notes-add-btn{margin:8px 12px;width:calc(100% - 24px);font-family:"Cinzel",serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-dim);border:1px solid rgba(154,122,42,.2);padding:7px;cursor:pointer;background:none;transition:all .2s}
 .notes-add-btn:hover{color:var(--gold);border-color:rgba(154,122,42,.4)}
 .notes-editor{flex:1;display:flex;flex-direction:column;padding:20px 24px}
-.notes-title-input{font-family:"Cinzel",serif;font-size:15px;color:var(--parch);background:none;border:none;border-bottom:1px solid rgba(154,122,42,.25);padding:6px 0 10px;margin-bottom:16px;outline:none;width:100%;letter-spacing:1px}
+.notes-title-input{font-family:"Cinzel",serif;font-size:21px;color:var(--parch);background:none;border:none;border-bottom:1px solid rgba(154,122,42,.25);padding:6px 0 10px;margin-bottom:16px;outline:none;width:100%;letter-spacing:1px}
 .notes-title-input::placeholder{color:rgba(212,192,154,.3)}
-.notes-textarea{flex:1;font-family:"Cormorant Garamond",serif;font-size:16px;line-height:1.85;color:var(--parch);background:rgba(255,255,255,.02);border:1px solid rgba(154,122,42,.15);padding:16px 20px;outline:none;resize:none;transition:border .2s}
+.notes-textarea{flex:1;font-family:"Cormorant Garamond",serif;font-size:20px;line-height:1.85;color:var(--parch);background:rgba(255,255,255,.02);border:1px solid rgba(154,122,42,.15);padding:16px 20px;outline:none;resize:none;transition:border .2s}
 .notes-textarea:focus{border-color:rgba(154,122,42,.35)}
 .notes-textarea::placeholder{color:rgba(212,192,154,.2)}
 .notes-toolbar{display:flex;gap:10px;align-items:center;padding:10px 0 0;flex-wrap:wrap}
-.notes-meta{font-family:"Cinzel",serif;font-size:8px;letter-spacing:3px;color:var(--ash);text-transform:uppercase;opacity:.6;flex:1}
-.btn-export{font-family:"Cinzel",serif;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-dim);border:1px solid rgba(154,122,42,.28);padding:6px 14px;cursor:pointer;background:none;transition:all .2s}
+.notes-meta{font-family:"Cinzel",serif;font-size:10px;letter-spacing:3px;color:var(--ash);text-transform:uppercase;opacity:.6;flex:1}
+.btn-export{font-family:"Cinzel",serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-dim);border:1px solid rgba(154,122,42,.28);padding:6px 14px;cursor:pointer;background:none;transition:all .2s}
 .btn-export:hover{color:var(--gold);border-color:rgba(154,122,42,.5)}
-.btn-delete{font-family:"Cinzel",serif;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:rgba(107,15,15,.6);border:1px solid rgba(107,15,15,.25);padding:6px 14px;cursor:pointer;background:none;transition:all .2s}
+.btn-delete{font-family:"Cinzel",serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(107,15,15,.6);border:1px solid rgba(107,15,15,.25);padding:6px 14px;cursor:pointer;background:none;transition:all .2s}
 .btn-delete:hover{color:var(--blood-lt);border-color:rgba(107,15,15,.45)}
 
 /* ── HOME DASHBOARD ────────────────────────────────────────── */
 .home-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0}
 .home-pane{padding:36px 40px;border-right:1px solid rgba(154,122,42,.12)}
 .home-pane:last-child{border-right:none}
-.home-pane-title{font-family:"Cinzel",serif;font-size:9px;letter-spacing:5px;text-transform:uppercase;color:var(--gold-dim);margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid rgba(154,122,42,.12)}
+.home-pane-title{font-family:"Cinzel",serif;font-size:11px;letter-spacing:5px;text-transform:uppercase;color:var(--gold-dim);margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid rgba(154,122,42,.12)}
 .stat-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid rgba(154,122,42,.08)}
 .stat-row:last-child{border:none}
-.stat-label{font-family:"Cinzel",serif;font-size:9.5px;color:rgba(212,192,154,.5);letter-spacing:.5px}
-.stat-value{font-family:"Cormorant Garamond",serif;font-size:17px;color:var(--parch)}
+.stat-label{font-family:"Cinzel",serif;font-size:11.5px;color:rgba(212,192,154,.5);letter-spacing:.5px}
+.stat-value{font-family:"Cormorant Garamond",serif;font-size:21px;color:var(--parch)}
 .clue-item{display:flex;align-items:flex-start;gap:10px;padding:6px 0;border-bottom:1px solid rgba(154,122,42,.07)}
 .clue-item:last-child{border:none}
 .clue-check{width:14px;height:14px;border:1px solid rgba(154,122,42,.4);flex-shrink:0;margin-top:3px;cursor:pointer;display:flex;align-items:center;justify-content:center;background:none}
 .clue-check.done{background:rgba(107,15,15,.3);border-color:var(--blood)}
-.clue-check.done::after{content:"✓";font-size:9px;color:var(--blood-lt)}
-.clue-label{font-family:"Cormorant Garamond",serif;font-size:14.5px;line-height:1.55;color:rgba(212,192,154,.65)}
+.clue-check.done::after{content:"✓";font-size:11px;color:var(--blood-lt)}
+.clue-label{font-family:"Cormorant Garamond",serif;font-size:17.5px;line-height:1.55;color:rgba(212,192,154,.65)}
 .clue-label.done{text-decoration:line-through;opacity:.45}
-.quick-link{display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid rgba(154,122,42,.07);cursor:pointer;transition:color .2s;color:rgba(212,192,154,.55);font-family:"Cinzel",serif;font-size:9.5px;letter-spacing:.5px;background:none;border-top:none;border-left:none;border-right:none;width:100%;text-align:left}
+.quick-link{display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid rgba(154,122,42,.07);cursor:pointer;transition:color .2s;color:rgba(212,192,154,.55);font-family:"Cinzel",serif;font-size:11.5px;letter-spacing:.5px;background:none;border-top:none;border-left:none;border-right:none;width:100%;text-align:left}
 .quick-link:hover{color:var(--gold-lt)}
-.quick-link .ql-icon{font-size:15px;width:20px;text-align:center;opacity:.6}
+.quick-link .ql-icon{font-size:21px;width:20px;text-align:center;opacity:.6}
 
 /* ── SEARCH OVERLAY ────────────────────────────────────────── */
 .search-overlay{position:fixed;inset:0;background:rgba(10,7,4,.88);z-index:1000;display:none;align-items:flex-start;justify-content:center;padding-top:120px}
 .search-overlay.open{display:flex}
 .search-box{width:560px;background:var(--bg2);border:1px solid rgba(154,122,42,.3);padding:0;overflow:hidden}
-.search-input{width:100%;font-family:"Cinzel",serif;font-size:14px;color:var(--parch);background:none;border:none;padding:18px 22px;outline:none;letter-spacing:.5px;border-bottom:1px solid rgba(154,122,42,.2)}
+.search-input{width:100%;font-family:"Cinzel",serif;font-size:21px;color:var(--parch);background:none;border:none;padding:18px 22px;outline:none;letter-spacing:.5px;border-bottom:1px solid rgba(154,122,42,.2)}
 .search-input::placeholder{color:rgba(212,192,154,.3)}
 .search-results{max-height:320px;overflow-y:auto}
 .search-result{padding:12px 22px;cursor:pointer;border-bottom:1px solid rgba(154,122,42,.08);transition:background .15s}
 .search-result:hover{background:rgba(154,122,42,.07)}
-.search-result-label{font-family:"Cinzel",serif;font-size:7.5px;letter-spacing:4px;color:var(--gold-dim);text-transform:uppercase;margin-bottom:3px}
-.search-result-title{font-family:"Cormorant Garamond",serif;font-size:16px;color:var(--parch)}
-.search-hint{font-family:"Cinzel",serif;font-size:7.5px;letter-spacing:3px;color:rgba(154,122,42,.35);text-transform:uppercase;padding:10px 22px;border-top:1px solid rgba(154,122,42,.1)}
+.search-result-label{font-family:"Cinzel",serif;font-size:11.5px;letter-spacing:4px;color:var(--gold-dim);text-transform:uppercase;margin-bottom:3px}
+.search-result-title{font-family:"Cormorant Garamond",serif;font-size:20px;color:var(--parch)}
+.search-hint{font-family:"Cinzel",serif;font-size:11.5px;letter-spacing:3px;color:rgba(154,122,42,.35);text-transform:uppercase;padding:10px 22px;border-top:1px solid rgba(154,122,42,.1)}
 
 /* ── MISC ──────────────────────────────────────────────────── */
-.tag{display:inline-block;font-family:"Cinzel",serif;font-size:7.5px;letter-spacing:3px;text-transform:uppercase;padding:2px 8px;border:1px solid;margin:2px}
+.tag{display:inline-block;font-family:"Cinzel",serif;font-size:11.5px;letter-spacing:3px;text-transform:uppercase;padding:2px 8px;border:1px solid;margin:2px}
 .tag.red{color:var(--blood-lt);border-color:rgba(107,15,15,.35)}
 .tag.gold{color:var(--gold);border-color:rgba(154,122,42,.35)}
 .tag.ash{color:var(--ash);border-color:rgba(90,74,48,.35)}
@@ -260,23 +260,23 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
 .timeline-line{border-left:2px solid rgba(154,122,42,.25);padding-left:20px;margin:16px 0}
 .tl-item{margin:0 0 14px;position:relative}
 .tl-item::before{content:"";position:absolute;left:-26px;top:6px;width:7px;height:7px;background:var(--gold);opacity:.45;transform:rotate(45deg)}
-.tl-year{font-family:"Cinzel",serif;font-size:10px;font-weight:700;color:var(--gold);letter-spacing:2px;margin-bottom:1px}
-.tl-text{font-family:"Cormorant Garamond",serif;font-size:15.5px;line-height:1.65;color:var(--ash)}
+.tl-year{font-family:"Cinzel",serif;font-size:21px;font-weight:700;color:var(--gold);letter-spacing:2px;margin-bottom:1px}
+.tl-text{font-family:"Cormorant Garamond",serif;font-size:18.5px;line-height:1.65;color:var(--ash)}
 .tl-text em{color:var(--blood);font-style:italic}
 .mech-box{margin:20px 0;padding:18px 22px;border:1px solid rgba(154,122,42,.25);background:rgba(154,122,42,.03)}
-.mech-ttl{font-family:"Cinzel",serif;font-size:10px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:9px;border-bottom:1px solid rgba(154,122,42,.16);padding-bottom:5px}
+.mech-ttl{font-family:"Cinzel",serif;font-size:21px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:9px;border-bottom:1px solid rgba(154,122,42,.16);padding-bottom:5px}
 .attr-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px}
 .attr-item{padding:8px 0;border-bottom:1px solid rgba(154,122,42,.1)}
-.attr-name{font-family:"Cinzel",serif;font-size:9px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:2px}
-.attr-desc{font-family:"Cormorant Garamond",serif;font-size:16.5px;line-height:1.65;color:var(--ink-soft)}
+.attr-name{font-family:"Cinzel",serif;font-size:11px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:2px}
+.attr-desc{font-family:"Cormorant Garamond",serif;font-size:20.5px;line-height:1.65;color:var(--ink-soft)}
 .stbl{width:100%;border-collapse:collapse;margin:12px 0}
-.stbl th{font-family:"Cinzel",serif;font-size:8px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;padding:6px 10px;text-align:left;border-bottom:1px solid rgba(154,122,42,.25)}
-.stbl td{font-family:"Cormorant Garamond",serif;font-size:16.5px;color:var(--ink-soft);padding:8px 10px;border-bottom:1px solid rgba(154,122,42,.09);line-height:1.6}
+.stbl th{font-family:"Cinzel",serif;font-size:10px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;padding:6px 10px;text-align:left;border-bottom:1px solid rgba(154,122,42,.25)}
+.stbl td{font-family:"Cormorant Garamond",serif;font-size:20.5px;color:var(--ink-soft);padding:8px 10px;border-bottom:1px solid rgba(154,122,42,.09);line-height:1.6}
 .stbl tr:nth-child(even) td{background:rgba(154,122,42,.03)}
-.back-btn{display:inline-flex;align-items:center;gap:8px;font-family:"Cinzel",serif;font-size:8.5px;letter-spacing:3px;text-transform:uppercase;color:var(--ash);cursor:pointer;background:none;border:none;padding:0;margin-bottom:22px;transition:color .2s}
+.back-btn{display:inline-flex;align-items:center;gap:8px;font-family:"Cinzel",serif;font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:var(--ash);cursor:pointer;background:none;border:none;padding:0;margin-bottom:22px;transition:color .2s}
 .back-btn:hover{color:var(--gold-lt)}
 .back-btn::before{content:"←"}
-.pill{display:inline-flex;align-items:center;gap:5px;font-family:"Cinzel",serif;font-size:8px;letter-spacing:2px;text-transform:uppercase;padding:3px 10px;border-radius:0;border:1px solid rgba(154,122,42,.25);color:var(--ash)}
+.pill{display:inline-flex;align-items:center;gap:5px;font-family:"Cinzel",serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:3px 10px;border-radius:0;border:1px solid rgba(154,122,42,.25);color:var(--ash)}
 
 /* ── SCROLLBAR ─────────────────────────────────────────────── */
 ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:rgba(107,15,15,.4)}::-webkit-scrollbar-thumb:hover{background:var(--blood)}
@@ -295,6 +295,16 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
 <body>
 
 <!-- ═══════════════ SIDEBAR ═══════════════ -->
+<!-- ═══ MOBILE OVERLAY ═══ -->
+<div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+<!-- ═══ MOBILE TOP BAR ═══ -->
+<div class="mobile-topbar">
+  <button class="mobile-menu-btn" onclick="toggleSidebar()" aria-label="Menu">☰</button>
+  <span class="mobile-title">KARMA ETERNO</span>
+  <button class="mobile-search-btn" onclick="openSearch()" aria-label="Buscar">🔍</button>
+</div>
+
 <nav class="sidebar" id="sidebar">
   <div class="sidebar-logo">
     <span class="logo-glyph">⊕</span>
@@ -327,7 +337,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
       <span class="nav-icon">✍</span> Anotações
     </button>
     <div class="nav-section" style="margin-top:16px">Atalho</div>
-    <button class="nav-item" onclick="openSearch()" style="font-size:9px;opacity:.65">
+    <button class="nav-item" onclick="openSearch()" style="font-size:11px;opacity:.65">
       <span class="nav-icon">🔍</span> Buscar <small style="margin-left:auto;opacity:.6">Ctrl+K</small>
     </button>
   </div>
@@ -399,7 +409,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
         <button class="quick-link" onclick="navigate('anotacoes')"><span class="ql-icon">✍</span> Nova Anotação</button>
         <div style="margin-top:20px">
           <div class="home-pane-title">Atenção do Mestre</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:14px;line-height:1.7;color:rgba(212,192,154,.55)">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:21px;line-height:1.7;color:rgba(212,192,154,.55)">
             <p>Armindo torna-se aliado ep.1–4, gerencia informação ep.5–6, confronto ep.7–8, revelação ep.9–10.</p>
             <p style="margin-top:8px;color:rgba(107,15,15,.8)">Sueli parece obstáculo. É proteção. Não revelar cedo.</p>
           </div>
@@ -411,11 +421,11 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
     <div style="padding:32px 40px;border-top:1px solid rgba(154,122,42,.1)">
       <div class="home-pane-title">Referência Rápida — Cronologia</div>
       <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:12px">
-        <div class="card" style="border-color:rgba(154,122,42,.12)"><div class="card-label">1931</div><div class="card-title" style="font-size:11px">Armindo nasce</div><div class="card-body" style="font-size:12px">Mapa também é datado de 1931 — intencional</div></div>
-        <div class="card" style="border-color:rgba(154,122,42,.12)"><div class="card-label">1961</div><div class="card-title" style="font-size:11px">Mapa entregue</div><div class="card-body" style="font-size:12px">17 jun. — mesmo dia da última entrada do diário</div></div>
-        <div class="card" style="border-color:rgba(107,15,15,.3)"><div class="card-label">1972</div><div class="card-title" style="font-size:11px;color:var(--blood-lt)">Operação Semente</div><div class="card-body" style="font-size:12px">33 mortos. Armindo vê a fresta.</div></div>
-        <div class="card" style="border-color:rgba(154,122,42,.12)"><div class="card-label">1974</div><div class="card-title" style="font-size:11px">Novavera fundada</div><div class="card-body" style="font-size:12px">17 jun. — símbolo fechado por Natalina sem saber</div></div>
-        <div class="card" style="border-color:rgba(154,122,42,.2)"><div class="card-label">2025</div><div class="card-title" style="font-size:11px">Temporada 1</div><div class="card-body" style="font-size:12px">Março — Valdecir morre. Os personagens chegam.</div></div>
+        <div class="card" style="border-color:rgba(154,122,42,.12)"><div class="card-label">1931</div><div class="card-title" style="font-size:21px">Armindo nasce</div><div class="card-body" style="font-size:21px">Mapa também é datado de 1931 — intencional</div></div>
+        <div class="card" style="border-color:rgba(154,122,42,.12)"><div class="card-label">1961</div><div class="card-title" style="font-size:21px">Mapa entregue</div><div class="card-body" style="font-size:21px">17 jun. — mesmo dia da última entrada do diário</div></div>
+        <div class="card" style="border-color:rgba(107,15,15,.3)"><div class="card-label">1972</div><div class="card-title" style="font-size:21px;color:var(--blood-lt)">Operação Semente</div><div class="card-body" style="font-size:21px">33 mortos. Armindo vê a fresta.</div></div>
+        <div class="card" style="border-color:rgba(154,122,42,.12)"><div class="card-label">1974</div><div class="card-title" style="font-size:21px">Novavera fundada</div><div class="card-body" style="font-size:21px">17 jun. — símbolo fechado por Natalina sem saber</div></div>
+        <div class="card" style="border-color:rgba(154,122,42,.2)"><div class="card-label">2025</div><div class="card-title" style="font-size:21px">Temporada 1</div><div class="card-body" style="font-size:21px">Março — Valdecir morre. Os personagens chegam.</div></div>
       </div>
     </div>
   </div>
@@ -434,8 +444,8 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
         <div class="t-eyebrow" style="text-align:center">Bíblia do Universo · Temporada I · Uso Interno do Mestre</div>
         <div style="text-align:center;margin:28px 0 36px">
           <div style="font-family:'Cinzel Decorative',serif;font-size:52px;font-weight:900;color:var(--blood);text-shadow:2px 2px 0 rgba(0,0,0,.08);line-height:1">KARMA ETERNO</div>
-          <div style="font-family:'IM Fell English',serif;font-style:italic;font-size:17px;color:var(--ash);margin-top:10px">O lugar onde o tempo parou de esquecer</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--ink-soft);opacity:.75;margin-top:16px;max-width:320px;margin-left:auto;margin-right:auto;line-height:1.8">"O tempo não passa. O tempo cobra."</div>
+          <div style="font-family:'IM Fell English',serif;font-style:italic;font-size:21px;color:var(--ash);margin-top:10px">O lugar onde o tempo parou de esquecer</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:var(--ink-soft);opacity:.75;margin-top:16px;max-width:320px;margin-left:auto;margin-right:auto;line-height:1.8">"O tempo não passa. O tempo cobra."</div>
         </div>
         <div class="div-orn">☩ ✦ ☩</div>
 
@@ -468,7 +478,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
         <p class="t-body">17 jun. 1961 (mapa entregue / última entrada do diário) → 17 jun. 1974 (fundação coberta, Novavera fundada) → 1987 (Valdecir anota o sonho com os quatro personagens). Intervalo exato: 13 anos entre cada momento. O Mestre decide se isso é coincidência, padrão ou instrução do próprio tempo.</p>
 
         <div class="div-orn">✦</div>
-        <p class="t-body" style="text-align:center;font-style:italic;opacity:.6;font-size:15px">Para o conteúdo completo detalhado de cada seção, use a navegação no menu lateral.</p>
+        <p class="t-body" style="text-align:center;font-style:italic;opacity:.6;font-size:21px">Para o conteúdo completo detalhado de cada seção, use a navegação no menu lateral.</p>
       </div>
     </div>
   </div>
@@ -510,7 +520,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
           <p class="t-body">Almas retornam porque há algo que não fechou. Os quatro personagens jogadores foram encontrados — pela mesma força que os trouxe de volta ao mesmo lugar, com as mesmas dívidas não resolvidas de vidas que nenhum lembra conscientemente.</p>
           <div class="mech-box">
             <div class="mech-ttl">A Teia Fechada dos Quatro Personagens</div>
-            <p style="font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--ash);line-height:1.7">A deve a B · B deve a C · C deve a D · D deve a A. Ninguém é só credor. Ninguém é só devedor. Armindo conhece essa teia inteira — desde antes dos personagens chegarem.</p>
+            <p style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--ash);line-height:1.7">A deve a B · B deve a C · C deve a D · D deve a A. Ninguém é só credor. Ninguém é só devedor. Armindo conhece essa teia inteira — desde antes dos personagens chegarem.</p>
           </div>
         </div>
 
@@ -554,7 +564,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
         <div class="t-sec"><span class="g">✦</span> Memória e Presença — Os Dois Atributos Exclusivos</div>
         <div class="mech-box" style="margin-bottom:16px">
           <div class="mech-ttl">Memória — O quanto de vidas anteriores já vazou</div>
-          <p style="font-family:'Cormorant Garamond',serif;font-size:15.5px;color:var(--ash);line-height:1.7;margin-bottom:12px"><strong style="color:var(--gold);font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase">Valor inicial:</strong> (POD + INT) ÷ 10, arredondado para baixo.<br><br><strong style="color:var(--gold);font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase">Sobe:</strong> ao acessar fragmentos de vida anterior — voluntariamente (confronto mediúnico) ou involuntariamente (consequência narrativa).<br><br><strong style="color:var(--gold);font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase">Desce:</strong> quando age ativamente para se ancorar no presente.<br><br><strong style="color:var(--blood-lt);font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase">O piso sobe permanentemente em 1D6 ao final de cada temporada.</strong></p>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:18.5px;color:var(--ash);line-height:1.7;margin-bottom:12px"><strong style="color:var(--gold);font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase">Valor inicial:</strong> (POD + INT) ÷ 10, arredondado para baixo.<br><br><strong style="color:var(--gold);font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase">Sobe:</strong> ao acessar fragmentos de vida anterior — voluntariamente (confronto mediúnico) ou involuntariamente (consequência narrativa).<br><br><strong style="color:var(--gold);font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase">Desce:</strong> quando age ativamente para se ancorar no presente.<br><br><strong style="color:var(--blood-lt);font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase">O piso sobe permanentemente em 1D6 ao final de cada temporada.</strong></p>
           <table class="stbl">
             <thead><tr><th>Valor</th><th>Estado do Personagem</th></tr></thead>
             <tbody>
@@ -568,7 +578,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
         </div>
         <div class="mech-box">
           <div class="mech-ttl">Presença — O quanto está ancorado no agora</div>
-          <p style="font-family:'Cormorant Garamond',serif;font-size:15.5px;color:var(--ash);line-height:1.7">Presença + Memória = sempre 20. Ambas se atualizam simultaneamente. Presença é modificador passivo — bônus em clareza no presente, penalidade quando baixa. Mas Presença baixa abre percepções que Presença alta não tem. <strong>Presença zero: o personagem não consegue mais distinguir qual é o presente funcional. É o estado de Décio Murta.</strong></p>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:18.5px;color:var(--ash);line-height:1.7">Presença + Memória = sempre 20. Ambas se atualizam simultaneamente. Presença é modificador passivo — bônus em clareza no presente, penalidade quando baixa. Mas Presença baixa abre percepções que Presença alta não tem. <strong>Presença zero: o personagem não consegue mais distinguir qual é o presente funcional. É o estado de Décio Murta.</strong></p>
         </div>
 
         <div class="t-sec"><span class="g">✦</span> Mecânicas Exclusivas</div>
@@ -582,12 +592,12 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
         </div>
         <div class="mech-box" style="margin-bottom:14px">
           <div class="mech-ttl">Sistema de Dívida</div>
-          <p style="font-family:'Cormorant Garamond',serif;font-size:15.5px;color:var(--ash);line-height:1.7;margin-bottom:10px">Cada personagem tem uma dívida com três componentes: <strong>natureza</strong> (o que foi feito ou deixado), <strong>credor</strong> (alguém desta vida), <strong>padrão</strong> (decisão que tende a repetir).</p>
-          <p style="font-family:'Cormorant Garamond',serif;font-size:15.5px;color:var(--ash);line-height:1.7">Quando o personagem está numa situação que ressoa com o padrão, o Mestre pode pedir rolagem de POD. <strong>Falha: o Mestre descreve a ação — não o jogador.</strong> Raramente. Com peso. Não é punição. É o universo cobrando.</p>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:18.5px;color:var(--ash);line-height:1.7;margin-bottom:10px">Cada personagem tem uma dívida com três componentes: <strong>natureza</strong> (o que foi feito ou deixado), <strong>credor</strong> (alguém desta vida), <strong>padrão</strong> (decisão que tende a repetir).</p>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:18.5px;color:var(--ash);line-height:1.7">Quando o personagem está numa situação que ressoa com o padrão, o Mestre pode pedir rolagem de POD. <strong>Falha: o Mestre descreve a ação — não o jogador.</strong> Raramente. Com peso. Não é punição. É o universo cobrando.</p>
         </div>
         <div class="mech-box">
           <div class="mech-ttl">Violência Física</div>
-          <p style="font-family:'Cormorant Garamond',serif;font-size:15.5px;color:var(--ash);line-height:1.7">Regras padrão do Chamado de Cthulhu, sem modificação. O que muda é o contexto: violência raramente resolve o problema central. Sempre há consequências físicas ou narrativas. Morte de personagem é possível e real — e não encerra a participação imediatamente.</p>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:18.5px;color:var(--ash);line-height:1.7">Regras padrão do Chamado de Cthulhu, sem modificação. O que muda é o contexto: violência raramente resolve o problema central. Sempre há consequências físicas ou narrativas. Morte de personagem é possível e real — e não encerra a participação imediatamente.</p>
         </div>
 
         <div class="t-sec"><span class="g">✦</span> O Envelope Lacrado — Criação de Personagem</div>
@@ -701,7 +711,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
         <div class="npc-detail-hdr">
           <div class="npc-sigil"><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="18" stroke-width=".8" stroke="currentColor" fill="none"/><polygon points="22,6 26,18 38,18 28,26 32,38 22,30 12,38 16,26 6,18 18,18" fill="currentColor" opacity=".28"/><circle cx="22" cy="22" r="4" fill="currentColor" opacity=".6"/></svg></div>
           <div>
-            <div class="npc-role" style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.78;margin-bottom:3px">Antagonista Principal</div>
+            <div class="npc-role" style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.78;margin-bottom:3px">Antagonista Principal</div>
             <div class="npc-name" style="font-family:'Cinzel Decorative',serif;font-size:28px;font-weight:700;color:var(--blood-deep);margin-bottom:8px">Armindo Laerte Vasconcelos</div>
             <div class="npc-attrs">
               <span class="npc-attr"><strong>Nascimento:</strong> 1931, Goiás</span>
@@ -743,7 +753,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
         <div class="npc-detail-hdr">
           <div class="npc-sigil"><svg viewBox="0 0 44 44"><circle cx="22" cy="16" r="7" stroke-width="1" stroke="currentColor" fill="currentColor" opacity=".22"/><path d="M10,38 Q22,24 34,38" stroke-width="1" stroke="currentColor" fill="currentColor" opacity=".18"/><circle cx="22" cy="16" r="3" fill="currentColor" opacity=".5"/></svg></div>
           <div>
-            <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.78;margin-bottom:3px">O Espelho</div>
+            <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.78;margin-bottom:3px">O Espelho</div>
             <div class="npc-name" style="font-family:'Cinzel Decorative',serif;font-size:28px;font-weight:700;color:var(--blood-deep);margin-bottom:8px">Vera Monteiro</div>
             <div class="npc-attrs">
               <span class="npc-attr"><strong>Idade:</strong> 41 anos (nascida 1984)</span>
@@ -774,7 +784,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
         <div class="npc-detail-hdr">
           <div class="npc-sigil"><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="16" stroke-width=".8" stroke="currentColor" fill="none" stroke-dasharray="3 3"/><path d="M22,8 L26,18 L38,18 L28,25 L32,36 L22,29 L12,36 L16,25 L6,18 L18,18 Z" fill="currentColor" opacity=".18"/><circle cx="22" cy="22" r="3" fill="currentColor" opacity=".65"/></svg></div>
           <div>
-            <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.78;margin-bottom:3px">O Arquivo</div>
+            <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.78;margin-bottom:3px">O Arquivo</div>
             <div class="npc-name" style="font-family:'Cinzel Decorative',serif;font-size:28px;font-weight:700;color:var(--blood-deep);margin-bottom:8px">Gabriel Tostes</div>
             <div class="npc-attrs">
               <span class="npc-attr"><strong>Idade:</strong> 9 anos (nascido 2016)</span>
@@ -809,7 +819,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
         <div class="npc-detail-hdr">
           <div class="npc-sigil"><svg viewBox="0 0 44 44"><path d="M22,4 L40,36 L4,36 Z" stroke-width="1" stroke="currentColor" fill="currentColor" opacity=".14"/><path d="M22,14 L32,32 L12,32 Z" stroke-width=".8" stroke="currentColor" fill="currentColor" opacity=".18"/><circle cx="22" cy="26" r="3" fill="currentColor" opacity=".58"/></svg></div>
           <div>
-            <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.78;margin-bottom:3px">A Âncora</div>
+            <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.78;margin-bottom:3px">A Âncora</div>
             <div class="npc-name" style="font-family:'Cinzel Decorative',serif;font-size:28px;font-weight:700;color:var(--blood-deep);margin-bottom:8px">Natalina Braga</div>
             <div class="npc-attrs">
               <span class="npc-attr"><strong>Idade:</strong> 78 anos (nascida 23 dez. 1947)</span>
@@ -834,7 +844,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
         <div class="npc-detail-hdr">
           <div class="npc-sigil"><svg viewBox="0 0 44 44"><rect x="8" y="8" width="28" height="28" stroke-width=".8" stroke="currentColor" fill="none"/><line x1="8" y1="8" x2="36" y2="36" stroke-width=".6" stroke="currentColor"/><line x1="36" y1="8" x2="8" y2="36" stroke-width=".6" stroke="currentColor"/><circle cx="22" cy="22" r="4" fill="currentColor" opacity=".45"/></svg></div>
           <div>
-            <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.78;margin-bottom:3px">O Precipício</div>
+            <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.78;margin-bottom:3px">O Precipício</div>
             <div class="npc-name" style="font-family:'Cinzel Decorative',serif;font-size:28px;font-weight:700;color:var(--blood-deep);margin-bottom:8px">Décio Murta</div>
             <div class="npc-attrs">
               <span class="npc-attr"><strong>Idade:</strong> 46 anos</span>
@@ -864,7 +874,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
         <div class="npc-detail-hdr">
           <div class="npc-sigil"><svg viewBox="0 0 44 44"><path d="M22,4 L38,12 L38,32 L22,40 L6,32 L6,12 Z" stroke-width="1" stroke="currentColor" fill="currentColor" opacity=".14"/><path d="M22,12 L30,16 L30,28 L22,32 L14,28 L14,16 Z" stroke-width=".8" stroke="currentColor" fill="none"/><circle cx="22" cy="22" r="3" fill="currentColor" opacity=".58"/></svg></div>
           <div>
-            <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.78;margin-bottom:3px">O Instrumento</div>
+            <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.78;margin-bottom:3px">O Instrumento</div>
             <div class="npc-name" style="font-family:'Cinzel Decorative',serif;font-size:28px;font-weight:700;color:var(--blood-deep);margin-bottom:8px">Ronaldo Seabra</div>
             <div class="npc-attrs">
               <span class="npc-attr"><strong>Idade:</strong> 52 anos (nascido 1973)</span>
@@ -889,7 +899,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
         <div class="npc-detail-hdr">
           <div class="npc-sigil"><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="16" stroke-width="1" stroke="currentColor" fill="none"/><path d="M22,6 A16,16 0 0,1 38,22 A16,16 0 0,1 22,38" fill="currentColor" opacity=".14"/><circle cx="22" cy="22" r="4" stroke-width="1" stroke="currentColor" fill="none"/><line x1="22" y1="6" x2="22" y2="18" stroke-width="1.5" stroke="currentColor"/></svg></div>
           <div>
-            <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.78;margin-bottom:3px">A Fratura</div>
+            <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.78;margin-bottom:3px">A Fratura</div>
             <div class="npc-name" style="font-family:'Cinzel Decorative',serif;font-size:28px;font-weight:700;color:var(--blood-deep);margin-bottom:8px">Sueli Nascimento</div>
             <div class="npc-attrs">
               <span class="npc-attr"><strong>Idade:</strong> 38 anos (nascida 1987)</span>
@@ -981,6 +991,217 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
 
 <!-- ════════════════ PRINT STYLES ════════════════ -->
 <style>
+
+/* ═══════════════════════════════════════════
+   MOBILE RESPONSIVE — 768px and below
+═══════════════════════════════════════════ */
+@media (max-width: 768px) {
+  :root { --sidebar-w: 0px; }
+
+  /* Sidebar: hidden by default, slides in as overlay */
+  .sidebar {
+    transform: translateX(-100%);
+    width: 280px;
+    z-index: 200;
+    box-shadow: 4px 0 40px rgba(0,0,0,.8);
+  }
+  .sidebar.mobile-open {
+    transform: translateX(0);
+  }
+
+  /* Overlay when sidebar is open */
+  .sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.6);
+    z-index: 199;
+  }
+  .sidebar-overlay.show { display: block; }
+
+  /* Main: full width */
+  .main { margin-left: 0; }
+
+  /* Mobile top bar */
+  .mobile-topbar {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+    background: #0d0804;
+    border-bottom: 1px solid rgba(154,122,42,.2);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+  .mobile-menu-btn {
+    background: none;
+    border: 1px solid rgba(154,122,42,.3);
+    color: var(--gold-lt);
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .mobile-title {
+    font-family: "Cinzel Decorative", serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--blood-lt);
+    letter-spacing: 1px;
+  }
+  .mobile-search-btn {
+    margin-left: auto;
+    background: none;
+    border: 1px solid rgba(154,122,42,.3);
+    color: var(--gold-lt);
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  /* Page header */
+  .page-hdr {
+    padding: 24px 20px 18px;
+  }
+  .page-hdr h2 {
+    font-size: 28px;
+  }
+  .page-hdr p {
+    font-size: 14px;
+  }
+
+  /* Scroll content */
+  .scroll-content {
+    padding: 20px 16px;
+  }
+
+  /* Book card */
+  .book-inner { padding: 24px 20px; }
+  .book-inner.compact { padding: 18px 16px; }
+
+  /* Grids → single column on mobile */
+  .grid-2, .grid-3, .grid-auto, .home-grid, .attr-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* NPC grid */
+  #npc-grid {
+    grid-template-columns: 1fr !important;
+  }
+  /* Full-width NPC card (was span 2) */
+  #npc-grid > div:last-child {
+    grid-column: span 1 !important;
+  }
+
+  /* Episode card */
+  .ep-card { padding: 18px 16px; }
+  .ep-num { font-size: 22px; right: 12px; top: 10px; }
+
+  /* Home pane: remove border between panes */
+  .home-pane {
+    padding: 20px 16px;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(154,122,42,.1);
+  }
+
+  /* Cards */
+  .npc-card-inner { padding: 20px 18px; }
+  .npc-sig { width: 46px; height: 46px; top: 18px; right: 18px; }
+  .npc-name { font-size: 20px; }
+
+  /* Doc grid */
+  #docs-list { grid-template-columns: 1fr !important; }
+
+  /* Notes */
+  .notes-area { flex-direction: column; }
+  .notes-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid rgba(154,122,42,.15);
+    padding: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 10px 12px;
+  }
+  .notes-session-item {
+    border-left: none;
+    border: 1px solid rgba(154,122,42,.2);
+    padding: 6px 12px;
+    font-size: 11px;
+    width: auto;
+  }
+  .notes-session-item.active {
+    border-color: var(--blood);
+    background: rgba(107,15,15,.15);
+  }
+  .notes-add-btn { margin: 0; width: auto; padding: 6px 14px; }
+  .notes-editor { padding: 16px; }
+  .notes-textarea { min-height: 280px; }
+
+  /* Search */
+  .search-overlay { padding-top: 60px; align-items: flex-start; }
+  .search-box { width: calc(100% - 32px); margin: 0 16px; }
+
+  /* Tables */
+  .stbl { font-size: 14px; }
+  .stbl th, .stbl td { padding: 6px 8px; }
+
+  /* Timeline */
+  .timeline-line { padding-left: 16px; }
+
+  /* Mech box attr grid */
+  .attr-grid { grid-template-columns: 1fr !important; }
+
+  /* Warn box */
+  .warn-box { padding: 16px 18px; }
+
+  /* Blockquote */
+  .bq { margin: 18px 0; padding: 16px 18px 16px 22px; }
+
+  /* T-title */
+  .t-title { font-size: 26px; }
+  .t-title.lg { font-size: 32px; }
+
+  /* Footer stat rows */
+  .stat-row { flex-wrap: wrap; gap: 4px; }
+
+  /* Quick links */
+  .quick-link { padding: 10px 0; }
+
+  /* Cronologia cards */
+  .home-grid > div:last-child > div {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+/* ─── Extra small: 480px ─── */
+@media (max-width: 480px) {
+  .page-hdr h2 { font-size: 24px; }
+  .book-inner { padding: 18px 14px; }
+  .scroll-content { padding: 16px 12px; }
+  .ep-card { padding: 14px 12px; }
+  .npc-card-inner { padding: 16px 14px; }
+  .npc-name { font-size: 18px; }
+}
+
+/* ─── Desktop: always show sidebar, hide mobile topbar ─── */
+@media (min-width: 769px) {
+  .mobile-topbar { display: none; }
+  .sidebar-overlay { display: none !important; }
+  .sidebar { transform: translateX(0) !important; }
+}
+
 @media print {
   body { background: #f4ead8 !important; }
   .sidebar, .main > *:not(.page.printing), .page-hdr, .warn-box, button, .notes-toolbar { display: none !important; }
@@ -1003,7 +1224,7 @@ async function loadData() {
     initApp();
   } catch(e) {
     console.error('Erro ao carregar data.json:', e);
-    document.body.innerHTML += '<div style="position:fixed;top:20px;left:50%;transform:translateX(-50%);background:#4a0808;color:#f4ead8;padding:16px 24px;font-family:Cinzel,serif;font-size:12px;letter-spacing:2px;">ERRO: data.json não encontrado</div>';
+    document.body.innerHTML += '<div style="position:fixed;top:20px;left:50%;transform:translateX(-50%);background:#4a0808;color:#f4ead8;padding:16px 24px;font-family:Cinzel,serif;font-size:21px;letter-spacing:2px;">ERRO: data.json não encontrado</div>';
   }
 }
 
@@ -1073,8 +1294,8 @@ function renderEpisodios() {
         <div class="t-ss">Pistas — Camada 2 (com investigação)</div>
         <ul class="ul">${ep.pistas_camada2.map(p=>`<li>${p}</li>`).join('')}</ul>
         <div style="margin-top:18px;padding:14px 18px;border-left:2px solid var(--blood);background:rgba(107,15,15,.06)">
-          <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:4px;color:var(--blood);text-transform:uppercase;margin-bottom:6px;opacity:.78">Gancho Final</div>
-          <div style="font-family:'IM Fell English',serif;font-style:italic;font-size:15px;color:var(--ink-soft);line-height:1.65">${ep.gancho}</div>
+          <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:4px;color:var(--blood);text-transform:uppercase;margin-bottom:6px;opacity:.78">Gancho Final</div>
+          <div style="font-family:'IM Fell English',serif;font-style:italic;font-size:21px;color:var(--ink-soft);line-height:1.65">${ep.gancho}</div>
         </div>
         <div class="ep-status">
           <button class="ep-btn red" onclick="setEpStatus(${ep.numero},'feito');event.stopPropagation()">✓ Marcar como feito</button>
@@ -1173,8 +1394,8 @@ function renderDocumentos() {
     <div style="background:var(--parch);background-image:radial-gradient(ellipse at 20% 0%,rgba(180,140,80,.12) 0%,transparent 55%);box-shadow:0 2px 20px rgba(0,0,0,.3);padding:24px 28px;position:relative;overflow:hidden">
       <div style="position:absolute;inset:0;background-image:repeating-linear-gradient(180deg,transparent,transparent 22px,rgba(90,74,48,.05) 22px,rgba(90,74,48,.05) 23px);pointer-events:none"></div>
       <div style="position:relative;z-index:1">
-        ${doc.stamp ? `<div style="position:absolute;top:0;right:0;font-family:'Cinzel',serif;font-size:7px;letter-spacing:3px;color:var(--blood);opacity:.45;border:1px solid var(--blood);padding:2px 6px;transform:rotate(2deg)">${doc.stamp}</div>` : ''}
-        <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;color:var(--ash);text-transform:uppercase;border-bottom:1px solid rgba(90,74,48,.35);padding-bottom:8px;margin-bottom:12px">${doc.titulo}</div>
+        ${doc.stamp ? `<div style="position:absolute;top:0;right:0;font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--blood);opacity:.45;border:1px solid var(--blood);padding:2px 6px;transform:rotate(2deg)">${doc.stamp}</div>` : ''}
+        <div style="font-family:'Cinzel',serif;font-size:21px;letter-spacing:3px;color:var(--ash);text-transform:uppercase;border-bottom:1px solid rgba(90,74,48,.35);padding-bottom:8px;margin-bottom:12px">${doc.titulo}</div>
         ${doc.tipo === 'ficha' ? renderFichaPreview(doc) : renderDiarioPreview(doc)}
         <button class="btn-print" onclick="printDoc('${doc.id}')">
           <svg viewBox="0 0 24 24"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2M6 14h12v8H6z" stroke="currentColor" stroke-width="2" fill="none"/></svg>
@@ -1187,16 +1408,16 @@ function renderDocumentos() {
 function renderFichaPreview(doc) {
   return doc.campos.slice(0,4).map(f => `
     <div style="margin-bottom:5px;display:flex;gap:8px;align-items:baseline">
-      <span style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;color:var(--ash);text-transform:uppercase;flex-shrink:0;opacity:.75;min-width:100px">${f.label}</span>
-      <span style="font-family:'IM Fell English',serif;font-size:14px;color:var(--ink);line-height:1.4">${f.valor}</span>
-    </div>`).join('') + `<div style="font-family:'Cinzel',serif;font-size:8px;color:var(--ash);opacity:.5;margin-top:8px">+ ${doc.campos.length - 4} campos</div>`;
+      <span style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;color:var(--ash);text-transform:uppercase;flex-shrink:0;opacity:.75;min-width:100px">${f.label}</span>
+      <span style="font-family:'IM Fell English',serif;font-size:21px;color:var(--ink);line-height:1.4">${f.valor}</span>
+    </div>`).join('') + `<div style="font-family:'Cinzel',serif;font-size:10px;color:var(--ash);opacity:.5;margin-top:8px">+ ${doc.campos.length - 4} campos</div>`;
 }
 
 function renderDiarioPreview(doc) {
   const first = doc.entradas[0];
-  return `<div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:6px;opacity:.8">${first.data}</div>
-  <div style="font-family:'IM Fell English',serif;font-size:14px;color:var(--ink-soft);line-height:1.7">${first.texto.substring(0,120)}...</div>
-  <div style="font-family:'Cinzel',serif;font-size:8px;color:var(--ash);opacity:.5;margin-top:8px">${doc.entradas.length} entradas</div>`;
+  return `<div style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:6px;opacity:.8">${first.data}</div>
+  <div style="font-family:'IM Fell English',serif;font-size:21px;color:var(--ink-soft);line-height:1.7">${first.texto.substring(0,120)}...</div>
+  <div style="font-family:'Cinzel',serif;font-size:10px;color:var(--ash);opacity:.5;margin-top:8px">${doc.entradas.length} entradas</div>`;
 }
 
 function printDoc(id) {
@@ -1214,18 +1435,18 @@ function generatePrintHTML(doc) {
   if (isficha) {
     content = doc.campos.map(f => `
       <div style="margin-bottom:8px;display:flex;gap:10px;align-items:baseline;border-bottom:1px solid rgba(90,74,48,.15);padding-bottom:6px">
-        <span style="font-family:'Cinzel',Georgia,serif;font-size:9px;letter-spacing:2px;color:#5a4a30;text-transform:uppercase;flex-shrink:0;min-width:130px;opacity:.8">${f.label}</span>
-        <span style="font-family:Georgia,serif;font-size:15px;color:#180e04;line-height:1.4">${f.valor}</span>
+        <span style="font-family:'Cinzel',Georgia,serif;font-size:11px;letter-spacing:2px;color:#5a4a30;text-transform:uppercase;flex-shrink:0;min-width:130px;opacity:.8">${f.label}</span>
+        <span style="font-family:Georgia,serif;font-size:21px;color:#180e04;line-height:1.4">${f.valor}</span>
       </div>`).join('') +
       (doc.nota ? `<div style="margin-top:16px;padding:12px 16px;border-left:2px solid #6b0f0f;background:rgba(107,15,15,.04)">
-        <div style="font-family:'Cinzel',Georgia,serif;font-size:8px;letter-spacing:3px;color:#6b0f0f;text-transform:uppercase;margin-bottom:5px">Observação de campo</div>
-        <div style="font-family:Georgia,serif;font-style:italic;font-size:14px;color:#3a2510;line-height:1.65">${doc.nota}</div>
+        <div style="font-family:'Cinzel',Georgia,serif;font-size:10px;letter-spacing:3px;color:#6b0f0f;text-transform:uppercase;margin-bottom:5px">Observação de campo</div>
+        <div style="font-family:Georgia,serif;font-style:italic;font-size:21px;color:#3a2510;line-height:1.65">${doc.nota}</div>
       </div>` : '');
   } else {
     content = doc.entradas.map(e => `
       <div style="margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid rgba(90,74,48,.18)">
-        <div style="font-family:'Cinzel',Georgia,serif;font-size:9px;letter-spacing:3px;color:#9a7a2a;text-transform:uppercase;margin-bottom:8px">${e.data}</div>
-        <div style="font-family:Georgia,serif;font-size:15px;line-height:1.82;color:#3a2510">${e.texto}</div>
+        <div style="font-family:'Cinzel',Georgia,serif;font-size:11px;letter-spacing:3px;color:#9a7a2a;text-transform:uppercase;margin-bottom:8px">${e.data}</div>
+        <div style="font-family:Georgia,serif;font-size:21px;line-height:1.82;color:#3a2510">${e.texto}</div>
       </div>`).join('');
   }
   return `<!DOCTYPE html><html><head><meta charset="UTF-8">
@@ -1234,8 +1455,8 @@ function generatePrintHTML(doc) {
     body{background:linear-gradient(135deg,#f0e4cc,#e8d5b0);margin:0;padding:40px;font-family:Georgia,serif;min-height:100vh}
     .wrapper{max-width:600px;margin:0 auto;background:linear-gradient(135deg,#f0e4cc,#e8d5b0);padding:40px;border:1px solid rgba(90,74,48,.45);position:relative;box-shadow:2px 4px 12px rgba(0,0,0,.15)}
     .wrapper::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(180deg,transparent,transparent 23px,rgba(90,74,48,.055) 23px,rgba(90,74,48,.055) 24px);pointer-events:none}
-    .stamp{position:absolute;top:14px;right:16px;font-family:'Cinzel',Georgia,serif;font-size:7px;letter-spacing:3px;color:#6b0f0f;opacity:.5;border:1px solid #6b0f0f;padding:2px 7px;transform:rotate(2.5deg)}
-    h1{font-family:'Cinzel',Georgia,serif;font-size:11px;letter-spacing:3px;color:#5a4a30;text-transform:uppercase;border-bottom:1px solid rgba(90,74,48,.38);padding-bottom:10px;margin-bottom:18px;margin-top:0}
+    .stamp{position:absolute;top:14px;right:16px;font-family:'Cinzel',Georgia,serif;font-size:11px;letter-spacing:3px;color:#6b0f0f;opacity:.5;border:1px solid #6b0f0f;padding:2px 7px;transform:rotate(2.5deg)}
+    h1{font-family:'Cinzel',Georgia,serif;font-size:21px;letter-spacing:3px;color:#5a4a30;text-transform:uppercase;border-bottom:1px solid rgba(90,74,48,.38);padding-bottom:10px;margin-bottom:18px;margin-top:0}
     @media print{body{background:#f0e4cc!important;padding:0}.wrapper{box-shadow:none;border:1px solid rgba(90,74,48,.3);margin:10mm;padding:20mm}}
   </style></head><body>
   <div class="wrapper">
@@ -1383,6 +1604,25 @@ function goToResult(i, page) {
 document.addEventListener('keydown', e => {
   if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); openSearch(); }
   if (e.key === 'Escape') closeSearch(e);
+});
+
+
+// ── MOBILE SIDEBAR ────────────────────────────────────────────────────────
+function toggleSidebar() {
+  const s = document.getElementById('sidebar');
+  const o = document.getElementById('sidebar-overlay');
+  s.classList.toggle('mobile-open');
+  o.classList.toggle('show');
+}
+function closeSidebar() {
+  document.getElementById('sidebar').classList.remove('mobile-open');
+  document.getElementById('sidebar-overlay').classList.remove('show');
+}
+// Close sidebar on nav item click (mobile)
+document.querySelectorAll('.nav-item').forEach(item => {
+  item.addEventListener('click', () => {
+    if (window.innerWidth <= 768) closeSidebar();
+  });
 });
 
 // ── START ─────────────────────────────────────────────────────────────────
