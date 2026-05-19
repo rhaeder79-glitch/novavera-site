@@ -1423,167 +1423,2017 @@
       "titulo": "Novavera",
       "status": "pendente",
       "subtitulo": "A chegada. O velório. A primeira noite.",
-      "pergunta": "Por que o corpo de Valdecir não faz sentido?",
-      "resumo": "Os quatro personagens chegam por razões diferentes. Não se conhecem antes de chegar. Se encontram no velório de Valdecir Conceição, 71 anos, guardião informal da Área Verde.",
-      "errado_desde_inicio": [
-        "Área Verde sem pássaros — nenhum, em nenhuma parte do terreno",
-        "Placa do Centro Cívico: Benedito Braga, foto jovem demais para nascimento em 1908",
-        "Arquivo histórico fechado, mas luz acesa no subsolo"
-      ],
-      "no_velorio": [
-        "Armindo presente — cordial, útil, sabe detalhes que não deveria saber",
-        "Ronaldo fecha o laudo antes que consigam ler",
-        "Natalina: \"Ele tinha certeza que vocês viriam. Faz tempo. Ele sabia.\"",
-        "Símbolo gravado na lateral do caixão — por quem, após preparação do corpo?",
-        "Gabriel do lado de fora — olha para Abel um segundo a mais do que deveria"
+      "abertura": "Os quatro personagens chegam por razões diferentes. Não se conhecem antes de chegar. Se encontram no velório de Valdecir Conceição, 71 anos, guardião informal da Área Verde.",
+      "blocos": [
+        {
+          "titulo": "O que está errado desde o primeiro momento",
+          "pontos": [
+            {
+              "t": "Área Verde sem pássaros — nenhum, em nenhuma parte do terreno",
+              "refs": [
+                {
+                  "label": "A Área Verde",
+                  "ref": "local:area-verde"
+                }
+              ]
+            },
+            {
+              "t": "Placa do Centro Cívico: Benedito Braga, foto jovem demais para nascimento em 1908",
+              "refs": [
+                {
+                  "label": "O Centro Cívico",
+                  "ref": "local:centro-civico"
+                },
+                {
+                  "label": "Ficha nº34 — Benedito",
+                  "ref": "doc:ficha-benedito"
+                }
+              ]
+            },
+            {
+              "t": "Arquivo histórico fechado, mas luz acesa no subsolo",
+              "refs": [
+                {
+                  "label": "O Arquivo Histórico",
+                  "ref": "local:arquivo-historico"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "titulo": "No velório",
+          "pontos": [
+            {
+              "t": "Armindo presente — cordial, útil, sabe detalhes que não deveria saber",
+              "refs": [
+                {
+                  "label": "Armindo (Profetas)",
+                  "ref": "page:profetas"
+                },
+                {
+                  "label": "Por que Armindo sabe mais que as fichas",
+                  "ref": "caus:4"
+                }
+              ]
+            },
+            {
+              "t": "Ronaldo fecha o laudo antes que consigam ler",
+              "refs": [
+                {
+                  "label": "Ronaldo Seabra",
+                  "ref": "npc:ronaldo"
+                },
+                {
+                  "label": "Por que o laudo foi alterado",
+                  "ref": "caus:2"
+                }
+              ]
+            },
+            {
+              "t": "Natalina: \"Ele tinha certeza que vocês viriam. Faz tempo. Ele sabia.\"",
+              "refs": [
+                {
+                  "label": "Natalina Braga",
+                  "ref": "npc:natalina"
+                },
+                {
+                  "label": "Como Armindo soube que viriam",
+                  "ref": "caus:1"
+                }
+              ]
+            },
+            {
+              "t": "Símbolo gravado na lateral do caixão — por quem, após preparação do corpo?",
+              "refs": [
+                {
+                  "label": "O Símbolo da Área Verde",
+                  "ref": "local:area-verde"
+                }
+              ]
+            },
+            {
+              "t": "Gabriel do lado de fora — olha para Abel um segundo a mais do que deveria",
+              "refs": [
+                {
+                  "label": "Gabriel Tostes",
+                  "ref": "npc:gabriel"
+                }
+              ]
+            }
+          ]
+        }
       ],
       "sinal_abel": "Gabriel para ao tentar \"ler\" o personagem de Abel. Diz apenas: \"Você não tem fragmentos. É tudo inteiro.\"",
-      "gancho": "No quarto de Valdecir, caderno aberto numa página de 1987 com os nomes dos personagens. Escritos trinta e oito anos antes de qualquer um deles ter razão para estar em Novavera."
+      "sinal_abel_refs": [
+        {
+          "label": "Abel — Os Três Sinais",
+          "ref": "page:abel"
+        },
+        {
+          "label": "Gabriel Tostes",
+          "ref": "npc:gabriel"
+        }
+      ],
+      "gancho": "No quarto de Valdecir, caderno aberto numa página de 1987 com os nomes dos personagens. Escritos trinta e oito anos antes de qualquer um deles ter razão para estar em Novavera.",
+      "gancho_refs": [
+        {
+          "label": "Valdecir — O Guardião",
+          "ref": "npc:valdecir"
+        }
+      ],
+      "detalhamento": {
+        "abertura": "A Temporada 1 começa devagar. Nada explode. Os quatro personagens chegam a Novavera por razões diferentes e não se conhecem — cada um seguindo o próprio fio até a mesma cidade. O ponto de encontro é o velório de Valdecir Conceição, 71 anos, guardião informal da Área Verde, encontrado morto na manhã de 18 de março de 2025. Esta é a data de início do jogo. A sessão é toda construída para plantar a sensação central da temporada: a cidade sabe que eles chegaram.",
+        "blocos": [
+          {
+            "grupo": "A Chegada",
+            "pontos": [
+              {
+                "titulo": "Quatro estranhos, quatro fios",
+                "texto": "Os personagens não se encontraram — foram encontrados. A mesma força que os trouxe de volta ao mundo os trouxe ao mesmo lugar, na mesma época, com dívidas não resolvidas de vidas que nenhum deles lembra. Já estiveram juntos antes, com outros nomes. O Mestre deve deixar a chegada parecer coincidência; ela não é.",
+                "nota_mestre": "As dívidas dos quatro formam uma teia fechada: A deve a B, B deve a C, C deve a D, D deve a A. A exceção é Abel — sua dívida não é com nenhum dos outros, é com Caim.",
+                "refs": [
+                  {
+                    "pagina": "regras",
+                    "rotulo": "Regra III — Ninguém Volta Por Acaso"
+                  },
+                  {
+                    "pagina": "regras",
+                    "rotulo": "O Envelope Lacrado"
+                  }
+                ]
+              },
+              {
+                "titulo": "A morte de Valdecir Conceição",
+                "texto": "Valdecir foi encontrado no limite da Área Verde. O velório é o cenário de abertura. Para os personagens é a morte de um senhor idoso desconhecido; para o Mestre é a primeira peça posicionada de um plano de décadas. Valdecir não foi vítima — foi guardião que escolheu a hora. A alma de Dalva o chamou e ele foi voluntariamente, para abrir o ciclo de forma que os quatro chegassem com razão para investigar.",
+                "nota_mestre": "Valdecir tinha um caderno escrito em 1987 com os nomes dos quatro personagens — recebidos em fragmentos que ele não compreendia. Ele não sabia quem seriam, só que viriam.",
+                "refs": [
+                  {
+                    "pagina": "npcs",
+                    "rotulo": "Dossiê: Valdecir, O Guardião"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "grupo": "O Que Está Errado Desde o Primeiro Momento",
+            "intro": "Três anomalias que os personagens podem notar logo na chegada, antes mesmo do velório. Nenhuma é explicada. Cada uma é uma porta.",
+            "pontos": [
+              {
+                "titulo": "A Área Verde sem pássaros",
+                "texto": "Não há um único pássaro em nenhuma parte do terreno da Área Verde. Crianças de Novavera nunca brincam ali. A construção foi paralisada em 1978 e um muro baixo apareceu anonimamente em 1980. A ausência de pássaros é o sinal mais sutil e mais perturbador — animais sentem o nó.",
+                "nota_mestre": "A construção foi parada por ordem de Armindo quando os trabalhadores escavaram fundo demais e o símbolo nas fundações antigas ficou em risco de ser exposto. Um trabalhador viu algo naquela semana e morreu três dias depois.",
+                "refs": [
+                  {
+                    "pagina": "cidade",
+                    "rotulo": "A Área Verde"
+                  }
+                ]
+              },
+              {
+                "titulo": "A placa do Centro Cívico — a foto impossível",
+                "texto": "A placa comemorativa da fundação inclui Benedito Braga, \"em memória de quem tornou possível\", incluído postumamente. A foto ao lado do nome mostra um homem que aparenta quarenta anos. Benedito nasceu em 1908 e morreu em 1969 — a foto não fecha com nenhuma idade plausível.",
+                "nota_mestre": "O nome de Benedito Braga foi usado por Armindo como a 34ª entrada da lista da Operação Semente, para cobrir a própria ausência. Benedito é avô de Natalina Braga.",
+                "refs": [
+                  {
+                    "pagina": "cidade",
+                    "rotulo": "O Centro Cívico"
+                  },
+                  {
+                    "pagina": "documentos",
+                    "rotulo": "Ficha nº34 — Benedito"
+                  },
+                  {
+                    "pagina": "npcs",
+                    "rotulo": "Natalina Braga"
+                  }
+                ]
+              },
+              {
+                "titulo": "A luz acesa no subsolo do arquivo",
+                "texto": "O Arquivo Histórico Municipal está fechado — mas há luz acesa no subsolo. É o primeiro indício de que o arquivo guarda algo que não está no horário de funcionamento. O subsolo será central a partir do episódio 3.",
+                "nota_mestre": "O subsolo abriga o diário do Anterior e, mais fundo, uma sala que não aparece na planta. A porta tem dois cilindros de fechadura.",
+                "refs": [
+                  {
+                    "pagina": "cidade",
+                    "rotulo": "O Arquivo Histórico"
+                  },
+                  {
+                    "pagina": "documentos",
+                    "rotulo": "O Diário do Anterior"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "grupo": "No Velório",
+            "intro": "O velório reúne, pela primeira vez, quase todas as peças da temporada num só lugar. Tudo aqui é introdução de personagem e plantio de pista.",
+            "pontos": [
+              {
+                "titulo": "Armindo presente — cordial e bem-informado demais",
+                "texto": "Armindo Laerte Vasconcelos, diretor do Arquivo Histórico, está no velório. É cordial, útil, e sabe detalhes que não deveria saber sobre os recém-chegados e sobre Valdecir. Nos episódios 1 a 4 ele age como aliado genuíno — entrega informação com generosidade estratégica, sempre a certa para guiar sem revelar.",
+                "nota_mestre": "Armindo usa \"há registros de\" e \"documentos da época indicam\", nunca \"pesquisei\". O detalhe é sutil e só aparece em retrospecto: ele conhecia pessoalmente a maioria das 33 vítimas antes de 1972.",
+                "refs": [
+                  {
+                    "pagina": "profetas",
+                    "rotulo": "Armindo — O Último Profeta"
+                  },
+                  {
+                    "pagina": "causalidade",
+                    "rotulo": "Por que Armindo sabe mais do que está nas fichas?"
+                  }
+                ]
+              },
+              {
+                "titulo": "Ronaldo fecha o laudo antes que consigam ler",
+                "texto": "O delegado Ronaldo Seabra fecha o laudo da morte de Valdecir antes que os personagens consigam lê-lo. Não é necessariamente má-fé — Ronaldo é amigo de Armindo há 18 anos e age por hábito de proteção. O laudo teve três detalhes removidos pelo legista, o Dr. Cláudio Meireles, por medo genuinamente pessoal.",
+                "nota_mestre": "Os três detalhes removidos: a temperatura impossível do corpo (contato com múltiplas camadas de tempo); a terra preta e úmida da camada de 1972 que Valdecir fechou nas mãos ativamente; e a expressão de reconhecimento — a última coisa que ele viu foi Dalva Monteiro.",
+                "refs": [
+                  {
+                    "pagina": "npcs",
+                    "rotulo": "Ronaldo Seabra"
+                  },
+                  {
+                    "pagina": "causalidade",
+                    "rotulo": "Por que o laudo foi alterado?"
+                  }
+                ]
+              },
+              {
+                "titulo": "Natalina: \"Ele tinha certeza que vocês viriam\"",
+                "texto": "Natalina Braga diz aos personagens: \"Ele tinha certeza que vocês viriam. Faz tempo. Ele sabia.\" Ela fala de Valdecir. Para ela é só uma observação sobre um amigo excêntrico; para os personagens é o primeiro arrepio de que foram esperados.",
+                "refs": [
+                  {
+                    "pagina": "npcs",
+                    "rotulo": "Natalina Braga"
+                  }
+                ]
+              },
+              {
+                "titulo": "O símbolo na lateral do caixão",
+                "texto": "Há um símbolo gravado na lateral do caixão de Valdecir. O detalhe perturbador: foi gravado depois da preparação do corpo. Por quem? O símbolo de três camadas concêntricas é o mesmo da Área Verde e do mapa — esta é uma das suas quatro aparições.",
+                "nota_mestre": "É a 2ª das quatro aparições do símbolo, na ordem de descoberta. A 1ª é uma fotografia no quarto de Valdecir; a 3ª é o mapa de 1961; a 4ª, as fundações da Rua do Anterior.",
+                "refs": [
+                  {
+                    "pagina": "cidade",
+                    "rotulo": "O Símbolo da Área Verde"
+                  }
+                ]
+              },
+              {
+                "titulo": "Gabriel do lado de fora",
+                "texto": "Gabriel Tostes, 9 anos, fica do lado de fora do velório. Olha para o personagem de Abel um segundo a mais do que deveria. Gabriel é médium sem saber — e o único que percebe imediatamente o que Abel é.",
+                "refs": [
+                  {
+                    "pagina": "npcs",
+                    "rotulo": "Gabriel Tostes"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "grupo": "O Sinal de Abel",
+            "pontos": [
+              {
+                "titulo": "\"Você não tem fragmentos. É tudo inteiro.\"",
+                "texto": "Gabriel tenta \"ler\" o personagem de Abel — como faz instintivamente com todos — e simplesmente para. Não é medo nem espanto: é reconhecimento. Diz apenas: \"Você não tem fragmentos. É tudo inteiro.\" Este é o primeiro dos três sinais de Abel plantados na T1.",
+                "nota_mestre": "Abel é um dos quatro jogadores, sem saber quem é. Diferente de todas as outras almas, Abel não chega quebrado — acumulou tanto karma positivo ao longo de milênios que é o oposto exato de Caim. Os jogadores só descobrem isso na T3, e os outros personagens descobrem antes do próprio Abel.",
+                "refs": [
+                  {
+                    "pagina": "abel",
+                    "rotulo": "Abel — Os Três Sinais"
+                  },
+                  {
+                    "pagina": "notas-mestre",
+                    "rotulo": "O Que Nunca É Dito Explicitamente"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "gancho_detalhado": {
+          "titulo": "O caderno de 1987",
+          "texto": "No quarto de Valdecir, um caderno está aberto numa página datada de 1987. Nela, os nomes dos quatro personagens — escritos trinta e oito anos antes de qualquer um deles ter razão para estar em Novavera. É o gancho que encerra a sessão e fixa a pergunta da temporada: como alguém sabia?",
+          "nota_mestre": "Valdecir escreveu os nomes em 1987 a partir de fragmentos recebidos que não compreendia. 1987 não é aleatório: é o Padrão 13 — 1961 (mapa) + 13 = 1974 (símbolo fechado) + 13 = 1987 (caderno de Valdecir).",
+          "refs": [
+            {
+              "pagina": "cidade",
+              "rotulo": "O Padrão 13"
+            },
+            {
+              "pagina": "regras",
+              "rotulo": "Regra III — Ninguém Volta Por Acaso"
+            }
+          ]
+        }
+      }
     },
     {
       "numero": 2,
       "titulo": "Fundação",
       "status": "pendente",
       "subtitulo": "O bairro. A chave. O primeiro fragmento.",
-      "pergunta": "O que o Bairro Fundação esconde sobre a origem da cidade?",
-      "resumo": "A investigação avança para o Bairro Fundação, onde as memórias dos moradores não batem com as datas oficiais.",
-      "o_que_acontece": [
-        "Três moradores, três versões diferentes de quando o bairro foi construído — cada um convicto",
-        "Fotografia de 1985 onde Armindo aparece ao fundo com a mesma aparência de hoje",
-        "A chave no quarto de Valdecir: metal antigo, não pertence a nenhuma fechadura da casa",
-        "Primeira comunicação mediúnica não planejada — Dalva Monteiro por menos de 30 segundos: \"Benedito Braga Sabia\""
+      "blocos": [
+        {
+          "titulo": "O que acontece",
+          "pontos": [
+            {
+              "t": "Três moradores, três versões diferentes de quando o bairro foi construído — cada um convicto",
+              "refs": [
+                {
+                  "label": "O Bairro Fundação",
+                  "ref": "local:bairro-fundacao"
+                }
+              ]
+            },
+            {
+              "t": "Fotografia de 1985 onde Armindo aparece ao fundo com a mesma aparência de hoje",
+              "refs": [
+                {
+                  "label": "Armindo (Profetas)",
+                  "ref": "page:profetas"
+                },
+                {
+                  "label": "A Marca de Caim",
+                  "ref": "page:caim"
+                }
+              ]
+            },
+            {
+              "t": "A chave no quarto de Valdecir: metal antigo, não pertence a nenhuma fechadura da casa",
+              "refs": [
+                {
+                  "label": "Valdecir — O Guardião",
+                  "ref": "npc:valdecir"
+                },
+                {
+                  "label": "O Arquivo Histórico",
+                  "ref": "local:arquivo-historico"
+                }
+              ]
+            },
+            {
+              "t": "Primeira comunicação mediúnica não planejada — Dalva Monteiro por menos de 30 segundos: \"Benedito Braga Sabia\"",
+              "refs": [
+                {
+                  "label": "Ficha nº07 — Dalva",
+                  "ref": "doc:ficha-dalva"
+                },
+                {
+                  "label": "Confronto Mediúnico (Sistema)",
+                  "ref": "page:regras"
+                },
+                {
+                  "label": "Por que Dalva começou a falar",
+                  "ref": "caus:0"
+                }
+              ]
+            }
+          ]
+        }
       ],
-      "gancho": "Os personagens pesquisam Benedito Braga. Encontram o nome na placa do Centro Cívico — fundador de 1974, morto em 1969. Quando vão confirmar no dia seguinte, a página online foi apagada. A placa de bronze continua lá. Alguém apagou o rastro digital mas não pôde apagar o bronze."
+      "gancho": "Os personagens pesquisam Benedito Braga. Encontram o nome na placa do Centro Cívico — fundador de 1974, morto em 1969. Quando vão confirmar no dia seguinte, a página online foi apagada. A placa de bronze continua lá. Alguém apagou o rastro digital mas não pôde apagar o bronze.",
+      "gancho_refs": [
+        {
+          "label": "O Centro Cívico",
+          "ref": "local:centro-civico"
+        },
+        {
+          "label": "Ficha nº34 — Benedito",
+          "ref": "doc:ficha-benedito"
+        }
+      ],
+      "detalhamento": {
+        "abertura": "Com o velório encerrado, a investigação ganha seu primeiro território: o Bairro Fundação, o núcleo mais antigo de Novavera, onde casas foram construídas antes do projeto oficial e as memórias dos moradores não batem com as datas. É também a sessão da primeira comunicação mediúnica não planejada — o sobrenatural deixa de ser atmosfera e passa a falar.",
+        "blocos": [
+          {
+            "grupo": "O Bairro Fundação",
+            "pontos": [
+              {
+                "titulo": "Três moradores, três versões",
+                "texto": "Três moradores antigos do Bairro Fundação dão três versões diferentes de quando o bairro foi construído — cada um absolutamente convicto. Não estão mentindo. A discordância é real: o nó distorce a memória de quem vive perto dele há décadas.",
+                "nota_mestre": "Armindo vai usar essa discordância mais tarde, no episódio 6, para semear dúvida entre os próprios personagens — apontando que se os moradores não concordam, a percepção dos investigadores também não é confiável.",
+                "refs": [
+                  {
+                    "pagina": "cidade",
+                    "rotulo": "O Bairro Fundação"
+                  },
+                  {
+                    "pagina": "regras",
+                    "rotulo": "Regra V — Saber Demais É Começar A Ficar"
+                  }
+                ]
+              },
+              {
+                "titulo": "A fotografia de 1985",
+                "texto": "Uma fotografia datada de 1985 mostra Armindo ao fundo — com exatamente a mesma aparência de hoje, quarenta anos depois. É a primeira prova física de que Armindo não envelhece. Os personagens ainda não têm como explicar.",
+                "nota_mestre": "A Marca de Caim retarda o envelhecimento físico — não é imortalidade, é retardamento. Armindo tem 94 anos reais e aparência de quarenta e poucos. O mesmo fenômeno explica o Anterior nas fotos de 1943, 1968 e 1989.",
+                "refs": [
+                  {
+                    "pagina": "profetas",
+                    "rotulo": "Armindo — Elementos Físicos"
+                  },
+                  {
+                    "pagina": "caim",
+                    "rotulo": "A Marca de Caim"
+                  },
+                  {
+                    "pagina": "caim",
+                    "rotulo": "Encarnação 9 — O Anterior"
+                  }
+                ]
+              },
+              {
+                "titulo": "A chave de Valdecir",
+                "texto": "No quarto de Valdecir, os personagens encontram uma chave: metal antigo, que não pertence a nenhuma fechadura da casa. Guardá-la é instinto de investigador. Só no episódio 3 ela revela seu propósito — e mesmo então, só pela metade.",
+                "nota_mestre": "A chave abre o cilindro 1 da porta do subsolo do arquivo. O cilindro 2 não tem chave física — exige uma sequência de toques no símbolo, que só Sueli conhece.",
+                "refs": [
+                  {
+                    "pagina": "cidade",
+                    "rotulo": "O Arquivo Histórico"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "grupo": "O Primeiro Fragmento",
+            "pontos": [
+              {
+                "titulo": "Dalva Monteiro — \"Benedito Braga Sabia\"",
+                "texto": "A primeira comunicação mediúnica não planejada da campanha. Dalva Monteiro se manifesta por menos de 30 segundos e deixa três palavras: \"Benedito Braga Sabia\". É fragmentário, sem contexto — exatamente como a Regra II prevê: o que atravessa a distância chega partido.",
+                "nota_mestre": "Dalva é a vítima nº23 da Operação Semente e avó de Vera Monteiro. Foi ela quem chamou Valdecir para a morte. Em 2025 o nó atingiu pressão suficiente para ela formar frases quase completas — depois de 52 anos tentando.",
+                "refs": [
+                  {
+                    "pagina": "regras",
+                    "rotulo": "Regra II — O Que Chega, Chega Quebrado"
+                  },
+                  {
+                    "pagina": "documentos",
+                    "rotulo": "Ficha nº07 — Dalva"
+                  },
+                  {
+                    "pagina": "npcs",
+                    "rotulo": "Vera Monteiro"
+                  },
+                  {
+                    "pagina": "causalidade",
+                    "rotulo": "Por que Dalva começou a falar em janeiro de 2025?"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "gancho_detalhado": {
+          "titulo": "O bronze que não pôde ser apagado",
+          "texto": "Os personagens pesquisam Benedito Braga. Encontram o nome na placa do Centro Cívico — fundador de 1974, morto em 1969. Quando vão confirmar online no dia seguinte, a página foi apagada. A placa de bronze continua lá. Alguém apagou o rastro digital, mas não pôde apagar o bronze. É a primeira prova de que existe uma mão ativa encobrindo a história.",
+          "refs": [
+            {
+              "pagina": "cidade",
+              "rotulo": "O Centro Cívico"
+            },
+            {
+              "pagina": "documentos",
+              "rotulo": "Ficha nº34 — Benedito"
+            }
+          ]
+        }
+      }
     },
     {
       "numero": 3,
       "titulo": "Onze Dias",
       "status": "pendente",
       "subtitulo": "O arquivo. A lacuna. O subsolo.",
-      "pergunta": "O que foi a Operação Semente — e quem a conduziu?",
-      "resumo": "Primeira visita ao Arquivo Histórico. A lacuna documental de 1972–1974 começa a tomar forma.",
-      "o_que_acontece": [
-        "Primeira visita ao Arquivo Histórico — Armindo os recebe como se esperasse",
-        "Lacuna: só dois caixas cobrem 1972–1974",
-        "Porta do subsolo com dois cilindros — a chave de Valdecir entra num mas não gira",
-        "Sombra de Sueli passando pela janela por menos de um minuto"
+      "blocos": [
+        {
+          "titulo": "O que acontece",
+          "pontos": [
+            {
+              "t": "Primeira visita ao Arquivo Histórico — Armindo os recebe como se esperasse",
+              "refs": [
+                {
+                  "label": "O Arquivo Histórico",
+                  "ref": "local:arquivo-historico"
+                },
+                {
+                  "label": "Armindo (Profetas)",
+                  "ref": "page:profetas"
+                }
+              ]
+            },
+            {
+              "t": "Lacuna: só dois caixas cobrem 1972–1974",
+              "refs": [
+                {
+                  "label": "A Operação Semente",
+                  "ref": "doc:ficha-dalva"
+                }
+              ]
+            },
+            {
+              "t": "Porta do subsolo com dois cilindros — a chave de Valdecir entra num mas não gira",
+              "refs": [
+                {
+                  "label": "O Arquivo Histórico",
+                  "ref": "local:arquivo-historico"
+                },
+                {
+                  "label": "Valdecir — O Guardião",
+                  "ref": "npc:valdecir"
+                }
+              ]
+            },
+            {
+              "t": "Sombra de Sueli passando pela janela por menos de um minuto",
+              "refs": [
+                {
+                  "label": "Sueli Nascimento",
+                  "ref": "npc:sueli"
+                }
+              ]
+            }
+          ]
+        }
       ],
-      "gancho": "Um personagem acorda no meio da noite. Não há ninguém. Mas há terra preta na sola dos sapatos — que estavam no corredor. A mesma terra das mãos de Valdecir. O personagem não foi à Área Verde."
+      "gancho": "Um personagem acorda no meio da noite. Não há ninguém. Mas há terra preta na sola dos sapatos — que estavam no corredor. A mesma terra das mãos de Valdecir. O personagem não foi à Área Verde.",
+      "gancho_refs": [
+        {
+          "label": "Valdecir — O Guardião",
+          "ref": "npc:valdecir"
+        },
+        {
+          "label": "A Área Verde",
+          "ref": "local:area-verde"
+        }
+      ],
+      "detalhamento": {
+        "abertura": "A investigação chega ao Arquivo Histórico Municipal — o território de Armindo. É aqui que a lacuna no centro da história fica visível pela primeira vez: o período de 1972 a 1974, que deveria ocupar dezenas de caixas, cabe em dois. O título do episódio, \"Onze Dias\", aponta para o que ainda não tem nome: a Operação Semente.",
+        "blocos": [
+          {
+            "grupo": "O Arquivo",
+            "pontos": [
+              {
+                "titulo": "Armindo recebe como se esperasse",
+                "texto": "Na primeira visita ao Arquivo Histórico, Armindo recebe os personagens como se esperasse por eles. Continua na fase de aliado — útil, cordial — mas o detalhe de já estar pronto para a visita reforça a sensação da temporada: ninguém ali é pego de surpresa.",
+                "refs": [
+                  {
+                    "pagina": "profetas",
+                    "rotulo": "Armindo — Como Interpretar (Ep. 1–4)"
+                  }
+                ]
+              },
+              {
+                "titulo": "A lacuna: dois caixas para 1972–1974",
+                "texto": "O período de 1972 a 1974 — o intervalo entre a Operação Semente e a fundação oficial de Novavera — está coberto por apenas dois caixas de arquivo. Deveria haver dezenas. A lacuna é grande demais para ser acidente e é a primeira evidência documental de um encobrimento sistemático.",
+                "nota_mestre": "Novavera foi fundada em 1974, dois anos depois da Operação Semente. O intervalo foi deliberado: tempo para a terra assentar e os documentos entrarem em ordem.",
+                "refs": [
+                  {
+                    "pagina": "operacao_semente_via_documentos",
+                    "rotulo": "A Operação Semente"
+                  },
+                  {
+                    "pagina": "cidade",
+                    "rotulo": "Novavera — O Nome e a Mentira"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "grupo": "O Subsolo",
+            "pontos": [
+              {
+                "titulo": "A porta de dois cilindros",
+                "texto": "A porta do subsolo do arquivo tem dois cilindros de fechadura. A chave de Valdecir, encontrada no episódio 2, entra em um deles — mas não gira sozinha. A porta foi projetada para exigir duas pessoas, ou dois conhecimentos. Os personagens ainda não têm o segundo.",
+                "nota_mestre": "Cilindro 1: a chave de Valdecir. Cilindro 2: não tem chave física — exige uma sequência de toques no símbolo gravado na porta. Apenas Sueli conhece a sequência. A porta só abre no episódio 7.",
+                "refs": [
+                  {
+                    "pagina": "cidade",
+                    "rotulo": "O Arquivo Histórico"
+                  },
+                  {
+                    "pagina": "npcs",
+                    "rotulo": "Sueli Nascimento"
+                  }
+                ]
+              },
+              {
+                "titulo": "A sombra de Sueli",
+                "texto": "Uma sombra passa pela janela do arquivo por menos de um minuto — Sueli Nascimento. Ela observa os personagens muito antes de se revelar. Os rastros que ela deixa ao longo da temporada vão parecer sabotagem; são proteção.",
+                "nota_mestre": "Não revelar que Sueli é aliada antes do episódio 7. Em 2023, Dalva comunicou a verdade a ela — não a Armindo. Sueli removeu 11 fichas e as escondeu para que os personagens as encontrassem sem o filtro de Armindo.",
+                "refs": [
+                  {
+                    "pagina": "npcs",
+                    "rotulo": "Sueli Nascimento"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "gancho_detalhado": {
+          "titulo": "Terra preta nos sapatos",
+          "texto": "Um personagem acorda no meio da noite. Não há ninguém. Mas há terra preta na sola dos sapatos — que estavam no corredor. É a mesma terra das mãos de Valdecir, a terra da camada de 1972. O personagem não foi à Área Verde. O nó começou a alcançá-lo enquanto dormia.",
+          "nota_mestre": "É o primeiro sinal de que a investigação tem custo pessoal — quanto mais se investiga, mais se começa a parecer com as almas presas. O mesmo processo que dissolveu Décio Murta.",
+          "refs": [
+            {
+              "pagina": "regras",
+              "rotulo": "Regra V — Saber Demais É Começar A Ficar"
+            },
+            {
+              "pagina": "npcs",
+              "rotulo": "Décio Murta"
+            }
+          ]
+        }
+      }
     },
     {
       "numero": 4,
       "titulo": "As Fichas",
       "status": "pendente",
       "subtitulo": "O critério. O padrão. O reconhecimento.",
-      "pergunta": "Por que aquelas 33 pessoas — qual era o critério real?",
-      "resumo": "Três fichas encontradas em lugares diferentes revelam um padrão quando colocadas lado a lado.",
-      "o_que_acontece": [
-        "Três fichas encontradas em lugares diferentes — o padrão só emerge quando colocadas lado a lado: dívidas morais, não histórico político",
-        "Um personagem reconhece o critério em si mesmo — não diz nada ainda",
-        "Primeiro contato real com Décio Murta num dia relativamente bom"
+      "blocos": [
+        {
+          "titulo": "O que acontece",
+          "pontos": [
+            {
+              "t": "Três fichas encontradas em lugares diferentes — o padrão só emerge quando colocadas lado a lado: dívidas morais, não histórico político",
+              "refs": [
+                {
+                  "label": "Ficha nº07 — Dalva",
+                  "ref": "doc:ficha-dalva"
+                },
+                {
+                  "label": "Ficha nº19 — Severino",
+                  "ref": "doc:ficha-severino"
+                },
+                {
+                  "label": "Ficha nº34 — Benedito",
+                  "ref": "doc:ficha-benedito"
+                }
+              ]
+            },
+            {
+              "t": "Um personagem reconhece o critério em si mesmo — não diz nada ainda",
+              "refs": [
+                {
+                  "label": "Sistema de Dívida",
+                  "ref": "page:regras"
+                }
+              ]
+            },
+            {
+              "t": "Primeiro contato real com Décio Murta num dia relativamente bom",
+              "refs": [
+                {
+                  "label": "Décio Murta",
+                  "ref": "npc:decio"
+                }
+              ]
+            }
+          ]
+        }
       ],
-      "gancho": "Décio entrega uma folha. Uma palavra circulada: Armindo Laerte Vasconcelos. Data de nascimento: 1931. E abaixo: \"Se ele nasceu em 1931 e está vivo hoje, ele tem mais de noventa anos. O que estamos vendo não é ele. É o que sobrou depois que o resto foi pago.\""
+      "gancho": "Décio entrega uma folha. Uma palavra circulada: Armindo Laerte Vasconcelos. Data de nascimento: 1931. E abaixo: \"Se ele nasceu em 1931 e está vivo hoje, ele tem mais de noventa anos. O que estamos vendo não é ele. É o que sobrou depois que o resto foi pago.\"",
+      "gancho_refs": [
+        {
+          "label": "Décio Murta",
+          "ref": "npc:decio"
+        },
+        {
+          "label": "Armindo (Profetas)",
+          "ref": "page:profetas"
+        },
+        {
+          "label": "A Marca de Caim",
+          "ref": "page:caim"
+        }
+      ],
+      "detalhamento": {
+        "abertura": "A sessão em que a investigação deixa de ser sobre uma cidade estranha e passa a ser sobre os próprios personagens. Três fichas da Operação Semente, encontradas separadamente, revelam um padrão quando finalmente colocadas lado a lado — e o padrão não é o que ninguém esperava.",
+        "blocos": [
+          {
+            "grupo": "O Critério",
+            "pontos": [
+              {
+                "titulo": "Três fichas, um padrão oculto",
+                "texto": "Três fichas da Operação Semente são encontradas em lugares diferentes. Individualmente, cada uma parece o registro burocrático de uma vítima da ditadura. O padrão só emerge quando são colocadas lado a lado: o critério de seleção não era histórico político — era dívida moral. Cada uma das 33 pessoas carregava uma dívida de peso.",
+                "nota_mestre": "As três fichas modelo são a nº07 (Dalva — ausência, deixou dois filhos), a nº19 (Severino — receptor mediúnico, promessa quebrada) e a nº34 (Benedito — entrada nunca usada, cobertura para Armindo). O critério visível é a dívida das vítimas; o critério secundário, ainda oculto, é que todas deviam a Armindo.",
+                "refs": [
+                  {
+                    "pagina": "documentos",
+                    "rotulo": "Ficha nº07 — Dalva"
+                  },
+                  {
+                    "pagina": "documentos",
+                    "rotulo": "Ficha nº19 — Severino"
+                  },
+                  {
+                    "pagina": "documentos",
+                    "rotulo": "Ficha nº34 — Benedito"
+                  },
+                  {
+                    "pagina": "operacao_semente",
+                    "rotulo": "A Operação Semente"
+                  }
+                ]
+              },
+              {
+                "titulo": "O personagem que se reconhece",
+                "texto": "Ao ver o critério, um dos personagens reconhece a si mesmo nele — o tipo de dívida moral descrito nas fichas ressoa com algo que ele carrega. Não diz nada ainda. É o primeiro momento em que a investigação dobra para dentro: eles não estão só estudando as 33 vítimas, estão se vendo nelas.",
+                "nota_mestre": "Cada personagem tem uma dívida de vida anterior com três componentes — a natureza, o credor (alguém desta vida) e o padrão que tende a repetir. O reconhecimento aqui prepara o Sistema de Dívida, que entra em ação no episódio 9.",
+                "refs": [
+                  {
+                    "pagina": "regras",
+                    "rotulo": "Sistema de Dívida"
+                  },
+                  {
+                    "pagina": "regras",
+                    "rotulo": "O Envelope Lacrado"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "grupo": "Décio Murta",
+            "pontos": [
+              {
+                "titulo": "Primeiro contato real — um dia bom",
+                "texto": "Os personagens têm o primeiro contato substancial com Décio Murta, jornalista investigativo, num dia relativamente bom para ele. Décio chegou a Novavera há dois anos e meio seguindo um número parcialmente redigido num arquivo da Comissão Nacional da Verdade: 34. Ele está em desorientação temporal avançada — é o espelho do que os personagens podem se tornar.",
+                "nota_mestre": "Décio tem 23 cadernos numerados. Os cadernos 16 a 22 contêm o material crucial — o nome verdadeiro de Armindo antes de 1972, a localização do subsolo, as três fotografias do Anterior — mas só são acessíveis durante uma janela de clareza de dois ou três minutos.",
+                "refs": [
+                  {
+                    "pagina": "npcs",
+                    "rotulo": "Décio Murta"
+                  },
+                  {
+                    "pagina": "regras",
+                    "rotulo": "Memória e Permanência"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "gancho_detalhado": {
+          "titulo": "A folha de Décio — \"o que sobrou depois que o resto foi pago\"",
+          "texto": "Décio entrega uma folha aos personagens. Nela, uma palavra circulada: Armindo Laerte Vasconcelos. E uma data de nascimento: 1931. Abaixo, escrito por Décio: \"Se ele nasceu em 1931 e está vivo hoje, ele tem mais de noventa anos. O que estamos vendo não é ele. É o que sobrou depois que o resto foi pago.\" É a primeira vez que a natureza de Armindo é nomeada em voz alta.",
+          "nota_mestre": "Armindo nasceu em 1931 — o mesmo ano gravado no mapa que o Anterior lhe entregou em 1961. O Anterior sabia quem viria antes de Armindo nascer.",
+          "refs": [
+            {
+              "pagina": "profetas",
+              "rotulo": "Armindo — O Último Profeta"
+            },
+            {
+              "pagina": "documentos",
+              "rotulo": "O Mapa Original"
+            },
+            {
+              "pagina": "timeline",
+              "rotulo": "Linha do Tempo — 1931"
+            }
+          ]
+        }
+      }
     },
     {
       "numero": 5,
       "titulo": "O Mapa",
       "status": "pendente",
       "subtitulo": "Vera. A Rua do Anterior. O símbolo fechado.",
-      "pergunta": "Quem desenhou Novavera antes de ela existir?",
-      "resumo": "Vera Monteiro faz contato. O mapa de 1961 revela uma rua que não existe — e a fundação diagonal escondida sob a calçada.",
-      "o_que_acontece": [
-        "Vera Monteiro faz contato — escolhe o personagem mais capaz de ouvir sem hostilidade",
-        "O mapa de 1961 com todos os detalhes de Novavera",
-        "A Rua do Anterior — verificação física: a fundação diagonal está lá",
-        "No concreto: símbolo com abertura fechada, data entalhada 17/06/1974",
-        "Natalina confrontada — confirma que cobriu, não sabia o que era, caderno entregue"
+      "blocos": [
+        {
+          "titulo": "O que acontece",
+          "pontos": [
+            {
+              "t": "Vera Monteiro faz contato — escolhe o personagem mais capaz de ouvir sem hostilidade",
+              "refs": [
+                {
+                  "label": "Vera Monteiro",
+                  "ref": "npc:vera"
+                },
+                {
+                  "label": "Ficha nº07 — Dalva",
+                  "ref": "doc:ficha-dalva"
+                }
+              ]
+            },
+            {
+              "t": "O mapa de 1961 com todos os detalhes de Novavera",
+              "refs": [
+                {
+                  "label": "O Mapa Original",
+                  "ref": "doc:mapa"
+                }
+              ]
+            },
+            {
+              "t": "A Rua do Anterior — verificação física: a fundação diagonal está lá",
+              "refs": [
+                {
+                  "label": "A Rua do Anterior",
+                  "ref": "local:rua-anterior"
+                }
+              ]
+            },
+            {
+              "t": "No concreto: símbolo com abertura fechada, data entalhada 17/06/1974",
+              "refs": [
+                {
+                  "label": "O Símbolo da Área Verde",
+                  "ref": "local:area-verde"
+                },
+                {
+                  "label": "Quem fechou o símbolo",
+                  "ref": "caus:5"
+                }
+              ]
+            },
+            {
+              "t": "Natalina confrontada — confirma que cobriu, não sabia o que era, caderno entregue",
+              "refs": [
+                {
+                  "label": "Natalina Braga",
+                  "ref": "npc:natalina"
+                }
+              ]
+            }
+          ]
+        }
       ],
-      "gancho": "A abertura no símbolo do mapa não é erro. É instrução. Alguém em 1974 decidiu que essa instrução não seria seguida — ainda. O padrão 13 começa a aparecer: 1961, 1974, 1987."
+      "gancho": "A abertura no símbolo do mapa não é erro. É instrução. Alguém em 1974 decidiu que essa instrução não seria seguida — ainda. O padrão 13 começa a aparecer: 1961, 1974, 1987.",
+      "gancho_refs": [
+        {
+          "label": "O Mapa Original",
+          "ref": "doc:mapa"
+        },
+        {
+          "label": "O Padrão 13 (A Cidade)",
+          "ref": "local:rua-anterior"
+        },
+        {
+          "label": "Linha do Tempo",
+          "ref": "page:timeline"
+        }
+      ],
+      "detalhamento": {
+        "abertura": "A sessão da prova física que muda a escala da investigação. Vera Monteiro faz contato e entrega o mapa de 1961 — e o mapa mostra uma cidade que ainda não existia, com uma rua que nunca foi construída. A partir daqui, os personagens deixam de investigar uma morte e passam a investigar um projeto.",
+        "blocos": [
+          {
+            "grupo": "Vera",
+            "pontos": [
+              {
+                "titulo": "Vera Monteiro faz contato",
+                "texto": "Vera Monteiro procura os personagens — e escolhe, entre os quatro, o mais capaz de ouvir sem hostilidade. Ela está em Novavera desde 2022, seguindo um sonho recorrente: terra vermelha de madrugada, uma mulher com o rosto da avó dizendo um nome que ela esquece ao acordar.",
+                "nota_mestre": "Vera é neta de Dalva Monteiro, a vítima nº23. Ela não sabe que é descendente direta de uma vítima. Armindo a monitora desde a chegada porque não sabe o que acontecerá quando ela descobrir quem foi Dalva.",
+                "refs": [
+                  {
+                    "pagina": "npcs",
+                    "rotulo": "Vera Monteiro"
+                  },
+                  {
+                    "pagina": "documentos",
+                    "rotulo": "Ficha nº07 — Dalva"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "grupo": "O Mapa de 1961",
+            "pontos": [
+              {
+                "titulo": "Uma cidade desenhada antes de existir",
+                "texto": "O mapa de 1961 mostra a planta de Novavera completa, com todos os detalhes que a cidade real tem hoje — treze anos antes da fundação oficial de 1974. Centro Cívico com círculo duplo, Bairro Fundação, Área Verde com o símbolo de três camadas. A precisão é impossível para um projeto que ainda não existia.",
+                "nota_mestre": "O mapa foi datado em 1961, não necessariamente desenhado em 1961 — pode ser muito mais antigo. O cerrado de Goiás aparece marcado num manuscrito jesuíta de 1580 com a anotação \"hic tempus curvatur\" — aqui o tempo se curva.",
+                "refs": [
+                  {
+                    "pagina": "documentos",
+                    "rotulo": "O Mapa Original"
+                  },
+                  {
+                    "pagina": "caim",
+                    "rotulo": "Encarnação 7 — O Jesuíta do Brasil"
+                  },
+                  {
+                    "pagina": "causalidade",
+                    "rotulo": "Por que o Anterior escolheu o cerrado de Goiás?"
+                  }
+                ]
+              },
+              {
+                "titulo": "A Rua do Anterior",
+                "texto": "O mapa mostra uma rua diagonal — do sudoeste ao nordeste, cruzando o ponto marcado na Área Verde — que não existe na Novavera real. A verificação física confirma: a fundação diagonal está lá, sob a calçada. A rua nunca foi erguida, mas seus alicerces foram lançados.",
+                "refs": [
+                  {
+                    "pagina": "cidade",
+                    "rotulo": "A Rua do Anterior"
+                  }
+                ]
+              },
+              {
+                "titulo": "O símbolo fechado nas fundações",
+                "texto": "Nas fundações da Rua do Anterior, gravado no concreto, está o símbolo de três camadas — mas com a abertura fechada. Há uma data entalhada: 17 de junho de 1974. No mapa, o mesmo símbolo aparece com a abertura aberta no nordeste. Alguém, em 1974, decidiu fechar o que o mapa mandava deixar aberto.",
+                "nota_mestre": "Armindo fechou o símbolo em 1974, via Natalina — que não sabia o que estava cobrindo. A abertura era instrução, não erro. Fechá-la retardou o ciclo. A construção da Área Verde foi parada em 1978 pelo mesmo motivo.",
+                "refs": [
+                  {
+                    "pagina": "cidade",
+                    "rotulo": "O Símbolo da Área Verde"
+                  },
+                  {
+                    "pagina": "npcs",
+                    "rotulo": "Natalina Braga"
+                  },
+                  {
+                    "pagina": "causalidade",
+                    "rotulo": "Quem fechou o símbolo na Rua do Anterior?"
+                  }
+                ]
+              },
+              {
+                "titulo": "Natalina confrontada",
+                "texto": "Confrontada com o que os personagens descobriram, Natalina confirma: ela cobriu a fundação diagonal em 1974. Não sabia o que era. A ordem veio de um \"assessor técnico\" — Armindo com identidade falsa. Ela entrega seu caderno de observações.",
+                "nota_mestre": "O caderno de Natalina — décadas de padrões de insônia, relacionamentos que terminam sem explicação perto da Área Verde — é, sem que ela saiba, o mapa mais preciso do campo de influência do nó. Ela acredita documentar um problema de arquitetura urbana.",
+                "refs": [
+                  {
+                    "pagina": "npcs",
+                    "rotulo": "Natalina Braga"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "gancho_detalhado": {
+          "titulo": "O Padrão 13 começa a aparecer",
+          "texto": "A abertura no símbolo do mapa não é erro — é instrução. E alguém, em 1974, decidiu que essa instrução não seria seguida, ainda. Os personagens começam a ver um intervalo se repetir: 1961 (data do mapa), 1974 (símbolo fechado), 1987 (caderno de Valdecir com os nomes). Treze anos entre cada um.",
+          "nota_mestre": "O Mestre decide se o Padrão 13 é coincidência, padrão ou instrução do próprio tempo. Nunca é explicado — fica em aberto deliberadamente.",
+          "refs": [
+            {
+              "pagina": "cidade",
+              "rotulo": "O Padrão 13"
+            },
+            {
+              "pagina": "notas-mestre",
+              "rotulo": "O Que Nunca É Dito Explicitamente"
+            }
+          ]
+        }
+      }
     },
     {
       "numero": 6,
       "titulo": "Reconhecimento",
       "status": "pendente",
       "subtitulo": "A memória vaza. Gabriel cobra. O nome de outra vida.",
-      "pergunta": "O que os personagens foram em vidas anteriores?",
-      "resumo": "A memória de vida anterior começa a vazar publicamente. O custo de Gabriel se torna urgente.",
-      "o_que_acontece": [
-        "Memória de vida anterior vaza publicamente — o personagem para no meio de uma ação",
-        "Contato mais substancial com Gabriel — o dilema ético do custo se torna urgente",
-        "Um personagem encontra o próprio nome numa ficha — data de outro século, dívida que reconhece visceralmente",
-        "Armindo usa a discordância do ep.2 para semear dúvida entre os personagens"
+      "blocos": [
+        {
+          "titulo": "O que acontece",
+          "pontos": [
+            {
+              "t": "Memória de vida anterior vaza publicamente — o personagem para no meio de uma ação",
+              "refs": [
+                {
+                  "label": "Memória (Sistema)",
+                  "ref": "page:regras"
+                }
+              ]
+            },
+            {
+              "t": "Contato mais substancial com Gabriel — o dilema ético do custo se torna urgente",
+              "refs": [
+                {
+                  "label": "Gabriel Tostes",
+                  "ref": "npc:gabriel"
+                }
+              ]
+            },
+            {
+              "t": "Um personagem encontra o próprio nome numa ficha — data de outro século, dívida que reconhece visceralmente",
+              "refs": [
+                {
+                  "label": "Sistema de Dívida",
+                  "ref": "page:regras"
+                }
+              ]
+            },
+            {
+              "t": "Armindo usa a discordância do ep.2 para semear dúvida entre os personagens",
+              "refs": [
+                {
+                  "label": "Armindo (Profetas)",
+                  "ref": "page:profetas"
+                },
+                {
+                  "label": "Por que veem coisas diferentes",
+                  "ref": "caus:3"
+                }
+              ]
+            }
+          ]
+        }
       ],
       "sinal_abel": "Armindo olha para Abel numa cena e diz, quase para si mesmo: \"Você não deveria estar aqui. Mas fico aliviado que esteja.\" Não explica.",
-      "gancho": "Gabriel de passagem na rua: \"Você era diferente antes. Mas o erro foi o mesmo.\" A mãe não ouve. Gabriel dobra a esquina. O personagem sabe que ele não estava falando desta vida."
+      "sinal_abel_refs": [
+        {
+          "label": "Abel — Os Três Sinais",
+          "ref": "page:abel"
+        },
+        {
+          "label": "Armindo (Profetas)",
+          "ref": "page:profetas"
+        }
+      ],
+      "gancho": "Gabriel de passagem na rua: \"Você era diferente antes. Mas o erro foi o mesmo.\" A mãe não ouve. Gabriel dobra a esquina. O personagem sabe que ele não estava falando desta vida.",
+      "gancho_refs": [
+        {
+          "label": "Gabriel Tostes",
+          "ref": "npc:gabriel"
+        }
+      ],
+      "detalhamento": {
+        "abertura": "A sessão em que o custo da investigação para de ser teórico. A memória de vidas anteriores vaza para o presente — em público, sem aviso. Os personagens começam a se tornar aquilo que investigam.",
+        "blocos": [
+          {
+            "grupo": "A Memória Vaza",
+            "pontos": [
+              {
+                "titulo": "A memória vaza publicamente",
+                "texto": "Pela primeira vez, uma memória de vida anterior vaza para o presente em público — o personagem para no meio de uma ação, tomado por algo que não é desta vida. Não é alucinação: é permanência simultânea, dois tempos ocupando o mesmo instante. É a Regra V se manifestando na mesa.",
+                "nota_mestre": "Isso acontece quando o atributo Memória do personagem sobe o suficiente. Memória e Permanência somam sempre 20: quanto mais se sabe, menos ancorado no presente se está. É o mesmo processo, em estágio inicial, que dissolveu Décio.",
+                "refs": [
+                  {
+                    "pagina": "regras",
+                    "rotulo": "Regra V — Saber Demais É Começar A Ficar"
+                  },
+                  {
+                    "pagina": "regras",
+                    "rotulo": "Memória e Permanência"
+                  }
+                ]
+              },
+              {
+                "titulo": "O próprio nome numa ficha",
+                "texto": "Um personagem encontra o próprio nome numa ficha — mas com data de outro século. A dívida descrita ali é uma que ele reconhece visceralmente, sem conseguir explicar como. A investigação confirma o que a Regra III já dizia: eles já estiveram aqui antes.",
+                "refs": [
+                  {
+                    "pagina": "regras",
+                    "rotulo": "Regra III — Ninguém Volta Por Acaso"
+                  },
+                  {
+                    "pagina": "regras",
+                    "rotulo": "Sistema de Dívida"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "grupo": "Gabriel Cobra",
+            "pontos": [
+              {
+                "titulo": "O dilema ético do custo",
+                "texto": "O contato com Gabriel fica mais substancial — e mais perigoso. Cada informação que Gabriel entrega apaga uma memória de quem a recebe. Pequeno no começo, crescente. Os personagens percebem que cada resposta tem um preço cobrado da própria mente. O dilema ético se torna urgente: vale a pena saber?",
+                "nota_mestre": "Gabriel não sabe que cobra. Não é punição — é o peso de informação de outro tempo precisando de espaço neste tempo para caber. Gabriel é médium sem saber.",
+                "refs": [
+                  {
+                    "pagina": "npcs",
+                    "rotulo": "Gabriel Tostes"
+                  },
+                  {
+                    "pagina": "regras",
+                    "rotulo": "Confronto Mediúnico"
+                  }
+                ]
+              },
+              {
+                "titulo": "Armindo semeia dúvida",
+                "texto": "Armindo usa a discordância entre os moradores do Bairro Fundação (episódio 2) para semear dúvida entre os próprios personagens — se nem as testemunhas concordam, por que confiar na percepção de quem investiga? É o início da fase em que Armindo deixa de só ajudar e começa a gerenciar a informação.",
+                "refs": [
+                  {
+                    "pagina": "profetas",
+                    "rotulo": "Armindo — Como Interpretar (Ep. 5–6)"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "grupo": "O Sinal de Abel",
+            "pontos": [
+              {
+                "titulo": "\"Você não deveria estar aqui. Mas fico aliviado que esteja.\"",
+                "texto": "Numa cena, Armindo olha para o personagem de Abel e diz, quase para si mesmo: \"Você não deveria estar aqui. Mas fico aliviado que esteja.\" Não explica. É o segundo dos três sinais de Abel — e a primeira vez que Armindo demonstra saber algo sobre ele.",
+                "nota_mestre": "Armindo olha para Abel de forma diferente desde o velório — melancólica. Parte do motivo de Caim ter escolhido Armindo é que Novavera era a cidade onde Abel reencarnaria. Caim não construiu só uma bateria; construiu uma armadilha.",
+                "refs": [
+                  {
+                    "pagina": "abel",
+                    "rotulo": "Abel — Os Três Sinais"
+                  },
+                  {
+                    "pagina": "profetas",
+                    "rotulo": "Armindo — O Olhar para Abel"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "gancho_detalhado": {
+          "titulo": "\"Você era diferente antes. Mas o erro foi o mesmo.\"",
+          "texto": "Gabriel cruza com um personagem na rua e diz, de passagem: \"Você era diferente antes. Mas o erro foi o mesmo.\" A mãe de Gabriel, ao lado, não ouve nada. Gabriel dobra a esquina. O personagem entende, com um arrepio, que Gabriel não estava falando desta vida — estava falando da anterior.",
+          "refs": [
+            {
+              "pagina": "npcs",
+              "rotulo": "Gabriel Tostes"
+            },
+            {
+              "pagina": "regras",
+              "rotulo": "Sistema de Dívida"
+            }
+          ]
+        }
+      }
     },
     {
       "numero": 7,
       "titulo": "O Diário",
       "status": "pendente",
       "subtitulo": "Sueli. O subsolo. O que o Anterior escreveu.",
-      "pergunta": "O que o observador técnico viu depois da última morte?",
-      "resumo": "Sueli faz contato direto e oferece acesso ao subsolo. O diário é encontrado — e revela uma segunda mão.",
-      "o_que_acontece": [
-        "Sueli faz contato direto — oferece acesso ao subsolo",
-        "A chave de Valdecir (cilindro 1) + Sueli conhece o segundo (sequência de toques no símbolo)",
-        "O diário encontrado: mais velho que esperavam, duas caligrafias",
-        "As entradas dos onze dias lidas em fragmentos",
-        "Revelação: o diário não é de Armindo — é de outra pessoa que o observava"
+      "blocos": [
+        {
+          "titulo": "O que acontece",
+          "pontos": [
+            {
+              "t": "Sueli faz contato direto — oferece acesso ao subsolo",
+              "refs": [
+                {
+                  "label": "Sueli Nascimento",
+                  "ref": "npc:sueli"
+                }
+              ]
+            },
+            {
+              "t": "A chave de Valdecir (cilindro 1) + Sueli conhece o segundo (sequência de toques no símbolo)",
+              "refs": [
+                {
+                  "label": "O Arquivo Histórico",
+                  "ref": "local:arquivo-historico"
+                },
+                {
+                  "label": "Valdecir — O Guardião",
+                  "ref": "npc:valdecir"
+                }
+              ]
+            },
+            {
+              "t": "O diário encontrado: mais velho que esperavam, duas caligrafias",
+              "refs": [
+                {
+                  "label": "O Diário do Anterior",
+                  "ref": "doc:diario"
+                }
+              ]
+            },
+            {
+              "t": "As entradas dos onze dias lidas em fragmentos",
+              "refs": [
+                {
+                  "label": "O Diário do Anterior",
+                  "ref": "doc:diario"
+                },
+                {
+                  "label": "A Operação Semente",
+                  "ref": "doc:ficha-dalva"
+                }
+              ]
+            },
+            {
+              "t": "Revelação: o diário não é de Armindo — é de outra pessoa que o observava",
+              "refs": [
+                {
+                  "label": "O diário é de Armindo?",
+                  "ref": "caus:6"
+                },
+                {
+                  "label": "O Anterior (Caim)",
+                  "ref": "page:caim"
+                }
+              ]
+            }
+          ]
+        }
       ],
-      "gancho": "Armindo aparece. Não ameaçador. Olha para o diário — não tenta tomar. Diz: \"Há coisas no que leram que não são o que parecem.\" Entrega chave pequena de metal escuro. No cabo: uma data gravada. Daqui a seis dias. \"Quando estiverem prontos para a conversa real, usem isso. Não antes.\""
+      "gancho": "Armindo aparece. Não ameaçador. Olha para o diário — não tenta tomar. Diz: \"Há coisas no que leram que não são o que parecem.\" Entrega chave pequena de metal escuro. No cabo: uma data gravada. Daqui a seis dias. \"Quando estiverem prontos para a conversa real, usem isso. Não antes.\"",
+      "gancho_refs": [
+        {
+          "label": "Armindo (Profetas)",
+          "ref": "page:profetas"
+        }
+      ],
+      "detalhamento": {
+        "abertura": "A porta do subsolo finalmente abre. Sueli se revela como aliada, e os personagens leem o diário — o documento que reorganiza tudo que eles achavam que sabiam. A revelação central: existe alguém por trás de Armindo.",
+        "blocos": [
+          {
+            "grupo": "Sueli",
+            "pontos": [
+              {
+                "titulo": "Sueli faz contato direto",
+                "texto": "Sueli Nascimento — a sombra do episódio 3 — finalmente faz contato direto e oferece acesso ao subsolo. O que parecia sabotagem ao longo da temporada se revela proteção: ela vinha preparando o caminho para que os personagens chegassem ao diário sem o filtro de Armindo.",
+                "nota_mestre": "Em junho de 2023, Dalva comunicou a Sueli — não a Armindo — três coisas: o critério secundário existe, Armindo estava na lista como vítima, e o que ele viu na fresta não é o que acredita. Sueli não falou com Armindo. Removeu 11 fichas e as escondeu num antiquário em Goiânia.",
+                "refs": [
+                  {
+                    "pagina": "npcs",
+                    "rotulo": "Sueli Nascimento"
+                  },
+                  {
+                    "pagina": "causalidade",
+                    "rotulo": "Por que Sueli removeu as 11 fichas?"
+                  }
+                ]
+              },
+              {
+                "titulo": "A porta de dois cilindros, enfim",
+                "texto": "A porta do subsolo abre com as duas chaves juntas: a chave de Valdecir no cilindro 1, e a sequência de toques no símbolo — que só Sueli conhece — no cilindro 2. A porta foi feita para exigir duas pessoas. Os personagens precisaram de toda a temporada para reunir as duas metades.",
+                "refs": [
+                  {
+                    "pagina": "cidade",
+                    "rotulo": "O Arquivo Histórico"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "grupo": "O Diário",
+            "pontos": [
+              {
+                "titulo": "Duas caligrafias",
+                "texto": "O diário encontrado no subsolo é mais velho do que os personagens esperavam, e tem duas caligrafias distintas. A maior parte é de uma mão; a última entrada, de outra. As entradas dos onze dias da Operação Semente são lidas em fragmentos.",
+                "nota_mestre": "O diário não é de Armindo — é do Anterior. A última entrada, de outubro de 1972, é de Armindo: uma única linha. Armindo nunca escreveu mais porque o Anterior dissera que escrever obriga a uma honestidade que pensar sozinho não obriga.",
+                "refs": [
+                  {
+                    "pagina": "documentos",
+                    "rotulo": "O Diário do Anterior"
+                  },
+                  {
+                    "pagina": "causalidade",
+                    "rotulo": "O diário é de Armindo?"
+                  }
+                ]
+              },
+              {
+                "titulo": "A revelação: alguém observava Armindo",
+                "texto": "A grande revelação da sessão: o diário não foi escrito por Armindo. Foi escrito por outra pessoa — alguém que o observava, que o encontrou jovem, que lhe mostrou o ponto no cerrado. Pela primeira vez os personagens entendem que Armindo não é o topo da pirâmide. Há uma sombra acima dele.",
+                "nota_mestre": "O autor do diário é o Anterior — a encarnação atual de Caim no mundo físico. \"Deixo esse registro não como aviso. Como honestidade.\" Na T1 essa linha soa como humildade; na T3 se revela como a declaração de alguém executando um plano.",
+                "refs": [
+                  {
+                    "pagina": "caim",
+                    "rotulo": "Encarnação 9 — O Anterior"
+                  },
+                  {
+                    "pagina": "notas-mestre",
+                    "rotulo": "A Linha Que Muda de Significado"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "gancho_detalhado": {
+          "titulo": "A chave de metal escuro — \"Não antes.\"",
+          "texto": "Armindo aparece no subsolo. Não é ameaçador. Olha para o diário — mas não tenta tomá-lo. Diz: \"Há coisas no que leram que não são o que parecem.\" Entrega uma chave pequena, de metal escuro, com uma data gravada no cabo — daqui a seis dias. E completa: \"Quando estiverem prontos para a conversa real, usem isso. Não antes.\"",
+          "nota_mestre": "Armindo controla o ritmo da revelação. Ele não tenta impedir os personagens — ele os conduz. A chave abre a sala separada do subsolo, cenário do episódio 8.",
+          "refs": [
+            {
+              "pagina": "profetas",
+              "rotulo": "Armindo — Como Interpretar (Ep. 7)"
+            }
+          ]
+        }
+      }
     },
     {
       "numero": 8,
       "titulo": "O Fundador",
       "status": "pendente",
       "subtitulo": "A sala separada. A confissão. O critério secundário.",
-      "pergunta": "O que Armindo realmente é — e o que sacrificou?",
-      "resumo": "A chave abre uma sala que não está na planta. Armindo confessa — com a honestidade de quem acredita na própria versão.",
-      "o_que_acontece": [
-        "A chave abre uma sala no subsolo que não aparece na planta",
-        "Armindo já sentado. Conta em fragmentos — honestidade de quem acredita genuinamente",
-        "Confirma que estava na lista como 34ª vítima",
-        "Sueli entrega o critério secundário: as 33 tinham dívidas de vidas anteriores com Armindo",
-        "Ronaldo investigando sozinho encontra o caso de 1978"
+      "blocos": [
+        {
+          "titulo": "O que acontece",
+          "pontos": [
+            {
+              "t": "A chave abre uma sala no subsolo que não aparece na planta",
+              "refs": [
+                {
+                  "label": "O Arquivo Histórico",
+                  "ref": "local:arquivo-historico"
+                }
+              ]
+            },
+            {
+              "t": "Armindo já sentado. Conta em fragmentos — honestidade de quem acredita genuinamente",
+              "refs": [
+                {
+                  "label": "Armindo (Profetas)",
+                  "ref": "page:profetas"
+                }
+              ]
+            },
+            {
+              "t": "Confirma que estava na lista como 34ª vítima",
+              "refs": [
+                {
+                  "label": "Ficha nº34 — Benedito",
+                  "ref": "doc:ficha-benedito"
+                },
+                {
+                  "label": "A Operação Semente",
+                  "ref": "doc:ficha-dalva"
+                }
+              ]
+            },
+            {
+              "t": "Sueli entrega o critério secundário: as 33 tinham dívidas de vidas anteriores com Armindo",
+              "refs": [
+                {
+                  "label": "Sueli Nascimento",
+                  "ref": "npc:sueli"
+                },
+                {
+                  "label": "Por que Sueli removeu as 11 fichas",
+                  "ref": "caus:8"
+                }
+              ]
+            },
+            {
+              "t": "Ronaldo investigando sozinho encontra o caso de 1978",
+              "refs": [
+                {
+                  "label": "Ronaldo Seabra",
+                  "ref": "npc:ronaldo"
+                },
+                {
+                  "label": "A Área Verde",
+                  "ref": "local:area-verde"
+                }
+              ]
+            }
+          ]
+        }
       ],
       "sinal_abel": "\"Você não deveria estar aqui. Mas fico aliviado que esteja.\" — desta vez dito claramente a Abel, não mais como aside. Armindo não explica. É a segunda vez. Os outros personagens ouviram.",
-      "gancho": "O personagem com Memória mais alta tem sobreposição mais severa. Quando volta, tem nas mãos um fragmento de papel com uma data. A mesma data do calendário de Valdecir. Daqui a três semanas. O ciclo está se acelerando."
+      "sinal_abel_refs": [
+        {
+          "label": "Abel — Os Três Sinais",
+          "ref": "page:abel"
+        },
+        {
+          "label": "Armindo (Profetas)",
+          "ref": "page:profetas"
+        }
+      ],
+      "gancho": "O personagem com Memória mais alta tem sobreposição mais severa. Quando volta, tem nas mãos um fragmento de papel com uma data. A mesma data do calendário de Valdecir. Daqui a três semanas. O ciclo está se acelerando.",
+      "gancho_refs": [
+        {
+          "label": "Memória (Sistema)",
+          "ref": "page:regras"
+        },
+        {
+          "label": "Valdecir — O Guardião",
+          "ref": "npc:valdecir"
+        }
+      ],
+      "detalhamento": {
+        "abertura": "A sessão da confissão. A chave de metal escuro abre uma sala que não existe na planta, e Armindo conta o que fez — com a honestidade de quem acredita genuinamente na própria versão. Não é um vilão se entregando. É um homem bom explicando por que fez o que fez.",
+        "blocos": [
+          {
+            "grupo": "A Sala Separada",
+            "pontos": [
+              {
+                "titulo": "A sala que não está na planta",
+                "texto": "A chave que Armindo entregou no episódio 7 abre uma sala dentro do subsolo que não aparece em nenhuma planta do arquivo. Menor: uma mesa, quatro cadeiras. Armindo já está sentado, esperando. Tudo foi preparado para esta conversa.",
+                "refs": [
+                  {
+                    "pagina": "cidade",
+                    "rotulo": "O Arquivo Histórico"
+                  }
+                ]
+              },
+              {
+                "titulo": "A confissão em fragmentos",
+                "texto": "Armindo conta sua história em fragmentos — não por evasão, mas porque é assim que ele a carrega. A honestidade dele é genuína: ele acredita em cada palavra. Confirma que estava na lista da Operação Semente como a 34ª vítima — e que retirou o próprio nome.",
+                "nota_mestre": "Armindo passou décadas acreditando que estava libertando almas. Nunca soube que era profeta de Caim, nem o que o Anterior realmente era. É a vítima mais sofisticada de Caim — escolhido exatamente por sua bondade.",
+                "refs": [
+                  {
+                    "pagina": "profetas",
+                    "rotulo": "Armindo — A História"
+                  },
+                  {
+                    "pagina": "profetas",
+                    "rotulo": "Armindo — A Tragédia"
+                  },
+                  {
+                    "pagina": "operacao_semente",
+                    "rotulo": "A Operação Semente"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "grupo": "O Critério Secundário",
+            "pontos": [
+              {
+                "titulo": "Sueli entrega o critério secundário",
+                "texto": "Sueli revela o que descobriu: o critério de seleção das 33 vítimas tinha uma segunda camada. Não era só a dívida moral de cada uma — era que todas as 33 tinham dívidas de vidas anteriores com Armindo. O ciclo nunca foi sobre as dívidas delas. Era sobre a dele.",
+                "nota_mestre": "Armindo provavelmente nunca compreendeu isso completamente — a manipulação do Anterior foi distorcida o bastante para ser invisível. Ao interromper as 33, Armindo interrompeu as contas que elas tinham com ele, tornando-as impossíveis de cobrar.",
+                "refs": [
+                  {
+                    "pagina": "operacao_semente",
+                    "rotulo": "O Critério Secundário"
+                  },
+                  {
+                    "pagina": "npcs",
+                    "rotulo": "Sueli Nascimento"
+                  }
+                ]
+              },
+              {
+                "titulo": "Ronaldo encontra o caso de 1978",
+                "texto": "Investigando por conta própria, Ronaldo Seabra encontra o caso de 1978: o trabalhador que morreu três dias depois de ver algo na Área Verde. O sobrenome do trabalhador é idêntico ao de uma das 33 vítimas de 1972. Este é o momento em que Ronaldo para de escolher não saber.",
+                "nota_mestre": "Ronaldo é médium sem saber — o que ele chama de pressentimento policial é informação fragmentada de almas presas. Seu caderno de curiosidades tem 15 nomes; 8 são vítimas de 1972.",
+                "refs": [
+                  {
+                    "pagina": "npcs",
+                    "rotulo": "Ronaldo Seabra"
+                  },
+                  {
+                    "pagina": "cidade",
+                    "rotulo": "A Área Verde"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "grupo": "O Sinal de Abel",
+            "pontos": [
+              {
+                "titulo": "\"Você não deveria estar aqui\" — desta vez, claramente",
+                "texto": "Armindo repete a frase do episódio 6 — \"Você não deveria estar aqui. Mas fico aliviado que esteja.\" — mas desta vez dita claramente a Abel, não mais como um aside para si mesmo. É a segunda vez, e agora os outros personagens ouviram. Armindo não explica.",
+                "nota_mestre": "É o sinal de Abel do episódio 8. Armindo sente, sem saber nomear, o que Abel é — porque Caim sempre foi atraído por Abel, e algo dessa atração atravessa o profeta.",
+                "refs": [
+                  {
+                    "pagina": "abel",
+                    "rotulo": "Abel — Os Três Sinais"
+                  },
+                  {
+                    "pagina": "caim",
+                    "rotulo": "O Plano Final de Caim"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "gancho_detalhado": {
+          "titulo": "A data nas mãos — o ciclo se acelera",
+          "texto": "O personagem com a Memória mais alta sofre a sobreposição mais severa da sessão. Quando volta a si, tem nas mãos um fragmento de papel com uma data — a mesma data marcada no calendário de Valdecir. Daqui a três semanas. O ciclo, que esperou 53 anos, está se acelerando.",
+          "refs": [
+            {
+              "pagina": "regras",
+              "rotulo": "Memória e Permanência"
+            },
+            {
+              "pagina": "npcs",
+              "rotulo": "Valdecir, O Guardião"
+            }
+          ]
+        }
+      }
     },
     {
       "numero": 9,
       "titulo": "Semente",
       "status": "pendente",
       "subtitulo": "A cidade muda. As dívidas cobram. Dalva aparece.",
-      "pergunta": "O que acontece quando o ciclo se completa — e alguém pode impedir?",
-      "resumo": "Novavera começa a mudar. As dívidas dos personagens chegam ao ponto de cobrança. À meia-noite, Dalva aparece.",
-      "o_que_acontece": [
-        "Novavera muda: três acidentes sem causa, dois internados sem diagnóstico, Gabriel com febre",
-        "As dívidas dos personagens chegam ao ponto de cobrança — o Sistema de Dívida entra em ação",
-        "Décio: dois minutos de clareza — última janela real, entrega algo crucial dos cadernos 16–22",
-        "Sueli revela: o ciclo não pode fechar sem Armindo entrar no nó",
-        "Ronaldo chega à Área Verde com tudo que descobriu"
+      "blocos": [
+        {
+          "titulo": "O que acontece",
+          "pontos": [
+            {
+              "t": "Novavera muda: três acidentes sem causa, dois internados sem diagnóstico, Gabriel com febre",
+              "refs": [
+                {
+                  "label": "Gabriel Tostes",
+                  "ref": "npc:gabriel"
+                }
+              ]
+            },
+            {
+              "t": "As dívidas dos personagens chegam ao ponto de cobrança — o Sistema de Dívida entra em ação",
+              "refs": [
+                {
+                  "label": "Sistema de Dívida",
+                  "ref": "page:regras"
+                }
+              ]
+            },
+            {
+              "t": "Décio: dois minutos de clareza — última janela real, entrega algo crucial dos cadernos 16–22",
+              "refs": [
+                {
+                  "label": "Décio Murta",
+                  "ref": "npc:decio"
+                }
+              ]
+            },
+            {
+              "t": "Sueli revela: o ciclo não pode fechar sem Armindo entrar no nó",
+              "refs": [
+                {
+                  "label": "Sueli Nascimento",
+                  "ref": "npc:sueli"
+                },
+                {
+                  "label": "Armindo (Profetas)",
+                  "ref": "page:profetas"
+                }
+              ]
+            },
+            {
+              "t": "Ronaldo chega à Área Verde com tudo que descobriu",
+              "refs": [
+                {
+                  "label": "Ronaldo Seabra",
+                  "ref": "npc:ronaldo"
+                },
+                {
+                  "label": "A Área Verde",
+                  "ref": "local:area-verde"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "titulo": "Meia-noite — A Área Verde silencia",
+          "pontos": [
+            {
+              "t": "Dalva Monteiro forma permanência visível para todos os personagens simultaneamente. Não diz nada. Olha para Armindo. Armindo olha de volta — com a primeira expressão que os personagens nunca viram nele: reconhecimento completo.",
+              "refs": [
+                {
+                  "label": "Ficha nº07 — Dalva",
+                  "ref": "doc:ficha-dalva"
+                },
+                {
+                  "label": "Por que Dalva forma permanência",
+                  "ref": "caus:7"
+                }
+              ]
+            },
+            {
+              "t": "Ele sabe agora quem era a alma que o avisou 53 anos atrás. Era ela. Dalva, que ainda não havia sido morta, o avisou de uma linha do tempo que os personagens ainda não compreendem.",
+              "refs": [
+                {
+                  "label": "Armindo (Profetas)",
+                  "ref": "page:profetas"
+                },
+                {
+                  "label": "A Operação Semente",
+                  "ref": "doc:ficha-dalva"
+                }
+              ]
+            }
+          ]
+        }
       ],
-      "meia_noite": "Dalva Monteiro forma permanência visível para todos os personagens simultaneamente. Não diz nada. Olha para Armindo. Armindo olha de volta — com a primeira expressão que os personagens nunca viram nele: reconhecimento completo.\n\nEle sabe agora quem era a alma que o avisou 53 anos atrás. Era ela. Dalva, que ainda não havia sido morta, o avisou de uma linha do tempo que os personagens ainda não compreendem.",
-      "gancho": "Armindo olha para os personagens depois de ver Dalva. Diz apenas: \"Amanhã. Venham à Área Verde ao amanhecer.\" E vai embora."
+      "gancho": "Armindo olha para os personagens depois de ver Dalva. Diz apenas: \"Amanhã. Venham à Área Verde ao amanhecer.\" E vai embora.",
+      "gancho_refs": [
+        {
+          "label": "A Área Verde",
+          "ref": "local:area-verde"
+        }
+      ],
+      "detalhamento": {
+        "abertura": "A penúltima sessão. A cidade inteira começa a responder ao colapso iminente do nó. As dívidas pessoais dos personagens chegam ao ponto de cobrança, e à meia-noite, na Área Verde, Dalva aparece — visível para todos ao mesmo tempo.",
+        "blocos": [
+          {
+            "grupo": "A Cidade Muda",
+            "pontos": [
+              {
+                "titulo": "Novavera responde ao colapso",
+                "texto": "A cidade começa a mudar visivelmente: três acidentes sem causa aparente, dois internados sem diagnóstico, Gabriel com febre. O nó, próximo do colapso, começa a influenciar fisicamente o presente — a Regra I em seu estágio mais agudo.",
+                "nota_mestre": "Gabriel com febre é sinal de que o nó está drenando até ele. No episódio 10, quando o nó colapsa, Gabriel acorda curado — e o silêncio o assusta mais que os fragmentos.",
+                "refs": [
+                  {
+                    "pagina": "regras",
+                    "rotulo": "Regra I — O Tempo Cobra"
+                  },
+                  {
+                    "pagina": "npcs",
+                    "rotulo": "Gabriel Tostes"
+                  }
+                ]
+              },
+              {
+                "titulo": "O Sistema de Dívida entra em ação",
+                "texto": "As dívidas de vida anterior dos personagens chegam ao ponto de cobrança. O Sistema de Dívida entra em ação: numa situação que ressoa com o padrão de cada um, o Mestre pode pedir uma rolagem — e numa falha, é o Mestre que descreve a ação, não o jogador. Não é punição. É o universo cobrando.",
+                "refs": [
+                  {
+                    "pagina": "regras",
+                    "rotulo": "Sistema de Dívida"
+                  },
+                  {
+                    "pagina": "regras",
+                    "rotulo": "O Envelope Lacrado"
+                  }
+                ]
+              },
+              {
+                "titulo": "Décio — a última janela de clareza",
+                "texto": "Décio Murta tem dois minutos de clareza — a última janela real dele na temporada. Nesse intervalo, entrega algo crucial dos cadernos 16 a 22: o material que os personagens não conseguiriam acessar de outra forma. Depois disso, a janela fecha e não volta.",
+                "nota_mestre": "Os cadernos 16–22 contêm o nome verdadeiro de Armindo antes de 1972, a localização exata do subsolo, o \"anterior ao anterior\", e as três fotografias do Anterior — 1943 (Berlim), 1968 (São Paulo), 1989 (Moscou). Os personagens veem as fotos sem entender; só compreendem na T3.",
+                "refs": [
+                  {
+                    "pagina": "npcs",
+                    "rotulo": "Décio Murta"
+                  },
+                  {
+                    "pagina": "caim",
+                    "rotulo": "Encarnação 9 — O Anterior"
+                  }
+                ]
+              },
+              {
+                "titulo": "Sueli revela o que falta para o ciclo fechar",
+                "texto": "Sueli revela a peça final: o ciclo não pode fechar sem que Armindo entre no nó. A conta principal — a dele — continua aberta. E Ronaldo chega à Área Verde trazendo tudo que descobriu sozinho. As investigações paralelas convergem.",
+                "refs": [
+                  {
+                    "pagina": "npcs",
+                    "rotulo": "Sueli Nascimento"
+                  },
+                  {
+                    "pagina": "npcs",
+                    "rotulo": "Ronaldo Seabra"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "grupo": "Meia-Noite — A Área Verde Silencia",
+            "pontos": [
+              {
+                "titulo": "Dalva, visível para todos",
+                "texto": "À meia-noite, na Área Verde, Dalva Monteiro forma permanência visível para todos os personagens ao mesmo tempo. Não diz nada. Olha para Armindo. E Armindo olha de volta — com uma expressão que os personagens nunca tinham visto nele: reconhecimento completo.",
+                "nota_mestre": "O nó em colapso iminente libera a energia que normalmente mantém as almas fragmentadas. Dalva — 53 anos acumulando paciência — usa essa energia da forma mais precisa possível. É também o adeus dela: ela sabe que quando o acerto acontecer, vai seguir.",
+                "refs": [
+                  {
+                    "pagina": "npcs",
+                    "rotulo": "Vera Monteiro"
+                  },
+                  {
+                    "pagina": "documentos",
+                    "rotulo": "Ficha nº07 — Dalva"
+                  },
+                  {
+                    "pagina": "causalidade",
+                    "rotulo": "Por que Dalva forma permanência visível no episódio 9?"
+                  }
+                ]
+              },
+              {
+                "titulo": "Armindo reconhece a alma que o avisou",
+                "texto": "No olhar trocado, Armindo entende: a alma que o avisou 53 anos atrás, na noite anterior à Operação Semente, era Dalva. Dalva — que ainda nem tinha sido morta — o avisou de uma linha do tempo que os personagens ainda não compreendem. O aviso veio de um futuro que ainda não existia.",
+                "nota_mestre": "Esta é a manifestação da Regra I e da não-linearidade do tempo: dentro de um nó, o passado e o futuro se tocam. O que Armindo viu na fresta em 1972 foi filtrado pelas dívidas das 33 — não era neutro, e havia algo mais antigo esperando lá dentro.",
+                "refs": [
+                  {
+                    "pagina": "regras",
+                    "rotulo": "Regra I — O Tempo Cobra"
+                  },
+                  {
+                    "pagina": "operacao_semente",
+                    "rotulo": "A Operação Semente"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "gancho_detalhado": {
+          "titulo": "\"Amanhã. Venham à Área Verde ao amanhecer.\"",
+          "texto": "Depois de ver Dalva, Armindo se vira para os personagens. Diz apenas: \"Amanhã. Venham à Área Verde ao amanhecer.\" E vai embora. A sessão fecha com o encontro marcado — e com a certeza de que o que vem é irreversível.",
+          "refs": [
+            {
+              "pagina": "cidade",
+              "rotulo": "A Área Verde"
+            }
+          ]
+        }
+      }
     },
     {
       "numero": 10,
       "titulo": "O Acerto",
       "status": "pendente",
       "subtitulo": "O finale. A dissolução. O envelope.",
-      "pergunta": "O que era o ciclo, o que acontece quando fecha, e o que foi destruído.",
-      "resumo": "O finale da Temporada 1. Armindo entende o que foi. As 33 almas fecham suas contas. E uma mulher bate na porta.",
-      "armindo_entende": "O Anterior não era uma pessoa independente. Era algo usando forma humana para posicioná-lo. Ele não descobriu o nó. Foi trazido até ele. O ciclo foi criado para cobrar uma dívida específica — a dele. A fresta que viu em 1972 não era iluminação. Era algo olhando de volta.\n\nAceita o acerto. Não como derrota. Como a única coisa honesta que ainda pode fazer.",
-      "o_que_acontece": [
-        "As 33 almas fecham suas contas simultaneamente",
-        "O nó colapsa",
-        "Armindo dissolve — o espaço onde estava deixa de ter sido preenchido",
-        "O anterior ao anterior se move — não é nenhuma das 33 almas, é mais antigo",
-        "Gabriel acorda curado e em silêncio. O silêncio o assusta mais que os fragmentos."
+      "blocos": [
+        {
+          "titulo": "O que Armindo entende e verbaliza pela primeira vez",
+          "pontos": [
+            {
+              "t": "O Anterior não era uma pessoa independente. Era algo usando forma humana para posicioná-lo. Ele não descobriu o nó. Foi trazido até ele. O ciclo foi criado para cobrar uma dívida específica — a dele. A fresta que viu em 1972 não era iluminação. Era algo olhando de volta.",
+              "refs": [
+                {
+                  "label": "O Anterior (Caim)",
+                  "ref": "page:caim"
+                },
+                {
+                  "label": "A Operação Semente",
+                  "ref": "doc:ficha-dalva"
+                }
+              ]
+            },
+            {
+              "t": "Aceita o acerto. Não como derrota. Como a única coisa honesta que ainda pode fazer.",
+              "refs": [
+                {
+                  "label": "Armindo (Profetas)",
+                  "ref": "page:profetas"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "titulo": "O que acontece",
+          "pontos": [
+            {
+              "t": "As 33 almas fecham suas contas simultaneamente",
+              "refs": [
+                {
+                  "label": "A Operação Semente",
+                  "ref": "doc:ficha-dalva"
+                }
+              ]
+            },
+            {
+              "t": "O nó colapsa",
+              "refs": [
+                {
+                  "label": "A Área Verde",
+                  "ref": "local:area-verde"
+                }
+              ]
+            },
+            {
+              "t": "Armindo dissolve — o espaço onde estava deixa de ter sido preenchido",
+              "refs": [
+                {
+                  "label": "Armindo (Profetas)",
+                  "ref": "page:profetas"
+                }
+              ]
+            },
+            {
+              "t": "O anterior ao anterior se move — não é nenhuma das 33 almas, é mais antigo",
+              "refs": [
+                {
+                  "label": "Caim — A Origem de Tudo",
+                  "ref": "page:caim"
+                }
+              ]
+            },
+            {
+              "t": "Gabriel acorda curado e em silêncio. O silêncio o assusta mais que os fragmentos.",
+              "refs": [
+                {
+                  "label": "Gabriel Tostes",
+                  "ref": "npc:gabriel"
+                }
+              ]
+            }
+          ]
+        }
       ],
       "sinal_abel": "No momento em que o nó colapsa, Abel sente algo que nenhum dos outros sente. Não fragmentos do passado — uma visão do futuro. Uma figura olhando diretamente para ele de algum lugar que não existe ainda. E a certeza, sem origem, de que essa figura sabe seu nome. O nome verdadeiro. O de antes.",
-      "cena_final": "Duas semanas depois. Uma mulher bate na porta. Cinquenta e poucos anos. Olhos que existem em mais de um tempo.\n\n\"Novavera não era o único nó. Era o menor. Os outros estão acordando — e o que saiu do de vocês já chegou nos outros. Precisamos conversar sobre o que vem depois. E sobre o que estava dentro do nó antes das 33 almas. Porque isso que vocês libertaram — não é uma alma. Nunca foi humano. E agora está acordado.\"\n\nEntrega um envelope. Dentro: sete cidades. Sete datas. Uma das cidades é onde um dos personagens nasceu. Uma das datas já passou. Há seis dias.\n\nO Primeiro Profeta já está em movimento.",
-      "gancho": "O Primeiro Profeta já está em movimento."
+      "sinal_abel_refs": [
+        {
+          "label": "Abel — Os Três Sinais",
+          "ref": "page:abel"
+        },
+        {
+          "label": "Caim — O Plano Final",
+          "ref": "page:caim"
+        }
+      ],
+      "cena_final": "Duas semanas depois. Uma mulher bate na porta. Cinquenta e poucos anos. Olhos que existem em mais de um tempo.\n\n\"Novavera não era o único nó. Era o menor. Os outros estão acordando — e o que saiu do de vocês já chegou nos outros. Precisamos conversar sobre o que vem depois. E sobre o que estava dentro do nó antes das 33 almas. Porque isso que vocês libertaram — não é uma alma. Nunca foi humano. E agora está acordado.\"\n\nEntrega um envelope. Dentro: sete cidades. Sete datas. Uma das cidades é onde um dos personagens nasceu. Uma das datas já passou. Há seis dias.",
+      "cena_final_refs": [
+        {
+          "label": "Temporada 2 — A Marca",
+          "ref": "page:temporadas"
+        },
+        {
+          "label": "Caim — O Plano Final",
+          "ref": "page:caim"
+        }
+      ],
+      "gancho": "O Primeiro Profeta já está em movimento.",
+      "gancho_refs": [
+        {
+          "label": "Ezequiel — O Primeiro Profeta",
+          "ref": "page:profetas"
+        }
+      ],
+      "detalhamento": {
+        "abertura": "O finale da Temporada 1. Ao amanhecer, na Área Verde, o ciclo se fecha. Armindo entende, pela primeira vez e em voz alta, o que realmente foi — e aceita o acerto. Não como derrota: como a única coisa honesta que ainda pode fazer. E quando tudo termina, uma mulher bate na porta.",
+        "blocos": [
+          {
+            "grupo": "O Que Armindo Entende",
+            "pontos": [
+              {
+                "titulo": "A verdade sobre o Anterior",
+                "texto": "Armindo verbaliza, pela primeira vez, o que entendeu: o Anterior nunca foi uma pessoa independente. Era algo usando forma humana para posicioná-lo. Ele não descobriu o nó — foi trazido até ele. O ciclo foi criado para cobrar uma dívida específica: a dele. E a fresta que viu em 1972 não era iluminação. Era algo olhando de volta.",
+                "nota_mestre": "O Anterior é Caim. Armindo nunca soube — e mesmo aqui, no finale, não tem o nome. Tem apenas a certeza de que foi usado. Que o Anterior é Caim só é revelado na T3.",
+                "refs": [
+                  {
+                    "pagina": "caim",
+                    "rotulo": "Caim — A Origem de Tudo"
+                  },
+                  {
+                    "pagina": "caim",
+                    "rotulo": "Encarnação 9 — O Anterior"
+                  },
+                  {
+                    "pagina": "notas-mestre",
+                    "rotulo": "O Que Nunca É Dito Explicitamente"
+                  }
+                ]
+              },
+              {
+                "titulo": "Armindo aceita o acerto",
+                "texto": "Armindo aceita o acerto. Não como derrota — como resolução. É a única coisa honesta que ainda lhe resta fazer. Ele estava na lista original como a 34ª vítima; ao retirar o próprio nome, deixou a conta principal aberta. Agora ele a fecha.",
+                "refs": [
+                  {
+                    "pagina": "profetas",
+                    "rotulo": "Armindo — A Tragédia"
+                  },
+                  {
+                    "pagina": "profetas",
+                    "rotulo": "Armindo — Como Interpretar (Ep. 9–10)"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "grupo": "O Acerto",
+            "pontos": [
+              {
+                "titulo": "As 33 almas fecham suas contas",
+                "texto": "As 33 almas da Operação Semente fecham suas contas simultaneamente. Cinquenta e três anos de espera se resolvem num único amanhecer. O nó, sem a tensão das dívidas que o mantinham, colapsa.",
+                "refs": [
+                  {
+                    "pagina": "operacao_semente",
+                    "rotulo": "A Operação Semente"
+                  }
+                ]
+              },
+              {
+                "titulo": "Armindo dissolve",
+                "texto": "Armindo não morre — dissolve. O espaço onde ele estava simplesmente deixa de ter sido preenchido. As almas presas o reconheciam não por medo, mas porque ele deveria ter sido um deles, e nunca foi. Agora, finalmente, a ausência se completa.",
+                "nota_mestre": "A dissolução é o gatilho que ativa tudo que estava represado: décadas de custo acumulado da Marca usada e depois adormecida. Armindo morre com a fé intacta no que acreditava — mais trágico do que qualquer vilão.",
+                "refs": [
+                  {
+                    "pagina": "profetas",
+                    "rotulo": "Armindo — O Último Profeta"
+                  },
+                  {
+                    "pagina": "caim",
+                    "rotulo": "A Marca de Caim"
+                  }
+                ]
+              },
+              {
+                "titulo": "O anterior ao anterior se move",
+                "texto": "No colapso do nó, algo se move — e não é nenhuma das 33 almas. É mais antigo. O diário do Anterior já avisava: \"o ponto no cerrado não está vazio. Nunca esteve vazio.\" Havia algo esperando dentro do nó, anterior a todas as 33 vítimas, anterior à própria presença humana naquele território.",
+                "nota_mestre": "Esse \"anterior ao anterior\" não é humano e não pertence a nenhuma tradição conhecida. É liberado pelo colapso do nó e segue sendo um gancho aberto através das três temporadas.",
+                "refs": [
+                  {
+                    "pagina": "documentos",
+                    "rotulo": "O Diário do Anterior"
+                  },
+                  {
+                    "pagina": "temporadas",
+                    "rotulo": "T3 — Ganchos em Aberto"
+                  }
+                ]
+              },
+              {
+                "titulo": "Gabriel acorda em silêncio",
+                "texto": "Com o nó fechado, Gabriel acorda curado — não recebe mais fragmentos. Mas o silêncio o assusta mais do que os fragmentos jamais assustaram. Ele passou a vida inteira ouvindo; o vazio é uma língua que ele não conhece.",
+                "refs": [
+                  {
+                    "pagina": "npcs",
+                    "rotulo": "Gabriel Tostes"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "grupo": "O Sinal de Abel — O Finale",
+            "pontos": [
+              {
+                "titulo": "Abel vê o futuro",
+                "texto": "No instante em que o nó colapsa, Abel sente algo que nenhum dos outros sente. Não fragmentos do passado — uma visão do futuro. Uma figura olhando diretamente para ele, de algum lugar que ainda não existe. E a certeza, sem origem, de que essa figura sabe o seu nome. O nome verdadeiro. O de antes.",
+                "nota_mestre": "É o terceiro sinal de Abel. Onde qualquer alma veria o passado num nó, Abel vê o futuro — porque é o oposto de Caim. A figura que o observa é o próprio Caim, que sempre soube onde Abel estaria, em todas as vidas.",
+                "refs": [
+                  {
+                    "pagina": "abel",
+                    "rotulo": "Abel — Os Três Sinais"
+                  },
+                  {
+                    "pagina": "abel",
+                    "rotulo": "A Bênção de Abel"
+                  },
+                  {
+                    "pagina": "caim",
+                    "rotulo": "O gancho além da T3"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "grupo": "Cena Final — Duas Semanas Depois",
+            "pontos": [
+              {
+                "titulo": "A mulher na porta",
+                "texto": "Duas semanas depois, uma mulher bate à porta. Cinquenta e poucos anos. Olhos que existem em mais de um tempo. Ela diz: Novavera não era o único nó — era o menor. Os outros estão acordando. O que saiu do nó dos personagens já chegou aos outros. E o que estava dentro do nó, antes das 33 almas, não é uma alma. Nunca foi humano. E agora está acordado.",
+                "nota_mestre": "Ela é a ponte para a T2. Note o paralelo com a descrição de Décio e Armindo — \"olhos que existem em mais de um tempo\" é o estado de quem carrega a Marca ou convive de perto com nós. Ela sabe muito mais do que diz.",
+                "refs": [
+                  {
+                    "pagina": "temporadas",
+                    "rotulo": "T2 — A Marca"
+                  },
+                  {
+                    "pagina": "regras",
+                    "rotulo": "Regra V — Saber Demais É Começar A Ficar"
+                  }
+                ]
+              },
+              {
+                "titulo": "O envelope das sete cidades",
+                "texto": "A mulher entrega um envelope. Dentro: sete cidades. Sete datas. Uma das cidades é onde um dos personagens nasceu. E uma das datas já passou — há seis dias. O Primeiro Profeta já está em movimento.",
+                "nota_mestre": "As sete cidades são os sete nós que Caim precisa colapsar simultaneamente para transcender. Uma delas é Sevilha. O Primeiro Profeta é Ezequiel Drummond Cavalcanti — mas seu nome só aparece na T2.",
+                "refs": [
+                  {
+                    "pagina": "temporadas",
+                    "rotulo": "T2 — A Marca"
+                  },
+                  {
+                    "pagina": "profetas",
+                    "rotulo": "Ezequiel — O Primeiro Profeta"
+                  },
+                  {
+                    "pagina": "caim",
+                    "rotulo": "O Plano Final de Caim"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "gancho_detalhado": {
+          "titulo": "O Primeiro Profeta já está em movimento",
+          "texto": "A Temporada 1 fecha com a frase que abre a seguinte. Os personagens acham que resolveram um mistério local — uma morte, uma cidade, um homem. Na verdade, dispararam o estágio final de um plano de cinco mil e oitocentos anos. E comprometeram, sem saber, a energia do nó de Novavera — o \"erro\" que, na T3, será a única coisa capaz de impedir que o plano de Caim seja perfeito.",
+          "refs": [
+            {
+              "pagina": "temporadas",
+              "rotulo": "T2 — A Marca"
+            },
+            {
+              "pagina": "temporadas",
+              "rotulo": "T3 — O Primeiro Assassino"
+            },
+            {
+              "pagina": "caim",
+              "rotulo": "O que dá errado no finale da T3"
+            }
+          ]
+        }
+      }
     }
   ],
   "notas_mestre": {
