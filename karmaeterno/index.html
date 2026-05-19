@@ -734,6 +734,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
     </div>
     <div class="scroll-content" id="npcsScroll">
       <div id="npcsList" class="grid-auto"></div>
+      <div id="quemSabeWrap"></div>
       <div id="npcDetailWrap"></div>
     </div>
   </section>
@@ -881,6 +882,7 @@ function initApp(){
   renderAbel();
   renderProfetas();
   renderNpcs();
+  renderQuemSabe();
   renderTemporadas();
   renderCausalidade();
   renderTimeline();
@@ -1279,6 +1281,7 @@ function renderNpcs(){
 function openNpc(i){
   const n=DATA.npcs[i];
   document.getElementById('npcsList').style.display='none';
+  document.getElementById('quemSabeWrap').style.display='none';
   const w=document.getElementById('npcDetailWrap');
   let h=`<button class="back-btn" onclick="closeNpc()">Voltar aos NPCs</button>
     <div class="book-card"><div class="book-inner">
@@ -1313,6 +1316,27 @@ function openNpc(i){
 function closeNpc(){
   document.getElementById('npcDetailWrap').innerHTML='';
   document.getElementById('npcsList').style.display='grid';
+  document.getElementById('quemSabeWrap').style.display='block';
+}
+
+/* ── TABELA "QUEM SABE O QUÊ" ─────────────────────────────── */
+function renderQuemSabe(){
+  const rows=DATA.quem_sabe.map(q=>`
+    <tr>
+      <td style="font-family:'Cinzel',serif;color:var(--blood);font-size:13px;letter-spacing:.5px;white-space:nowrap;vertical-align:top">${esc(q.personagem)}</td>
+      <td style="vertical-align:top">${fmtInline(q.sabe)}</td>
+      <td style="vertical-align:top">${fmtInline(q.nao_sabe)}</td>
+    </tr>`).join('');
+  document.getElementById('quemSabeWrap').innerHTML=`
+    <div class="div-orn">❧ ✦ ❧</div>
+    <div class="book-card"><div class="book-inner compact">
+      <div class="t-eyebrow">Parte VIII · Referência do Mestre</div>
+      <h3 class="t-title">Quem Sabe O Quê</h3>
+      <p class="t-body" style="margin-bottom:14px">A visão de conjunto — o que cada peça da trama conhece e ignora, incluindo Armindo e Ezequiel.</p>
+      <table class="stbl"><thead><tr>
+        <th>Personagem</th><th>O Que Sabe</th><th>O Que Não Sabe</th>
+      </tr></thead><tbody>${rows}</tbody></table>
+    </div></div>`;
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -1631,7 +1655,8 @@ function renderNotasMestre(){
     <div class="warn-box"><div class="warn-lbl">O Epitáfio</div><div class="warn-txt">${esc(n.epitafio)}</div></div>
 
     <div class="div-orn">❧ ✦ ❧</div>
-    <p class="t-sub" style="text-align:center;display:block">Karma Eterno · Temporadas I, II e III · 2025<br>Documento Confidencial · Uso Interno do Mestre<br>Nenhuma inconsistência é acidental.</p>`;
+    <p class="t-sub" style="text-align:center;display:block;font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--blood);text-transform:uppercase;opacity:.7;margin-bottom:8px">Fim da Bíblia — Versão Lapidada</p>
+    <p class="t-sub" style="text-align:center;display:block">Karma Eterno · Temporada I, II e III · 2025<br>Documento Confidencial · Uso Interno do Mestre<br>Nenhuma inconsistência é acidental.</p>`;
 }
 
 /* ═══════════════════════════════════════════════════════════
