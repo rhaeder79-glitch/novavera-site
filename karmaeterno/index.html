@@ -1526,43 +1526,122 @@ function printDoc(id) {
   const win = window.open('', '_blank');
   win.document.write(generatePrintHTML(doc));
   win.document.close();
-  win.onload = () => { win.focus(); win.print(); };
+  const triggerPrint = () => {
+    win.focus();
+    const fonts = win.document.fonts;
+    if (fonts && fonts.ready) {
+      fonts.ready.then(() => setTimeout(() => win.print(), 80));
+    } else {
+      setTimeout(() => win.print(), 350);
+    }
+  };
+  if (win.document.readyState === 'complete') triggerPrint();
+  else win.onload = triggerPrint;
 }
 
 function generatePrintHTML(doc) {
-  const isficha = doc.tipo === 'ficha';
   let content = '';
-  if (isficha) {
-    content = doc.campos.map(f => `
-      <div style="margin-bottom:8px;display:flex;gap:10px;align-items:baseline;border-bottom:1px solid rgba(90,74,48,.15);padding-bottom:6px">
-        <span style="font-family:'Cinzel',Georgia,serif;font-size:11px;letter-spacing:2px;color:#5a4a30;text-transform:uppercase;flex-shrink:0;min-width:130px;opacity:.8">${f.label}</span>
-        <span style="font-family:Georgia,serif;font-size:21px;color:#180e04;line-height:1.4">${f.valor}</span>
+
+  if (doc.tipo === 'ficha') {
+    content = (doc.campos || []).map(f => `
+      <div class="row">
+        <span class="fl">${f.label}</span>
+        <span class="fv">${f.valor}</span>
       </div>`).join('') +
-      (doc.nota ? `<div style="margin-top:16px;padding:12px 16px;border-left:2px solid #6b0f0f;background:rgba(107,15,15,.04)">
-        <div style="font-family:'Cinzel',Georgia,serif;font-size:10px;letter-spacing:3px;color:#6b0f0f;text-transform:uppercase;margin-bottom:5px">Observação de campo</div>
-        <div style="font-family:Georgia,serif;font-style:italic;font-size:21px;color:#3a2510;line-height:1.65">${doc.nota}</div>
+      (doc.nota ? `
+      <div class="nota">
+        <div class="nota-l">Observação de campo · manuscrita</div>
+        <div class="nota-t">${doc.nota}</div>
       </div>` : '');
-  } else {
-    content = doc.entradas.map(e => `
-      <div style="margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid rgba(90,74,48,.18)">
-        <div style="font-family:'Cinzel',Georgia,serif;font-size:11px;letter-spacing:3px;color:#9a7a2a;text-transform:uppercase;margin-bottom:8px">${e.data}</div>
-        <div style="font-family:Georgia,serif;font-size:17px;line-height:1.82;color:#3a2510">${e.texto}</div>
+
+  } else if (doc.tipo === 'diario') {
+    content = (doc.entradas || []).map(e => `
+      <div class="entry${e.destaque ? ' entry-hi' : ''}">
+        <div class="entry-date${e.destaque ? ' entry-date-hi' : ''}">${e.data}</div>
+        <div class="entry-txt">${e.texto}</div>
+      </div>`).join('');
+
+  } else if (doc.tipo === 'mapa') {
+    const c = doc.conteudo || {};
+    content = [
+      ['O que o mapa mostra', c.o_que_mostra],
+      ['O símbolo — três camadas', c.o_simbolo],
+      ['O que existe fisicamente mas não está no mapa', c.o_que_existe_fisicamente],
+      ['A anotação no verso', c.verso],
+      ['O Padrão 13', c.padrao_13]
+    ].filter(([,v]) => v).map(([t,v]) => `
+      <div class="sec">
+        <div class="sec-l">${t}</div>
+        <div class="sec-t">${v}</div>
       </div>`).join('');
   }
-  return `<!DOCTYPE html><html><head><meta charset="UTF-8">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+
+  return `<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8">
+  <title>${doc.titulo}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
   <style>
-    body{background:linear-gradient(135deg,#f0e4cc,#e8d5b0);margin:0;padding:40px;font-family:Georgia,serif;min-height:100vh}
-    .wrapper{max-width:600px;margin:0 auto;background:linear-gradient(135deg,#f0e4cc,#e8d5b0);padding:40px;border:1px solid rgba(90,74,48,.45);position:relative;box-shadow:2px 4px 12px rgba(0,0,0,.15)}
-    .wrapper::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(180deg,transparent,transparent 23px,rgba(90,74,48,.055) 23px,rgba(90,74,48,.055) 24px);pointer-events:none}
-    .stamp{position:absolute;top:14px;right:16px;font-family:'Cinzel',Georgia,serif;font-size:11px;letter-spacing:3px;color:#6b0f0f;opacity:.5;border:1px solid #6b0f0f;padding:2px 7px;transform:rotate(2.5deg)}
-    h1{font-family:'Cinzel',Georgia,serif;font-size:21px;letter-spacing:3px;color:#5a4a30;text-transform:uppercase;border-bottom:1px solid rgba(90,74,48,.38);padding-bottom:10px;margin-bottom:18px;margin-top:0}
-    @media print{body{background:#f0e4cc!important;padding:0}.wrapper{box-shadow:none;border:1px solid rgba(90,74,48,.3);margin:10mm;padding:20mm}}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{background:#221a10;font-family:'IM Fell English',Georgia,serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .wrapper{max-width:680px;margin:24px auto;background:linear-gradient(135deg,#f0e4cc,#e8d5b0);
+      border:1px solid rgba(90,74,48,.45);padding:32px 36px;position:relative;
+      box-shadow:2px 4px 20px rgba(0,0,0,.3)}
+    .wrapper::before{content:"";position:absolute;inset:0;
+      background-image:repeating-linear-gradient(180deg,transparent,transparent 23px,rgba(90,74,48,.055) 23px,rgba(90,74,48,.055) 24px);
+      pointer-events:none}
+    .inner{position:relative;z-index:1}
+    .stamp{position:absolute;top:10px;right:12px;font-family:'Cinzel',Georgia,serif;font-size:7px;
+      letter-spacing:3px;color:#7d1212;opacity:.48;border:1px solid #7d1212;padding:2px 7px;
+      transform:rotate(2.5deg);text-transform:uppercase}
+    h1{font-family:'Cinzel',Georgia,serif;font-size:11px;letter-spacing:3px;color:#5a4a30;
+      text-transform:uppercase;border-bottom:1px solid rgba(90,74,48,.38);
+      padding-bottom:10px;margin-bottom:18px}
+
+    /* ── FICHA ── */
+    .row{margin-bottom:8px;display:flex;gap:10px;align-items:baseline;
+      border-bottom:1px solid rgba(90,74,48,.12);padding-bottom:7px;flex-wrap:wrap;
+      break-inside:avoid;page-break-inside:avoid}
+    .fl{font-family:'Cinzel',Georgia,serif;font-size:8px;letter-spacing:2px;color:#5a4a30;
+      text-transform:uppercase;flex-shrink:0;opacity:.78;min-width:120px}
+    .fv{font-family:'IM Fell English',Georgia,serif;font-size:15px;color:#180e04;line-height:1.5}
+    .nota{margin-top:16px;padding:12px 16px;border-left:2px solid #7d1212;
+      background:rgba(125,18,18,.04);break-inside:avoid;page-break-inside:avoid}
+    .nota-l{font-family:'Cinzel',Georgia,serif;font-size:8px;letter-spacing:3px;color:#7d1212;
+      text-transform:uppercase;margin-bottom:6px}
+    .nota-t{font-family:'IM Fell English',Georgia,serif;font-style:italic;font-size:14px;
+      color:#3a2510;line-height:1.7;white-space:pre-line}
+
+    /* ── DIÁRIO ── */
+    .entry{margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid rgba(90,74,48,.18);
+      break-inside:avoid;page-break-inside:avoid}
+    .entry:last-child{border:none;margin-bottom:0;padding-bottom:0}
+    .entry-hi{background:rgba(125,18,18,.035);padding:12px;margin-left:-12px;margin-right:-12px}
+    .entry-date{font-family:'Cinzel',Georgia,serif;font-size:9px;letter-spacing:3px;color:#9a7a2a;
+      text-transform:uppercase;margin-bottom:8px;opacity:.85}
+    .entry-date-hi{color:#7d1212}
+    .entry-txt{font-family:'IM Fell English',Georgia,serif;font-size:15px;line-height:1.85;
+      color:#3a2510;white-space:pre-line}
+
+    /* ── MAPA ── */
+    .sec{margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid rgba(90,74,48,.14);
+      break-inside:avoid;page-break-inside:avoid}
+    .sec:last-child{border:none;margin-bottom:0;padding-bottom:0}
+    .sec-l{font-family:'Cinzel',Georgia,serif;font-size:9px;letter-spacing:3px;color:#9a7a2a;
+      text-transform:uppercase;margin-bottom:6px;opacity:.85}
+    .sec-t{font-family:'IM Fell English',Georgia,serif;font-size:15px;line-height:1.82;color:#3a2510}
+
+    @page{margin:14mm}
+    @media print{
+      body{background:#f0e4cc!important}
+      .wrapper{margin:0 auto;box-shadow:none;border:1px solid rgba(90,74,48,.3);max-width:none}
+      h1{break-after:avoid;page-break-after:avoid}
+    }
   </style></head><body>
   <div class="wrapper">
-    ${doc.stamp ? `<div class="stamp">${doc.stamp}</div>` : ''}
-    <h1>${doc.titulo}</h1>
-    <div style="position:relative;z-index:1">${content}</div>
+    <div class="inner">
+      ${doc.stamp ? `<div class="stamp">${doc.stamp}</div>` : ''}
+      <h1>${doc.titulo}</h1>
+      ${content}
+    </div>
   </div></body></html>`;
 }
 
