@@ -316,11 +316,17 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
     <button class="nav-item" data-page="regras" onclick="navigate('regras')">
       <span class="nav-icon">⚖</span> Regras & Sistema
     </button>
+    <button class="nav-item" data-page="cidade" onclick="navigate('cidade')">
+      <span class="nav-icon">🏚</span> A Cidade
+    </button>
     <button class="nav-item" data-page="npcs" onclick="navigate('npcs')">
       <span class="nav-icon">👤</span> NPCs
     </button>
     <button class="nav-item" data-page="episodios" onclick="navigate('episodios')">
       <span class="nav-icon">🎭</span> Episódios
+    </button>
+    <button class="nav-item" data-page="causalidade" onclick="navigate('causalidade')">
+      <span class="nav-icon">🔗</span> Causalidade
     </button>
     <div class="nav-section">Ferramentas</div>
     <button class="nav-item" data-page="documentos" onclick="navigate('documentos')">
@@ -990,6 +996,30 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
   </div>
 </div>
 
+<!-- ════════ PÁGINA: CIDADE ════════ -->
+<div class="page" id="page-cidade">
+  <div class="page-hdr">
+    <p class="page-eyebrow">Cerrado de Goiás · O Que Está Sob a Cidade</p>
+    <h2>A Cidade</h2>
+    <p>Novavera — locais, o símbolo, e o que cada lugar esconde</p>
+  </div>
+  <div class="scroll-content">
+    <div id="cidade-content"></div>
+  </div>
+</div>
+
+<!-- ════════ PÁGINA: CAUSALIDADE ════════ -->
+<div class="page" id="page-causalidade">
+  <div class="page-hdr">
+    <p class="page-eyebrow">O Que Realmente Aconteceu</p>
+    <h2>Bíblia de Causalidade</h2>
+    <p>Respostas para cada "por quê" — tudo conectado por data, nome e consequência</p>
+  </div>
+  <div class="scroll-content">
+    <div id="causalidade-content"></div>
+  </div>
+</div>
+
 <!-- ════════ SEARCH OVERLAY ════════ -->
 <div class="search-overlay" id="search-overlay" onclick="closeSearch(event)">
   <div class="search-box">
@@ -1236,6 +1266,8 @@ function initApp() {
   renderClues();
   renderEpisodios();
   renderDocumentos();
+  renderCidade();
+  renderCausalidade();
   loadNotes();
   handleHash();
 }
@@ -1397,31 +1429,96 @@ function renderDocumentos() {
     <div style="background:var(--parch);background-image:radial-gradient(ellipse at 20% 0%,rgba(180,140,80,.12) 0%,transparent 55%);box-shadow:0 2px 20px rgba(0,0,0,.3);padding:24px 28px;position:relative;overflow:hidden">
       <div style="position:absolute;inset:0;background-image:repeating-linear-gradient(180deg,transparent,transparent 22px,rgba(90,74,48,.05) 22px,rgba(90,74,48,.05) 23px);pointer-events:none"></div>
       <div style="position:relative;z-index:1">
-        ${doc.stamp ? `<div style="position:absolute;top:0;right:0;font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--blood);opacity:.45;border:1px solid var(--blood);padding:2px 6px;transform:rotate(2deg)">${doc.stamp}</div>` : ''}
-        <div style="font-family:'Cinzel',serif;font-size:21px;letter-spacing:3px;color:var(--ash);text-transform:uppercase;border-bottom:1px solid rgba(90,74,48,.35);padding-bottom:8px;margin-bottom:12px">${doc.titulo}</div>
-        ${doc.tipo === 'ficha' ? renderFichaPreview(doc) : renderDiarioPreview(doc)}
-        <button class="btn-print" onclick="printDoc('${doc.id}')">
-          <svg viewBox="0 0 24 24"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2M6 14h12v8H6z" stroke="currentColor" stroke-width="2" fill="none"/></svg>
-          Imprimir / Baixar PDF
-        </button>
+        ${doc.stamp ? `<div style="position:absolute;top:0;right:0;font-family:'Cinzel',serif;font-size:7px;letter-spacing:3px;color:var(--blood);opacity:.45;border:1px solid var(--blood);padding:2px 6px;transform:rotate(2deg)">${doc.stamp}</div>` : ''}
+        <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;color:var(--ash);text-transform:uppercase;border-bottom:1px solid rgba(90,74,48,.35);padding-bottom:8px;margin-bottom:12px">${doc.titulo}</div>
+        ${doc.tipo === 'ficha' ? renderFichaPreview(doc) : doc.tipo === 'diario' ? renderDiarioPreview(doc) : renderMapaPreview(doc)}
+        <div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">
+          <button class="btn-print" onclick="openDocModal('${doc.id}')" style="font-size:9px">👁 Ver completo</button>
+          <button class="btn-print" onclick="printDoc('${doc.id}')" style="font-size:9px">Imprimir PDF</button>
+        </div>
       </div>
     </div>`).join('');
+}
+
+function openDocModal(id) {
+  const doc = DATA.documentos.find(d => d.id === id);
+  if (!doc) return;
+  const old = document.getElementById('doc-modal');
+  if (old) old.remove();
+  const modal = document.createElement('div');
+  modal.id = 'doc-modal';
+  modal.style.cssText = 'position:fixed;inset:0;background:rgba(10,7,4,.92);z-index:500;overflow-y:auto;padding:30px 16px';
+  modal.innerHTML = `
+    <div style="max-width:700px;margin:0 auto">
+      <button onclick="document.getElementById('doc-modal').remove()" style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(154,122,42,.3);background:none;padding:8px 16px;cursor:pointer;margin-bottom:20px">← Fechar</button>
+      <div style="background:linear-gradient(135deg,#f0e4cc,#e8d5b0);border:1px solid rgba(90,74,48,.45);padding:32px 36px;position:relative;box-shadow:2px 4px 20px rgba(0,0,0,.3)">
+        <div style="position:absolute;inset:0;background-image:repeating-linear-gradient(180deg,transparent,transparent 23px,rgba(90,74,48,.055) 23px,rgba(90,74,48,.055) 24px);pointer-events:none"></div>
+        <div style="position:relative;z-index:1">
+          ${doc.stamp ? `<div style="position:absolute;top:10px;right:12px;font-family:'Cinzel',serif;font-size:7px;letter-spacing:3px;color:var(--blood);opacity:.48;border:1px solid var(--blood);padding:2px 7px;transform:rotate(2.5deg)">${doc.stamp}</div>` : ''}
+          <div style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--ash);text-transform:uppercase;border-bottom:1px solid rgba(90,74,48,.38);padding-bottom:10px;margin-bottom:18px">${doc.titulo}</div>
+          ${doc.tipo === 'ficha' ? renderFichaFull(doc) : doc.tipo === 'diario' ? renderDiarioFull(doc) : renderMapaFull(doc)}
+        </div>
+      </div>
+      ${doc.nota_mestre ? `<div style="margin-top:14px;padding:16px 20px;border:1px solid rgba(107,15,15,.3);background:rgba(10,7,4,.85)"><div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:4px;color:var(--blood);text-transform:uppercase;margin-bottom:8px;opacity:.78">Nota do Mestre</div><div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;line-height:1.75;color:rgba(212,192,154,.85)">${doc.nota_mestre}</div></div>` : ''}
+      <div style="margin-top:12px;text-align:right">
+        <button class="btn-print" onclick="printDoc('${doc.id}')">Imprimir / Baixar PDF</button>
+      </div>
+    </div>`;
+  document.body.appendChild(modal);
 }
 
 function renderFichaPreview(doc) {
   return doc.campos.slice(0,4).map(f => `
     <div style="margin-bottom:5px;display:flex;gap:8px;align-items:baseline">
-      <span style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:2px;color:var(--ash);text-transform:uppercase;flex-shrink:0;opacity:.75;min-width:100px">${f.label}</span>
-      <span style="font-family:'IM Fell English',serif;font-size:21px;color:var(--ink);line-height:1.4">${f.valor}</span>
-    </div>`).join('') + `<div style="font-family:'Cinzel',serif;font-size:10px;color:var(--ash);opacity:.5;margin-top:8px">+ ${doc.campos.length - 4} campos</div>`;
+      <span style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;color:var(--ash);text-transform:uppercase;flex-shrink:0;opacity:.75;min-width:100px">${f.label}</span>
+      <span style="font-family:'IM Fell English',serif;font-size:14px;color:var(--ink);line-height:1.4">${f.valor}</span>
+    </div>`).join('') + `<div style="font-family:'Cinzel',serif;font-size:8px;color:var(--ash);opacity:.5;margin-top:8px">+ ${doc.campos.length - 4} campos</div>`;
+}
+
+function renderFichaFull(doc) {
+  return doc.campos.map(f => `
+    <div style="margin-bottom:8px;display:flex;gap:10px;align-items:baseline;border-bottom:1px solid rgba(90,74,48,.12);padding-bottom:7px;flex-wrap:wrap">
+      <span style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;color:var(--ash);text-transform:uppercase;flex-shrink:0;opacity:.78;min-width:120px">${f.label}</span>
+      <span style="font-family:'IM Fell English',serif;font-size:15px;color:var(--ink);line-height:1.5">${f.valor}</span>
+    </div>`).join('') +
+  (doc.nota ? `<div style="margin-top:16px;padding:12px 16px;border-left:2px solid var(--blood);background:rgba(107,15,15,.04)"><div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;color:var(--blood);text-transform:uppercase;margin-bottom:6px">Observação de campo · manuscrita</div><div style="font-family:'IM Fell English',serif;font-style:italic;font-size:14px;color:var(--ink-soft);line-height:1.7;white-space:pre-line">${doc.nota}</div></div>` : '');
 }
 
 function renderDiarioPreview(doc) {
   const first = doc.entradas[0];
-  return `<div style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:6px;opacity:.8">${first.data}</div>
-  <div style="font-family:'IM Fell English',serif;font-size:15.5px;color:var(--ink-soft);line-height:1.7">${first.texto.substring(0,120)}...</div>
-  <div style="font-family:'Cinzel',serif;font-size:10px;color:var(--ash);opacity:.5;margin-top:8px">${doc.entradas.length} entradas</div>`;
+  return `<div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:6px;opacity:.8">${first.data}</div>
+  <div style="font-family:'IM Fell English',serif;font-size:14px;color:var(--ink-soft);line-height:1.7">${first.texto.substring(0,150)}...</div>
+  <div style="font-family:'Cinzel',serif;font-size:8px;color:var(--ash);opacity:.5;margin-top:8px">${doc.entradas.length} entradas</div>`;
 }
+
+function renderDiarioFull(doc) {
+  return doc.entradas.map(e => `
+    <div style="margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid rgba(90,74,48,.18)${e.destaque ? ';background:rgba(107,15,15,.035);padding:12px;margin-left:-12px;margin-right:-12px' : ''}">
+      <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:${e.destaque ? 'var(--blood)' : 'var(--gold)'};text-transform:uppercase;margin-bottom:8px;opacity:.85">${e.data}</div>
+      <div style="font-family:'IM Fell English',serif;font-size:15px;line-height:1.85;color:var(--ink-soft);white-space:pre-line">${e.texto}</div>
+    </div>`).join('');
+}
+
+function renderMapaPreview(doc) {
+  return `<div style="font-family:'IM Fell English',serif;font-size:14px;color:var(--ink-soft);line-height:1.7">${doc.conteudo.o_que_mostra.substring(0,150)}...</div>
+  <div style="font-family:'Cinzel',serif;font-size:8px;color:var(--ash);opacity:.5;margin-top:8px">Clique para ver completo</div>`;
+}
+
+function renderMapaFull(doc) {
+  const c = doc.conteudo;
+  return [
+    ['O que o mapa mostra', c.o_que_mostra],
+    ['O símbolo — três camadas', c.o_simbolo],
+    ['O que existe fisicamente mas não está no mapa', c.o_que_existe_fisicamente],
+    ['A anotação no verso', c.verso],
+    ['O Padrão 13', c.padrao_13]
+  ].map(([t,v]) => `
+    <div style="margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid rgba(90,74,48,.14)">
+      <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:6px;opacity:.85">${t}</div>
+      <div style="font-family:'IM Fell English',serif;font-size:15px;line-height:1.82;color:var(--ink-soft)">${v}</div>
+    </div>`).join('');
+}
+
 
 function printDoc(id) {
   const doc = DATA.documentos.find(d => d.id === id);
@@ -1571,6 +1668,14 @@ const SEARCH_INDEX = [
   { section: 'Documentos', title: 'Ficha nº34 — Benedito Braga', page: 'documentos' },
   { section: 'Documentos', title: 'O Diário do Anterior', page: 'documentos' },
   { section: 'Anotações', title: 'Minhas Anotações', page: 'anotacoes' },
+  { section: 'Cidade', title: 'A Cidade — Novavera', page: 'cidade' },
+  { section: 'Cidade', title: 'Área Verde — Nível Extremo', page: 'cidade' },
+  { section: 'Cidade', title: 'Arquivo Histórico Municipal', page: 'cidade' },
+  { section: 'Cidade', title: 'O Símbolo da Área Verde', page: 'cidade' },
+  { section: 'Causalidade', title: 'Bíblia de Causalidade', page: 'causalidade' },
+  { section: 'Causalidade', title: 'Por que Dalva começou a falar?', page: 'causalidade' },
+  { section: 'Causalidade', title: 'Como Armindo soube dos personagens?', page: 'causalidade' },
+  { section: 'Causalidade', title: 'Quem fechou o símbolo na Rua do Anterior?', page: 'causalidade' },
 ];
 
 function openSearch() {
@@ -1627,6 +1732,82 @@ document.querySelectorAll('.nav-item').forEach(item => {
     if (window.innerWidth <= 768) closeSidebar();
   });
 });
+
+// ── CIDADE ────────────────────────────────────────────────────────────────
+function renderCidade() {
+  if (!DATA || !DATA.cidade) return;
+  const el = document.getElementById('cidade-content');
+  if (!el) return;
+  const c = DATA.cidade;
+
+  // Locais
+  const locaisHtml = c.locais.map(l => {
+    const cores = {extremo:'rgba(107,15,15,.35)', alto:'rgba(154,122,42,.25)', medio:'rgba(90,74,48,.2)'};
+    const cor = cores[l.nivel_perigo] || cores.medio;
+    return `<div class="book-card" style="margin-bottom:16px">
+      <div class="book-inner compact">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+          <div style="font-family:'Cinzel Decorative',serif;font-size:22px;font-weight:700;color:var(--blood)">${l.nome}</div>
+          <span style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;color:var(--blood);border:1px solid ${cor};background:${cor};padding:2px 8px;text-transform:uppercase;flex-shrink:0">${l.nivel_perigo.toUpperCase()}</span>
+        </div>
+        <p class="t-body" style="margin-bottom:10px">${l.descricao}</p>
+        <div style="padding:12px 16px;border-left:2px solid rgba(154,122,42,.3);background:rgba(154,122,42,.04)">
+          <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:5px;opacity:.8">Detalhe</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:15px;line-height:1.75;color:var(--ink-soft)">${l.detalhe}</div>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+
+  // Símbolo
+  const simHtml = `<div class="book-card" style="margin-top:24px">
+    <div class="book-inner compact">
+      <div class="t-sec"><span class="g">✦</span> O Símbolo da Área Verde</div>
+      <p class="t-body">${c.simbolo.descricao}</p>
+      <p class="t-body">${c.simbolo.significado}</p>
+      <div class="t-ss">Ordem de Aparições — A Curva Dramática</div>
+      <ul class="ul">${c.simbolo.aparicoes.map((a,i)=>`<li><strong>${i+1}.</strong> ${a}</li>`).join('')}</ul>
+      <div class="warn-box"><div class="warn-lbl">Nota do Mestre</div><div class="warn-txt">${c.simbolo.nota_mestre}</div></div>
+    </div>
+  </div>`;
+
+  el.innerHTML = `<div class="t-eyebrow" style="margin-bottom:8px">${c.nome} · ${c.localizacao} · Fundada em ${c.fundacao}</div>
+    <div class="book-card" style="margin-bottom:20px"><div class="book-inner compact"><p class="t-body">${c.descricao}</p></div></div>
+    <div class="t-ss" style="margin-bottom:14px">Os Locais Principais</div>
+    ${locaisHtml}${simHtml}`;
+}
+
+// ── CAUSALIDADE ────────────────────────────────────────────────────────────
+function renderCausalidade() {
+  if (!DATA || !DATA.causalidade) return;
+  const el = document.getElementById('causalidade-content');
+  if (!el) return;
+  el.innerHTML = `<div class="book-card"><div class="book-inner">
+    <p class="t-body" style="font-style:italic;opacity:.75">Cada pergunta abaixo representa um momento em que os personagens podem fazer a conta errada — ou certa. O Mestre sabe todas as respostas. Os personagens descobrem com o tempo.</p>
+    <div style="margin-top:24px">
+      ${DATA.causalidade.map((item, i) => `
+        <div style="margin-bottom:0;border-bottom:1px solid rgba(154,122,42,.12);cursor:pointer" onclick="toggleCausalidade(${i})">
+          <div style="display:flex;align-items:center;gap:12px;padding:16px 0">
+            <span style="font-family:'Cinzel Decorative',serif;font-size:18px;color:var(--blood);opacity:.3;flex-shrink:0;width:28px">${i+1}</span>
+            <div style="font-family:'Cinzel',serif;font-size:13px;font-weight:600;color:var(--blood-lt);flex:1;letter-spacing:.5px">${item.pergunta}</div>
+            <span style="color:var(--gold);opacity:.6;font-size:16px" id="caus-icon-${i}">+</span>
+          </div>
+          <div id="caus-body-${i}" style="display:none;padding:0 0 18px 40px">
+            <p style="font-family:'Cormorant Garamond',serif;font-size:17px;line-height:1.85;color:var(--ink-soft)">${item.resposta}</p>
+          </div>
+        </div>`).join('')}
+    </div>
+  </div></div>`;
+}
+
+function toggleCausalidade(i) {
+  const body = document.getElementById('caus-body-'+i);
+  const icon = document.getElementById('caus-icon-'+i);
+  if (!body) return;
+  const open = body.style.display !== 'none';
+  body.style.display = open ? 'none' : 'block';
+  icon.textContent = open ? '+' : '−';
+}
 
 // ── START ─────────────────────────────────────────────────────────────────
 loadData();
