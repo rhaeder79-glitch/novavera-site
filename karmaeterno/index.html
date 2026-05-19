@@ -603,9 +603,21 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
         <div class="t-sec"><span class="g">✦</span> O Envelope Lacrado — Criação de Personagem</div>
         <p class="t-body">Duas camadas. Camada 1 (pública): criação convencional CoC na mesa com todos. Camada 2: entregue individualmente com os outros fora da sala.</p>
         <div class="grid-3" style="margin-top:14px">
-          <div class="card"><div class="card-label">Página 1</div><div class="card-title">A Dívida</div><div class="card-body">Natureza da dívida de vida anterior + quem é o credor nesta vida + o padrão que isso criou.</div></div>
-          <div class="card"><div class="card-label">Página 2</div><div class="card-title">A Memória</div><div class="card-body">Momento sensorial de outra vida, segunda pessoa, tempo presente. Sem contexto. Só o momento.</div></div>
-          <div class="card"><div class="card-label">Página 3</div><div class="card-title">A Conexão</div><div class="card-body">Uma linha sobre um dos outros personagens — sem nome, mas identificável nos primeiros episódios.</div></div>
+          <div class="envelope-card">
+            <div class="envelope-label">Página 1</div>
+            <div class="envelope-title">A Dívida</div>
+            <div class="envelope-body">Natureza da dívida de vida anterior + quem é o credor nesta vida + o padrão que isso criou.</div>
+          </div>
+          <div class="envelope-card">
+            <div class="envelope-label">Página 2</div>
+            <div class="envelope-title">A Memória</div>
+            <div class="envelope-body">Momento sensorial de outra vida, segunda pessoa, tempo presente. Sem contexto. Só o momento.</div>
+          </div>
+          <div class="envelope-card">
+            <div class="envelope-label">Página 3</div>
+            <div class="envelope-title">A Conexão</div>
+            <div class="envelope-body">Uma linha sobre um dos outros personagens — sem nome, mas identificável nos primeiros episódios.</div>
+          </div>
         </div>
       </div>
     </div>
@@ -1159,6 +1171,39 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
 }
 
 
+
+
+/* ── ENVELOPE CARDS (dark bg, inside parchment) ── */
+.envelope-card {
+  background: rgba(10,7,4,.82);
+  border: 1px solid rgba(154,122,42,.28);
+  padding: 18px 20px;
+  transition: border-color .2s;
+}
+.envelope-card:hover { border-color: rgba(154,122,42,.5); }
+.envelope-label {
+  font-family: "Cinzel", serif;
+  font-size: 9px;
+  letter-spacing: 4px;
+  color: var(--gold);
+  text-transform: uppercase;
+  opacity: .85;
+  margin-bottom: 6px;
+}
+.envelope-title {
+  font-family: "Cinzel Decorative", serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--blood-lt);
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+.envelope-body {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 15px;
+  line-height: 1.72;
+  color: rgba(212,192,154,.8);
+}
 
 @media print {
   body { background: #f4ead8 !important; }
