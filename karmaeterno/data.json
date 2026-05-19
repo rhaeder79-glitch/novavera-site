@@ -1,6 +1,6 @@
 {
   "meta": {
-    "titulo": "NOVAVERA",
+    "titulo": "KARMA ETERNO",
     "subtitulo": "O lugar onde o tempo parou de esquecer",
     "temporada": 1,
     "episodio_atual": 1,
@@ -47,12 +47,29 @@
       "idade": "94 anos reais / aparência 40 e poucos",
       "funcao": "Diretor do Arquivo Histórico Municipal",
       "sigil": "star",
-      "attrs": ["Nascimento: 1931, Goiás", "Identidades anteriores: Laerte Vasconcelos (1974–89), pesquisador visitante (anos 90)"],
+      "attrs": [
+        "Nascimento: 1931, Goiás",
+        "Identidades anteriores: Laerte Vasconcelos (1974–89), pesquisador visitante (anos 90)"
+      ],
       "resumo": "94 anos reais, aparência de 40 e poucos. Aliado até ser revelado. A dívida não é das 33 — é dele.",
       "historia": "Em 1953, com 22 anos, foi encontrado pelo Anterior numa conferência em Goiânia. O Anterior não era uma pessoa independente — era a estrutura temporal usando forma humana para posicionar o único homem que havia escapado da cobrança vidas demais. Em outubro de 1972 retirou o próprio nome da lista e colocou o de Benedito Braga — morto em 1969. Viu a fresta. Convenceu-se. Desde então não envelhece normalmente.",
-      "como_interpretar": ["Episódios 1–4: Aliado genuíno. Entrega informação com generosidade estratégica.", "Episódios 5–6: Gerencia informação. Começa a omitir. Justificativas plausíveis para tudo.", "Episódio 7: Confronto. Entrega a chave da sala separada.", "Episódio 8: Revelação. Responde com honestidade de quem acredita genuinamente na própria versão.", "Episódios 9–10: Aceitação. A dissolução não é derrota. É resolução."],
-      "elementos_fisicos": ["O anel na mão direita: ouro velho, nunca tira, gravação interna ilegível.", "A voz: calma em todos os contextos. Nunca levanta. Isso é perturbador.", "Nunca usa 'pesquisei' — usa 'há registros de' ou 'documentos da época indicam'."],
-      "monologos": ["Vi o lugar onde as dívidas não existem porque nunca existiu separação suficiente para que se formassem.", "O que chamam de Deus — seja lá o nome que usam — não está ausente. Nunca esteve presente.", "Eu não vim salvar ninguém. Vim acabar com a repetição."],
+      "como_interpretar": [
+        "Episódios 1–4: Aliado genuíno. Entrega informação com generosidade estratégica.",
+        "Episódios 5–6: Gerencia informação. Começa a omitir. Justificativas plausíveis para tudo.",
+        "Episódio 7: Confronto. Entrega a chave da sala separada.",
+        "Episódio 8: Revelação. Responde com honestidade de quem acredita genuinamente na própria versão.",
+        "Episódios 9–10: Aceitação. A dissolução não é derrota. É resolução."
+      ],
+      "elementos_fisicos": [
+        "O anel na mão direita: ouro velho, nunca tira, gravação interna ilegível.",
+        "A voz: calma em todos os contextos. Nunca levanta. Isso é perturbador.",
+        "Nunca usa 'pesquisei' — usa 'há registros de' ou 'documentos da época indicam'."
+      ],
+      "monologos": [
+        "Vi o lugar onde as dívidas não existem porque nunca existiu separação suficiente para que se formassem.",
+        "O que chamam de Deus — seja lá o nome que usam — não está ausente. Nunca esteve presente.",
+        "Eu não vim salvar ninguém. Vim acabar com a repetição."
+      ],
       "nota_mestre": "Armindo estava na lista original como 34ª vítima. Retirou o próprio nome. Quando aceita o acerto, dissolve — o espaço onde estava deixa de ter sido preenchido. As almas o reconheciam não por medo. Porque ele deveria ter sido um deles. E nunca foi."
     },
     {
@@ -63,12 +80,24 @@
       "idade": "41 anos (nascida 1984)",
       "funcao": "Em Novavera desde 2022",
       "sigil": "circle",
-      "attrs": ["Conexão: Neta de Dalva Monteiro, vítima nº23", "Armindo a monitora desde a chegada"],
+      "attrs": [
+        "Conexão: Neta de Dalva Monteiro, vítima nº23",
+        "Armindo a monitora desde a chegada"
+      ],
       "resumo": "Neta de Dalva Monteiro, vítima nº23. Veio seguindo um sonho recorrente que ela não sabia nomear.",
       "historia": "Chegou seguindo um sonho recorrente: terra vermelha de madrugada, mulher com o rosto da avó dizendo um nome que ela esquecia ao acordar. Dalva Monteiro morreu em outubro de 1972 com 32 anos, deixando duas crianças. A família recebeu uma carta do governo dizendo que havia emigrado. Vera cresceu sabendo que a avó havia sumido.",
-      "como_interpretar": ["Não é vilã. Tomou decisões reconhecíveis, graduais, cada uma justificável no momento.", "Quando confrontada sobre Rafael: 'Eu sabia que estava fazendo. Sabia que era errado. Fiz mesmo assim. Você faria diferente?'", "A conexão com Dalva é o coração dela."],
-      "elementos_fisicos": ["Carrega uma fotografia antiga de Dalva que encontrou em Goiânia.", "Fala de Rafael com naturalidade — como se a dor já tivesse sido processada mais vezes do que é saudável."],
-      "monologos": ["Eu sabia que estava fazendo. Sabia que era errado. Fiz mesmo assim. Você faria diferente?"],
+      "como_interpretar": [
+        "Não é vilã. Tomou decisões reconhecíveis, graduais, cada uma justificável no momento.",
+        "Quando confrontada sobre Rafael: 'Eu sabia que estava fazendo. Sabia que era errado. Fiz mesmo assim. Você faria diferente?'",
+        "A conexão com Dalva é o coração dela."
+      ],
+      "elementos_fisicos": [
+        "Carrega uma fotografia antiga de Dalva que encontrou em Goiânia.",
+        "Fala de Rafael com naturalidade — como se a dor já tivesse sido processada mais vezes do que é saudável."
+      ],
+      "monologos": [
+        "Eu sabia que estava fazendo. Sabia que era errado. Fiz mesmo assim. Você faria diferente?"
+      ],
       "nota_mestre": "A dívida de Dalva com Armindo é a mais pesada entre as 33. Vera é a pessoa através de quem essa dívida pode fechar — ou se aprofundar. Armindo a mantém próxima porque não sabe o que acontecerá quando ela descobrir quem foi Dalva."
     },
     {
@@ -79,12 +108,25 @@
       "idade": "9 anos (nascido 2016)",
       "funcao": "Médium involuntário",
       "sigil": "star-outline",
-      "attrs": ["Natureza: Médium sem saber", "Custo: Cobra memórias de quem acessa — sem saber"],
+      "attrs": [
+        "Natureza: Médium sem saber",
+        "Custo: Cobra memórias de quem acessa — sem saber"
+      ],
       "resumo": "Médium sem saber. Cobra memórias de quem acessa. Sabe o nome de vida anterior de um personagem.",
       "historia": "Pequeno para a idade. Desenha compulsivamente o mesmo lugar: terra vermelha, árvores do cerrado, fundações no centro — a Área Verde de cima. Nunca foi à Área Verde. Cada informação entregue por Gabriel apaga algo da pessoa que recebeu — pequeno no começo, crescente.",
-      "como_interpretar": ["Fala pouco. Quando fala, importa.", "A mãe repete 'imaginação criativa muito desenvolvida' para si mesma.", "O dilema ético de acessá-lo torna-se urgente no episódio 6.", "No episódio 10: acorda curado e sem receber mais nada. O silêncio o assusta mais que os fragmentos."],
-      "elementos_fisicos": ["Os desenhos: sempre a mesma cena, ângulo de cima, nunca assina.", "Pequeno para a idade — parece mais novo do que é."],
-      "monologos": ["Você era diferente antes. Mas o erro foi o mesmo."],
+      "como_interpretar": [
+        "Fala pouco. Quando fala, importa.",
+        "A mãe repete 'imaginação criativa muito desenvolvida' para si mesma.",
+        "O dilema ético de acessá-lo torna-se urgente no episódio 6.",
+        "No episódio 10: acorda curado e sem receber mais nada. O silêncio o assusta mais que os fragmentos."
+      ],
+      "elementos_fisicos": [
+        "Os desenhos: sempre a mesma cena, ângulo de cima, nunca assina.",
+        "Pequeno para a idade — parece mais novo do que é."
+      ],
+      "monologos": [
+        "Você era diferente antes. Mas o erro foi o mesmo."
+      ],
       "nota_mestre": "Sabe o nome de um dos personagens de uma vida anterior. Que o que está na Área Verde não é nenhuma das 33 almas — é o que estava antes."
     },
     {
@@ -95,12 +137,24 @@
       "idade": "78 anos (nascida 23 dez. 1947)",
       "funcao": "Aposentada da administração municipal",
       "sigil": "triangle",
-      "attrs": ["Segredo: Neta de Benedito Braga, cúmplice das execuções", "Tem o mapa do nó sem saber"],
+      "attrs": [
+        "Segredo: Neta de Benedito Braga, cúmplice das execuções",
+        "Tem o mapa do nó sem saber"
+      ],
       "resumo": "Neta de Benedito Braga. Seu caderno é o mapa mais preciso do campo de influência do nó — sem saber.",
       "historia": "Nasceu na fazenda que Benedito — seu avô paterno — administrava, a 40km de onde Novavera seria construída. Chegou à cidade com 27 anos quando foi fundada e nunca saiu. Em 1974 recebeu ordem de cobrir uma fundação diagonal — não sabia o que era.",
-      "como_interpretar": ["Entrega o caderno voluntariamente quando os personagens mostram interesse genuíno.", "Não sabe sobre o avô. Quando souber — se souber — a reação depende da relação construída.", "Na sala: fotografia de cada aniversário da cidade desde 1974."],
-      "elementos_fisicos": ["O caderno: décadas de padrões registrados, taxas de insônia, relacionamentos que terminam.", "Fotografias de cada inauguração desde 1974 na parede da sala."],
-      "monologos": ["Ele tinha certeza que vocês viriam. Faz tempo. Ele sabia."],
+      "como_interpretar": [
+        "Entrega o caderno voluntariamente quando os personagens mostram interesse genuíno.",
+        "Não sabe sobre o avô. Quando souber — se souber — a reação depende da relação construída.",
+        "Na sala: fotografia de cada aniversário da cidade desde 1974."
+      ],
+      "elementos_fisicos": [
+        "O caderno: décadas de padrões registrados, taxas de insônia, relacionamentos que terminam.",
+        "Fotografias de cada inauguração desde 1974 na parede da sala."
+      ],
+      "monologos": [
+        "Ele tinha certeza que vocês viriam. Faz tempo. Ele sabia."
+      ],
       "nota_mestre": "Contar ou não contar sobre Benedito é uma das decisões morais mais pesadas da temporada. O que ela faz com a informação depende inteiramente do que a relação construiu até aquele momento."
     },
     {
@@ -111,12 +165,24 @@
       "idade": "46 anos",
       "funcao": "Jornalista investigativo — em Novavera há dois anos e meio",
       "sigil": "square",
-      "attrs": ["Estado: Desorientação temporal avançada", "23 cadernos — 16 a 22 têm o que os personagens precisam"],
+      "attrs": [
+        "Estado: Desorientação temporal avançada",
+        "23 cadernos — 16 a 22 têm o que os personagens precisam"
+      ],
       "resumo": "23 cadernos numerados. Os cadernos 16 a 22 têm o que os personagens precisam — mas ele não consegue mais verbalizar.",
       "historia": "Jornalista investigativo de Brasília. Chegou seguindo um número parcialmente redigido num arquivo da Comissão Nacional da Verdade: 34. Dois anos e meio depois, está nos cadernos 16-22 — que têm o nome verdadeiro de Armindo antes de 1972, a localização exata do arquivo no subsolo, e o que Décio chama de o anterior ao anterior.",
-      "como_interpretar": ["A janela de clareza: dois, três minutos, sem aviso. A janela fecha e não volta.", "Os jogadores precisam ter as perguntas certas prontas.", "Episódio 9: dois minutos de clareza — entrega algo crucial. Depois piora definitivamente."],
-      "elementos_fisicos": ["23 cadernos numerados empilhados no apartamento.", "Aparência de alguém que dorme pouco e pensa demais."],
-      "monologos": ["É como traduzir de uma língua que está se dissolvendo enquanto você fala."],
+      "como_interpretar": [
+        "A janela de clareza: dois, três minutos, sem aviso. A janela fecha e não volta.",
+        "Os jogadores precisam ter as perguntas certas prontas.",
+        "Episódio 9: dois minutos de clareza — entrega algo crucial. Depois piora definitivamente."
+      ],
+      "elementos_fisicos": [
+        "23 cadernos numerados empilhados no apartamento.",
+        "Aparência de alguém que dorme pouco e pensa demais."
+      ],
+      "monologos": [
+        "É como traduzir de uma língua que está se dissolvendo enquanto você fala."
+      ],
       "nota_mestre": "Décio é o espelho do que os personagens podem se tornar. Cada cena com ele é um aviso que nunca é dito explicitamente."
     },
     {
@@ -127,11 +193,21 @@
       "idade": "52 anos (nascido 1973)",
       "funcao": "Delegado titular de Novavera",
       "sigil": "hexagon",
-      "attrs": ["Natureza oculta: Médium sem saber", "15 nomes no caderno — 8 são das 33 vítimas"],
+      "attrs": [
+        "Natureza oculta: Médium sem saber",
+        "15 nomes no caderno — 8 são das 33 vítimas"
+      ],
       "resumo": "Delegado titular. Médium sem saber. Amigo genuíno de Armindo há 18 anos.",
       "historia": "Amigo de Armindo há 18 anos. A amizade é real. Há três anos um processo administrativo grave foi arquivado com a ajuda de Armindo. Ronaldo nunca perguntou como. O que chama de pressentimento policial é informação fragmentada de almas presas.",
-      "como_interpretar": ["A dívida com Armindo é não nomeada — mas Ronaldo sente o peso.", "No episódio 8: encontra o caso de 1978. Esse é o momento onde para de escolher não saber.", "Antes disso: cooperativo mas protetivo do que não quer examinar."],
-      "elementos_fisicos": ["Caderno de capa preta chamado 'curiosidades' — 15 nomes sem contexto.", "Tom de quem resolveu muita coisa na vida através de não fazer perguntas."],
+      "como_interpretar": [
+        "A dívida com Armindo é não nomeada — mas Ronaldo sente o peso.",
+        "No episódio 8: encontra o caso de 1978. Esse é o momento onde para de escolher não saber.",
+        "Antes disso: cooperativo mas protetivo do que não quer examinar."
+      ],
+      "elementos_fisicos": [
+        "Caderno de capa preta chamado 'curiosidades' — 15 nomes sem contexto.",
+        "Tom de quem resolveu muita coisa na vida através de não fazer perguntas."
+      ],
       "monologos": [],
       "nota_mestre": "Ronaldo para de escolher não saber no episódio 8. Antes disso, é instrumento involuntário de Armindo — sem saber que é."
     },
@@ -143,11 +219,21 @@
       "idade": "38 anos (nascida 1987)",
       "funcao": "Recrutada por Armindo em 2015",
       "sigil": "half-circle",
-      "attrs": ["Fratura: junho de 2023", "11 fichas escondidas em antiquário em Goiânia"],
+      "attrs": [
+        "Fratura: junho de 2023",
+        "11 fichas escondidas em antiquário em Goiânia"
+      ],
       "resumo": "Recrutada por Armindo em 2015. Os rastros dela parecem sabotagem. São proteção.",
       "historia": "Em junho de 2023, Dalva Monteiro aproveitou um canal aberto e se comunicou com Sueli — não com Armindo. Disse três coisas: que o critério secundário existe, que Armindo estava na lista original como vítima, e que o que ele viu na fresta não é o que acredita que é. Sueli não falou com Armindo.",
-      "como_interpretar": ["Não revelar antes do episódio 7.", "Os rastros — documentos sumidos, conexões cortadas — parecem sabotagem. São proteção.", "Quando os personagens a encontrarem: duas investigações paralelas percebem que olhavam o mesmo problema de lados diferentes."],
-      "elementos_fisicos": ["Age com cuidado deliberado — nada por acidente.", "Quando faz contato, escolhe o personagem que parece mais capaz de ouvir sem hostilidade."],
+      "como_interpretar": [
+        "Não revelar antes do episódio 7.",
+        "Os rastros — documentos sumidos, conexões cortadas — parecem sabotagem. São proteção.",
+        "Quando os personagens a encontrarem: duas investigações paralelas percebem que olhavam o mesmo problema de lados diferentes."
+      ],
+      "elementos_fisicos": [
+        "Age com cuidado deliberado — nada por acidente.",
+        "Quando faz contato, escolhe o personagem que parece mais capaz de ouvir sem hostilidade."
+      ],
       "monologos": [],
       "nota_mestre": "CRUCIAL: Não revelar que é aliada antes do episódio 7. Manter a ambiguidade."
     }
@@ -159,9 +245,22 @@
       "pergunta": "Por que o corpo de Seu Valdecir não faz sentido?",
       "status": "pendente",
       "resumo": "Os personagens chegam em momentos diferentes e têm a tarde para explorar antes do velório. Área Verde sem pássaros. Placa do Centro Cívico. Laudo fechado rápido demais. No velório: Armindo olhando para a lateral do caixão — o símbolo está gravado ali.",
-      "caminhos": ["Investigar o laudo de Valdecir → Dr. Cláudio Meireles", "Explorar a Área Verde → fundações, muro anônimo", "Falar com Natalina no velório → primeira pista sobre Valdecir saber", "Observar Armindo → comportamento suspeito no velório"],
-      "pistas_camada1": ["Área Verde sem pássaros — nenhum, em nenhuma parte do terreno", "Placa do Centro Cívico: Benedito Braga, foto jovem demais para 1908", "Arquivo histórico fechado, mas luz acesa no subsolo"],
-      "pistas_camada2": ["Laudo de óbito limpo demais — Ronaldo fecha antes que consigam ler", "Símbolo gravado na lateral do caixão — por quem, após preparação do corpo?", "Funcionário da funerária: 'Estava frio de um jeito estranho. Não frio de morte.'"],
+      "caminhos": [
+        "Investigar o laudo de Valdecir → Dr. Cláudio Meireles",
+        "Explorar a Área Verde → fundações, muro anônimo",
+        "Falar com Natalina no velório → primeira pista sobre Valdecir saber",
+        "Observar Armindo → comportamento suspeito no velório"
+      ],
+      "pistas_camada1": [
+        "Área Verde sem pássaros — nenhum, em nenhuma parte do terreno",
+        "Placa do Centro Cívico: Benedito Braga, foto jovem demais para 1908",
+        "Arquivo histórico fechado, mas luz acesa no subsolo"
+      ],
+      "pistas_camada2": [
+        "Laudo de óbito limpo demais — Ronaldo fecha antes que consigam ler",
+        "Símbolo gravado na lateral do caixão — por quem, após preparação do corpo?",
+        "Funcionário da funerária: 'Estava frio de um jeito estranho. Não frio de morte.'"
+      ],
       "gancho": "No quarto de Valdecir, o caderno aberto numa página de 1987 com os nomes dos personagens escritos décadas antes de qualquer um ter razão para vir a Novavera."
     },
     {
@@ -170,9 +269,20 @@
       "pergunta": "O que o Bairro Fundação esconde sobre a origem da cidade?",
       "status": "pendente",
       "resumo": "Três moradores com versões diferentes de quando o bairro foi construído. Fotografia de 1985 onde Armindo aparece com a mesma aparência de hoje. A chave no quarto de Valdecir não pertence a nenhuma fechadura da casa.",
-      "caminhos": ["Entrevistar moradores antigos do Bairro Fundação", "Pesquisar Benedito Braga → placa do Centro Cívico", "Investigar a chave de Valdecir → metal idêntico às dobradiças do arquivo", "Primeiro contato mediúnico → Dalva Monteiro: 'Benedito Braga Sabia'"],
-      "pistas_camada1": ["Três versões diferentes de quando o bairro foi construído", "Fotografia de 1985 com Armindo ao fundo — mesma aparência de hoje"],
-      "pistas_camada2": ["A chave: metal antigo, não pertence a nenhuma fechadura da casa de Valdecir", "Dalva Monteiro — três palavras: Benedito Braga Sabia"],
+      "caminhos": [
+        "Entrevistar moradores antigos do Bairro Fundação",
+        "Pesquisar Benedito Braga → placa do Centro Cívico",
+        "Investigar a chave de Valdecir → metal idêntico às dobradiças do arquivo",
+        "Primeiro contato mediúnico → Dalva Monteiro: 'Benedito Braga Sabia'"
+      ],
+      "pistas_camada1": [
+        "Três versões diferentes de quando o bairro foi construído",
+        "Fotografia de 1985 com Armindo ao fundo — mesma aparência de hoje"
+      ],
+      "pistas_camada2": [
+        "A chave: metal antigo, não pertence a nenhuma fechadura da casa de Valdecir",
+        "Dalva Monteiro — três palavras: Benedito Braga Sabia"
+      ],
       "gancho": "A página online sobre Benedito Braga foi apagada. Mas a placa física continua lá. Alguém apagou o rastro digital mas não pôde apagar o bronze."
     },
     {
@@ -181,9 +291,20 @@
       "pergunta": "O que foi a Operação Semente — e quem a conduziu?",
       "status": "pendente",
       "resumo": "Primeira visita ao Arquivo Histórico. Armindo os recebe como se esperasse. Lacuna nos arquivos: só dois caixas para 1972–1974. A porta do subsolo com dois cilindros.",
-      "caminhos": ["Visitar o Arquivo Histórico → Armindo como aliado aparente", "Investigar a lacuna de 1972-1974 nos arquivos", "Tentar a chave de Valdecir na porta do subsolo", "Encontrar Sueli → sombra passando pela janela"],
-      "pistas_camada1": ["Lacuna suspeita: só dois caixas para 1972–1974", "Armindo conhece detalhes que não estão nas fichas públicas"],
-      "pistas_camada2": ["Porta do subsolo com dois cilindros — a chave entra num mas não gira", "Sombra de Sueli pela janela por menos de um minuto"],
+      "caminhos": [
+        "Visitar o Arquivo Histórico → Armindo como aliado aparente",
+        "Investigar a lacuna de 1972-1974 nos arquivos",
+        "Tentar a chave de Valdecir na porta do subsolo",
+        "Encontrar Sueli → sombra passando pela janela"
+      ],
+      "pistas_camada1": [
+        "Lacuna suspeita: só dois caixas para 1972–1974",
+        "Armindo conhece detalhes que não estão nas fichas públicas"
+      ],
+      "pistas_camada2": [
+        "Porta do subsolo com dois cilindros — a chave entra num mas não gira",
+        "Sombra de Sueli pela janela por menos de um minuto"
+      ],
       "gancho": "Terra preta na sola dos sapatos de um personagem — que estavam no corredor. A mesma terra das mãos de Valdecir. O personagem não foi à Área Verde hoje."
     },
     {
@@ -192,9 +313,20 @@
       "pergunta": "Por que aquelas 33 pessoas — qual era o critério real?",
       "status": "pendente",
       "resumo": "Três fichas em lugares diferentes. O padrão só emerge quando colocadas lado a lado: dívidas morais específicas, não histórico político. Um personagem reconhece que o critério se aplica a ele.",
-      "caminhos": ["Encontrar e comparar as três fichas disponíveis", "Pesquisar os critérios de seleção → dívidas morais, não política", "Primeiro contato real com Décio Murta", "Investigar a chave de Valdecir → conexão com o arquivo"],
-      "pistas_camada1": ["As fichas: dívidas morais, não histórico político", "Um personagem reconhece o critério em si mesmo"],
-      "pistas_camada2": ["A chave: metal idêntico às dobradiças da porta do subsolo do arquivo", "Décio — primeiro contato num dia relativamente bom"],
+      "caminhos": [
+        "Encontrar e comparar as três fichas disponíveis",
+        "Pesquisar os critérios de seleção → dívidas morais, não política",
+        "Primeiro contato real com Décio Murta",
+        "Investigar a chave de Valdecir → conexão com o arquivo"
+      ],
+      "pistas_camada1": [
+        "As fichas: dívidas morais, não histórico político",
+        "Um personagem reconhece o critério em si mesmo"
+      ],
+      "pistas_camada2": [
+        "A chave: metal idêntico às dobradiças da porta do subsolo do arquivo",
+        "Décio — primeiro contato num dia relativamente bom"
+      ],
       "gancho": "Décio entrega uma folha: 'Armindo Laerte Vasconcelos. Nascimento: 1931. Se ele nasceu em 1931 e está vivo hoje, ele tem mais de noventa anos. O que estamos vendo não é ele. É o que sobrou depois que o resto foi pago.'"
     },
     {
@@ -203,9 +335,20 @@
       "pergunta": "Quem desenhou Novavera antes de ela existir?",
       "status": "pendente",
       "resumo": "Vera Monteiro faz contato. Compartilha o mapa encontrado em Goiânia: data de 1961, todos os detalhes corretos da cidade futura. A Rua do Anterior — diagonal, que não existe. Verificação física: a fundação diagonal está lá.",
-      "caminhos": ["Receber o mapa de Vera → estabelecer confiança primeiro", "Verificar a Rua do Anterior fisicamente → levantar calçada", "Pesquisar a data 17/06/1961 → conexão com o diário", "Confrontar Natalina sobre a fundação coberta em 1974"],
-      "pistas_camada1": ["Mapa de 1961 com todos os detalhes de Novavera — que só existiu em 1974", "A Rua do Anterior: diagonal, não existe na cidade real"],
-      "pistas_camada2": ["Fundação diagonal real sob a calçada — símbolo gravado com abertura fechada", "Data entalhada: 17 de junho de 1974"],
+      "caminhos": [
+        "Receber o mapa de Vera → estabelecer confiança primeiro",
+        "Verificar a Rua do Anterior fisicamente → levantar calçada",
+        "Pesquisar a data 17/06/1961 → conexão com o diário",
+        "Confrontar Natalina sobre a fundação coberta em 1974"
+      ],
+      "pistas_camada1": [
+        "Mapa de 1961 com todos os detalhes de Novavera — que só existiu em 1974",
+        "A Rua do Anterior: diagonal, não existe na cidade real"
+      ],
+      "pistas_camada2": [
+        "Fundação diagonal real sob a calçada — símbolo gravado com abertura fechada",
+        "Data entalhada: 17 de junho de 1974"
+      ],
       "gancho": "A abertura no símbolo do mapa não é erro. É instrução. Alguém em 1974 decidiu que essa instrução não seria seguida — ainda. Os personagens sabem que Natalina cobriu aquela fundação."
     },
     {
@@ -214,9 +357,20 @@
       "pergunta": "O que os personagens foram em vidas anteriores?",
       "status": "pendente",
       "resumo": "Memória de vida anterior vaza publicamente. Contato mais substancial com Gabriel — o dilema ético de acessá-lo torna-se urgente. Um personagem encontra seu próprio nome numa ficha do arquivo.",
-      "caminhos": ["Lidar com a memória que vazou publicamente", "Decidir como acessar Gabriel — e se acessar", "Investigar a ficha com o próprio nome", "Armindo usa a discordância do ep.2 para semear dúvida"],
-      "pistas_camada1": ["Memória de vida anterior — o personagem para, está aqui e em outro lugar", "A ficha: nome do personagem, data de outro século, dívida reconhecível"],
-      "pistas_camada2": ["Gabriel entrega fragmento com custo — primeiro personagem percebe o apagamento", "Armindo semeando dúvida sobre percepção dos personagens"],
+      "caminhos": [
+        "Lidar com a memória que vazou publicamente",
+        "Decidir como acessar Gabriel — e se acessar",
+        "Investigar a ficha com o próprio nome",
+        "Armindo usa a discordância do ep.2 para semear dúvida"
+      ],
+      "pistas_camada1": [
+        "Memória de vida anterior — o personagem para, está aqui e em outro lugar",
+        "A ficha: nome do personagem, data de outro século, dívida reconhecível"
+      ],
+      "pistas_camada2": [
+        "Gabriel entrega fragmento com custo — primeiro personagem percebe o apagamento",
+        "Armindo semeando dúvida sobre percepção dos personagens"
+      ],
       "gancho": "Gabriel, de passagem: 'Você era diferente antes. Mas o erro foi o mesmo.' A mãe não ouve. Gabriel dobra a esquina. O personagem sabe que ele não estava falando desta vida."
     },
     {
@@ -225,9 +379,20 @@
       "pergunta": "O que o observador técnico viu depois da última morte?",
       "status": "pendente",
       "resumo": "Sueli faz contato direto. Oferece acesso ao subsolo: a chave de Valdecir abre o primeiro cilindro, Sueli conhece o segundo. O diário é encontrado — mais velho que esperavam, caligrafia que não é de Armindo.",
-      "caminhos": ["Aceitar ou recusar o contato de Sueli — avaliar confiança", "Abrir o subsolo com a chave + Sueli", "Ler o diário do Anterior em fragmentos", "Decidir o que fazer com o que descobriram antes de Armindo aparecer"],
-      "pistas_camada1": ["O diário: mais velho que esperavam, duas caligrafias", "Entradas dos onze dias de outubro de 1972"],
-      "pistas_camada2": ["A última entrada: uma linha em caligrafia de Armindo — 'Feito. O que vem agora, não sei nomear ainda.'", "Sueli revela fragmento do critério secundário"],
+      "caminhos": [
+        "Aceitar ou recusar o contato de Sueli — avaliar confiança",
+        "Abrir o subsolo com a chave + Sueli",
+        "Ler o diário do Anterior em fragmentos",
+        "Decidir o que fazer com o que descobriram antes de Armindo aparecer"
+      ],
+      "pistas_camada1": [
+        "O diário: mais velho que esperavam, duas caligrafias",
+        "Entradas dos onze dias de outubro de 1972"
+      ],
+      "pistas_camada2": [
+        "A última entrada: uma linha em caligrafia de Armindo — 'Feito. O que vem agora, não sei nomear ainda.'",
+        "Sueli revela fragmento do critério secundário"
+      ],
       "gancho": "Armindo aparece. Não ameaçador. Entrega uma chave de metal escuro com uma data gravada — daqui a seis dias. 'Quando estiverem prontos para a conversa real, usem isso. Não antes.'"
     },
     {
@@ -236,9 +401,20 @@
       "pergunta": "O que Armindo realmente é — e o que sacrificou?",
       "status": "pendente",
       "resumo": "A chave abre uma sala separada no subsolo. Armindo já sentado. Conta em fragmentos. Confirmação: estava na lista. Retirou o próprio nome. Sueli entrega o critério secundário completo.",
-      "caminhos": ["Usar a chave na data certa — ou antes (consequências)", "A conversa com Armindo na sala separada", "Sueli entrega o critério secundário — as 33 tinham dívidas com Armindo", "Ronaldo investiga sozinho → encontra o caso de 1978"],
-      "pistas_camada1": ["Armindo confirma que estava na lista como 34ª vítima", "O critério secundário: as 33 tinham dívidas de vidas anteriores com ele"],
-      "pistas_camada2": ["Ronaldo: trabalhador morto em 1978, sobrenome idêntico a uma das vítimas", "O ciclo não é sobre as dívidas das 33. É sobre a dívida dele."],
+      "caminhos": [
+        "Usar a chave na data certa — ou antes (consequências)",
+        "A conversa com Armindo na sala separada",
+        "Sueli entrega o critério secundário — as 33 tinham dívidas com Armindo",
+        "Ronaldo investiga sozinho → encontra o caso de 1978"
+      ],
+      "pistas_camada1": [
+        "Armindo confirma que estava na lista como 34ª vítima",
+        "O critério secundário: as 33 tinham dívidas de vidas anteriores com ele"
+      ],
+      "pistas_camada2": [
+        "Ronaldo: trabalhador morto em 1978, sobrenome idêntico a uma das vítimas",
+        "O ciclo não é sobre as dívidas das 33. É sobre a dívida dele."
+      ],
       "gancho": "O personagem com Memória mais alta tem sobreposição mais severa. Quando volta, tem nas mãos um fragmento de papel com uma data. A mesma data do calendário de Valdecir. Daqui a três semanas. O ciclo está se acelerando."
     },
     {
@@ -247,9 +423,20 @@
       "pergunta": "O que acontece quando o ciclo se completa — e alguém pode impedir?",
       "status": "pendente",
       "resumo": "Novavera muda: acidentes, internações, Gabriel com febre. As dívidas dos personagens chegam ao ponto de cobrança. Ronaldo chega à Área Verde. Sueli revela que o ciclo não pode fechar sem Armindo entrar no nó.",
-      "caminhos": ["Lidar com as cobranças de dívida de cada personagem", "Décio — dois minutos de clareza, última oportunidade", "Ronaldo chega à Área Verde — o que fazer com ele", "Decidir se tentam impedir ou deixar o ciclo fechar"],
-      "pistas_camada1": ["Novavera muda: três acidentes, dois internados, criança desenhando a Área Verde", "As dívidas chegam ao ponto de cobrança"],
-      "pistas_camada2": ["Sueli: o ciclo não pode fechar sem Armindo entrar no nó", "Décio entrega algo crucial nos dois minutos de clareza"],
+      "caminhos": [
+        "Lidar com as cobranças de dívida de cada personagem",
+        "Décio — dois minutos de clareza, última oportunidade",
+        "Ronaldo chega à Área Verde — o que fazer com ele",
+        "Decidir se tentam impedir ou deixar o ciclo fechar"
+      ],
+      "pistas_camada1": [
+        "Novavera muda: três acidentes, dois internados, criança desenhando a Área Verde",
+        "As dívidas chegam ao ponto de cobrança"
+      ],
+      "pistas_camada2": [
+        "Sueli: o ciclo não pode fechar sem Armindo entrar no nó",
+        "Décio entrega algo crucial nos dois minutos de clareza"
+      ],
       "gancho": "Meia-noite. A Área Verde silencia. Dalva Monteiro forma presença visível para todos. Olha para Armindo. Armindo olha de volta — com reconhecimento. Era ela que o havia avisado 53 anos atrás."
     },
     {
@@ -258,9 +445,20 @@
       "pergunta": "O que era o ciclo, o que acontece quando fecha, e o que foi destruído.",
       "status": "pendente",
       "resumo": "Armindo entende que o Anterior não era pessoa independente — era a estrutura temporal. O ciclo foi criado pelo tempo para cobrar de Armindo. Quando aceita o acerto, as 33 almas seguem. Armindo dissolve. O anterior ao anterior se move.",
-      "caminhos": ["Armindo aceita ou recusa o acerto — os personagens influenciam?", "As 33 almas fechando suas contas simultaneamente", "O que acontece com o anterior ao anterior depois do nó colapsar", "A cena final — a mulher com o envelope das sete cidades"],
-      "pistas_camada1": ["O Anterior não era pessoa — era a estrutura temporal", "Armindo dissolve: não morre, o espaço onde estava deixa de ter sido preenchido"],
-      "pistas_camada2": ["O anterior ao anterior se move — mais antigo que qualquer presença humana", "Gabriel acorda curado e em silêncio"],
+      "caminhos": [
+        "Armindo aceita ou recusa o acerto — os personagens influenciam?",
+        "As 33 almas fechando suas contas simultaneamente",
+        "O que acontece com o anterior ao anterior depois do nó colapsar",
+        "A cena final — a mulher com o envelope das sete cidades"
+      ],
+      "pistas_camada1": [
+        "O Anterior não era pessoa — era a estrutura temporal",
+        "Armindo dissolve: não morre, o espaço onde estava deixa de ter sido preenchido"
+      ],
+      "pistas_camada2": [
+        "O anterior ao anterior se move — mais antigo que qualquer presença humana",
+        "Gabriel acorda curado e em silêncio"
+      ],
       "gancho": "Uma mulher bate na porta. 'Novavera não era o único nó. Era o menor. Os outros estão acordando.' Entrega um envelope: sete cidades, sete datas. Uma é onde um dos personagens nasceu."
     }
   ],
@@ -271,15 +469,42 @@
       "tipo": "ficha",
       "stamp": "Confidencial",
       "campos": [
-        {"label": "Número de ordem", "valor": "07"},
-        {"label": "Nome completo", "valor": "Dalva Aparecida Monteiro"},
-        {"label": "Data de nascimento", "valor": "14 de março de 1940 · Anápolis, Goiás"},
-        {"label": "Estado civil", "valor": "Casada (separada de fato desde 1970)"},
-        {"label": "Filhos", "valor": "Dois. Idades: 4 e 2 anos. Sob guarda da avó materna em Anápolis."},
-        {"label": "Ocupação", "valor": "Professora primária, licenciada"},
-        {"label": "Histórico", "valor": "Participação em movimento estudantil 1959–1963. Sem atividade política registrada após 1969."},
-        {"label": "Data de inclusão", "valor": "22 de agosto de 1972"},
-        {"label": "Número na operação", "valor": "23"}
+        {
+          "label": "Número de ordem",
+          "valor": "07"
+        },
+        {
+          "label": "Nome completo",
+          "valor": "Dalva Aparecida Monteiro"
+        },
+        {
+          "label": "Data de nascimento",
+          "valor": "14 de março de 1940 · Anápolis, Goiás"
+        },
+        {
+          "label": "Estado civil",
+          "valor": "Casada (separada de fato desde 1970)"
+        },
+        {
+          "label": "Filhos",
+          "valor": "Dois. Idades: 4 e 2 anos. Sob guarda da avó materna em Anápolis."
+        },
+        {
+          "label": "Ocupação",
+          "valor": "Professora primária, licenciada"
+        },
+        {
+          "label": "Histórico",
+          "valor": "Participação em movimento estudantil 1959–1963. Sem atividade política registrada após 1969."
+        },
+        {
+          "label": "Data de inclusão",
+          "valor": "22 de agosto de 1972"
+        },
+        {
+          "label": "Número na operação",
+          "valor": "23"
+        }
       ],
       "nota": "Dívida primária: ausência. A conta que isso abre não é dela — é de quem a deixou partir. A interrupção vai criar tensão suficiente."
     },
@@ -289,14 +514,38 @@
       "tipo": "ficha",
       "stamp": "Confidencial",
       "campos": [
-        {"label": "Número de ordem", "valor": "19"},
-        {"label": "Nome completo", "valor": "Severino Ramos da Costa"},
-        {"label": "Data de nascimento", "valor": "3 de novembro de 1929 · Corumbá, Mato Grosso"},
-        {"label": "Estado civil", "valor": "Solteiro"},
-        {"label": "Ocupação", "valor": "Contador, firma própria · Goiânia"},
-        {"label": "Histórico", "valor": "Sem histórico político. Frequentador de centro espírita em Goiânia 1955–1968. Episódios de mediunidade involuntária."},
-        {"label": "Data de inclusão", "valor": "5 de setembro de 1972"},
-        {"label": "Número na operação", "valor": "19"}
+        {
+          "label": "Número de ordem",
+          "valor": "19"
+        },
+        {
+          "label": "Nome completo",
+          "valor": "Severino Ramos da Costa"
+        },
+        {
+          "label": "Data de nascimento",
+          "valor": "3 de novembro de 1929 · Corumbá, Mato Grosso"
+        },
+        {
+          "label": "Estado civil",
+          "valor": "Solteiro"
+        },
+        {
+          "label": "Ocupação",
+          "valor": "Contador, firma própria · Goiânia"
+        },
+        {
+          "label": "Histórico",
+          "valor": "Sem histórico político. Frequentador de centro espírita em Goiânia 1955–1968. Episódios de mediunidade involuntária."
+        },
+        {
+          "label": "Data de inclusão",
+          "valor": "5 de setembro de 1972"
+        },
+        {
+          "label": "Número na operação",
+          "valor": "19"
+        }
       ],
       "nota": "Receptor natural. Pode ter captado fragmentos do ponto durante anos sem contexto para interpretá-los."
     },
@@ -306,12 +555,30 @@
       "tipo": "ficha",
       "stamp": "Post-mortem",
       "campos": [
-        {"label": "Número de ordem", "valor": "34 — Número nunca utilizado"},
-        {"label": "Nome completo", "valor": "Benedito Serafim Costa Lima"},
-        {"label": "Data de nascimento", "valor": "17 de junho de 1908 · Região do Rio Vermelho, Goiás"},
-        {"label": "Óbito", "valor": "1969 — anterior à operação"},
-        {"label": "Filhos", "valor": "Quatro. Três sobreviventes no momento do registro."},
-        {"label": "Histórico", "valor": "Proprietário rural desde 1934. Colaboração ativa com planejamento desde 1952."}
+        {
+          "label": "Número de ordem",
+          "valor": "34 — Número nunca utilizado"
+        },
+        {
+          "label": "Nome completo",
+          "valor": "Benedito Serafim Costa Lima"
+        },
+        {
+          "label": "Data de nascimento",
+          "valor": "17 de junho de 1908 · Região do Rio Vermelho, Goiás"
+        },
+        {
+          "label": "Óbito",
+          "valor": "1969 — anterior à operação"
+        },
+        {
+          "label": "Filhos",
+          "valor": "Quatro. Três sobreviventes no momento do registro."
+        },
+        {
+          "label": "Histórico",
+          "valor": "Proprietário rural desde 1934. Colaboração ativa com planejamento desde 1952."
+        }
       ],
       "nota": "Natalina não sabe. Não precisa saber ainda."
     },
@@ -321,37 +588,142 @@
       "tipo": "diario",
       "stamp": null,
       "entradas": [
-        {"data": "14 de março de 1948", "texto": "Encontrei o ponto no cerrado que os registros descreviam. Não é o que esperava — não há marca visível. É só terra vermelha e árvores retorcidas como todas as outras. Mas o tempo aqui não se move da mesma forma."},
-        {"data": "3 de setembro de 1948", "texto": "Um homem da região disse: 'Minha avó dizia que ali é onde o tempo pede as contas.' Perguntei se ele acreditava nisso. 'Não preciso acreditar. Vi.' Não perguntei o que viu."},
-        {"data": "17 de fevereiro de 1951", "texto": "O ponto não é único. Mas o do cerrado é diferente dos outros — como se tivesse sido preparado. Começo a achar que não fui o primeiro a encontrá-lo. Acho que ele me encontrou."},
-        {"data": "8 de outubro de 1953", "texto": "Encontrei Armindo. Vinte e dois anos, estudante de direito em Goiânia. Mostrei o ponto no cerrado. Ficou lá parado por mais tempo do que eu ficara na primeira vez. Quando voltou, disse: 'Quantas pessoas precisaria?' Não era a pergunta que eu esperava. Mas era a certa."},
-        {"data": "29 de abril de 1961", "texto": "Desenhei o mapa da cidade que vai ser construída ali. Armindo olhou por um longo tempo. Perguntou: 'Você já sabia que seria eu?' Respondi honestamente: 'Não. Mas quando te encontrei, entendi que poderia ser.' Ele dobrou o mapa com cuidado. Não perguntou se podia ficar."},
-        {"data": "12 de junho de 1968", "texto": "Meu último verão em campo. Há algo no ponto que não é nenhuma alma humana presa. É mais antigo do que qualquer estrutura que conheço. Mais antigo, provavelmente, do que a presença humana naquele território. Não sei o que é. Sei que está esperando."},
-        {"data": "Outubro de 1972 — caligrafia de Armindo", "texto": "Feito. O que vem agora, não sei nomear ainda."}
+        {
+          "data": "14 de março de 1948",
+          "texto": "Encontrei o ponto no cerrado que os registros descreviam. Não é o que esperava — não há marca visível. É só terra vermelha e árvores retorcidas como todas as outras. Mas o tempo aqui não se move da mesma forma."
+        },
+        {
+          "data": "3 de setembro de 1948",
+          "texto": "Um homem da região disse: 'Minha avó dizia que ali é onde o tempo pede as contas.' Perguntei se ele acreditava nisso. 'Não preciso acreditar. Vi.' Não perguntei o que viu."
+        },
+        {
+          "data": "17 de fevereiro de 1951",
+          "texto": "O ponto não é único. Mas o do cerrado é diferente dos outros — como se tivesse sido preparado. Começo a achar que não fui o primeiro a encontrá-lo. Acho que ele me encontrou."
+        },
+        {
+          "data": "8 de outubro de 1953",
+          "texto": "Encontrei Armindo. Vinte e dois anos, estudante de direito em Goiânia. Mostrei o ponto no cerrado. Ficou lá parado por mais tempo do que eu ficara na primeira vez. Quando voltou, disse: 'Quantas pessoas precisaria?' Não era a pergunta que eu esperava. Mas era a certa."
+        },
+        {
+          "data": "29 de abril de 1961",
+          "texto": "Desenhei o mapa da cidade que vai ser construída ali. Armindo olhou por um longo tempo. Perguntou: 'Você já sabia que seria eu?' Respondi honestamente: 'Não. Mas quando te encontrei, entendi que poderia ser.' Ele dobrou o mapa com cuidado. Não perguntou se podia ficar."
+        },
+        {
+          "data": "12 de junho de 1968",
+          "texto": "Meu último verão em campo. Há algo no ponto que não é nenhuma alma humana presa. É mais antigo do que qualquer estrutura que conheço. Mais antigo, provavelmente, do que a presença humana naquele território. Não sei o que é. Sei que está esperando."
+        },
+        {
+          "data": "Outubro de 1972 — caligrafia de Armindo",
+          "texto": "Feito. O que vem agora, não sei nomear ainda."
+        }
       ]
     }
   ],
   "timeline": [
-    {"ano": "1908", "evento": "Benedito Serafim Costa Lima nasce.", "destaque": false},
-    {"ano": "1929", "evento": "Severino Ramos da Costa nasce em Corumbá.", "destaque": false},
-    {"ano": "1931", "evento": "Armindo Laerte Vasconcelos nasce em Goiás. Mesmo ano da data no mapa original.", "destaque": false},
-    {"ano": "1940", "evento": "Dalva Aparecida Monteiro nasce em Anápolis.", "destaque": false},
-    {"ano": "1947", "evento": "Natalina Braga nasce em 23 de dezembro.", "destaque": false},
-    {"ano": "1948", "evento": "Anterior encontra o ponto no cerrado pela primeira vez.", "destaque": false},
-    {"ano": "1953", "evento": "Anterior encontra Armindo (22 anos) em Goiânia.", "destaque": false},
-    {"ano": "1961", "evento": "Anterior entrega o mapa a Armindo. Data: 17 de junho de 1961.", "destaque": false},
-    {"ano": "1968", "evento": "Última entrada do Anterior no diário. Revela que algo mais antigo habita o ponto.", "destaque": false},
-    {"ano": "1969", "evento": "Benedito Serafim Costa Lima morre.", "destaque": false},
-    {"ano": "1972 · outubro", "evento": "Operação Semente — onze dias. 33 mortos. Armindo vê a fresta. Dalva Monteiro o reconhece.", "destaque": true},
-    {"ano": "1973", "evento": "Ronaldo Seabra nasce.", "destaque": false},
-    {"ano": "1974", "evento": "Novavera fundada. Natalina cobre a fundação diagonal sem saber. Data: 17 de junho de 1974.", "destaque": false},
-    {"ano": "1978", "evento": "Construção da Área Verde paralisada. Um trabalhador morre.", "destaque": false},
-    {"ano": "1987", "evento": "Valdecir anota sonho com os quatro personagens. Sueli nasce.", "destaque": false},
-    {"ano": "2005", "evento": "Armindo assume terceira identidade em Novavera.", "destaque": false},
-    {"ano": "2015", "evento": "Sueli Nascimento é recrutada (28 anos).", "destaque": false},
-    {"ano": "2022", "evento": "Vera Monteiro chega a Novavera.", "destaque": false},
-    {"ano": "2023 · junho", "evento": "Dalva comunica o critério secundário a Sueli — não a Armindo.", "destaque": false},
-    {"ano": "2024 · maio", "evento": "Sueli remove as 11 fichas. Esconde em antiquário em Goiânia.", "destaque": false},
-    {"ano": "2025 · março", "evento": "Valdecir morre. A temporada 1 começa.", "destaque": true}
+    {
+      "ano": "1908",
+      "evento": "Benedito Serafim Costa Lima nasce.",
+      "destaque": false
+    },
+    {
+      "ano": "1929",
+      "evento": "Severino Ramos da Costa nasce em Corumbá.",
+      "destaque": false
+    },
+    {
+      "ano": "1931",
+      "evento": "Armindo Laerte Vasconcelos nasce em Goiás. Mesmo ano da data no mapa original.",
+      "destaque": false
+    },
+    {
+      "ano": "1940",
+      "evento": "Dalva Aparecida Monteiro nasce em Anápolis.",
+      "destaque": false
+    },
+    {
+      "ano": "1947",
+      "evento": "Natalina Braga nasce em 23 de dezembro.",
+      "destaque": false
+    },
+    {
+      "ano": "1948",
+      "evento": "Anterior encontra o ponto no cerrado pela primeira vez.",
+      "destaque": false
+    },
+    {
+      "ano": "1953",
+      "evento": "Anterior encontra Armindo (22 anos) em Goiânia.",
+      "destaque": false
+    },
+    {
+      "ano": "1961",
+      "evento": "Anterior entrega o mapa a Armindo. Data: 17 de junho de 1961.",
+      "destaque": false
+    },
+    {
+      "ano": "1968",
+      "evento": "Última entrada do Anterior no diário. Revela que algo mais antigo habita o ponto.",
+      "destaque": false
+    },
+    {
+      "ano": "1969",
+      "evento": "Benedito Serafim Costa Lima morre.",
+      "destaque": false
+    },
+    {
+      "ano": "1972 · outubro",
+      "evento": "Operação Semente — onze dias. 33 mortos. Armindo vê a fresta. Dalva Monteiro o reconhece.",
+      "destaque": true
+    },
+    {
+      "ano": "1973",
+      "evento": "Ronaldo Seabra nasce.",
+      "destaque": false
+    },
+    {
+      "ano": "1974",
+      "evento": "Novavera fundada. Natalina cobre a fundação diagonal sem saber. Data: 17 de junho de 1974.",
+      "destaque": false
+    },
+    {
+      "ano": "1978",
+      "evento": "Construção da Área Verde paralisada. Um trabalhador morre.",
+      "destaque": false
+    },
+    {
+      "ano": "1987",
+      "evento": "Valdecir anota sonho com os quatro personagens. Sueli nasce.",
+      "destaque": false
+    },
+    {
+      "ano": "2005",
+      "evento": "Armindo assume terceira identidade em Novavera.",
+      "destaque": false
+    },
+    {
+      "ano": "2015",
+      "evento": "Sueli Nascimento é recrutada (28 anos).",
+      "destaque": false
+    },
+    {
+      "ano": "2022",
+      "evento": "Vera Monteiro chega a Novavera.",
+      "destaque": false
+    },
+    {
+      "ano": "2023 · junho",
+      "evento": "Dalva comunica o critério secundário a Sueli — não a Armindo.",
+      "destaque": false
+    },
+    {
+      "ano": "2024 · maio",
+      "evento": "Sueli remove as 11 fichas. Esconde em antiquário em Goiânia.",
+      "destaque": false
+    },
+    {
+      "ano": "2025 · março",
+      "evento": "Valdecir morre. A temporada 1 começa.",
+      "destaque": true
+    }
   ]
 }
