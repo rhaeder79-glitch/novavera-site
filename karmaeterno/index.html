@@ -399,6 +399,15 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
 .local-flash{animation:localFlash 2.2s ease}
 @keyframes localFlash{0%,100%{box-shadow:0 0 0 0 rgba(154,122,42,0)}25%,60%{box-shadow:0 0 0 2px rgba(184,146,46,.6),0 0 22px rgba(184,146,46,.25)}}
 
+/* botão "voltar para a origem" — aparece ao chegar via referência cruzada */
+.back-origin{display:inline-flex;align-items:center;gap:6px;font-family:"Cinzel",serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-lt);background:rgba(107,15,15,.22);border:1px solid rgba(154,122,42,.4);padding:8px 16px;cursor:pointer;transition:all .2s;margin-bottom:14px}
+.back-origin:hover{background:rgba(107,15,15,.35);border-color:var(--gold);color:var(--parch)}
+
+/* aparições do NPC — trechos da Bíblia em outras seções */
+.apar-item{margin:10px 0;padding:14px 18px;background:rgba(107,15,15,.035);border:1px solid rgba(90,74,48,.22);border-left:2px solid rgba(154,122,42,.4)}
+.apar-origem{font-family:"Cinzel",serif;font-size:9.5px;letter-spacing:2.5px;color:var(--gold-dim);text-transform:uppercase;margin-bottom:6px}
+.apar-texto{font-family:"Cormorant Garamond",serif;font-size:16px;line-height:1.72;color:var(--ink-soft)}
+
 /* mobile */
 @media (max-width:768px){
   .tlm-item{grid-template-columns:90px 1fr;gap:10px}
@@ -918,7 +927,17 @@ function roman(n){return['','I','II','III','IV','V','VI','VII','VIII','IX','X'][
 
 /* ── NAVEGAÇÃO ───────────────────────────────────────────── */
 document.querySelectorAll('.nav-item').forEach(btn=>{
-  btn.addEventListener('click',()=>navigate(btn.dataset.page));
+  btn.addEventListener('click',()=>{
+    NAV_ORIGIN=null;
+    // ao entrar manualmente em NPCs/Documentos, volta para a lista
+    if(btn.dataset.page==='npcs' && document.getElementById('npcDetailWrap').innerHTML){
+      closeNpc();
+    }
+    if(btn.dataset.page==='documentos' && document.getElementById('docDetailWrap').innerHTML){
+      closeDoc();
+    }
+    navigate(btn.dataset.page);
+  });
 });
 function navigate(page){
   document.querySelectorAll('.nav-item').forEach(n=>n.classList.toggle('active',n.dataset.page===page));
@@ -1288,6 +1307,32 @@ const SIGILS={
 function sigilSvg(name){
   return `<svg viewBox="0 0 40 40">${SIGILS[name]||SIGILS.circle}</svg>`;
 }
+/* ── ORIGEM DE NAVEGAÇÃO ──────────────────────────────────────
+   Quando o usuário chega a um item via referência cruzada, guardamos
+   de onde veio para oferecer um botão "voltar". Limpo quando ele
+   navega manualmente pela sidebar.                                   */
+let NAV_ORIGIN = null;   // {label, page, epIndex}
+
+function originBackButton(){
+  if(!NAV_ORIGIN) return '';
+  return `<button class="back-origin" onclick="returnToOrigin()">↩ Voltar para ${esc(NAV_ORIGIN.label)}</button>`;
+}
+function returnToOrigin(){
+  const o=NAV_ORIGIN;
+  if(!o) return;
+  NAV_ORIGIN=null;
+  navigate(o.page);
+  if(o.page==='temporadas'){
+    setTimeout(()=>{
+      switchTemp(0);
+      if(o.epIndex!=null){
+        const el=document.getElementById('ep-'+o.epIndex);
+        if(el){ el.classList.add('open'); el.scrollIntoView({behavior:'smooth',block:'center'}); }
+      }
+    },140);
+  }
+}
+
 function renderNpcs(){
   const list=document.getElementById('npcsList');
   list.innerHTML=DATA.npcs.map((n,i)=>`
@@ -1306,7 +1351,8 @@ function openNpc(i){
   document.getElementById('npcsList').style.display='none';
   document.getElementById('quemSabeWrap').style.display='none';
   const w=document.getElementById('npcDetailWrap');
-  let h=`<button class="back-btn" onclick="closeNpc()">Voltar aos NPCs</button>
+  let h=`${originBackButton()}
+    <button class="back-btn" onclick="closeNpc()">Voltar aos NPCs</button>
     <div class="book-card"><div class="book-inner">
       <div class="npc-detail-hdr">
         <div class="npc-sigil">${sigilSvg(n.sigil)}</div>
@@ -1331,12 +1377,26 @@ function openNpc(i){
   h+=`<div class="grid-2" style="margin-top:18px">
         <div class="mech-box"><div class="mech-ttl">O Que Sabe</div>${ulList(n.sabe&&n.sabe.length?n.sabe:['—'])}</div>
         <div class="mech-box"><div class="mech-ttl">O Que Não Sabe</div>${ulList(n.nao_sabe&&n.nao_sabe.length?n.nao_sabe:['—'])}</div>
-      </div>
-    </div></div>`;
+      </div>`;
+  // ── APARIÇÕES: onde mais a Bíblia menciona este personagem ──
+  if(n.aparicoes&&n.aparicoes.length){
+    h+=`<div class="div-orn">❧ ✦ ❧</div>
+      <div class="t-sec" style="margin-top:0"><span class="g">❦</span>Onde Mais Aparece</div>
+      <p class="t-body" style="margin-bottom:14px">Trechos da crônica, em outras seções, que mencionam ${esc(n.nome.split(' ')[0])}. Toque na origem para ir até a seção completa.</p>`;
+    n.aparicoes.forEach(ap=>{
+      h+=`<div class="apar-item">
+        <div class="apar-origem">${esc(ap.origem)}</div>
+        <div class="apar-texto">${fmtInline(ap.texto)}</div>
+        <div class="det-refs"><button class="ref-btn" onclick="goRef('${esc(ap.ref)}')">Ir para a seção</button></div>
+      </div>`;
+    });
+  }
+  h+=`</div></div>`;
   w.innerHTML=h;
   document.getElementById('npcsScroll').scrollTop=0;
 }
 function closeNpc(){
+  NAV_ORIGIN=null;
   document.getElementById('npcDetailWrap').innerHTML='';
   document.getElementById('npcsList').style.display='grid';
   document.getElementById('quemSabeWrap').style.display='block';
@@ -1444,6 +1504,8 @@ function refButton(r){
 }
 function goRef(ref){
   const [tipo,id]=ref.split(':');
+  // captura a origem: se estamos na aba Temporadas com um episódio aberto
+  captureOrigin();
   if(tipo==='npc'){
     navigate('npcs');
     const idx=DATA.npcs.findIndex(n=>n.id===id);
@@ -1456,13 +1518,14 @@ function goRef(ref){
   }
   else if(tipo==='local'){
     navigate('cidade');
-    setTimeout(()=>highlightLocal(id),160);
+    setTimeout(()=>{ highlightLocal(id); renderCidadeOrigin(); },160);
   }
   else if(tipo==='caus'){
     navigate('causalidade');
     setTimeout(()=>{
       const it=document.getElementById('caus-'+id);
       if(it){ it.classList.add('open'); it.scrollIntoView({behavior:'smooth',block:'center'}); }
+      renderCausalidadeOrigin();
     },160);
   }
   else if(tipo==='enc'){
@@ -1470,11 +1533,62 @@ function goRef(ref){
     setTimeout(()=>{
       const el=document.getElementById('enc-'+id);
       if(el){ el.classList.add('open'); el.scrollIntoView({behavior:'smooth',block:'center'}); }
+      renderPageOrigin('caimBody');
     },160);
   }
   else { // page
-    navigate(tipo==='page'?id:tipo);
+    const alvo=(tipo==='page'?id:tipo);
+    navigate(alvo);
+    const bodyId={caim:'caimBody',abel:'abelBody',profetas:'profetasBody',
+      regras:'regrasBody',grimorio:'grimorioBody',timeline:'timelineBody',
+      cidade:'cidadeBody','notas-mestre':'notasMestreBody'}[alvo];
+    if(bodyId) setTimeout(()=>renderPageOrigin(bodyId),160);
+    if(alvo==='temporadas') NAV_ORIGIN=null; // referência circular: não guarda
   }
+}
+// captura de onde o usuário veio (episódio aberto na aba Temporadas)
+function captureOrigin(){
+  const tempAtiva=document.getElementById('page-temporadas').classList.contains('active');
+  if(tempAtiva){
+    // qual episódio está aberto e visível
+    let epIdx=null;
+    document.querySelectorAll('.ep-detail.open').forEach(el=>{
+      const m=el.id.match(/^ep-(\d+)$/);
+      if(m) epIdx=parseInt(m[1]);
+    });
+    if(epIdx!=null){
+      NAV_ORIGIN={label:'Episódio '+roman(epIdx+1)+' — '+DATA.episodios[epIdx].titulo,
+                  page:'temporadas', epIndex:epIdx};
+      return;
+    }
+    NAV_ORIGIN={label:'Temporadas',page:'temporadas',epIndex:null};
+    return;
+  }
+  // veio de outro lugar (busca, navegação normal) — sem origem
+  NAV_ORIGIN=null;
+}
+// insere o botão de retorno no topo de uma página de conteúdo
+function renderPageOrigin(bodyId){
+  if(!NAV_ORIGIN) return;
+  const body=document.getElementById(bodyId);
+  if(!body || body.querySelector('.back-origin')) return;
+  const btn=document.createElement('button');
+  btn.className='back-origin';
+  btn.innerHTML='↩ Voltar para '+NAV_ORIGIN.label;
+  btn.onclick=returnToOrigin;
+  body.insertBefore(btn, body.firstChild);
+}
+function renderCidadeOrigin(){ renderPageOrigin('cidadeBody'); }
+function renderCausalidadeOrigin(){
+  if(!NAV_ORIGIN) return;
+  const body=document.getElementById('causalidadeBody');
+  const card=body&&body.querySelector('.book-inner');
+  if(!card || card.querySelector('.back-origin')) return;
+  const btn=document.createElement('button');
+  btn.className='back-origin';
+  btn.innerHTML='↩ Voltar para '+NAV_ORIGIN.label;
+  btn.onclick=returnToOrigin;
+  card.insertBefore(btn, card.firstChild);
 }
 // destaca temporariamente um local na aba A Cidade
 function highlightLocal(id){
@@ -1631,7 +1745,8 @@ function openDoc(i){
           <div class="doc-fv" style="line-height:1.7">${fmtInline(v)}</div></div>`).join('')}
     </div>`;
   }
-  let h=`<button class="back-btn" onclick="closeDoc()">Voltar aos Documentos</button>
+  let h=`${originBackButton()}
+    <button class="back-btn" onclick="closeDoc()">Voltar aos Documentos</button>
     <div class="book-card"><div class="book-inner">
       <div class="t-eyebrow">Documento Físico</div>
       <div class="t-title">${esc(d.titulo)}</div>`;
@@ -1658,6 +1773,7 @@ function openDoc(i){
   document.getElementById('documentosScroll').scrollTop=0;
 }
 function closeDoc(){
+  NAV_ORIGIN=null;
   document.getElementById('docDetailWrap').innerHTML='';
   document.getElementById('documentosList').style.display='grid';
 }
