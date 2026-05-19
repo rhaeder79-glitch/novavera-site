@@ -380,6 +380,25 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
 .subpane{display:none}
 .subpane.active{display:block}
 
+/* ── EPISÓDIO DETALHADO (lapidação T1) — sobre fundo pergaminho ── */
+.ep-abertura{font-family:"Cormorant Garamond",serif;font-size:16.5px;line-height:1.8;color:var(--ink-soft);font-style:italic;margin:6px 0 18px;padding:14px 20px;border-left:3px solid var(--gold);background:linear-gradient(to right,rgba(154,122,42,.1),transparent)}
+.det-grupo{margin:22px 0 10px}
+.det-grupo-titulo{font-family:"Cinzel",serif;font-size:13.5px;font-weight:700;color:var(--blood);letter-spacing:1.5px;text-transform:uppercase;padding-bottom:7px;border-bottom:1px solid rgba(107,15,15,.3);display:flex;align-items:center;gap:8px}
+.det-grupo-titulo::before{content:"❧";color:var(--gold-dim);opacity:.7;font-size:15px}
+.det-ponto{margin:12px 0;padding:14px 18px;background:rgba(107,15,15,.035);border:1px solid rgba(90,74,48,.22);border-left:2px solid rgba(154,122,42,.4);transition:border-color .2s}
+.det-ponto:hover{border-left-color:var(--blood)}
+.det-ponto-texto{font-family:"Cormorant Garamond",serif;font-size:16.5px;line-height:1.75;color:var(--ink-soft)}
+.det-refs{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.ref-btn{display:inline-flex;align-items:center;gap:5px;font-family:"Cinzel",serif;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;color:var(--blood);background:rgba(154,122,42,.1);border:1px solid rgba(107,15,15,.28);padding:4px 10px;cursor:pointer;transition:all .18s;text-align:left;line-height:1.35}
+.ref-btn:hover{background:rgba(107,15,15,.12);border-color:var(--blood);color:var(--blood-deep)}
+.ref-btn::before{content:"→";opacity:.65;font-size:11px}
+.det-gancho{margin:20px 0 6px;padding:16px 20px;border:1px solid rgba(107,15,15,.35);background:repeating-linear-gradient(-45deg,transparent,transparent 8px,rgba(107,15,15,.04) 8px,rgba(107,15,15,.04) 9px)}
+.det-gancho-lbl{font-family:"Cinzel",serif;font-size:9px;letter-spacing:4px;color:var(--blood);text-transform:uppercase;margin-bottom:7px;opacity:.85}
+.det-gancho-texto{font-family:"Cormorant Garamond",serif;font-size:16.5px;line-height:1.78;color:var(--ink-soft)}
+/* destaque temporário ao chegar via referência cruzada */
+.local-flash{animation:localFlash 2.2s ease}
+@keyframes localFlash{0%,100%{box-shadow:0 0 0 0 rgba(154,122,42,0)}25%,60%{box-shadow:0 0 0 2px rgba(184,146,46,.6),0 0 22px rgba(184,146,46,.25)}}
+
 /* mobile */
 @media (max-width:768px){
   .tlm-item{grid-template-columns:90px 1fr;gap:10px}
@@ -387,6 +406,8 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
   .season-num{font-size:44px}
   .info-grid{grid-template-columns:1fr}
   .info-k{padding-top:8px}
+  .det-ponto{padding:13px 15px}
+  .ref-btn{font-size:9px}
 }
 </style>
 <style>
@@ -840,6 +861,8 @@ let DATA = null;
 
 /* ── helpers de escape & formatação ──────────────────────── */
 function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+// normaliza texto para comparação (sem acento, minúsculo)
+function norm(s){return String(s==null?'':s).normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/\s+/g,' ').trim();}
 // Converte texto com quebras de linha em parágrafos. Itálico para trechos
 // entre aspas. Preserva quebras simples como <br>.
 function paras(txt){
@@ -1085,7 +1108,7 @@ function renderCidade(){
     <div class="t-sec"><span class="g">⌖</span>Os Pontos Centrais</div>`;
 
   c.locais.forEach(l=>{
-    h+=`<div class="mech-box">
+    h+=`<div class="mech-box" id="local-${esc(l.id)}">
       <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:8px">
         <div class="mech-ttl" style="margin:0;border:none;padding:0">${esc(l.nome)}</div>
         <span class="tag ${perigoTag[l.nivel_perigo]||'ash'}">${esc(l.nivel_perigo)}</span>
@@ -1398,7 +1421,6 @@ function renderTemporadas(){
           <div class="ep-label">Episódio ${roman(e.numero)}</div>
           <div class="ep-title">${esc(e.titulo)}</div>
           <div class="ep-q">${esc(e.subtitulo)}</div>
-          <div class="ep-body">${esc(e.resumo)}</div>
           <div class="ep-detail" id="ep-${ei}">${renderEpDetail(e)}</div>
         </div>`).join('');
     }
@@ -1410,17 +1432,107 @@ function switchTemp(i){
   document.querySelectorAll('#tempPanes .subpane').forEach((p,pi)=>p.classList.toggle('active',pi===i));
   document.getElementById('temporadasScroll').scrollTop=0;
 }
+/* ── REFERÊNCIAS CRUZADAS ─────────────────────────────────
+   Cada ref tem {pagina, rotulo}. goRef navega para a página e,
+   quando o rótulo identifica um NPC ou documento específico,
+   abre esse item diretamente. */
+/* ── REFERÊNCIAS CRUZADAS ─────────────────────────────────────
+   Cada ref tem formato "tipo:id". goRef navega e abre o item exato.
+   Tipos: npc / doc / local / caus / page / enc                       */
+function refButton(r){
+  return `<button class="ref-btn" onclick="event.stopPropagation();goRef('${esc(r.ref)}')">${esc(r.label)}</button>`;
+}
+function goRef(ref){
+  const [tipo,id]=ref.split(':');
+  if(tipo==='npc'){
+    navigate('npcs');
+    const idx=DATA.npcs.findIndex(n=>n.id===id);
+    if(idx>=0) setTimeout(()=>openNpc(idx),140);
+  }
+  else if(tipo==='doc'){
+    navigate('documentos');
+    const idx=DATA.documentos.findIndex(d=>d.id===id);
+    if(idx>=0) setTimeout(()=>openDoc(idx),140);
+  }
+  else if(tipo==='local'){
+    navigate('cidade');
+    setTimeout(()=>highlightLocal(id),160);
+  }
+  else if(tipo==='caus'){
+    navigate('causalidade');
+    setTimeout(()=>{
+      const it=document.getElementById('caus-'+id);
+      if(it){ it.classList.add('open'); it.scrollIntoView({behavior:'smooth',block:'center'}); }
+    },160);
+  }
+  else if(tipo==='enc'){
+    navigate('caim');
+    setTimeout(()=>{
+      const el=document.getElementById('enc-'+id);
+      if(el){ el.classList.add('open'); el.scrollIntoView({behavior:'smooth',block:'center'}); }
+    },160);
+  }
+  else { // page
+    navigate(tipo==='page'?id:tipo);
+  }
+}
+// destaca temporariamente um local na aba A Cidade
+function highlightLocal(id){
+  const el=document.getElementById('local-'+id);
+  if(!el) return;
+  el.scrollIntoView({behavior:'smooth',block:'center'});
+  el.classList.add('local-flash');
+  setTimeout(()=>el.classList.remove('local-flash'),2200);
+}
+
 function renderEpDetail(e){
   let h='';
-  if(e.pergunta) h+=`<div class="doc-note" style="margin:0 0 14px"><div class="doc-nl">A Pergunta do Episódio</div><div class="doc-nt">${fmtInline(e.pergunta)}</div></div>`;
-  if(e.errado_desde_inicio){h+=`<div class="t-label">O Que Está Errado Desde o Início</div>${ulList(e.errado_desde_inicio)}`;}
-  if(e.no_velorio){h+=`<div class="t-label">No Velório</div>${ulList(e.no_velorio)}`;}
-  if(e.o_que_acontece){h+=`<div class="t-label">O Que Acontece</div>${ulList(e.o_que_acontece)}`;}
-  if(e.meia_noite){h+=`<div class="nm-box"><div class="nm-lbl">Meia-Noite — A Área Verde Silencia</div><div class="nm-txt">${fmtInline(e.meia_noite)}</div></div>`;}
-  if(e.armindo_entende){h+=`<div class="nm-box"><div class="nm-lbl">O Que Armindo Entende e Verbaliza</div><div class="nm-txt">${fmtInline(e.armindo_entende)}</div></div>`;}
-  if(e.sinal_abel){h+=`<div class="signal-block" style="border-color:rgba(107,15,15,.3)"><div class="signal-num" style="color:var(--blood)">Sinal de Abel</div><div class="signal-txt">${fmtInline(e.sinal_abel)}</div></div>`;}
-  if(e.cena_final){h+=`<div class="t-label">Cena Final</div>${paras(e.cena_final)}`;}
-  if(e.gancho){h+=`<div class="bq"><p><strong style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;color:var(--blood);display:block;margin-bottom:5px">GANCHO FINAL</strong>${fmtInline(e.gancho)}</p></div>`;}
+  // parágrafo de abertura (literal da Bíblia) — só o ep1 tem
+  if(e.abertura){
+    h+=`<div class="ep-abertura">${fmtInline(e.abertura)}</div>`;
+  }
+  // blocos de pontos — cada ponto com seu texto e botões de referência
+  (e.blocos||[]).forEach(bl=>{
+    h+=`<div class="det-grupo"><div class="det-grupo-titulo">${esc(bl.titulo)}</div></div>`;
+    (bl.pontos||[]).forEach(p=>{
+      h+=`<div class="det-ponto">
+        <div class="det-ponto-texto">${fmtInline(p.t)}</div>`;
+      if(p.refs&&p.refs.length){
+        h+=`<div class="det-refs">${p.refs.map(refButton).join('')}</div>`;
+      }
+      h+=`</div>`;
+    });
+  });
+  // sinal de Abel
+  if(e.sinal_abel){
+    h+=`<div class="signal-block" style="border-color:rgba(107,15,15,.3)">
+      <div class="signal-num" style="color:var(--blood)">Sinal de Abel</div>
+      <div class="signal-txt">${fmtInline(e.sinal_abel)}</div>`;
+    if(e.sinal_abel_refs&&e.sinal_abel_refs.length){
+      h+=`<div class="det-refs">${e.sinal_abel_refs.map(refButton).join('')}</div>`;
+    }
+    h+=`</div>`;
+  }
+  // cena final (só ep10)
+  if(e.cena_final){
+    h+=`<div class="det-gancho">
+      <div class="det-gancho-lbl">Cena Final — Duas Semanas Depois</div>
+      <div class="det-gancho-texto">${fmtInline(e.cena_final)}</div>`;
+    if(e.cena_final_refs&&e.cena_final_refs.length){
+      h+=`<div class="det-refs">${e.cena_final_refs.map(refButton).join('')}</div>`;
+    }
+    h+=`</div>`;
+  }
+  // gancho final
+  if(e.gancho){
+    h+=`<div class="det-gancho">
+      <div class="det-gancho-lbl">Gancho Final</div>
+      <div class="det-gancho-texto">${fmtInline(e.gancho)}</div>`;
+    if(e.gancho_refs&&e.gancho_refs.length){
+      h+=`<div class="det-refs">${e.gancho_refs.map(refButton).join('')}</div>`;
+    }
+    h+=`</div>`;
+  }
   h+=`<div class="ep-status">
     <button class="ep-btn red" onclick="event.stopPropagation();setEpStatus(${e.numero},'concluido')">Marcar concluído</button>
     <button class="ep-btn gold" onclick="event.stopPropagation();setEpStatus(${e.numero},'pendente')">Marcar pendente</button>
