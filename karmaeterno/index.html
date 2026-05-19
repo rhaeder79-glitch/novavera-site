@@ -1542,6 +1542,17 @@ function printDoc(id) {
 function generatePrintHTML(doc) {
   let content = '';
 
+  // Divide um texto em parágrafos <p> individuais. Cada parágrafo é uma
+  // unidade que não pode ser cortada ao meio; a quebra de página só pode
+  // acontecer ENTRE parágrafos, nunca dentro de um. Textos sem quebra
+  // dupla viram um único parágrafo.
+  const paras = (txt, cls) => String(txt || '')
+    .split(/\n\s*\n/)
+    .map(p => p.trim())
+    .filter(Boolean)
+    .map(p => `<p class="${cls}">${p.replace(/\n/g, '<br>')}</p>`)
+    .join('');
+
   if (doc.tipo === 'ficha') {
     content = (doc.campos || []).map(f => `
       <div class="row">
@@ -1551,14 +1562,14 @@ function generatePrintHTML(doc) {
       (doc.nota ? `
       <div class="nota">
         <div class="nota-l">Observação de campo · manuscrita</div>
-        <div class="nota-t">${doc.nota}</div>
+        ${paras(doc.nota, 'nota-t')}
       </div>` : '');
 
   } else if (doc.tipo === 'diario') {
     content = (doc.entradas || []).map(e => `
       <div class="entry${e.destaque ? ' entry-hi' : ''}">
         <div class="entry-date${e.destaque ? ' entry-date-hi' : ''}">${e.data}</div>
-        <div class="entry-txt">${e.texto}</div>
+        ${paras(e.texto, 'entry-txt')}
       </div>`).join('');
 
   } else if (doc.tipo === 'mapa') {
@@ -1572,7 +1583,7 @@ function generatePrintHTML(doc) {
     ].filter(([,v]) => v).map(([t,v]) => `
       <div class="sec">
         <div class="sec-l">${t}</div>
-        <div class="sec-t">${v}</div>
+        ${paras(v, 'sec-t')}
       </div>`).join('');
   }
 
@@ -1604,30 +1615,39 @@ function generatePrintHTML(doc) {
       text-transform:uppercase;flex-shrink:0;opacity:.78;min-width:120px}
     .fv{font-family:'IM Fell English',Georgia,serif;font-size:15px;color:#180e04;line-height:1.5}
     .nota{margin-top:16px;padding:12px 16px;border-left:2px solid #7d1212;
-      background:rgba(125,18,18,.04);break-inside:avoid;page-break-inside:avoid}
+      background:rgba(125,18,18,.04)}
     .nota-l{font-family:'Cinzel',Georgia,serif;font-size:8px;letter-spacing:3px;color:#7d1212;
-      text-transform:uppercase;margin-bottom:6px}
+      text-transform:uppercase;margin-bottom:6px;
+      break-after:avoid;page-break-after:avoid}
     .nota-t{font-family:'IM Fell English',Georgia,serif;font-style:italic;font-size:14px;
-      color:#3a2510;line-height:1.7;white-space:pre-line}
+      color:#3a2510;line-height:1.7}
+    .nota-t+.nota-t{margin-top:10px}
 
     /* ── DIÁRIO ── */
-    .entry{margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid rgba(90,74,48,.18);
-      break-inside:avoid;page-break-inside:avoid}
+    .entry{margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid rgba(90,74,48,.18)}
     .entry:last-child{border:none;margin-bottom:0;padding-bottom:0}
-    .entry-hi{background:rgba(125,18,18,.035);padding:12px;margin-left:-12px;margin-right:-12px}
+    .entry-hi{background:rgba(125,18,18,.035);padding:12px;margin-left:-12px;margin-right:-12px;
+      break-inside:avoid;page-break-inside:avoid}
     .entry-date{font-family:'Cinzel',Georgia,serif;font-size:9px;letter-spacing:3px;color:#9a7a2a;
-      text-transform:uppercase;margin-bottom:8px;opacity:.85}
+      text-transform:uppercase;margin-bottom:8px;opacity:.85;
+      break-after:avoid;page-break-after:avoid}
     .entry-date-hi{color:#7d1212}
     .entry-txt{font-family:'IM Fell English',Georgia,serif;font-size:15px;line-height:1.85;
-      color:#3a2510;white-space:pre-line}
+      color:#3a2510}
+    .entry-txt+.entry-txt{margin-top:13px}
 
     /* ── MAPA ── */
-    .sec{margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid rgba(90,74,48,.14);
-      break-inside:avoid;page-break-inside:avoid}
+    .sec{margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid rgba(90,74,48,.14)}
     .sec:last-child{border:none;margin-bottom:0;padding-bottom:0}
     .sec-l{font-family:'Cinzel',Georgia,serif;font-size:9px;letter-spacing:3px;color:#9a7a2a;
-      text-transform:uppercase;margin-bottom:6px;opacity:.85}
+      text-transform:uppercase;margin-bottom:6px;opacity:.85;
+      break-after:avoid;page-break-after:avoid}
     .sec-t{font-family:'IM Fell English',Georgia,serif;font-size:15px;line-height:1.82;color:#3a2510}
+    .sec-t+.sec-t{margin-top:10px}
+
+    /* Cada parágrafo é indivisível; a quebra de página só ocorre ENTRE eles.
+       orphans/widows impedem linha solta no fim ou início de página. */
+    p{break-inside:avoid;page-break-inside:avoid;orphans:2;widows:2}
 
     @page{margin:14mm}
     @media print{
