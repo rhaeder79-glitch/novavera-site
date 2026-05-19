@@ -124,6 +124,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
 .npc-card{background:var(--parch);background-image:radial-gradient(ellipse at 20% 0%,rgba(180,140,80,.12) 0%,transparent 60%);box-shadow:0 2px 20px rgba(0,0,0,.3);position:relative;overflow:hidden;cursor:pointer;transition:transform .2s,box-shadow .2s}
 .npc-card:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,.4)}
 .npc-card-inner{padding:28px 32px}
+.npc-card-inner .npc-role,.npc-card-inner .npc-name,.npc-card-inner .npc-tag{padding-right:74px}
 .npc-role{font-family:"Cinzel",serif;font-size:8px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.78;margin-bottom:4px}
 .npc-name{font-family:"Cinzel Decorative",serif;font-size:24px;font-weight:700;color:var(--blood-deep);line-height:1.1;margin-bottom:10px}
 .npc-tag{display:inline-block;font-family:"Cinzel",serif;font-size:10px;letter-spacing:3px;color:var(--blood);border:1px solid rgba(107,15,15,.3);padding:2px 8px;text-transform:uppercase;margin-bottom:10px}
@@ -292,746 +293,102 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
 }
 </style>
 </head>
-<body>
+<style>
+/* ═══════════════════════════════════════════
+   NOVOS COMPONENTES — KARMA ETERNO v3
+═══════════════════════════════════════════ */
 
-<!-- ═══════════════ SIDEBAR ═══════════════ -->
-<!-- ═══ MOBILE OVERLAY ═══ -->
-<div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebar()"></div>
+/* ── BLOCO DE TEXTO TEMÁTICO (Caim, Abel, etc) ── */
+.lore-block{margin:24px 0;padding:0}
+.lore-block .lb-title{font-family:"Cinzel",serif;font-size:15px;font-weight:700;color:var(--blood);letter-spacing:1px;margin-bottom:8px}
+.nm-box{margin:18px 0;padding:16px 22px;border:1px solid rgba(107,15,15,.32);background:rgba(107,15,15,.045);position:relative}
+.nm-box .nm-lbl{font-family:"Cinzel",serif;font-size:9px;letter-spacing:5px;color:var(--blood);text-transform:uppercase;margin-bottom:7px;opacity:.85}
+.nm-box .nm-txt{font-family:"Cormorant Garamond",serif;font-size:16.5px;line-height:1.78;color:var(--ink-soft);font-style:italic}
 
-<nav class="sidebar" id="sidebar">
-  <div class="sidebar-logo">
-    <span class="logo-glyph">⊕</span>
-    <h1>KARMA ETERNO</h1>
-    <p>Painel do Mestre</p>
-  </div>
-  <div class="sidebar-nav">
-    <div class="nav-section">Navegação</div>
-    <button class="nav-item active" data-page="inicio" onclick="navigate('inicio')">
-      <span class="nav-icon">⌖</span> Início
-    </button>
-    <button class="nav-item" data-page="grimorio" onclick="navigate('grimorio')">
-      <span class="nav-icon">📖</span> Grimório
-    </button>
-    <div class="nav-section">Conteúdo</div>
-    <button class="nav-item" data-page="regras" onclick="navigate('regras')">
-      <span class="nav-icon">⚖</span> Regras & Sistema
-    </button>
-    <button class="nav-item" data-page="cidade" onclick="navigate('cidade')">
-      <span class="nav-icon">🏚</span> A Cidade
-    </button>
-    <button class="nav-item" data-page="npcs" onclick="navigate('npcs')">
-      <span class="nav-icon">👤</span> NPCs
-    </button>
-    <button class="nav-item" data-page="episodios" onclick="navigate('episodios')">
-      <span class="nav-icon">🎭</span> Episódios
-    </button>
-    <button class="nav-item" data-page="causalidade" onclick="navigate('causalidade')">
-      <span class="nav-icon">🔗</span> Causalidade
-    </button>
-    <div class="nav-section">Ferramentas</div>
-    <button class="nav-item" data-page="documentos" onclick="navigate('documentos')">
-      <span class="nav-icon">📄</span> Documentos
-    </button>
-    <button class="nav-item" data-page="anotacoes" onclick="navigate('anotacoes')">
-      <span class="nav-icon">✍</span> Anotações
-    </button>
-    <div class="nav-section" style="margin-top:16px">Atalho</div>
-    <button class="nav-item" onclick="openSearch()" style="font-size:11px;opacity:.65">
-      <span class="nav-icon">🔍</span> Buscar <small style="margin-left:auto;opacity:.6">Ctrl+K</small>
-    </button>
-  </div>
-  <div class="sidebar-footer">
-    <div class="episode-badge">
-      <p>Episódio Atual</p>
-      <span id="current-ep-display">—</span>
-    </div>
-  </div>
-</nav>
+/* ── CAMADAS DE ANTAGONISMO ── */
+.camada{margin:14px 0;padding:18px 22px;border-left:3px solid var(--blood);background:linear-gradient(to right,rgba(107,15,15,.06),transparent)}
+.camada .cm-num{font-family:"Cinzel",serif;font-size:9px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:3px}
+.camada .cm-title{font-family:"Cinzel Decorative",serif;font-size:22px;font-weight:700;color:var(--blood);line-height:1.1}
+.camada .cm-name{font-family:"Cinzel",serif;font-size:13px;color:var(--ash);letter-spacing:1px;margin:3px 0 8px}
+.camada .cm-body{font-family:"Cormorant Garamond",serif;font-size:16.5px;line-height:1.7;color:var(--ink-soft)}
 
-<!-- ═══════════════ MAIN ═══════════════ -->
-<main class="main">
+/* ── ENCARNAÇÕES (timeline navegável) ── */
+.enc-card{background:var(--parch);background-image:radial-gradient(ellipse at 12% 0%,rgba(180,140,80,.1) 0%,transparent 55%);border-left:3px solid transparent;padding:22px 28px;cursor:pointer;transition:all .22s;position:relative;margin-bottom:14px}
+.enc-card:hover{border-left-color:rgba(107,15,15,.4);background-image:radial-gradient(ellipse at 12% 0%,rgba(180,140,80,.18) 0%,transparent 55%)}
+.enc-card.principal{border-left-color:var(--blood)}
+.enc-card.menor{opacity:.82}
+.enc-ordem{font-family:"Cinzel",serif;font-size:8px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:4px;opacity:.8}
+.enc-titulo{font-family:"Cinzel",serif;font-size:20px;font-weight:700;color:var(--blood);letter-spacing:.5px;margin-bottom:3px}
+.enc-data{font-family:"IM Fell English",serif;font-style:italic;font-size:14.5px;color:var(--ash);margin-bottom:8px}
+.enc-detail{display:none;margin-top:14px;padding-top:14px;border-top:1px solid rgba(154,122,42,.22)}
+.enc-detail.open{display:block}
+.enc-marker{position:absolute;top:18px;right:24px;font-family:"Cinzel Decorative",serif;font-size:30px;color:var(--blood);opacity:.13}
 
-<!-- ═══ MOBILE TOP BAR ═══ -->
-<div class="mobile-topbar" id="mobile-topbar">
-  <button class="mobile-menu-btn" onclick="toggleSidebar()" aria-label="Menu">☰</button>
-  <span class="mobile-title">KARMA ETERNO</span>
-  <button class="mobile-search-btn" onclick="openSearch()" aria-label="Buscar">🔍</button>
-</div>
+/* ── TEMPORADA CARD ── */
+.season-card{background:var(--parch);background-image:radial-gradient(ellipse at 80% 0%,rgba(107,15,15,.1) 0%,transparent 60%);padding:30px 34px;margin-bottom:22px;position:relative;box-shadow:0 3px 22px rgba(0,0,0,.32);border-top:3px solid var(--blood)}
+.season-num{font-family:"Cinzel Decorative",serif;font-size:64px;font-weight:900;color:var(--blood);opacity:.12;position:absolute;top:16px;right:28px;line-height:1}
+.season-eyebrow{font-family:"Cinzel",serif;font-size:9px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.85;margin-bottom:5px}
+.season-title{font-family:"Cinzel Decorative",serif;font-size:30px;font-weight:700;color:var(--blood);line-height:1.1}
+.season-period{font-family:"IM Fell English",serif;font-style:italic;font-size:15px;color:var(--ash);margin:5px 0 3px}
+.season-lema{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:18px;color:var(--blood-deep);opacity:.8;margin-bottom:14px}
 
-<!-- ════════ PÁGINA: INÍCIO ════════ -->
-<div class="page active" id="page-inicio">
-  <div class="page-hdr">
-    <p class="page-eyebrow">Painel do Mestre</p>
-    <h2>KARMA ETERNO</h2>
-    <p>Karma Eterno — O lugar onde o tempo parou de esquecer — Temporada I</p>
-  </div>
-  <div style="flex:1;background:var(--bg2)">
-    <div class="home-grid">
+/* ── BLOCO INSTRUCIONAL (sinais, monólogos, etc) ── */
+.signal-block{margin:12px 0;padding:14px 20px;border:1px solid rgba(154,122,42,.25);background:rgba(154,122,42,.03)}
+.signal-num{font-family:"Cinzel",serif;font-size:10px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:5px}
+.signal-txt{font-family:"Cormorant Garamond",serif;font-size:16.5px;line-height:1.72;color:var(--ink-soft)}
 
-      <!-- Pane 1: Estado da Campanha -->
-      <div class="home-pane">
-        <div class="home-pane-title">Estado da Campanha</div>
-        <div class="stat-row">
-          <span class="stat-label">Episódio atual</span>
-          <span class="stat-value" id="stat-ep">—</span>
-        </div>
-        <div class="stat-row">
-          <span class="stat-label">Sessões realizadas</span>
-          <span class="stat-value" id="stat-sessoes">0</span>
-        </div>
-        <div class="stat-row">
-          <span class="stat-label">Pistas descobertas</span>
-          <span class="stat-value" id="stat-pistas">0 / 18</span>
-        </div>
-        <div class="stat-row">
-          <span class="stat-label">NPCs revelados</span>
-          <span class="stat-value" id="stat-npcs">0 / 6</span>
-        </div>
+/* ── ENVELOPE PAGE ── */
+.env-page{margin:12px 0;padding:16px 22px;border:1px dashed rgba(90,74,48,.5);background:rgba(90,74,48,.035)}
+.env-page-lbl{font-family:"Cinzel",serif;font-size:10px;letter-spacing:3px;color:var(--blood);text-transform:uppercase;margin-bottom:7px}
+.env-page-txt{font-family:"IM Fell English",serif;font-style:italic;font-size:16px;line-height:1.78;color:var(--ink);white-space:pre-line}
 
-        <div style="margin-top:20px">
-          <div class="home-pane-title">Episódio</div>
-          <div style="display:flex;gap:6px;flex-wrap:wrap">
-            <button id="ep-prev" class="ep-btn red" onclick="changeEp(-1)" style="flex:1">← Anterior</button>
-            <button id="ep-next" class="ep-btn gold" onclick="changeEp(1)" style="flex:1">Próximo →</button>
-          </div>
-        </div>
-      </div>
+/* ── MONÓLOGO ── */
+.mono{margin:10px 14px;padding:12px 20px;border-left:2px solid var(--gold);font-family:"Cormorant Garamond",serif;font-style:italic;font-size:17px;line-height:1.65;color:var(--ink);background:linear-gradient(to right,rgba(154,122,42,.05),transparent)}
 
-      <!-- Pane 2: Pistas Chave -->
-      <div class="home-pane">
-        <div class="home-pane-title">Pistas Descobertas</div>
-        <div id="clues-list">
-          <!-- gerado por JS -->
-        </div>
-      </div>
+/* ── CAUSALIDADE ACCORDION ── */
+.caus-item{margin-bottom:10px;border:1px solid rgba(154,122,42,.2);background:var(--parch);background-image:radial-gradient(ellipse at 10% 0%,rgba(180,140,80,.08) 0%,transparent 60%)}
+.caus-q{padding:16px 22px;cursor:pointer;font-family:"Cinzel",serif;font-size:14px;font-weight:600;color:var(--blood);letter-spacing:.5px;display:flex;justify-content:space-between;align-items:center;gap:14px;transition:background .2s}
+.caus-q:hover{background:rgba(107,15,15,.05)}
+.caus-q .caus-mark{color:var(--gold);font-size:20px;flex-shrink:0;transition:transform .25s}
+.caus-item.open .caus-mark{transform:rotate(45deg)}
+.caus-a{display:none;padding:0 22px 18px;font-family:"Cormorant Garamond",serif;font-size:16.5px;line-height:1.8;color:var(--ink-soft)}
+.caus-item.open .caus-a{display:block}
 
-      <!-- Pane 3: Acesso Rápido -->
-      <div class="home-pane">
-        <div class="home-pane-title">Acesso Rápido</div>
-        <button class="quick-link" onclick="navigate('regras')"><span class="ql-icon">⚖</span> As Cinco Regras</button>
-        <button class="quick-link" onclick="navigate('npcs')"><span class="ql-icon">👤</span> NPCs Completos</button>
-        <button class="quick-link" onclick="navigate('episodios')"><span class="ql-icon">🎭</span> Estrutura dos Episódios</button>
-        <button class="quick-link" onclick="navigate('documentos')"><span class="ql-icon">📄</span> Imprimir Documentos</button>
-        <button class="quick-link" onclick="navigate('anotacoes')"><span class="ql-icon">✍</span> Nova Anotação</button>
-        <div style="margin-top:20px">
-          <div class="home-pane-title">Atenção do Mestre</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:21px;line-height:1.7;color:rgba(212,192,154,.55)">
-            <p>Armindo torna-se aliado ep.1–4, gerencia informação ep.5–6, confronto ep.7–8, revelação ep.9–10.</p>
-            <p style="margin-top:8px;color:rgba(107,15,15,.8)">Sueli parece obstáculo. É proteção. Não revelar cedo.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+/* ── INFO ROW (ficha de personagem destacado) ── */
+.info-grid{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;margin:14px 0}
+.info-k{font-family:"Cinzel",serif;font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;opacity:.8;padding-top:3px}
+.info-v{font-family:"IM Fell English",serif;font-size:16px;color:var(--ink);line-height:1.5}
 
-    <!-- Linha do Tempo rápida -->
-    <div style="padding:32px 40px;border-top:1px solid rgba(154,122,42,.1)">
-      <div class="home-pane-title">Referência Rápida — Cronologia</div>
-      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:12px">
-        <div class="card" style="border-color:rgba(154,122,42,.12)"><div class="card-label">1931</div><div class="card-title" style="font-size:12px">Armindo nasce</div><div class="card-body" style="font-size:12px">Mapa também é datado de 1931 — intencional</div></div>
-        <div class="card" style="border-color:rgba(154,122,42,.12)"><div class="card-label">1961</div><div class="card-title" style="font-size:12px">Mapa entregue</div><div class="card-body" style="font-size:12px">17 jun. — mesmo dia da última entrada do diário</div></div>
-        <div class="card" style="border-color:rgba(107,15,15,.3)"><div class="card-label">1972</div><div class="card-title" style="font-size:12px">Operação Semente</div><div class="card-body" style="font-size:12px">33 mortos. Armindo vê a fresta.</div></div>
-        <div class="card" style="border-color:rgba(154,122,42,.12)"><div class="card-label">1974</div><div class="card-title" style="font-size:12px">Novavera fundada</div><div class="card-body" style="font-size:12px">17 jun. — símbolo fechado por Natalina sem saber</div></div>
-        <div class="card" style="border-color:rgba(154,122,42,.2)"><div class="card-label">2025</div><div class="card-title" style="font-size:12px">Temporada 1</div><div class="card-body" style="font-size:12px">Março — Valdecir morre. Os personagens chegam.</div></div>
-      </div>
-    </div>
-  </div>
-</div>
+/* ── TIMELINE MASTER (linha do tempo grande) ── */
+.tlm-item{display:grid;grid-template-columns:130px 1fr;gap:18px;padding:9px 0;border-bottom:1px solid rgba(154,122,42,.1);align-items:baseline}
+.tlm-item.destaque{background:rgba(107,15,15,.05)}
+.tlm-data{font-family:"Cinzel",serif;font-size:13px;font-weight:700;color:var(--gold);letter-spacing:1px;text-align:right}
+.tlm-item.destaque .tlm-data{color:var(--blood)}
+.tlm-evento{font-family:"Cormorant Garamond",serif;font-size:16.5px;line-height:1.55;color:var(--ink-soft)}
+.tlm-evento .tlm-conf{display:block;font-family:"Cinzel",serif;font-size:9px;letter-spacing:1.5px;color:var(--ash);opacity:.6;text-transform:uppercase;margin-top:2px}
 
-<!-- ════════ PÁGINA: GRIMÓRIO ════════ -->
-<div class="page" id="page-grimorio">
-  <div class="page-hdr">
-    <p class="page-eyebrow">Referência Completa</p>
-    <h2>O Grimório</h2>
-    <p>Bíblia completa do universo — todas as seções em uma visão</p>
-  </div>
-  <div class="scroll-content">
-    <div class="book-card">
-      <div class="book-inner">
-        <div class="t-eyebrow" style="text-align:center">Bíblia do Universo · Temporada I · Uso Interno do Mestre</div>
-        <div style="text-align:center;margin:28px 0 36px">
-          <div style="font-family:'Cinzel Decorative',serif;font-size:52px;font-weight:900;color:var(--blood);text-shadow:2px 2px 0 rgba(0,0,0,.08);line-height:1">KARMA ETERNO</div>
-          <div style="font-family:'IM Fell English',serif;font-style:italic;font-size:15.5px;color:var(--ash);margin-top:10px">O lugar onde o tempo parou de esquecer</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15.5px;color:var(--ink-soft);opacity:.75;margin-top:16px;max-width:320px;margin-left:auto;margin-right:auto;line-height:1.8">"O tempo não passa. O tempo cobra."</div>
-        </div>
-        <div class="div-orn">☩ ✦ ☩</div>
+/* ── HIERARQUIA PROFETAS ── */
+.hier{margin:12px 0;padding:14px 20px;border-left:3px solid var(--gold)}
+.hier-nivel{font-family:"Cinzel",serif;font-size:13px;font-weight:700;color:var(--blood);letter-spacing:1px;margin-bottom:4px}
+.hier-body{font-family:"Cormorant Garamond",serif;font-size:16px;line-height:1.7;color:var(--ink-soft)}
 
-        <p class="t-body dc">Este grimório contém a verdade completa do universo de Karma Eterno — o que aconteceu, por que aconteceu, e o que vai acontecer. Todas as datas são consistentes entre si. Todos os nomes estão conectados. Nenhuma inconsistência é acidental.</p>
+/* ── NAV: pílula de seção dentro de página longa (sub-tabs) ── */
+.subtabs{display:flex;gap:0;flex-wrap:wrap;margin-bottom:24px;border-bottom:1px solid rgba(154,122,42,.18)}
+.subtab{font-family:"Cinzel",serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(154,122,42,.55);padding:9px 16px;cursor:pointer;background:none;border:none;border-bottom:2px solid transparent;transition:all .2s}
+.subtab.active{color:var(--gold-lt);border-bottom-color:var(--blood)}
+.subtab:hover{color:var(--gold)}
+.subpane{display:none}
+.subpane.active{display:block}
 
-        <div class="t-sec"><span class="g">✦</span> As Cinco Regras Fundamentais</div>
-        <p class="t-body">Cinco leis que governam o universo de Karma Eterno — não escritas em nenhum livro, não nomeadas por nenhuma tradição, mas operando desde que o primeiro nó temporal foi formado. Os personagens vão descobri-las empiricamente. O Mestre já as conhece todas.</p>
-        <ul class="ul">
-          <li><strong>O Tempo Cobra</strong> — Almas arrancadas antes de fechar suas contas criam nós temporais. Não é metáfora. É mecânica.</li>
-          <li><strong>O Que Chega, Chega Quebrado</strong> — Toda comunicação entre tempos chega fragmentada e distorcida. Algo intercepta certas mensagens na fonte.</li>
-          <li><strong>Ninguém Volta Por Acaso</strong> — Grupos de almas com dívidas entre si retornam juntos. A teia dos 4 personagens: A→B→C→D→A.</li>
-          <li><strong>Os Presos Sabem, Mas Não Tudo</strong> — As 33 almas são humanas, com perspectiva limitada. Sabem que foram interrompidas. Não sabem completamente por quem.</li>
-          <li><strong>Saber Demais É Começar A Ficar</strong> — Estado de Armindo há décadas. Estado atual de Décio Murta.</li>
-        </ul>
-
-        <div class="t-sec"><span class="g">✦</span> Novavera — A Cidade</div>
-        <p class="t-body">Fundada em 1974 sobre o ponto de maior densidade do nó. A planta em grade amplifica a concentração em vez de deixá-la se dispersar. Três pontos centrais: <strong>Centro Cívico</strong> (sobre o nó, placa com Benedito Braga), <strong>Bairro Fundação</strong> (Natalina mora aqui desde 1978), <strong>Área Verde</strong> (construção paralisada em 1978, muro anônimo de 1980, sem pássaros, sem crianças).</p>
-
-        <div class="t-sec"><span class="g">✦</span> A Operação Semente — O Que Realmente Foi</div>
-        <p class="t-body">A ditadura forneceu o aparato. Armindo forneceu a lógica de seleção. 33 pessoas selecionadas por terem dívidas de vidas anteriores com Armindo — interrompendo as contas que elas tinham com ele antes que pudessem ser pagas. Nome de Benedito Braga (morto 1969) usado como cobertura para a ausência de Armindo da lista. O ciclo não é sobre as dívidas das 33. É sobre a dívida de Armindo.</p>
-
-        <div class="t-sec"><span class="g">✦</span> Armindo — A Verdade Final</div>
-        <p class="t-body">94 anos reais, aparência de 40 e poucos. O Anterior não era pessoa independente — era a estrutura temporal posicionando o único homem que havia escapado da cobrança vidas demais. Armindo estava na lista original como 34ª vítima. Retirou o próprio nome. A alma de Dalva o havia avisado na noite anterior — de uma linha do tempo que os personagens só vão compreender no finale.</p>
-        <div class="bq"><p>"Eu não vim salvar ninguém. Vim acabar com a repetição."</p></div>
-
-        <div class="t-sec"><span class="g">✦</span> O Símbolo da Área Verde — As Quatro Aparições</div>
-        <p class="t-body">A ordem de descoberta é a curva dramática. (1) Fotografia no quarto de Valdecir — fragmento. (2) Lateral do caixão — completo, por quem? (3) Mapa original — com abertura no nordeste. (4) Fundações da Rua do Anterior — abertura <em>fechada</em>, data entalhada: 17 de junho de 1974. Armindo fechou via Natalina que não sabia o que cobria.</p>
-
-        <div class="t-sec"><span class="g">✦</span> O Padrão 13</div>
-        <p class="t-body">17 jun. 1961 (mapa entregue / última entrada do diário) → 17 jun. 1974 (fundação coberta, Novavera fundada) → 1987 (Valdecir anota o sonho com os quatro personagens). Intervalo exato: 13 anos entre cada momento. O Mestre decide se isso é coincidência, padrão ou instrução do próprio tempo.</p>
-
-        <div class="div-orn">✦</div>
-        <p class="t-body" style="text-align:center;font-style:italic;opacity:.6;font-size:21px">Para o conteúdo completo detalhado de cada seção, use a navegação no menu lateral.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ════════ PÁGINA: REGRAS & SISTEMA ════════ -->
-<div class="page" id="page-regras">
-  <div class="page-hdr">
-    <p class="page-eyebrow">Mecânicas e Leis do Universo</p>
-    <h2>Regras & Sistema</h2>
-    <p>As Cinco Regras Fundamentais + Chamado de Cthulhu adaptado + Memória & Presença</p>
-  </div>
-  <div class="scroll-content">
-
-    <!-- As 5 Regras -->
-    <div class="book-card" style="margin-bottom:24px">
-      <div class="book-inner">
-        <div class="t-eyebrow" style="text-align:center;margin-bottom:24px">As Cinco Regras Fundamentais</div>
-
-        <div style="border-left:2px solid rgba(107,15,15,.3);padding-left:20px;margin:28px 0;position:relative">
-          <div style="position:absolute;left:-1px;top:0;width:2px;height:50px;background:var(--blood)"></div>
-          <div class="t-ss">Regra I — O Tempo Cobra</div>
-          <p class="t-body dc">O tempo não passa. O tempo <em>cobra</em>. Quando uma alma é arrancada antes de resolver o que veio resolver — não por acidente, mas por interferência deliberada — o tempo naquele ponto para de seguir. Dezenas de arrancamentos simultâneos criam um nó temporal: lugar onde passado e presente existem juntos.</p>
-          <p class="t-body">As execuções de 1972 não foram só crime político. Foram engenharia temporal cirúrgica. O método — variação deliberada nas mortes — não era sadismo. Era precisão.</p>
-        </div>
-
-        <div class="div-slim"><span></span><i>✦</i><span></span></div>
-
-        <div style="border-left:2px solid rgba(107,15,15,.22);padding-left:20px;margin:28px 0">
-          <div class="t-ss">Regra II — O Que Chega, Chega Quebrado</div>
-          <p class="t-body">Toda comunicação entre tempos chega fragmentada. O que era uma frase inteira chega como três palavras sem contexto. Quem recebe preenche com a tradição que conhece, com o medo que já carregava. Diferentes tradições captaram fragmentos reais da estrutura. Nenhuma tem o todo.</p>
-          <div class="warn-box"><div class="warn-lbl">Atenção do Mestre</div><div class="warn-txt">Algumas mensagens foram corrompidas na fonte — algo intercepta o sinal com interesse em que certas verdades não circulem limpas. Sua identidade é um dos últimos mistérios da temporada.</div></div>
-        </div>
-
-        <div class="div-slim"><span></span><i>✦</i><span></span></div>
-
-        <div style="border-left:2px solid rgba(107,15,15,.22);padding-left:20px;margin:28px 0">
-          <div class="t-ss">Regra III — Ninguém Volta Por Acaso</div>
-          <p class="t-body">Almas retornam porque há algo que não fechou. Os quatro personagens jogadores foram encontrados — pela mesma força que os trouxe de volta ao mesmo lugar, com as mesmas dívidas não resolvidas de vidas que nenhum lembra conscientemente.</p>
-          <div class="mech-box">
-            <div class="mech-ttl">A Teia Fechada dos Quatro Personagens</div>
-            <p style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--ash);line-height:1.7">A deve a B · B deve a C · C deve a D · D deve a A. Ninguém é só credor. Ninguém é só devedor. Armindo conhece essa teia inteira — desde antes dos personagens chegarem.</p>
-          </div>
-        </div>
-
-        <div class="div-slim"><span></span><i>✦</i><span></span></div>
-
-        <div style="border-left:2px solid rgba(107,15,15,.22);padding-left:20px;margin:28px 0">
-          <div class="t-ss">Regra IV — Os Presos Sabem, Mas Não Tudo</div>
-          <p class="t-body">As 33 almas presas desde outubro de 1972 são humanas — com rancores de décadas, lealdades que a morte não apagou, e a desorientação profunda de existir fora do fluxo normal do tempo. Interagir com elas é negociação com alguém que tem informação valiosa, dor acumulada, e agenda própria. Elas sabem que foram interrompidas. Não sabem completamente por quem.</p>
-        </div>
-
-        <div class="div-slim"><span></span><i>✦</i><span></span></div>
-
-        <div style="border-left:2px solid rgba(107,15,15,.22);padding-left:20px;margin:28px 0">
-          <div class="t-ss">Regra V — Saber Demais É Começar A Ficar</div>
-          <p class="t-body">O presente só parece sólido porque a memória coopera. Quando memórias de outras vidas começam a vazar, o presente perde chão. Não de uma vez. Aos poucos. No estágio avançado, passado e presente existem ao mesmo tempo — não como alucinação, mas como realidade concorrente. A linha que separa o investigador das almas presas nunca vai ser anunciada. Ninguém vai avisar quando for cruzada.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Sistema -->
-    <div class="book-card" style="margin-bottom:24px">
-      <div class="book-inner">
-        <div class="t-eyebrow" style="text-align:center;margin-bottom:24px">O Sistema — Chamado de Cthulhu Adaptado</div>
-        <p class="t-body dc">A base é o Chamado de Cthulhu sem modificação nos atributos clássicos. As adaptações são camadas adicionais — dois novos atributos exclusivos e três mecânicas específicas para o universo de Karma Eterno.</p>
-
-        <div class="t-sec"><span class="g">✦</span> Os Atributos Clássicos — Reinterpretados</div>
-        <div class="mech-box">
-          <div class="mech-ttl">O que cada atributo significa em Novavera</div>
-          <div class="attr-grid">
-            <div class="attr-item"><div class="attr-name">Força</div><div class="attr-desc">Resistência a ser deslocado por forças invisíveis. Alta Força não é violência — é quem permanece onde está quando algo tenta mover.</div></div>
-            <div class="attr-item"><div class="attr-name">Constituição</div><div class="attr-desc">Quanto tempo consegue permanecer num espaço de alta concentração temporal sem efeitos físicos — náusea, sangramento, desorientação.</div></div>
-            <div class="attr-item"><div class="attr-name">Destreza</div><div class="attr-desc">Em confrontos mediúnicos: quem consegue encerrar o contato primeiro quando as coisas saem do controle.</div></div>
-            <div class="attr-item"><div class="attr-name">Aparência</div><div class="attr-desc">Personagens com Aparência alta são percebidos mais facilmente pelas almas presas — o vigor de uma presença forte atravessa camadas.</div></div>
-            <div class="attr-item"><div class="attr-name">Inteligência</div><div class="attr-desc">Personagens muito inteligentes processam fragmentos mais rapidamente — Memória sobe mais rápido. Saber mais rápido tem custo mais rápido.</div></div>
-            <div class="attr-item"><div class="attr-name">Poder</div><div class="attr-desc">O que as entidades usam para avaliar dívidas de peso suficiente. Poder alto não é proteção. É visibilidade.</div></div>
-            <div class="attr-item"><div class="attr-name">Educação</div><div class="attr-desc">Sistemas de interpretação desenvolvidos distorcem mais o que se recebe (Regra II). Bônus de investigação, penalidade em fragmentos mediúnicos.</div></div>
-            <div class="attr-item"><div class="attr-name">Tamanho</div><div class="attr-desc">Mantido sem modificação. Necessário para combate físico quando ocorre.</div></div>
-          </div>
-        </div>
-
-        <div class="t-sec"><span class="g">✦</span> Memória e Presença — Os Dois Atributos Exclusivos</div>
-        <div class="mech-box" style="margin-bottom:16px">
-          <div class="mech-ttl">Memória — O quanto de vidas anteriores já vazou</div>
-          <p style="font-family:'Cormorant Garamond',serif;font-size:18.5px;color:var(--ash);line-height:1.7;margin-bottom:12px"><strong style="color:var(--gold);font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase">Valor inicial:</strong> (POD + INT) ÷ 10, arredondado para baixo.<br><br><strong style="color:var(--gold);font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase">Sobe:</strong> ao acessar fragmentos de vida anterior — voluntariamente (confronto mediúnico) ou involuntariamente (consequência narrativa).<br><br><strong style="color:var(--gold);font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase">Desce:</strong> quando age ativamente para se ancorar no presente.<br><br><strong style="color:var(--blood-lt);font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase">O piso sobe permanentemente em 1D6 ao final de cada temporada.</strong></p>
-          <table class="stbl">
-            <thead><tr><th>Valor</th><th>Estado do Personagem</th></tr></thead>
-            <tbody>
-              <tr><td>1–5</td><td>Presente estável. Fragmentos chegam como sonhos, intuições, déjà vu explicável.</td></tr>
-              <tr><td>6–10</td><td>Permeabilidade moderada. Fragmentos chegam acordado. Padrões desconhecidos começam a aparecer.</td></tr>
-              <tr><td>11–15</td><td>Sobreposição frequente. Memórias de outras vidas com clareza em locais de alta concentração.</td></tr>
-              <tr><td>16–18</td><td>Sobreposição constante. Dificuldade de distinguir presente de passado sob pressão.</td></tr>
-              <tr><td>19</td><td>Limiar. Ainda funciona — por quanto tempo, e com qual custo.</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="mech-box">
-          <div class="mech-ttl">Presença — O quanto está ancorado no agora</div>
-          <p style="font-family:'Cormorant Garamond',serif;font-size:18.5px;color:var(--ash);line-height:1.7">Presença + Memória = sempre 20. Ambas se atualizam simultaneamente. Presença é modificador passivo — bônus em clareza no presente, penalidade quando baixa. Mas Presença baixa abre percepções que Presença alta não tem. <strong>Presença zero: o personagem não consegue mais distinguir qual é o presente funcional. É o estado de Décio Murta.</strong></p>
-        </div>
-
-        <div class="t-sec"><span class="g">✦</span> Mecânicas Exclusivas</div>
-        <div class="mech-box" style="margin-bottom:14px">
-          <div class="mech-ttl">Confronto Mediúnico</div>
-          <ul class="ul">
-            <li><strong>Intenção declarada.</strong> Mestre determina qual alma está disponível no momento e contexto.</li>
-            <li><strong>Rolagem:</strong> POD vs POD da entidade. Bônus por rituais, localização. Sucesso: canal abre. Falha: nada — ou algo diferente responde.</li>
-            <li><strong>Custo imediato, sem exceção:</strong> Memória +1D4 / Presença −1D4. Contato forçado pela entidade: custo 1D6+2.</li>
-          </ul>
-        </div>
-        <div class="mech-box" style="margin-bottom:14px">
-          <div class="mech-ttl">Sistema de Dívida</div>
-          <p style="font-family:'Cormorant Garamond',serif;font-size:18.5px;color:var(--ash);line-height:1.7;margin-bottom:10px">Cada personagem tem uma dívida com três componentes: <strong>natureza</strong> (o que foi feito ou deixado), <strong>credor</strong> (alguém desta vida), <strong>padrão</strong> (decisão que tende a repetir).</p>
-          <p style="font-family:'Cormorant Garamond',serif;font-size:18.5px;color:var(--ash);line-height:1.7">Quando o personagem está numa situação que ressoa com o padrão, o Mestre pode pedir rolagem de POD. <strong>Falha: o Mestre descreve a ação — não o jogador.</strong> Raramente. Com peso. Não é punição. É o universo cobrando.</p>
-        </div>
-        <div class="mech-box">
-          <div class="mech-ttl">Violência Física</div>
-          <p style="font-family:'Cormorant Garamond',serif;font-size:18.5px;color:var(--ash);line-height:1.7">Regras padrão do Chamado de Cthulhu, sem modificação. O que muda é o contexto: violência raramente resolve o problema central. Sempre há consequências físicas ou narrativas. Morte de personagem é possível e real — e não encerra a participação imediatamente.</p>
-        </div>
-
-        <div class="t-sec"><span class="g">✦</span> O Envelope Lacrado — Criação de Personagem</div>
-        <p class="t-body">Duas camadas. Camada 1 (pública): criação convencional CoC na mesa com todos. Camada 2: entregue individualmente com os outros fora da sala.</p>
-        <div class="grid-3" style="margin-top:14px">
-          <div class="envelope-card">
-            <div class="envelope-label">Página 1</div>
-            <div class="envelope-title">A Dívida</div>
-            <div class="envelope-body">Natureza da dívida de vida anterior + quem é o credor nesta vida + o padrão que isso criou.</div>
-          </div>
-          <div class="envelope-card">
-            <div class="envelope-label">Página 2</div>
-            <div class="envelope-title">A Memória</div>
-            <div class="envelope-body">Momento sensorial de outra vida, segunda pessoa, tempo presente. Sem contexto. Só o momento.</div>
-          </div>
-          <div class="envelope-card">
-            <div class="envelope-label">Página 3</div>
-            <div class="envelope-title">A Conexão</div>
-            <div class="envelope-body">Uma linha sobre um dos outros personagens — sem nome, mas identificável nos primeiros episódios.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ════════ PÁGINA: NPCs ════════ -->
-<div class="page" id="page-npcs">
-  <div class="page-hdr">
-    <p class="page-eyebrow">Seis Funções Narrativas</p>
-    <h2>NPCs — Fichas Completas</h2>
-    <p>História, narratividade, como interpretar, o que sabem e o que escondem</p>
-  </div>
-  <div class="scroll-content">
-
-    <!-- Grid de cards -->
-    <div id="npc-grid" class="grid-2" style="margin-bottom:28px">
-
-      <!-- ARMINDO -->
-      <div class="npc-card" onclick="openNPC('armindo')">
-        <div class="npc-card-inner">
-          <div class="npc-sig"><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="18" stroke-width=".8" stroke="currentColor" fill="none"/><polygon points="22,6 26,18 38,18 28,26 32,38 22,30 12,38 16,26 6,18 18,18" fill="currentColor" opacity=".28"/><circle cx="22" cy="22" r="4" fill="currentColor" opacity=".6"/></svg></div>
-          <div class="npc-role">Antagonista Principal</div>
-          <div class="npc-name">Armindo Laerte Vasconcelos</div>
-          <span class="npc-tag">O Fundador</span>
-          <p class="npc-excerpt">94 anos reais, aparência de 40 e poucos. Diretor do Arquivo Histórico. Aliado até ser revelado. A dívida não é das 33 — é dele.</p>
-        </div>
-      </div>
-
-      <!-- VERA -->
-      <div class="npc-card" onclick="openNPC('vera')">
-        <div class="npc-card-inner">
-          <div class="npc-sig"><svg viewBox="0 0 44 44"><circle cx="22" cy="16" r="7" stroke-width="1" stroke="currentColor" fill="currentColor" opacity=".22"/><path d="M10,38 Q22,24 34,38" stroke-width="1" stroke="currentColor" fill="currentColor" opacity=".18"/><circle cx="22" cy="16" r="3" fill="currentColor" opacity=".5"/></svg></div>
-          <div class="npc-role">O Espelho</div>
-          <div class="npc-name">Vera Monteiro</div>
-          <span class="npc-tag">41 Anos</span>
-          <p class="npc-excerpt">Neta de Dalva Monteiro, vítima nº23. Armindo a monitora desde que chegou em 2022. Veio seguindo um sonho recorrente que ela não sabia nomear.</p>
-        </div>
-      </div>
-
-      <!-- GABRIEL -->
-      <div class="npc-card" onclick="openNPC('gabriel')">
-        <div class="npc-card-inner">
-          <div class="npc-sig"><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="16" stroke-width=".8" stroke="currentColor" fill="none" stroke-dasharray="3 3"/><path d="M22,8 L26,18 L38,18 L28,25 L32,36 L22,29 L12,36 L16,25 L6,18 L18,18 Z" fill="currentColor" opacity=".18"/><circle cx="22" cy="22" r="3" fill="currentColor" opacity=".65"/></svg></div>
-          <div class="npc-role">O Arquivo</div>
-          <div class="npc-name">Gabriel Tostes</div>
-          <span class="npc-tag">9 Anos</span>
-          <p class="npc-excerpt">Médium sem saber. Cobra memórias de quem acessa — sem saber que cobra. Sabe o nome de vida anterior de um personagem.</p>
-        </div>
-      </div>
-
-      <!-- NATALINA -->
-      <div class="npc-card" onclick="openNPC('natalina')">
-        <div class="npc-card-inner">
-          <div class="npc-sig"><svg viewBox="0 0 44 44"><path d="M22,4 L40,36 L4,36 Z" stroke-width="1" stroke="currentColor" fill="currentColor" opacity=".14"/><path d="M22,14 L32,32 L12,32 Z" stroke-width=".8" stroke="currentColor" fill="currentColor" opacity=".18"/><circle cx="22" cy="26" r="3" fill="currentColor" opacity=".58"/></svg></div>
-          <div class="npc-role">A Âncora</div>
-          <div class="npc-name">Natalina Braga</div>
-          <span class="npc-tag">78 Anos</span>
-          <p class="npc-excerpt">Neta de Benedito Braga, cúmplice das execuções de 1972. Seu caderno é o mapa mais preciso do campo de influência do nó — sem saber.</p>
-        </div>
-      </div>
-
-      <!-- DÉCIO -->
-      <div class="npc-card" onclick="openNPC('decio')">
-        <div class="npc-card-inner">
-          <div class="npc-sig"><svg viewBox="0 0 44 44"><rect x="8" y="8" width="28" height="28" stroke-width=".8" stroke="currentColor" fill="none"/><line x1="8" y1="8" x2="36" y2="36" stroke-width=".6" stroke="currentColor"/><line x1="36" y1="8" x2="8" y2="36" stroke-width=".6" stroke="currentColor"/><circle cx="22" cy="22" r="4" fill="currentColor" opacity=".45"/></svg></div>
-          <div class="npc-role">O Precipício</div>
-          <div class="npc-name">Décio Murta</div>
-          <span class="npc-tag">46 Anos</span>
-          <p class="npc-excerpt">Jornalista de Brasília. 23 cadernos numerados — 16 a 22 têm o que os personagens precisam, mas ele não consegue mais verbalizar.</p>
-        </div>
-      </div>
-
-      <!-- RONALDO -->
-      <div class="npc-card" onclick="openNPC('ronaldo')">
-        <div class="npc-card-inner">
-          <div class="npc-sig"><svg viewBox="0 0 44 44"><path d="M22,4 L38,12 L38,32 L22,40 L6,32 L6,12 Z" stroke-width="1" stroke="currentColor" fill="currentColor" opacity=".14"/><path d="M22,12 L30,16 L30,28 L22,32 L14,28 L14,16 Z" stroke-width=".8" stroke="currentColor" fill="none"/><circle cx="22" cy="22" r="3" fill="currentColor" opacity=".58"/></svg></div>
-          <div class="npc-role">O Instrumento</div>
-          <div class="npc-name">Ronaldo Seabra</div>
-          <span class="npc-tag">52 Anos</span>
-          <p class="npc-excerpt">Delegado titular. Médium sem saber. 15 nomes no caderno de "curiosidades" — 8 são das 33 vítimas de 1972. Amigo genuíno de Armindo há 18 anos.</p>
-        </div>
-      </div>
-
-      <!-- SUELI -->
-      <div class="npc-card" onclick="openNPC('sueli')" style="grid-column:span 2">
-        <div class="npc-card-inner">
-          <div class="npc-sig"><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="16" stroke-width="1" stroke="currentColor" fill="none"/><path d="M22,6 A16,16 0 0,1 38,22 A16,16 0 0,1 22,38" fill="currentColor" opacity=".14"/><circle cx="22" cy="22" r="4" stroke-width="1" stroke="currentColor" fill="none"/><line x1="22" y1="6" x2="22" y2="18" stroke-width="1.5" stroke="currentColor"/></svg></div>
-          <div class="npc-role">A Fratura</div>
-          <div class="npc-name">Sueli Nascimento</div>
-          <span class="npc-tag">38 Anos</span>
-          <p class="npc-excerpt">Recrutada por Armindo em 2015. Fratura em junho/2023 — Dalva comunicou o critério secundário a ela (não a Armindo). As 11 fichas que removeu não são sabotagem. São proteção. <strong>Não revelar cedo.</strong></p>
-        </div>
-      </div>
-    </div>
-
-    <!-- NPC DETAIL PANELS (hidden by default) -->
-
-    <!-- ARMINDO DETAIL -->
-    <div class="npc-detail book-card" id="npc-armindo">
-      <div class="book-inner">
-        <button class="back-btn" onclick="closeNPC()">Voltar aos NPCs</button>
-        <div class="npc-detail-hdr">
-          <div class="npc-sigil"><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="18" stroke-width=".8" stroke="currentColor" fill="none"/><polygon points="22,6 26,18 38,18 28,26 32,38 22,30 12,38 16,26 6,18 18,18" fill="currentColor" opacity=".28"/><circle cx="22" cy="22" r="4" fill="currentColor" opacity=".6"/></svg></div>
-          <div>
-            <div class="npc-role" style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.78;margin-bottom:3px">Antagonista Principal</div>
-            <div class="npc-name" style="font-family:'Cinzel Decorative',serif;font-size:28px;font-weight:700;color:var(--blood-deep);margin-bottom:8px">Armindo Laerte Vasconcelos</div>
-            <div class="npc-attrs">
-              <span class="npc-attr"><strong>Nascimento:</strong> 1931, Goiás</span>
-              <span class="npc-attr"><strong>Idade real:</strong> 94 anos</span>
-              <span class="npc-attr"><strong>Aparência:</strong> 40 e poucos</span>
-              <span class="npc-attr"><strong>Função:</strong> Diretor do Arquivo Histórico Municipal</span>
-            </div>
-          </div>
-        </div>
-        <div class="t-sec"><span class="g">✦</span> A História Verdadeira</div>
-        <p class="t-body dc">Em 1953, com 22 anos, foi encontrado pelo Anterior numa conferência em Goiânia. O Anterior não era uma pessoa independente — era a estrutura temporal usando forma humana para posicionar o único homem que havia escapado da cobrança vidas demais. Armindo nunca soube disso completamente.</p>
-        <p class="t-body">Em outubro de 1972, com 41 anos, retirou o próprio nome da lista e colocou o de Benedito Braga — morto em 1969. A alma de Dalva Monteiro o avisou na noite anterior — de uma linha do tempo que os personagens só vão compreender no finale. Viu a fresta. Convenceu-se. Desde então não envelhece normalmente: 94 anos reais, aparência de 40 e poucos, o que experimenta como fardo e não como dom.</p>
-        <div class="t-sec"><span class="g">✦</span> Como Interpretar</div>
-        <ul class="ul">
-          <li><strong>Episódios 1–4:</strong> Aliado genuíno. Útil, presente, entrega informação com generosidade estratégica — sempre a informação certa para guiar sem revelar.</li>
-          <li><strong>Episódios 5–6:</strong> Gerencia informação. Começa a omitir. Justificativas plausíveis para tudo.</li>
-          <li><strong>Episódio 7:</strong> Confronto. Entrega a chave da sala separada. Controla o ritmo da revelação.</li>
-          <li><strong>Episódio 8:</strong> Revelação. Responde com honestidade — mas honestidade de quem acredita genuinamente em sua própria versão dos eventos.</li>
-          <li><strong>Episódios 9–10:</strong> Aceitação. O movimento de dissolução não é derrota. É resolução.</li>
-        </ul>
-        <div class="t-sec"><span class="g">✦</span> Elementos Físicos</div>
-        <ul class="ul">
-          <li><strong>O anel na mão direita:</strong> ouro velho, nunca tira, gravação interna ilegível. Se perguntado: "foi de quem me ensinou."</li>
-          <li><strong>A voz:</strong> calma em todos os contextos. Nunca levanta. Isso é perturbador.</li>
-          <li><strong>O conhecimento:</strong> nunca usa "pesquisei" — usa "há registros de" ou "documentos da época indicam". A diferença é sutil, consistente, e vai aparecer em retrospecto.</li>
-        </ul>
-        <div class="t-sec"><span class="g">✦</span> O Monólogo Final</div>
-        <div class="bq"><p>"Vi o lugar onde as dívidas não existem porque nunca existiu separação suficiente para que se formassem."</p></div>
-        <div class="bq"><p>"O que chamam de Deus — seja lá o nome que usam — não está ausente. Nunca esteve presente."</p></div>
-        <div class="bq"><p>"Eu não vim salvar ninguém. Vim acabar com a repetição."</p></div>
-        <div class="warn-box"><div class="warn-lbl">Revelação Final — Episódio 10</div><div class="warn-txt">Armindo estava na lista original como 34ª vítima. Retirou o próprio nome. O ciclo não podia fechar porque a conta principal estava aberta: a dele. Quando aceita o acerto, dissolve. Não morre — o espaço onde estava deixa de ter sido preenchido. As almas o reconheciam não por medo. Porque ele deveria ter sido um deles. E nunca foi.</div></div>
-      </div>
-    </div>
-
-    <!-- VERA DETAIL -->
-    <div class="npc-detail book-card" id="npc-vera">
-      <div class="book-inner">
-        <button class="back-btn" onclick="closeNPC()">Voltar aos NPCs</button>
-        <div class="npc-detail-hdr">
-          <div class="npc-sigil"><svg viewBox="0 0 44 44"><circle cx="22" cy="16" r="7" stroke-width="1" stroke="currentColor" fill="currentColor" opacity=".22"/><path d="M10,38 Q22,24 34,38" stroke-width="1" stroke="currentColor" fill="currentColor" opacity=".18"/><circle cx="22" cy="16" r="3" fill="currentColor" opacity=".5"/></svg></div>
-          <div>
-            <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.78;margin-bottom:3px">O Espelho</div>
-            <div class="npc-name" style="font-family:'Cinzel Decorative',serif;font-size:28px;font-weight:700;color:var(--blood-deep);margin-bottom:8px">Vera Monteiro</div>
-            <div class="npc-attrs">
-              <span class="npc-attr"><strong>Idade:</strong> 41 anos (nascida 1984)</span>
-              <span class="npc-attr"><strong>Em Novavera:</strong> desde 2022</span>
-              <span class="npc-attr"><strong>Conexão:</strong> Neta de Dalva Monteiro, vítima nº23</span>
-            </div>
-          </div>
-        </div>
-        <div class="t-sec"><span class="g">✦</span> História</div>
-        <p class="t-body dc">Chegou seguindo um sonho recorrente: terra vermelha de madrugada, mulher com o rosto da avó dizendo um nome que ela esquecia ao acordar. Dalva Monteiro morreu em outubro de 1972 com 32 anos, deixando duas crianças. A família recebeu uma carta do governo dizendo que havia emigrado. Vera cresceu sabendo que a avó havia <em>sumido</em>.</p>
-        <p class="t-body">Veio com Rafael — namorado que amava e que usou para permanecer em Novavera. Quando ele foi embora, não o seguiu. Esse movimento — manter alguém próximo com manipulação, colocá-lo em segundo lugar, deixá-lo ir quando foi — é o espelho que os personagens vão ver em si mesmos.</p>
-        <div class="t-sec"><span class="g">✦</span> Como Interpretar</div>
-        <ul class="ul">
-          <li>Não é vilã. Tomou decisões reconhecíveis, graduais, cada uma justificável no momento, que no total formam um padrão que ela não consegue mais negar.</li>
-          <li>Quando confrontada sobre Rafael: <em>"Eu sabia que estava fazendo. Sabia que era errado. Fiz mesmo assim. Você faria diferente?"</em></li>
-          <li>A conexão com Dalva é o coração dela. Quando descobrir a verdade sobre a avó, a reação vai ser orientada pela relação que construiu com os personagens.</li>
-        </ul>
-        <div class="t-sec"><span class="g">✦</span> Narratividade — O Que Ela Reflete</div>
-        <p class="t-body">Vera existe para mostrar aos personagens o que seus próprios padrões parecem de fora. Cada vez que os jogadores assistem a uma decisão de Vera e se reconhecem nela, é a bíblia de causalidade funcionando. O espelho não é literal. É dramático.</p>
-        <div class="warn-box"><div class="warn-lbl">Atenção do Mestre</div><div class="warn-txt">A dívida de Dalva com Armindo é a mais pesada entre as 33. Vera é a pessoa através de quem essa dívida pode fechar — ou se aprofundar. Armindo a mantém próxima porque não sabe o que acontecerá quando ela descobrir quem foi Dalva.</div></div>
-      </div>
-    </div>
-
-    <!-- GABRIEL DETAIL -->
-    <div class="npc-detail book-card" id="npc-gabriel">
-      <div class="book-inner">
-        <button class="back-btn" onclick="closeNPC()">Voltar aos NPCs</button>
-        <div class="npc-detail-hdr">
-          <div class="npc-sigil"><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="16" stroke-width=".8" stroke="currentColor" fill="none" stroke-dasharray="3 3"/><path d="M22,8 L26,18 L38,18 L28,25 L32,36 L22,29 L12,36 L16,25 L6,18 L18,18 Z" fill="currentColor" opacity=".18"/><circle cx="22" cy="22" r="3" fill="currentColor" opacity=".65"/></svg></div>
-          <div>
-            <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.78;margin-bottom:3px">O Arquivo</div>
-            <div class="npc-name" style="font-family:'Cinzel Decorative',serif;font-size:28px;font-weight:700;color:var(--blood-deep);margin-bottom:8px">Gabriel Tostes</div>
-            <div class="npc-attrs">
-              <span class="npc-attr"><strong>Idade:</strong> 9 anos (nascido 2016)</span>
-              <span class="npc-attr"><strong>Natureza:</strong> Médium sem saber</span>
-              <span class="npc-attr"><strong>Custo:</strong> Cobra memórias de quem acessa — sem saber que cobra</span>
-            </div>
-          </div>
-        </div>
-        <div class="t-sec"><span class="g">✦</span> Como Funciona</div>
-        <p class="t-body dc">Cada informação entregue por Gabriel apaga algo da pessoa que recebeu — pequeno no começo, crescente. Não é punição — é o peso de informação de outro tempo precisando de espaço neste tempo para caber. Gabriel não sabe que cobra. Sente alívio quando entrega um fragmento.</p>
-        <div class="t-sec"><span class="g">✦</span> O Que Ele Sabe (que nenhum outro NPC sabe)</div>
-        <ul class="ul">
-          <li>O nome de um dos personagens de uma vida anterior — dito às vezes quando está quase dormindo.</li>
-          <li>Que o que está na Área Verde não é nenhuma das 33 almas — é "o que estava antes."</li>
-          <li>Que Valdecir voltava diferente na última semana antes de morrer.</li>
-          <li>O campo de noite — o desenho que faz compulsivamente é a Área Verde de cima. Nunca foi lá.</li>
-        </ul>
-        <div class="t-sec"><span class="g">✦</span> Como Interpretar</div>
-        <ul class="ul">
-          <li>Pequeno para a idade. Fala pouco. Quando fala, importa.</li>
-          <li>A mãe repete "imaginação criativa muito desenvolvida" para si mesma até virar verdade funcional.</li>
-          <li>O dilema ético de acessar Gabriel torna-se urgente no episódio 6: os personagens vão perceber o custo e precisar decidir se continuam.</li>
-          <li>No episódio 10: acorda curado e sem receber mais nada. O silêncio o assusta mais que os fragmentos.</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- NATALINA DETAIL -->
-    <div class="npc-detail book-card" id="npc-natalina">
-      <div class="book-inner">
-        <button class="back-btn" onclick="closeNPC()">Voltar aos NPCs</button>
-        <div class="npc-detail-hdr">
-          <div class="npc-sigil"><svg viewBox="0 0 44 44"><path d="M22,4 L40,36 L4,36 Z" stroke-width="1" stroke="currentColor" fill="currentColor" opacity=".14"/><path d="M22,14 L32,32 L12,32 Z" stroke-width=".8" stroke="currentColor" fill="currentColor" opacity=".18"/><circle cx="22" cy="26" r="3" fill="currentColor" opacity=".58"/></svg></div>
-          <div>
-            <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.78;margin-bottom:3px">A Âncora</div>
-            <div class="npc-name" style="font-family:'Cinzel Decorative',serif;font-size:28px;font-weight:700;color:var(--blood-deep);margin-bottom:8px">Natalina Braga</div>
-            <div class="npc-attrs">
-              <span class="npc-attr"><strong>Idade:</strong> 78 anos (nascida 23 dez. 1947)</span>
-              <span class="npc-attr"><strong>Segredo:</strong> Neta de Benedito Braga, cúmplice das execuções</span>
-            </div>
-          </div>
-        </div>
-        <div class="t-sec"><span class="g">✦</span> História</div>
-        <p class="t-body dc">Nasceu na fazenda que Benedito — seu avô paterno — administrava: a 40km de onde Novavera seria construída. Chegou à cidade com 27 anos quando foi fundada e nunca saiu. Na administração municipal desde o primeiro dia: datilografou a lista de ruas, alguns nomes foram ideia dela.</p>
-        <p class="t-body">Em 1974 recebeu ordem de cobrir uma fundação diagonal — não sabia o que era. A ordem veio de um assessor técnico cujo nome estava no papel. O assessor técnico era Armindo com identidade falsa. Natalina não sabe.</p>
-        <div class="t-sec"><span class="g">✦</span> O Caderno</div>
-        <p class="t-body">Décadas de padrões registrados — taxas de insônia perto da Área Verde, relacionamentos que terminam sem explicação, acidentes que se concentram em datas específicas. Acredita que documenta um problema de arquitetura urbana. É o mapa mais preciso do campo de influência do nó que existe. Entrega voluntariamente quando os personagens mostram interesse genuíno.</p>
-        <div class="t-sec"><span class="g">✦</span> A Decisão Moral Mais Pesada</div>
-        <div class="warn-box"><div class="warn-lbl">Decisão dos Personagens</div><div class="warn-txt">Quando conectarem "B." no diário de Armindo com Benedito Braga e com o sobrenome dela: contar ou não contar é uma das decisões morais mais pesadas da temporada. O que ela faz com a informação depende inteiramente do que a relação construiu até aquele momento.</div></div>
-      </div>
-    </div>
-
-    <!-- DÉCIO DETAIL -->
-    <div class="npc-detail book-card" id="npc-decio">
-      <div class="book-inner">
-        <button class="back-btn" onclick="closeNPC()">Voltar aos NPCs</button>
-        <div class="npc-detail-hdr">
-          <div class="npc-sigil"><svg viewBox="0 0 44 44"><rect x="8" y="8" width="28" height="28" stroke-width=".8" stroke="currentColor" fill="none"/><line x1="8" y1="8" x2="36" y2="36" stroke-width=".6" stroke="currentColor"/><line x1="36" y1="8" x2="8" y2="36" stroke-width=".6" stroke="currentColor"/><circle cx="22" cy="22" r="4" fill="currentColor" opacity=".45"/></svg></div>
-          <div>
-            <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.78;margin-bottom:3px">O Precipício</div>
-            <div class="npc-name" style="font-family:'Cinzel Decorative',serif;font-size:28px;font-weight:700;color:var(--blood-deep);margin-bottom:8px">Décio Murta</div>
-            <div class="npc-attrs">
-              <span class="npc-attr"><strong>Idade:</strong> 46 anos</span>
-              <span class="npc-attr"><strong>Em Novavera:</strong> dois anos e meio</span>
-              <span class="npc-attr"><strong>Cadernos:</strong> 23 numerados — 16-22 têm o que os personagens precisam</span>
-            </div>
-          </div>
-        </div>
-        <div class="t-sec"><span class="g">✦</span> O Estado Atual</div>
-        <p class="t-body dc">Jornalista investigativo de Brasília. Chegou seguindo um número parcialmente redigido num arquivo da Comissão Nacional da Verdade: 34. Dois anos e meio depois, está nos cadernos 16-22 — que têm o nome verdadeiro de Armindo antes de 1972, a localização exata do arquivo no subsolo, e o que Décio chama de <em>o anterior ao anterior</em>.</p>
-        <div class="bq"><p>É como traduzir de uma língua que está se dissolvendo enquanto você fala.</p></div>
-        <div class="t-sec"><span class="g">✦</span> Como Jogar as Cenas com Décio</div>
-        <ul class="ul">
-          <li><strong>A janela:</strong> dois, três minutos de clareza, sem aviso, que os personagens precisam aprender a reconhecer. A janela fecha e não volta naquela sessão.</li>
-          <li><strong>A regra:</strong> os jogadores precisam ter as perguntas certas prontas. Não haverá segunda chance de perguntar na mesma sessão.</li>
-          <li><strong>O que ele sabe que está nos cadernos 16-22:</strong> nome de Armindo antes de 1972, localização do subsolo do arquivo, o anterior ao anterior, cronologia completa da Operação Semente.</li>
-          <li><strong>Episódio 9:</strong> dois minutos de clareza — entrega algo crucial. Depois piora definitivamente.</li>
-        </ul>
-        <p class="t-body" style="font-style:italic;opacity:.7">Décio é o espelho do que os personagens podem se tornar. Cada cena com ele é um aviso que nunca é dito explicitamente.</p>
-      </div>
-    </div>
-
-    <!-- RONALDO DETAIL -->
-    <div class="npc-detail book-card" id="npc-ronaldo">
-      <div class="book-inner">
-        <button class="back-btn" onclick="closeNPC()">Voltar aos NPCs</button>
-        <div class="npc-detail-hdr">
-          <div class="npc-sigil"><svg viewBox="0 0 44 44"><path d="M22,4 L38,12 L38,32 L22,40 L6,32 L6,12 Z" stroke-width="1" stroke="currentColor" fill="currentColor" opacity=".14"/><path d="M22,12 L30,16 L30,28 L22,32 L14,28 L14,16 Z" stroke-width=".8" stroke="currentColor" fill="none"/><circle cx="22" cy="22" r="3" fill="currentColor" opacity=".58"/></svg></div>
-          <div>
-            <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.78;margin-bottom:3px">O Instrumento</div>
-            <div class="npc-name" style="font-family:'Cinzel Decorative',serif;font-size:28px;font-weight:700;color:var(--blood-deep);margin-bottom:8px">Ronaldo Seabra</div>
-            <div class="npc-attrs">
-              <span class="npc-attr"><strong>Idade:</strong> 52 anos (nascido 1973)</span>
-              <span class="npc-attr"><strong>Função:</strong> Delegado titular de Novavera</span>
-              <span class="npc-attr"><strong>Natureza oculta:</strong> Médium sem saber</span>
-            </div>
-          </div>
-        </div>
-        <div class="t-sec"><span class="g">✦</span> A Dívida com Armindo</div>
-        <p class="t-body dc">Amigo de Armindo há 18 anos. A amizade é real — Armindo lembra de detalhes, pergunta sobre a vida, tem paciência para as histórias longas que Ronaldo conta quando bebe o suficiente. Há três anos um processo administrativo grave foi arquivado com a ajuda de Armindo. Ronaldo nunca perguntou como. Uma dívida não nomeada que sente o peso todos os dias sem conseguir articular.</p>
-        <div class="t-sec"><span class="g">✦</span> O Caderno de Curiosidades</div>
-        <p class="t-body">15 nomes anotados ao longo dos anos — casos que ficaram na memória sem razão clara. 8 são das 33 vítimas de 1972. Ronaldo não sabe. O que chama de pressentimento policial é informação fragmentada de almas presas que acessa sem saber que acessa.</p>
-        <div class="t-sec"><span class="g">✦</span> O Momento do Episódio 8</div>
-        <p class="t-body">Investiga por conta própria e encontra o caso de 1978: trabalhador morto na Área Verde, sobrenome idêntico a uma vítima de 1972, laudo de acidente sem inconsistências mas com detalhes que só fazem sentido em retrospecto. <strong>Esse é o momento onde Ronaldo para de escolher não saber.</strong></p>
-      </div>
-    </div>
-
-    <!-- SUELI DETAIL -->
-    <div class="npc-detail book-card" id="npc-sueli">
-      <div class="book-inner">
-        <button class="back-btn" onclick="closeNPC()">Voltar aos NPCs</button>
-        <div class="npc-detail-hdr">
-          <div class="npc-sigil"><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="16" stroke-width="1" stroke="currentColor" fill="none"/><path d="M22,6 A16,16 0 0,1 38,22 A16,16 0 0,1 22,38" fill="currentColor" opacity=".14"/><circle cx="22" cy="22" r="4" stroke-width="1" stroke="currentColor" fill="none"/><line x1="22" y1="6" x2="22" y2="18" stroke-width="1.5" stroke="currentColor"/></svg></div>
-          <div>
-            <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.78;margin-bottom:3px">A Fratura</div>
-            <div class="npc-name" style="font-family:'Cinzel Decorative',serif;font-size:28px;font-weight:700;color:var(--blood-deep);margin-bottom:8px">Sueli Nascimento</div>
-            <div class="npc-attrs">
-              <span class="npc-attr"><strong>Idade:</strong> 38 anos (nascida 1987)</span>
-              <span class="npc-attr"><strong>Recrutada:</strong> 2015, aos 28 anos</span>
-              <span class="npc-attr"><strong>Fratura:</strong> junho de 2023</span>
-            </div>
-          </div>
-        </div>
-        <div class="t-sec"><span class="g">✦</span> A Fratura</div>
-        <p class="t-body dc">Em junho de 2023, numa sessão rotineira, Dalva Monteiro aproveitou o canal aberto e se comunicou com Sueli — não com Armindo. Disse três coisas: que o critério secundário existe (Armindo interrompeu contas que as 33 tinham com ele), que Armindo estava na lista original como vítima, e que o que ele viu na fresta não é o que acredita que é.</p>
-        <p class="t-body">Sueli não falou com Armindo sobre o que ouviu. Em maio de 2024 removeu as 11 fichas com anotações marginais e as escondeu num antiquário em Goiânia. O antiquário não sabe o que guarda.</p>
-        <div class="t-sec"><span class="g">✦</span> O Que os Personagens Vão Interpretar Errado</div>
-        <div class="warn-box"><div class="warn-lbl">Crucial — Não Revelar Antes do Episódio 7</div><div class="warn-txt">Os rastros de Sueli — documentos sumidos, conexões cortadas, sombra na investigação — vão parecer sabotagem. São proteção. Ela está removendo as iscas que Armindo plantou para conduzir a investigação numa direção que serve ao ciclo. Quando os personagens finalmente a encontrarem, duas investigações paralelas percebem que estavam olhando para o mesmo problema de lados diferentes.</div></div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<!-- ════════ PÁGINA: EPISÓDIOS ════════ -->
-<div class="page" id="page-episodios">
-  <div class="page-hdr">
-    <p class="page-eyebrow">Dez Episódios · Temporada I</p>
-    <h2>Episódios</h2>
-    <p>Resumo, caminhos possíveis e ganchos — clique em cada episódio para expandir</p>
-  </div>
-  <div class="scroll-content" id="ep-scroll">
-    <div id="ep-list"></div>
-    <div id="ep-detail-full" style="display:none"></div>
-  </div>
-</div>
-
-<!-- ════════ PÁGINA: DOCUMENTOS ════════ -->
-<div class="page" id="page-documentos">
-  <div class="page-hdr">
-    <p class="page-eyebrow">Props Físicos · Impressão e PDF</p>
-    <h2>Documentos</h2>
-    <p>Fichas, diário e mapa com o design original — clique em imprimir para gerar o PDF</p>
-  </div>
-  <div class="scroll-content">
-    <div class="warn-box" style="margin-bottom:28px">
-      <div class="warn-lbl">Como baixar como PDF</div>
-      <div class="warn-txt">Clique em "Imprimir documento" → no diálogo de impressão, selecione "Salvar como PDF" como destino → salva com o design das folhas antigas.</div>
-    </div>
-    <div id="docs-list" class="grid-2"></div>
-  </div>
-</div>
-
-<!-- ════════ PÁGINA: ANOTAÇÕES ════════ -->
-<div class="page" id="page-anotacoes">
-  <div class="page-hdr">
-    <p class="page-eyebrow">Notas do Mestre</p>
-    <h2>Anotações</h2>
-    <p>Registros por sessão — salvos no navegador, exportáveis como arquivo</p>
-  </div>
-  <div class="notes-wrapper">
-    <div class="notes-tabs">
-      <button class="notes-tab active" onclick="switchNotesTab('sessoes')">Por Sessão</button>
-      <button class="notes-tab" onclick="switchNotesTab('livre')">Notas Livres</button>
-    </div>
-    <div class="notes-area">
-      <div class="notes-sidebar">
-        <button class="notes-add-btn" onclick="addNote()">+ Nova nota</button>
-        <div id="notes-list"></div>
-      </div>
-      <div class="notes-editor">
-        <input class="notes-title-input" id="note-title" placeholder="Título da nota..." oninput="saveCurrentNote()">
-        <textarea class="notes-textarea" id="note-body" placeholder="Escreva aqui — anotações, descobertas, decisões tomadas, o que os personagens encontraram..." oninput="saveCurrentNote()"></textarea>
-        <div class="notes-toolbar">
-          <span class="notes-meta" id="note-meta">Nenhuma nota selecionada</span>
-          <button class="btn-export" onclick="exportNotes()">⬇ Exportar todas</button>
-          <button class="btn-delete" onclick="deleteCurrentNote()">✕ Apagar</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ════════ PÁGINA: CIDADE ════════ -->
-<div class="page" id="page-cidade">
-  <div class="page-hdr">
-    <p class="page-eyebrow">Cerrado de Goiás · O Que Está Sob a Cidade</p>
-    <h2>A Cidade</h2>
-    <p>Novavera — locais, o símbolo, e o que cada lugar esconde</p>
-  </div>
-  <div class="scroll-content">
-    <div id="cidade-content"></div>
-  </div>
-</div>
-
-<!-- ════════ PÁGINA: CAUSALIDADE ════════ -->
-<div class="page" id="page-causalidade">
-  <div class="page-hdr">
-    <p class="page-eyebrow">O Que Realmente Aconteceu</p>
-    <h2>Bíblia de Causalidade</h2>
-    <p>Respostas para cada "por quê" — tudo conectado por data, nome e consequência</p>
-  </div>
-  <div class="scroll-content">
-    <div id="causalidade-content"></div>
-  </div>
-</div>
-
-<!-- ════════ SEARCH OVERLAY ════════ -->
-<div class="search-overlay" id="search-overlay" onclick="closeSearch(event)">
-  <div class="search-box">
-    <input class="search-input" id="search-input" placeholder="Buscar em Novavera..." oninput="doSearch(this.value)">
-    <div class="search-results" id="search-results"></div>
-    <div class="search-hint">↵ para ir · ESC para fechar · Ctrl+K para abrir</div>
-  </div>
-</div>
-
-</main>
-
-<!-- ════════════════ PRINT STYLES ════════════════ -->
+/* mobile */
+@media (max-width:768px){
+  .tlm-item{grid-template-columns:90px 1fr;gap:10px}
+  .tlm-data{font-size:11px}
+  .season-num{font-size:44px}
+  .info-grid{grid-template-columns:1fr}
+  .info-k{padding-top:8px}
+}
+</style>
 <style>
 
 /* ═══════════════════════════════════════════
@@ -1049,6 +406,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
 
   /* Prevent ANY horizontal scroll */
   html, body { overflow-x: hidden !important; max-width: 100vw !important; }
+  body { display: block !important; }
   * { max-width: 100%; }
 
   /* Sidebar: hidden off screen */
@@ -1074,6 +432,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
   .main {
     margin-left: 0 !important;
     width: 100vw !important;
+    flex: 1 0 100vw !important;
     overflow-x: hidden !important;
   }
 
@@ -1244,411 +603,989 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
   @page { margin: 15mm; size: A4; }
 }
 </style>
+<body>
 
-<!-- ════════════════ JAVASCRIPT ════════════════ -->
+<!-- ── MOBILE TOPBAR ─────────────────────────────────────── -->
+<div class="mobile-topbar">
+  <button class="mobile-menu-btn" onclick="toggleSidebar()">☰</button>
+  <span class="mobile-title">KARMA ETERNO</span>
+  <button class="mobile-search-btn" onclick="openSearch()">⚲</button>
+</div>
+<div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+<!-- ── SIDEBAR ───────────────────────────────────────────── -->
+<aside class="sidebar">
+  <div class="sidebar-logo">
+    <span class="logo-glyph">☉</span>
+    <h1>KARMA ETERNO</h1>
+    <p>Painel do Mestre</p>
+  </div>
+  <nav class="sidebar-nav">
+    <div class="nav-section">A Crônica</div>
+    <button class="nav-item active" data-page="inicio"><span class="nav-icon">⌂</span>Início</button>
+    <button class="nav-item" data-page="grimorio"><span class="nav-icon">✦</span>Grimório</button>
+    <button class="nav-item" data-page="regras"><span class="nav-icon">⚖</span>Regras &amp; Sistema</button>
+    <button class="nav-item" data-page="cidade"><span class="nav-icon">⌖</span>A Cidade</button>
+
+    <div class="nav-section">As Almas</div>
+    <button class="nav-item" data-page="caim"><span class="nav-icon">☉</span>Caim</button>
+    <button class="nav-item" data-page="abel"><span class="nav-icon">☓</span>Abel</button>
+    <button class="nav-item" data-page="profetas"><span class="nav-icon">†</span>Profetas</button>
+    <button class="nav-item" data-page="npcs"><span class="nav-icon">☥</span>NPCs</button>
+
+    <div class="nav-section">A Investigação</div>
+    <button class="nav-item" data-page="temporadas"><span class="nav-icon">❧</span>Temporadas</button>
+    <button class="nav-item" data-page="causalidade"><span class="nav-icon">⟁</span>Causalidade</button>
+    <button class="nav-item" data-page="timeline"><span class="nav-icon">⧗</span>Linha do Tempo</button>
+    <button class="nav-item" data-page="documentos"><span class="nav-icon">❦</span>Documentos</button>
+
+    <div class="nav-section">O Mestre</div>
+    <button class="nav-item" data-page="notas-mestre"><span class="nav-icon">☞</span>Notas do Mestre</button>
+    <button class="nav-item" data-page="anotacoes"><span class="nav-icon">✎</span>Anotações</button>
+  </nav>
+  <div class="sidebar-footer">
+    <div class="episode-badge">
+      <p>Temporada I · Episódio</p>
+      <span id="footerEp">I</span>
+    </div>
+  </div>
+</aside>
+
+<!-- ── MAIN ──────────────────────────────────────────────── -->
+<main class="main">
+
+  <!-- INÍCIO -->
+  <section class="page active" id="page-inicio">
+    <div class="page-hdr">
+      <div class="page-eyebrow">Documento Confidencial · Uso Interno do Mestre</div>
+      <h2>KARMA ETERNO</h2>
+      <p id="inicioSub">O lugar onde o tempo parou de esquecer</p>
+    </div>
+    <div class="home-grid" id="homeGrid"></div>
+    <div class="scroll-content" id="inicioExtra" style="padding-top:0"></div>
+  </section>
+
+  <!-- GRIMÓRIO -->
+  <section class="page" id="page-grimorio">
+    <div class="page-hdr">
+      <div class="page-eyebrow">A Verdade do Mundo</div>
+      <h2>Grimório</h2>
+      <p>O que este universo é — e as leis que o governam</p>
+    </div>
+    <div class="scroll-content"><div class="book-card"><div class="book-inner" id="grimorioBody"></div></div></div>
+  </section>
+
+  <!-- REGRAS & SISTEMA -->
+  <section class="page" id="page-regras">
+    <div class="page-hdr">
+      <div class="page-eyebrow">Chamado de Cthulhu Adaptado</div>
+      <h2>Regras &amp; Sistema</h2>
+      <p>Memória, Permanência, Integridade — e o preço de saber</p>
+    </div>
+    <div class="scroll-content"><div class="book-card"><div class="book-inner" id="regrasBody"></div></div></div>
+  </section>
+
+  <!-- A CIDADE -->
+  <section class="page" id="page-cidade">
+    <div class="page-hdr">
+      <div class="page-eyebrow">Cerrado de Goiás</div>
+      <h2>A Cidade</h2>
+      <p>Novavera — um nome que soa como promessa</p>
+    </div>
+    <div class="scroll-content"><div class="book-card"><div class="book-inner" id="cidadeBody"></div></div></div>
+  </section>
+
+  <!-- CAIM -->
+  <section class="page" id="page-caim">
+    <div class="page-hdr">
+      <div class="page-eyebrow">A Origem de Tudo</div>
+      <h2>Caim</h2>
+      <p>O primeiro assassino — a causa e a vítima do próprio sistema</p>
+    </div>
+    <div class="scroll-content"><div class="book-card"><div class="book-inner" id="caimBody"></div></div></div>
+  </section>
+
+  <!-- ABEL -->
+  <section class="page" id="page-abel">
+    <div class="page-hdr">
+      <div class="page-eyebrow">O Outro Lado</div>
+      <h2>Abel</h2>
+      <p>Meio-anjo pela completude — e um dos quatro jogadores</p>
+    </div>
+    <div class="scroll-content"><div class="book-card"><div class="book-inner" id="abelBody"></div></div></div>
+  </section>
+
+  <!-- PROFETAS -->
+  <section class="page" id="page-profetas">
+    <div class="page-hdr">
+      <div class="page-eyebrow">Os Portadores da Marca</div>
+      <h2>Profetas</h2>
+      <p>Homens bons escolhidos exatamente por sua bondade</p>
+    </div>
+    <div class="scroll-content"><div class="book-card"><div class="book-inner" id="profetasBody"></div></div></div>
+  </section>
+
+  <!-- NPCs -->
+  <section class="page" id="page-npcs">
+    <div class="page-hdr">
+      <div class="page-eyebrow">Os Habitantes de Novavera</div>
+      <h2>NPCs Principais</h2>
+      <p>Cada um sabe uma parte. Nenhum sabe o todo.</p>
+    </div>
+    <div class="scroll-content" id="npcsScroll">
+      <div id="npcsList" class="grid-auto"></div>
+      <div id="npcDetailWrap"></div>
+    </div>
+  </section>
+
+  <!-- TEMPORADAS -->
+  <section class="page" id="page-temporadas">
+    <div class="page-hdr">
+      <div class="page-eyebrow">Temporadas I · II · III</div>
+      <h2>As Três Temporadas</h2>
+      <p>O Profeta · A Marca · O Primeiro Assassino</p>
+    </div>
+    <div class="scroll-content" id="temporadasScroll">
+      <div class="subtabs" id="tempSubtabs"></div>
+      <div id="tempPanes"></div>
+    </div>
+  </section>
+
+  <!-- CAUSALIDADE -->
+  <section class="page" id="page-causalidade">
+    <div class="page-hdr">
+      <div class="page-eyebrow">Bíblia de Causalidade</div>
+      <h2>Causalidade</h2>
+      <p>Uma resposta para cada "por quê"</p>
+    </div>
+    <div class="scroll-content" id="causalidadeBody"></div>
+  </section>
+
+  <!-- LINHA DO TEMPO -->
+  <section class="page" id="page-timeline">
+    <div class="page-hdr">
+      <div class="page-eyebrow">Auditada e Verificada</div>
+      <h2>Linha do Tempo Master</h2>
+      <p>Todas as datas são consistentes — nenhuma inconsistência é acidental</p>
+    </div>
+    <div class="scroll-content"><div class="book-card"><div class="book-inner compact" id="timelineBody"></div></div></div>
+  </section>
+
+  <!-- DOCUMENTOS -->
+  <section class="page" id="page-documentos">
+    <div class="page-hdr">
+      <div class="page-eyebrow">Provas Físicas</div>
+      <h2>Os Documentos</h2>
+      <p>O diário, as fichas, o mapa — o que os personagens vão tocar</p>
+    </div>
+    <div class="scroll-content" id="documentosScroll">
+      <div id="documentosList" class="grid-auto"></div>
+      <div id="docDetailWrap"></div>
+    </div>
+  </section>
+
+  <!-- NOTAS DO MESTRE -->
+  <section class="page" id="page-notas-mestre">
+    <div class="page-hdr">
+      <div class="page-eyebrow">Parte XIII</div>
+      <h2>Notas Finais do Mestre</h2>
+      <p>O que nunca é dito explicitamente</p>
+    </div>
+    <div class="scroll-content"><div class="book-card"><div class="book-inner" id="notasMestreBody"></div></div></div>
+  </section>
+
+  <!-- ANOTAÇÕES -->
+  <section class="page" id="page-anotacoes">
+    <div class="page-hdr">
+      <div class="page-eyebrow">Caderno do Mestre</div>
+      <h2>Anotações</h2>
+      <p>Registros de sessão — salvos neste navegador</p>
+    </div>
+    <div class="notes-wrapper">
+      <div class="notes-area">
+        <div class="notes-sidebar">
+          <button class="notes-add-btn" onclick="addNote()">+ Nova Anotação</button>
+          <div id="notesList"></div>
+        </div>
+        <div class="notes-editor">
+          <input class="notes-title-input" id="noteTitle" placeholder="Título da anotação…" oninput="saveCurrentNote()">
+          <textarea class="notes-textarea" id="noteBody" placeholder="Escreva aqui…" oninput="saveCurrentNote()"></textarea>
+          <div class="notes-toolbar">
+            <span class="notes-meta" id="noteMeta"></span>
+            <button class="btn-export" onclick="exportNote()">Exportar</button>
+            <button class="btn-delete" onclick="deleteNote()">Excluir</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── SEARCH OVERLAY ────────────────────────────────────── -->
+<div class="search-overlay" id="searchOverlay" onclick="if(event.target===this)closeSearch()">
+  <div class="search-box">
+    <input class="search-input" id="searchInput" placeholder="Buscar na crônica…" oninput="runSearch()">
+    <div class="search-results" id="searchResults"></div>
+    <div class="search-hint">↵ para abrir · ESC para fechar</div>
+  </div>
+</div>
 <script>
-// ── DATA ──────────────────────────────────────────────────────────────────
+/* ═══════════════════════════════════════════════════════════
+   KARMA ETERNO · PAINEL DO MESTRE · v3
+   ═══════════════════════════════════════════════════════════ */
+
 let DATA = null;
 
-async function loadData() {
-  try {
-    const r = await fetch('data.json?v=' + Date.now());
-    DATA = await r.json();
-    initApp();
-  } catch(e) {
-    console.error('Erro ao carregar data.json:', e);
-    document.body.innerHTML += '<div style="position:fixed;top:20px;left:50%;transform:translateX(-50%);background:#4a0808;color:#f4ead8;padding:16px 24px;font-family:Cinzel,serif;font-size:21px;letter-spacing:2px;">ERRO: data.json não encontrado</div>';
-  }
+/* ── helpers de escape & formatação ──────────────────────── */
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+// Converte texto com quebras de linha em parágrafos. Itálico para trechos
+// entre aspas. Preserva quebras simples como <br>.
+function paras(txt){
+  return String(txt||'').split(/\n\s*\n/).map(p=>p.trim()).filter(Boolean)
+    .map(p=>`<p class="t-body">${fmtInline(p)}</p>`).join('');
+}
+function fmtInline(s){
+  // escapa e destaca falas entre aspas curvas/retas em itálico suave
+  return esc(s).replace(/\n/g,'<br>')
+    .replace(/"([^"]+)"/g,'<em style="color:var(--ink);font-style:italic">&ldquo;$1&rdquo;</em>')
+    .replace(/“([^”]+)”/g,'<em style="color:var(--ink);font-style:italic">&ldquo;$1&rdquo;</em>');
+}
+function ulList(arr){
+  if(!arr||!arr.length) return '';
+  return '<ul class="ul">'+arr.map(i=>`<li>${fmtInline(i)}</li>`).join('')+'</ul>';
 }
 
-function initApp() {
-  updateEpBadge();
-  renderClues();
-  renderEpisodios();
-  renderDocumentos();
+/* ── carregamento de dados ───────────────────────────────── */
+async function loadData(){
+  try{
+    const r = await fetch('data.json');
+    DATA = await r.json();
+  }catch(e){
+    document.querySelector('.main').innerHTML =
+      '<div style="padding:60px;font-family:serif;color:#d4c09a">Não foi possível carregar <b>data.json</b>. '+
+      'Abra o site através de um servidor (não direto do arquivo) ou mantenha data.json na mesma pasta.</div>';
+    return;
+  }
+  initApp();
+}
+
+function initApp(){
+  document.getElementById('footerEp').textContent = roman(DATA.meta.episodio_atual||1);
+  document.getElementById('inicioSub').textContent = DATA.meta.subtitulo||'';
+  renderHome();
+  renderGrimorio();
+  renderRegras();
   renderCidade();
+  renderCaim();
+  renderAbel();
+  renderProfetas();
+  renderNpcs();
+  renderTemporadas();
   renderCausalidade();
+  renderTimeline();
+  renderDocumentos();
+  renderNotasMestre();
   loadNotes();
   handleHash();
 }
+function roman(n){return['','I','II','III','IV','V','VI','VII','VIII','IX','X'][n]||n;}
 
-// ── NAVIGATION ────────────────────────────────────────────────────────────
-function navigate(page) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-  const pg = document.getElementById('page-' + page);
-  if (pg) pg.classList.add('active');
-  const nav = document.querySelector('[data-page="' + page + '"]');
-  if (nav) nav.classList.add('active');
-  window.location.hash = page;
-  // Reset NPC view when navigating away
-  if (page !== 'npcs') { closeNPC(); }
+/* ── NAVEGAÇÃO ───────────────────────────────────────────── */
+document.querySelectorAll('.nav-item').forEach(btn=>{
+  btn.addEventListener('click',()=>navigate(btn.dataset.page));
+});
+function navigate(page){
+  document.querySelectorAll('.nav-item').forEach(n=>n.classList.toggle('active',n.dataset.page===page));
+  document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id==='page-'+page));
+  document.querySelector('.mobile-title').textContent =
+    (document.querySelector('.nav-item[data-page="'+page+'"]')||{}).textContent || 'KARMA ETERNO';
+  window.scrollTo(0,0);
+  document.querySelectorAll('.scroll-content,.home-grid').forEach(s=>s.scrollTop=0);
+  if(location.hash!=='#'+page) history.replaceState(null,'','#'+page);
+  closeSidebarMobile();
+}
+function handleHash(){
+  const h=(location.hash||'#inicio').replace('#','');
+  if(document.getElementById('page-'+h)) navigate(h);
+  else navigate('inicio');
+}
+window.addEventListener('hashchange',handleHash);
+
+/* ── SIDEBAR MOBILE ──────────────────────────────────────── */
+function toggleSidebar(){
+  document.querySelector('.sidebar').classList.toggle('mobile-open');
+  document.querySelector('.sidebar-overlay').classList.toggle('show');
+}
+function closeSidebarMobile(){
+  document.querySelector('.sidebar').classList.remove('mobile-open');
+  document.querySelector('.sidebar-overlay').classList.remove('show');
 }
 
-function handleHash() {
-  const h = window.location.hash.replace('#','') || 'inicio';
-  navigate(h);
+/* ═══════════════════════════════════════════════════════════
+   INÍCIO — dashboard
+   ═══════════════════════════════════════════════════════════ */
+function renderHome(){
+  const m=DATA.meta;
+  const totalEp=DATA.episodios.length;
+  const grid=document.getElementById('homeGrid');
+  grid.innerHTML=`
+    <div class="home-pane">
+      <div class="home-pane-title">A Crônica</div>
+      <div class="stat-row"><span class="stat-label">Temporada</span><span class="stat-value">${roman(m.temporada)} — ${esc(DATA.temporadas[0].titulo)}</span></div>
+      <div class="stat-row"><span class="stat-label">Episódio Atual</span><span class="stat-value">${roman(m.episodio_atual)} de ${totalEp}</span></div>
+      <div class="stat-row"><span class="stat-label">Início do Jogo</span><span class="stat-value">18 de março de 2025</span></div>
+      <div class="stat-row"><span class="stat-label">Cidade</span><span class="stat-value">${esc(DATA.cidade.nome)}</span></div>
+      <div class="stat-row"><span class="stat-label">Vítimas — Operação Semente</span><span class="stat-value">33 em 11 dias</span></div>
+      <div class="stat-row"><span class="stat-label">Encarnações de Caim</span><span class="stat-value">9 documentadas</span></div>
+    </div>
+    <div class="home-pane">
+      <div class="home-pane-title">As Três Camadas</div>
+      ${DATA.universo.camadas.map(c=>`
+        <div class="stat-row" style="flex-direction:column;align-items:flex-start;gap:2px">
+          <span class="stat-label" style="color:var(--gold-lt)">${esc(c.numero)} · ${esc(c.titulo)}</span>
+          <span class="stat-value" style="font-size:15px">${esc(c.nome)}</span>
+        </div>`).join('')}
+      <div style="margin-top:14px">
+        <button class="quick-link" onclick="navigate('caim')"><span class="ql-icon">☉</span>Dossiê de Caim</button>
+        <button class="quick-link" onclick="navigate('abel')"><span class="ql-icon">☓</span>Dossiê de Abel</button>
+        <button class="quick-link" onclick="navigate('profetas')"><span class="ql-icon">†</span>Os Profetas</button>
+      </div>
+    </div>
+    <div class="home-pane">
+      <div class="home-pane-title">Atalhos</div>
+      <button class="quick-link" onclick="navigate('temporadas')"><span class="ql-icon">❧</span>As Três Temporadas</button>
+      <button class="quick-link" onclick="navigate('npcs')"><span class="ql-icon">☥</span>NPCs Principais</button>
+      <button class="quick-link" onclick="navigate('documentos')"><span class="ql-icon">❦</span>Documentos Físicos</button>
+      <button class="quick-link" onclick="navigate('timeline')"><span class="ql-icon">⧗</span>Linha do Tempo</button>
+      <button class="quick-link" onclick="navigate('causalidade')"><span class="ql-icon">⟁</span>Bíblia de Causalidade</button>
+      <button class="quick-link" onclick="navigate('regras')"><span class="ql-icon">⚖</span>Regras &amp; Sistema</button>
+      <button class="quick-link" onclick="navigate('notas-mestre')"><span class="ql-icon">☞</span>Notas do Mestre</button>
+    </div>`;
+
+  // bloco inferior — epígrafe
+  document.getElementById('inicioExtra').innerHTML=`
+    <div class="book-card" style="margin-top:0"><div class="book-inner">
+      <div class="t-eyebrow">${esc(m.documento)}</div>
+      <div class="div-orn">❧ ✦ ❧</div>
+      ${m.epigrafe.map(e=>`<div class="bq"><p>${esc(e)}</p></div>`).join('')}
+      <p class="t-body" style="text-align:center;margin-top:18px">${esc(DATA.universo.o_que_e)}</p>
+      <div class="div-orn">☉</div>
+      <p class="t-sub" style="text-align:center;display:block">Nenhuma inconsistência é acidental.</p>
+    </div></div>`;
 }
 
-window.addEventListener('hashchange', handleHash);
+/* ═══════════════════════════════════════════════════════════
+   GRIMÓRIO — universo + camadas + 5 regras
+   ═══════════════════════════════════════════════════════════ */
+function renderGrimorio(){
+  const u=DATA.universo;
+  let h=`
+    <div class="t-eyebrow">Parte I</div>
+    <h3 class="t-title">O Que Este Universo É</h3>
+    <p class="t-body dc">${fmtInline(u.o_que_e)}</p>
+    <p class="t-body">${fmtInline(u.referencia)}</p>
 
-// ── EPISODE ───────────────────────────────────────────────────────────────
-let currentEp = parseInt(localStorage.getItem('nv_ep') || '1');
+    <div class="t-sec"><span class="g">❧</span>As Três Camadas de Antagonismo</div>
+    ${u.camadas.map(c=>`
+      <div class="camada">
+        <div class="cm-num">${esc(c.numero)}</div>
+        <div class="cm-title">${esc(c.titulo)}</div>
+        <div class="cm-name">${esc(c.nome)}</div>
+        <div class="cm-body">${fmtInline(c.corpo)}</div>
+      </div>`).join('')}
 
-function changeEp(dir) {
-  currentEp = Math.max(1, Math.min(10, currentEp + dir));
-  localStorage.setItem('nv_ep', currentEp);
-  updateEpBadge();
-  renderEpisodios();
+    <div class="div-orn">✦ ✦ ✦</div>
+    <div class="t-eyebrow">As Leis do Mundo</div>
+    <h3 class="t-title">As Cinco Regras Fundamentais</h3>
+    <p class="t-body">Estas são as leis que governam o universo de Karma Eterno. Não estão escritas em nenhum livro. Nenhuma tradição as nomeou completamente. Os personagens vão descobri-las empiricamente. O Mestre já as conhece todas.</p>`;
+
+  DATA.regras.forEach(r=>{
+    h+=`<div class="t-sec"><span class="g">${esc(r.numero)}</span>Regra ${esc(r.numero)} — ${esc(r.titulo)}</div>
+        ${paras(r.corpo)}`;
+    if(r.nota_mestre){
+      h+=`<div class="nm-box"><div class="nm-lbl">O que o Mestre sabe e os personagens não</div>
+          <div class="nm-txt">${fmtInline(r.nota_mestre)}</div></div>`;
+    }
+  });
+  document.getElementById('grimorioBody').innerHTML=h;
 }
 
-function updateEpBadge() {
-  document.getElementById('current-ep-display').textContent = currentEp;
-  document.getElementById('stat-ep').textContent = 'Episódio ' + currentEp;
+/* ═══════════════════════════════════════════════════════════
+   REGRAS & SISTEMA
+   ═══════════════════════════════════════════════════════════ */
+function renderRegras(){
+  const s=DATA.sistema;
+  let h=`
+    <div class="t-eyebrow">Parte IX</div>
+    <h3 class="t-title">Base: ${esc(s.base)}</h3>
+    <p class="t-body dc">${fmtInline(s.base_intro)}</p>
+
+    <table class="stbl"><thead><tr><th>Atributo</th><th>Significado em Karma Eterno</th></tr></thead><tbody>
+    ${s.atributos.map(a=>`<tr><td style="font-family:'Cinzel',serif;color:var(--blood);font-size:13px;letter-spacing:1px">${esc(a.nome)}</td><td>${fmtInline(a.significado)}</td></tr>`).join('')}
+    </tbody></table>
+
+    <div class="div-orn">✦ ✦ ✦</div>
+    <div class="t-eyebrow">Os Dois Atributos Exclusivos</div>
+    <h3 class="t-title">Memória e Permanência</h3>
+
+    <div class="t-sec"><span class="g">❧</span>Memória</div>
+    <p class="t-body">${fmtInline(s.memoria.descricao)}</p>
+    <div class="info-grid">
+      <div class="info-k">Valor inicial</div><div class="info-v">${fmtInline(s.memoria.calculo)}</div>
+      <div class="info-k">Sobe</div><div class="info-v">${fmtInline(s.memoria.sobe)}</div>
+      <div class="info-k">Desce</div><div class="info-v">${fmtInline(s.memoria.desce)}</div>
+      <div class="info-k">Piso</div><div class="info-v">${fmtInline(s.memoria.piso)}</div>
+    </div>
+    <table class="stbl"><thead><tr><th>Valor</th><th>Estado</th></tr></thead><tbody>
+    ${s.memoria.escala.map(e=>`<tr><td style="font-family:'Cinzel',serif;color:var(--gold);font-size:13px">${esc(e.faixa)}</td><td>${fmtInline(e.estado)}</td></tr>`).join('')}
+    </tbody></table>
+
+    <div class="t-sec"><span class="g">❧</span>Permanência</div>
+    <p class="t-body">${fmtInline(s.permanencia.descricao)}</p>
+    <p class="t-body">${fmtInline(s.permanencia.mecanica)}</p>
+    <div class="warn-box"><div class="warn-lbl">Permanência Zero</div><div class="warn-txt">${fmtInline(s.permanencia.zero)}</div></div>
+
+    <div class="t-sec"><span class="g">❧</span>Integridade — Atributo Exclusivo de Abel</div>
+    <p class="t-body">${fmtInline(s.integridade.descricao)}</p>
+    <div class="bq"><p>${fmtInline(s.integridade.manifestacao)}</p></div>
+
+    <div class="div-orn">✦ ✦ ✦</div>
+    <div class="t-eyebrow">Mecânicas Exclusivas</div>
+    <h3 class="t-title">As Regras de Mesa</h3>`;
+
+  s.mecanicas.forEach(m=>{
+    h+=`<div class="mech-box"><div class="mech-ttl">${esc(m.nome)}</div>${paras(m.corpo)}</div>`;
+  });
+
+  h+=`<div class="t-sec"><span class="g">❧</span>O Envelope Lacrado — Criação de Personagem</div>
+      <p class="t-body">${fmtInline(s.envelope.descricao)}</p>
+      ${s.envelope.paginas.map(p=>`
+        <div class="env-page"><div class="env-page-lbl">${esc(p.pagina)}</div>
+        <div class="env-page-txt">${fmtInline(p.texto)}</div></div>`).join('')}
+      <div class="nm-box"><div class="nm-lbl">A Teia Fechada</div><div class="nm-txt">${fmtInline(s.envelope.teia)}</div></div>`;
+
+  document.getElementById('regrasBody').innerHTML=h;
 }
 
-function renderEpisodios() {
-  if (!DATA) return;
-  const list = document.getElementById('ep-list');
-  if (!list) return;
-  list.innerHTML = DATA.episodios.map(ep => {
-    const isCurrent = ep.numero === currentEp;
-    const isDone = ep.numero < currentEp;
-    return `
-    <div class="ep-card ${isDone?'done':''} ${isCurrent?'current':''}" style="margin-bottom:2px" onclick="toggleEp(${ep.numero})">
-      <div class="ep-num">${String(ep.numero).padStart(2,'0')}</div>
-      <div class="ep-label">Episódio ${ep.numero}</div>
-      <div class="ep-title">${ep.titulo}</div>
-      <div class="ep-q">${ep.pergunta}</div>
-      <div class="ep-body">${ep.resumo}</div>
-      <div class="ep-detail" id="epd-${ep.numero}">
-        <div class="t-ss" style="margin-top:0">Caminhos Possíveis</div>
-        <ul class="ul">${ep.caminhos.map(c=>`<li>${c}</li>`).join('')}</ul>
-        <div class="t-ss">Pistas — Camada 1 (visíveis)</div>
-        <ul class="ul">${ep.pistas_camada1.map(p=>`<li>${p}</li>`).join('')}</ul>
-        <div class="t-ss">Pistas — Camada 2 (com investigação)</div>
-        <ul class="ul">${ep.pistas_camada2.map(p=>`<li>${p}</li>`).join('')}</ul>
-        <div style="margin-top:18px;padding:14px 18px;border-left:2px solid var(--blood);background:rgba(107,15,15,.06)">
-          <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:4px;color:var(--blood);text-transform:uppercase;margin-bottom:6px;opacity:.78">Gancho Final</div>
-          <div style="font-family:'IM Fell English',serif;font-style:italic;font-size:15.5px;color:var(--ink-soft);line-height:1.65">${ep.gancho}</div>
-        </div>
-        <div class="ep-status">
-          <button class="ep-btn red" onclick="setEpStatus(${ep.numero},'feito');event.stopPropagation()">✓ Marcar como feito</button>
-          <button class="ep-btn gold" onclick="setEpCurrent(${ep.numero});event.stopPropagation()">→ Definir como atual</button>
-        </div>
+/* ═══════════════════════════════════════════════════════════
+   A CIDADE — Novavera
+   ═══════════════════════════════════════════════════════════ */
+function renderCidade(){
+  const c=DATA.cidade;
+  const perigoTag={extremo:'red',alto:'red',medio:'gold',baixo:'ash'};
+  let h=`
+    <div class="t-eyebrow">Parte V · ${esc(c.localizacao)} · Fundada em ${esc(c.fundacao)}</div>
+    <h3 class="t-title lg">${esc(c.nome)}</h3>
+    <div class="t-sec"><span class="g">❧</span>O Nome e a Mentira</div>
+    <p class="t-body dc">${fmtInline(c.nome_e_mentira)}</p>
+
+    <div class="t-sec"><span class="g">⌖</span>Os Pontos Centrais</div>`;
+
+  c.locais.forEach(l=>{
+    h+=`<div class="mech-box">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:8px">
+        <div class="mech-ttl" style="margin:0;border:none;padding:0">${esc(l.nome)}</div>
+        <span class="tag ${perigoTag[l.nivel_perigo]||'ash'}">${esc(l.nivel_perigo)}</span>
+      </div>
+      <p class="t-body" style="margin-bottom:8px">${fmtInline(l.descricao)}</p>
+      <div class="doc-note" style="margin:0"><div class="doc-nl">Detalhe</div><div class="doc-nt">${fmtInline(l.detalhe)}</div></div>
+    </div>`;
+  });
+
+  h+=`<div class="t-sec"><span class="g">⟁</span>O Símbolo da Área Verde</div>
+      <p class="t-body">${fmtInline(c.simbolo.descricao)}</p>
+      <div class="bq"><p>${fmtInline(c.simbolo.significado)}</p></div>
+      <div class="t-label">As Quatro Aparições — Ordem de Descoberta</div>
+      <div class="timeline-line">
+      ${c.simbolo.aparicoes.map((a,i)=>`<div class="tl-item"><div class="tl-year" style="font-size:14px">Aparição ${i+1}</div><div class="tl-text">${fmtInline(a)}</div></div>`).join('')}
+      </div>
+
+      <div class="t-sec"><span class="g">⧗</span>O Padrão 13</div>
+      ${paras(c.padrao_13)}`;
+
+  document.getElementById('cidadeBody').innerHTML=h;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CAIM — origem, marca, 9 encarnações
+   ═══════════════════════════════════════════════════════════ */
+function renderCaim(){
+  const c=DATA.caim;
+  let h=`
+    <div class="t-eyebrow">Parte II</div>
+    <h3 class="t-title lg">Caim — A Origem de Tudo</h3>
+    <p class="t-body dc">${fmtInline(c.intro)}</p>`;
+
+  c.blocos.forEach(b=>{
+    h+=`<div class="t-sec"><span class="g">☉</span>${esc(b.titulo)}</div>${paras(b.corpo)}`;
+  });
+
+  // A Marca
+  h+=`<div class="div-orn">✦ ✦ ✦</div>
+      <div class="t-eyebrow">No Sistema CoC</div>
+      <h3 class="t-title">A Marca de Caim</h3>
+      <p class="t-body">${fmtInline(c.marca.intro)}</p>
+      <div class="grid-2">
+        <div class="mech-box"><div class="mech-ttl">Benefícios</div>${ulList(c.marca.beneficios)}</div>
+        <div class="mech-box"><div class="mech-ttl">Custo</div>${ulList(c.marca.custo)}</div>
+      </div>
+      <div class="nm-box"><div class="nm-lbl">Paradoxo da Marca</div><div class="nm-txt">${fmtInline(c.marca.paradoxo)}</div></div>
+
+      <div class="div-orn">⧗ ⧗ ⧗</div>
+      <div class="t-eyebrow">Linha do Tempo Completa</div>
+      <h3 class="t-title">As Encarnações de Caim</h3>
+      <p class="t-body">Cinco mil e oitocentos anos. Nove encarnações com consciência plena, intercaladas por vidas menores de aprendizado. Clique em cada uma para abrir.</p>
+      <div style="margin-top:18px">`;
+
+  DATA.encarnacoes.forEach((e,i)=>{
+    h+=`<div class="enc-card ${e.principal?'principal':'menor'}" onclick="toggleEnc(${i})">
+      <div class="enc-marker">${e.principal?'☉':'·'}</div>
+      <div class="enc-ordem">${esc(e.ordem)}</div>
+      <div class="enc-titulo">${esc(e.titulo)}</div>
+      <div class="enc-data">${esc(e.data)}</div>
+      <div class="enc-detail" id="enc-${i}">
+        ${paras(e.corpo)}
+        ${e.ressonancia?`<div class="nm-box"><div class="nm-lbl">Ressonância com 2025</div><div class="nm-txt">${fmtInline(e.ressonancia)}</div></div>`:''}
       </div>
     </div>`;
+  });
+  h+='</div>';
+  document.getElementById('caimBody').innerHTML=h;
+}
+function toggleEnc(i){
+  document.getElementById('enc-'+i).classList.toggle('open');
+}
+
+/* ═══════════════════════════════════════════════════════════
+   ABEL
+   ═══════════════════════════════════════════════════════════ */
+function renderAbel(){
+  const a=DATA.abel;
+  let h=`
+    <div class="t-eyebrow">Parte III</div>
+    <h3 class="t-title lg">Abel — O Outro Lado</h3>
+    <div class="t-sec"><span class="g">☓</span>Quem Abel É</div>
+    <p class="t-body dc">${fmtInline(a.quem_e)}</p>
+
+    <div class="t-sec"><span class="g">☓</span>Abel como Jogador</div>
+    ${paras(a.como_jogador)}
+
+    <div class="t-sec"><span class="g">❧</span>Os Três Sinais de Abel na T1</div>
+    <p class="t-body">O Mestre planta três coisas sutis que só fazem sentido na T3:</p>
+    ${a.sinais.map(s=>`<div class="signal-block"><div class="signal-num">${esc(s.numero)}</div><div class="signal-txt">${fmtInline(s.corpo)}</div></div>`).join('')}
+
+    <div class="t-sec"><span class="g">❦</span>O Envelope Lacrado de Abel</div>
+    ${a.envelope.map(p=>`<div class="env-page"><div class="env-page-lbl">${esc(p.pagina)}</div><div class="env-page-txt">${fmtInline(p.texto)}</div></div>`).join('')}
+
+    <div class="t-sec"><span class="g">✦</span>A Bênção de Abel — Mecânica</div>
+    <p class="t-body">${fmtInline(a.bencao.intro)}</p>
+    <div class="mech-box"><div class="mech-ttl">Efeitos</div>${ulList(a.bencao.efeitos)}</div>
+    <div class="nm-box"><div class="nm-lbl">O Custo Único</div><div class="nm-txt">${fmtInline(a.bencao.custo)}</div></div>`;
+  document.getElementById('abelBody').innerHTML=h;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   PROFETAS — sistema + Ezequiel + Armindo
+   ═══════════════════════════════════════════════════════════ */
+function renderProfetas(){
+  const p=DATA.profetas;
+  const ez=p.ezequiel, ar=p.armindo;
+  let h=`
+    <div class="t-eyebrow">Parte IV</div>
+    <h3 class="t-title lg">Os Profetas</h3>
+    <div class="t-sec"><span class="g">†</span>O Sistema dos Profetas</div>
+    <p class="t-body dc">${fmtInline(p.sistema.intro)}</p>
+    ${p.sistema.hierarquia.map(hi=>`<div class="hier"><div class="hier-nivel">${esc(hi.nivel)}</div><div class="hier-body">${fmtInline(hi.corpo)}</div></div>`).join('')}
+
+    <div class="div-orn">✦ ✦ ✦</div>
+    <div class="t-eyebrow">O Primeiro Profeta · O Arquiteto</div>
+    <h3 class="t-title">${esc(ez.nome)}</h3>
+    <div class="info-grid">
+      <div class="info-k">Papel</div><div class="info-v">${esc(ez.papel)}</div>
+      <div class="info-k">Idade</div><div class="info-v">${esc(ez.idade)}</div>
+      <div class="info-k">Localização</div><div class="info-v">${esc(ez.localizacao)}</div>
+      <div class="info-k">Profissão</div><div class="info-v">${esc(ez.profissao)}</div>
+    </div>
+    <div class="t-label">A História</div>
+    ${paras(ez.historia)}
+    <div class="t-label">Quem Ele É em 2025</div>
+    ${paras(ez.em_2025)}
+    <div class="info-grid">
+      <div class="info-k">Estado da Marca</div><div class="info-v">${fmtInline(ez.marca)}</div>
+      <div class="info-k">Como Opera</div><div class="info-v">${fmtInline(ez.como_opera)}</div>
+    </div>
+    <div class="nm-box"><div class="nm-lbl">O Confronto Final da T2</div><div class="nm-txt">${fmtInline(ez.confronto_t2)}</div></div>
+    <div class="nm-box"><div class="nm-lbl">O Que o Torna Diferente</div><div class="nm-txt">${fmtInline(ez.o_que_torna_diferente)}</div></div>
+
+    <div class="div-orn">✦ ✦ ✦</div>
+    <div class="t-eyebrow">O Último Profeta · O Fundador</div>
+    <h3 class="t-title">${esc(ar.nome)}</h3>
+    <div class="info-grid">
+      <div class="info-k">Papel</div><div class="info-v">${esc(ar.papel)}</div>
+      <div class="info-k">Nascimento</div><div class="info-v">${esc(ar.nascimento)}</div>
+      <div class="info-k">Idade Real</div><div class="info-v">${esc(ar.idade_real)}</div>
+      <div class="info-k">Aparência</div><div class="info-v">${esc(ar.aparencia)}</div>
+      <div class="info-k">Função em 2025</div><div class="info-v">${esc(ar.funcao)}</div>
+      <div class="info-k">Identidades</div><div class="info-v">${esc(ar.identidades)}</div>
+    </div>
+    <div class="t-label">Por Que Caim o Escolheu</div>
+    ${paras(ar.por_que_escolhido)}
+    <div class="t-label">A História</div>
+    ${paras(ar.historia)}
+    <div class="nm-box"><div class="nm-lbl">A Tragédia de Armindo</div><div class="nm-txt">${fmtInline(ar.tragedia)}</div></div>
+
+    <div class="t-label">Como Interpretar Armindo</div>
+    ${ar.como_interpretar.map(f=>`<div class="signal-block"><div class="signal-num">${esc(f.fase)}</div><div class="signal-txt">${fmtInline(f.corpo)}</div></div>`).join('')}
+
+    <div class="t-label">Elementos Físicos</div>
+    ${ulList(ar.elementos_fisicos)}
+
+    <div class="t-label">Os Três Monólogos de Armindo</div>
+    ${ar.monologos.map(m=>`<div class="mono">${fmtInline(m)}</div>`).join('')}
+
+    <div class="nm-box"><div class="nm-lbl">O Que o Mestre Sabe e Ninguém Mais</div><div class="nm-txt">${fmtInline(ar.nota_mestre)}</div></div>`;
+  document.getElementById('profetasBody').innerHTML=h;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   NPCs
+   ═══════════════════════════════════════════════════════════ */
+const SIGILS={
+  circle:'<circle cx="20" cy="20" r="14" fill="none" stroke="currentColor" stroke-width="2"/>',
+  spiral:'<path d="M20 6a14 14 0 1 1-13 9 10 10 0 1 1 9 10 6 6 0 1 1-5-7" fill="none" stroke="currentColor" stroke-width="2"/>',
+  eye:'<path d="M4 20s7-10 16-10 16 10 16 10-7 10-16 10S4 20 4 20z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="20" cy="20" r="5"/>',
+  anchor:'<path d="M20 8v24M10 26a10 10 0 0 0 20 0M14 14h12" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="20" cy="9" r="3"/>',
+  fracture:'<path d="M20 4l-6 14 8 4-6 14M20 4l8 12-6 6 8 14" fill="none" stroke="currentColor" stroke-width="2"/>',
+  badge:'<path d="M20 5l4 4h6v6l4 4-4 4v6h-6l-4 4-4-4h-6v-6l-4-4 4-4V9h6z" fill="none" stroke="currentColor" stroke-width="2"/>',
+  key:'<circle cx="14" cy="14" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M19 19l13 13M28 28l4-4M24 32l4-4" stroke="currentColor" stroke-width="2" fill="none"/>'
+};
+function sigilSvg(name){
+  return `<svg viewBox="0 0 40 40">${SIGILS[name]||SIGILS.circle}</svg>`;
+}
+function renderNpcs(){
+  const list=document.getElementById('npcsList');
+  list.innerHTML=DATA.npcs.map((n,i)=>`
+    <div class="npc-card" onclick="openNpc(${i})">
+      <div class="npc-card-inner">
+        <div class="npc-sig">${sigilSvg(n.sigil)}</div>
+        <div class="npc-role">${esc(n.role)}</div>
+        <div class="npc-name">${esc(n.nome)}</div>
+        <div class="npc-tag">${esc(n.tag)}</div>
+        <div class="npc-excerpt">${esc(n.resumo)}</div>
+      </div>
+    </div>`).join('');
+}
+function openNpc(i){
+  const n=DATA.npcs[i];
+  document.getElementById('npcsList').style.display='none';
+  const w=document.getElementById('npcDetailWrap');
+  let h=`<button class="back-btn" onclick="closeNpc()">Voltar aos NPCs</button>
+    <div class="book-card"><div class="book-inner">
+      <div class="npc-detail-hdr">
+        <div class="npc-sigil">${sigilSvg(n.sigil)}</div>
+        <div>
+          <div class="t-eyebrow">${esc(n.role)}</div>
+          <div class="t-title" style="margin-bottom:4px">${esc(n.nome)}</div>
+          <div class="npc-attrs">
+            <span class="npc-attr"><strong>Idade</strong> ${esc(n.idade)}</span>
+            <span class="npc-attr"><strong>Função</strong> ${esc(n.funcao)}</span>
+          </div>
+        </div>
+      </div>
+      ${ulList(n.attrs)}
+      <div class="t-label">A História</div>
+      ${paras(n.historia)}`;
+  if(n.como_interpretar&&n.como_interpretar.length){
+    h+=`<div class="t-label">Como Interpretar / Pontos-Chave</div>${ulList(n.como_interpretar)}`;
+  }
+  if(n.nota_mestre){
+    h+=`<div class="nm-box"><div class="nm-lbl">O Que o Mestre Sabe</div><div class="nm-txt">${fmtInline(n.nota_mestre)}</div></div>`;
+  }
+  h+=`<div class="grid-2" style="margin-top:18px">
+        <div class="mech-box"><div class="mech-ttl">O Que Sabe</div>${ulList(n.sabe&&n.sabe.length?n.sabe:['—'])}</div>
+        <div class="mech-box"><div class="mech-ttl">O Que Não Sabe</div>${ulList(n.nao_sabe&&n.nao_sabe.length?n.nao_sabe:['—'])}</div>
+      </div>
+    </div></div>`;
+  w.innerHTML=h;
+  document.getElementById('npcsScroll').scrollTop=0;
+}
+function closeNpc(){
+  document.getElementById('npcDetailWrap').innerHTML='';
+  document.getElementById('npcsList').style.display='grid';
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TEMPORADAS — subtabs T1 / T2 / T3
+   ═══════════════════════════════════════════════════════════ */
+function renderTemporadas(){
+  const tabs=document.getElementById('tempSubtabs');
+  const panes=document.getElementById('tempPanes');
+  tabs.innerHTML=DATA.temporadas.map((t,i)=>
+    `<button class="subtab ${i===0?'active':''}" onclick="switchTemp(${i})">T${roman(t.numero)} — ${esc(t.titulo)}</button>`).join('');
+  panes.innerHTML=DATA.temporadas.map((t,i)=>{
+    let inner=`
+      <div class="season-card">
+        <div class="season-num">${roman(t.numero)}</div>
+        <div class="season-eyebrow">Temporada ${roman(t.numero)}</div>
+        <div class="season-title">${esc(t.titulo)}</div>
+        <div class="season-period">${esc(t.periodo)}</div>
+        <div class="season-lema">&ldquo;${esc(t.lema)}&rdquo;</div>
+        <div class="doc-note" style="margin:0 0 14px"><div class="doc-nl">O arco em uma frase</div><div class="doc-nt">${fmtInline(t.arco)}</div></div>
+        <div class="t-label" style="margin-top:6px">Tom</div>
+        <p class="t-body" style="margin-bottom:4px">${fmtInline(t.tom)}</p>
+      </div>`;
+    if(t.estabelece){
+      inner+=`<div class="book-card"><div class="book-inner compact">
+        <div class="t-sec" style="margin-top:0"><span class="g">❧</span>O Que a T${roman(t.numero)} Estabelece</div>
+        ${ulList(t.estabelece)}</div></div>`;
+    }
+    if(t.estrutura){
+      inner+=`<div class="book-card"><div class="book-inner compact">
+        <div class="t-sec" style="margin-top:0"><span class="g">❧</span>Estrutura</div>
+        ${ulList(t.estrutura)}</div></div>`;
+    }
+    if(t.revela){
+      inner+=`<div class="book-card"><div class="book-inner compact">
+        <div class="t-sec" style="margin-top:0"><span class="g">❧</span>O Que a T${roman(t.numero)} Revela</div>
+        ${ulList(t.revela)}</div></div>`;
+    }
+    if(t.gancho){
+      inner+=`<div class="book-card"><div class="book-inner compact">
+        <div class="t-sec" style="margin-top:0"><span class="g">⟁</span>O Gancho</div>${paras(t.gancho)}</div></div>`;
+    }
+    if(t.finale){
+      inner+=`<div class="book-card"><div class="book-inner compact">
+        <div class="t-sec" style="margin-top:0"><span class="g">☉</span>O Finale</div>${paras(t.finale)}
+        <div class="t-label">A Cena Mais Importante</div>${paras(t.cena_chave)}</div></div>`;
+    }
+    if(t.ganchos){
+      inner+=`<div class="book-card"><div class="book-inner compact">
+        <div class="t-sec" style="margin-top:0"><span class="g">⟁</span>Ganchos em Aberto</div>
+        ${ulList(t.ganchos)}</div></div>`;
+    }
+    // Episódios apenas para T1
+    if(t.numero===1){
+      inner+=`<div class="div-orn">❧ ✦ ❧</div>
+        <div style="font-family:'Cinzel',serif;font-size:13px;letter-spacing:4px;color:var(--gold-lt);text-transform:uppercase;margin-bottom:16px;text-align:center">Os Dez Episódios</div>`;
+      inner+=DATA.episodios.map((e,ei)=>`
+        <div class="ep-card ${e.status==='concluido'?'done':''} ${e.numero===DATA.meta.episodio_atual?'current':''}" onclick="toggleEp(${ei})">
+          <div class="ep-num">${roman(e.numero)}</div>
+          <div class="ep-label">Episódio ${roman(e.numero)}</div>
+          <div class="ep-title">${esc(e.titulo)}</div>
+          <div class="ep-q">${esc(e.subtitulo)}</div>
+          <div class="ep-body">${esc(e.resumo)}</div>
+          <div class="ep-detail" id="ep-${ei}">${renderEpDetail(e)}</div>
+        </div>`).join('');
+    }
+    return `<div class="subpane ${i===0?'active':''}" id="temppane-${i}">${inner}</div>`;
   }).join('');
 }
-
-function toggleEp(num) {
-  const d = document.getElementById('epd-'+num);
-  if (!d) return;
-  d.classList.toggle('open');
+function switchTemp(i){
+  document.querySelectorAll('#tempSubtabs .subtab').forEach((t,ti)=>t.classList.toggle('active',ti===i));
+  document.querySelectorAll('#tempPanes .subpane').forEach((p,pi)=>p.classList.toggle('active',pi===i));
+  document.getElementById('temporadasScroll').scrollTop=0;
+}
+function renderEpDetail(e){
+  let h='';
+  if(e.pergunta) h+=`<div class="doc-note" style="margin:0 0 14px"><div class="doc-nl">A Pergunta do Episódio</div><div class="doc-nt">${fmtInline(e.pergunta)}</div></div>`;
+  if(e.errado_desde_inicio){h+=`<div class="t-label">O Que Está Errado Desde o Início</div>${ulList(e.errado_desde_inicio)}`;}
+  if(e.no_velorio){h+=`<div class="t-label">No Velório</div>${ulList(e.no_velorio)}`;}
+  if(e.o_que_acontece){h+=`<div class="t-label">O Que Acontece</div>${ulList(e.o_que_acontece)}`;}
+  if(e.meia_noite){h+=`<div class="nm-box"><div class="nm-lbl">Meia-Noite — A Área Verde Silencia</div><div class="nm-txt">${fmtInline(e.meia_noite)}</div></div>`;}
+  if(e.armindo_entende){h+=`<div class="nm-box"><div class="nm-lbl">O Que Armindo Entende e Verbaliza</div><div class="nm-txt">${fmtInline(e.armindo_entende)}</div></div>`;}
+  if(e.sinal_abel){h+=`<div class="signal-block" style="border-color:rgba(107,15,15,.3)"><div class="signal-num" style="color:var(--blood)">Sinal de Abel</div><div class="signal-txt">${fmtInline(e.sinal_abel)}</div></div>`;}
+  if(e.cena_final){h+=`<div class="t-label">Cena Final</div>${paras(e.cena_final)}`;}
+  if(e.gancho){h+=`<div class="bq"><p><strong style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;color:var(--blood);display:block;margin-bottom:5px">GANCHO FINAL</strong>${fmtInline(e.gancho)}</p></div>`;}
+  h+=`<div class="ep-status">
+    <button class="ep-btn red" onclick="event.stopPropagation();setEpStatus(${e.numero},'concluido')">Marcar concluído</button>
+    <button class="ep-btn gold" onclick="event.stopPropagation();setEpStatus(${e.numero},'pendente')">Marcar pendente</button>
+  </div>`;
+  return h;
+}
+function toggleEp(i){document.getElementById('ep-'+i).classList.toggle('open');}
+function setEpStatus(num,status){
+  const e=DATA.episodios.find(x=>x.numero===num);
+  if(e){e.status=status; try{localStorage.setItem('ke_ep_'+num,status);}catch(_){}}
+  renderTemporadas();
+  switchTemp(0);
+  setTimeout(()=>{const el=document.getElementById('ep-'+(num-1));if(el)el.classList.add('open');},30);
 }
 
-function setEpCurrent(num) {
-  currentEp = num;
-  localStorage.setItem('nv_ep', num);
-  updateEpBadge();
-  renderEpisodios();
+/* ═══════════════════════════════════════════════════════════
+   CAUSALIDADE — accordion
+   ═══════════════════════════════════════════════════════════ */
+function renderCausalidade(){
+  document.getElementById('causalidadeBody').innerHTML=
+    `<div class="book-card"><div class="book-inner compact">
+      <div class="t-eyebrow">Parte X</div>
+      <h3 class="t-title">Respostas Para Cada "Por Quê"</h3>
+      <p class="t-body" style="margin-bottom:20px">Para cada pista que os personagens encontram, o Mestre sabe o que ela revela e para onde aponta. Toque numa pergunta para abrir.</p>
+      ${DATA.causalidade.map((c,i)=>`
+        <div class="caus-item" id="caus-${i}">
+          <div class="caus-q" onclick="toggleCaus(${i})">
+            <span>${esc(c.pergunta)}</span><span class="caus-mark">+</span>
+          </div>
+          <div class="caus-a">${fmtInline(c.resposta)}</div>
+        </div>`).join('')}
+    </div></div>`;
+}
+function toggleCaus(i){document.getElementById('caus-'+i).classList.toggle('open');}
+
+/* ═══════════════════════════════════════════════════════════
+   LINHA DO TEMPO MASTER
+   ═══════════════════════════════════════════════════════════ */
+function renderTimeline(){
+  document.getElementById('timelineBody').innerHTML=`
+    <div class="t-eyebrow">Parte VI</div>
+    <h3 class="t-title">Linha do Tempo Master</h3>
+    <p class="t-body" style="margin-bottom:18px">De 3800 a.C. ao 18 de março de 2025 — quando o jogo começa. As linhas destacadas marcam os momentos estruturais da crônica.</p>
+    ${DATA.timeline.map(t=>`
+      <div class="tlm-item ${t.destaque?'destaque':''}">
+        <div class="tlm-data">${esc(t.data)}</div>
+        <div class="tlm-evento">${fmtInline(t.evento)}${t.confirmacao?`<span class="tlm-conf">${esc(t.confirmacao)}</span>`:''}</div>
+      </div>`).join('')}`;
 }
 
-function setEpStatus(num, status) {
-  // Store in localStorage
-  const statuses = JSON.parse(localStorage.getItem('nv_ep_status') || '{}');
-  statuses[num] = status;
-  localStorage.setItem('nv_ep_status', JSON.stringify(statuses));
+/* ═══════════════════════════════════════════════════════════
+   DOCUMENTOS — diário, fichas, mapa (+ impressão)
+   ═══════════════════════════════════════════════════════════ */
+function renderDocumentos(){
+  const list=document.getElementById('documentosList');
+  list.innerHTML=DATA.documentos.map((d,i)=>{
+    let preview='';
+    if(d.tipo==='diario') preview=`${d.entradas.length} entradas · capa de couro preto`;
+    else if(d.tipo==='ficha') preview=esc((d.subtitulo||'').replace(' · CONFIDENCIAL','').replace(' · POST-MORTEM',''));
+    else if(d.tipo==='mapa') preview='Planta de 1961 · três camadas · Rua do Anterior';
+    return `<div class="npc-card" onclick="openDoc(${i})">
+      <div class="npc-card-inner">
+        <div class="npc-sig">${sigilSvg(d.tipo==='diario'?'fracture':d.tipo==='mapa'?'circle':'key')}</div>
+        <div class="npc-role">${d.tipo==='diario'?'Diário':d.tipo==='mapa'?'Mapa':'Ficha · Operação Semente'}</div>
+        <div class="npc-name" style="font-size:20px">${esc(d.titulo)}</div>
+        <div class="npc-excerpt">${preview}</div>
+      </div></div>`;
+  }).join('');
 }
-
-// ── CLUES (HOME) ──────────────────────────────────────────────────────────
-const CLUES = [
-  'Caderno de Valdecir com nomes dos personagens (1987)',
-  'Símbolo na lateral do caixão — por quem?',
-  'Placa do Centro Cívico — Benedito Braga, foto jovem demais',
-  'A chave de Valdecir — metal idêntico ao arquivo',
-  'Foto de Armindo de 1985 com mesma aparência de hoje',
-  'As três fichas e o critério de seleção',
-  'A Rua do Anterior no mapa original',
-  'Fundação diagonal — símbolo fechado em 17/06/1974',
-  'O diário do Anterior — duas caligrafias',
-  'Critério secundário — as 33 tinham dívidas com Armindo',
-  'O caso de 1978 — trabalhador morto, sobrenome de vítima',
-  'Data nos cadernos de Valdecir — daqui a três semanas'
-];
-
-function renderClues() {
-  const saved = JSON.parse(localStorage.getItem('nv_clues') || '{}');
-  const el = document.getElementById('clues-list');
-  if (!el) return;
-  el.innerHTML = CLUES.map((c,i) => `
-    <div class="clue-item">
-      <div class="clue-check ${saved[i]?'done':''}" onclick="toggleClue(${i})"></div>
-      <div class="clue-label ${saved[i]?'done':''}">${c}</div>
-    </div>`).join('');
-  updateStats(saved);
-}
-
-function toggleClue(i) {
-  const saved = JSON.parse(localStorage.getItem('nv_clues') || '{}');
-  saved[i] = !saved[i];
-  localStorage.setItem('nv_clues', JSON.stringify(saved));
-  renderClues();
-}
-
-function updateStats(saved) {
-  const done = Object.values(saved).filter(Boolean).length;
-  document.getElementById('stat-pistas').textContent = done + ' / ' + CLUES.length;
-  const npcSaved = JSON.parse(localStorage.getItem('nv_npcs_revealed') || '[]');
-  document.getElementById('stat-npcs').textContent = npcSaved.length + ' / 6';
-  document.getElementById('stat-sessoes').textContent = localStorage.getItem('nv_sessoes') || '0';
-}
-
-// ── NPCs ──────────────────────────────────────────────────────────────────
-function openNPC(id) {
-  document.getElementById('npc-grid').style.display = 'none';
-  document.querySelectorAll('.npc-detail').forEach(d => d.classList.remove('open'));
-  const det = document.getElementById('npc-'+id);
-  if (det) det.classList.add('open');
-  // track revealed
-  const rev = JSON.parse(localStorage.getItem('nv_npcs_revealed') || '[]');
-  if (!rev.includes(id)) { rev.push(id); localStorage.setItem('nv_npcs_revealed', JSON.stringify(rev)); }
-}
-
-function closeNPC() {
-  document.getElementById('npc-grid').style.display = 'grid';
-  document.querySelectorAll('.npc-detail').forEach(d => d.classList.remove('open'));
-}
-
-// ── DOCUMENTOS ────────────────────────────────────────────────────────────
-function renderDocumentos() {
-  if (!DATA) return;
-  const el = document.getElementById('docs-list');
-  if (!el) return;
-  el.innerHTML = DATA.documentos.map(doc => `
-    <div style="background:var(--parch);background-image:radial-gradient(ellipse at 20% 0%,rgba(180,140,80,.12) 0%,transparent 55%);box-shadow:0 2px 20px rgba(0,0,0,.3);padding:24px 28px;position:relative;overflow:hidden">
-      <div style="position:absolute;inset:0;background-image:repeating-linear-gradient(180deg,transparent,transparent 22px,rgba(90,74,48,.05) 22px,rgba(90,74,48,.05) 23px);pointer-events:none"></div>
-      <div style="position:relative;z-index:1">
-        ${doc.stamp ? `<div style="position:absolute;top:0;right:0;font-family:'Cinzel',serif;font-size:7px;letter-spacing:3px;color:var(--blood);opacity:.45;border:1px solid var(--blood);padding:2px 6px;transform:rotate(2deg)">${doc.stamp}</div>` : ''}
-        <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;color:var(--ash);text-transform:uppercase;border-bottom:1px solid rgba(90,74,48,.35);padding-bottom:8px;margin-bottom:12px">${doc.titulo}</div>
-        ${doc.tipo === 'ficha' ? renderFichaPreview(doc) : doc.tipo === 'diario' ? renderDiarioPreview(doc) : renderMapaPreview(doc)}
-        <div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">
-          <button class="btn-print" onclick="openDocModal('${doc.id}')" style="font-size:9px">👁 Ver completo</button>
-          <button class="btn-print" onclick="printDoc('${doc.id}')" style="font-size:9px">Imprimir PDF</button>
-        </div>
-      </div>
-    </div>`).join('');
-}
-
-function openDocModal(id) {
-  const doc = DATA.documentos.find(d => d.id === id);
-  if (!doc) return;
-  const old = document.getElementById('doc-modal');
-  if (old) old.remove();
-  const modal = document.createElement('div');
-  modal.id = 'doc-modal';
-  modal.style.cssText = 'position:fixed;inset:0;background:rgba(10,7,4,.92);z-index:500;overflow-y:auto;padding:30px 16px';
-  modal.innerHTML = `
-    <div style="max-width:700px;margin:0 auto">
-      <button onclick="document.getElementById('doc-modal').remove()" style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(154,122,42,.3);background:none;padding:8px 16px;cursor:pointer;margin-bottom:20px">← Fechar</button>
-      <div style="background:linear-gradient(135deg,#f0e4cc,#e8d5b0);border:1px solid rgba(90,74,48,.45);padding:32px 36px;position:relative;box-shadow:2px 4px 20px rgba(0,0,0,.3)">
-        <div style="position:absolute;inset:0;background-image:repeating-linear-gradient(180deg,transparent,transparent 23px,rgba(90,74,48,.055) 23px,rgba(90,74,48,.055) 24px);pointer-events:none"></div>
-        <div style="position:relative;z-index:1">
-          ${doc.stamp ? `<div style="position:absolute;top:10px;right:12px;font-family:'Cinzel',serif;font-size:7px;letter-spacing:3px;color:var(--blood);opacity:.48;border:1px solid var(--blood);padding:2px 7px;transform:rotate(2.5deg)">${doc.stamp}</div>` : ''}
-          <div style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--ash);text-transform:uppercase;border-bottom:1px solid rgba(90,74,48,.38);padding-bottom:10px;margin-bottom:18px">${doc.titulo}</div>
-          ${doc.tipo === 'ficha' ? renderFichaFull(doc) : doc.tipo === 'diario' ? renderDiarioFull(doc) : renderMapaFull(doc)}
-        </div>
-      </div>
-      ${doc.nota_mestre ? `<div style="margin-top:14px;padding:16px 20px;border:1px solid rgba(107,15,15,.3);background:rgba(10,7,4,.85)"><div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:4px;color:var(--blood);text-transform:uppercase;margin-bottom:8px;opacity:.78">Nota do Mestre</div><div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;line-height:1.75;color:rgba(212,192,154,.85)">${doc.nota_mestre}</div></div>` : ''}
-      <div style="margin-top:12px;text-align:right">
-        <button class="btn-print" onclick="printDoc('${doc.id}')">Imprimir / Baixar PDF</button>
-      </div>
+function openDoc(i){
+  const d=DATA.documentos[i];
+  document.getElementById('documentosList').style.display='none';
+  const w=document.getElementById('docDetailWrap');
+  let body='';
+  if(d.tipo==='ficha'){
+    body=`<div class="doc-prop">${d.stamp?`<div class="doc-stamp">${esc(d.stamp)}</div>`:''}
+      <div class="doc-hdr">${esc(d.subtitulo||d.titulo)}</div>
+      ${d.campos.map(f=>`<div class="doc-field"><span class="doc-fl">${esc(f.label)}</span><span class="doc-fv">${esc(f.valor)}</span></div>`).join('')}
+      ${d.nota?`<div class="doc-note"><div class="doc-nl">Observação de campo · manuscrita</div><div class="doc-nt" style="white-space:pre-line">${fmtInline(d.nota)}</div></div>`:''}
     </div>`;
-  document.body.appendChild(modal);
+  }else if(d.tipo==='diario'){
+    body=`<div class="diary-prop">
+      <div class="diary-hdr">${esc(d.titulo)}</div>
+      ${d.entradas.map(e=>`<div class="diary-entry" ${e.destaque?'style="background:rgba(107,15,15,.045);margin:0 -14px 22px;padding:14px;border-radius:2px"':''}>
+        <div class="diary-date" ${e.destaque?'style="color:var(--blood)"':''}>${esc(e.data)}</div>
+        <div class="diary-txt" style="white-space:pre-line">${fmtInline(e.texto)}</div>
+      </div>`).join('')}
+    </div>`;
+  }else if(d.tipo==='mapa'){
+    const c=d.conteudo;
+    body=`<div class="doc-prop">
+      <div class="doc-hdr">${esc(d.titulo)}</div>
+      ${[['O que o mapa mostra',c.o_que_mostra],['O símbolo — três camadas',c.o_simbolo],['O que existe fisicamente mas não está no mapa',c.o_que_existe_fisicamente],['A anotação no verso',c.verso],['O Padrão 13',c.padrao_13]]
+        .map(([t,v])=>`<div style="margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid rgba(90,74,48,.14)">
+          <div class="doc-nl" style="color:var(--gold)">${esc(t)}</div>
+          <div class="doc-fv" style="line-height:1.7">${fmtInline(v)}</div></div>`).join('')}
+    </div>`;
+  }
+  let h=`<button class="back-btn" onclick="closeDoc()">Voltar aos Documentos</button>
+    <div class="book-card"><div class="book-inner">
+      <div class="t-eyebrow">Documento Físico</div>
+      <div class="t-title">${esc(d.titulo)}</div>`;
+  if(d.descricao) h+=`<p class="t-sub" style="display:block;margin-bottom:16px">${esc(d.descricao)}</p>`;
+  h+=`<button class="btn-print" onclick="printDoc('${d.id}')">
+        <svg viewBox="0 0 24 24"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg>
+        Imprimir / Salvar PDF
+      </button>
+      ${body}`;
+  if(d.nota_mestre){
+    h+=`<div class="nm-box" style="margin-top:18px"><div class="nm-lbl">Nota do Mestre</div><div class="nm-txt">${fmtInline(d.nota_mestre)}</div></div>`;
+  }
+  // contexto extra para fichas: operação semente
+  if(d.tipo==='ficha' && i===DATA.documentos.findIndex(x=>x.tipo==='ficha')){
+    const op=DATA.operacao_semente;
+    h+=`<div class="div-orn">✦</div>
+      <div class="t-sec" style="margin-top:0"><span class="g">❧</span>A Operação Semente</div>
+      ${paras(op.o_que_foi)}
+      <div class="nm-box"><div class="nm-lbl">O Que o Mestre Sabe</div><div class="nm-txt">${fmtInline(op.nota_mestre)}</div></div>
+      <div class="t-label">O Critério Secundário</div>${paras(op.criterio_secundario)}`;
+  }
+  h+='</div></div>';
+  w.innerHTML=h;
+  document.getElementById('documentosScroll').scrollTop=0;
+}
+function closeDoc(){
+  document.getElementById('docDetailWrap').innerHTML='';
+  document.getElementById('documentosList').style.display='grid';
 }
 
-function renderFichaPreview(doc) {
-  return doc.campos.slice(0,4).map(f => `
-    <div style="margin-bottom:5px;display:flex;gap:8px;align-items:baseline">
-      <span style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;color:var(--ash);text-transform:uppercase;flex-shrink:0;opacity:.75;min-width:100px">${f.label}</span>
-      <span style="font-family:'IM Fell English',serif;font-size:14px;color:var(--ink);line-height:1.4">${f.valor}</span>
-    </div>`).join('') + `<div style="font-family:'Cinzel',serif;font-size:8px;color:var(--ash);opacity:.5;margin-top:8px">+ ${doc.campos.length - 4} campos</div>`;
-}
-
-function renderFichaFull(doc) {
-  return doc.campos.map(f => `
-    <div style="margin-bottom:8px;display:flex;gap:10px;align-items:baseline;border-bottom:1px solid rgba(90,74,48,.12);padding-bottom:7px;flex-wrap:wrap">
-      <span style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;color:var(--ash);text-transform:uppercase;flex-shrink:0;opacity:.78;min-width:120px">${f.label}</span>
-      <span style="font-family:'IM Fell English',serif;font-size:15px;color:var(--ink);line-height:1.5">${f.valor}</span>
-    </div>`).join('') +
-  (doc.nota ? `<div style="margin-top:16px;padding:12px 16px;border-left:2px solid var(--blood);background:rgba(107,15,15,.04)"><div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;color:var(--blood);text-transform:uppercase;margin-bottom:6px">Observação de campo · manuscrita</div><div style="font-family:'IM Fell English',serif;font-style:italic;font-size:14px;color:var(--ink-soft);line-height:1.7;white-space:pre-line">${doc.nota}</div></div>` : '');
-}
-
-function renderDiarioPreview(doc) {
-  const first = doc.entradas[0];
-  return `<div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:6px;opacity:.8">${first.data}</div>
-  <div style="font-family:'IM Fell English',serif;font-size:14px;color:var(--ink-soft);line-height:1.7">${first.texto.substring(0,150)}...</div>
-  <div style="font-family:'Cinzel',serif;font-size:8px;color:var(--ash);opacity:.5;margin-top:8px">${doc.entradas.length} entradas</div>`;
-}
-
-function renderDiarioFull(doc) {
-  return doc.entradas.map(e => `
-    <div style="margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid rgba(90,74,48,.18)${e.destaque ? ';background:rgba(107,15,15,.035);padding:12px;margin-left:-12px;margin-right:-12px' : ''}">
-      <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:${e.destaque ? 'var(--blood)' : 'var(--gold)'};text-transform:uppercase;margin-bottom:8px;opacity:.85">${e.data}</div>
-      <div style="font-family:'IM Fell English',serif;font-size:15px;line-height:1.85;color:var(--ink-soft);white-space:pre-line">${e.texto}</div>
-    </div>`).join('');
-}
-
-function renderMapaPreview(doc) {
-  return `<div style="font-family:'IM Fell English',serif;font-size:14px;color:var(--ink-soft);line-height:1.7">${doc.conteudo.o_que_mostra.substring(0,150)}...</div>
-  <div style="font-family:'Cinzel',serif;font-size:8px;color:var(--ash);opacity:.5;margin-top:8px">Clique para ver completo</div>`;
-}
-
-function renderMapaFull(doc) {
-  const c = doc.conteudo;
-  return [
-    ['O que o mapa mostra', c.o_que_mostra],
-    ['O símbolo — três camadas', c.o_simbolo],
-    ['O que existe fisicamente mas não está no mapa', c.o_que_existe_fisicamente],
-    ['A anotação no verso', c.verso],
-    ['O Padrão 13', c.padrao_13]
-  ].map(([t,v]) => `
-    <div style="margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid rgba(90,74,48,.14)">
-      <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:6px;opacity:.85">${t}</div>
-      <div style="font-family:'IM Fell English',serif;font-size:15px;line-height:1.82;color:var(--ink-soft)">${v}</div>
-    </div>`).join('');
-}
-
-
-function printDoc(id) {
-  const doc = DATA.documentos.find(d => d.id === id);
-  if (!doc) return;
-  const win = window.open('', '_blank');
+/* ── IMPRESSÃO DE DOCUMENTOS (preservada — tarefas 1 e 2) ─── */
+function printDoc(id){
+  const doc=DATA.documentos.find(d=>d.id===id);
+  if(!doc) return;
+  const win=window.open('','_blank');
   win.document.write(generatePrintHTML(doc));
   win.document.close();
-  const triggerPrint = () => {
+  const triggerPrint=()=>{
     win.focus();
-    const fonts = win.document.fonts;
-    if (fonts && fonts.ready) {
-      fonts.ready.then(() => setTimeout(() => win.print(), 80));
-    } else {
-      setTimeout(() => win.print(), 350);
-    }
+    const fonts=win.document.fonts;
+    if(fonts&&fonts.ready){fonts.ready.then(()=>setTimeout(()=>win.print(),80));}
+    else{setTimeout(()=>win.print(),350);}
   };
-  if (win.document.readyState === 'complete') triggerPrint();
-  else win.onload = triggerPrint;
+  if(win.document.readyState==='complete') triggerPrint();
+  else win.onload=triggerPrint;
 }
-
-function generatePrintHTML(doc) {
-  let content = '';
-
-  // Divide um texto em parágrafos <p> individuais. Cada parágrafo é uma
-  // unidade que não pode ser cortada ao meio; a quebra de página só pode
-  // acontecer ENTRE parágrafos, nunca dentro de um. Textos sem quebra
-  // dupla viram um único parágrafo.
-  const paras = (txt, cls) => String(txt || '')
-    .split(/\n\s*\n/)
-    .map(p => p.trim())
-    .filter(Boolean)
-    .map(p => `<p class="${cls}">${p.replace(/\n/g, '<br>')}</p>`)
-    .join('');
-
-  if (doc.tipo === 'ficha') {
-    content = (doc.campos || []).map(f => `
-      <div class="row">
-        <span class="fl">${f.label}</span>
-        <span class="fv">${f.valor}</span>
-      </div>`).join('') +
-      (doc.nota ? `
-      <div class="nota">
-        <div class="nota-l">Observação de campo · manuscrita</div>
-        ${paras(doc.nota, 'nota-t')}
-      </div>` : '');
-
-  } else if (doc.tipo === 'diario') {
-    content = (doc.entradas || []).map(e => `
-      <div class="entry${e.destaque ? ' entry-hi' : ''}">
-        <div class="entry-date${e.destaque ? ' entry-date-hi' : ''}">${e.data}</div>
-        ${paras(e.texto, 'entry-txt')}
-      </div>`).join('');
-
-  } else if (doc.tipo === 'mapa') {
-    const c = doc.conteudo || {};
-    content = [
-      ['O que o mapa mostra', c.o_que_mostra],
-      ['O símbolo — três camadas', c.o_simbolo],
-      ['O que existe fisicamente mas não está no mapa', c.o_que_existe_fisicamente],
-      ['A anotação no verso', c.verso],
-      ['O Padrão 13', c.padrao_13]
-    ].filter(([,v]) => v).map(([t,v]) => `
-      <div class="sec">
-        <div class="sec-l">${t}</div>
-        ${paras(v, 'sec-t')}
-      </div>`).join('');
+function generatePrintHTML(doc){
+  let content='';
+  const pp=(txt,cls)=>String(txt||'').split(/\n\s*\n/).map(p=>p.trim()).filter(Boolean)
+    .map(p=>`<p class="${cls}">${p.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/\n/g,'<br>')}</p>`).join('');
+  if(doc.tipo==='ficha'){
+    content=(doc.campos||[]).map(f=>`<div class="row"><span class="fl">${f.label}</span><span class="fv">${f.valor}</span></div>`).join('')+
+      (doc.nota?`<div class="nota"><div class="nota-l">Observação de campo · manuscrita</div>${pp(doc.nota,'nota-t')}</div>`:'');
+  }else if(doc.tipo==='diario'){
+    content=(doc.entradas||[]).map(e=>`<div class="entry${e.destaque?' entry-hi':''}"><div class="entry-date${e.destaque?' entry-date-hi':''}">${e.data}</div>${pp(e.texto,'entry-txt')}</div>`).join('');
+  }else if(doc.tipo==='mapa'){
+    const c=doc.conteudo||{};
+    content=[['O que o mapa mostra',c.o_que_mostra],['O símbolo — três camadas',c.o_simbolo],['O que existe fisicamente mas não está no mapa',c.o_que_existe_fisicamente],['A anotação no verso',c.verso],['O Padrão 13',c.padrao_13]]
+      .filter(([,v])=>v).map(([t,v])=>`<div class="sec"><div class="sec-l">${t}</div>${pp(v,'sec-t')}</div>`).join('');
   }
-
-  return `<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8">
-  <title>${doc.titulo}</title>
+  return `<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><title>${doc.titulo}</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     body{background:#221a10;font-family:'IM Fell English',Georgia,serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-    .wrapper{max-width:680px;margin:24px auto;background:linear-gradient(135deg,#f0e4cc,#e8d5b0);
-      border:1px solid rgba(90,74,48,.45);padding:32px 36px;position:relative;
-      box-shadow:2px 4px 20px rgba(0,0,0,.3)}
-    .wrapper::before{content:"";position:absolute;inset:0;
-      background-image:repeating-linear-gradient(180deg,transparent,transparent 23px,rgba(90,74,48,.055) 23px,rgba(90,74,48,.055) 24px);
-      pointer-events:none}
+    .wrapper{max-width:680px;margin:24px auto;background:linear-gradient(135deg,#f0e4cc,#e8d5b0);border:1px solid rgba(90,74,48,.45);padding:32px 36px;position:relative;box-shadow:2px 4px 20px rgba(0,0,0,.3)}
+    .wrapper::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(180deg,transparent,transparent 23px,rgba(90,74,48,.055) 23px,rgba(90,74,48,.055) 24px);pointer-events:none}
     .inner{position:relative;z-index:1}
-    .stamp{position:absolute;top:10px;right:12px;font-family:'Cinzel',Georgia,serif;font-size:7px;
-      letter-spacing:3px;color:#7d1212;opacity:.48;border:1px solid #7d1212;padding:2px 7px;
-      transform:rotate(2.5deg);text-transform:uppercase}
-    h1{font-family:'Cinzel',Georgia,serif;font-size:11px;letter-spacing:3px;color:#5a4a30;
-      text-transform:uppercase;border-bottom:1px solid rgba(90,74,48,.38);
-      padding-bottom:10px;margin-bottom:18px}
-
-    /* ── FICHA ── */
-    .row{margin-bottom:8px;display:flex;gap:10px;align-items:baseline;
-      border-bottom:1px solid rgba(90,74,48,.12);padding-bottom:7px;flex-wrap:wrap;
-      break-inside:avoid;page-break-inside:avoid}
-    .fl{font-family:'Cinzel',Georgia,serif;font-size:8px;letter-spacing:2px;color:#5a4a30;
-      text-transform:uppercase;flex-shrink:0;opacity:.78;min-width:120px}
+    .stamp{position:absolute;top:10px;right:12px;font-family:'Cinzel',Georgia,serif;font-size:7px;letter-spacing:3px;color:#7d1212;opacity:.48;border:1px solid #7d1212;padding:2px 7px;transform:rotate(2.5deg);text-transform:uppercase}
+    h1{font-family:'Cinzel',Georgia,serif;font-size:11px;letter-spacing:3px;color:#5a4a30;text-transform:uppercase;border-bottom:1px solid rgba(90,74,48,.38);padding-bottom:10px;margin-bottom:18px}
+    .row{margin-bottom:8px;display:flex;gap:10px;align-items:baseline;border-bottom:1px solid rgba(90,74,48,.12);padding-bottom:7px;flex-wrap:wrap;break-inside:avoid;page-break-inside:avoid}
+    .fl{font-family:'Cinzel',Georgia,serif;font-size:8px;letter-spacing:2px;color:#5a4a30;text-transform:uppercase;flex-shrink:0;opacity:.78;min-width:120px}
     .fv{font-family:'IM Fell English',Georgia,serif;font-size:15px;color:#180e04;line-height:1.5}
-    .nota{margin-top:16px;padding:12px 16px;border-left:2px solid #7d1212;
-      background:rgba(125,18,18,.04)}
-    .nota-l{font-family:'Cinzel',Georgia,serif;font-size:8px;letter-spacing:3px;color:#7d1212;
-      text-transform:uppercase;margin-bottom:6px;
-      break-after:avoid;page-break-after:avoid}
-    .nota-t{font-family:'IM Fell English',Georgia,serif;font-style:italic;font-size:14px;
-      color:#3a2510;line-height:1.7}
+    .nota{margin-top:16px;padding:12px 16px;border-left:2px solid #7d1212;background:rgba(125,18,18,.04)}
+    .nota-l{font-family:'Cinzel',Georgia,serif;font-size:8px;letter-spacing:3px;color:#7d1212;text-transform:uppercase;margin-bottom:6px;break-after:avoid;page-break-after:avoid}
+    .nota-t{font-family:'IM Fell English',Georgia,serif;font-style:italic;font-size:14px;color:#3a2510;line-height:1.7}
     .nota-t+.nota-t{margin-top:10px}
-
-    /* ── DIÁRIO ── */
     .entry{margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid rgba(90,74,48,.18)}
     .entry:last-child{border:none;margin-bottom:0;padding-bottom:0}
-    .entry-hi{background:rgba(125,18,18,.035);padding:12px;margin-left:-12px;margin-right:-12px;
-      break-inside:avoid;page-break-inside:avoid}
-    .entry-date{font-family:'Cinzel',Georgia,serif;font-size:9px;letter-spacing:3px;color:#9a7a2a;
-      text-transform:uppercase;margin-bottom:8px;opacity:.85;
-      break-after:avoid;page-break-after:avoid}
+    .entry-hi{background:rgba(125,18,18,.035);padding:12px;margin-left:-12px;margin-right:-12px;break-inside:avoid;page-break-inside:avoid}
+    .entry-date{font-family:'Cinzel',Georgia,serif;font-size:9px;letter-spacing:3px;color:#9a7a2a;text-transform:uppercase;margin-bottom:8px;opacity:.85;break-after:avoid;page-break-after:avoid}
     .entry-date-hi{color:#7d1212}
-    .entry-txt{font-family:'IM Fell English',Georgia,serif;font-size:15px;line-height:1.85;
-      color:#3a2510}
+    .entry-txt{font-family:'IM Fell English',Georgia,serif;font-size:15px;line-height:1.85;color:#3a2510}
     .entry-txt+.entry-txt{margin-top:13px}
-
-    /* ── MAPA ── */
     .sec{margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid rgba(90,74,48,.14)}
     .sec:last-child{border:none;margin-bottom:0;padding-bottom:0}
-    .sec-l{font-family:'Cinzel',Georgia,serif;font-size:9px;letter-spacing:3px;color:#9a7a2a;
-      text-transform:uppercase;margin-bottom:6px;opacity:.85;
-      break-after:avoid;page-break-after:avoid}
+    .sec-l{font-family:'Cinzel',Georgia,serif;font-size:9px;letter-spacing:3px;color:#9a7a2a;text-transform:uppercase;margin-bottom:6px;opacity:.85;break-after:avoid;page-break-after:avoid}
     .sec-t{font-family:'IM Fell English',Georgia,serif;font-size:15px;line-height:1.82;color:#3a2510}
     .sec-t+.sec-t{margin-top:10px}
-
-    /* Cada parágrafo é indivisível; a quebra de página só ocorre ENTRE eles.
-       orphans/widows impedem linha solta no fim ou início de página. */
     p{break-inside:avoid;page-break-inside:avoid;orphans:2;widows:2}
-
     @page{margin:14mm}
     @media print{
       body{background:#f0e4cc!important}
@@ -1656,260 +1593,160 @@ function generatePrintHTML(doc) {
       h1{break-after:avoid;page-break-after:avoid}
     }
   </style></head><body>
-  <div class="wrapper">
-    <div class="inner">
-      ${doc.stamp ? `<div class="stamp">${doc.stamp}</div>` : ''}
-      <h1>${doc.titulo}</h1>
-      ${content}
+  <div class="wrapper"><div class="inner">
+    ${doc.stamp?`<div class="stamp">${doc.stamp}</div>`:''}
+    <h1>${doc.titulo}</h1>
+    ${content}
+  </div></div></body></html>`;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   NOTAS DO MESTRE — Parte XIII
+   ═══════════════════════════════════════════════════════════ */
+function renderNotasMestre(){
+  const n=DATA.notas_mestre;
+  document.getElementById('notasMestreBody').innerHTML=`
+    <div class="t-eyebrow">Parte XIII</div>
+    <h3 class="t-title lg">Notas Finais do Mestre</h3>
+
+    <div class="t-sec"><span class="g">☞</span>${esc(n.linha_que_muda.titulo)}</div>
+    <div class="bq"><p>${esc(n.linha_que_muda.citacao)}</p></div>
+    <div class="info-grid">
+      <div class="info-k">Na T1</div><div class="info-v">${fmtInline(n.linha_que_muda.t1)}</div>
+      <div class="info-k">Na T3</div><div class="info-v">${fmtInline(n.linha_que_muda.t3)}</div>
     </div>
-  </div></body></html>`;
+
+    <div class="t-sec"><span class="g">☞</span>${esc(n.nunca_dito.titulo)}</div>
+    ${ulList(n.nunca_dito.itens)}
+
+    <div class="t-sec"><span class="g">☞</span>${esc(n.pergunta_sem_resposta.titulo)}</div>
+    <p class="t-body">${fmtInline(n.pergunta_sem_resposta.corpo)}</p>
+    <div class="bq"><p>${esc(n.pergunta_sem_resposta.citacao)}</p></div>
+    <p class="t-body">${fmtInline(n.pergunta_sem_resposta.fecho)}</p>
+
+    <div class="t-sec"><span class="g">☞</span>${esc(n.regra_de_ouro.titulo)}</div>
+    ${paras(n.regra_de_ouro.corpo)}
+
+    <div class="div-orn">☉</div>
+    <div class="warn-box"><div class="warn-lbl">O Epitáfio</div><div class="warn-txt">${esc(n.epitafio)}</div></div>
+
+    <div class="div-orn">❧ ✦ ❧</div>
+    <p class="t-sub" style="text-align:center;display:block">Karma Eterno · Temporadas I, II e III · 2025<br>Documento Confidencial · Uso Interno do Mestre<br>Nenhuma inconsistência é acidental.</p>`;
 }
 
-// ── NOTES ─────────────────────────────────────────────────────────────────
-let notes = [];
-let currentNoteId = null;
-let notesTab = 'sessoes';
-
-function loadNotes() {
-  notes = JSON.parse(localStorage.getItem('nv_notes') || '[]');
-  if (notes.length === 0) {
-    notes = [{ id: Date.now(), title: 'Sessão 1', body: '', updated: new Date().toISOString() }];
-    saveNotes();
-  }
-  renderNotesList();
-  selectNote(notes[0].id);
-}
-
-function saveNotes() {
-  localStorage.setItem('nv_notes', JSON.stringify(notes));
-}
-
-function renderNotesList() {
-  const el = document.getElementById('notes-list');
-  if (!el) return;
-  const filtered = notesTab === 'sessoes' ? notes.filter(n => n.title.startsWith('Sessão')) : notes.filter(n => !n.title.startsWith('Sessão'));
-  el.innerHTML = filtered.map(n => `
-    <button class="notes-session-item ${n.id === currentNoteId ? 'active' : ''}" onclick="selectNote(${n.id})">
-      ${n.title || 'Sem título'}
-    </button>`).join('');
-}
-
-function selectNote(id) {
-  currentNoteId = id;
-  const note = notes.find(n => n.id === id);
-  if (!note) return;
-  document.getElementById('note-title').value = note.title || '';
-  document.getElementById('note-body').value = note.body || '';
-  document.getElementById('note-meta').textContent = 'Atualizado: ' + new Date(note.updated).toLocaleString('pt-BR');
-  renderNotesList();
-}
-
-function saveCurrentNote() {
-  if (!currentNoteId) return;
-  const note = notes.find(n => n.id === currentNoteId);
-  if (!note) return;
-  note.title = document.getElementById('note-title').value;
-  note.body = document.getElementById('note-body').value;
-  note.updated = new Date().toISOString();
-  saveNotes();
-  renderNotesList();
-  document.getElementById('note-meta').textContent = 'Salvo · ' + new Date().toLocaleTimeString('pt-BR');
-}
-
-function addNote() {
-  const prefix = notesTab === 'sessoes' ? 'Sessão ' : 'Nota ';
-  const num = notes.filter(n => n.title.startsWith(prefix)).length + 1;
-  const note = { id: Date.now(), title: prefix + num, body: '', updated: new Date().toISOString() };
-  notes.unshift(note);
-  saveNotes();
-  renderNotesList();
-  selectNote(note.id);
-}
-
-function deleteCurrentNote() {
-  if (!currentNoteId || notes.length <= 1) return;
-  if (!confirm('Apagar esta nota?')) return;
-  notes = notes.filter(n => n.id !== currentNoteId);
-  saveNotes();
-  loadNotes();
-}
-
-function switchNotesTab(tab) {
-  notesTab = tab;
-  document.querySelectorAll('.notes-tab').forEach((t,i) => t.classList.toggle('active', (i===0&&tab==='sessoes')||(i===1&&tab==='livre')));
-  renderNotesList();
-}
-
-function exportNotes() {
-  const data = { exportado: new Date().toISOString(), notas: notes };
-  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = 'novavera-anotacoes-' + new Date().toISOString().slice(0,10) + '.json';
-  a.click();
-}
-
-// ── SEARCH ────────────────────────────────────────────────────────────────
-const SEARCH_INDEX = [
-  { section: 'Grimório', title: 'O Grimório Completo', page: 'grimorio' },
-  { section: 'Regras', title: 'As Cinco Regras Fundamentais', page: 'regras' },
-  { section: 'Regras', title: 'Sistema — Chamado de Cthulhu', page: 'regras' },
-  { section: 'Regras', title: 'Memória e Presença', page: 'regras' },
-  { section: 'NPC', title: 'Armindo Laerte Vasconcelos', page: 'npcs', action: () => { navigate('npcs'); setTimeout(()=>openNPC('armindo'),100); } },
-  { section: 'NPC', title: 'Vera Monteiro — O Espelho', page: 'npcs', action: () => { navigate('npcs'); setTimeout(()=>openNPC('vera'),100); } },
-  { section: 'NPC', title: 'Gabriel Tostes — O Arquivo', page: 'npcs', action: () => { navigate('npcs'); setTimeout(()=>openNPC('gabriel'),100); } },
-  { section: 'NPC', title: 'Natalina Braga — A Âncora', page: 'npcs', action: () => { navigate('npcs'); setTimeout(()=>openNPC('natalina'),100); } },
-  { section: 'NPC', title: 'Décio Murta — O Precipício', page: 'npcs', action: () => { navigate('npcs'); setTimeout(()=>openNPC('decio'),100); } },
-  { section: 'NPC', title: 'Ronaldo Seabra — O Instrumento', page: 'npcs', action: () => { navigate('npcs'); setTimeout(()=>openNPC('ronaldo'),100); } },
-  { section: 'NPC', title: 'Sueli Nascimento — A Fratura', page: 'npcs', action: () => { navigate('npcs'); setTimeout(()=>openNPC('sueli'),100); } },
-  { section: 'Documentos', title: 'Ficha nº07 — Dalva Monteiro', page: 'documentos' },
-  { section: 'Documentos', title: 'Ficha nº19 — Severino Costa', page: 'documentos' },
-  { section: 'Documentos', title: 'Ficha nº34 — Benedito Braga', page: 'documentos' },
-  { section: 'Documentos', title: 'O Diário do Anterior', page: 'documentos' },
-  { section: 'Anotações', title: 'Minhas Anotações', page: 'anotacoes' },
-  { section: 'Cidade', title: 'A Cidade — Novavera', page: 'cidade' },
-  { section: 'Cidade', title: 'Área Verde — Nível Extremo', page: 'cidade' },
-  { section: 'Cidade', title: 'Arquivo Histórico Municipal', page: 'cidade' },
-  { section: 'Cidade', title: 'O Símbolo da Área Verde', page: 'cidade' },
-  { section: 'Causalidade', title: 'Bíblia de Causalidade', page: 'causalidade' },
-  { section: 'Causalidade', title: 'Por que Dalva começou a falar?', page: 'causalidade' },
-  { section: 'Causalidade', title: 'Como Armindo soube dos personagens?', page: 'causalidade' },
-  { section: 'Causalidade', title: 'Quem fechou o símbolo na Rua do Anterior?', page: 'causalidade' },
-];
-
-function openSearch() {
-  document.getElementById('search-overlay').classList.add('open');
-  setTimeout(() => document.getElementById('search-input').focus(), 50);
-}
-
-function closeSearch(e) {
-  if (e.target.id === 'search-overlay' || e.key === 'Escape') {
-    document.getElementById('search-overlay').classList.remove('open');
-    document.getElementById('search-input').value = '';
-    document.getElementById('search-results').innerHTML = '';
-  }
-}
-
-function doSearch(q) {
-  const el = document.getElementById('search-results');
-  if (!q) { el.innerHTML = ''; return; }
-  const results = SEARCH_INDEX.filter(i => i.title.toLowerCase().includes(q.toLowerCase()) || i.section.toLowerCase().includes(q.toLowerCase()));
-  el.innerHTML = results.slice(0,8).map((r,i) => `
-    <div class="search-result" onclick="goToResult(${i}, '${r.page}')">
-      <div class="search-result-label">${r.section}</div>
-      <div class="search-result-title">${r.title}</div>
-    </div>`).join('') || '<div class="search-result"><div class="search-result-title" style="opacity:.5">Nenhum resultado</div></div>';
-  window._searchResults = results;
-}
-
-function goToResult(i, page) {
-  const r = window._searchResults && window._searchResults[i];
-  document.getElementById('search-overlay').classList.remove('open');
-  if (r && r.action) { r.action(); } else { navigate(page); }
-}
-
-document.addEventListener('keydown', e => {
-  if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); openSearch(); }
-  if (e.key === 'Escape') closeSearch(e);
-});
-
-
-// ── MOBILE SIDEBAR ────────────────────────────────────────────────────────
-function toggleSidebar() {
-  const s = document.getElementById('sidebar');
-  const o = document.getElementById('sidebar-overlay');
-  s.classList.toggle('mobile-open');
-  o.classList.toggle('show');
-}
-function closeSidebar() {
-  document.getElementById('sidebar').classList.remove('mobile-open');
-  document.getElementById('sidebar-overlay').classList.remove('show');
-}
-// Close sidebar on nav item click (mobile)
-document.querySelectorAll('.nav-item').forEach(item => {
-  item.addEventListener('click', () => {
-    if (window.innerWidth <= 768) closeSidebar();
+/* ═══════════════════════════════════════════════════════════
+   ANOTAÇÕES — localStorage
+   ═══════════════════════════════════════════════════════════ */
+let notes=[], currentNote=null;
+function loadNotes(){
+  try{notes=JSON.parse(localStorage.getItem('ke_notes')||'[]');}catch(_){notes=[];}
+  // restaura status de episódios
+  DATA.episodios.forEach(e=>{
+    try{const s=localStorage.getItem('ke_ep_'+e.numero);if(s)e.status=s;}catch(_){}
   });
+  if(!notes.length){
+    notes=[{id:Date.now(),title:'Sessão 1 — Novavera',body:'',ts:Date.now()}];
+    persistNotes();
+  }
+  currentNote=notes[0].id;
+  renderNotesList();
+  loadNoteToEditor();
+}
+function persistNotes(){try{localStorage.setItem('ke_notes',JSON.stringify(notes));}catch(_){}}
+function renderNotesList(){
+  document.getElementById('notesList').innerHTML=notes.map(n=>
+    `<button class="notes-session-item ${n.id===currentNote?'active':''}" onclick="selectNote(${n.id})">${esc(n.title||'Sem título')}</button>`).join('');
+}
+function selectNote(id){currentNote=id;renderNotesList();loadNoteToEditor();}
+function loadNoteToEditor(){
+  const n=notes.find(x=>x.id===currentNote);
+  if(!n)return;
+  document.getElementById('noteTitle').value=n.title||'';
+  document.getElementById('noteBody').value=n.body||'';
+  document.getElementById('noteMeta').textContent='Atualizado: '+new Date(n.ts).toLocaleString('pt-BR');
+}
+function saveCurrentNote(){
+  const n=notes.find(x=>x.id===currentNote);
+  if(!n)return;
+  n.title=document.getElementById('noteTitle').value;
+  n.body=document.getElementById('noteBody').value;
+  n.ts=Date.now();
+  document.getElementById('noteMeta').textContent='Atualizado: '+new Date(n.ts).toLocaleString('pt-BR');
+  persistNotes();renderNotesList();
+}
+function addNote(){
+  const n={id:Date.now(),title:'Nova anotação',body:'',ts:Date.now()};
+  notes.unshift(n);currentNote=n.id;persistNotes();renderNotesList();loadNoteToEditor();
+  document.getElementById('noteTitle').focus();
+}
+function deleteNote(){
+  if(notes.length<=1){alert('Mantenha ao menos uma anotação.');return;}
+  if(!confirm('Excluir esta anotação?'))return;
+  notes=notes.filter(x=>x.id!==currentNote);
+  currentNote=notes[0].id;persistNotes();renderNotesList();loadNoteToEditor();
+}
+function exportNote(){
+  const n=notes.find(x=>x.id===currentNote);
+  if(!n)return;
+  const blob=new Blob([(n.title||'Anotação')+'\n\n'+(n.body||'')],{type:'text/plain;charset=utf-8'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download=(n.title||'anotacao').replace(/[^\w\sÀ-ÿ-]/g,'').trim()+'.txt';
+  a.click();URL.revokeObjectURL(a.href);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   BUSCA
+   ═══════════════════════════════════════════════════════════ */
+function buildSearchIndex(){
+  const idx=[];
+  idx.push({label:'Crônica',title:'Grimório — O Universo',page:'grimorio'});
+  DATA.regras.forEach(r=>idx.push({label:'Regra',title:'Regra '+r.numero+' — '+r.titulo,page:'grimorio'}));
+  idx.push({label:'Sistema',title:'Regras & Sistema',page:'regras'});
+  idx.push({label:'Cidade',title:'Novavera',page:'cidade'});
+  DATA.cidade.locais.forEach(l=>idx.push({label:'Local',title:l.nome,page:'cidade'}));
+  idx.push({label:'Antagonista',title:'Caim — A Origem de Tudo',page:'caim'});
+  DATA.encarnacoes.forEach(e=>idx.push({label:'Encarnação',title:e.titulo+' ('+e.data+')',page:'caim'}));
+  idx.push({label:'Antagonista',title:'Abel — O Outro Lado',page:'abel'});
+  idx.push({label:'Profeta',title:DATA.profetas.ezequiel.nome,page:'profetas'});
+  idx.push({label:'Profeta',title:DATA.profetas.armindo.nome,page:'profetas'});
+  DATA.npcs.forEach(n=>idx.push({label:'NPC · '+n.role,title:n.nome,page:'npcs'}));
+  DATA.temporadas.forEach(t=>idx.push({label:'Temporada',title:'T'+roman(t.numero)+' — '+t.titulo,page:'temporadas'}));
+  DATA.episodios.forEach(e=>idx.push({label:'Episódio '+roman(e.numero),title:e.titulo,page:'temporadas'}));
+  DATA.causalidade.forEach(c=>idx.push({label:'Causalidade',title:c.pergunta,page:'causalidade'}));
+  DATA.documentos.forEach(d=>idx.push({label:'Documento',title:d.titulo,page:'documentos'}));
+  idx.push({label:'Mestre',title:'Notas Finais do Mestre',page:'notas-mestre'});
+  idx.push({label:'Crônica',title:'Linha do Tempo Master',page:'timeline'});
+  return idx;
+}
+let SEARCH_IDX=[];
+function openSearch(){
+  document.getElementById('searchOverlay').classList.add('open');
+  document.getElementById('searchInput').value='';
+  document.getElementById('searchInput').focus();
+  runSearch();
+}
+function closeSearch(){document.getElementById('searchOverlay').classList.remove('open');}
+function runSearch(){
+  const q=(document.getElementById('searchInput').value||'').toLowerCase().trim();
+  let res=SEARCH_IDX;
+  if(q) res=SEARCH_IDX.filter(r=>(r.title+' '+r.label).toLowerCase().includes(q));
+  res=res.slice(0,40);
+  document.getElementById('searchResults').innerHTML=res.length?res.map(r=>
+    `<div class="search-result" onclick="navigate('${r.page}');closeSearch()">
+      <div class="search-result-label">${esc(r.label)}</div>
+      <div class="search-result-title">${esc(r.title)}</div>
+    </div>`).join(''):'<div class="search-result"><div class="search-result-title">Nada encontrado.</div></div>';
+}
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape')closeSearch();
+  if((e.ctrlKey||e.metaKey)&&e.key==='k'){e.preventDefault();openSearch();}
 });
 
-// ── CIDADE ────────────────────────────────────────────────────────────────
-function renderCidade() {
-  if (!DATA || !DATA.cidade) return;
-  const el = document.getElementById('cidade-content');
-  if (!el) return;
-  const c = DATA.cidade;
-
-  // Locais
-  const locaisHtml = c.locais.map(l => {
-    const cores = {extremo:'rgba(107,15,15,.35)', alto:'rgba(154,122,42,.25)', medio:'rgba(90,74,48,.2)'};
-    const cor = cores[l.nivel_perigo] || cores.medio;
-    return `<div class="book-card" style="margin-bottom:16px">
-      <div class="book-inner compact">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
-          <div style="font-family:'Cinzel Decorative',serif;font-size:22px;font-weight:700;color:var(--blood)">${l.nome}</div>
-          <span style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;color:var(--blood);border:1px solid ${cor};background:${cor};padding:2px 8px;text-transform:uppercase;flex-shrink:0">${l.nivel_perigo.toUpperCase()}</span>
-        </div>
-        <p class="t-body" style="margin-bottom:10px">${l.descricao}</p>
-        <div style="padding:12px 16px;border-left:2px solid rgba(154,122,42,.3);background:rgba(154,122,42,.04)">
-          <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:5px;opacity:.8">Detalhe</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:15px;line-height:1.75;color:var(--ink-soft)">${l.detalhe}</div>
-        </div>
-      </div>
-    </div>`;
-  }).join('');
-
-  // Símbolo
-  const simHtml = `<div class="book-card" style="margin-top:24px">
-    <div class="book-inner compact">
-      <div class="t-sec"><span class="g">✦</span> O Símbolo da Área Verde</div>
-      <p class="t-body">${c.simbolo.descricao}</p>
-      <p class="t-body">${c.simbolo.significado}</p>
-      <div class="t-ss">Ordem de Aparições — A Curva Dramática</div>
-      <ul class="ul">${c.simbolo.aparicoes.map((a,i)=>`<li><strong>${i+1}.</strong> ${a}</li>`).join('')}</ul>
-      <div class="warn-box"><div class="warn-lbl">Nota do Mestre</div><div class="warn-txt">${c.simbolo.nota_mestre}</div></div>
-    </div>
-  </div>`;
-
-  el.innerHTML = `<div class="t-eyebrow" style="margin-bottom:8px">${c.nome} · ${c.localizacao} · Fundada em ${c.fundacao}</div>
-    <div class="book-card" style="margin-bottom:20px"><div class="book-inner compact"><p class="t-body">${c.descricao}</p></div></div>
-    <div class="t-ss" style="margin-bottom:14px">Os Locais Principais</div>
-    ${locaisHtml}${simHtml}`;
-}
-
-// ── CAUSALIDADE ────────────────────────────────────────────────────────────
-function renderCausalidade() {
-  if (!DATA || !DATA.causalidade) return;
-  const el = document.getElementById('causalidade-content');
-  if (!el) return;
-  el.innerHTML = `<div class="book-card"><div class="book-inner">
-    <p class="t-body" style="font-style:italic;opacity:.75">Cada pergunta abaixo representa um momento em que os personagens podem fazer a conta errada — ou certa. O Mestre sabe todas as respostas. Os personagens descobrem com o tempo.</p>
-    <div style="margin-top:24px">
-      ${DATA.causalidade.map((item, i) => `
-        <div style="margin-bottom:0;border-bottom:1px solid rgba(154,122,42,.12);cursor:pointer" onclick="toggleCausalidade(${i})">
-          <div style="display:flex;align-items:center;gap:12px;padding:16px 0">
-            <span style="font-family:'Cinzel Decorative',serif;font-size:18px;color:var(--blood);opacity:.3;flex-shrink:0;width:28px">${i+1}</span>
-            <div style="font-family:'Cinzel',serif;font-size:13px;font-weight:600;color:var(--blood-lt);flex:1;letter-spacing:.5px">${item.pergunta}</div>
-            <span style="color:var(--gold);opacity:.6;font-size:16px" id="caus-icon-${i}">+</span>
-          </div>
-          <div id="caus-body-${i}" style="display:none;padding:0 0 18px 40px">
-            <p style="font-family:'Cormorant Garamond',serif;font-size:17px;line-height:1.85;color:var(--ink-soft)">${item.resposta}</p>
-          </div>
-        </div>`).join('')}
-    </div>
-  </div></div>`;
-}
-
-function toggleCausalidade(i) {
-  const body = document.getElementById('caus-body-'+i);
-  const icon = document.getElementById('caus-icon-'+i);
-  if (!body) return;
-  const open = body.style.display !== 'none';
-  body.style.display = open ? 'none' : 'block';
-  icon.textContent = open ? '+' : '−';
-}
-
-// ── START ─────────────────────────────────────────────────────────────────
-loadData();
+/* ── BOOT ────────────────────────────────────────────────── */
+window.addEventListener('DOMContentLoaded',()=>{
+  loadData().then(()=>{ SEARCH_IDX=buildSearchIndex(); });
+});
 </script>
 </body>
 </html>
