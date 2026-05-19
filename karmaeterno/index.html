@@ -1,2 +1,1392 @@
 <!DOCTYPE html>
-   <html><head><title>Karma Eterno</title></head><body><p>Em breve.</p></body></html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOVAVERA — Painel do Mestre</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & VARIABLES ─────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0704;
+  --bg2:#110c06;
+  --parch:#f4ead8;
+  --parch-mid:#e6d5b8;
+  --parch-deep:#d4c09a;
+  --ink:#180e04;
+  --ink-soft:#3a2510;
+  --blood:#6b0f0f;
+  --blood-deep:#4a0808;
+  --blood-lt:#8b1a1a;
+  --gold:#9a7a2a;
+  --gold-lt:#c8a84a;
+  --gold-dim:#7a5e1e;
+  --ash:#5a4a30;
+  --sidebar-w:240px;
+  --transition:.3s ease;
+}
+html{scroll-behavior:smooth;height:100%}
+body{background:var(--bg);color:var(--parch);font-family:"IM Fell English",serif;display:flex;min-height:100vh;overflow-x:hidden}
+
+/* ── NOISE OVERLAY ─────────────────────────────────────────── */
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;opacity:.35;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E")}
+
+/* ── SIDEBAR ───────────────────────────────────────────────── */
+.sidebar{width:var(--sidebar-w);min-height:100vh;background:linear-gradient(180deg,#0d0804 0%,#120c06 100%);border-right:1px solid rgba(154,122,42,.2);display:flex;flex-direction:column;position:fixed;left:0;top:0;bottom:0;z-index:100;transition:transform var(--transition)}
+.sidebar-logo{padding:28px 20px 24px;border-bottom:1px solid rgba(154,122,42,.15);text-align:center}
+.sidebar-logo .logo-glyph{font-size:28px;color:var(--gold);opacity:.7;display:block;margin-bottom:8px;animation:pulse-glyph 4s ease-in-out infinite}
+@keyframes pulse-glyph{0%,100%{opacity:.6;transform:scale(1)}50%{opacity:.9;transform:scale(1.05)}}
+.sidebar-logo h1{font-family:"Cinzel Decorative",serif;font-size:18px;font-weight:900;color:var(--blood-lt);letter-spacing:1px;line-height:1.1}
+.sidebar-logo p{font-family:"Cinzel",serif;font-size:8px;letter-spacing:4px;color:var(--gold-dim);text-transform:uppercase;margin-top:5px;opacity:.7}
+.sidebar-nav{flex:1;padding:16px 0;overflow-y:auto}
+.nav-section{font-family:"Cinzel",serif;font-size:7px;letter-spacing:5px;color:var(--gold-dim);text-transform:uppercase;padding:12px 20px 5px;opacity:.6}
+.nav-item{display:flex;align-items:center;gap:11px;padding:10px 20px;cursor:pointer;transition:all .2s;position:relative;text-decoration:none;border:none;background:none;width:100%;text-align:left;color:rgba(212,192,154,.55);font-family:"Cinzel",serif;font-size:10.5px;letter-spacing:.8px}
+.nav-item:hover{color:var(--gold-lt);background:rgba(154,122,42,.07)}
+.nav-item.active{color:var(--gold-lt);background:rgba(107,15,15,.18)}
+.nav-item.active::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--blood)}
+.nav-item.active::after{content:"";position:absolute;right:0;top:50%;transform:translateY(-50%);width:5px;height:5px;background:var(--gold);transform:translateY(-50%) rotate(45deg)}
+.nav-icon{width:18px;font-size:14px;text-align:center;opacity:.75;flex-shrink:0}
+.sidebar-footer{padding:16px 20px;border-top:1px solid rgba(154,122,42,.12)}
+.episode-badge{background:rgba(107,15,15,.3);border:1px solid rgba(107,15,15,.4);border-radius:2px;padding:8px 12px;text-align:center}
+.episode-badge p{font-family:"Cinzel",serif;font-size:8px;letter-spacing:3px;color:var(--ash);text-transform:uppercase;margin-bottom:3px}
+.episode-badge span{font-family:"Cinzel Decorative",serif;font-size:16px;color:var(--blood-lt)}
+
+/* ── MAIN CONTENT ──────────────────────────────────────────── */
+.main{flex:1;margin-left:var(--sidebar-w);min-height:100vh;display:flex;flex-direction:column}
+.page{display:none;flex:1;animation:fadeIn .4s ease}
+.page.active{display:flex;flex-direction:column}
+@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── PAGE HEADER ───────────────────────────────────────────── */
+.page-hdr{padding:40px 56px 32px;border-bottom:1px solid rgba(154,122,42,.15);background:linear-gradient(135deg,rgba(107,15,15,.08) 0%,transparent 60%)}
+.page-hdr .page-eyebrow{font-family:"Cinzel",serif;font-size:8px;letter-spacing:6px;color:var(--gold-dim);text-transform:uppercase;margin-bottom:10px;opacity:.8}
+.page-hdr h2{font-family:"Cinzel Decorative",serif;font-size:36px;font-weight:700;color:var(--blood-lt);text-shadow:1px 2px 0 rgba(0,0,0,.3);line-height:1.1}
+.page-hdr p{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:16px;color:rgba(212,192,154,.65);margin-top:8px}
+
+/* ── BOOK CARD (parchment container) ──────────────────────── */
+.book-card{background:var(--parch);background-image:radial-gradient(ellipse at 20% 10%,rgba(180,140,80,.15) 0%,transparent 60%),radial-gradient(ellipse at 80% 90%,rgba(100,60,20,.12) 0%,transparent 60%);box-shadow:-8px 0 40px rgba(0,0,0,.5),0 4px 30px rgba(0,0,0,.4);position:relative;overflow:hidden}
+.book-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(to right,rgba(0,0,0,.2),transparent)}
+.book-card::after{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(180deg,transparent,transparent 28px,rgba(154,122,42,.035) 28px,rgba(154,122,42,.035) 29px);pointer-events:none}
+.book-inner{position:relative;z-index:1;padding:48px 56px}
+.book-inner.compact{padding:32px 48px}
+
+/* ── TYPOGRAPHY ────────────────────────────────────────────── */
+.t-eyebrow{font-family:"Cinzel",serif;font-size:8px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.8;margin-bottom:6px}
+.t-title{font-family:"Cinzel Decorative",serif;font-size:32px;font-weight:700;color:var(--blood);line-height:1.15;margin-bottom:10px}
+.t-title.lg{font-size:42px}
+.t-sub{font-family:"IM Fell English",serif;font-style:italic;font-size:15px;color:var(--ash);opacity:.85}
+.t-body{font-family:"Cormorant Garamond",serif;font-size:17px;line-height:1.85;color:var(--ink-soft);text-align:justify;hyphens:auto;margin-bottom:14px}
+.t-body.dc::first-letter{font-family:"Cinzel Decorative",serif;font-size:68px;font-weight:900;float:left;line-height:.72;margin:10px 8px 0 -4px;color:var(--blood)}
+.t-label{font-family:"Cinzel",serif;font-size:8.5px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin:20px 0 5px;opacity:.85}
+.t-sec{font-family:"Cinzel",serif;font-size:16px;font-weight:600;color:var(--blood);letter-spacing:.5px;margin:38px 0 12px;padding-bottom:7px;border-bottom:1px solid rgba(107,15,15,.18);display:flex;align-items:center;gap:9px}
+.t-sec .g{color:var(--gold);opacity:.65;font-size:16px;font-family:serif;font-weight:400}
+.t-ss{font-family:"Cinzel",serif;font-size:10.5px;font-weight:700;color:var(--gold);letter-spacing:3.5px;text-transform:uppercase;margin:26px 0 8px}
+
+/* ── DIVIDERS ──────────────────────────────────────────────── */
+.div-orn{text-align:center;margin:36px 0;color:var(--gold);opacity:.5;font-size:17px;letter-spacing:12px;font-family:serif;position:relative}
+.div-orn::before,.div-orn::after{content:"";position:absolute;top:50%;width:18%;height:1px;background:linear-gradient(to var(--d,right),transparent,rgba(154,122,42,.3))}
+.div-orn::before{left:0;--d:right}.div-orn::after{right:0;--d:left}
+.div-slim{display:flex;align-items:center;gap:10px;margin:28px 0 22px;opacity:.38}
+.div-slim span{flex:1;height:1px;background:var(--gold)}
+.div-slim i{color:var(--gold);font-size:10px;font-style:normal}
+
+/* ── BLOCKQUOTE ────────────────────────────────────────────── */
+.bq{margin:22px 14px;padding:18px 24px 18px 28px;border-left:3px solid var(--blood);background:linear-gradient(to right,rgba(107,15,15,.05),transparent);position:relative}
+.bq::before{content:"C";position:absolute;top:-6px;left:8px;font-family:"Cinzel Decorative",serif;font-size:54px;color:var(--blood);opacity:.15;line-height:1}
+.bq p{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:17.5px;line-height:1.72;color:var(--ink)}
+
+/* ── WARN BOX ──────────────────────────────────────────────── */
+.warn-box{margin:26px 0;padding:20px 26px;border:1px solid rgba(107,15,15,.3);background:repeating-linear-gradient(-45deg,transparent,transparent 7px,rgba(107,15,15,.025) 7px,rgba(107,15,15,.025) 8px);position:relative}
+.warn-box::before{content:"⚠";position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--parch);padding:0 9px;color:var(--blood);font-size:15px;opacity:.65}
+.warn-lbl{font-family:"Cinzel",serif;font-size:8px;letter-spacing:5px;color:var(--blood);text-transform:uppercase;text-align:center;margin-bottom:8px;opacity:.75}
+.warn-txt{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:16.5px;line-height:1.78;color:var(--ink);text-align:center}
+
+/* ── LISTS ─────────────────────────────────────────────────── */
+.ul{list-style:none;margin:12px 0 16px;padding:0}
+.ul li{font-family:"Cormorant Garamond",serif;font-size:16.5px;line-height:1.8;color:var(--ink-soft);padding:3px 0 3px 23px;position:relative}
+.ul li::before{content:"✦";position:absolute;left:0;color:var(--gold);opacity:.55;font-size:10px;top:8px}
+
+/* ── GRID LAYOUTS ──────────────────────────────────────────── */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.grid-auto{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+
+/* ── CARDS (dark, on dark bg) ──────────────────────────────── */
+.card{background:rgba(255,255,255,.03);border:1px solid rgba(154,122,42,.18);padding:22px 24px;transition:all .25s;cursor:default}
+.card:hover{background:rgba(154,122,42,.06);border-color:rgba(154,122,42,.32)}
+.card-label{font-family:"Cinzel",serif;font-size:8px;letter-spacing:4px;color:var(--gold-dim);text-transform:uppercase;margin-bottom:6px}
+.card-title{font-family:"Cinzel",serif;font-size:13px;font-weight:700;color:var(--parch);margin-bottom:8px;letter-spacing:.5px}
+.card-body{font-family:"Cormorant Garamond",serif;font-size:14.5px;line-height:1.7;color:rgba(212,192,154,.65)}
+
+/* ── NPC CARD ──────────────────────────────────────────────── */
+.npc-card{background:var(--parch);background-image:radial-gradient(ellipse at 20% 0%,rgba(180,140,80,.12) 0%,transparent 60%);box-shadow:0 2px 20px rgba(0,0,0,.3);position:relative;overflow:hidden;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.npc-card:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,.4)}
+.npc-card-inner{padding:28px 32px}
+.npc-role{font-family:"Cinzel",serif;font-size:8px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.78;margin-bottom:4px}
+.npc-name{font-family:"Cinzel Decorative",serif;font-size:24px;font-weight:700;color:var(--blood-deep);line-height:1.1;margin-bottom:10px}
+.npc-tag{display:inline-block;font-family:"Cinzel",serif;font-size:8px;letter-spacing:3px;color:var(--blood);border:1px solid rgba(107,15,15,.3);padding:2px 8px;text-transform:uppercase;margin-bottom:10px}
+.npc-excerpt{font-family:"Cormorant Garamond",serif;font-size:15px;line-height:1.7;color:var(--ash)}
+.npc-sig{width:60px;height:60px;border:1px solid rgba(154,122,42,.35);display:flex;align-items:center;justify-content:center;position:absolute;top:24px;right:24px;background:rgba(107,15,15,.05)}
+.npc-sig::before{content:"";position:absolute;inset:4px;border:1px solid rgba(154,122,42,.14)}
+.npc-sig svg{width:34px;height:34px;fill:var(--blood);opacity:.38}
+
+/* ── NPC DETAIL (expanded) ─────────────────────────────────── */
+.npc-detail{display:none}
+.npc-detail.open{display:block}
+.npc-detail-hdr{display:grid;grid-template-columns:70px 1fr;gap:18px;align-items:start;margin-bottom:20px;padding-bottom:18px;border-bottom:1px solid rgba(154,122,42,.25)}
+.npc-sigil{width:70px;height:70px;border:1px solid rgba(154,122,42,.38);display:flex;align-items:center;justify-content:center;background:rgba(107,15,15,.048);position:relative;flex-shrink:0}
+.npc-sigil::before{content:"";position:absolute;inset:4px;border:1px solid rgba(154,122,42,.15)}
+.npc-sigil svg{width:38px;height:38px;fill:var(--blood);opacity:.4}
+.npc-attrs{display:flex;flex-wrap:wrap;gap:3px 14px;margin-top:6px}
+.npc-attr{font-family:"Cinzel",serif;font-size:9px;color:var(--ash);letter-spacing:.5px}
+.npc-attr strong{color:var(--gold);letter-spacing:2px;text-transform:uppercase;font-size:7.5px}
+
+/* ── EPISODE CARD ──────────────────────────────────────────── */
+.ep-card{background:var(--parch);background-image:radial-gradient(ellipse at 15% 0%,rgba(180,140,80,.1) 0%,transparent 55%);border-left:3px solid transparent;padding:24px 28px;cursor:pointer;transition:all .22s;position:relative}
+.ep-card:hover{background-image:radial-gradient(ellipse at 15% 0%,rgba(180,140,80,.18) 0%,transparent 55%);border-left-color:rgba(107,15,15,.4)}
+.ep-card.done{border-left-color:var(--blood)}
+.ep-card.current{border-left-color:var(--gold)}
+.ep-card.current::before{content:"EM ANDAMENTO";position:absolute;top:10px;right:14px;font-family:"Cinzel",serif;font-size:7px;letter-spacing:3px;color:var(--gold);opacity:.7}
+.ep-num{font-family:"Cinzel Decorative",serif;font-size:38px;font-weight:900;color:var(--blood);opacity:.15;position:absolute;top:12px;right:20px;line-height:1}
+.ep-label{font-family:"Cinzel",serif;font-size:8px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.75;margin-bottom:5px}
+.ep-title{font-family:"Cinzel",serif;font-size:15px;font-weight:700;color:var(--blood);margin-bottom:5px;letter-spacing:.5px}
+.ep-q{font-family:"IM Fell English",serif;font-style:italic;font-size:13px;color:var(--ash);margin-bottom:8px}
+.ep-body{font-family:"Cormorant Garamond",serif;font-size:15px;line-height:1.7;color:var(--ink-soft)}
+.ep-detail{display:none;margin-top:18px;padding-top:18px;border-top:1px solid rgba(154,122,42,.22)}
+.ep-detail.open{display:block}
+.ep-status{display:flex;gap:8px;align-items:center;margin-top:12px}
+.ep-btn{font-family:"Cinzel",serif;font-size:8px;letter-spacing:3px;text-transform:uppercase;padding:5px 14px;border:1px solid;cursor:pointer;transition:all .2s;background:none}
+.ep-btn.red{color:var(--blood);border-color:rgba(107,15,15,.4)}.ep-btn.red:hover{background:rgba(107,15,15,.12)}
+.ep-btn.gold{color:var(--gold);border-color:rgba(154,122,42,.35)}.ep-btn.gold:hover{background:rgba(154,122,42,.1)}
+
+/* ── DOCUMENT PROP ─────────────────────────────────────────── */
+.doc-prop{background:linear-gradient(135deg,#f0e4cc,#e8d5b0);border:1px solid rgba(90,74,48,.45);padding:24px 30px;position:relative;box-shadow:2px 4px 14px rgba(0,0,0,.15)}
+.doc-prop::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(180deg,transparent,transparent 22px,rgba(90,74,48,.05) 22px,rgba(90,74,48,.05) 23px);pointer-events:none}
+.doc-stamp{position:absolute;top:10px;right:12px;font-family:"Cinzel",serif;font-size:7px;letter-spacing:3px;color:var(--blood);opacity:.45;text-transform:uppercase;border:1px solid var(--blood);padding:2px 6px;transform:rotate(2.5deg)}
+.doc-hdr{font-family:"Cinzel",serif;font-size:10px;letter-spacing:3px;color:var(--ash);text-transform:uppercase;border-bottom:1px solid rgba(90,74,48,.35);padding-bottom:8px;margin-bottom:13px}
+.doc-field{margin-bottom:6px;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.doc-fl{font-family:"Cinzel",serif;font-size:8px;letter-spacing:2px;color:var(--ash);text-transform:uppercase;flex-shrink:0;opacity:.75;min-width:110px}
+.doc-fv{font-family:"IM Fell English",serif;font-size:14.5px;color:var(--ink);line-height:1.45}
+.doc-note{margin-top:13px;padding:10px 13px;border-left:2px solid var(--blood);background:rgba(107,15,15,.04)}
+.doc-nl{font-family:"Cinzel",serif;font-size:7.5px;letter-spacing:3px;color:var(--blood);text-transform:uppercase;margin-bottom:4px;opacity:.75}
+.doc-nt{font-family:"IM Fell English",serif;font-style:italic;font-size:13.5px;color:var(--ink-soft);line-height:1.6}
+.redact{background:var(--ink);color:transparent;user-select:none;padding:0 3px;display:inline}
+
+/* ── DIARY ─────────────────────────────────────────────────── */
+.diary-prop{background:linear-gradient(160deg,#ede0c4,#e2d0a8);border:1px solid rgba(90,74,48,.45);padding:24px 30px;position:relative;box-shadow:2px 4px 14px rgba(0,0,0,.15)}
+.diary-prop::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(180deg,transparent,transparent 23px,rgba(90,74,48,.048) 23px,rgba(90,74,48,.048) 24px);pointer-events:none}
+.diary-hdr{font-family:"Cinzel",serif;font-size:9.5px;letter-spacing:4px;color:var(--ash);text-transform:uppercase;text-align:center;border-bottom:1px solid rgba(90,74,48,.32);padding-bottom:9px;margin-bottom:18px}
+.diary-entry{margin-bottom:22px;padding-bottom:18px;border-bottom:1px solid rgba(90,74,48,.16);position:relative;z-index:1}
+.diary-entry:last-child{border:none;margin:0;padding:0}
+.diary-date{font-family:"Cinzel",serif;font-size:9px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:7px;opacity:.8}
+.diary-txt{font-family:"IM Fell English",serif;font-size:14.5px;line-height:1.8;color:var(--ink-soft)}
+.diary-txt em{color:var(--ink);font-style:italic}
+
+/* ── PRINT BUTTON ──────────────────────────────────────────── */
+.btn-print{display:inline-flex;align-items:center;gap:8px;font-family:"Cinzel",serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(154,122,42,.4);padding:9px 18px;cursor:pointer;background:none;transition:all .2s;margin:12px 0}
+.btn-print:hover{background:rgba(154,122,42,.1);border-color:rgba(154,122,42,.6)}
+.btn-print svg{width:14px;height:14px;fill:var(--gold);opacity:.7}
+
+/* ── NOTES / ANNOTATIONS ───────────────────────────────────── */
+.notes-wrapper{flex:1;display:flex;flex-direction:column;padding:0}
+.notes-tabs{display:flex;gap:0;border-bottom:1px solid rgba(154,122,42,.2);padding:0 24px;background:rgba(0,0,0,.2)}
+.notes-tab{font-family:"Cinzel",serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(154,122,42,.5);padding:12px 18px;cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;background:none;border-top:none;border-left:none;border-right:none}
+.notes-tab.active{color:var(--gold-lt);border-bottom-color:var(--blood)}
+.notes-tab:hover{color:var(--gold)}
+.notes-area{flex:1;display:flex;gap:0}
+.notes-sidebar{width:200px;border-right:1px solid rgba(154,122,42,.15);padding:16px 0;background:rgba(0,0,0,.15)}
+.notes-session-item{display:block;padding:10px 16px;font-family:"Cinzel",serif;font-size:9.5px;letter-spacing:.5px;color:rgba(212,192,154,.55);cursor:pointer;border:none;background:none;width:100%;text-align:left;transition:all .2s;border-left:2px solid transparent}
+.notes-session-item:hover{color:var(--gold-lt);background:rgba(154,122,42,.06)}
+.notes-session-item.active{color:var(--gold-lt);border-left-color:var(--blood);background:rgba(107,15,15,.12)}
+.notes-add-btn{margin:8px 12px;width:calc(100% - 24px);font-family:"Cinzel",serif;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-dim);border:1px solid rgba(154,122,42,.2);padding:7px;cursor:pointer;background:none;transition:all .2s}
+.notes-add-btn:hover{color:var(--gold);border-color:rgba(154,122,42,.4)}
+.notes-editor{flex:1;display:flex;flex-direction:column;padding:20px 24px}
+.notes-title-input{font-family:"Cinzel",serif;font-size:15px;color:var(--parch);background:none;border:none;border-bottom:1px solid rgba(154,122,42,.25);padding:6px 0 10px;margin-bottom:16px;outline:none;width:100%;letter-spacing:1px}
+.notes-title-input::placeholder{color:rgba(212,192,154,.3)}
+.notes-textarea{flex:1;font-family:"Cormorant Garamond",serif;font-size:16px;line-height:1.85;color:var(--parch);background:rgba(255,255,255,.02);border:1px solid rgba(154,122,42,.15);padding:16px 20px;outline:none;resize:none;transition:border .2s}
+.notes-textarea:focus{border-color:rgba(154,122,42,.35)}
+.notes-textarea::placeholder{color:rgba(212,192,154,.2)}
+.notes-toolbar{display:flex;gap:10px;align-items:center;padding:10px 0 0;flex-wrap:wrap}
+.notes-meta{font-family:"Cinzel",serif;font-size:8px;letter-spacing:3px;color:var(--ash);text-transform:uppercase;opacity:.6;flex:1}
+.btn-export{font-family:"Cinzel",serif;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-dim);border:1px solid rgba(154,122,42,.28);padding:6px 14px;cursor:pointer;background:none;transition:all .2s}
+.btn-export:hover{color:var(--gold);border-color:rgba(154,122,42,.5)}
+.btn-delete{font-family:"Cinzel",serif;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:rgba(107,15,15,.6);border:1px solid rgba(107,15,15,.25);padding:6px 14px;cursor:pointer;background:none;transition:all .2s}
+.btn-delete:hover{color:var(--blood-lt);border-color:rgba(107,15,15,.45)}
+
+/* ── HOME DASHBOARD ────────────────────────────────────────── */
+.home-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0}
+.home-pane{padding:36px 40px;border-right:1px solid rgba(154,122,42,.12)}
+.home-pane:last-child{border-right:none}
+.home-pane-title{font-family:"Cinzel",serif;font-size:9px;letter-spacing:5px;text-transform:uppercase;color:var(--gold-dim);margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid rgba(154,122,42,.12)}
+.stat-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid rgba(154,122,42,.08)}
+.stat-row:last-child{border:none}
+.stat-label{font-family:"Cinzel",serif;font-size:9.5px;color:rgba(212,192,154,.5);letter-spacing:.5px}
+.stat-value{font-family:"Cormorant Garamond",serif;font-size:17px;color:var(--parch)}
+.clue-item{display:flex;align-items:flex-start;gap:10px;padding:6px 0;border-bottom:1px solid rgba(154,122,42,.07)}
+.clue-item:last-child{border:none}
+.clue-check{width:14px;height:14px;border:1px solid rgba(154,122,42,.4);flex-shrink:0;margin-top:3px;cursor:pointer;display:flex;align-items:center;justify-content:center;background:none}
+.clue-check.done{background:rgba(107,15,15,.3);border-color:var(--blood)}
+.clue-check.done::after{content:"✓";font-size:9px;color:var(--blood-lt)}
+.clue-label{font-family:"Cormorant Garamond",serif;font-size:14.5px;line-height:1.55;color:rgba(212,192,154,.65)}
+.clue-label.done{text-decoration:line-through;opacity:.45}
+.quick-link{display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid rgba(154,122,42,.07);cursor:pointer;transition:color .2s;color:rgba(212,192,154,.55);font-family:"Cinzel",serif;font-size:9.5px;letter-spacing:.5px;background:none;border-top:none;border-left:none;border-right:none;width:100%;text-align:left}
+.quick-link:hover{color:var(--gold-lt)}
+.quick-link .ql-icon{font-size:15px;width:20px;text-align:center;opacity:.6}
+
+/* ── SEARCH OVERLAY ────────────────────────────────────────── */
+.search-overlay{position:fixed;inset:0;background:rgba(10,7,4,.88);z-index:1000;display:none;align-items:flex-start;justify-content:center;padding-top:120px}
+.search-overlay.open{display:flex}
+.search-box{width:560px;background:var(--bg2);border:1px solid rgba(154,122,42,.3);padding:0;overflow:hidden}
+.search-input{width:100%;font-family:"Cinzel",serif;font-size:14px;color:var(--parch);background:none;border:none;padding:18px 22px;outline:none;letter-spacing:.5px;border-bottom:1px solid rgba(154,122,42,.2)}
+.search-input::placeholder{color:rgba(212,192,154,.3)}
+.search-results{max-height:320px;overflow-y:auto}
+.search-result{padding:12px 22px;cursor:pointer;border-bottom:1px solid rgba(154,122,42,.08);transition:background .15s}
+.search-result:hover{background:rgba(154,122,42,.07)}
+.search-result-label{font-family:"Cinzel",serif;font-size:7.5px;letter-spacing:4px;color:var(--gold-dim);text-transform:uppercase;margin-bottom:3px}
+.search-result-title{font-family:"Cormorant Garamond",serif;font-size:16px;color:var(--parch)}
+.search-hint{font-family:"Cinzel",serif;font-size:7.5px;letter-spacing:3px;color:rgba(154,122,42,.35);text-transform:uppercase;padding:10px 22px;border-top:1px solid rgba(154,122,42,.1)}
+
+/* ── MISC ──────────────────────────────────────────────────── */
+.tag{display:inline-block;font-family:"Cinzel",serif;font-size:7.5px;letter-spacing:3px;text-transform:uppercase;padding:2px 8px;border:1px solid;margin:2px}
+.tag.red{color:var(--blood-lt);border-color:rgba(107,15,15,.35)}
+.tag.gold{color:var(--gold);border-color:rgba(154,122,42,.35)}
+.tag.ash{color:var(--ash);border-color:rgba(90,74,48,.35)}
+.scroll-content{flex:1;overflow-y:auto;padding:40px 56px}
+.scroll-content::-webkit-scrollbar{width:5px}
+.scroll-content::-webkit-scrollbar-track{background:transparent}
+.scroll-content::-webkit-scrollbar-thumb{background:rgba(154,122,42,.3)}
+.timeline-line{border-left:2px solid rgba(154,122,42,.25);padding-left:20px;margin:16px 0}
+.tl-item{margin:0 0 14px;position:relative}
+.tl-item::before{content:"";position:absolute;left:-26px;top:6px;width:7px;height:7px;background:var(--gold);opacity:.45;transform:rotate(45deg)}
+.tl-year{font-family:"Cinzel",serif;font-size:10px;font-weight:700;color:var(--gold);letter-spacing:2px;margin-bottom:1px}
+.tl-text{font-family:"Cormorant Garamond",serif;font-size:15.5px;line-height:1.65;color:var(--ash)}
+.tl-text em{color:var(--blood);font-style:italic}
+.mech-box{margin:20px 0;padding:18px 22px;border:1px solid rgba(154,122,42,.25);background:rgba(154,122,42,.03)}
+.mech-ttl{font-family:"Cinzel",serif;font-size:10px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:9px;border-bottom:1px solid rgba(154,122,42,.16);padding-bottom:5px}
+.attr-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px}
+.attr-item{padding:8px 0;border-bottom:1px solid rgba(154,122,42,.1)}
+.attr-name{font-family:"Cinzel",serif;font-size:9px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:2px}
+.attr-desc{font-family:"Cormorant Garamond",serif;font-size:14.5px;line-height:1.6;color:var(--ash)}
+.stbl{width:100%;border-collapse:collapse;margin:12px 0}
+.stbl th{font-family:"Cinzel",serif;font-size:8px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;padding:6px 10px;text-align:left;border-bottom:1px solid rgba(154,122,42,.25)}
+.stbl td{font-family:"Cormorant Garamond",serif;font-size:15px;color:var(--ash);padding:6px 10px;border-bottom:1px solid rgba(154,122,42,.09);line-height:1.55}
+.stbl tr:nth-child(even) td{background:rgba(154,122,42,.03)}
+.back-btn{display:inline-flex;align-items:center;gap:8px;font-family:"Cinzel",serif;font-size:8.5px;letter-spacing:3px;text-transform:uppercase;color:var(--ash);cursor:pointer;background:none;border:none;padding:0;margin-bottom:22px;transition:color .2s}
+.back-btn:hover{color:var(--gold-lt)}
+.back-btn::before{content:"←"}
+.pill{display:inline-flex;align-items:center;gap:5px;font-family:"Cinzel",serif;font-size:8px;letter-spacing:2px;text-transform:uppercase;padding:3px 10px;border-radius:0;border:1px solid rgba(154,122,42,.25);color:var(--ash)}
+
+/* ── SCROLLBAR ─────────────────────────────────────────────── */
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:rgba(107,15,15,.4)}::-webkit-scrollbar-thumb:hover{background:var(--blood)}
+
+/* ── PRINT ─────────────────────────────────────────────────── */
+@media print{
+  .sidebar,.page-hdr,.btn-print,.search-overlay,.notes-tabs,.notes-sidebar,.notes-toolbar,.ep-status{display:none!important}
+  .main{margin:0!important}
+  .book-card{box-shadow:none!important}
+  body{background:#fff!important}
+  .doc-prop,.diary-prop{break-inside:avoid}
+  @page{margin:20mm}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ SIDEBAR ═══════════════ -->
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <span class="logo-glyph">⊕</span>
+    <h1>NOVAVERA</h1>
+    <p>Painel do Mestre</p>
+  </div>
+  <div class="sidebar-nav">
+    <div class="nav-section">Navegação</div>
+    <button class="nav-item active" data-page="inicio" onclick="navigate('inicio')">
+      <span class="nav-icon">⌖</span> Início
+    </button>
+    <button class="nav-item" data-page="grimorio" onclick="navigate('grimorio')">
+      <span class="nav-icon">📖</span> Grimório
+    </button>
+    <div class="nav-section">Conteúdo</div>
+    <button class="nav-item" data-page="regras" onclick="navigate('regras')">
+      <span class="nav-icon">⚖</span> Regras & Sistema
+    </button>
+    <button class="nav-item" data-page="npcs" onclick="navigate('npcs')">
+      <span class="nav-icon">👤</span> NPCs
+    </button>
+    <button class="nav-item" data-page="episodios" onclick="navigate('episodios')">
+      <span class="nav-icon">🎭</span> Episódios
+    </button>
+    <div class="nav-section">Ferramentas</div>
+    <button class="nav-item" data-page="documentos" onclick="navigate('documentos')">
+      <span class="nav-icon">📄</span> Documentos
+    </button>
+    <button class="nav-item" data-page="anotacoes" onclick="navigate('anotacoes')">
+      <span class="nav-icon">✍</span> Anotações
+    </button>
+    <div class="nav-section" style="margin-top:16px">Atalho</div>
+    <button class="nav-item" onclick="openSearch()" style="font-size:9px;opacity:.65">
+      <span class="nav-icon">🔍</span> Buscar <small style="margin-left:auto;opacity:.6">Ctrl+K</small>
+    </button>
+  </div>
+  <div class="sidebar-footer">
+    <div class="episode-badge">
+      <p>Episódio Atual</p>
+      <span id="current-ep-display">—</span>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════ MAIN ═══════════════ -->
+<main class="main">
+
+<!-- ════════ PÁGINA: INÍCIO ════════ -->
+<div class="page active" id="page-inicio">
+  <div class="page-hdr">
+    <p class="page-eyebrow">Painel do Mestre</p>
+    <h2>NOVAVERA</h2>
+    <p>O lugar onde o tempo parou de esquecer — Temporada I</p>
+  </div>
+  <div style="flex:1;background:var(--bg2)">
+    <div class="home-grid">
+
+      <!-- Pane 1: Estado da Campanha -->
+      <div class="home-pane">
+        <div class="home-pane-title">Estado da Campanha</div>
+        <div class="stat-row">
+          <span class="stat-label">Episódio atual</span>
+          <span class="stat-value" id="stat-ep">—</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Sessões realizadas</span>
+          <span class="stat-value" id="stat-sessoes">0</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Pistas descobertas</span>
+          <span class="stat-value" id="stat-pistas">0 / 18</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">NPCs revelados</span>
+          <span class="stat-value" id="stat-npcs">0 / 6</span>
+        </div>
+
+        <div style="margin-top:20px">
+          <div class="home-pane-title">Episódio</div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap">
+            <button id="ep-prev" class="ep-btn red" onclick="changeEp(-1)" style="flex:1">← Anterior</button>
+            <button id="ep-next" class="ep-btn gold" onclick="changeEp(1)" style="flex:1">Próximo →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pane 2: Pistas Chave -->
+      <div class="home-pane">
+        <div class="home-pane-title">Pistas Descobertas</div>
+        <div id="clues-list">
+          <!-- gerado por JS -->
+        </div>
+      </div>
+
+      <!-- Pane 3: Acesso Rápido -->
+      <div class="home-pane">
+        <div class="home-pane-title">Acesso Rápido</div>
+        <button class="quick-link" onclick="navigate('regras')"><span class="ql-icon">⚖</span> As Cinco Regras</button>
+        <button class="quick-link" onclick="navigate('npcs')"><span class="ql-icon">👤</span> NPCs Completos</button>
+        <button class="quick-link" onclick="navigate('episodios')"><span class="ql-icon">🎭</span> Estrutura dos Episódios</button>
+        <button class="quick-link" onclick="navigate('documentos')"><span class="ql-icon">📄</span> Imprimir Documentos</button>
+        <button class="quick-link" onclick="navigate('anotacoes')"><span class="ql-icon">✍</span> Nova Anotação</button>
+        <div style="margin-top:20px">
+          <div class="home-pane-title">Atenção do Mestre</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:14px;line-height:1.7;color:rgba(212,192,154,.55)">
+            <p>Armindo torna-se aliado ep.1–4, gerencia informação ep.5–6, confronto ep.7–8, revelação ep.9–10.</p>
+            <p style="margin-top:8px;color:rgba(107,15,15,.8)">Sueli parece obstáculo. É proteção. Não revelar cedo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Linha do Tempo rápida -->
+    <div style="padding:32px 40px;border-top:1px solid rgba(154,122,42,.1)">
+      <div class="home-pane-title">Referência Rápida — Cronologia</div>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:12px">
+        <div class="card" style="border-color:rgba(154,122,42,.12)"><div class="card-label">1931</div><div class="card-title" style="font-size:11px">Armindo nasce</div><div class="card-body" style="font-size:12px">Mapa também é datado de 1931 — intencional</div></div>
+        <div class="card" style="border-color:rgba(154,122,42,.12)"><div class="card-label">1961</div><div class="card-title" style="font-size:11px">Mapa entregue</div><div class="card-body" style="font-size:12px">17 jun. — mesmo dia da última entrada do diário</div></div>
+        <div class="card" style="border-color:rgba(107,15,15,.3)"><div class="card-label">1972</div><div class="card-title" style="font-size:11px;color:var(--blood-lt)">Operação Semente</div><div class="card-body" style="font-size:12px">33 mortos. Armindo vê a fresta.</div></div>
+        <div class="card" style="border-color:rgba(154,122,42,.12)"><div class="card-label">1974</div><div class="card-title" style="font-size:11px">Novavera fundada</div><div class="card-body" style="font-size:12px">17 jun. — símbolo fechado por Natalina sem saber</div></div>
+        <div class="card" style="border-color:rgba(154,122,42,.2)"><div class="card-label">2025</div><div class="card-title" style="font-size:11px">Temporada 1</div><div class="card-body" style="font-size:12px">Março — Valdecir morre. Os personagens chegam.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ PÁGINA: GRIMÓRIO ════════ -->
+<div class="page" id="page-grimorio">
+  <div class="page-hdr">
+    <p class="page-eyebrow">Referência Completa</p>
+    <h2>O Grimório</h2>
+    <p>Bíblia completa do universo — todas as seções em uma visão</p>
+  </div>
+  <div class="scroll-content">
+    <div class="book-card">
+      <div class="book-inner">
+        <div class="t-eyebrow" style="text-align:center">Bíblia do Universo · Temporada I · Uso Interno do Mestre</div>
+        <div style="text-align:center;margin:28px 0 36px">
+          <div style="font-family:'Cinzel Decorative',serif;font-size:52px;font-weight:900;color:var(--blood);text-shadow:2px 2px 0 rgba(0,0,0,.08);line-height:1">NOVAVERA</div>
+          <div style="font-family:'IM Fell English',serif;font-style:italic;font-size:17px;color:var(--ash);margin-top:10px">O lugar onde o tempo parou de esquecer</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--ink-soft);opacity:.75;margin-top:16px;max-width:320px;margin-left:auto;margin-right:auto;line-height:1.8">"O tempo não passa. O tempo cobra."</div>
+        </div>
+        <div class="div-orn">☩ ✦ ☩</div>
+
+        <p class="t-body dc">Este grimório contém a verdade completa do universo de Novavera — o que aconteceu, por que aconteceu, e o que vai acontecer. Todas as datas são consistentes entre si. Todos os nomes estão conectados. Nenhuma inconsistência é acidental.</p>
+
+        <div class="t-sec"><span class="g">✦</span> As Cinco Regras Fundamentais</div>
+        <p class="t-body">Cinco leis que governam o universo de Novavera — não escritas em nenhum livro, não nomeadas por nenhuma tradição, mas operando desde que o primeiro nó temporal foi formado. Os personagens vão descobri-las empiricamente. O Mestre já as conhece todas.</p>
+        <ul class="ul">
+          <li><strong>O Tempo Cobra</strong> — Almas arrancadas antes de fechar suas contas criam nós temporais. Não é metáfora. É mecânica.</li>
+          <li><strong>O Que Chega, Chega Quebrado</strong> — Toda comunicação entre tempos chega fragmentada e distorcida. Algo intercepta certas mensagens na fonte.</li>
+          <li><strong>Ninguém Volta Por Acaso</strong> — Grupos de almas com dívidas entre si retornam juntos. A teia dos 4 personagens: A→B→C→D→A.</li>
+          <li><strong>Os Presos Sabem, Mas Não Tudo</strong> — As 33 almas são humanas, com perspectiva limitada. Sabem que foram interrompidas. Não sabem completamente por quem.</li>
+          <li><strong>Saber Demais É Começar A Ficar</strong> — Estado de Armindo há décadas. Estado atual de Décio Murta.</li>
+        </ul>
+
+        <div class="t-sec"><span class="g">✦</span> Novavera — A Cidade</div>
+        <p class="t-body">Fundada em 1974 sobre o ponto de maior densidade do nó. A planta em grade amplifica a concentração em vez de deixá-la se dispersar. Três pontos centrais: <strong>Centro Cívico</strong> (sobre o nó, placa com Benedito Braga), <strong>Bairro Fundação</strong> (Natalina mora aqui desde 1978), <strong>Área Verde</strong> (construção paralisada em 1978, muro anônimo de 1980, sem pássaros, sem crianças).</p>
+
+        <div class="t-sec"><span class="g">✦</span> A Operação Semente — O Que Realmente Foi</div>
+        <p class="t-body">A ditadura forneceu o aparato. Armindo forneceu a lógica de seleção. 33 pessoas selecionadas por terem dívidas de vidas anteriores com Armindo — interrompendo as contas que elas tinham com ele antes que pudessem ser pagas. Nome de Benedito Braga (morto 1969) usado como cobertura para a ausência de Armindo da lista. O ciclo não é sobre as dívidas das 33. É sobre a dívida de Armindo.</p>
+
+        <div class="t-sec"><span class="g">✦</span> Armindo — A Verdade Final</div>
+        <p class="t-body">94 anos reais, aparência de 40 e poucos. O Anterior não era pessoa independente — era a estrutura temporal posicionando o único homem que havia escapado da cobrança vidas demais. Armindo estava na lista original como 34ª vítima. Retirou o próprio nome. A alma de Dalva o havia avisado na noite anterior — de uma linha do tempo que os personagens só vão compreender no finale.</p>
+        <div class="bq"><p>"Eu não vim salvar ninguém. Vim acabar com a repetição."</p></div>
+
+        <div class="t-sec"><span class="g">✦</span> O Símbolo da Área Verde — As Quatro Aparições</div>
+        <p class="t-body">A ordem de descoberta é a curva dramática. (1) Fotografia no quarto de Valdecir — fragmento. (2) Lateral do caixão — completo, por quem? (3) Mapa original — com abertura no nordeste. (4) Fundações da Rua do Anterior — abertura <em>fechada</em>, data entalhada: 17 de junho de 1974. Armindo fechou via Natalina que não sabia o que cobria.</p>
+
+        <div class="t-sec"><span class="g">✦</span> O Padrão 13</div>
+        <p class="t-body">17 jun. 1961 (mapa entregue / última entrada do diário) → 17 jun. 1974 (fundação coberta, Novavera fundada) → 1987 (Valdecir anota o sonho com os quatro personagens). Intervalo exato: 13 anos entre cada momento. O Mestre decide se isso é coincidência, padrão ou instrução do próprio tempo.</p>
+
+        <div class="div-orn">✦</div>
+        <p class="t-body" style="text-align:center;font-style:italic;opacity:.6;font-size:15px">Para o conteúdo completo detalhado de cada seção, use a navegação no menu lateral.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ PÁGINA: REGRAS & SISTEMA ════════ -->
+<div class="page" id="page-regras">
+  <div class="page-hdr">
+    <p class="page-eyebrow">Mecânicas e Leis do Universo</p>
+    <h2>Regras & Sistema</h2>
+    <p>As Cinco Regras Fundamentais + Chamado de Cthulhu adaptado + Memória & Presença</p>
+  </div>
+  <div class="scroll-content">
+
+    <!-- As 5 Regras -->
+    <div class="book-card" style="margin-bottom:24px">
+      <div class="book-inner">
+        <div class="t-eyebrow" style="text-align:center;margin-bottom:24px">As Cinco Regras Fundamentais</div>
+
+        <div style="border-left:2px solid rgba(107,15,15,.3);padding-left:20px;margin:28px 0;position:relative">
+          <div style="position:absolute;left:-1px;top:0;width:2px;height:50px;background:var(--blood)"></div>
+          <div class="t-ss">Regra I — O Tempo Cobra</div>
+          <p class="t-body dc">O tempo não passa. O tempo <em>cobra</em>. Quando uma alma é arrancada antes de resolver o que veio resolver — não por acidente, mas por interferência deliberada — o tempo naquele ponto para de seguir. Dezenas de arrancamentos simultâneos criam um nó temporal: lugar onde passado e presente existem juntos.</p>
+          <p class="t-body">As execuções de 1972 não foram só crime político. Foram engenharia temporal cirúrgica. O método — variação deliberada nas mortes — não era sadismo. Era precisão.</p>
+        </div>
+
+        <div class="div-slim"><span></span><i>✦</i><span></span></div>
+
+        <div style="border-left:2px solid rgba(107,15,15,.22);padding-left:20px;margin:28px 0">
+          <div class="t-ss">Regra II — O Que Chega, Chega Quebrado</div>
+          <p class="t-body">Toda comunicação entre tempos chega fragmentada. O que era uma frase inteira chega como três palavras sem contexto. Quem recebe preenche com a tradição que conhece, com o medo que já carregava. Diferentes tradições captaram fragmentos reais da estrutura. Nenhuma tem o todo.</p>
+          <div class="warn-box"><div class="warn-lbl">Atenção do Mestre</div><div class="warn-txt">Algumas mensagens foram corrompidas na fonte — algo intercepta o sinal com interesse em que certas verdades não circulem limpas. Sua identidade é um dos últimos mistérios da temporada.</div></div>
+        </div>
+
+        <div class="div-slim"><span></span><i>✦</i><span></span></div>
+
+        <div style="border-left:2px solid rgba(107,15,15,.22);padding-left:20px;margin:28px 0">
+          <div class="t-ss">Regra III — Ninguém Volta Por Acaso</div>
+          <p class="t-body">Almas retornam porque há algo que não fechou. Os quatro personagens jogadores foram encontrados — pela mesma força que os trouxe de volta ao mesmo lugar, com as mesmas dívidas não resolvidas de vidas que nenhum lembra conscientemente.</p>
+          <div class="mech-box">
+            <div class="mech-ttl">A Teia Fechada dos Quatro Personagens</div>
+            <p style="font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--ash);line-height:1.7">A deve a B · B deve a C · C deve a D · D deve a A. Ninguém é só credor. Ninguém é só devedor. Armindo conhece essa teia inteira — desde antes dos personagens chegarem.</p>
+          </div>
+        </div>
+
+        <div class="div-slim"><span></span><i>✦</i><span></span></div>
+
+        <div style="border-left:2px solid rgba(107,15,15,.22);padding-left:20px;margin:28px 0">
+          <div class="t-ss">Regra IV — Os Presos Sabem, Mas Não Tudo</div>
+          <p class="t-body">As 33 almas presas desde outubro de 1972 são humanas — com rancores de décadas, lealdades que a morte não apagou, e a desorientação profunda de existir fora do fluxo normal do tempo. Interagir com elas é negociação com alguém que tem informação valiosa, dor acumulada, e agenda própria. Elas sabem que foram interrompidas. Não sabem completamente por quem.</p>
+        </div>
+
+        <div class="div-slim"><span></span><i>✦</i><span></span></div>
+
+        <div style="border-left:2px solid rgba(107,15,15,.22);padding-left:20px;margin:28px 0">
+          <div class="t-ss">Regra V — Saber Demais É Começar A Ficar</div>
+          <p class="t-body">O presente só parece sólido porque a memória coopera. Quando memórias de outras vidas começam a vazar, o presente perde chão. Não de uma vez. Aos poucos. No estágio avançado, passado e presente existem ao mesmo tempo — não como alucinação, mas como realidade concorrente. A linha que separa o investigador das almas presas nunca vai ser anunciada. Ninguém vai avisar quando for cruzada.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sistema -->
+    <div class="book-card" style="margin-bottom:24px">
+      <div class="book-inner">
+        <div class="t-eyebrow" style="text-align:center;margin-bottom:24px">O Sistema — Chamado de Cthulhu Adaptado</div>
+        <p class="t-body dc">A base é o Chamado de Cthulhu sem modificação nos atributos clássicos. As adaptações são camadas adicionais — dois novos atributos exclusivos e três mecânicas específicas para o universo de Novavera.</p>
+
+        <div class="t-sec"><span class="g">✦</span> Os Atributos Clássicos — Reinterpretados</div>
+        <div class="mech-box">
+          <div class="mech-ttl">O que cada atributo significa em Novavera</div>
+          <div class="attr-grid">
+            <div class="attr-item"><div class="attr-name">Força</div><div class="attr-desc">Resistência a ser deslocado por forças invisíveis. Alta Força não é violência — é quem permanece onde está quando algo tenta mover.</div></div>
+            <div class="attr-item"><div class="attr-name">Constituição</div><div class="attr-desc">Quanto tempo consegue permanecer num espaço de alta concentração temporal sem efeitos físicos — náusea, sangramento, desorientação.</div></div>
+            <div class="attr-item"><div class="attr-name">Destreza</div><div class="attr-desc">Em confrontos mediúnicos: quem consegue encerrar o contato primeiro quando as coisas saem do controle.</div></div>
+            <div class="attr-item"><div class="attr-name">Aparência</div><div class="attr-desc">Personagens com Aparência alta são percebidos mais facilmente pelas almas presas — o vigor de uma presença forte atravessa camadas.</div></div>
+            <div class="attr-item"><div class="attr-name">Inteligência</div><div class="attr-desc">Personagens muito inteligentes processam fragmentos mais rapidamente — Memória sobe mais rápido. Saber mais rápido tem custo mais rápido.</div></div>
+            <div class="attr-item"><div class="attr-name">Poder</div><div class="attr-desc">O que as entidades usam para avaliar dívidas de peso suficiente. Poder alto não é proteção. É visibilidade.</div></div>
+            <div class="attr-item"><div class="attr-name">Educação</div><div class="attr-desc">Sistemas de interpretação desenvolvidos distorcem mais o que se recebe (Regra II). Bônus de investigação, penalidade em fragmentos mediúnicos.</div></div>
+            <div class="attr-item"><div class="attr-name">Tamanho</div><div class="attr-desc">Mantido sem modificação. Necessário para combate físico quando ocorre.</div></div>
+          </div>
+        </div>
+
+        <div class="t-sec"><span class="g">✦</span> Memória e Presença — Os Dois Atributos Exclusivos</div>
+        <div class="mech-box" style="margin-bottom:16px">
+          <div class="mech-ttl">Memória — O quanto de vidas anteriores já vazou</div>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:15.5px;color:var(--ash);line-height:1.7;margin-bottom:12px"><strong style="color:var(--gold);font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase">Valor inicial:</strong> (POD + INT) ÷ 10, arredondado para baixo.<br><br><strong style="color:var(--gold);font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase">Sobe:</strong> ao acessar fragmentos de vida anterior — voluntariamente (confronto mediúnico) ou involuntariamente (consequência narrativa).<br><br><strong style="color:var(--gold);font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase">Desce:</strong> quando age ativamente para se ancorar no presente.<br><br><strong style="color:var(--blood-lt);font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase">O piso sobe permanentemente em 1D6 ao final de cada temporada.</strong></p>
+          <table class="stbl">
+            <thead><tr><th>Valor</th><th>Estado do Personagem</th></tr></thead>
+            <tbody>
+              <tr><td>1–5</td><td>Presente estável. Fragmentos chegam como sonhos, intuições, déjà vu explicável.</td></tr>
+              <tr><td>6–10</td><td>Permeabilidade moderada. Fragmentos chegam acordado. Padrões desconhecidos começam a aparecer.</td></tr>
+              <tr><td>11–15</td><td>Sobreposição frequente. Memórias de outras vidas com clareza em locais de alta concentração.</td></tr>
+              <tr><td>16–18</td><td>Sobreposição constante. Dificuldade de distinguir presente de passado sob pressão.</td></tr>
+              <tr><td>19</td><td>Limiar. Ainda funciona — por quanto tempo, e com qual custo.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="mech-box">
+          <div class="mech-ttl">Presença — O quanto está ancorado no agora</div>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:15.5px;color:var(--ash);line-height:1.7">Presença + Memória = sempre 20. Ambas se atualizam simultaneamente. Presença é modificador passivo — bônus em clareza no presente, penalidade quando baixa. Mas Presença baixa abre percepções que Presença alta não tem. <strong>Presença zero: o personagem não consegue mais distinguir qual é o presente funcional. É o estado de Décio Murta.</strong></p>
+        </div>
+
+        <div class="t-sec"><span class="g">✦</span> Mecânicas Exclusivas</div>
+        <div class="mech-box" style="margin-bottom:14px">
+          <div class="mech-ttl">Confronto Mediúnico</div>
+          <ul class="ul">
+            <li><strong>Intenção declarada.</strong> Mestre determina qual alma está disponível no momento e contexto.</li>
+            <li><strong>Rolagem:</strong> POD vs POD da entidade. Bônus por rituais, localização. Sucesso: canal abre. Falha: nada — ou algo diferente responde.</li>
+            <li><strong>Custo imediato, sem exceção:</strong> Memória +1D4 / Presença −1D4. Contato forçado pela entidade: custo 1D6+2.</li>
+          </ul>
+        </div>
+        <div class="mech-box" style="margin-bottom:14px">
+          <div class="mech-ttl">Sistema de Dívida</div>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:15.5px;color:var(--ash);line-height:1.7;margin-bottom:10px">Cada personagem tem uma dívida com três componentes: <strong>natureza</strong> (o que foi feito ou deixado), <strong>credor</strong> (alguém desta vida), <strong>padrão</strong> (decisão que tende a repetir).</p>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:15.5px;color:var(--ash);line-height:1.7">Quando o personagem está numa situação que ressoa com o padrão, o Mestre pode pedir rolagem de POD. <strong>Falha: o Mestre descreve a ação — não o jogador.</strong> Raramente. Com peso. Não é punição. É o universo cobrando.</p>
+        </div>
+        <div class="mech-box">
+          <div class="mech-ttl">Violência Física</div>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:15.5px;color:var(--ash);line-height:1.7">Regras padrão do Chamado de Cthulhu, sem modificação. O que muda é o contexto: violência raramente resolve o problema central. Sempre há consequências físicas ou narrativas. Morte de personagem é possível e real — e não encerra a participação imediatamente.</p>
+        </div>
+
+        <div class="t-sec"><span class="g">✦</span> O Envelope Lacrado — Criação de Personagem</div>
+        <p class="t-body">Duas camadas. Camada 1 (pública): criação convencional CoC na mesa com todos. Camada 2: entregue individualmente com os outros fora da sala.</p>
+        <div class="grid-3" style="margin-top:14px">
+          <div class="card"><div class="card-label">Página 1</div><div class="card-title">A Dívida</div><div class="card-body">Natureza da dívida de vida anterior + quem é o credor nesta vida + o padrão que isso criou.</div></div>
+          <div class="card"><div class="card-label">Página 2</div><div class="card-title">A Memória</div><div class="card-body">Momento sensorial de outra vida, segunda pessoa, tempo presente. Sem contexto. Só o momento.</div></div>
+          <div class="card"><div class="card-label">Página 3</div><div class="card-title">A Conexão</div><div class="card-body">Uma linha sobre um dos outros personagens — sem nome, mas identificável nos primeiros episódios.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ PÁGINA: NPCs ════════ -->
+<div class="page" id="page-npcs">
+  <div class="page-hdr">
+    <p class="page-eyebrow">Seis Funções Narrativas</p>
+    <h2>NPCs — Fichas Completas</h2>
+    <p>História, narratividade, como interpretar, o que sabem e o que escondem</p>
+  </div>
+  <div class="scroll-content">
+
+    <!-- Grid de cards -->
+    <div id="npc-grid" class="grid-2" style="margin-bottom:28px">
+
+      <!-- ARMINDO -->
+      <div class="npc-card" onclick="openNPC('armindo')">
+        <div class="npc-card-inner">
+          <div class="npc-sig"><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="18" stroke-width=".8" stroke="currentColor" fill="none"/><polygon points="22,6 26,18 38,18 28,26 32,38 22,30 12,38 16,26 6,18 18,18" fill="currentColor" opacity=".28"/><circle cx="22" cy="22" r="4" fill="currentColor" opacity=".6"/></svg></div>
+          <div class="npc-role">Antagonista Principal</div>
+          <div class="npc-name">Armindo Laerte Vasconcelos</div>
+          <span class="npc-tag">O Fundador</span>
+          <p class="npc-excerpt">94 anos reais, aparência de 40 e poucos. Diretor do Arquivo Histórico. Aliado até ser revelado. A dívida não é das 33 — é dele.</p>
+        </div>
+      </div>
+
+      <!-- VERA -->
+      <div class="npc-card" onclick="openNPC('vera')">
+        <div class="npc-card-inner">
+          <div class="npc-sig"><svg viewBox="0 0 44 44"><circle cx="22" cy="16" r="7" stroke-width="1" stroke="currentColor" fill="currentColor" opacity=".22"/><path d="M10,38 Q22,24 34,38" stroke-width="1" stroke="currentColor" fill="currentColor" opacity=".18"/><circle cx="22" cy="16" r="3" fill="currentColor" opacity=".5"/></svg></div>
+          <div class="npc-role">O Espelho</div>
+          <div class="npc-name">Vera Monteiro</div>
+          <span class="npc-tag">41 Anos</span>
+          <p class="npc-excerpt">Neta de Dalva Monteiro, vítima nº23. Armindo a monitora desde que chegou em 2022. Veio seguindo um sonho recorrente que ela não sabia nomear.</p>
+        </div>
+      </div>
+
+      <!-- GABRIEL -->
+      <div class="npc-card" onclick="openNPC('gabriel')">
+        <div class="npc-card-inner">
+          <div class="npc-sig"><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="16" stroke-width=".8" stroke="currentColor" fill="none" stroke-dasharray="3 3"/><path d="M22,8 L26,18 L38,18 L28,25 L32,36 L22,29 L12,36 L16,25 L6,18 L18,18 Z" fill="currentColor" opacity=".18"/><circle cx="22" cy="22" r="3" fill="currentColor" opacity=".65"/></svg></div>
+          <div class="npc-role">O Arquivo</div>
+          <div class="npc-name">Gabriel Tostes</div>
+          <span class="npc-tag">9 Anos</span>
+          <p class="npc-excerpt">Médium sem saber. Cobra memórias de quem acessa — sem saber que cobra. Sabe o nome de vida anterior de um personagem.</p>
+        </div>
+      </div>
+
+      <!-- NATALINA -->
+      <div class="npc-card" onclick="openNPC('natalina')">
+        <div class="npc-card-inner">
+          <div class="npc-sig"><svg viewBox="0 0 44 44"><path d="M22,4 L40,36 L4,36 Z" stroke-width="1" stroke="currentColor" fill="currentColor" opacity=".14"/><path d="M22,14 L32,32 L12,32 Z" stroke-width=".8" stroke="currentColor" fill="currentColor" opacity=".18"/><circle cx="22" cy="26" r="3" fill="currentColor" opacity=".58"/></svg></div>
+          <div class="npc-role">A Âncora</div>
+          <div class="npc-name">Natalina Braga</div>
+          <span class="npc-tag">78 Anos</span>
+          <p class="npc-excerpt">Neta de Benedito Braga, cúmplice das execuções de 1972. Seu caderno é o mapa mais preciso do campo de influência do nó — sem saber.</p>
+        </div>
+      </div>
+
+      <!-- DÉCIO -->
+      <div class="npc-card" onclick="openNPC('decio')">
+        <div class="npc-card-inner">
+          <div class="npc-sig"><svg viewBox="0 0 44 44"><rect x="8" y="8" width="28" height="28" stroke-width=".8" stroke="currentColor" fill="none"/><line x1="8" y1="8" x2="36" y2="36" stroke-width=".6" stroke="currentColor"/><line x1="36" y1="8" x2="8" y2="36" stroke-width=".6" stroke="currentColor"/><circle cx="22" cy="22" r="4" fill="currentColor" opacity=".45"/></svg></div>
+          <div class="npc-role">O Precipício</div>
+          <div class="npc-name">Décio Murta</div>
+          <span class="npc-tag">46 Anos</span>
+          <p class="npc-excerpt">Jornalista de Brasília. 23 cadernos numerados — 16 a 22 têm o que os personagens precisam, mas ele não consegue mais verbalizar.</p>
+        </div>
+      </div>
+
+      <!-- RONALDO -->
+      <div class="npc-card" onclick="openNPC('ronaldo')">
+        <div class="npc-card-inner">
+          <div class="npc-sig"><svg viewBox="0 0 44 44"><path d="M22,4 L38,12 L38,32 L22,40 L6,32 L6,12 Z" stroke-width="1" stroke="currentColor" fill="currentColor" opacity=".14"/><path d="M22,12 L30,16 L30,28 L22,32 L14,28 L14,16 Z" stroke-width=".8" stroke="currentColor" fill="none"/><circle cx="22" cy="22" r="3" fill="currentColor" opacity=".58"/></svg></div>
+          <div class="npc-role">O Instrumento</div>
+          <div class="npc-name">Ronaldo Seabra</div>
+          <span class="npc-tag">52 Anos</span>
+          <p class="npc-excerpt">Delegado titular. Médium sem saber. 15 nomes no caderno de "curiosidades" — 8 são das 33 vítimas de 1972. Amigo genuíno de Armindo há 18 anos.</p>
+        </div>
+      </div>
+
+      <!-- SUELI -->
+      <div class="npc-card" onclick="openNPC('sueli')" style="grid-column:span 2">
+        <div class="npc-card-inner">
+          <div class="npc-sig"><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="16" stroke-width="1" stroke="currentColor" fill="none"/><path d="M22,6 A16,16 0 0,1 38,22 A16,16 0 0,1 22,38" fill="currentColor" opacity=".14"/><circle cx="22" cy="22" r="4" stroke-width="1" stroke="currentColor" fill="none"/><line x1="22" y1="6" x2="22" y2="18" stroke-width="1.5" stroke="currentColor"/></svg></div>
+          <div class="npc-role">A Fratura</div>
+          <div class="npc-name">Sueli Nascimento</div>
+          <span class="npc-tag">38 Anos</span>
+          <p class="npc-excerpt">Recrutada por Armindo em 2015. Fratura em junho/2023 — Dalva comunicou o critério secundário a ela (não a Armindo). As 11 fichas que removeu não são sabotagem. São proteção. <strong>Não revelar cedo.</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- NPC DETAIL PANELS (hidden by default) -->
+
+    <!-- ARMINDO DETAIL -->
+    <div class="npc-detail book-card" id="npc-armindo">
+      <div class="book-inner">
+        <button class="back-btn" onclick="closeNPC()">Voltar aos NPCs</button>
+        <div class="npc-detail-hdr">
+          <div class="npc-sigil"><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="18" stroke-width=".8" stroke="currentColor" fill="none"/><polygon points="22,6 26,18 38,18 28,26 32,38 22,30 12,38 16,26 6,18 18,18" fill="currentColor" opacity=".28"/><circle cx="22" cy="22" r="4" fill="currentColor" opacity=".6"/></svg></div>
+          <div>
+            <div class="npc-role" style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.78;margin-bottom:3px">Antagonista Principal</div>
+            <div class="npc-name" style="font-family:'Cinzel Decorative',serif;font-size:28px;font-weight:700;color:var(--blood-deep);margin-bottom:8px">Armindo Laerte Vasconcelos</div>
+            <div class="npc-attrs">
+              <span class="npc-attr"><strong>Nascimento:</strong> 1931, Goiás</span>
+              <span class="npc-attr"><strong>Idade real:</strong> 94 anos</span>
+              <span class="npc-attr"><strong>Aparência:</strong> 40 e poucos</span>
+              <span class="npc-attr"><strong>Função:</strong> Diretor do Arquivo Histórico Municipal</span>
+            </div>
+          </div>
+        </div>
+        <div class="t-sec"><span class="g">✦</span> A História Verdadeira</div>
+        <p class="t-body dc">Em 1953, com 22 anos, foi encontrado pelo Anterior numa conferência em Goiânia. O Anterior não era uma pessoa independente — era a estrutura temporal usando forma humana para posicionar o único homem que havia escapado da cobrança vidas demais. Armindo nunca soube disso completamente.</p>
+        <p class="t-body">Em outubro de 1972, com 41 anos, retirou o próprio nome da lista e colocou o de Benedito Braga — morto em 1969. A alma de Dalva Monteiro o avisou na noite anterior — de uma linha do tempo que os personagens só vão compreender no finale. Viu a fresta. Convenceu-se. Desde então não envelhece normalmente: 94 anos reais, aparência de 40 e poucos, o que experimenta como fardo e não como dom.</p>
+        <div class="t-sec"><span class="g">✦</span> Como Interpretar</div>
+        <ul class="ul">
+          <li><strong>Episódios 1–4:</strong> Aliado genuíno. Útil, presente, entrega informação com generosidade estratégica — sempre a informação certa para guiar sem revelar.</li>
+          <li><strong>Episódios 5–6:</strong> Gerencia informação. Começa a omitir. Justificativas plausíveis para tudo.</li>
+          <li><strong>Episódio 7:</strong> Confronto. Entrega a chave da sala separada. Controla o ritmo da revelação.</li>
+          <li><strong>Episódio 8:</strong> Revelação. Responde com honestidade — mas honestidade de quem acredita genuinamente em sua própria versão dos eventos.</li>
+          <li><strong>Episódios 9–10:</strong> Aceitação. O movimento de dissolução não é derrota. É resolução.</li>
+        </ul>
+        <div class="t-sec"><span class="g">✦</span> Elementos Físicos</div>
+        <ul class="ul">
+          <li><strong>O anel na mão direita:</strong> ouro velho, nunca tira, gravação interna ilegível. Se perguntado: "foi de quem me ensinou."</li>
+          <li><strong>A voz:</strong> calma em todos os contextos. Nunca levanta. Isso é perturbador.</li>
+          <li><strong>O conhecimento:</strong> nunca usa "pesquisei" — usa "há registros de" ou "documentos da época indicam". A diferença é sutil, consistente, e vai aparecer em retrospecto.</li>
+        </ul>
+        <div class="t-sec"><span class="g">✦</span> O Monólogo Final</div>
+        <div class="bq"><p>"Vi o lugar onde as dívidas não existem porque nunca existiu separação suficiente para que se formassem."</p></div>
+        <div class="bq"><p>"O que chamam de Deus — seja lá o nome que usam — não está ausente. Nunca esteve presente."</p></div>
+        <div class="bq"><p>"Eu não vim salvar ninguém. Vim acabar com a repetição."</p></div>
+        <div class="warn-box"><div class="warn-lbl">Revelação Final — Episódio 10</div><div class="warn-txt">Armindo estava na lista original como 34ª vítima. Retirou o próprio nome. O ciclo não podia fechar porque a conta principal estava aberta: a dele. Quando aceita o acerto, dissolve. Não morre — o espaço onde estava deixa de ter sido preenchido. As almas o reconheciam não por medo. Porque ele deveria ter sido um deles. E nunca foi.</div></div>
+      </div>
+    </div>
+
+    <!-- VERA DETAIL -->
+    <div class="npc-detail book-card" id="npc-vera">
+      <div class="book-inner">
+        <button class="back-btn" onclick="closeNPC()">Voltar aos NPCs</button>
+        <div class="npc-detail-hdr">
+          <div class="npc-sigil"><svg viewBox="0 0 44 44"><circle cx="22" cy="16" r="7" stroke-width="1" stroke="currentColor" fill="currentColor" opacity=".22"/><path d="M10,38 Q22,24 34,38" stroke-width="1" stroke="currentColor" fill="currentColor" opacity=".18"/><circle cx="22" cy="16" r="3" fill="currentColor" opacity=".5"/></svg></div>
+          <div>
+            <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.78;margin-bottom:3px">O Espelho</div>
+            <div class="npc-name" style="font-family:'Cinzel Decorative',serif;font-size:28px;font-weight:700;color:var(--blood-deep);margin-bottom:8px">Vera Monteiro</div>
+            <div class="npc-attrs">
+              <span class="npc-attr"><strong>Idade:</strong> 41 anos (nascida 1984)</span>
+              <span class="npc-attr"><strong>Em Novavera:</strong> desde 2022</span>
+              <span class="npc-attr"><strong>Conexão:</strong> Neta de Dalva Monteiro, vítima nº23</span>
+            </div>
+          </div>
+        </div>
+        <div class="t-sec"><span class="g">✦</span> História</div>
+        <p class="t-body dc">Chegou seguindo um sonho recorrente: terra vermelha de madrugada, mulher com o rosto da avó dizendo um nome que ela esquecia ao acordar. Dalva Monteiro morreu em outubro de 1972 com 32 anos, deixando duas crianças. A família recebeu uma carta do governo dizendo que havia emigrado. Vera cresceu sabendo que a avó havia <em>sumido</em>.</p>
+        <p class="t-body">Veio com Rafael — namorado que amava e que usou para permanecer em Novavera. Quando ele foi embora, não o seguiu. Esse movimento — manter alguém próximo com manipulação, colocá-lo em segundo lugar, deixá-lo ir quando foi — é o espelho que os personagens vão ver em si mesmos.</p>
+        <div class="t-sec"><span class="g">✦</span> Como Interpretar</div>
+        <ul class="ul">
+          <li>Não é vilã. Tomou decisões reconhecíveis, graduais, cada uma justificável no momento, que no total formam um padrão que ela não consegue mais negar.</li>
+          <li>Quando confrontada sobre Rafael: <em>"Eu sabia que estava fazendo. Sabia que era errado. Fiz mesmo assim. Você faria diferente?"</em></li>
+          <li>A conexão com Dalva é o coração dela. Quando descobrir a verdade sobre a avó, a reação vai ser orientada pela relação que construiu com os personagens.</li>
+        </ul>
+        <div class="t-sec"><span class="g">✦</span> Narratividade — O Que Ela Reflete</div>
+        <p class="t-body">Vera existe para mostrar aos personagens o que seus próprios padrões parecem de fora. Cada vez que os jogadores assistem a uma decisão de Vera e se reconhecem nela, é a bíblia de causalidade funcionando. O espelho não é literal. É dramático.</p>
+        <div class="warn-box"><div class="warn-lbl">Atenção do Mestre</div><div class="warn-txt">A dívida de Dalva com Armindo é a mais pesada entre as 33. Vera é a pessoa através de quem essa dívida pode fechar — ou se aprofundar. Armindo a mantém próxima porque não sabe o que acontecerá quando ela descobrir quem foi Dalva.</div></div>
+      </div>
+    </div>
+
+    <!-- GABRIEL DETAIL -->
+    <div class="npc-detail book-card" id="npc-gabriel">
+      <div class="book-inner">
+        <button class="back-btn" onclick="closeNPC()">Voltar aos NPCs</button>
+        <div class="npc-detail-hdr">
+          <div class="npc-sigil"><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="16" stroke-width=".8" stroke="currentColor" fill="none" stroke-dasharray="3 3"/><path d="M22,8 L26,18 L38,18 L28,25 L32,36 L22,29 L12,36 L16,25 L6,18 L18,18 Z" fill="currentColor" opacity=".18"/><circle cx="22" cy="22" r="3" fill="currentColor" opacity=".65"/></svg></div>
+          <div>
+            <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.78;margin-bottom:3px">O Arquivo</div>
+            <div class="npc-name" style="font-family:'Cinzel Decorative',serif;font-size:28px;font-weight:700;color:var(--blood-deep);margin-bottom:8px">Gabriel Tostes</div>
+            <div class="npc-attrs">
+              <span class="npc-attr"><strong>Idade:</strong> 9 anos (nascido 2016)</span>
+              <span class="npc-attr"><strong>Natureza:</strong> Médium sem saber</span>
+              <span class="npc-attr"><strong>Custo:</strong> Cobra memórias de quem acessa — sem saber que cobra</span>
+            </div>
+          </div>
+        </div>
+        <div class="t-sec"><span class="g">✦</span> Como Funciona</div>
+        <p class="t-body dc">Cada informação entregue por Gabriel apaga algo da pessoa que recebeu — pequeno no começo, crescente. Não é punição — é o peso de informação de outro tempo precisando de espaço neste tempo para caber. Gabriel não sabe que cobra. Sente alívio quando entrega um fragmento.</p>
+        <div class="t-sec"><span class="g">✦</span> O Que Ele Sabe (que nenhum outro NPC sabe)</div>
+        <ul class="ul">
+          <li>O nome de um dos personagens de uma vida anterior — dito às vezes quando está quase dormindo.</li>
+          <li>Que o que está na Área Verde não é nenhuma das 33 almas — é "o que estava antes."</li>
+          <li>Que Valdecir voltava diferente na última semana antes de morrer.</li>
+          <li>O campo de noite — o desenho que faz compulsivamente é a Área Verde de cima. Nunca foi lá.</li>
+        </ul>
+        <div class="t-sec"><span class="g">✦</span> Como Interpretar</div>
+        <ul class="ul">
+          <li>Pequeno para a idade. Fala pouco. Quando fala, importa.</li>
+          <li>A mãe repete "imaginação criativa muito desenvolvida" para si mesma até virar verdade funcional.</li>
+          <li>O dilema ético de acessar Gabriel torna-se urgente no episódio 6: os personagens vão perceber o custo e precisar decidir se continuam.</li>
+          <li>No episódio 10: acorda curado e sem receber mais nada. O silêncio o assusta mais que os fragmentos.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- NATALINA DETAIL -->
+    <div class="npc-detail book-card" id="npc-natalina">
+      <div class="book-inner">
+        <button class="back-btn" onclick="closeNPC()">Voltar aos NPCs</button>
+        <div class="npc-detail-hdr">
+          <div class="npc-sigil"><svg viewBox="0 0 44 44"><path d="M22,4 L40,36 L4,36 Z" stroke-width="1" stroke="currentColor" fill="currentColor" opacity=".14"/><path d="M22,14 L32,32 L12,32 Z" stroke-width=".8" stroke="currentColor" fill="currentColor" opacity=".18"/><circle cx="22" cy="26" r="3" fill="currentColor" opacity=".58"/></svg></div>
+          <div>
+            <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.78;margin-bottom:3px">A Âncora</div>
+            <div class="npc-name" style="font-family:'Cinzel Decorative',serif;font-size:28px;font-weight:700;color:var(--blood-deep);margin-bottom:8px">Natalina Braga</div>
+            <div class="npc-attrs">
+              <span class="npc-attr"><strong>Idade:</strong> 78 anos (nascida 23 dez. 1947)</span>
+              <span class="npc-attr"><strong>Segredo:</strong> Neta de Benedito Braga, cúmplice das execuções</span>
+            </div>
+          </div>
+        </div>
+        <div class="t-sec"><span class="g">✦</span> História</div>
+        <p class="t-body dc">Nasceu na fazenda que Benedito — seu avô paterno — administrava: a 40km de onde Novavera seria construída. Chegou à cidade com 27 anos quando foi fundada e nunca saiu. Na administração municipal desde o primeiro dia: datilografou a lista de ruas, alguns nomes foram ideia dela.</p>
+        <p class="t-body">Em 1974 recebeu ordem de cobrir uma fundação diagonal — não sabia o que era. A ordem veio de um assessor técnico cujo nome estava no papel. O assessor técnico era Armindo com identidade falsa. Natalina não sabe.</p>
+        <div class="t-sec"><span class="g">✦</span> O Caderno</div>
+        <p class="t-body">Décadas de padrões registrados — taxas de insônia perto da Área Verde, relacionamentos que terminam sem explicação, acidentes que se concentram em datas específicas. Acredita que documenta um problema de arquitetura urbana. É o mapa mais preciso do campo de influência do nó que existe. Entrega voluntariamente quando os personagens mostram interesse genuíno.</p>
+        <div class="t-sec"><span class="g">✦</span> A Decisão Moral Mais Pesada</div>
+        <div class="warn-box"><div class="warn-lbl">Decisão dos Personagens</div><div class="warn-txt">Quando conectarem "B." no diário de Armindo com Benedito Braga e com o sobrenome dela: contar ou não contar é uma das decisões morais mais pesadas da temporada. O que ela faz com a informação depende inteiramente do que a relação construiu até aquele momento.</div></div>
+      </div>
+    </div>
+
+    <!-- DÉCIO DETAIL -->
+    <div class="npc-detail book-card" id="npc-decio">
+      <div class="book-inner">
+        <button class="back-btn" onclick="closeNPC()">Voltar aos NPCs</button>
+        <div class="npc-detail-hdr">
+          <div class="npc-sigil"><svg viewBox="0 0 44 44"><rect x="8" y="8" width="28" height="28" stroke-width=".8" stroke="currentColor" fill="none"/><line x1="8" y1="8" x2="36" y2="36" stroke-width=".6" stroke="currentColor"/><line x1="36" y1="8" x2="8" y2="36" stroke-width=".6" stroke="currentColor"/><circle cx="22" cy="22" r="4" fill="currentColor" opacity=".45"/></svg></div>
+          <div>
+            <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.78;margin-bottom:3px">O Precipício</div>
+            <div class="npc-name" style="font-family:'Cinzel Decorative',serif;font-size:28px;font-weight:700;color:var(--blood-deep);margin-bottom:8px">Décio Murta</div>
+            <div class="npc-attrs">
+              <span class="npc-attr"><strong>Idade:</strong> 46 anos</span>
+              <span class="npc-attr"><strong>Em Novavera:</strong> dois anos e meio</span>
+              <span class="npc-attr"><strong>Cadernos:</strong> 23 numerados — 16-22 têm o que os personagens precisam</span>
+            </div>
+          </div>
+        </div>
+        <div class="t-sec"><span class="g">✦</span> O Estado Atual</div>
+        <p class="t-body dc">Jornalista investigativo de Brasília. Chegou seguindo um número parcialmente redigido num arquivo da Comissão Nacional da Verdade: 34. Dois anos e meio depois, está nos cadernos 16-22 — que têm o nome verdadeiro de Armindo antes de 1972, a localização exata do arquivo no subsolo, e o que Décio chama de <em>o anterior ao anterior</em>.</p>
+        <div class="bq"><p>É como traduzir de uma língua que está se dissolvendo enquanto você fala.</p></div>
+        <div class="t-sec"><span class="g">✦</span> Como Jogar as Cenas com Décio</div>
+        <ul class="ul">
+          <li><strong>A janela:</strong> dois, três minutos de clareza, sem aviso, que os personagens precisam aprender a reconhecer. A janela fecha e não volta naquela sessão.</li>
+          <li><strong>A regra:</strong> os jogadores precisam ter as perguntas certas prontas. Não haverá segunda chance de perguntar na mesma sessão.</li>
+          <li><strong>O que ele sabe que está nos cadernos 16-22:</strong> nome de Armindo antes de 1972, localização do subsolo do arquivo, o anterior ao anterior, cronologia completa da Operação Semente.</li>
+          <li><strong>Episódio 9:</strong> dois minutos de clareza — entrega algo crucial. Depois piora definitivamente.</li>
+        </ul>
+        <p class="t-body" style="font-style:italic;opacity:.7">Décio é o espelho do que os personagens podem se tornar. Cada cena com ele é um aviso que nunca é dito explicitamente.</p>
+      </div>
+    </div>
+
+    <!-- RONALDO DETAIL -->
+    <div class="npc-detail book-card" id="npc-ronaldo">
+      <div class="book-inner">
+        <button class="back-btn" onclick="closeNPC()">Voltar aos NPCs</button>
+        <div class="npc-detail-hdr">
+          <div class="npc-sigil"><svg viewBox="0 0 44 44"><path d="M22,4 L38,12 L38,32 L22,40 L6,32 L6,12 Z" stroke-width="1" stroke="currentColor" fill="currentColor" opacity=".14"/><path d="M22,12 L30,16 L30,28 L22,32 L14,28 L14,16 Z" stroke-width=".8" stroke="currentColor" fill="none"/><circle cx="22" cy="22" r="3" fill="currentColor" opacity=".58"/></svg></div>
+          <div>
+            <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.78;margin-bottom:3px">O Instrumento</div>
+            <div class="npc-name" style="font-family:'Cinzel Decorative',serif;font-size:28px;font-weight:700;color:var(--blood-deep);margin-bottom:8px">Ronaldo Seabra</div>
+            <div class="npc-attrs">
+              <span class="npc-attr"><strong>Idade:</strong> 52 anos (nascido 1973)</span>
+              <span class="npc-attr"><strong>Função:</strong> Delegado titular de Novavera</span>
+              <span class="npc-attr"><strong>Natureza oculta:</strong> Médium sem saber</span>
+            </div>
+          </div>
+        </div>
+        <div class="t-sec"><span class="g">✦</span> A Dívida com Armindo</div>
+        <p class="t-body dc">Amigo de Armindo há 18 anos. A amizade é real — Armindo lembra de detalhes, pergunta sobre a vida, tem paciência para as histórias longas que Ronaldo conta quando bebe o suficiente. Há três anos um processo administrativo grave foi arquivado com a ajuda de Armindo. Ronaldo nunca perguntou como. Uma dívida não nomeada que sente o peso todos os dias sem conseguir articular.</p>
+        <div class="t-sec"><span class="g">✦</span> O Caderno de Curiosidades</div>
+        <p class="t-body">15 nomes anotados ao longo dos anos — casos que ficaram na memória sem razão clara. 8 são das 33 vítimas de 1972. Ronaldo não sabe. O que chama de pressentimento policial é informação fragmentada de almas presas que acessa sem saber que acessa.</p>
+        <div class="t-sec"><span class="g">✦</span> O Momento do Episódio 8</div>
+        <p class="t-body">Investiga por conta própria e encontra o caso de 1978: trabalhador morto na Área Verde, sobrenome idêntico a uma vítima de 1972, laudo de acidente sem inconsistências mas com detalhes que só fazem sentido em retrospecto. <strong>Esse é o momento onde Ronaldo para de escolher não saber.</strong></p>
+      </div>
+    </div>
+
+    <!-- SUELI DETAIL -->
+    <div class="npc-detail book-card" id="npc-sueli">
+      <div class="book-inner">
+        <button class="back-btn" onclick="closeNPC()">Voltar aos NPCs</button>
+        <div class="npc-detail-hdr">
+          <div class="npc-sigil"><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="16" stroke-width="1" stroke="currentColor" fill="none"/><path d="M22,6 A16,16 0 0,1 38,22 A16,16 0 0,1 22,38" fill="currentColor" opacity=".14"/><circle cx="22" cy="22" r="4" stroke-width="1" stroke="currentColor" fill="none"/><line x1="22" y1="6" x2="22" y2="18" stroke-width="1.5" stroke="currentColor"/></svg></div>
+          <div>
+            <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.78;margin-bottom:3px">A Fratura</div>
+            <div class="npc-name" style="font-family:'Cinzel Decorative',serif;font-size:28px;font-weight:700;color:var(--blood-deep);margin-bottom:8px">Sueli Nascimento</div>
+            <div class="npc-attrs">
+              <span class="npc-attr"><strong>Idade:</strong> 38 anos (nascida 1987)</span>
+              <span class="npc-attr"><strong>Recrutada:</strong> 2015, aos 28 anos</span>
+              <span class="npc-attr"><strong>Fratura:</strong> junho de 2023</span>
+            </div>
+          </div>
+        </div>
+        <div class="t-sec"><span class="g">✦</span> A Fratura</div>
+        <p class="t-body dc">Em junho de 2023, numa sessão rotineira, Dalva Monteiro aproveitou o canal aberto e se comunicou com Sueli — não com Armindo. Disse três coisas: que o critério secundário existe (Armindo interrompeu contas que as 33 tinham com ele), que Armindo estava na lista original como vítima, e que o que ele viu na fresta não é o que acredita que é.</p>
+        <p class="t-body">Sueli não falou com Armindo sobre o que ouviu. Em maio de 2024 removeu as 11 fichas com anotações marginais e as escondeu num antiquário em Goiânia. O antiquário não sabe o que guarda.</p>
+        <div class="t-sec"><span class="g">✦</span> O Que os Personagens Vão Interpretar Errado</div>
+        <div class="warn-box"><div class="warn-lbl">Crucial — Não Revelar Antes do Episódio 7</div><div class="warn-txt">Os rastros de Sueli — documentos sumidos, conexões cortadas, sombra na investigação — vão parecer sabotagem. São proteção. Ela está removendo as iscas que Armindo plantou para conduzir a investigação numa direção que serve ao ciclo. Quando os personagens finalmente a encontrarem, duas investigações paralelas percebem que estavam olhando para o mesmo problema de lados diferentes.</div></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ════════ PÁGINA: EPISÓDIOS ════════ -->
+<div class="page" id="page-episodios">
+  <div class="page-hdr">
+    <p class="page-eyebrow">Dez Episódios · Temporada I</p>
+    <h2>Episódios</h2>
+    <p>Resumo, caminhos possíveis e ganchos — clique em cada episódio para expandir</p>
+  </div>
+  <div class="scroll-content" id="ep-scroll">
+    <div id="ep-list"></div>
+    <div id="ep-detail-full" style="display:none"></div>
+  </div>
+</div>
+
+<!-- ════════ PÁGINA: DOCUMENTOS ════════ -->
+<div class="page" id="page-documentos">
+  <div class="page-hdr">
+    <p class="page-eyebrow">Props Físicos · Impressão e PDF</p>
+    <h2>Documentos</h2>
+    <p>Fichas, diário e mapa com o design original — clique em imprimir para gerar o PDF</p>
+  </div>
+  <div class="scroll-content">
+    <div class="warn-box" style="margin-bottom:28px">
+      <div class="warn-lbl">Como baixar como PDF</div>
+      <div class="warn-txt">Clique em "Imprimir documento" → no diálogo de impressão, selecione "Salvar como PDF" como destino → salva com o design das folhas antigas.</div>
+    </div>
+    <div id="docs-list" class="grid-2"></div>
+  </div>
+</div>
+
+<!-- ════════ PÁGINA: ANOTAÇÕES ════════ -->
+<div class="page" id="page-anotacoes">
+  <div class="page-hdr">
+    <p class="page-eyebrow">Notas do Mestre</p>
+    <h2>Anotações</h2>
+    <p>Registros por sessão — salvos no navegador, exportáveis como arquivo</p>
+  </div>
+  <div class="notes-wrapper">
+    <div class="notes-tabs">
+      <button class="notes-tab active" onclick="switchNotesTab('sessoes')">Por Sessão</button>
+      <button class="notes-tab" onclick="switchNotesTab('livre')">Notas Livres</button>
+    </div>
+    <div class="notes-area">
+      <div class="notes-sidebar">
+        <button class="notes-add-btn" onclick="addNote()">+ Nova nota</button>
+        <div id="notes-list"></div>
+      </div>
+      <div class="notes-editor">
+        <input class="notes-title-input" id="note-title" placeholder="Título da nota..." oninput="saveCurrentNote()">
+        <textarea class="notes-textarea" id="note-body" placeholder="Escreva aqui — anotações, descobertas, decisões tomadas, o que os personagens encontraram..." oninput="saveCurrentNote()"></textarea>
+        <div class="notes-toolbar">
+          <span class="notes-meta" id="note-meta">Nenhuma nota selecionada</span>
+          <button class="btn-export" onclick="exportNotes()">⬇ Exportar todas</button>
+          <button class="btn-delete" onclick="deleteCurrentNote()">✕ Apagar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ SEARCH OVERLAY ════════ -->
+<div class="search-overlay" id="search-overlay" onclick="closeSearch(event)">
+  <div class="search-box">
+    <input class="search-input" id="search-input" placeholder="Buscar em Novavera..." oninput="doSearch(this.value)">
+    <div class="search-results" id="search-results"></div>
+    <div class="search-hint">↵ para ir · ESC para fechar · Ctrl+K para abrir</div>
+  </div>
+</div>
+
+</main>
+
+<!-- ════════════════ PRINT STYLES ════════════════ -->
+<style>
+@media print {
+  body { background: #f4ead8 !important; }
+  .sidebar, .main > *:not(.page.printing), .page-hdr, .warn-box, button, .notes-toolbar { display: none !important; }
+  .main { margin: 0 !important; }
+  .page.printing { display: block !important; }
+  .doc-prop, .diary-prop { break-inside: avoid; box-shadow: none !important; }
+  @page { margin: 15mm; size: A4; }
+}
+</style>
+
+<!-- ════════════════ JAVASCRIPT ════════════════ -->
+<script>
+// ── DATA ──────────────────────────────────────────────────────────────────
+let DATA = null;
+
+async function loadData() {
+  try {
+    const r = await fetch('data.json?v=' + Date.now());
+    DATA = await r.json();
+    initApp();
+  } catch(e) {
+    console.error('Erro ao carregar data.json:', e);
+    document.body.innerHTML += '<div style="position:fixed;top:20px;left:50%;transform:translateX(-50%);background:#4a0808;color:#f4ead8;padding:16px 24px;font-family:Cinzel,serif;font-size:12px;letter-spacing:2px;">ERRO: data.json não encontrado</div>';
+  }
+}
+
+function initApp() {
+  updateEpBadge();
+  renderClues();
+  renderEpisodios();
+  renderDocumentos();
+  loadNotes();
+  handleHash();
+}
+
+// ── NAVIGATION ────────────────────────────────────────────────────────────
+function navigate(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  const pg = document.getElementById('page-' + page);
+  if (pg) pg.classList.add('active');
+  const nav = document.querySelector('[data-page="' + page + '"]');
+  if (nav) nav.classList.add('active');
+  window.location.hash = page;
+  // Reset NPC view when navigating away
+  if (page !== 'npcs') { closeNPC(); }
+}
+
+function handleHash() {
+  const h = window.location.hash.replace('#','') || 'inicio';
+  navigate(h);
+}
+
+window.addEventListener('hashchange', handleHash);
+
+// ── EPISODE ───────────────────────────────────────────────────────────────
+let currentEp = parseInt(localStorage.getItem('nv_ep') || '1');
+
+function changeEp(dir) {
+  currentEp = Math.max(1, Math.min(10, currentEp + dir));
+  localStorage.setItem('nv_ep', currentEp);
+  updateEpBadge();
+  renderEpisodios();
+}
+
+function updateEpBadge() {
+  document.getElementById('current-ep-display').textContent = currentEp;
+  document.getElementById('stat-ep').textContent = 'Episódio ' + currentEp;
+}
+
+function renderEpisodios() {
+  if (!DATA) return;
+  const list = document.getElementById('ep-list');
+  if (!list) return;
+  list.innerHTML = DATA.episodios.map(ep => {
+    const isCurrent = ep.numero === currentEp;
+    const isDone = ep.numero < currentEp;
+    return `
+    <div class="ep-card ${isDone?'done':''} ${isCurrent?'current':''}" style="margin-bottom:2px" onclick="toggleEp(${ep.numero})">
+      <div class="ep-num">${String(ep.numero).padStart(2,'0')}</div>
+      <div class="ep-label">Episódio ${ep.numero}</div>
+      <div class="ep-title">${ep.titulo}</div>
+      <div class="ep-q">${ep.pergunta}</div>
+      <div class="ep-body">${ep.resumo}</div>
+      <div class="ep-detail" id="epd-${ep.numero}">
+        <div class="t-ss" style="margin-top:0">Caminhos Possíveis</div>
+        <ul class="ul">${ep.caminhos.map(c=>`<li>${c}</li>`).join('')}</ul>
+        <div class="t-ss">Pistas — Camada 1 (visíveis)</div>
+        <ul class="ul">${ep.pistas_camada1.map(p=>`<li>${p}</li>`).join('')}</ul>
+        <div class="t-ss">Pistas — Camada 2 (com investigação)</div>
+        <ul class="ul">${ep.pistas_camada2.map(p=>`<li>${p}</li>`).join('')}</ul>
+        <div style="margin-top:18px;padding:14px 18px;border-left:2px solid var(--blood);background:rgba(107,15,15,.06)">
+          <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:4px;color:var(--blood);text-transform:uppercase;margin-bottom:6px;opacity:.78">Gancho Final</div>
+          <div style="font-family:'IM Fell English',serif;font-style:italic;font-size:15px;color:var(--ink-soft);line-height:1.65">${ep.gancho}</div>
+        </div>
+        <div class="ep-status">
+          <button class="ep-btn red" onclick="setEpStatus(${ep.numero},'feito');event.stopPropagation()">✓ Marcar como feito</button>
+          <button class="ep-btn gold" onclick="setEpCurrent(${ep.numero});event.stopPropagation()">→ Definir como atual</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function toggleEp(num) {
+  const d = document.getElementById('epd-'+num);
+  if (!d) return;
+  d.classList.toggle('open');
+}
+
+function setEpCurrent(num) {
+  currentEp = num;
+  localStorage.setItem('nv_ep', num);
+  updateEpBadge();
+  renderEpisodios();
+}
+
+function setEpStatus(num, status) {
+  // Store in localStorage
+  const statuses = JSON.parse(localStorage.getItem('nv_ep_status') || '{}');
+  statuses[num] = status;
+  localStorage.setItem('nv_ep_status', JSON.stringify(statuses));
+}
+
+// ── CLUES (HOME) ──────────────────────────────────────────────────────────
+const CLUES = [
+  'Caderno de Valdecir com nomes dos personagens (1987)',
+  'Símbolo na lateral do caixão — por quem?',
+  'Placa do Centro Cívico — Benedito Braga, foto jovem demais',
+  'A chave de Valdecir — metal idêntico ao arquivo',
+  'Foto de Armindo de 1985 com mesma aparência de hoje',
+  'As três fichas e o critério de seleção',
+  'A Rua do Anterior no mapa original',
+  'Fundação diagonal — símbolo fechado em 17/06/1974',
+  'O diário do Anterior — duas caligrafias',
+  'Critério secundário — as 33 tinham dívidas com Armindo',
+  'O caso de 1978 — trabalhador morto, sobrenome de vítima',
+  'Data nos cadernos de Valdecir — daqui a três semanas'
+];
+
+function renderClues() {
+  const saved = JSON.parse(localStorage.getItem('nv_clues') || '{}');
+  const el = document.getElementById('clues-list');
+  if (!el) return;
+  el.innerHTML = CLUES.map((c,i) => `
+    <div class="clue-item">
+      <div class="clue-check ${saved[i]?'done':''}" onclick="toggleClue(${i})"></div>
+      <div class="clue-label ${saved[i]?'done':''}">${c}</div>
+    </div>`).join('');
+  updateStats(saved);
+}
+
+function toggleClue(i) {
+  const saved = JSON.parse(localStorage.getItem('nv_clues') || '{}');
+  saved[i] = !saved[i];
+  localStorage.setItem('nv_clues', JSON.stringify(saved));
+  renderClues();
+}
+
+function updateStats(saved) {
+  const done = Object.values(saved).filter(Boolean).length;
+  document.getElementById('stat-pistas').textContent = done + ' / ' + CLUES.length;
+  const npcSaved = JSON.parse(localStorage.getItem('nv_npcs_revealed') || '[]');
+  document.getElementById('stat-npcs').textContent = npcSaved.length + ' / 6';
+  document.getElementById('stat-sessoes').textContent = localStorage.getItem('nv_sessoes') || '0';
+}
+
+// ── NPCs ──────────────────────────────────────────────────────────────────
+function openNPC(id) {
+  document.getElementById('npc-grid').style.display = 'none';
+  document.querySelectorAll('.npc-detail').forEach(d => d.classList.remove('open'));
+  const det = document.getElementById('npc-'+id);
+  if (det) det.classList.add('open');
+  // track revealed
+  const rev = JSON.parse(localStorage.getItem('nv_npcs_revealed') || '[]');
+  if (!rev.includes(id)) { rev.push(id); localStorage.setItem('nv_npcs_revealed', JSON.stringify(rev)); }
+}
+
+function closeNPC() {
+  document.getElementById('npc-grid').style.display = 'grid';
+  document.querySelectorAll('.npc-detail').forEach(d => d.classList.remove('open'));
+}
+
+// ── DOCUMENTOS ────────────────────────────────────────────────────────────
+function renderDocumentos() {
+  if (!DATA) return;
+  const el = document.getElementById('docs-list');
+  if (!el) return;
+  el.innerHTML = DATA.documentos.map(doc => `
+    <div style="background:var(--parch);background-image:radial-gradient(ellipse at 20% 0%,rgba(180,140,80,.12) 0%,transparent 55%);box-shadow:0 2px 20px rgba(0,0,0,.3);padding:24px 28px;position:relative;overflow:hidden">
+      <div style="position:absolute;inset:0;background-image:repeating-linear-gradient(180deg,transparent,transparent 22px,rgba(90,74,48,.05) 22px,rgba(90,74,48,.05) 23px);pointer-events:none"></div>
+      <div style="position:relative;z-index:1">
+        ${doc.stamp ? `<div style="position:absolute;top:0;right:0;font-family:'Cinzel',serif;font-size:7px;letter-spacing:3px;color:var(--blood);opacity:.45;border:1px solid var(--blood);padding:2px 6px;transform:rotate(2deg)">${doc.stamp}</div>` : ''}
+        <div style="font-family:'Cinzel',serif;font-size:10px;letter-spacing:3px;color:var(--ash);text-transform:uppercase;border-bottom:1px solid rgba(90,74,48,.35);padding-bottom:8px;margin-bottom:12px">${doc.titulo}</div>
+        ${doc.tipo === 'ficha' ? renderFichaPreview(doc) : renderDiarioPreview(doc)}
+        <button class="btn-print" onclick="printDoc('${doc.id}')">
+          <svg viewBox="0 0 24 24"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2M6 14h12v8H6z" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+          Imprimir / Baixar PDF
+        </button>
+      </div>
+    </div>`).join('');
+}
+
+function renderFichaPreview(doc) {
+  return doc.campos.slice(0,4).map(f => `
+    <div style="margin-bottom:5px;display:flex;gap:8px;align-items:baseline">
+      <span style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:2px;color:var(--ash);text-transform:uppercase;flex-shrink:0;opacity:.75;min-width:100px">${f.label}</span>
+      <span style="font-family:'IM Fell English',serif;font-size:14px;color:var(--ink);line-height:1.4">${f.valor}</span>
+    </div>`).join('') + `<div style="font-family:'Cinzel',serif;font-size:8px;color:var(--ash);opacity:.5;margin-top:8px">+ ${doc.campos.length - 4} campos</div>`;
+}
+
+function renderDiarioPreview(doc) {
+  const first = doc.entradas[0];
+  return `<div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:6px;opacity:.8">${first.data}</div>
+  <div style="font-family:'IM Fell English',serif;font-size:14px;color:var(--ink-soft);line-height:1.7">${first.texto.substring(0,120)}...</div>
+  <div style="font-family:'Cinzel',serif;font-size:8px;color:var(--ash);opacity:.5;margin-top:8px">${doc.entradas.length} entradas</div>`;
+}
+
+function printDoc(id) {
+  const doc = DATA.documentos.find(d => d.id === id);
+  if (!doc) return;
+  const win = window.open('', '_blank');
+  win.document.write(generatePrintHTML(doc));
+  win.document.close();
+  win.onload = () => { win.focus(); win.print(); };
+}
+
+function generatePrintHTML(doc) {
+  const isficha = doc.tipo === 'ficha';
+  let content = '';
+  if (isficha) {
+    content = doc.campos.map(f => `
+      <div style="margin-bottom:8px;display:flex;gap:10px;align-items:baseline;border-bottom:1px solid rgba(90,74,48,.15);padding-bottom:6px">
+        <span style="font-family:'Cinzel',Georgia,serif;font-size:9px;letter-spacing:2px;color:#5a4a30;text-transform:uppercase;flex-shrink:0;min-width:130px;opacity:.8">${f.label}</span>
+        <span style="font-family:Georgia,serif;font-size:15px;color:#180e04;line-height:1.4">${f.valor}</span>
+      </div>`).join('') +
+      (doc.nota ? `<div style="margin-top:16px;padding:12px 16px;border-left:2px solid #6b0f0f;background:rgba(107,15,15,.04)">
+        <div style="font-family:'Cinzel',Georgia,serif;font-size:8px;letter-spacing:3px;color:#6b0f0f;text-transform:uppercase;margin-bottom:5px">Observação de campo</div>
+        <div style="font-family:Georgia,serif;font-style:italic;font-size:14px;color:#3a2510;line-height:1.65">${doc.nota}</div>
+      </div>` : '');
+  } else {
+    content = doc.entradas.map(e => `
+      <div style="margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid rgba(90,74,48,.18)">
+        <div style="font-family:'Cinzel',Georgia,serif;font-size:9px;letter-spacing:3px;color:#9a7a2a;text-transform:uppercase;margin-bottom:8px">${e.data}</div>
+        <div style="font-family:Georgia,serif;font-size:15px;line-height:1.82;color:#3a2510">${e.texto}</div>
+      </div>`).join('');
+  }
+  return `<!DOCTYPE html><html><head><meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    body{background:linear-gradient(135deg,#f0e4cc,#e8d5b0);margin:0;padding:40px;font-family:Georgia,serif;min-height:100vh}
+    .wrapper{max-width:600px;margin:0 auto;background:linear-gradient(135deg,#f0e4cc,#e8d5b0);padding:40px;border:1px solid rgba(90,74,48,.45);position:relative;box-shadow:2px 4px 12px rgba(0,0,0,.15)}
+    .wrapper::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(180deg,transparent,transparent 23px,rgba(90,74,48,.055) 23px,rgba(90,74,48,.055) 24px);pointer-events:none}
+    .stamp{position:absolute;top:14px;right:16px;font-family:'Cinzel',Georgia,serif;font-size:7px;letter-spacing:3px;color:#6b0f0f;opacity:.5;border:1px solid #6b0f0f;padding:2px 7px;transform:rotate(2.5deg)}
+    h1{font-family:'Cinzel',Georgia,serif;font-size:11px;letter-spacing:3px;color:#5a4a30;text-transform:uppercase;border-bottom:1px solid rgba(90,74,48,.38);padding-bottom:10px;margin-bottom:18px;margin-top:0}
+    @media print{body{background:#f0e4cc!important;padding:0}.wrapper{box-shadow:none;border:1px solid rgba(90,74,48,.3);margin:10mm;padding:20mm}}
+  </style></head><body>
+  <div class="wrapper">
+    ${doc.stamp ? `<div class="stamp">${doc.stamp}</div>` : ''}
+    <h1>${doc.titulo}</h1>
+    <div style="position:relative;z-index:1">${content}</div>
+  </div></body></html>`;
+}
+
+// ── NOTES ─────────────────────────────────────────────────────────────────
+let notes = [];
+let currentNoteId = null;
+let notesTab = 'sessoes';
+
+function loadNotes() {
+  notes = JSON.parse(localStorage.getItem('nv_notes') || '[]');
+  if (notes.length === 0) {
+    notes = [{ id: Date.now(), title: 'Sessão 1', body: '', updated: new Date().toISOString() }];
+    saveNotes();
+  }
+  renderNotesList();
+  selectNote(notes[0].id);
+}
+
+function saveNotes() {
+  localStorage.setItem('nv_notes', JSON.stringify(notes));
+}
+
+function renderNotesList() {
+  const el = document.getElementById('notes-list');
+  if (!el) return;
+  const filtered = notesTab === 'sessoes' ? notes.filter(n => n.title.startsWith('Sessão')) : notes.filter(n => !n.title.startsWith('Sessão'));
+  el.innerHTML = filtered.map(n => `
+    <button class="notes-session-item ${n.id === currentNoteId ? 'active' : ''}" onclick="selectNote(${n.id})">
+      ${n.title || 'Sem título'}
+    </button>`).join('');
+}
+
+function selectNote(id) {
+  currentNoteId = id;
+  const note = notes.find(n => n.id === id);
+  if (!note) return;
+  document.getElementById('note-title').value = note.title || '';
+  document.getElementById('note-body').value = note.body || '';
+  document.getElementById('note-meta').textContent = 'Atualizado: ' + new Date(note.updated).toLocaleString('pt-BR');
+  renderNotesList();
+}
+
+function saveCurrentNote() {
+  if (!currentNoteId) return;
+  const note = notes.find(n => n.id === currentNoteId);
+  if (!note) return;
+  note.title = document.getElementById('note-title').value;
+  note.body = document.getElementById('note-body').value;
+  note.updated = new Date().toISOString();
+  saveNotes();
+  renderNotesList();
+  document.getElementById('note-meta').textContent = 'Salvo · ' + new Date().toLocaleTimeString('pt-BR');
+}
+
+function addNote() {
+  const prefix = notesTab === 'sessoes' ? 'Sessão ' : 'Nota ';
+  const num = notes.filter(n => n.title.startsWith(prefix)).length + 1;
+  const note = { id: Date.now(), title: prefix + num, body: '', updated: new Date().toISOString() };
+  notes.unshift(note);
+  saveNotes();
+  renderNotesList();
+  selectNote(note.id);
+}
+
+function deleteCurrentNote() {
+  if (!currentNoteId || notes.length <= 1) return;
+  if (!confirm('Apagar esta nota?')) return;
+  notes = notes.filter(n => n.id !== currentNoteId);
+  saveNotes();
+  loadNotes();
+}
+
+function switchNotesTab(tab) {
+  notesTab = tab;
+  document.querySelectorAll('.notes-tab').forEach((t,i) => t.classList.toggle('active', (i===0&&tab==='sessoes')||(i===1&&tab==='livre')));
+  renderNotesList();
+}
+
+function exportNotes() {
+  const data = { exportado: new Date().toISOString(), notas: notes };
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'novavera-anotacoes-' + new Date().toISOString().slice(0,10) + '.json';
+  a.click();
+}
+
+// ── SEARCH ────────────────────────────────────────────────────────────────
+const SEARCH_INDEX = [
+  { section: 'Grimório', title: 'O Grimório Completo', page: 'grimorio' },
+  { section: 'Regras', title: 'As Cinco Regras Fundamentais', page: 'regras' },
+  { section: 'Regras', title: 'Sistema — Chamado de Cthulhu', page: 'regras' },
+  { section: 'Regras', title: 'Memória e Presença', page: 'regras' },
+  { section: 'NPC', title: 'Armindo Laerte Vasconcelos', page: 'npcs', action: () => { navigate('npcs'); setTimeout(()=>openNPC('armindo'),100); } },
+  { section: 'NPC', title: 'Vera Monteiro — O Espelho', page: 'npcs', action: () => { navigate('npcs'); setTimeout(()=>openNPC('vera'),100); } },
+  { section: 'NPC', title: 'Gabriel Tostes — O Arquivo', page: 'npcs', action: () => { navigate('npcs'); setTimeout(()=>openNPC('gabriel'),100); } },
+  { section: 'NPC', title: 'Natalina Braga — A Âncora', page: 'npcs', action: () => { navigate('npcs'); setTimeout(()=>openNPC('natalina'),100); } },
+  { section: 'NPC', title: 'Décio Murta — O Precipício', page: 'npcs', action: () => { navigate('npcs'); setTimeout(()=>openNPC('decio'),100); } },
+  { section: 'NPC', title: 'Ronaldo Seabra — O Instrumento', page: 'npcs', action: () => { navigate('npcs'); setTimeout(()=>openNPC('ronaldo'),100); } },
+  { section: 'NPC', title: 'Sueli Nascimento — A Fratura', page: 'npcs', action: () => { navigate('npcs'); setTimeout(()=>openNPC('sueli'),100); } },
+  { section: 'Documentos', title: 'Ficha nº07 — Dalva Monteiro', page: 'documentos' },
+  { section: 'Documentos', title: 'Ficha nº19 — Severino Costa', page: 'documentos' },
+  { section: 'Documentos', title: 'Ficha nº34 — Benedito Braga', page: 'documentos' },
+  { section: 'Documentos', title: 'O Diário do Anterior', page: 'documentos' },
+  { section: 'Anotações', title: 'Minhas Anotações', page: 'anotacoes' },
+];
+
+function openSearch() {
+  document.getElementById('search-overlay').classList.add('open');
+  setTimeout(() => document.getElementById('search-input').focus(), 50);
+}
+
+function closeSearch(e) {
+  if (e.target.id === 'search-overlay' || e.key === 'Escape') {
+    document.getElementById('search-overlay').classList.remove('open');
+    document.getElementById('search-input').value = '';
+    document.getElementById('search-results').innerHTML = '';
+  }
+}
+
+function doSearch(q) {
+  const el = document.getElementById('search-results');
+  if (!q) { el.innerHTML = ''; return; }
+  const results = SEARCH_INDEX.filter(i => i.title.toLowerCase().includes(q.toLowerCase()) || i.section.toLowerCase().includes(q.toLowerCase()));
+  el.innerHTML = results.slice(0,8).map((r,i) => `
+    <div class="search-result" onclick="goToResult(${i}, '${r.page}')">
+      <div class="search-result-label">${r.section}</div>
+      <div class="search-result-title">${r.title}</div>
+    </div>`).join('') || '<div class="search-result"><div class="search-result-title" style="opacity:.5">Nenhum resultado</div></div>';
+  window._searchResults = results;
+}
+
+function goToResult(i, page) {
+  const r = window._searchResults && window._searchResults[i];
+  document.getElementById('search-overlay').classList.remove('open');
+  if (r && r.action) { r.action(); } else { navigate(page); }
+}
+
+document.addEventListener('keydown', e => {
+  if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); openSearch(); }
+  if (e.key === 'Escape') closeSearch(e);
+});
+
+// ── START ─────────────────────────────────────────────────────────────────
+loadData();
+</script>
+</body>
+</html>
