@@ -769,7 +769,54 @@
       "sabe": [
         "Tudo — escolheu ir"
       ],
-      "nao_sabe": []
+      "nao_sabe": [],
+      "aparicoes": [
+        {
+          "origem": "A Cidade — O Arquivo Histórico",
+          "ref": "local:arquivo-historico",
+          "texto": "Cilindro 1: abre com a chave de Valdecir."
+        },
+        {
+          "origem": "A Cidade — O Símbolo da Área Verde",
+          "ref": "local:area-verde",
+          "texto": "Fotografia no quarto de Valdecir — fragmento do símbolo em cal, terreno vazio. Lateral do caixão de Valdecir — completo, gravado após a preparação do corpo. Por quem?"
+        },
+        {
+          "origem": "A Cidade — O Padrão 13",
+          "ref": "local:rua-anterior",
+          "texto": "O sonho de Valdecir: 1987 — exatamente 13 anos depois."
+        },
+        {
+          "origem": "Linha do Tempo — 1987",
+          "ref": "page:timeline",
+          "texto": "Valdecir anota sonho com os quatro personagens. Sueli nasce."
+        },
+        {
+          "origem": "Linha do Tempo — 2025",
+          "ref": "page:timeline",
+          "texto": "Dalva começa a se comunicar com Valdecir com clareza. Valdecir morre. Temporada 1 começa."
+        },
+        {
+          "origem": "Causalidade — Por que Dalva começou a falar",
+          "ref": "caus:0",
+          "texto": "Dalva, que havia passado 52 anos tentando comunicação fragmentada, teve clareza suficiente para formar frases completas. Escolheu Valdecir — que já a ouvia há décadas — para a mensagem mais importante."
+        },
+        {
+          "origem": "Documentos — O Diário do Anterior",
+          "ref": "doc:diario",
+          "texto": "Encontrado no subsolo do arquivo com a chave de Valdecir e o conhecimento de Sueli."
+        },
+        {
+          "origem": "NPCs — Gabriel Tostes",
+          "ref": "npc:gabriel",
+          "texto": "Que Valdecir voltava diferente na última semana antes de morrer."
+        },
+        {
+          "origem": "Temporadas — Episódio 1",
+          "ref": "page:temporadas",
+          "texto": "No quarto de Valdecir, caderno aberto numa página de 1987 com os nomes dos personagens. Escritos trinta e oito anos antes de qualquer um deles ter razão para estar em Novavera."
+        }
+      ]
     },
     {
       "id": "vera",
@@ -799,6 +846,33 @@
       "nao_sabe": [
         "Que é descendente direta de vítima",
         "A natureza da dívida de Dalva"
+      ],
+      "aparicoes": [
+        {
+          "origem": "Caim — O Mercador de Alexandria",
+          "ref": "page:caim",
+          "texto": "Vera Monteiro, antes de ir a Novavera, fez pesquisa acadêmica sobre gnosticismo no Brasil do século XIX — a raiz intelectual do espiritismo kardecista. Ela não sabe por que esse tema sempre a atraiu."
+        },
+        {
+          "origem": "Linha do Tempo — 1984 / 2022",
+          "ref": "page:timeline",
+          "texto": "Vera Monteiro nasce. Vera Monteiro (38 anos) chega a Novavera."
+        },
+        {
+          "origem": "Linha do Tempo — 1971",
+          "ref": "page:timeline",
+          "texto": "Armindo (40 anos) contata coronel do regime — foto encontrada por Vera."
+        },
+        {
+          "origem": "Documentos — Ficha nº07 (Dalva)",
+          "ref": "doc:ficha-dalva",
+          "texto": "Avó de Vera Monteiro. A alma de Dalva avisou Armindo na noite anterior à operação — de uma linha do tempo que os personagens só compreenderão no finale."
+        },
+        {
+          "origem": "Temporadas — Episódio 5",
+          "ref": "page:temporadas",
+          "texto": "Vera Monteiro faz contato — escolhe o personagem mais capaz de ouvir sem hostilidade."
+        }
       ]
     },
     {
@@ -833,6 +907,33 @@
       "nao_sabe": [
         "Que é médium",
         "Que cobra memórias"
+      ],
+      "aparicoes": [
+        {
+          "origem": "Abel — Os Três Sinais",
+          "ref": "page:abel",
+          "texto": "Sinal 2: Gabriel — o médium de 9 anos — nunca consegue ler Abel. Tenta uma vez e simplesmente para. Olha para ele com expressão de reconhecimento — não de medo nem espanto. Diz apenas: \"Você não tem fragmentos. É tudo inteiro.\""
+        },
+        {
+          "origem": "Linha do Tempo — 2016",
+          "ref": "page:timeline",
+          "texto": "Gabriel Tostes nasce."
+        },
+        {
+          "origem": "Temporadas — Episódio 1",
+          "ref": "page:temporadas",
+          "texto": "Gabriel do lado de fora — olha para Abel um segundo a mais do que deveria."
+        },
+        {
+          "origem": "Temporadas — Episódio 6",
+          "ref": "page:temporadas",
+          "texto": "Contato mais substancial com Gabriel — o dilema ético do custo se torna urgente. Gabriel de passagem na rua: \"Você era diferente antes. Mas o erro foi o mesmo.\""
+        },
+        {
+          "origem": "Temporadas — Episódio 9 e 10",
+          "ref": "page:temporadas",
+          "texto": "Novavera muda: três acidentes sem causa, dois internados sem diagnóstico, Gabriel com febre. Gabriel acorda curado e em silêncio. O silêncio o assusta mais que os fragmentos."
+        }
       ]
     },
     {
@@ -864,6 +965,38 @@
       "nao_sabe": [
         "Que Benedito era cúmplice",
         "Que o caderno é o documento mais preciso sobre o nó"
+      ],
+      "aparicoes": [
+        {
+          "origem": "A Cidade — O Bairro Fundação",
+          "ref": "local:bairro-fundacao",
+          "texto": "Natalina Braga mora aqui desde 1978 — veio logo após a construção da Área Verde ser paralisada."
+        },
+        {
+          "origem": "A Cidade — A Rua do Anterior",
+          "ref": "local:rua-anterior",
+          "texto": "Armindo fechou o símbolo em 1974 via Natalina, que não sabia o que estava cobrindo."
+        },
+        {
+          "origem": "Linha do Tempo — 1947",
+          "ref": "page:timeline",
+          "texto": "Natalina Braga nasce em 23 de dezembro."
+        },
+        {
+          "origem": "Causalidade — Quem fechou o símbolo",
+          "ref": "caus:5",
+          "texto": "Armindo, em 1974, via Natalina que não sabia o que cobria. A ordem veio como assessor técnico — identidade falsa."
+        },
+        {
+          "origem": "Documentos — Ficha nº34 (Benedito)",
+          "ref": "doc:ficha-benedito",
+          "texto": "Avô de Natalina Braga. B. morreu em 1969. A dívida dele ficou com os descendentes — como sempre fica. Natalina não sabe. Não precisa saber ainda."
+        },
+        {
+          "origem": "Temporadas — Episódio 1 e 5",
+          "ref": "page:temporadas",
+          "texto": "Natalina: \"Ele tinha certeza que vocês viriam. Faz tempo. Ele sabia.\" Natalina confrontada — confirma que cobriu, não sabia o que era, caderno entregue."
+        }
       ]
     },
     {
@@ -897,6 +1030,33 @@
       ],
       "nao_sabe": [
         "Como entregar o que sabe"
+      ],
+      "aparicoes": [
+        {
+          "origem": "Grimório — Regra V",
+          "ref": "page:grimorio",
+          "texto": "É o estado em que Décio Murta se encontra agora — documentando sua própria dissolução com a lucidez de quem está se afogando e ainda faz anotações sobre a água."
+        },
+        {
+          "origem": "Caim — O Escriba de Babilônia",
+          "ref": "page:caim",
+          "texto": "Um dos livros no apartamento de Décio em Novavera é uma edição acadêmica crítica do Antigo Testamento com anotações sobre interpolações textuais do período babilônico. Décio circulou três passagens e escreveu ao lado: \"isso não estava aqui antes.\""
+        },
+        {
+          "origem": "Caim — O Anterior",
+          "ref": "page:caim",
+          "texto": "Décio encontrou as três fotografias. Estão nos cadernos 16 a 22. Os personagens vão ver essas fotos na T1 sem saber o que estão vendo — e só vão entender na T3."
+        },
+        {
+          "origem": "Regras & Sistema — Permanência",
+          "ref": "page:regras",
+          "texto": "Permanência zero: o personagem não consegue mais distinguir qual é o presente funcional. É o estado de Décio Murta."
+        },
+        {
+          "origem": "Temporadas — Episódio 4 e 9",
+          "ref": "page:temporadas",
+          "texto": "Décio entrega uma folha. Uma palavra circulada: Armindo Laerte Vasconcelos. Décio: dois minutos de clareza — última janela real, entrega algo crucial dos cadernos 16–22."
+        }
       ]
     },
     {
@@ -927,6 +1087,28 @@
         "Que é médium",
         "Que o caderno tem nomes das vítimas",
         "Natureza real de Armindo"
+      ],
+      "aparicoes": [
+        {
+          "origem": "Linha do Tempo — 1973 / 2024",
+          "ref": "page:timeline",
+          "texto": "Ronaldo Seabra nasce. Ronaldo menciona pesquisador a Armindo num jantar."
+        },
+        {
+          "origem": "Causalidade — Como Armindo soube que viriam",
+          "ref": "caus:1",
+          "texto": "Em setembro de 2024, Ronaldo mencionou num jantar um pesquisador externo que havia consultado a delegacia sobre outubro de 1972. Armindo interpretou como sinal de que o ciclo entrava na fase final."
+        },
+        {
+          "origem": "Temporadas — Episódio 1",
+          "ref": "page:temporadas",
+          "texto": "Ronaldo fecha o laudo antes que consigam ler."
+        },
+        {
+          "origem": "Temporadas — Episódio 8 e 9",
+          "ref": "page:temporadas",
+          "texto": "Ronaldo investigando sozinho encontra o caso de 1978. Ronaldo chega à Área Verde com tudo que descobriu."
+        }
       ]
     },
     {
@@ -961,6 +1143,38 @@
         "Conexão dos personagens com as vítimas",
         "Que Gabriel existe",
         "Que Abel está no grupo"
+      ],
+      "aparicoes": [
+        {
+          "origem": "A Cidade — O Arquivo Histórico",
+          "ref": "local:arquivo-historico",
+          "texto": "Cilindro 2: não tem chave física — tem sequência de toques no símbolo gravado na porta. Sueli sabe."
+        },
+        {
+          "origem": "Linha do Tempo — 1987 / 2015 / 2023 / 2024",
+          "ref": "page:timeline",
+          "texto": "Sueli nasce. Sueli Nascimento (28 anos) é recrutada por Armindo. Dalva comunica critério secundário a Sueli. Sueli remove as 11 fichas. Antiquário em Goiânia."
+        },
+        {
+          "origem": "A Operação Semente — O Critério Secundário",
+          "ref": "doc:ficha-dalva",
+          "texto": "Descoberto por Sueli via comunicação de Dalva em junho de 2023: ao selecionar as 33, Armindo interrompeu as contas que elas tinham com ele de vidas anteriores."
+        },
+        {
+          "origem": "Causalidade — Por que Sueli removeu as 11 fichas",
+          "ref": "caus:8",
+          "texto": "Em junho de 2023, Dalva aproveitou canal aberto e comunicou a Sueli — não a Armindo — três coisas: o critério secundário existe, Armindo estava na lista como vítima, o que ele viu na fresta não é o que acredita."
+        },
+        {
+          "origem": "Documentos — O Diário do Anterior",
+          "ref": "doc:diario",
+          "texto": "Encontrado no subsolo do arquivo com a chave de Valdecir e o conhecimento de Sueli."
+        },
+        {
+          "origem": "Temporadas — Episódio 3, 7 e 8",
+          "ref": "page:temporadas",
+          "texto": "Sombra de Sueli passando pela janela por menos de um minuto. Sueli faz contato direto — oferece acesso ao subsolo. Sueli entrega o critério secundário."
+        }
       ]
     }
   ],
