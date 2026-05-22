@@ -1324,7 +1324,6 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
       <div class="card" style="border-top:none;border-left:none;border-right:none;border-radius:0;margin:0 -16px 12px;padding:12px 16px;background:linear-gradient(135deg,rgba(107,15,15,0.15),rgba(20,8,4,0.4));border-color:rgba(107,15,15,0.4)">
         <div style="font-family:'Cinzel Decorative',serif;font-size:20px;color:var(--blood);margin-bottom:2px">Práticas Espíritas</div>
         <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;opacity:.7">Confrontos Mediúnicos & Rituais · Karma Eterno / CoC</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:12px;color:var(--ash);font-style:italic;margin-top:6px;padding:6px 10px;border-left:2px solid rgba(107,15,15,0.4)">⚠ Em Karma Eterno não há magia de fantasia. Jogadores comuns não têm acesso a práticas. As magias do CoC existem para campanhas clássicas ou para NPCs Marcados (Caim e os Profetas).</div>
       </div>
       <div style="display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap">
         <button class="btn sm gold" onclick="filterSpells('all')" id="filter-all">Todas</button>
@@ -2224,7 +2223,7 @@ const SPELLS = [
  effect:'Grava um "ponto de memória" permanente no local. Futuros usuários de Sussurro do Anterior verão este momento com clareza cristalina. Irreversível.',
  duration:'Permanente.'},
 
-{id:'h3',type:'homebrew',cat:'Ilusão',skill:'POD',name:'Véu de Novavera',mp:'2',san:'0',difficulty:'Baixa',
+{id:'h3',type:'homebrew',cat:'Ilusão',skill:'POD',name:'Véu',mp:'2',san:'0',difficulty:'Baixa',
  how:'Concentrar-se em "pertencer ao ambiente" por 1 ação.',
  test:'Nenhum teste para uso básico. Para manter contra entidades alertas: teste de POD vs. INT da entidade.',
  effect:'O conjurador torna-se psiquicamente ignorado. Entidades com INT < 10 ignoram por 1D4 turnos extras. Entidades muito antigas são imunes.',
@@ -2236,19 +2235,19 @@ const SPELLS = [
  effect:'Cria vínculo místico permanente entre 2-4 investigadores. Cada um sente o nível de Sanidade dos outros. Compartilham sonhos e pesadelos. Em momentos de crise, podem enviar 1D3 San a outro membro.',
  duration:'Permanente e irreversível.'},
 
-{id:'h5',type:'homebrew',cat:'Profecia',skill:'POD',name:'Olho de Valdecir',mp:'4',san:'1D4',difficulty:'Média',
+{id:'h5',type:'homebrew',cat:'Profecia',skill:'POD',name:'O Olho',mp:'4',san:'1D4',difficulty:'Média',
  how:'Fechar os olhos, concentrar por 5 minutos em silêncio absoluto.',
  test:'Teste de POD. Falha: a visão é incoerente. Falha crítica: a visão enlouquece (1D6 San extra).',
  effect:'Fragmentos de visões futuras — o Mestre fornece uma pista vaga. A visão pode ser enganosa, metafórica ou incompleta.',
  duration:'Não pode ser repetida para o mesmo evento futuro.'},
 
-{id:'h6',type:'homebrew',cat:'Ambiental',skill:'Oculto',name:'Silêncio da Área Verde',mp:'3',san:'1D3',difficulty:'Baixa',
+{id:'h6',type:'homebrew',cat:'Ambiental',skill:'Oculto',name:'Ritual do Silêncio',mp:'3',san:'1D3',difficulty:'Baixa',
  how:'Estender as mãos e recitar o Canto do Silêncio em voz baixa. Pode ser feito em 1 ação.',
  test:'Teste de Oculto. Falha: o silêncio é incompleto.',
  effect:'Bolha de silêncio absoluto de 5m ao redor do conjurador. Sons não entram nem saem. Em locais de poder, dura o dobro.',
  duration:'1D6 minutos.'},
 
-{id:'h7',type:'homebrew',cat:'Invocação',skill:'Oculto',name:'Chamado do Rio Vermelho',mp:'6',san:'1D6',difficulty:'Alta',
+{id:'h7',type:'homebrew',cat:'Invocação',skill:'Oculto',name:'Chamado do Rio',mp:'6',san:'1D6',difficulty:'Alta',
  how:'Próximo a um rio ou corpo dagua. Oferenda de grãos, sal e cachaça jogada na água.',
  test:'Teste de Oculto. A entidade não é controlada — apenas convocada.',
  effect:'Invoca entidade fluvial da região. Pode revelar segredos de corpos dagua, guiar até pontos submersos. Deve ser tratada com respeito.',
