@@ -886,10 +886,13 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
             <div class="field">
               <label>Era</label>
               <select id="c-era">
-                <option value="anos20">Anos 20</option>
-                <option value="anos60" selected>Anos 60 (Karma Eterno)</option>
-                <option value="anos80">Anos 80 (Karma Eterno)</option>
-                <option value="moderno">Moderno</option>
+                <option value="moderna" selected>2025 — Brasil (Karma Eterno)</option>
+                <option value="anos20">Anos 20 — EUA/Europa (CoC Clássico)</option>
+                <option value="anos30">Anos 30 (Outras Campanhas)</option>
+                <option value="anos50">Anos 50 (Outras Campanhas)</option>
+                <option value="anos60">Anos 60 (Outras Campanhas)</option>
+                <option value="anos80">Anos 80 (Outras Campanhas)</option>
+                <option value="anos90">Anos 90 (Outras Campanhas)</option>
               </select>
             </div>
             <div class="field">
@@ -920,21 +923,69 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
             <label>Profissão</label>
             <select id="c-profissao" onchange="updateSkillsPreview()">
               <option value="">Selecione...</option>
+              <optgroup label="⭐ Lovecraftianas Clássicas">
               <option value="antiquario">Antiquário</option>
               <option value="artista">Artista</option>
-              <option value="clergy">Clérigo / Padre</option>
-              <option value="detetive">Detetive Particular</option>
-              <option value="doutor">Doutor / Médico</option>
-              <option value="engenheiro">Engenheiro</option>
-              <option value="escritor">Escritor / Jornalista</option>
-              <option value="fazendeiro">Fazendeiro / Proprietário Rural</option>
-              <option value="investigador">Investigador Policial</option>
-              <option value="militar">Militar / Ex-soldado</option>
-              <option value="ocultista">Ocultista</option>
-              <option value="paranormal">Pesquisador do Paranormal</option>
+              <option value="diletante">Diletante</option>
+              <option value="escritor">Escritor</option>
+              <option value="jornalista">Jornalista</option>
+              <option value="doutor">Médico / Doutor</option>
+              <option value="psicologo">Médico / Psiquiatra</option>
               <option value="professor">Professor / Acadêmico</option>
-              <option value="psicologo">Psicólogo</option>
+              <option value="detetive">Detetive Particular</option>
+              <option value="investigador">Investigador de Polícia</option>
+              </optgroup>
+              <optgroup label="Outras Ocupações">
+              <option value="advogado">Advogado</option>
+              <option value="andarilho">Andarilho / Vagabundo</option>
+              <option value="atleta">Atleta</option>
               <option value="aventureiro">Aventureiro</option>
+              <option value="criminoso">Criminoso</option>
+              <option value="engenheiro">Engenheiro</option>
+              <option value="entretimento">Entretenimento / Ator</option>
+              <option value="fanático">Fanático / Sectário</option>
+              <option value="fazendeiro">Fazendeiro</option>
+              <option value="hacker">Hacker (Moderno)</option>
+              <option value="militar">Militar / Oficial</option>
+              <option value="missionario">Missionário</option>
+              <option value="musico">Músico</option>
+              <option value="ocultista">Ocultista / Parapsicólogo</option>
+              <option value="oficial_policia">Oficial de Polícia</option>
+              <option value="piloto">Piloto</option>
+              <option value="soldado">Soldado</option>
+              <option value="tribal">Tribal / Nativo</option>
+              </optgroup>
+              <optgroup label="Guia do Investigador">
+              <option value="espiao">Espião</option>
+              <option value="explorador">Explorador</option>
+              <option value="fotografo">Fotógrafo</option>
+              <option value="gangster">Gangster / Crime Organizado</option>
+              <option value="detetive_agencia">Detetive de Agência</option>
+              <option value="pesquisador">Pesquisador</option>
+              <option value="cientifico">Cientista</option>
+              <option value="cowboy">Cowboy / Vaqueiro</option>
+              <option value="enfermeiro">Enfermeiro</option>
+              <option value="farmaceutico">Farmacêutico</option>
+              <option value="bombeiro">Bombeiro</option>
+              <option value="bibliotecario">Bibliotecário</option>
+              <option value="estudante">Estudante / Estagiário</option>
+              <option value="cacador_recomp">Caçador de Recompensas</option>
+              </optgroup>
+              <optgroup label="Modernas Brasileiras (Karma Eterno 2025)">
+              <option value="medico_interior">Médico do Interior</option>
+              <option value="psicologo_mod">Psicólogo / Terapeuta</option>
+              <option value="advogado_mod">Advogado</option>
+              <option value="jornalista_mod">Jornalista / Repórter</option>
+              <option value="programador">Programador / Dev / TI</option>
+              <option value="servidor_pub">Servidor Público</option>
+              <option value="professor_mod">Professor / Educador</option>
+              <option value="assistente_soc">Assistente Social</option>
+              <option value="policial_mod">Policial Civil / Militar</option>
+              <option value="investigador_mod">Detetive / Investigador Particular</option>
+              <option value="medico_legista">Médico Legista / Perito</option>
+              <option value="influencer">Influencer / Criador de Conteúdo</option>
+              </optgroup>
+              </optgroup>
             </select>
           </div>
           <div id="skills-preview" style="margin-top:8px"></div>
@@ -1006,6 +1057,18 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
             <div style="margin-top:8px;text-align:center">
               <span style="font-family:'Cinzel',serif;font-size:9px;color:var(--gold)">SORTE: </span>
               <span style="font-family:'Cinzel Decorative',serif;font-size:16px" id="d-sorte">—</span>
+            </div>
+            <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(154,122,42,0.2);display:flex;gap:8px">
+              <div style="flex:1;text-align:center;padding:8px;background:rgba(200,160,96,0.08);border:1px solid rgba(200,160,96,0.25)">
+                <div style="font-family:'Cinzel',serif;font-size:7px;letter-spacing:3px;color:#c8a060">MEMÓRIA</div>
+                <div style="font-family:'Cinzel Decorative',serif;font-size:22px" id="d-mem">—</div>
+                <div style="font-family:'Cinzel',serif;font-size:7px;color:var(--ash)">(POD+INT)÷10</div>
+              </div>
+              <div style="flex:1;text-align:center;padding:8px;background:rgba(90,58,138,0.08);border:1px solid rgba(90,58,138,0.25)">
+                <div style="font-family:'Cinzel',serif;font-size:7px;letter-spacing:3px;color:#8a7ec8">PERMANÊNCIA</div>
+                <div style="font-family:'Cinzel Decorative',serif;font-size:22px" id="d-perm">—</div>
+                <div style="font-family:'Cinzel',serif;font-size:7px;color:var(--ash)">20 − Memória</div>
+              </div>
             </div>
           </div>
         </div>
@@ -1120,6 +1183,28 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
                 </div>
               </div>
               <div id="mp-track" class="stat-track"></div>
+            </div>
+          </div>
+          <!-- Memória / Permanência — KE -->
+          <div id="mem-perm-section" style="margin-top:10px">
+            <div style="font-family:'Cinzel',serif;font-size:7px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:6px;border-top:1px solid rgba(154,122,42,0.2);padding-top:8px">✦ Karma Eterno</div>
+            <div>
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+                <span style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:#c8a060;text-transform:uppercase" id="mem-label">Memória</span>
+                <div class="counter" style="gap:6px">
+                  <button class="counter-btn" style="width:26px;height:26px;font-size:14px" onclick="adjustMemoria(-1)">−</button>
+                  <span style="font-family:'Cinzel Decorative',serif;font-size:18px;min-width:50px;text-align:center"><span id="f-mem-cur">—</span>/19</span>
+                  <button class="counter-btn" style="width:26px;height:26px;font-size:14px" onclick="adjustMemoria(1)">+</button>
+                </div>
+              </div>
+              <div id="mem-track" class="stat-track"></div>
+            </div>
+            <div style="margin-top:6px">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+                <span class="perm-label" style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:#8a7ec8;text-transform:uppercase">Permanência</span>
+                <span style="font-family:'Cinzel Decorative',serif;font-size:18px;min-width:50px;text-align:center" id="f-perm-cur">—</span>
+              </div>
+              <div id="perm-track" class="stat-track"></div>
             </div>
           </div>
           <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px">
@@ -1237,12 +1322,13 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
   <div class="section" id="sec-magias">
     <div class="pg">
       <div class="card" style="border-top:none;border-left:none;border-right:none;border-radius:0;margin:0 -16px 12px;padding:12px 16px;background:linear-gradient(135deg,rgba(107,15,15,0.15),rgba(20,8,4,0.4));border-color:rgba(107,15,15,0.4)">
-        <div style="font-family:'Cinzel Decorative',serif;font-size:20px;color:var(--blood);margin-bottom:2px">Grimório</div>
-        <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;opacity:.7">Magias · CoC 7ª Ed. & Karma Eterno</div>
+        <div style="font-family:'Cinzel Decorative',serif;font-size:20px;color:var(--blood);margin-bottom:2px">Práticas Espíritas</div>
+        <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;opacity:.7">Confrontos Mediúnicos & Rituais · Karma Eterno / CoC</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:12px;color:var(--ash);font-style:italic;margin-top:6px;padding:6px 10px;border-left:2px solid rgba(107,15,15,0.4)">⚠ Em Karma Eterno não há magia de fantasia. Jogadores comuns não têm acesso a práticas. As magias do CoC existem para campanhas clássicas ou para NPCs Marcados (Caim e os Profetas).</div>
       </div>
       <div style="display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap">
         <button class="btn sm gold" onclick="filterSpells('all')" id="filter-all">Todas</button>
-        <button class="btn sm" onclick="filterSpells('canon')" id="filter-canon" style="background:rgba(90,58,138,0.2);border-color:rgba(90,58,138,0.4);color:#c8a4e8">CoC Canon</button>
+        <button class="btn sm" onclick="filterSpells('canon')" id="filter-canon" style="background:rgba(90,58,138,0.2);border-color:rgba(90,58,138,0.4);color:#c8a4e8">CoC Clássico</button>
         <button class="btn sm" onclick="filterSpells('homebrew')" id="filter-hb" style="background:rgba(107,15,15,0.2);border-color:var(--muted);color:var(--gold)">Novavera</button>
         <button class="btn sm" onclick="filterSpells('owned')" id="filter-owned" style="background:rgba(45,90,39,0.2);border-color:rgba(74,138,66,0.4);color:#8bc87f">Minhas</button>
       </div>
@@ -1270,22 +1356,29 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
       </div>
       <div class="rule-section">
   <button class="rule-toggle" onclick="toggleRule('testesdeatri')">
-    <span class="rule-toggle-title">🎲 Testes de Atributo</span>
+    <span class="rule-toggle-title">🎲 Testes de Atributo e Perícia</span>
     <span class="rule-toggle-arrow" id="arr-testesdeatri">▼</span>
   </button>
   <div class="rule-content" id="rule-testesdeatri">
     <div class="rule-body">
-          <p>Para realizar um teste, role <strong>1d100</strong> e compare com o valor da perícia ou atributo. O resultado determina o grau de sucesso:</p>
-        </div>
-        <table class="rule-table">
-          <tr><th>Resultado</th><th>Descrição</th></tr>
-          <tr><td><strong style="color:#8bc87f">Sucesso Extremo</strong></td><td>≤ 1/5 do valor (arredonde para baixo)</td></tr>
-          <tr><td><strong style="color:#a8c87f">Sucesso Bom</strong></td><td>≤ metade do valor</td></tr>
-          <tr><td><strong style="color:var(--parch)">Sucesso</strong></td><td>≤ valor total da perícia</td></tr>
-          <tr><td><strong style="color:#e8a080">Falha</strong></td><td>Acima do valor</td></tr>
-          <tr><td><strong style="color:var(--blood-bright)">Falha Crítica</strong></td><td>96–100 (ou 100 se perícia ≥ 50)</td></tr>
-        </table>
-        <div class="rule-box"><p>A regra de <strong>Empurrar o Teste</strong>: uma vez por cena, se falhar, pode tentar novamente com o custo de uma consequência mais grave em caso de nova falha.</p></div>
+      <p>Role <strong>1d100</strong> e compare com o valor da perícia ou atributo. Quanto menor o resultado, melhor. O Guardião determina o nível de dificuldade antes do teste.</p>
+      <p><strong>Quando usar dados:</strong> apenas em momentos de tensão e risco real. Atividades cotidianas não exigem teste. Se a tarefa for impossível, o Guardião não pede dados — simplesmente nega.</p>
+      <p><strong>Nível de dificuldade vs. oponentes vivos:</strong> se o oponente tiver a perícia relevante abaixo de 50, a dificuldade é Regular. Entre 50–89, Difícil. 90 ou mais, Extremo.</p>
+    </div>
+    <table class="rule-table">
+      <tr><th>Grau</th><th>Condição</th><th>Uso</th></tr>
+      <tr><td style="color:#8bc87f">Sucesso Extremo (Crítico)</td><td>≤ 1/5 da perícia</td><td>Resultado excepcional; empalamento em combate</td></tr>
+      <tr><td style="color:#a8d870">Sucesso Difícil (Sólido)</td><td>≤ metade da perícia</td><td>Resultado acima do esperado</td></tr>
+      <tr><td style="color:var(--parch)">Sucesso Regular</td><td>≤ valor total</td><td>Objetivo alcançado normalmente</td></tr>
+      <tr><td style="color:#e8a080">Fracasso</td><td>Acima do valor</td><td>Objetivo não alcançado</td></tr>
+      <tr><td style="color:var(--blood-bright)">Desastre</td><td>96–100 (ou 100 se perícia ≥ 50)</td><td>Pior resultado possível; perda máxima de San</td></tr>
+    </table>
+    <div class="rule-body">
+      <p><strong>Forçando o Teste (Empurrar):</strong> após um fracasso, o jogador pode tentar uma segunda e última vez — mas deve justificar o esforço extra (jogar-se contra uma porta, arriscar ser preso, gastar mais tempo). Se falhar novamente, as consequências são muito piores. Testes de Combate e Sanidade <strong>não podem ser forçados</strong>. A maioria dos outros pode.</p>
+      <p><strong>Dados de Bônus e Penalidade:</strong> certas situações concedem dados extras. Com <strong>dado de bônus</strong>, role dois dados de dezena e use o menor. Com <strong>dado de penalidade</strong>, use o maior. Múltiplos dados se cancelam um a um.</p>
+      <p><strong>Testes Resistidos:</strong> quando dois personagens se opõem diretamente (ex.: Furtividade vs. Encontrar), ambos rolam. O maior grau de sucesso vence. Empate: quem se opõe (defensor) vence.</p>
+      <p><strong>Teste de Sorte:</strong> quando nenhuma perícia se aplica, role contra a Sorte atual. A Sorte não sobe com melhorias — apenas diminui quando gasta ou aumenta por eventos narrativos.</p>
+    </div>
   </div>
 </div>
 
@@ -1296,20 +1389,37 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
   </button>
   <div class="rule-content" id="rule-combate">
     <div class="rule-body">
-          <p>O combate ocorre em <strong>rodadas</strong>, cada uma representando aproximadamente 3 segundos. A ordem das ações segue a ordem de <strong>DES</strong> (Destreza) dos personagens envolvidos — maior DES age primeiro.</p>
-          <p><strong>Na sua rodada</strong>, você pode: mover-se E realizar uma ação (atacar, recarregar, usar item, conjurar magia, primeiros socorros).</p>
-          <p><strong>Para atacar:</strong> role sua perícia de combate (Briga, Armas de Fogo, etc.). Em caso de sucesso, role o dano.</p>
-        </div>
-        <table class="rule-table">
-          <tr><th>Arma</th><th>Dano</th><th>Alcance</th></tr>
-          <tr><td>Soco / Briga</td><td>1d3 + bônus de dano</td><td>Corpo-a-corpo</td></tr>
-          <tr><td>Faca</td><td>1d4 + bônus de dano</td><td>Corpo-a-corpo</td></tr>
-          <tr><td>Revólver .38</td><td>1d10</td><td>Médio</td></tr>
-          <tr><td>Espingarda</td><td>4d6/2d6/1d6</td><td>Curto/Médio/Longo</td></tr>
-          <tr><td>Rifle</td><td>2d6+4</td><td>Longo</td></tr>
-          <tr><td>Improvisada</td><td>1d6</td><td>Corpo-a-corpo</td></tr>
-        </table>
-        <div class="rule-box"><p><strong>Bônus de Dano:</strong> calculado pela soma de FOR + TAM. De 2 a 64: nenhum. De 65 a 84: +1d4. De 85 a 124: +1d6. 125+: +2d6.</p></div>
+      <p>O combate ocorre em <strong>rodadas</strong> de aproximadamente 3 segundos. A ordem das ações é determinada pela <strong>DES</strong> — quem tem maior DES age primeiro. Armas de fogo <strong>já preparadas</strong> agem como se a DES fosse +50.</p>
+      <p><strong>Em sua rodada</strong> você pode mover-se até MOV×5 metros E realizar uma ação (atacar, recarregar, usar item, primeiros socorros, magia). Se mover o máximo antes de atacar com arma de fogo, recebe dado de penalidade.</p>
+      <p><strong>Atacar:</strong> role a perícia de combate. O defensor pode <strong>Esquivar</strong> ou <strong>Contra-Atacar</strong> (apenas corpo a corpo). Em armas de fogo, o alvo só pode buscar cobertura.</p>
+      <p><strong>Ataque Surpresa:</strong> o alvo pode fazer teste de Encontrar, Escutar ou Psicologia para perceber. Se não perceber: o ataque acerta automaticamente ou ganha dado de bônus.</p>
+    </div>
+    <table class="rule-table">
+      <tr><th>Ação</th><th>Como resolver</th><th>Resultado</th></tr>
+      <tr><td>Esquivar</td><td>Teste resistido (Esquivar vs. ataque)</td><td>Maior grau de sucesso vence. Empate: defensor vence.</td></tr>
+      <tr><td>Contra-Atacar</td><td>Teste resistido (Lutar vs. Lutar)</td><td>Maior grau de sucesso vence. Ambos causam dano se ambos falharem.</td></tr>
+      <tr><td>Manobra</td><td>Como Contra-Atacar, mas aplica efeito (desarmar, nocautear, empurrar)</td><td>Corpo maior do oponente = dado de penalidade por ponto de diferença. Diferença ≥3 = impossível.</td></tr>
+    </table>
+    <div class="rule-body">
+      <p><strong>Sucesso Extremo em ataque = Empalamento:</strong> dano máximo da arma + DX máximo + uma rolagem normal de dano. (Ex.: faca: 4 + DX máx + 1d4)</p>
+      <p><strong>Desvantagem Numérica:</strong> após esquivar ou contra-atacar uma vez na rodada, ataques subsequentes contra você ganham dado de bônus.</p>
+      <p><strong>Dano e Bônus de Dano (DX):</strong> baseado em FOR + TAM.</p>
+    </div>
+    <table class="rule-table">
+      <tr><th>FOR + TAM</th><th>DX (Bônus de Dano)</th><th>Corpo</th></tr>
+      <tr><td>2–64</td><td>−2</td><td>−2</td></tr>
+      <tr><td>65–84</td><td>−1</td><td>−1</td></tr>
+      <tr><td>85–124</td><td>0</td><td>0</td></tr>
+      <tr><td>125–164</td><td>+1d4</td><td>1</td></tr>
+      <tr><td>165–204</td><td>+1d6</td><td>2</td></tr>
+      <tr><td>205–284</td><td>+2d6</td><td>3</td></tr>
+      <tr><td>285–364</td><td>+3d6</td><td>4</td></tr>
+    </table>
+    <div class="rule-body">
+      <p><strong>Armas de Fogo — Alcance:</strong> o alcance base de cada arma define dificuldade Regular. O dobro do alcance base = Difícil. O quádruplo = Extremo. À queima-roupa (&lt;3m): dado de bônus (exceto rifles e espingardas longas).</p>
+      <p><strong>Ferimentos:</strong> perder metade dos PV em um único ataque = <strong>Lesão Grave</strong>. Chegar a 0 PV sem lesão grave = inconsciente. Chegar a 0 com lesão grave = morrendo (requer Primeiros Socorros para estabilizar, depois Medicina).</p>
+      <p><strong>Armadura:</strong> reduz o dano recebido pelo valor indicado. Não funciona contra magia, venenos ou afogamento. Para espingardas, aplica-se o valor de armadura contra cada D6 do dano.</p>
+    </div>
   </div>
 </div>
 
@@ -1320,20 +1430,31 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
   </button>
   <div class="rule-content" id="rule-sanidade">
     <div class="rule-body">
-          <p>A Sanidade reflete o estado mental do investigador. Começa em <strong>POD × 5</strong> (máximo 99). Quando confrontado com o horror, role para San com 1d100.</p>
-          <p>Se falhar, perde a quantidade de San indicada pelo evento. Se perder <strong>5 ou mais pontos em uma única cena</strong>, sofre um Episódio de Insanidade Temporária.</p>
-          <p>Se a San cair a <strong>0</strong>, o investigador entra em Insanidade Permanente — torna-se PNJ do Mestre.</p>
-        </div>
-        <table class="rule-table">
-          <tr><th>Evento</th><th>Perda de San</th></tr>
-          <tr><td>Ver um cadáver humano</td><td>0/1d3</td></tr>
-          <tr><td>Ver um monstro menor</td><td>0/1d6</td></tr>
-          <tr><td>Ver um Grande Antigo</td><td>1d10/1d100</td></tr>
-          <tr><td>Aprender uma magia</td><td>Variável (ver magias)</td></tr>
-          <tr><td>Testemunhar ritual</td><td>1/1d8</td></tr>
-          <tr><td>Sucesso em teste de San</td><td>Perda menor</td></tr>
-        </table>
-        <div class="rule-box"><p><strong>Sanidade Indefinida:</strong> se sua San atual estiver abaixo de <strong>San máx ÷ 5</strong>, você se torna indefinidamente insano e pode perder traços de humanidade.</p></div>
+      <p>A Sanidade começa igual ao atributo <strong>POD</strong> (máximo 99). Nunca pode ultrapassar <strong>99 − Conhecimento Proibido</strong>. Quando confrontado com horror, role 1d100 contra a San atual.</p>
+      <p><strong>Sucesso:</strong> perde o menor valor da perda (X em X/Y). <strong>Fracasso:</strong> perde o maior valor (Y). Um <strong>Desastre</strong> no teste causa a perda máxima possível.</p>
+      <p>Ao falhar um teste de San, o investigador perde brevemente o autocontrole: pode pular de susto, gritar, congelar, atacar involuntariamente ou ter outro comportamento determinado pelo Guardião.</p>
+      <p><strong>Insanidade Temporária:</strong> perder <strong>5 ou mais pontos de San de uma só vez</strong> exige teste de INT. Se <em>passar</em> no teste de INT, o investigador compreende o horror e fica temporariamente insano por 1d10 horas. Se falhar no INT, reprime a memória e não fica insano (por enquanto).</p>
+      <p><strong>Insanidade Indefinida:</strong> perder <strong>1/5 ou mais da San atual em um único dia de jogo</strong> causa insanidade indefinida — o investigador não consegue suportar tamanha exposição ao horror.</p>
+      <p><strong>Insanidade Permanente:</strong> San chega a 0. O investigador torna-se PNJ do Guardião, perdido para sempre na loucura.</p>
+    </div>
+    <table class="rule-table">
+      <tr><th>Evento</th><th>Perda de San</th></tr>
+      <tr><td>Encontrar carcaça de animal mutilada</td><td>0/1d2</td></tr>
+      <tr><td>Encontrar cadáver ou parte de corpo</td><td>0/1d3</td></tr>
+      <tr><td>Ver fluxo de sangue em riacho</td><td>0/1d4</td></tr>
+      <tr><td>Cadáver humano horrivelmente mutilado</td><td>1/1d4+1</td></tr>
+      <tr><td>Acordar preso em caixão</td><td>0/1d6</td></tr>
+      <tr><td>Testemunhar morte violenta de amigo</td><td>0/1d6</td></tr>
+      <tr><td>Ver um carniçal</td><td>0/1d6</td></tr>
+      <tr><td>Alguém que você sabe estar morto, vivo</td><td>1/1d6+1</td></tr>
+      <tr><td>Ser submetido a tortura severa</td><td>0/1d10</td></tr>
+      <tr><td>Ver cadáver se erguer da cova</td><td>1/1d10</td></tr>
+      <tr><td>Cabeça decapitada gigante cair do céu</td><td>2/2d10+1</td></tr>
+      <tr><td>Ver o Grande Cthulhu</td><td>1d10/1d100</td></tr>
+    </table>
+    <div class="rule-body">
+      <p><strong>San Indefinida:</strong> o valor abaixo do qual você está em risco permanente é sua <strong>San atual ÷ 5</strong>. Se a San cair abaixo desse valor, qualquer nova perda pode desencadear episódios sem aviso.</p>
+    </div>
   </div>
 </div>
 
@@ -1344,12 +1465,13 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
   </button>
   <div class="rule-content" id="rule-progressoupa">
     <div class="rule-body">
-          <p>Ao final de cada sessão, o Mestre indica quais perícias podem ser aprimoradas. Para aprimorar uma perícia:</p>
-          <p>1. Role 1d100. Se o resultado for <strong>maior</strong> que o valor atual da perícia, ela aumenta em <strong>1d10</strong> pontos.</p>
-          <p>2. Cada investigador também recebe <strong>1 ponto de EDU</strong> por sessão (máximo 99).</p>
-          <p>3. Atributos base (FOR, CON, etc.) <strong>não aumentam normalmente</strong> — apenas em eventos narrativos especiais determinados pelo Mestre.</p>
-        </div>
-        <div class="rule-box"><p><strong>No Novavera:</strong> expor-se a horrores cósmicos pode reduzir atributos permanentemente, mas também pode — raramente — aumentá-los de formas perturbadoras.</p></div>
+      <p>Perícias melhoram quando são <strong>usadas com sucesso</strong> durante o jogo. O Guardião marca quais perícias foram bem-sucedidas na sessão (check/marcação). Ao final:</p>
+      <p>1. Para cada perícia marcada, role 1d100. Se o resultado for <strong>maior que o valor atual</strong> da perícia, ela aumenta em <strong>1d10</strong> pontos (máximo 99).</p>
+      <p>2. A perícia <strong>Conhecimento Proibido</strong> (Mitos de Cthulhu no CoC clássico) nunca é marcada para melhoria normal — só sobe ao testemunhar eventos sobrenaturais, acessar memórias proibidas ou confrontar entidades. E sempre reduz a San máxima na mesma quantidade.</p>
+      <p>3. <strong>EDU</strong> pode aumentar no início do jogo para personagens com 20 anos ou mais: faça uma verificação de melhoria (1d100 — se maior que EDU atual, some 1d10). Personagens com 40+ fazem 2 verificações; 50+ fazem 3; 60+ fazem 4.</p>
+      <p>4. Atributos base (FOR, CON, DES, etc.) <strong>não aumentam normalmente</strong> — apenas por eventos narrativos especiais a critério do Guardião.</p>
+      <p><strong>Fase de Desenvolvimento:</strong> entre aventuras, investigadores podem recuperar San usando seus antecedentes (ver Antecedentes na ficha). Cada conexão-chave intacta pode render 1d3 de San recuperada.</p>
+    </div>
   </div>
 </div>
 
@@ -1360,10 +1482,19 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
   </button>
   <div class="rule-content" id="rule-curaerecuper">
     <div class="rule-body">
-          <p><strong>PV:</strong> recupera 1 PV por dia com descanso. Com Primeiros Socorros bem-sucedidos, recupera 1d3 imediatamente. Medicina bem-sucedida pode estabilizar um personagem à beira da morte.</p>
-          <p><strong>Sanidade:</strong> recupera lentamente com psicoterapia (1d3 por sessão de terapia bem-sucedida). Nunca pode ultrapassar o máximo original (POD×5). Conhecer que a ameaça foi eliminada pode restaurar 1d6 San.</p>
-          <p><strong>Pontos de Magia:</strong> recuperam completamente após <strong>8 horas de sono</strong>.</p>
-        </div>
+      <p><strong>Pontos de Vida — Cura Natural:</strong> sem Lesão Grave, recupera <strong>1 PV por dia</strong> de descanso. Com Lesão Grave, faz uma jogada de cura semanal (teste de CON — sucesso recupera 1d3 PV).</p>
+      <p><strong>Primeiros Socorros:</strong> aplicado imediatamente após o ferimento (mesma cena). Sucesso cura <strong>1 PV</strong>. Pode estabilizar um personagem Morrendo temporariamente — mas depois exige Medicina para recuperação real. Primeiros Socorros não pode ser aplicado duas vezes no mesmo ferimento.</p>
+      <p><strong>Medicina:</strong> aplicada com equipamento adequado. Sucesso cura <strong>1d3 PV</strong> adicionais. É o único tratamento eficaz para Lesões Graves a longo prazo. Também pode estabilizar definitivamente um personagem Morrendo.</p>
+      <p><strong>Pontos de Magia:</strong> regeneram <strong>1 PM por hora</strong>. Não pode ultrapassar o máximo (POD ÷ 5). Se os PM chegarem a zero, gastos adicionais são deduzidos dos PV na taxa de 1 para 1 — manifestando-se como ferimentos físicos reais.</p>
+      <p><strong>Sanidade — Recuperação:</strong> a San não se recupera por si só. Formas de recuperar:</p>
+      <ul style="font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--parch);line-height:1.9;margin:6px 0 10px 16px">
+        <li>Psicoterapia bem-sucedida: <strong>1d3 San</strong> por sessão de terapia</li>
+        <li>Eliminar uma ameaça definitivamente: <strong>1d6 San</strong> (a critério do Guardião)</li>
+        <li>Fase de Desenvolvimento entre aventuras: até <strong>1d10 San</strong> (dependendo dos antecedentes intactos)</li>
+        <li>Autoajuda: com um dado de bônus em testes de San específicos (apenas uma vez por situação)</li>
+      </ul>
+      <p>A San recuperada nunca pode ultrapassar o máximo atual (<strong>99 − Conhecimento Proibido</strong>).</p>
+    </div>
   </div>
 </div>
 
@@ -1374,12 +1505,52 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
   </button>
   <div class="rule-content" id="rule-regrasespeci">
     <div class="rule-body">
-          <p><strong>Laços:</strong> cada investigador começa com pelo menos um vínculo significativo — uma pessoa, um lugar ou uma crença. Cada laço funciona como âncora à sanidade: enquanto estiver intacto, protege 1 ponto de San por sessão. Se um laço for destruído, o investigador pode perder San além da perda normal.</p>
-          <p><strong>Conhecimento Proibido:</strong> algumas informações, ao serem descobertas, têm peso próprio — não pelo horror que revelam, mas pela responsabilidade que impõem. O Mestre pode determinar que certos fragmentos de verdade custam Sanidade mesmo sem presença de criaturas.</p>
-          <p><strong>Sonhos:</strong> investigadores com San abaixo de 50 começam a ter sonhos recorrentes. O Mestre pode usar esses sonhos como ferramenta narrativa — eles podem conter pistas, avisos ou simplesmente pesadelos sem significado aparente.</p>
-          <p><strong>Testemunhas:</strong> ver outro investigador perder a sanidade exige um teste de San (0/1). Ver um aliado morrer exige um teste mais severo (1/1d4). A tragédia é contagiante.</p>
-          <p><strong>Recuperação Narrativa:</strong> atos de coragem, solidariedade ou conquista significativa podem restaurar 1d3 de Sanidade a critério do Mestre — independente de psicoterapia.</p>
-        </div>
+      <p><strong>Era:</strong> Karma Eterno se passa no Brasil de <strong>2025</strong>, cidade de Novavera, cerrado de Goiás., no cerrado de Goiás. O sistema sobrenatural é exclusivamente espírita — sem magia de fantasia, sem tecnologia alienígena. Apenas o sistema de ciclos, dívidas, reencarnação e o que acontece quando esse sistema é violado.</p>
+
+      <p><strong>Memória</strong> e <strong>Permanência</strong> são os dois atributos exclusivos de Karma Eterno. Sua soma é sempre <strong>20</strong>.</p>
+
+      <div style="margin:10px 0;padding:10px 12px;border:1px solid rgba(154,122,42,0.25);background:rgba(154,122,42,0.04)">
+        <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:6px">Memória</div>
+        <p style="margin:0 0 6px">O quanto de vidas anteriores já vazou para a consciência. Não é conhecimento — é permanência simultânea. Valor inicial: <strong>(POD + INT) ÷ 10</strong>, arredondado.</p>
+        <table class="rule-table" style="margin:6px 0 0">
+          <tr><th>Faixa</th><th>Estado</th></tr>
+          <tr><td style="color:#8bc87f">1–5</td><td>Presente estável. Fragmentos chegam como sonhos, déjà vu.</td></tr>
+          <tr><td style="color:#c8c870">6–10</td><td>Permeabilidade moderada. Fragmentos chegam acordado.</td></tr>
+          <tr><td style="color:#e8a060">11–15</td><td>Sobreposição frequente. Memórias de outras vidas com clareza em nós temporais.</td></tr>
+          <tr><td style="color:#e07070">16–18</td><td>Sobreposição constante. Dificuldade de distinguir presente de passado.</td></tr>
+          <tr><td style="color:#e070e0">19</td><td>Limiar. Ainda funciona — por quanto tempo, e com qual custo.</td></tr>
+        </table>
+        <p style="margin:6px 0 0;font-size:13px;color:var(--ash)"><strong>Sobe:</strong> ao acessar fragmentos voluntariamente (confronto mediúnico) ou involuntariamente (exposição ao sobrenatural). <strong>Desce:</strong> quando age para se ancorar no presente. O <em>piso</em> sobe +1D6 permanentemente ao final de cada temporada.</p>
+      </div>
+
+      <div style="margin:10px 0 14px;padding:10px 12px;border:1px solid rgba(154,122,42,0.25);background:rgba(154,122,42,0.04)">
+        <div style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:6px">Permanência</div>
+        <p style="margin:0">O quanto o personagem está ancorado no agora. <strong>Permanência + Memória = 20 sempre.</strong> Permanência baixa abre percepções que Permanência alta não tem — mas Permanência zero significa incapacidade de distinguir qual é o presente funcional.</p>
+      </div>
+
+      <p><strong>San e Memória são complementares:</strong> San cobre o choque agudo imediato — ver um cadáver, presenciar violência, confrontar o inexplicável. Memória/Permanência cobre o custo de longo prazo da exposição ao sobrenatural. Uma queda brusca de San num encontro brutal não substitui a Memória que vai acumulando a cada sessão.</p>
+
+      <p><strong>Confronto Mediúnico:</strong> 1. Declare intenção. 2. Role POD vs. POD da entidade (bônus por rituais e localização). 3. Sucesso: canal abre — fragmento chega distorcido (Alta Memória = mais claro). 4. <strong>Custo imediato:</strong> Memória +1D4, Permanência −1D4. Contato forçado pela entidade: Memória +1D6+2, Permanência −1D6+2.</p>
+
+      <p><strong>Memória Involuntária (Ep. 1):</strong> Exposição ao sobrenatural cobra Memória independente de intenção.</p>
+      <ul style="font-family:'Cormorant Garamond',serif;font-size:13px;color:var(--parch);line-height:1.9;margin:4px 0 10px 16px">
+        <li>Conversa com médium inconsciente: Automático — Memória +1 em segredo</li>
+        <li>Tocar terra de nó temporal ativo: POD 50 — Memória +1</li>
+        <li>Ler texto premonitório que cita o personagem: Automático — Memória +1 para todos</li>
+        <li>Testemunhar manifestação espírita inegável: Automático — Memória +1, Permanência −1 para todos</li>
+        <li>Sofrer dano físico de entidade possuída: Automático — Memória +1 adicional ao dano</li>
+      </ul>
+
+      <p><strong>Sistema de Dívida:</strong> cada personagem tem uma dívida de vida anterior com três componentes — a natureza (o que foi feito ou deixado por fazer), o credor (alguém desta vida que representa a dívida), e o padrão (a decisão que tende a repetir sem perceber). Quando numa situação que ressoa com o padrão, o Mestre pode pedir rolagem de POD. Falha: o Mestre descreve a ação — não o jogador.</p>
+
+      <p><strong>Possessão:</strong> entidades podem usar corpos de médiuns inconscientes ou pessoas em estado de receptividade aumentada. Durante a possessão: FOR e CON aumentam substancialmente, DES pode aumentar, INT e EDU mantidas do corpo. Duração limitada pela resistência física. Matar o corpo possuído não elimina a entidade — ela volta ao plano de origem.</p>
+
+      <p><strong>Laços (Antecedentes):</strong> cada investigador começa com conexões pessoais — pessoas, lugares, crenças, objetos. Escolha uma como <strong>Conexão-Chave</strong> (a mais importante). Ela é protegida: o Guardião não pode destruí-la sem que o jogador tenha ao menos uma chance de salvar. Perder a conexão-chave custa <strong>1/1d6 San</strong>. Laços intactos ajudam na recuperação de San entre aventuras.</p>
+      <p><strong>Conhecimento Proibido:</strong> algumas verdades custam San independente de qualquer criatura. Descobrir fragmentos da história de Novavera, ler documentos proibidos ou compreender o escopo real do que aconteceu na região pode exigir testes de San determinados pelo Guardião.</p>
+      <p><strong>Sonhos:</strong> investigadores com San abaixo de 40 começam a ter sonhos recorrentes. O Guardião pode usá-los como ferramenta narrativa — pistas, avisos ou pesadelos sem significado aparente. Personagens com Conhecimento Proibido acima de 20% sonham com mais frequência e intensidade.</p>
+      <p><strong>Testemunhas:</strong> ver outro investigador perder a sanidade exige teste de San (0/1). Ver um aliado morrer exige teste mais severo (1/1d4). A tragédia é contagiante.</p>
+      <p><strong>Recuperação Narrativa:</strong> atos de coragem genuína, sacrifício, solidariedade significativa ou conquista importante podem restaurar <strong>1d3 San</strong> a critério do Guardião — independente de psicoterapia. Não é garantido; precisa ser ganho.</p>
+    </div>
   </div>
 </div>
 
@@ -1392,7 +1563,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
     <div class="rule-body">
       <p>Magias são conhecimentos proibidos que o investigador acumula ao longo da campanha. Aprender uma magia tem um custo imediato de <strong>Sanidade</strong> — o simples ato de compreender algo que a mente humana não foi feita para entender deixa marcas permanentes.</p>
 
-      <p><strong>O que são os Mitos de Cthulhu:</strong> é uma perícia especial que representa o quanto o investigador conhece sobre o horror cósmico — entidades, rituais, línguas antigas e a verdade perturbadora sobre o universo. Diferente de outras perícias, ela <strong>nunca é comprada na criação de ficha</strong>: só sobe quando o investigador presencia eventos sobrenaturais, lê grimórios proibidos ou aprende magias. Quanto maior o valor de Mitos de Cthulhu, mais o investigador sabe — e menos Sanidade máxima ele pode ter. O limite máximo de San é <strong>99 menos o valor atual de Mitos de Cthulhu</strong>.</p>
+      <p><strong>Conhecimento Proibido</strong> (chamado de Mitos de Cthulhu no CoC clássico): perícia especial que representa o quanto o investigador compreendeu da estrutura oculta da realidade — em Karma Eterno, isso significa o sistema de ciclos, dívidas e nós temporais. <strong>Nunca comprada na criação de ficha</strong>: só sobe ao presenciar manifestações inegáveis, acessar memórias de vidas passadas ou confrontar as Regras diretamente. Quanto mais sobe, menos San máxima o personagem pode ter. Limite de San = <strong>99 − Conhecimento Proibido</strong>.</p>
 
       <p><strong>Como conjurar uma magia — passo a passo:</strong></p>
       <p>1. Verifique se possui MP suficientes (indicado na magia).<br>
@@ -1520,7 +1691,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
     <span class="icon">🎒</span>Itens
   </button>
   <button class="nav-tab" onclick="goTab('magias')" id="tab-magias">
-    <span class="icon">✨</span>Magias
+    <span class="icon">✦</span>Práticas
   </button>
   <button class="nav-tab" onclick="goTab('regras')" id="tab-regras">
     <span class="icon">📖</span>Regras
@@ -1588,24 +1759,69 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;heigh
 // ═══════════════════════════════════════════════
 
 const ATTRS = ['FOR','CON','TAM','DES','APA','INT','POD','EDU'];
-const ERAS = {anos20:'Anos 20',anos60:'Anos 60 · Novavera',anos80:'Anos 80 · Novavera',moderno:'Moderno'};
+const ATTRS_KE = ['Memória','Permanência']; // Atributos exclusivos Karma Eterno
+const ERAS = {moderna:'2025 · Brasil',anos20:'Anos 20 · CoC',anos30:'Anos 30',anos50:'Anos 50',anos60:'Anos 60',anos80:'Anos 80',anos90:'Anos 90'};
 
 const PROF_SKILLS = {
-  antiquario:    {pts:320, skills:['Avaliação','Biblioteconomia','Arte/Ofício','História','Lábia','Biblioteca','Persuasão','Localização']},
-  artista:       {pts:320, skills:['Arte/Ofício','História da Arte','Lábia','Psicologia','Percepção','Furtividade','Persuasão','Idioma Estrangeiro']},
-  clergy:        {pts:300, skills:['Contabilidade','História','Biblioteca','Lábia','Ouvir','Persuasão','Psicologia','Idioma Estrangeiro']},
-  detetive:      {pts:360, skills:['Arte/Ofício','Direito','Lábia','Psicologia','Pontaria','Localização','Rastrear','Percepção']},
-  doutor:        {pts:360, skills:['Primeiros Socorros','Medicina','Psicologia','Ciência (Biologia)','Lábia','Biblioteca','Percepção','Sutura']},
-  engenheiro:    {pts:340, skills:['Arte/Ofício (Mecânica)','Ciência (Física)','Contabilidade','Eletrônica','Biblioteca','Operar Maquinaria','Percepção','Reparar']},
-  escritor:      {pts:340, skills:['Arte/Ofício (Escrita)','História','Biblioteca','Lábia','Ouvir','Psicologia','Idioma Estrangeiro','Persuasão']},
-  fazendeiro:    {pts:300, skills:['Arte/Ofício (Fazenda)','Andar a Cavalo','Dirigir','Primeiros Socorros','Rastrear','Pontaria','Natureza','Percepção']},
-  investigador:  {pts:360, skills:['Arte/Ofício','Direito','Armas de Fogo','Intimidar','Psicologia','Localização','Rastrear','Percepção']},
-  militar:       {pts:340, skills:['Armas de Fogo','Artilharia','Briga','Primeiros Socorros','Navegação','Furtividade','Sobrevivência','Intimidar']},
-  ocultista:     {pts:300, skills:['Antropologia','História','Biblioteca','Mitos de Cthulhu','Oculto','Idioma Estrangeiro','Persuasão','Percepção']},
-  paranormal:    {pts:320, skills:['Antropologia','Biblioteca','Mitos de Cthulhu','Oculto','Percepção','Psicologia','Ciência','Idioma Estrangeiro']},
-  professor:     {pts:320, skills:['Antropologia','Arqueologia','Biblioteconomia','Biblioteca','História','Idioma Estrangeiro','Ouvir','Persuasão']},
-  psicologo:     {pts:340, skills:['Psicanálise','Psicologia','Medicina','Persuasão','Lábia','Ouvir','Percepção','Biblioteca']},
-  aventureiro:   {pts:360, skills:['Briga','Armas de Fogo','Primeiros Socorros','Escalar','Furtividade','Navegação','Rastrear','Sobrevivência']},
+  // Clássicas Lovecraftianas
+  antiquario:       {pts:320, label:'Antiquário', formula:'EDU×4', skills:['Arte/Ofício','Avaliação','Encontrar','História','Idioma Estrangeiro','Usar Biblioteca','Charme ou Intimidação ou Lábia ou Persuasão']},
+  artista:          {pts:320, label:'Artista', formula:'EDU×2+POD×2 ou DES×2', skills:['Arte/Ofício','Encontrar','História ou Mundo Natural','Idioma Estrangeiro','Psicologia','Charme ou Intimidação ou Lábia ou Persuasão']},
+  diletante:        {pts:320, label:'Diletante', formula:'EDU×2+APA×2', skills:['Armas de Fogo','Arte/Ofício','Cavalgar','Idioma Estrangeiro','Charme ou Intimidação ou Lábia ou Persuasão']},
+  escritor:         {pts:320, label:'Escritor', formula:'EDU×4', skills:['Arte/Ofício (Literatura)','História','Idioma Nativo','Mundo Natural ou Ocultismo','Idioma Estrangeiro','Psicologia','Usar Biblioteca']},
+  jornalista:       {pts:320, label:'Jornalista', formula:'EDU×4', skills:['Arte/Ofício (Arte ou Fotografia)','História','Idioma Nativo','Psicologia','Usar Biblioteca','Charme ou Intimidação ou Lábia ou Persuasão']},
+  doutor:           {pts:320, label:'Médico', formula:'EDU×4', skills:['Ciência (Biologia)','Ciência (Farmácia)','Medicina','Idioma Estrangeiro (Latim)','Primeiros Socorros','Psicologia']},
+  professor:        {pts:320, label:'Professor', formula:'EDU×4', skills:['Idioma Nativo','Idioma Estrangeiro','Psicologia','Usar Biblioteca']},
+  detetive:         {pts:320, label:'Detetive Particular', formula:'EDU×2+DES×2 ou FOR×2', skills:['Arte/Ofício (Fotografia)','Direito','Disfarce','Encontrar','Psicologia','Usar Biblioteca','Charme ou Intimidação ou Lábia ou Persuasão']},
+  investigador:     {pts:320, label:'Investigador de Polícia', formula:'EDU×2+DES×2 ou FOR×2', skills:['Arte/Ofício (Atuar) ou Disfarce','Armas de Fogo','Direito','Escutar','Psicologia','Encontrar','Charme ou Intimidação ou Lábia ou Persuasão']},
+  // Outras Ocupações
+  advogado:         {pts:320, label:'Advogado', formula:'EDU×4', skills:['Contabilidade','Direito','Psicologia','Usar Biblioteca','Charme ou Intimidação ou Lábia ou Persuasão']},
+  andarilho:        {pts:320, label:'Andarilho', formula:'EDU×2+APA×2 ou DES×2 ou FOR×2', skills:['Escalar','Escutar','Furtividade','Navegação','Saltar','Charme ou Intimidação ou Lábia ou Persuasão']},
+  atleta:           {pts:320, label:'Atleta', formula:'EDU×2+DES×2 ou FOR×2', skills:['Arremessar','Cavalgar','Escalar','Lutar (Briga)','Natação','Saltar','Charme ou Intimidação ou Lábia ou Persuasão']},
+  criminoso:        {pts:320, label:'Criminoso', formula:'EDU×2+DES×2 ou FOR×2', skills:['Encontrar','Furtividade','Psicologia','Armas de Fogo','Avaliação','Chaveiro','Consertos Mecânicos','Disfarce','Lutar','Prestidigitação','Charme ou Intimidação ou Lábia ou Persuasão']},
+  engenheiro:       {pts:320, label:'Engenheiro', formula:'EDU×4', skills:['Arte/Ofício (Desenho Técnico)','Consertos Elétricos','Ciência (Engenharia)','Ciência (Física)','Consertos Mecânicos','Operar Maquinário Pesado','Usar Biblioteca']},
+  fanático:         {pts:320, label:'Fanático', formula:'EDU×2+APA×2 ou POD×2', skills:['Furtividade','História','Psicologia','Charme ou Intimidação ou Lábia ou Persuasão']},
+  fazendeiro:       {pts:320, label:'Fazendeiro', formula:'EDU×2+DES×2 ou FOR×2', skills:['Arte/Ofício (Trabalhos de Fazenda)','Consertos Mecânicos','Dirigir Auto','Mundo Natural','Operar Maquinário Pesado','Rastrear','Charme ou Intimidação ou Lábia ou Persuasão']},
+  hacker:           {pts:320, label:'Hacker (Moderno)', formula:'EDU×4', skills:['Consertos Elétricos','Eletrônica','Encontrar','Usar Biblioteca','Usar Computadores','Charme ou Intimidação ou Lábia ou Persuasão']},
+  missionario:      {pts:320, label:'Missionário', formula:'EDU×4', skills:['Arte/Ofício','Consertos Mecânicos','Medicina','Mundo Natural','Primeiros Socorros','Charme ou Intimidação ou Lábia ou Persuasão']},
+  militar:          {pts:320, label:'Oficial Militar', formula:'EDU×2+DES×2 ou FOR×2', skills:['Armas de Fogo','Contabilidade','Navegação','Psicologia','Sobrevivência','Charme ou Intimidação ou Lábia ou Persuasão']},
+  musico:           {pts:320, label:'Músico', formula:'EDU×2+DES×2 ou POD×2', skills:['Arte/Ofício (Instrumento)','Escutar','Psicologia','Charme ou Intimidação ou Lábia ou Persuasão']},
+  oficial_policia:  {pts:320, label:'Oficial de Polícia', formula:'EDU×2+DES×2 ou FOR×2', skills:['Armas de Fogo','Direito','Encontrar','Lutar (Briga)','Primeiros Socorros','Psicologia','Charme ou Intimidação ou Lábia ou Persuasão']},
+  parapsicólogo:    {pts:320, label:'Parapsicólogo', formula:'EDU×4', skills:['Antropologia','Arte/Ofício (Fotografia)','História','Usar Biblioteca','Ocultismo','Idioma Estrangeiro','Psicologia']},
+  piloto:           {pts:320, label:'Piloto', formula:'EDU×2+DES×2', skills:['Ciência (Astronomia)','Consertos Elétricos','Consertos Mecânicos','Navegação','Operar Maquinário Pesado','Pilotar (Aeronaves)']},
+  ocultista:        {pts:320, label:'Parapsicólogo/Ocultista', formula:'EDU×4', skills:['Antropologia','Arte/Ofício (Fotografia)','História','Usar Biblioteca','Ocultismo','Idioma Estrangeiro','Psicologia']},
+  soldado:          {pts:320, label:'Soldado', formula:'EDU×2+DES×2 ou FOR×2', skills:['Armas de Fogo','Escalar ou Natação','Esquivar','Furtividade','Lutar','Sobrevivência','Consertos Mecânicos','Idioma Estrangeiro','Primeiros Socorros']},
+  entretimento:     {pts:320, label:'Profissional de Entretenimento', formula:'EDU×2+APA×2', skills:['Arte/Ofício (Atuar)','Disfarce','Escutar','Psicologia','Charme ou Intimidação ou Lábia ou Persuasão']},
+  psicologo:        {pts:320, label:'Médico / Psiquiatra', formula:'EDU×4', skills:['Ciência (Biologia)','Ciência (Farmácia)','Medicina','Idioma Estrangeiro (Latim)','Primeiros Socorros','Psicologia','Psicanálise']},
+  aventureiro:      {pts:320, label:'Aventureiro', formula:'EDU×2+DES×2 ou FOR×2', skills:['Armas de Fogo','Escalar','Furtividade','Lutar (Briga)','Natação','Saltar','Primeiros Socorros','Navegação','Rastrear','Sobrevivência']},
+  tribal:           {pts:320, label:'Tribal / Nativo', formula:'EDU×2+DES×2 ou FOR×2', skills:['Arremessar ou Lutar','Encontrar','Escalar','Escutar','Mundo Natural','Natação','Ocultismo','Sobrevivência']},
+  // Exclusivas do Guia do Investigador
+  espiao:           {pts:320, label:'Espião', formula:'EDU×2+APA×2 ou DES×2', skills:['Armas de Fogo','Escutar','Furtividade','Outra Língua','Prestidigitação','Psicologia','Arte/Ofício (Atuação) ou Disfarce','Charme ou Intimidação ou Lábia ou Persuasão']},
+  explorador:       {pts:320, label:'Explorador', formula:'EDU×2+APA×2 ou DES×2 ou FOR×2', skills:['Armas de Fogo','Escalar','Furtividade','Mundo Natural','Navegação','Outra Língua ou Sobrevivência','Escutar ou Encontrar']},
+  fotografo:        {pts:320, label:'Fotógrafo', formula:'EDU×4 ou EDU×2+APA×2', skills:['Arte/Ofício (Fotografia)','Ciência (Química)','Escalar','Furtividade','Psicologia','Usar Bibliotecas','Charme ou Intimidação ou Lábia ou Persuasão']},
+  gangster:         {pts:320, label:'Gangster / Crime Organizado', formula:'EDU×2+FOR×2 ou DES×2', skills:['Armas de Fogo','Dirigir Auto','Encontrar','Furtividade','Lutar','Psicologia','Charme ou Intimidação ou Lábia ou Persuasão']},
+  detetive_agencia: {pts:320, label:'Detetive de Agência', formula:'EDU×2+DES×2 ou FOR×2', skills:['Arte/Ofício (Fotografia ou Datilografia)','Direito','Disfarce','Encontrar','Psicologia','Usar Bibliotecas','Charme ou Intimidação ou Lábia ou Persuasão']},
+  pesquisador:      {pts:320, label:'Pesquisador', formula:'EDU×4', skills:['Encontrar','Língua Nativa','Outra Língua','Usar Bibliotecas','quaisquer outras quatro perícias como tópicos especializados']},
+  cientifico:       {pts:320, label:'Cientista', formula:'EDU×4', skills:['Três especializações de Ciência','Encontrar','Língua Nativa','Outra Língua','Usar Computadores ou Usar Bibliotecas','Charme ou Intimidação ou Lábia ou Persuasão']},
+  cowboy:           {pts:320, label:'Cowboy / Vaqueiro', formula:'EDU×2+DES×2 ou FOR×2', skills:['Arremessar','Cavalgar','Esquivar','Rastrear','Saltar','Sobrevivência','Lutar ou Armas de Fogo','Primeiros Socorros ou Mundo Natural']},
+  enfermeiro:       {pts:320, label:'Enfermeiro', formula:'EDU×4', skills:['Ciência (Biologia)','Escutar','Medicina','Primeiros Socorros','Psicologia','Usar Bibliotecas','Charme ou Intimidação ou Lábia ou Persuasão']},
+  farmaceutico:     {pts:320, label:'Farmacêutico', formula:'EDU×4', skills:['Ciência (Farmácia)','Ciência (Química)','Contabilidade','Outra Língua (Latim)','Psicologia','Primeiros Socorros','Usar Bibliotecas','Charme ou Intimidação ou Lábia ou Persuasão']},
+  bombeiro:         {pts:320, label:'Bombeiro', formula:'EDU×2+DES×2 ou FOR×2', skills:['Arremessar','Consertos Mecânicos','Dirigir Auto','Escalar','Esquivar','Operar Maquinário Pesado','Primeiros Socorros','Saltar']},
+  bibliotecario:    {pts:320, label:'Bibliotecário', formula:'EDU×4', skills:['Contabilidade','Língua Nativa','Outra Língua','Usar Bibliotecas','quaisquer outras quatro perícias como especialidades']},
+  estudante:        {pts:320, label:'Estudante / Estagiário', formula:'EDU×4', skills:['Escutar','Língua Nativa ou Outra Língua','Usar Bibliotecas','três campos de estudo e duas perícias pessoais']},
+  // ══ Ocupações Modernas Brasileiras (Karma Eterno / Era 2025) ══
+  medico_interior:  {pts:320, label:'Médico do Interior', formula:'EDU×4', skills:['Ciência (Biologia)','Ciência (Farmácia)','Medicina','Primeiros Socorros','Psicologia','Usar Bibliotecas','Charme ou Persuasão']},
+  psicologo_mod:    {pts:320, label:'Psicólogo / Terapeuta', formula:'EDU×4', skills:['Psicanálise','Psicologia','Medicina','Escutar','Persuasão','Usar Bibliotecas','Ciência (Farmácia)']},
+  advogado_mod:     {pts:320, label:'Advogado', formula:'EDU×4', skills:['Direito','Contabilidade','Psicologia','Usar Bibliotecas','Encontrar','Charme ou Intimidação ou Lábia ou Persuasão']},
+  jornalista_mod:   {pts:320, label:'Jornalista de Portal / Repórter', formula:'EDU×4', skills:['Arte/Ofício (Escrita)','Encontrar','Escutar','História','Psicologia','Usar Computadores','Charme ou Lábia ou Persuasão']},
+  programador:      {pts:320, label:'Programador / Dev / TI', formula:'EDU×4', skills:['Consertos Elétricos','Eletrônica','Encontrar','Usar Computadores','Usar Bibliotecas','Ciência (Matemática)','Charme ou Lábia']},
+  servidor_pub:     {pts:320, label:'Servidor Público', formula:'EDU×4', skills:['Contabilidade','Direito','Encontrar','História','Usar Computadores','Usar Bibliotecas','Charme ou Persuasão']},
+  professor_mod:    {pts:320, label:'Professor / Educador', formula:'EDU×4', skills:['História','Língua Nativa','Psicologia','Usar Bibliotecas','Charme ou Persuasão','quaisquer duas especializações acadêmicas']},
+  assistente_soc:   {pts:320, label:'Assistente Social', formula:'EDU×4', skills:['Direito','Escutar','Psicologia','Primeiros Socorros','Persuasão','Usar Bibliotecas','Charme ou Intimidação']},
+  policial_mod:     {pts:320, label:'Policial Civil / Militar', formula:'EDU×2+DES×2 ou FOR×2', skills:['Armas de Fogo','Direito','Encontrar','Lutar (Briga)','Psicologia','Primeiros Socorros','Charme ou Intimidação ou Persuasão']},
+  investigador_mod: {pts:320, label:'Detetive / Investigador Particular', formula:'EDU×2+DES×2', skills:['Armas de Fogo','Disfarce','Encontrar','Furtividade','Psicologia','Usar Computadores','Charme ou Intimidação ou Persuasão']},
+  medico_legista:   {pts:320, label:'Médico Legista / Perito', formula:'EDU×4', skills:['Ciência (Biologia)','Ciência (Forense)','Encontrar','Medicina','Outra Língua (Inglês)','Usar Bibliotecas','Persuasão']},
+  influencer:       {pts:320, label:'Influencer / Criador de Conteúdo', formula:'EDU×2+APA×2', skills:['Arte/Ofício (Fotografia ou Vídeo)','Encontrar','Psicologia','Usar Computadores','Charme ou Lábia ou Persuasão']},
+  cacador_recomp:   {pts:320, label:'Caçador de Recompensas', formula:'EDU×2+DES×2 ou FOR×2', skills:['Direito','Dirigir Auto','Furtividade','Psicologia','Rastrear','Lutar ou Armas de Fogo','Eletrônica ou Consertos Elétricos','Charme ou Intimidação ou Lábia ou Persuasão']},
 };
 
 const ALL_SKILLS = [
@@ -1618,7 +1834,7 @@ const ALL_SKILLS = [
   {name:'Esquivar',base:0},{name:'Furtividade',base:20},{name:'História',base:5},
   {name:'Idioma Estrangeiro',base:1},{name:'Idioma Nativo',base:0},{name:'Intimidar',base:15},
   {name:'Lábia',base:10},{name:'Localização',base:25},{name:'Medicina',base:1},
-  {name:'Mitos de Cthulhu',base:0},{name:'Natação',base:20},{name:'Navegação',base:10},
+  {name:'Conhecimento Proibido',base:0},{name:'Natação',base:20},{name:'Navegação',base:10},
   {name:'Oculto',base:5},{name:'Operar Maquinaria',base:1},{name:'Percepção',base:25},
   {name:'Persuasão',base:10},{name:'Primeiros Socorros',base:30},{name:'Psicanálise',base:1},
   {name:'Psicologia',base:10},{name:'Rastrear',base:10},{name:'Reparar',base:20},
@@ -1626,277 +1842,435 @@ const ALL_SKILLS = [
 ];
 
 const QUICK_ITEMS = [
-  // ARMAS CORPO-A-CORPO
-  {icon:'👊',name:'Briga (Soco/Chute)',tipo:'arma',cat:'Corpo-a-corpo',desc:'Dano: 1d3 + bônus de dano | Corpo-a-corpo | Não requer item — apenas os punhos'},
-  {icon:'🔪',name:'Faca de Caça',tipo:'arma',cat:'Corpo-a-corpo',desc:'Dano: 1d4+2 + bônus | Corpo-a-corpo | Pode ser arremessada (alcance curto)'},
-  {icon:'🗡',name:'Faca de Cozinha',tipo:'arma',cat:'Corpo-a-corpo',desc:'Dano: 1d4 + bônus | Corpo-a-corpo | Comum e fácil de obter'},
-  {icon:'⚔',name:'Espada / Sabre',tipo:'arma',cat:'Corpo-a-corpo',desc:'Dano: 1d8 + bônus | Corpo-a-corpo | Alcance ligeiramente maior que uma faca'},
-  {icon:'🏹',name:'Machadinha',tipo:'arma',cat:'Corpo-a-corpo',desc:'Dano: 1d6 + bônus | Pode ser arremessada (curto alcance) | Requer perícia Briga ou Arremesso'},
-  {icon:'🪓',name:'Machado de Lenha',tipo:'arma',cat:'Corpo-a-corpo',desc:'Dano: 1d8+2 + bônus | Grande e pesado | Penalidade de DES se FOR < 60'},
-  {icon:'🪃',name:'Bastão / Cassetete',tipo:'arma',cat:'Corpo-a-corpo',desc:'Dano: 1d6 + bônus | Corpo-a-corpo | Pode ser usado para imobilizar'},
-  {icon:'🔧',name:'Chave Inglesa',tipo:'arma',cat:'Improvisada',desc:'Dano: 1d6 + bônus | Improvisada | Corpo-a-corpo'},
-  {icon:'🪑',name:'Cadeira / Objeto Grande',tipo:'arma',cat:'Improvisada',desc:'Dano: 1d6 + bônus | Improvisada | Pode quebrar após uso'},
-  // ARMAS DE FOGO
-  {icon:'🔫',name:'Revólver .32',tipo:'arma',cat:'Pistola',desc:'Dano: 1d8 | Alcance: Médio | Munição: 6 | Recarga: 2 ações | Silencioso relativo'},
-  {icon:'🔫',name:'Revólver .38',tipo:'arma',cat:'Pistola',desc:'Dano: 1d10 | Alcance: Médio | Munição: 6 | Recarga: 2 ações | O mais comum nos anos 60'},
-  {icon:'🔫',name:'Revólver .44',tipo:'arma',cat:'Pistola',desc:'Dano: 1d10+2 | Alcance: Médio | Munição: 6 | Recarga: 2 ações | Pesado, recuo alto'},
-  {icon:'🔫',name:'Pistola 9mm',tipo:'arma',cat:'Pistola',desc:'Dano: 1d10 | Alcance: Médio | Munição: 15 | Recarga: 1 ação | Militar/policial'},
-  {icon:'🔫',name:'Pistola .45',tipo:'arma',cat:'Pistola',desc:'Dano: 1d10+2 | Alcance: Médio | Munição: 7 | Padrão da 2ª Guerra Mundial'},
-  {icon:'🪃',name:'Espingarda Cal. 12',tipo:'arma',cat:'Espingarda',desc:'Dano: 4d6/2d6/1d6 (curto/médio/longo) | Munição: 2 | Recarga: 2 ações | Devastadora no curto'},
-  {icon:'🪃',name:'Espingarda Dupla',tipo:'arma',cat:'Espingarda',desc:'Dano: 4d6+4/2d6/1d4 | 2 canos, pode disparar ambos simultaneamente | Munição: 2'},
-  {icon:'🏹',name:'Rifle de Caça',tipo:'arma',cat:'Rifle',desc:'Dano: 2d6+4 | Alcance: Longo | Munição: 5 | Precisa de base estável para longo alcance'},
-  {icon:'🏹',name:'Rifle Militar (.303)',tipo:'arma',cat:'Rifle',desc:'Dano: 2d6+4 | Alcance: Muito Longo | Munição: 5 | Requer perícia Rifles'},
-  {icon:'🔫',name:'Metralhadora Thompson',tipo:'arma',cat:'Automática',desc:'Dano: 1d10+2 | Automática: até 3 tiros/rodada | Munição: 20 | Rara, anos 20-40'},
-  // EQUIPAMENTOS
-  {icon:'🔦',name:'Lanterna',tipo:'equipamento',cat:'Básico',desc:'Ilumina até 10m. Bateria: 6 horas. Essencial para exploração noturna ou subterrânea.'},
-  {icon:'🕯',name:'Velas (pacote)',tipo:'equipamento',cat:'Básico',desc:'10 velas. Cada uma dura 4 horas. Boa para rituais e locais sem energia elétrica.'},
-  {icon:'🧭',name:'Bússola',tipo:'equipamento',cat:'Navegação',desc:'+10% Navegação em campo aberto. Não funciona perto de certos fenômenos sobrenaturais.'},
-  {icon:'🗺',name:'Mapa Regional',tipo:'equipamento',cat:'Navegação',desc:'+10% Localização na região. Especifique a região ao adicionar.'},
-  {icon:'🧰',name:'Corda (30m)',tipo:'equipamento',cat:'Exploração',desc:'FOR 30m | Suporta até 200kg | Pode ser usada para escalar, amarrar, ou criar armadilhas.'},
-  {icon:'🎒',name:'Mochila de Expedição',tipo:'equipamento',cat:'Exploração',desc:'Capacidade alta. Permite carregar mais itens sem penalidade de movimento.'},
-  {icon:'⛺',name:'Kit de Camping',tipo:'equipamento',cat:'Exploração',desc:'Barraca, saco de dormir, fogão portátil. Necessário para missões de vários dias.'},
-  {icon:'🔭',name:'Binóculo',tipo:'equipamento',cat:'Observação',desc:'+20% Percepção a longa distância | Essencial para vigilância.'},
-  {icon:'📷',name:'Câmera Fotográfica',tipo:'equipamento',cat:'Investigação',desc:'Filmes: 12 fotos por rolo. Fotos servem como evidência (+10% em situações legais). Anos 40+.'},
-  {icon:'📻',name:'Rádio Portátil',tipo:'equipamento',cat:'Comunicação',desc:'Comunicação de longa distância. Anos 60+. Bateria dura 8 horas.'},
-  {icon:'📞',name:'Gravador de Voz',tipo:'equipamento',cat:'Investigação',desc:'Fita magnética. Registra conversas e sons. Anos 60+. Útil para interrogatórios.'},
-  {icon:'🔬',name:'Kit de Análise',tipo:'equipamento',cat:'Ciência',desc:'+10% Ciência (Química) para análise de amostras no campo.'},
-  {icon:'⛓',name:'Algemas',tipo:'equipamento',cat:'Contenção',desc:'Imobiliza um alvo. Requer teste de Briga ou Intimidar para aplicar em combate.'},
-  // MEDICINA
-  {icon:'🩹',name:'Kit de Primeiros Socorros',tipo:'remedio',cat:'Médico',desc:'+20% Primeiros Socorros | Usos: 3 | Cura 1d3 PV por uso bem-sucedido. Essencial.'},
-  {icon:'🧪',name:'Kit Médico Avançado',tipo:'remedio',cat:'Médico',desc:'+10% Medicina | Usos: 5 | Cura 1d3+1 PV. Pode estabilizar personagens à beira da morte.'},
-  {icon:'💊',name:'Morfina',tipo:'remedio',cat:'Narcótico',desc:'Ignora penalidades de dor por 1d4 horas. Permite agir normalmente mesmo gravemente ferido. Viciante com uso repetido.'},
-  {icon:'💊',name:'Aspirina',tipo:'remedio',cat:'Medicamento',desc:'Alivia dores de cabeça moderadas. Não cura PV. Comum nos anos 20-60.'},
-  {icon:'🍶',name:'Álcool / Cachaça',tipo:'remedio',cat:'Medicamento',desc:'Pode ser usado para desinfetar ferimentos (substitui kit médico em emergência, -10% no teste). Consumo excessivo: penalidades em testes.'},
-  {icon:'💉',name:'Adrenalina',tipo:'remedio',cat:'Médico',desc:'Estabiliza um personagem inconsciente por 1 rodada. Permite uma ação antes de colapsar novamente.'},
-  // LIVROS E GRIMÓRIOS
-  {icon:'📚',name:'Necronomicon (Cópia)',tipo:'livro',cat:'Grimório',desc:'Leitura completa: +15% Mitos de Cthulhu, -1d10 San. Estudo leva semanas. Contém encantamentos perigosos.'},
-  {icon:'📗',name:'Cultos Inomináveis',tipo:'livro',cat:'Grimório',desc:'Leitura: +8% Mitos de Cthulhu, -1d6 San. Mapeia cultos ativos no século XX. Autor: Montgomery Winters.'},
-  {icon:'📘',name:'O Rei de Amarelo',tipo:'livro',cat:'Grimório',desc:'Leitura: -1d6 San imediatamente. +5% Mitos de Cthulhu. A peça teatral proibida. Risco de obsessão.'},
-  {icon:'📙',name:'De Vermis Mysteriis',tipo:'livro',cat:'Grimório',desc:'Leitura: +10% Mitos de Cthulhu, -1d8 San. Contém rituais de invocação de vermes primordiais.'},
-  {icon:'📒',name:'Unaussprechlichen Kulten',tipo:'livro',cat:'Grimório',desc:'Leitura: +12% Mitos de Cthulhu, -1d8 San. Em alemão. Requer Idioma Estrangeiro (Alemão) ≥ 30%.'},
-  {icon:'📓',name:'Diário de Campo (Vazio)',tipo:'equipamento',cat:'Investigação',desc:'Para o jogador registrar descobertas, pistas e anotações da campanha. Sem efeito mecânico.'},
-  // ARTEFATOS KARMA ETERNO HOMEBREW
-  {icon:'📔',name:'Diário de Valdecir',tipo:'artefato',cat:'Karma Eterno',desc:'KARMA ETERNO | +10% Ocultismo e Mitos de Cthulhu. Ler uma entrada: -1 San. Contém visões fragmentadas de 1987.'},
-  {icon:'🗺',name:'Mapa Original de Novavera',tipo:'artefato',cat:'Karma Eterno',desc:'KARMA ETERNO | Permite localizar pontos de interesse na cidade. O símbolo no centro exige teste de San ao ser observado (perda 0/1d4).'},
-  {icon:'🧿',name:'Amuleto da Operação Semente',tipo:'artefato',cat:'Karma Eterno',desc:'KARMA ETERNO | Absorve 1 ponto de perda de San por sessão. Após 13 pontos absorvidos, fica inativo e aquece ao toque.'},
-  {icon:'🗝',name:'Chave da Rua do Anterior',tipo:'artefato',cat:'Karma Eterno',desc:'KARMA ETERNO | Abre passagens ocultas em locais específicos. Uso: custa 1 MP e requer teste de Oculto.'},
-  {icon:'🌿',name:'Ervas de Dona Natalina',tipo:'remedio',cat:'Karma Eterno',desc:'KARMA ETERNO | Chá feito com ervas locais. Cura 1d3 PV. +5% Primeiros Socorros. Doses: 3.'},
-  {icon:'📜',name:'Fragmento Histórico',tipo:'artefato',cat:'Karma Eterno',desc:'KARMA ETERNO | Um documento parcial de origem desconhecida. Ler: -1 San. Contém informações sobre eventos passados da região.'},
-];
+// ══ ARMAS CORPO A CORPO (Tabela XVII — Livro do Guardião) ══
+{icon:'👊',name:'Soco / Briga',tipo:'arma',cat:'Corpo a Corpo',desc:'Perícia: Lutar (Briga) | Dano: 1D3+DX | Alcance: Toque | Ataques/Rodada: 1 | Era: 1920s, Moderna'},
+{icon:'🪃',name:'Chicote',tipo:'arma',cat:'Corpo a Corpo',desc:'Perícia: Lutar (Chicotes) | Dano: 1D3+½DX | Alcance: 3 metros | Ataques/Rodada: 1 | Era: 1920s'},
+{icon:'🔦',name:'Porrete / Cassetete',tipo:'arma',cat:'Corpo a Corpo',desc:'Perícia: Lutar (Briga) | Dano: 1D8+DX | Alcance: Toque | Ataques/Rodada: 1 | Era: 1920s, Moderna. Pode ser usado para imobilizar.'},
+{icon:'🏒',name:'Bastão de Baseball / Críquete',tipo:'arma',cat:'Corpo a Corpo',desc:'Perícia: Lutar (Briga) | Dano: 1D8+DX | Alcance: Toque | Ataques/Rodada: 1 | Era: 1920s, Moderna'},
+{icon:'🔪',name:'Faca Grande (Facão)',tipo:'arma',cat:'Corpo a Corpo',desc:'Perícia: Lutar (Briga) | Dano: 1D8+DX | Alcance: Toque | Defeito: - | Era: 1920s, Moderna | Pode ser arremessada.'},
+{icon:'🔪',name:'Faca Média (de Cozinha)',tipo:'arma',cat:'Corpo a Corpo',desc:'Perícia: Lutar (Briga) | Dano: 1D4+2+DX | Alcance: Toque | Era: 1920s, Moderna'},
+{icon:'🗡',name:'Faca Pequena (Canivete)',tipo:'arma',cat:'Corpo a Corpo',desc:'Perícia: Lutar (Briga) | Dano: 1D4+DX | Alcance: Toque | Era: 1920s, Moderna'},
+{icon:'🏹',name:'Machadinha / Foicinha',tipo:'arma',cat:'Corpo a Corpo',desc:'Perícia: Lutar (Machados) | Dano: 1D6+1+DX | Alcance: Toque | Era: 1920s, Moderna. Pode ser arremessada.'},
+{icon:'🪓',name:'Machado de Lenhador',tipo:'arma',cat:'Corpo a Corpo',desc:'Perícia: Lutar (Machados) | Dano: 1D8+2+DX | Alcance: Toque | Era: 1920s, Moderna'},
+{icon:'⚔',name:'Espada Pesada (Sabre)',tipo:'arma',cat:'Corpo a Corpo',desc:'Perícia: Lutar (Espadas) | Dano: 1D8+1+DX | Alcance: Toque | Era: 1920s, Moderna'},
+{icon:'🤺',name:'Espada Leve (Florete)',tipo:'arma',cat:'Corpo a Corpo',desc:'Perícia: Lutar (Espadas) | Dano: 1D6+DX | Alcance: Toque | Era: 1920s, Moderna'},
+{icon:'🥄',name:'Soqueira de Metal',tipo:'arma',cat:'Corpo a Corpo',desc:'Perícia: Lutar (Briga) | Dano: 1D3+1+DX | Alcance: Toque | Era: 1920s, Moderna'},
+{icon:'🪢',name:'Garrote',tipo:'arma',cat:'Corpo a Corpo',desc:'Perícia: Lutar (Garrotes) | Dano: 1D6+DX | Alcance: Toque | Era: 1920s, Moderna. Usado para estrangular.'},
+{icon:'🔫',name:'Spray de Pimenta',tipo:'arma',cat:'Corpo a Corpo',desc:'Perícia: Lutar (Briga) | Efeito: Atordoamento | Alcance: 2 metros | Usos: 25 jatos | Era: 1920s, Moderna'},
 
+// ══ PISTOLAS (Tabela XVII — Livro do Guardião) ══
+{icon:'🔫',name:'Revólver .32 (7.65mm)',tipo:'arma',cat:'Pistola',desc:'Perícia: Armas de Fogo (Pistolas) | Dano: 1D8 | Alcance: 15m | Ataques: 1 (3) | Munição: 6 | Defeito: 100 | Era: 1920s, Moderna'},
+{icon:'🔫',name:'Revólver .38 (9mm)',tipo:'arma',cat:'Pistola',desc:'Perícia: Armas de Fogo (Pistolas) | Dano: 1D10 | Alcance: 15m | Ataques: 1 (3) | Munição: 6 | Defeito: 100 | Era: 1920s, Moderna. O mais comum nos anos 20.'},
+{icon:'🔫',name:'Revólver .45',tipo:'arma',cat:'Pistola',desc:'Perícia: Armas de Fogo (Pistolas) | Dano: 1D10+2 | Alcance: 15m | Ataques: 1 (3) | Munição: 6 | Defeito: 100 | Era: 1920s, Moderna'},
+{icon:'🔫',name:'.38 Automática',tipo:'arma',cat:'Pistola',desc:'Perícia: Armas de Fogo (Pistolas) | Dano: 1D10 | Alcance: 15m | Ataques: 1 (3) | Munição: 8 | Defeito: 99 | Era: 1920s, Moderna'},
+{icon:'🔫',name:'.45 Automática',tipo:'arma',cat:'Pistola',desc:'Perícia: Armas de Fogo (Pistolas) | Dano: 1D10+2 | Alcance: 15m | Ataques: 1 (3) | Munição: 7 | Defeito: 100 | Era: 1920s, Moderna. Padrão da 2ª Guerra.'},
+{icon:'🔫',name:'Luger P08',tipo:'arma',cat:'Pistola',desc:'Perícia: Armas de Fogo (Pistolas) | Dano: 1D10 | Alcance: 15m | Ataques: 1 (3) | Munição: 8 | Defeito: 99 | Era: 1920s, Moderna'},
+{icon:'🔫',name:'.25 Derringer (1C)',tipo:'arma',cat:'Pistola',desc:'Perícia: Armas de Fogo (Pistolas) | Dano: 1D6 | Alcance: 3m | Ataques: 1 | Munição: 1 | Defeito: 100 | Era: 1920s. Pequena, escondida facilmente.'},
+{icon:'🔫',name:'Pistola 9mm (Beretta M9)',tipo:'arma',cat:'Pistola',desc:'Perícia: Armas de Fogo (Pistolas) | Dano: 1D10 | Alcance: 15m | Ataques: 1 (3) | Munição: 15 | Defeito: 98 | Era: Moderna'},
+{icon:'🔫',name:'Glock 17 (9mm)',tipo:'arma',cat:'Pistola',desc:'Perícia: Armas de Fogo (Pistolas) | Dano: 1D10 | Alcance: 15m | Ataques: 1 (3) | Munição: 17 | Defeito: 98 | Era: Moderna'},
+{icon:'🔫',name:'Revólver .357 Magnum',tipo:'arma',cat:'Pistola',desc:'Perícia: Armas de Fogo (Pistolas) | Dano: 1D8+1D4 | Alcance: 15m | Ataques: 1 (3) | Munição: 6 | Defeito: 100 | Era: Moderna'},
+{icon:'🔫',name:'Desert Eagle',tipo:'arma',cat:'Pistola',desc:'Perícia: Armas de Fogo (Pistolas) | Dano: 1D10+1D6+3 | Alcance: 15m | Ataques: 1 (3) | Munição: 7 | Defeito: 94 | Era: Moderna'},
+
+// ══ RIFLES (Tabela XVII — Livro do Guardião) ══
+{icon:'🏹',name:'Carabina de Alavanca .30',tipo:'arma',cat:'Rifle',desc:'Perícia: Armas de Fogo (Rifles) | Dano: 2D6 | Alcance: 50m | Ataques: 1 | Munição: 6 | Defeito: 98 | Era: 1920s, Moderna'},
+{icon:'🏹',name:'Lee-Enfield .303',tipo:'arma',cat:'Rifle',desc:'Perícia: Armas de Fogo (Rifles) | Dano: 2D6+4 | Alcance: 110m | Ataques: 1 | Munição: 10 | Defeito: 100 | Era: 1920s, Moderna'},
+{icon:'🏹',name:'Rifle de Ferrolho .30-06',tipo:'arma',cat:'Rifle',desc:'Perícia: Armas de Fogo (Rifles) | Dano: 2D6+4 | Alcance: 110m | Ataques: 1 | Munição: 5 | Defeito: 100 | Era: 1920s, Moderna. O rifle de caça padrão.'},
+{icon:'🏹',name:'Rifle Garand M1',tipo:'arma',cat:'Rifle',desc:'Perícia: Armas de Fogo (Rifles) | Dano: 2D6+4 | Alcance: 110m | Ataques: 1 | Munição: 8 | Defeito: 100 | Era: WWII em diante'},
+{icon:'🏹',name:'Rifle de Elefantes (2C)',tipo:'arma',cat:'Rifle',desc:'Perícia: Armas de Fogo (Rifles) | Dano: 3D6+4 | Alcance: 100m | Ataques: 1 ou 2 | Munição: 2 | Defeito: 100 | Era: 1920s, Moderna'},
+{icon:'🏹',name:'Carabina SKS',tipo:'arma',cat:'Rifle',desc:'Perícia: Armas de Fogo (Rifles) | Dano: 2D6+1 | Alcance: 90m | Ataques: 1 (2) | Munição: 10 | Defeito: 97 | Era: Moderna'},
+
+// ══ ESPINGARDAS (Tabela XVII — Livro do Guardião) ══
+{icon:'🪃',name:'Espingarda Calibre 12 (2C)',tipo:'arma',cat:'Espingarda',desc:'Perícia: Armas de Fogo (Espingardas) | Dano: 4D6/2D6/1D6 (10/20/50m) | Ataques: 1 ou 2 | Munição: 2 | Defeito: 100 | Era: 1920s, Moderna. A mais devastadora no curto.'},
+{icon:'🪃',name:'Escopeta Deslizante Cal.12',tipo:'arma',cat:'Espingarda',desc:'Perícia: Armas de Fogo (Espingardas) | Dano: 4D6/2D6/1D6 (10/20/50m) | Ataques: 1 | Munição: 5 | Defeito: 100 | Era: Moderna'},
+{icon:'🪃',name:'Escopeta Cal.12 Serrada',tipo:'arma',cat:'Espingarda',desc:'Perícia: Armas de Fogo (Espingardas) | Dano: 4D6/1D6 (5/10m) | Ataques: 1 ou 2 | Munição: 2 | Era: 1920s. Ilegal — mercado negro.'},
+{icon:'🪃',name:'Espingarda Calibre 20 (2C)',tipo:'arma',cat:'Espingarda',desc:'Perícia: Armas de Fogo (Espingardas) | Dano: 2D6/1D6/1D3 (10/20/50m) | Ataques: 1 ou 2 | Munição: 2 | Era: 1920s'},
+
+// ══ EQUIPAMENTOS DE INVESTIGAÇÃO ══
+{icon:'🔦',name:'Lanterna Elétrica',tipo:'equipamento',cat:'Iluminação',desc:'Ilumina até 10-15m. Requer baterias (60¢). Essencial para exploração noturna ou subterrânea. Preço anos 20: $2,40'},
+{icon:'🕯',name:'Velas (12 unidades)',tipo:'equipamento',cat:'Iluminação',desc:'Cada vela dura várias horas. Boa para rituais e locais sem energia elétrica. Não resistem ao vento. Preço anos 20: 38¢'},
+{icon:'🔭',name:'Binóculo Simples (3x-6x)',tipo:'equipamento',cat:'Observação',desc:'+20% Percepção a longa distância. Essencial para vigilância. Preço anos 20: $8,50 a $23,00'},
+{icon:'🔭',name:'Binóculos de Qualidade',tipo:'equipamento',cat:'Observação',desc:'+30% Percepção a longa distância. Alta precisão óptica. Preço anos 20: $28,50'},
+{icon:'🔭',name:'Telescópio',tipo:'equipamento',cat:'Observação',desc:'Observação de estrelas e pontos distantes. Útil para localizar portais ou entidades. Preço anos 20: $3,45'},
+{icon:'🧭',name:'Bússola de Bolso',tipo:'equipamento',cat:'Navegação',desc:'+10% Navegação em campo aberto. Preço anos 20: $3,25. Atenção: pode falhar perto de certas entidades ou locais de poder.'},
+{icon:'📷',name:'Câmera Box Brownie',tipo:'equipamento',cat:'Investigação',desc:'Filmes de 24 exposições (38¢ cada). Fotos servem como evidência. Kit de revelação: $4,95. Preço anos 20: $3,15'},
+{icon:'📷',name:'Câmera Kodak de Fole',tipo:'equipamento',cat:'Investigação',desc:'Qualidade superior. Fotos detalhadas de cenas de crime, entidades, documentos. Preço anos 20: $4,29'},
+{icon:'🖊',name:'Ditafone (Gravador de Voz)',tipo:'equipamento',cat:'Investigação',desc:'Registra conversas e interrogatórios. Rolo de cera — qualidade limitada. Anos 20: $39,95. Gravador magnético: $129,95'},
+{icon:'🔍',name:'Lupa de Bolso',tipo:'equipamento',cat:'Investigação',desc:'+10% Encontrar para examinar detalhes pequenos: textos, símbolos, pistas. Preço anos 20: $1,68'},
+{icon:'🔬',name:'Microscópio de Bolso',tipo:'equipamento',cat:'Investigação',desc:'Análise básica de amostras. +5% Ciência para exames no campo. Preço anos 20: 58¢'},
+{icon:'🔬',name:'Microscópio de Mesa 110x',tipo:'equipamento',cat:'Investigação',desc:'Análise detalhada de amostras biológicas e minerais. +15% Ciência (Biologia ou Química). Preço anos 20: $17,50'},
+{icon:'📚',name:'Enciclopédia (10 volumes)',tipo:'livro',cat:'Referência',desc:'+10% Usar Biblioteca para pesquisa geral. Cobre história, ciência, geografia. Preço anos 20: $49,00'},
+{icon:'📖',name:'Dicionário Completo',tipo:'livro',cat:'Referência',desc:'Auxilia na tradução e na compreensão de textos obscuros. Preço anos 20: $6,75'},
+
+// ══ FERRAMENTAS E EXPLORAÇÃO ══
+{icon:'🧰',name:'Kit de Ferramentas (20 peças)',tipo:'equipamento',cat:'Ferramentas',desc:'Martelo, chave, alicate, chave de fenda, etc. Essencial para consertos no campo. Preço anos 20: $14,90'},
+{icon:'🗝',name:'Algemas com Chave',tipo:'equipamento',cat:'Contenção',desc:'Imobiliza um alvo. Requer teste de Briga ou Intimidação para aplicar em combate. Preço anos 20: $3,35 + chave extra $0,28'},
+{icon:'🔒',name:'Cadeado',tipo:'equipamento',cat:'Ferramentas',desc:'Tranca portas, caixas, correntes. Requer teste de Chaveiro para abrir sem chave. Preço anos 20: 95¢'},
+{icon:'🧲',name:'Pé-de-Cabra',tipo:'equipamento',cat:'Ferramentas',desc:'+20% Força para arrombar portas, caixas, grades. Pode ser usado como arma (1D6+DX). Preço anos 20: $2,25'},
+{icon:'🪢',name:'Corda (15 metros)',tipo:'equipamento',cat:'Exploração',desc:'Suporta peso considerável. Pode ser usada para escalar, amarrar ou criar armadilhas. +10% Escalar. Preço anos 20: $8,60'},
+{icon:'🎒',name:'Mala de Ombro Pesada',tipo:'equipamento',cat:'Exploração',desc:'Capacidade alta para carregar equipamentos de investigação. Preço anos 20: $3,45'},
+{icon:'⛺',name:'Barraca (2x2m)',tipo:'equipamento',cat:'Camping',desc:'Abrigo para 1-2 pessoas. Essencial para expedições de vários dias. Preço anos 20: $11,48'},
+{icon:'🪔',name:'Lanterna a Querosene',tipo:'equipamento',cat:'Iluminação',desc:'Luz duradoura, resistente ao vento. Não requer baterias. Ideal para expedições longas. Preço anos 20: $1,30'},
+{icon:'🧲',name:'Trajes Completos de Mergulho',tipo:'equipamento',cat:'Exploração',desc:'Permite exploração subaquática. Necessário para investigar locais abissais ou submersos. Preço anos 20: $1.200,00'},
+{icon:'🔧',name:'Maçarico a Gasolina',tipo:'equipamento',cat:'Ferramentas',desc:'Corta metal, solda, pode ser usado como fonte de fogo em rituais. Preço anos 20: $4,45'},
+{icon:'🔦',name:'Sinalizador Descartável',tipo:'equipamento',cat:'Iluminação',desc:'Luz de emergência e sinalização. Uso único. Preço anos 20: 27¢'},
+{icon:'🧪',name:'Respirador de Espuma',tipo:'equipamento',cat:'Proteção',desc:'Proteção básica contra gases e névoas. Útil em locais com emanações do Mythos. Preço anos 20: $1,95'},
+
+// ══ MEDICAMENTOS E PRIMEIROS SOCORROS ══
+{icon:'🩹',name:'Kit de Primeiros Socorros',tipo:'remedio',cat:'Médico',desc:'Ataduras, antisséptico, tesoura. +20% Primeiros Socorros | Usos: 3 | Cura 1D3 PV por uso bem-sucedido. Preço anos 20: ~$2'},
+{icon:'💊',name:'Morfina (ampola)',tipo:'remedio',cat:'Narcótico',desc:'Ignora penalidades de dor por 1D4 horas. Permite agir normalmente mesmo gravemente ferido. Viciante com uso repetido. Uso médico. Preço anos 20: $12,50 (caixa de seringas)'},
+{icon:'💉',name:'Seringas Hipodérmicas',tipo:'remedio',cat:'Médico',desc:'Necessário para injeções. Pode ser usado para administrar morfina, soro ou veneno. Preço anos 20: $12,50'},
+{icon:'🍶',name:'Álcool (desinfetante)',tipo:'remedio',cat:'Médico',desc:'Desinfeta ferimentos (substitui kit médico em emergência, -10% no teste). Preço anos 20: 20¢ por meio galão'},
+{icon:'🩺',name:'Ataduras de Gaze (5m)',tipo:'remedio',cat:'Médico',desc:'Estanca hemorragias. +5% Primeiros Socorros para estabilização. Preço anos 20: 69¢'},
+{icon:'🌡',name:'Termômetro Clínico',tipo:'remedio',cat:'Médico',desc:'Diagnóstico de febre e estado do paciente. +5% Medicina para avaliação. Preço anos 20: 69¢'},
+
+// ══ LIVROS E GRIMÓRIOS ══
+{icon:'📚',name:'Necronomicon (Cópia)',tipo:'livro',cat:'Grimório',desc:'Leitura completa: +15% Conhecimento Proibido, -1D10 San. Estudo: semanas. Contém feitiços e encantamentos. Extremamente raro e perigoso.'},
+{icon:'📗',name:'Cultos Inomináveis (von Junzt)',tipo:'livro',cat:'Grimório',desc:'Leitura: +8% Conhecimento Proibido, -1D6 San. Mapeia cultos ativos no século XIX-XX. Raro.'},
+{icon:'📘',name:'O Rei de Amarelo',tipo:'livro',cat:'Grimório',desc:'Leitura: -1D6 San imediato. +5% Conhecimento Proibido. A peça teatral proibida. Risco de obsessão permanente.'},
+{icon:'📙',name:'De Vermis Mysteriis (Prinn)',tipo:'livro',cat:'Grimório',desc:'Leitura: +10% Conhecimento Proibido, -1D8 San. Contém rituais de invocação de vermes primordiais.'},
+{icon:'📒',name:'Revelações de Glaaki',tipo:'livro',cat:'Grimório',desc:'Leitura: +8% Conhecimento Proibido, -1D6 San por volume. Série de 12 volumes. Contém feitiços relacionados a Glaaki.'},
+{icon:'📓',name:'Caderno de Rascunho (vazio)',tipo:'equipamento',cat:'Investigação',desc:'Para registrar descobertas, pistas e anotações de campanha. Sem efeito mecânico. Preço anos 20: 25¢'},
+
+// ══ KARMA ETERNO — ARTEFATOS HOMEBREW ══
+{icon:'📔',name:'Diário de Valdecir',tipo:'artefato',cat:'Karma Eterno',desc:'KARMA ETERNO | +10% Ocultismo e Conhecimento Proibido. Ler uma entrada: -1 San. Contém visões fragmentadas de 1987. Objeto único.'},
+{icon:'🗺',name:'Mapa Original de Novavera',tipo:'artefato',cat:'Karma Eterno',desc:'KARMA ETERNO | Permite localizar pontos de interesse na região. O símbolo central exige teste de San ao ser observado (perda 0/1D4). Objeto único.'},
+{icon:'🧿',name:'Amuleto da Operação Semente',tipo:'artefato',cat:'Karma Eterno',desc:'KARMA ETERNO | Absorve 1 ponto de perda de San por sessão. Após 13 pontos absorvidos no total, fica inativo e aquece ao toque.'},
+{icon:'🗝',name:'Chave da Rua do Anterior',tipo:'artefato',cat:'Karma Eterno',desc:'KARMA ETERNO | Abre passagens ocultas em locais específicos da região. Uso: custa 1 PM e requer teste de Oculto.'},
+{icon:'🌿',name:'Ervas de Dona Natalina',tipo:'remedio',cat:'Karma Eterno',desc:'KARMA ETERNO | Chá feito com ervas locais. Cura 1D3 PV. +5% Primeiros Socorros. Doses: 3. Não funciona fora da região de Novavera.'},
+{icon:'📜',name:'Fragmento Histórico',tipo:'artefato',cat:'Karma Eterno',desc:'KARMA ETERNO | Documento parcial de origem desconhecida. Ler: -1 San. Contém informações sobre eventos passados da região.'},
+
+// ══ ITENS MODERNOS — Era 2025 ══
+{icon:'📱',name:'Smartphone',tipo:'equipamento',cat:'Moderno',desc:'Câmera HD, gravador, acesso à internet, GPS. Essencial para investigações modernas. Bateria: ~12h. Sinal pode falhar em nós temporais.'},
+{icon:'💻',name:'Notebook',tipo:'equipamento',cat:'Moderno',desc:'+10% Usar Computadores. Pesquisa, análise de arquivos digitais, comunicação. Pode registrar e processar evidências. Bateria: ~8h.'},
+{icon:'🎙',name:'Gravador Digital',tipo:'equipamento',cat:'Moderno',desc:'Grava vozes, sons ambientes, EVP (Vozes de Fenômeno Eletrônico). +15% Encontrar em análise de áudio. Memória: 32GB.'},
+{icon:'🔦',name:'Lanterna Tática LED',tipo:'equipamento',cat:'Moderno',desc:'300 lumens. Duração: 20h. Resistente à água. Pode ser usada como arma de oportunidade (1D3). Essencial para exploração noturna.'},
+{icon:'📷',name:'Câmera DSLR',tipo:'equipamento',cat:'Moderno',desc:'Fotografia e vídeo em alta resolução. +15% Arte/Ofício (Fotografia). Pode capturar anomalias invisíveis a olho nu em nós temporais.'},
+{icon:'🧰',name:'Kit de Primeiros Socorros Moderno',tipo:'remedio',cat:'Moderno',desc:'+25% Primeiros Socorros. Curativo hemostático, bandagem de compressão, torniquete, analgésicos. Usos: 5. Era: 2025.'},
+{icon:'💊',name:'Diazepam (Ansiolítico)',tipo:'remedio',cat:'Moderno',desc:'Reduz pânico imediato. Dado de bônus em próximo teste de San até 2h. Uso controlado — requer receita. Pode criar dependência.'},
+{icon:'🚗',name:'Veículo (Carro Popular)',tipo:'equipamento',cat:'Moderno',desc:'Locomoção. Capacidade: 4 pessoas + bagagem. Pode servir como abrigo ou barreira. Tanque: ~500km. Kia Picanto, Fiat Mobi, etc.'},
+{icon:'📔',name:'Caderno dos 23 (Décio Murta)',tipo:'artefato',cat:'Karma Eterno',desc:'KARMA ETERNO | Um dos 23 cadernos de Décio Murta. Ler: Memória +1, Permanência -1. Contém observações temporais fragmentadas. Objeto único — consulte o Mestre.'},
+{icon:'📓',name:'Caderno de Valdecir (1987)',tipo:'artefato',cat:'Karma Eterno',desc:'KARMA ETERNO | Caderno com os nomes dos personagens, escrito em 1987. Ler: Memória +1D4, San -1D6. Objeto único — consulte o Mestre.'},
+{icon:'🗺',name:'Mapa da Área Verde',tipo:'artefato',cat:'Karma Eterno',desc:'KARMA ETERNO | Campo de influência do nó temporal. Esboçado por Natalina sem saber o que é. Revela pontos de amplificação. Objeto único.'},
+{icon:'📋',name:'As 11 Fichas de Sueli',tipo:'artefato',cat:'Karma Eterno',desc:'KARMA ETERNO | Fichas de pacientes com padrões impossíveis. Guardadas em antiquário em Goiânia. Ler tudo: Memória +1D6. Objeto único — consulte o Mestre.'},
+
+// ══ GUIA DO INVESTIGADOR — Itens adicionais ══
+{icon:'♟',name:'Tabuleiro de Ouija',tipo:'equipamento',cat:'Ocultismo',desc:'Instrumento de comunicação espírita, popular nos anos 20. Pode ser usado em rituais de Contactar Espíritos dos Mortos. Preço anos 20: 98¢'},
+{icon:'🎭',name:'Kit de Disfarce Profissional',tipo:'equipamento',cat:'Investigação',desc:'+20% Disfarce. Inclui maquiagem teatral, perucas e acessórios. Essencial para espiões e detetives. Preço anos 20: ~$15'},
+{icon:'🔐',name:'Kit de Arrombamento (Gazuas)',tipo:'equipamento',cat:'Investigação',desc:'+15% Chaveiro. Conjunto de gazuas profissional. Ilegal em maioria dos lugares. Preço anos 20: ~$5 (mercado negro)'},
+{icon:'💣',name:'Granada de Mão',tipo:'arma',cat:'Explosivos',desc:'Perícia: Arremessar | Dano: 4D6 em raio de 3m | Uso único | Mercado negro: $50 por caixa com 24 (WWII, 50% chance de falha). EXTREMAMENTE PERIGOSO.'},
+{icon:'🔫',name:'Submetralhadora Thompson',tipo:'arma',cat:'Submetralhadora',desc:'Perícia: Armas de Fogo (Submetralhadoras) | Dano: 2D6+4 | Alcance: 90m | Ataques: 1(2) ou automático | Munição: 20 | Mercado negro: 1D6 × $50 | Era: Pós-WWI'},
+{icon:'🚬',name:'Narguilé',tipo:'equipamento',cat:'Social',desc:'Acessório social comum nos anos 20. Pode conter tabaco, drogas ou substâncias rituais. Preço anos 20: 99¢'},
+{icon:'📻',name:'Receptor de Rádio Portátil',tipo:'equipamento',cat:'Comunicação',desc:'Recebe transmissões de rádio a distância. Útil para acompanhar notícias e comunicados. Preço anos 20: $65'},
+{icon:'🎥',name:'Câmera de Filme 16mm',tipo:'equipamento',cat:'Investigação',desc:'Registra imagens em movimento. Evidência irrefutável de atividades sobrenaturais — se o filme não derreter. Preço anos 20: $335 (com projetor)'},
+{icon:'💊',name:'Clorofórmio',tipo:'remedio',cat:'Narcótico',desc:'1 rodada para agir: inconsciência por 1 hora. Nenhum dano. Utilizado como anestésico. Uso controlado — acesso via farmacêutico. Desnecessário em dose alta pode matar.'},
+{icon:'⚗',name:'Arsénico (veneno)',tipo:'remedio',cat:'Veneno',desc:'30 min a 24h para agir. Dano: 4D10. Dor ardente, vômitos, diarreia violenta. Historicamente usado como ferramenta de assassinato (difícil de detectar antes de 1836).'},
+];
 const SPELLS = [
-  // CoC Canônico — Básicos
-  {id:'s1',skill:'Mitos de Cthulhu',type:'canon',cat:'Contato',name:'Contato com Divindade',mp:'Variável',san:'1d6',difficulty:'Alta',
-   how:'Ritual de concentração prolongada (mínimo 1 hora). O conjurador precisa conhecer o nome verdadeiro ou símbolo da divindade.',
-   test:'Teste de Oculto para iniciar o contato. Falha: nenhum contato. Falha crítica: a entidade nota, com consequências.',
-   effect:'Estabelece contato mental com uma entidade cósmica específica. A entidade pode responder, ignorar ou contra-atacar mentalmente. O custo de MP varia conforme o poder da divindade (5 a 20 MP).',
-   duration:'Uma sessão de comunicação. A entidade encerra quando quiser.'},
-  {id:'s2',skill:'Oculto',type:'canon',cat:'Dimensional',name:'Criar Portão',mp:'10',san:'1d10',difficulty:'Muito Alta',
-   how:'Ritual de 1 hora com círculo gravado no chão, componentes de prata e conhecimento prévio do destino.',
-   test:'Teste de Mitos de Cthulhu. Falha: o portão não abre. Falha crítica: abre para o lugar errado.',
-   effect:'Abre um portal estável entre dois pontos do espaço-tempo. Qualquer coisa pode atravessar em ambas as direções. O portão permanece aberto enquanto o conjurador gastar 1 MP por rodada.',
-   duration:'Mantido ativamente. Fecha ao abandonar a concentração.'},
-  {id:'s3',skill:'Oculto',type:'canon',cat:'Expulsão',name:'Devolver aos Profundos',mp:'6',san:'1d6',difficulty:'Alta',
-   how:'Pronunciar o Nome das Águas em alto-mar ou com água salgada presente. Componentes: sal marinho e sangue do conjurador (1 PV sacrificado).',
-   test:'Teste de Oculto oposto ao POD da criatura. Se a criatura vencer, ela permanece — e está furiosa.',
-   effect:'Força uma criatura dos Profundos (Deep One, Shoggoth aquático, etc.) a retornar compulsoriamente às águas de onde veio. Funciona apenas em criaturas com vínculo oceânico.',
-   duration:'Permanente — a criatura não pode retornar ao mesmo local por 1d6 dias.'},
-  {id:'s4',skill:'Oculto',type:'canon',cat:'Proteção',name:'Encantamento de Proteção',mp:'3',san:'0/1d3',difficulty:'Média',
-   how:'Traçar símbolos de proteção em todas as entradas do local (portas, janelas) com giz consagrado ou sal. Demora 10 minutos.',
-   test:'Teste de Oculto para ativar corretamente. Falha: os símbolos parecem corretos mas não funcionam.',
-   effect:'Cria barreira mística em um local fechado. Entidades de POD menor que o conjurador não podem entrar. Entidades maiores podem tentar forçar (teste de POD×5 delas vs. Oculto do conjurador).',
-   duration:'Até o amanhecer seguinte ou até um símbolo ser apagado fisicamente.'},
-  {id:'s5',skill:'POD vs POD',type:'canon',cat:'Expulsão',name:'Expelir Espírito',mp:'5',san:'1d4',difficulty:'Alta',
-   how:'Imposição de mãos no hospedeiro e recitação do Rito de Expulsão por 3 rodadas completas. O conjurador não pode ser interrompido.',
-   test:'Teste de POD do conjurador vs. POD da entidade possessora. Vitória: expulsão. Derrota: o espírito pode tentar possuir o conjurador.',
-   effect:'Expulsa um espírito, demônio ou entidade menor que esteja possuindo um hospedeiro. O hospedeiro fica inconsciente por 1d4 horas e acorda confuso. A entidade expulsa fica desorientada por 1 rodada.',
-   duration:'Imediato. A entidade não pode repossuir o mesmo alvo por 24 horas.'},
-  {id:'s6',skill:'Psicologia',type:'canon',cat:'Mente',name:'Hipnose Oculta',mp:'2',san:'0/1',difficulty:'Baixa',
-   how:'Contato visual direto por pelo menos 1 rodada completa. Mover as mãos lentamente em padrão específico enquanto fala em voz calma.',
-   test:'Teste de Psicologia do conjurador vs. POD×5 do alvo. Alvos suspeitos ou em alerta têm +20% na resistência.',
-   effect:'Coloca o alvo em estado de sugestão profunda. O conjurador pode plantar até 3 sugestões simples ("durma", "esqueça isso", "abra a porta"). A vítima não recorda da hipnose.',
-   duration:'As sugestões duram até serem cumpridas ou até 24 horas.'},
-  {id:'s7',skill:'Mitos de Cthulhu',type:'canon',cat:'Invocação',name:'Invocar Shantak',mp:'10',san:'2d6',difficulty:'Muito Alta',
-   how:'Ritual noturno ao ar livre com cristal da Coroa de Estrelas. Pronunciar o Nome Verdadeiro do Shantak. Mínimo 30 minutos.',
-   test:'Teste de Mitos de Cthulhu. Falha: o Shantak aparece mas não está vinculado. Falha crítica: aparece hostil.',
-   effect:'Convoca um Shantak — ave reptiliana do tamanho de um elefante — da dimensão dos Sonhos. Se o ritual for perfeito, obedece ordens simples. Pode ser usado como transporte aéreo ou combatente.',
-   duration:'Até o amanhecer, ou até ser dispensado com 2 MP adicionais.'},
-  {id:'s8',skill:'Oculto',type:'canon',cat:'Conhecimento',name:'Ler Magia',mp:'1',san:'0',difficulty:'Baixa',
-   how:'Concentrar-se no texto por 1 minuto enquanto gasta 1 MP. Não requer componentes.',
-   test:'Nenhum teste necessário. Simplesmente funciona se o conjurador souber a magia.',
-   effect:'Revela a camada mística de qualquer texto escrito — encantamentos ocultos, instruções de ritual, símbolos de proteção. Não traduz o idioma, apenas revela o significado mágico. Textos de alto nível podem causar 0/1 San.',
-   duration:'A "leitura" dura enquanto o conjurador se concentrar no texto.'},
-  {id:'s9',skill:'Oculto',type:'canon',cat:'Mente',name:'Maldição de Nitocris',mp:'8',san:'1d8',difficulty:'Alta',
-   how:'Escrever o nome do alvo em papiro com sangue e queimá-lo às 3 da manhã. O conjurador deve conhecer o nome completo do alvo.',
-   test:'Teste de POD do conjurador vs. POD×5 do alvo. Se o alvo resistir, o sonho é vívido mas inofensivo.',
-   effect:'Envia um pesadelo cósmico ao alvo. O alvo deve testar San ao acordar (falha: perde 1d4 San adicional). O alvo acorda exausto, com -10% em todos os testes no dia seguinte.',
-   duration:'Um sonho. Pode ser repetido em noites consecutivas (custo total acumulado).'},
-  {id:'s10',skill:'Oculto',type:'canon',cat:'Mente',name:'Nevoeiro da Loucura',mp:'4',san:'1d4',difficulty:'Média',
-   how:'Contato visual com o alvo por 1 rodada completa. Gesticular em padrão confuso enquanto murmura sílabas sem sentido.',
-   test:'Teste de POD do conjurador vs. INT×5 do alvo. Alvos com INT muito alta resistem naturalmente.',
-   effect:'Cria névoa mental que confunde completamente o alvo. Ele sofre -20% em todos os testes, não consegue reconhecer aliados de inimigos por 1d6 turnos e age aleatoriamente.',
-   duration:'1d6 turnos (≈ 18-36 segundos de combate).'},
-  {id:'s11',skill:'Oculto',type:'canon',cat:'Maldição',name:'Olho do Mal',mp:'4',san:'1d4',difficulty:'Média',
-   how:'Fitar o alvo por 1 rodada e sussurrar a maldição. O alvo precisa estar a menos de 10 metros.',
-   test:'Teste de Oculto. Falha: a maldição volta ao conjurador por 1 hora.',
-   effect:'Marca o alvo com estigma sobrenatural. Por 24 horas: falha automática em Furtividade, criaturas menores fogem ou atacam o alvo primeiro, e o alvo sente que está sendo observado constantemente.',
-   duration:'24 horas. Pode ser quebrada por Encantamento de Proteção ou Banimento Éldrico.'},
-  {id:'s12',skill:'Oculto',type:'canon',cat:'Proteção',name:'Selamento de Tumbas',mp:'5',san:'1d4',difficulty:'Média',
-   how:'Gravar símbolos em todas as entradas e saídas do local com ferramenta de metal. Mínimo 20 minutos por local pequeno.',
-   test:'Teste de Oculto. Falha: apenas metade das entradas são seladas. Falha crítica: o local fica mais permeável ao sobrenatural.',
-   effect:'Sela magicamente um local fechado contra entrada e saída de entidades sobrenaturais. Mortos-vivos, espíritos e entidades dimensionais não conseguem atravessar enquanto os símbolos existirem.',
-   duration:'Permanente até os símbolos serem destruídos fisicamente.'},
-  {id:'s13',skill:'POD',type:'canon',cat:'Comunicação',name:'Transmissão de Pensamento',mp:'2',san:'0/1',difficulty:'Baixa',
-   how:'Concentrar-se no alvo e visualizar sua face claramente. Não requer linha de visão mas requer conhecimento do alvo.',
-   test:'Teste de POD. Falha: o alvo não recebe a mensagem. Falha crítica: mensagem chega distorcida ou vai para alguém errado.',
-   effect:'Envia uma mensagem telepática a um alvo conhecido. O receptor sente como voz interior repentina. Mensagens longas causam dor de cabeça em ambos (0/1 San). Funciona em qualquer distância no mesmo plano.',
-   duration:'Uma mensagem por uso. Respostas requerem novo uso pelo alvo.'},
-  {id:'s14',skill:'Mitos de Cthulhu',type:'canon',cat:'Conhecimento',name:'Visão de Yog-Sothoth',mp:'7',san:'1d8',difficulty:'Alta',
-   how:'Tocar o objeto ou solo do local e recitar o Fragmento do Além por 5 minutos. Não pode ser interrompido.',
-   test:'Teste de Mitos de Cthulhu. Quanto maior o sucesso, mais clara e útil a visão.',
-   effect:'Abre uma janela para o passado ou futuro de um objeto ou local. A visão é não-linear e simbólica. O Mestre escolhe o que é revelado — pode ser uma pista crucial ou algo que o personagem preferia não saber.',
-   duration:'Visão dura 1d4 minutos (para o conjurador). No mundo real, apenas alguns segundos.'},
-  {id:'s15',skill:'Mitos de Cthulhu',type:'canon',cat:'Invocação',name:'Chamar/Dispensar Cthulhu',mp:'30',san:'1d10',difficulty:'Lendária',
-   how:'Ritual de 12 horas com pelo menos 5 cultistas, no oceano ou próximo a ele, nas coordenadas corretas de R\'lyeh. Requer Necronomicon original.',
-   test:'Teste de Mitos de Cthulhu com -30%. Qualquer falha: nada acontece. Falha crítica: algo responde — mas não é o que deveria.',
-   effect:'Tenta estabelecer contato com Cthulhu adormecido. Sucesso parcial: sonhos cósmicos invadem todos no raio de 1km (1d6 San). Sucesso total: consequências determinadas pelo Mestre.',
-   duration:'Efeitos podem durar semanas ou ser permanentes.'},
-  {id:'s16',skill:'Mitos de Cthulhu',type:'canon',cat:'Invocação',name:'Invocar Byakhee',mp:'8',san:'1d6',difficulty:'Alta',
-   how:'Noite clara com estrelas visíveis. Toque no cristal da Coroa de Estrelas e pronuncie o Nome Verdadeiro do Byakhee em voz alta.',
-   test:'Teste de Mitos de Cthulhu. Falha: o Byakhee não aparece. Falha crítica: aparece mas ataca imediatamente.',
-   effect:'Convoca um Byakhee — ser alado do espaço interestelar. Pode voar pelo espaço com passageiros (em êxtase químico específico). Obedece comandos simples por uma viagem ou missão.',
-   duration:'Até o alvorecer ou até a missão ser cumprida.'},
-  {id:'s17',skill:'Mitos de Cthulhu',type:'canon',cat:'Invocação',name:'Invocar Servente de Nyog',mp:'12',san:'2d6',difficulty:'Muito Alta',
-   how:'Círculo de contenção de prata pura (caro e raro). Ritual de 2 horas com velas negras. Nunca tente sem o círculo.',
-   test:'Teste de Mitos de Cthulhu com -20%. Falha crítica: o círculo falha e a criatura está livre.',
-   effect:'Invoca um Servente Cinza — massa amorfa que dissolve matéria orgânica ao toque. Obedece dentro do círculo. Pode ser direcionado a um alvo específico, mas o controle é instável.',
-   duration:'Até ser dispensado (3 MP) ou até o círculo ser quebrado.'},
-  {id:'s18',skill:'Mitos de Cthulhu',type:'canon',cat:'Invocação',name:'Chamar os Inomináveis',mp:'10',san:'1d8',difficulty:'Muito Alta',
-   how:'Ritual ao ar livre à meia-noite, com sangue de três animais diferentes. Proibido chamar sem um alvo claramente definido.',
-   test:'Teste de Mitos de Cthulhu. Sem alvo definido na falha: as entidades atacam o conjurador.',
-   effect:'Convoca 1d3 entidades sem forma de entre as estrelas. Chegam em 1d6 rodadas e atacam o alvo designado com fúria. São difíceis de controlar e podem atacar qualquer coisa próxima após o alvo morrer.',
-   duration:'Até o alvo morrer ou até serem dispensadas (5 MP adicionais).'},
-  {id:'s19',skill:'Automático',type:'canon',cat:'Invocação',name:'Contato com Nyarlathotep',mp:'15',san:'1d10',difficulty:'Lendária',
-   how:'Qualquer ritual que mencione Nyarlathotep em qualquer idioma. Ele já sabe. Não precisa de preparação elaborada — isso é o mais assustador.',
-   test:'Nenhum teste necessário. Ele atende. Sempre. A questão é o que ele vai querer.',
-   effect:'Nyarlathotep aparece em alguma forma (humana ou não) e "concede" o que foi pedido — mas sempre com um custo oculto. O Mestre determina a forma e o preço, que nunca é o que o conjurador espera.',
-   duration:'Até ele decidir ir embora.'},
-  {id:'s20',skill:'Oculto',type:'canon',cat:'Proteção',name:'Estrela Anciã',mp:'3',san:'0',difficulty:'Baixa',
-   how:'Desenhar o símbolo de cinco pontas com o dedo ou ferramenta em qualquer superfície. Demora apenas 1 minuto.',
-   test:'Nenhum teste necessário se o conjurador conhecer a magia. Símbolos desenhados incorretamente não funcionam.',
-   effect:'O símbolo cria uma barreira local. Entidades de POD menor que 60 não podem cruzar ou tocar a superfície marcada. Fácil de destruir fisicamente.',
-   duration:'Até o amanhecer seguinte.'},
-  {id:'s21',skill:'Oculto',type:'canon',cat:'Proteção',name:'Cruz de Fogo',mp:'4',san:'0/1d3',difficulty:'Média',
-   how:'Estender os braços e recitar o Rito do Fogo Sagrado. Pode ser feito em 1 ação de combate.',
-   test:'Teste de Oculto. Falha: as chamas aparecem mas apagam em 1 rodada.',
-   effect:'Chamas místicas (não físicas) envolvem o conjurador em raio de 1m. Criaturas físicas levam 1d6 de dano ao tentar atravessar. Entidades puramente espirituais são empurradas para trás.',
-   duration:'1d4 rodadas.'},
-  {id:'s22',skill:'POD vs POD',type:'canon',cat:'Expulsão',name:'Banimento Éldrico',mp:'6',san:'1d4',difficulty:'Alta',
-   how:'Apontar para a entidade e recitar o Nome do Vazio por 2 rodadas completas. Requer linha de visão.',
-   test:'Teste de POD do conjurador vs. POD da entidade. Quanto maior a entidade, menor a chance de sucesso.',
-   effect:'Força a entidade a retornar à sua dimensão de origem. Entidades com POD maior que o dobro do conjurador são imunes. Entidades de tamanho médio podem resistir parcialmente, recuando mas não sumindo.',
-   duration:'A entidade não pode retornar ao mesmo local por 24 horas.'},
-  {id:'s23',skill:'Mitos de Cthulhu',type:'canon',cat:'Proteção',name:'Selo de Éon',mp:'8',san:'1d6',difficulty:'Alta',
-   how:'Ritual de 8 horas contínuas com componentes raros (cinza de ossos humanos, água benta e tinta de sépia de cefalópode). Apenas em locais fechados.',
-   test:'Teste de Mitos de Cthulhu. Falha: o selo é instável e dura apenas 1d6 dias.',
-   effect:'Cria uma barreira permanente contra influências extradimensionais em um local fechado. Nenhuma entidade pode entrar ou sair pelo sobrenatural. Mortais passam normalmente.',
-   duration:'Permanente — só pode ser quebrado de dentro, por quem criou, ou destruindo a estrutura física.'},
-  {id:'s24',skill:'POD',type:'canon',cat:'Transformação',name:'Forma das Bestas',mp:'6',san:'1d6',difficulty:'Alta',
-   how:'Concentração de 3 rodadas e recitar o Canto Primordial. Requer ter tocado o animal alvo nos últimos 7 dias.',
-   test:'Teste de POD para manter a mente humana durante a transformação. Falha no teste: o conjurador age instintivamente pelo animal.',
-   effect:'Assume traços físicos de um animal específico (FOR+20, CON+20, INT-30). Pode ser apenas traços (garras, visão noturna) ou completo. Em forma completa, a mente fica em risco.',
-   duration:'1d4 horas. Retornar à forma humana requer novo teste de POD.'},
-  {id:'s25',skill:'CON',type:'canon',cat:'Transformação',name:'Pele de Serpente',mp:'4',san:'1d4',difficulty:'Média',
-   how:'Passar as mãos pelo corpo enquanto recita o Rito da Escama. Pode ser feito em 1 ação de combate.',
-   test:'Teste de CON. Falha: a transformação é dolorosa e penaliza DES em -20% por 1 hora.',
-   effect:'A pele endurece em escamas quitinosas, conferindo Armadura +2 contra dano físico. Visualmente perturbador: qualquer um que veja deve testar San (0/1).',
-   duration:'1d6 rodadas de combate ou 10 minutos fora de combate.'},
-  {id:'s26',skill:'Mitos de Cthulhu',type:'canon',cat:'Transformação',name:'Transferência de Alma',mp:'15',san:'1d10',difficulty:'Lendária',
-   how:'Ritual de 4 horas com o alvo presente e inconsciente. Ambos devem estar no mesmo local. Componentes caríssimos e raros.',
-   test:'Teste de POD×2 do conjurador. Falha: as almas ficam presas entre os corpos (ambos incapacitados por 1d6 dias).',
-   effect:'Transfere a consciência para outro corpo vivo. O corpo original fica cataléptico. O conjurador opera o novo corpo com todas as perícias mentais mas atributos físicos do hospedeiro.',
-   duration:'Indefinido. Reversão requer o mesmo ritual. Se o corpo hospedeiro morrer: teste de POD para não perder a alma permanentemente.'},
-  {id:'s27',skill:'POD',type:'canon',cat:'Ilusão',name:'Desvanecer',mp:'5',san:'1d4',difficulty:'Média',
-   how:'Concentrar-se em "não ser visto" por 1 rodada. Funciona melhor em ambientes com distrações visuais.',
-   test:'Teste de POD. Falha: o personagem fica apenas parcialmente invisível (-20% para ser notado, não invisível total).',
-   effect:'O conjurador torna-se psiquicamente "imperceptível" — os olhos deslizam sobre ele. Permanece físico: pode ser tocado, faz barulho, deixa rastros. Ataques ou sons altos encerram o efeito.',
-   duration:'1d4 rodadas completas de invisibilidade.'},
-  {id:'s28',skill:'Psicologia',type:'canon',cat:'Conhecimento',name:'Leitura de Aura',mp:'2',san:'0/1',difficulty:'Baixa',
-   how:'Focar nos olhos do alvo por 30 segundos com concentração. Pode ser feito discretamente.',
-   test:'Teste de Psicologia. Falha: a leitura é confusa. Falha crítica: o conjurador absorve emoções negativas do alvo (0/1d3 San).',
-   effect:'Revela o estado emocional atual, se há possessão ativa, se o alvo usa magia, e o nível aproximado de sanidade. Alvos com POD muito alto podem perceber que estão sendo lidos.',
-   duration:'Instantâneo. Snapshot do momento atual.'},
-  {id:'s29',skill:'POD vs POD',type:'canon',cat:'Mente',name:'Dominação',mp:'6',san:'1d4',difficulty:'Alta',
-   how:'Manter contato visual ininterrupto por 2 rodadas e pronunciar o Comando em voz firme.',
-   test:'Teste de POD do conjurador vs. POD×5 do alvo. Se o alvo vencer: fica imune à dominação deste conjurador por 24 horas.',
-   effect:'Controle mental direto. O alvo executa ordens verbais simples sem questionar. Não pode ser forçado a se machucar gravemente — nesses casos, novo teste de resistência com +20%.',
-   duration:'Enquanto o conjurador mantiver concentração e gastar 1 MP por rodada adicional.'},
-  {id:'s30',skill:'POD',type:'canon',cat:'Sonho',name:'Sonho Lúcido',mp:'3',san:'0',difficulty:'Baixa',
-   how:'Adormecer voluntariamente com concentração no destino onírico. Requer ambiente seguro e 8 horas disponíveis.',
-   test:'Teste de POD para navegar conscientemente. Falha: o conjurador sonha, mas sem controle.',
-   effect:'Entra na Terra dos Sonhos com consciência plena. Pode interagir com sonhadores, visitar locais oníricos e encontrar entidades dos Sonhos. Morte nos sonhos não mata o corpo — mas pode custar Sanidade.',
-   duration:'Dura enquanto o corpo dorme (até 8 horas).'},
-  {id:'s31',skill:'Automático',type:'canon',cat:'Conhecimento',name:'Memória Perfeita',mp:'2',san:'0',difficulty:'Baixa',
-   how:'Fechar os olhos, concentrar-se no momento exato a revisitar e gastar 2 MP.',
-   test:'Nenhum teste. Sempre funciona — mas memórias traumáticas exigem teste de San (0/1d3) ao revisar.',
-   effect:'Revive uma memória com clareza absoluta de todos os sentidos: sons, cheiros, visões, sensações físicas. Útil para revisar cenas de crime, conversas importantes ou detalhes esquecidos.',
-   duration:'O personagem pode "pausar" na memória por até 10 minutos de concentração.'},
-  {id:'s32',skill:'Mitos de Cthulhu',type:'canon',cat:'Conhecimento',name:'Sussurro das Estrelas',mp:'5',san:'1d4',difficulty:'Média',
-   how:'Ao ar livre em noite estrelada, focar em uma constelação específica por 10 minutos.',
-   test:'Teste de Mitos de Cthulhu. Falha: ruído estático cósmico sem informação útil.',
-   effect:'Recebe fragmentos de comunicação do espaço profundo — informações sobre entidades, locais ou eventos cósmicos. As mensagens são simbólicas e raramente literais. O Mestre determina o que é revelado.',
-   duration:'Sessão de 10 minutos de "escuta".'},
-  // Homebrew Karma Eterno
-  {id:'h1',skill:'Oculto',type:'homebrew',cat:'Memória',name:'Sussurro do Anterior',mp:'3',san:'1d4',difficulty:'Baixa',
-   how:'Tocar uma superfície (parede, chão, pedra) com a palma da mão e fechar os olhos. Concentrar por 1 minuto.',
-   test:'Teste de Oculto. Quanto melhor o resultado, mais clara e mais antiga a memória acessada.',
-   effect:'Ouve ecos de eventos passados no local tocado. Quanto mais antigo o evento, mais fragmentada a visão. Locais com eventos traumáticos mostram imagens mais vívidas.',
-   duration:'A visão dura enquanto a mão tocar a superfície (máx. 5 minutos).'},
-  {id:'h2',skill:'Oculto',type:'homebrew',cat:'Memória',name:'Marca da Fundação',mp:'5',san:'1d6',difficulty:'Média',
-   how:'Gravar o símbolo da Fundação em qualquer superfície com ferramenta de metal. Demora 15 minutos. O símbolo precisa ser perfeito.',
-   test:'Teste de Oculto. Falha: o símbolo não carrega energia. Falha crítica: o símbolo registra algo indesejado.',
-   effect:'Grava um "ponto de memória" permanente no local. Futuros usuários de Sussurro do Anterior verão este momento com clareza cristalina. Irreversível — o ponto existe para sempre na estrutura do local.',
-   duration:'Permanente.'},
-  {id:'h3',skill:'POD',type:'homebrew',cat:'Ilusão',name:'Véu de Novavera',mp:'2',san:'0',difficulty:'Baixa',
-   how:'Concentrar-se em "pertencer ao ambiente" por 1 ação. Funciona melhor em locais conhecidos.',
-   test:'Nenhum teste para uso básico. Para manter contra entidades alertas: teste de POD vs. INT da entidade.',
-   effect:'O conjurador torna-se psiquicamente ignorado — não invisível, mas simplesmente não notado. Entidades com INT < 10 ignoram por 1d4 turnos extras. Entidades muito antigas são completamente imunes.',
-   duration:'1 turno de invisibilidade social garantida.'},
-  {id:'h4',skill:'POD',type:'homebrew',cat:'Vínculo',name:'Pacto dos Treze',mp:'13',san:'1d10',difficulty:'Muito Alta',
-   how:'Todos os participantes presentes, cada um gastar 13 MP simultaneamente. Ritual de 13 minutos no mesmo local. Irreversível.',
-   test:'Todos testam POD. Qualquer falha: o ritual falha e custa San igualmente.',
-   effect:'Cria vínculo místico permanente entre 2-4 investigadores. Cada um sente o nível de Sanidade dos outros (alto/médio/baixo/crítico). Compartilham sonhos e pesadelos. Em momentos de crise, podem enviar 1d3 San a outro membro.',
-   duration:'Permanente e irreversível.'},
-  {id:'h5',skill:'POD',type:'homebrew',cat:'Profecia',name:'Olho de Valdecir',mp:'4',san:'1d4',difficulty:'Média',
-   how:'Fechar os olhos, concentrar por 5 minutos em silêncio absoluto. Não pode haver distrações.',
-   test:'Teste de POD. Falha: a visão é completamente incoerente. Falha crítica: a visão mostra algo que enlouquece (1d6 San extra).',
-   effect:'Fragmentos de visões futuras se manifestam — imagens simbólicas de algo que acontecerá nas próximas sessões. O Mestre fornece uma pista vaga. A visão pode ser enganosa, metafórica ou incompleta.',
-   duration:'A visão dura 1d4 minutos e não pode ser repetida para o mesmo evento futuro.'},
-  {id:'h6',skill:'Oculto',type:'homebrew',cat:'Ambiental',name:'Silêncio da Área Verde',mp:'3',san:'1d3',difficulty:'Baixa',
-   how:'Estender as mãos e recitar o Canto do Silêncio em voz baixa. Pode ser feito em 1 ação.',
-   test:'Teste de Oculto. Falha: o silêncio é incompleto (sussurros ainda passam).',
-   effect:'Cria bolha de silêncio absoluto de 5m ao redor do conjurador. Sons não entram nem saem. Útil para conversas secretas, emboscadas e rituais que exigem silêncio. Em locais de poder, dura o dobro.',
-   duration:'1d6 minutos.'},
-  {id:'h7',skill:'Oculto',type:'homebrew',cat:'Invocação',name:'Chamado do Rio Vermelho',mp:'6',san:'1d6',difficulty:'Alta',
-   how:'Deve ser realizado próximo a um rio ou corpo d\'água. Oferenda de grãos, sal e cachaça jogada na água.',
-   test:'Teste de Oculto. A entidade não é controlada — apenas convocada. Pode ignorar o conjurador.',
-   effect:'Invoca uma entidade fluvial da região. Pode revelar segredos de corpos d\'água locais, guiar até pontos submersos ou proteger o grupo de criaturas aquáticas por uma cena. Deve ser tratada com respeito.',
-   duration:'A entidade permanece por 1 cena e vai embora por conta própria.'},
-  {id:'h8',skill:'História ou Oculto',type:'homebrew',cat:'Memória',name:'Memória de Pedra',mp:'4',san:'1d4',difficulty:'Média',
-   how:'Tocar a fundação ou parede mais antiga de uma construção e manter contato por 3 minutos.',
-   test:'Teste de História ou Oculto. Quanto melhor o resultado, mais detalhes são revelados.',
-   effect:'Absorve a "memória" de uma construção — aprende quem a construiu, com que intenção, e os eventos mais marcantes que ocorreram nela. Em fundações muito antigas, pode revelar símbolos originais e seus propósitos.',
-   duration:'Visão dura até 10 minutos de concentração.'},
-  {id:'h9',skill:'POD',type:'homebrew',cat:'Memória',name:'Herança Sanguínea',mp:'3',san:'1d3',difficulty:'Baixa',
-   how:'Segurar um objeto pessoal de um ancestral direto (avô, bisavô) e concentrar por 5 minutos.',
-   test:'Teste de POD. Falha: memórias fragmentadas demais para serem úteis.',
-   effect:'Acessa memórias de um ancestral direto — vê o que essa pessoa viu e sentiu em um momento específico de sua vida. O conjurador escolhe o período aproximado, o Mestre determina o que é mostrado.',
-   duration:'A memória dura até 15 minutos de concentração.'},
-  {id:'h10',skill:'Mitos de Cthulhu ou Oculto',type:'homebrew',cat:'Temporal',name:'Cicatriz Temporal',mp:'7',san:'1d6',difficulty:'Alta',
-   how:'Ritual de 30 minutos no local alvo, gravando três símbolos específicos em pontos distintos do espaço.',
-   test:'Teste de Mitos de Cthulhu ou Oculto. Falha: o efeito dura apenas 1d6 dias.',
-   effect:'O local "resiste" à passagem do tempo. Objetos não envelhecem, documentos não deterioram, sangue não seca. Útil para preservar evidências ou locais de importância. Não afeta seres vivos.',
-   duration:'1 ano. Pode ser renovado com novo ritual.'},
+// ══ CANÔNICOS — ENCANTAMENTOS (Livro do Guardião Cap.12) ══
+{id:'c01',type:'canon',cat:'Encantamento',skill:'POD',name:'Abraço de Nyogtha',mp:'1 + 2× dano/rodada',san:'1D20',difficulty:'Alta',
+ how:'Gastar 1 PM para iniciar. O alvo deve estar no alcance de uma conversa. Manter concentração a cada rodada gastando PM = dobro do dano causado.',
+ test:'Teste resistido de POD vs. alvo a cada rodada. Se o conjurador perder, o feitiço termina.',
+ effect:'A vítima sente um tentáculo esmagando seu coração, perdendo 1D3 PV por rodada. O alvo fica paralisado enquanto dura o efeito. Quando atingir 0 PV, o tórax explode e o coração fumegante aparece na mão do conjurador.',
+ duration:'Enquanto o conjurador mantiver concentração e vencer o teste resistido.'},
+
+{id:'c02',type:'canon',cat:'Proteção',skill:'Oculto',name:'Alerta',mp:'1 por pedra',san:'0',difficulty:'Baixa',
+ how:'Posicionar pedras brancas no chão (máx. 1 metro entre elas). Conjurar sobre as pedras em 5 rodadas.',
+ test:'Nenhum teste necessário.',
+ effect:'Se qualquer pedra for movida, o conjurador acorda imediatamente e percebe, mesmo dormindo. O feitiço então se desfaz.',
+ duration:'Até uma pedra ser movida.'},
+
+{id:'c03',type:'canon',cat:'Banimento',skill:'POD vs. POD',name:'Banimento de Yde Etad',mp:'1D4+3 por conjurador',san:'1D4 cada',difficulty:'Alta',
+ how:'Mínimo 3 pessoas (múltiplo de 3), todos sabendo o feitiço. Ao ar livre à meia-noite. Queimar símbolo do alvo. Rituais duram mínimo 1 hora.',
+ test:'Teste resistido de POD do conjurador com maior POD vs. alvo. Cada grupo extra de 3 conjuradores dá um dado de bônus.',
+ effect:'Envia a maioria das inteligências transdimensionais de volta à origem. Permanente e irrevogável para cada alvo individual. Não funciona contra criaturas sob comando de outro.',
+ duration:'Permanente.'},
+
+{id:'c04',type:'canon',cat:'Encantamento',skill:'POD vs. INT',name:'Canção de Hastur',mp:'1D4 por rodada',san:'1D4 por rodada',difficulty:'Muito Alta',
+ how:'Apenas em noites em que Aldebaran esteja visível. Rolar POD para conseguir entoar a melodia alienígena correta. Efeito começa após 3 rodadas.',
+ test:'Teste de POD para iniciar. A canção afeta apenas o alvo escolhido.',
+ effect:'Causa 1D6 de dano por rodada. Cicatrizes reduzem APA da vítima em 3D10 a cada 2 rodadas. Rupturas internas reduzem CON em 3D10 a cada 4 rodadas. Quando CON=0 ou PV=0, o corpo explode.',
+ duration:'Enquanto o conjurador cantar e o alvo estiver à vista.'},
+
+{id:'c05',type:'canon',cat:'Conhecimento',skill:'Oculto',name:'Cântico de Thoth',mp:'10',san:'1D4',difficulty:'Média',
+ how:'30 minutos de cântico de concentração.',
+ test:'Nenhum teste de conjuração. Funciona automaticamente.',
+ effect:'Concede um dado de bônus em qualquer teste intelectual específico: aprender feitiço, traduzir texto, deduzir símbolo, ganhar conhecimento. Deve ser usado imediatamente após o cântico.',
+ duration:'Um único teste com dado de bônus.'},
+
+{id:'c06',type:'canon',cat:'Maldição',skill:'POD vs. CON',name:'Causar Cegueira',mp:'8',san:'2D6',difficulty:'Alta',
+ how:'Um dia inteiro de ritual sobre o alvo.',
+ test:'Teste resistido de POD vs. alvo (sucesso automático se consentido).',
+ effect:'Cegueira completa e permanente como se fosse derrame. O mesmo feitiço pode reverter a cegueira se olhos e nervos ópticos estiverem intactos.',
+ duration:'Permanente até ser revertida.'},
+
+{id:'c07',type:'canon',cat:'Transformação',skill:'POD',name:'Consumir Semblante',mp:'10 por 6 horas + 5 POD',san:'1D20',difficulty:'Muito Alta',
+ how:'Vários dias com o cadáver ou pessoa escolhida. Gastar 10 PM por cada 6 horas de conjuração, mais 5 POD permanentes.',
+ test:'Nenhum teste se o processo for completado.',
+ effect:'Permite assumir a aparência viva de uma pessoa consumida. A sombra permanece na forma original. Ao perder PV, retorna à forma real. Retorno leva 20 segundos; assumir nova forma leva 1D3 minutos.',
+ duration:'Indefinida. Pode manter múltiplos disfarces.'},
+
+{id:'c08',type:'canon',cat:'Proteção',skill:'Oculto',name:'Criar Barreira de Naach-Tith',mp:'variável',san:'1D10 cada',difficulty:'Alta',
+ how:'1 minuto de conjuração. Cada PM gasto na criação fornece 3D10 de FOR à barreira esférica de 100m de diâmetro.',
+ test:'Nenhum teste para criar. Criaturas aprisionadas fazem teste resistido de FOR vs. FOR da barreira para escapar.',
+ effect:'Barreira esférica física e mágica. Projéteis atravessam se dano superar 1/5 da FOR da barreira, destruindo-a. Pode ser usada para proteger ou aprisionar.',
+ duration:'1D4+4 horas.'},
+
+{id:'c09',type:'canon',cat:'Ilusão',skill:'Oculto',name:"Criar Névoa de R'lyeh",mp:'2',san:'0',difficulty:'Baixa',
+ how:'Instantâneo. Gestos específicos na direção desejada.',
+ test:'Nenhum teste necessário.',
+ effect:'Cria neblina densa em volume oval de 3×3×4,5 metros diretamente à frente do conjurador. Obscurece a visão completamente.',
+ duration:'1D6+4 rodadas, então se desfaz sem deixar rastros.'},
+
+{id:'c10',type:'canon',cat:'Necromancia',skill:'Oculto',name:'Criar Zumbi',mp:'16',san:'1D6',difficulty:'Alta',
+ how:'Derramar líquido ritual (com sangue do conjurador) sobre um cadáver. Deixar madurar uma semana inteira. Retornar e entoar o ritual de vinculação por 30 minutos.',
+ test:'Nenhum teste se realizado corretamente.',
+ effect:'O cadáver ressuscita e obedece ordens simples ("vigie", "busque", "mate"). Continua apodrecendo após ressurreição; substitutos devem ser criados periodicamente.',
+ duration:'Até apodrecer completamente ou o conjurador morrer.'},
+
+{id:'c11',type:'canon',cat:'Maldição',skill:'POD vs. INT',name:'Decomposição Verde',mp:'10 POD + ritual',san:'2D8',difficulty:'Muito Alta',
+ how:'Um dia de concentração e encantamento para Gla\'aki. Nas próximas 24h, entregar pessoalmente uma folha verde ao alvo.',
+ test:'Teste resistido de POD vs. alvo ao amanhecer do dia seguinte.',
+ effect:'Em 7 dias, a vítima se transforma em mofo verde. Manchas verdes, pelos de mofo, órgãos apodrecendo. No sexto dia, faculdades mentais deterioram e movimentação se torna impossível. Única cura: matar o conjurador.',
+ duration:'7 dias até morte por decomposição (salvo cura).'},
+
+{id:'c12',type:'canon',cat:'Encantamento',skill:'Oculto',name:'Devastar',mp:'3',san:'1',difficulty:'Média',
+ how:'1 rodada de conjuração. O alvo deve estar a até 10 metros.',
+ test:'Teste resistido de POD vs. alvo.',
+ effect:'Dores intensas, pele com bolhas, olhos enevoados com sangue. O alvo fica completamente incapacitado. Após recuperação, custará 1/1D6+1 de San ao alvo.',
+ duration:'1D6 rodadas de incapacitação. Recuperação completa em 3D10 minutos.'},
+
+{id:'c13',type:'canon',cat:'Maldição',skill:'POD vs. CON',name:'Dissolver a Carne',mp:'1 PM por 15 TAM (morta); 5 PM por 15 TAM (viva)',san:'1D4-1D6',difficulty:'Alta',
+ how:'5 rodadas de conjuração. Funciona em carne morta ou viva.',
+ test:'Para carne viva: teste resistido de POD vs. alvo.',
+ effect:'Aquece a carne até o ponto de fusão em uma rodada. 1D4 de dano para cada 15 TAM afetados. Pode causar cegueira, surdez ou sufocamento se áreas específicas forem visadas.',
+ duration:'Instantâneo — o dano é permanente.'},
+
+{id:'c14',type:'canon',cat:'Controle',skill:'POD vs. POD',name:'Dominação',mp:'1',san:'1',difficulty:'Média',
+ how:'Instantâneo. Alcance máximo de 10 metros.',
+ test:'Teste resistido de POD vs. alvo. Pode ser reconjurado imediatamente para manter controle contínuo.',
+ effect:'O alvo obedece qualquer comando até o fim da rodada. Pode ser reconjurado tantas vezes quanto o conjurador conseguir. Não funciona para ações contra a natureza básica do alvo.',
+ duration:'Até o fim da rodada de combate atual. Reconjuração instantânea.'},
+
+{id:'c15',type:'canon',cat:'Memória',skill:'POD vs. POD',name:'Enevoar Memória',mp:'1D6',san:'1D2',difficulty:'Média',
+ how:'O conjurador deve ver o alvo e o alvo deve receber instruções. O evento a bloquear deve ser específico.',
+ test:'Teste resistido de POD vs. alvo.',
+ effect:'Bloqueia a memória consciente de um evento específico. Pesadelos vagamente relacionados podem persistir. Não pode bloquear conhecimento de Mitos ou feitiços.',
+ duration:'Permanente até ser contrafeito.'},
+
+{id:'c16',type:'canon',cat:'Controle',skill:'POD vs. POD',name:'Enfeitiçar Vítima',mp:'2',san:'1D6',difficulty:'Média',
+ how:'Conversar calmamente com o alvo por cerca de uma rodada antes.',
+ test:'Teste resistido de POD vs. alvo após uma rodada de conversa.',
+ effect:'A vítima fica entorpecida e muda até ser atingida fisicamente ou receber choque equivalente.',
+ duration:'Até receber impacto físico ou evento equivalente.'},
+
+{id:'c17',type:'canon',cat:'Encantamento',skill:'POD vs. POD',name:'Encarquilhar',mp:'variável',san:'metade dos PM',difficulty:'Alta',
+ how:'Instantâneo. Investir tantos PM quanto desejar; pagar metade disso em San.',
+ test:'Teste resistido de POD vs. alvo — ou pode ser lançado sem teste na versão visceral.',
+ effect:'O alvo perde 1 PV para cada PM investido. A pele escurece e murcha. Versão visceral: o alvo acredita ser atacado por entidades do Mythos, perdendo San adicional 1/1D6.',
+ duration:'Instantâneo — dano permanente.'},
+
+{id:'c18',type:'canon',cat:'Ilusão',skill:'POD vs. INT',name:'Espelho de Tarkhun Atep',mp:'5',san:'1',difficulty:'Média',
+ how:'Meio dia de preparação. O conjurador precisa de um espelho grande o suficiente para refletir cabeça e pescoço.',
+ test:'Nenhum teste. A imagem aparece quando o alvo olhar qualquer superfície reflexiva.',
+ effect:'Projeta a imagem do conjurador em qualquer espelho ou superfície reflexiva vista pelo alvo, em qualquer lugar da Terra. O conjurador pode ver o entorno do alvo e falar frases curtas.',
+ duration:'Enquanto o conjurador mantiver concentração no espelho.'},
+
+{id:'c19',type:'canon',cat:'Morte',skill:'POD vs. POD',name:'Feitiço de Morte',mp:'24',san:'3D10',difficulty:'Muito Alta',
+ how:'1D3 rodadas de concentração. O alvo deve estar a até 10 metros.',
+ test:'Teste resistido de POD a cada rodada de concentração.',
+ effect:'Após 1D3 rodadas: pele com bolhas (1D3 dano). Rodada seguinte: 1D6 dano. Terceira rodada em diante: alvo pega fogo (1D10 dano/rodada). Queima de dentro para fora — impossível prestar ajuda.',
+ duration:'Até a morte da vítima. Testemunhas perdem San 1/1D6.'},
+
+{id:'c20',type:'canon',cat:'Encantamento',skill:'POD vs. POD',name:'Gorgolejo das Profundezas',mp:'8',san:'1D6',difficulty:'Alta',
+ how:'Uma rodada de entoação mental. O conjurador deve ver o alvo.',
+ test:'Teste resistido de POD vs. alvo.',
+ effect:'Os pulmões do alvo se enchem de água do mar. O alvo afunda no chão, sufocando, recebendo 1D8 de dano por rodada. Para cada rodada: teste Extremo de CON para expelir a água e encerrar o feitiço.',
+ duration:'Até o alvo passar no teste de CON ou morrer.'},
+
+{id:'c21',type:'canon',cat:'Medo',skill:'Oculto',name:'Implantar Medo',mp:'12',san:'1D6',difficulty:'Alta',
+ how:'Instantâneo. Apontar um dedo para o alvo enquanto invoca uma maldição.',
+ test:'Nenhum — o efeito é automático ao ver o alvo.',
+ effect:'Medo tremendo e paralisante. O alvo perde 0/1D6 San e foge compulsoriamente para um local "seguro". Suas ações são interrompidas.',
+ duration:'O alvo foge até chegar ao local seguro.'},
+
+{id:'c22',type:'canon',cat:'Maldição',skill:'POD vs. INT',name:'Maldição da Casca Pútrida',mp:'5',san:'10',difficulty:'Alta',
+ how:'1 hora de conjuração. O conjurador deve ter um objeto pessoal do alvo. Aplica dado de penalidade ao alvo se conjurado enquanto ele dorme.',
+ test:'Teste resistido de INT vs. alvo.',
+ effect:'A vítima percebre sua pele apodrecendo e órgãos caindo (1D10 San). Desmaia e acorda incólume. Psicanálise bem-sucedida restaura metade da San perdida.',
+ duration:'O ciclo dura ~20 minutos.'},
+
+{id:'c23',type:'canon',cat:'Maldição',skill:'POD vs. POD',name:'Maldição Pavorosa de Azathoth',mp:'4',san:'1D6',difficulty:'Alta',
+ how:'1 rodada. Repetir o nome secreto de Azathoth contra a vítima.',
+ test:'Teste resistido de POD vs. alvo.',
+ effect:'O alvo perde 3D6 de POD permanentemente.',
+ duration:'Permanente — a perda de POD não se recupera.'},
+
+{id:'c24',type:'canon',cat:'Maldição',skill:'Sorte',name:'Mau Olhado',mp:'10',san:'1D4',difficulty:'Média',
+ how:'1 rodada. O alvo precisa estar à vista. A vítima pode sentir um arrepio mas não saber que foi amaldiçoada.',
+ test:'Teste automático de sucesso se o feitiço for conjurado.',
+ effect:'Chances de Sorte reduzidas à metade. Dado de penalidade em todos os testes de atributos. Armas com defeito em rolagens ≥75%. Feitiços de Invocar têm chances reduzidas à metade.',
+ duration:'Até o próximo nascer do sol, ou até o conjurador remover, ou até alguém ferir o conjurador.'},
+
+{id:'c25',type:'canon',cat:'Destruição',skill:'Oculto',name:'Onda do Oblívio',mp:'30+',san:'1D8',difficulty:'Muito Alta',
+ how:'1 hora de conjuração. O conjurador deve estar na água salgada, visão livre para o alvo. Outros podem contribuir com PM para aumentar o tamanho.',
+ test:'Nenhum. O feitiço funciona automaticamente com PM suficientes.',
+ effect:'Onda violenta de 90m³ (suficiente para afundar chalupa). Com PM adicionais: cada PM extra acrescenta 30cm à onda. Pessoas engolidas desaparecem para sempre.',
+ duration:'Instantâneo.'},
+
+{id:'c26',type:'canon',cat:'Controle',skill:'Charme/Persuasão',name:'Palavras de Poder',mp:'3 por 10 minutos',san:'1D6',difficulty:'Média',
+ how:'Discurso improvisado de pelo menos 10 minutos. A cada 10 minutos: gastar 3 PM e fazer teste de Charme ou Persuasão.',
+ test:'Teste de Charme ou Persuasão. Se falhar, o discurso termina sem efeito.',
+ effect:'O público acredita totalmente no que foi dito pelo conjurador.',
+ duration:'1D3 dias.'},
+
+{id:'c27',type:'canon',cat:'Conhecimento',skill:'Oculto',name:'Pó de Ibn-Ghazi',mp:'1 por dose',san:'0',difficulty:'Baixa',
+ how:'2 dias de preparação. Aplicar o pó em 1 rodada.',
+ test:'Nenhum teste para aplicar.',
+ effect:'Torna visível criaturas e entidades normalmente invisíveis na área afetada.',
+ duration:'Enquanto o pó estiver presente — geralmente uma cena.'},
+
+// ══ CANÔNICOS — CONTACTAR (agrupados) ══
+{id:'c28',type:'canon',cat:'Contactar',skill:'Oculto/Automático',name:'Contactar Abissal',mp:'3',san:'1D3',difficulty:'Média',
+ how:'À beira de oceano ou mar, próximo de cidades de abissais. Jogar pedras inscritas na água. 1D6+4 rodadas.',
+ test:'Automático se houver abissais próximos. Não há controle sobre eles — apenas contato.',
+ effect:'Estabelece contato com um abissal. Ele pode negociar, ajudar — ou devorar o conjurador.',
+ duration:'Até a criatura decidir partir.'},
+
+{id:'c29',type:'canon',cat:'Contactar',skill:'Oculto/Automático',name:'Contactar Carniçal',mp:'5',san:'1D3',difficulty:'Baixa',
+ how:'Em cemitérios com mais de um século de existência. Noites iluminadas pela lua são as melhores. 1D6+4 rodadas.',
+ test:'Automático se houver carniçais próximos.',
+ effect:'Estabelece contato com um carniçal. Podem negociar, revelar informações sobre mortos e locais subterrâneos.',
+ duration:'Até a criatura decidir partir.'},
+
+{id:'c30',type:'canon',cat:'Contactar',skill:'POD',name:'Contactar Espíritos dos Mortos',mp:'3+',san:'1D3',difficulty:'Média',
+ how:'Tenda de lençóis brancos perto de rio com jarras de água do córrego. Cantorias e danças. Somar todos os PM dos participantes, multiplicar por 5 — esse é o percentual de chance em 1D100.',
+ test:'Jogar 1D100 contra total de PM × 5.',
+ effect:'Vozes dos mortos emergem das jarras. É possível conversar com eles — mas os mortos sabem apenas o que sabiam em vida e alguns não percebem que estão mortos.',
+ duration:'Durante o ritual.'},
+
+{id:'c31',type:'canon',cat:'Contactar',skill:'POD',name:'Contactar Divindade',mp:'5 POD permanentes',san:'1D6',difficulty:'Muito Alta',
+ how:'1D6+4 rodadas. Sacrificar 5 de POD permanentemente. Chance de sucesso = metade do POD restante.',
+ test:'Rolar ≤ metade do POD após o sacrifício.',
+ effect:'A divindade (qualquer Grande Antigo ou Deus) entra em contato de forma semiamigável. Improvável que dê algo de valor a não-adoradores. Se entediada ou ofendida: esmagará ou enlouquecerá o conjurador.',
+ duration:'Algumas horas ou dias de jogo após o ritual.'},
+
+// ══ CANÔNICOS — CONVOCAR/DISPERSAR ══
+{id:'c32',type:'canon',cat:'Convocar',skill:'POD',name:'Convocar Divindade',mp:'1+ por pessoa',san:'1D10 (conjurador)',difficulty:'Lendária',
+ how:'1 a 100 minutos de cântico. Cada PM gasto = 1% de chance de sucesso. Resultado 96-100 sempre falha. Conjurador perde 1D10 San. Todos presentes perdem San se o deus aparecer.',
+ test:'Rolar 1D100 contra total de PM gastos (máx. 99%).',
+ effect:'O avatar, deus ou Grande Antigo se manifesta fisicamente. Na maioria das vezes quer ficar e está faminto. O Guardião determina motivações.',
+ duration:'Até ser dispersado ou ir embora por conta própria.'},
+
+{id:'c33',type:'canon',cat:'Dispersar',skill:'POD',name:'Dispersar Divindade',mp:'variável',san:'0',difficulty:'Muito Alta',
+ how:'1 minuto + 1 rodada por participante. PM iniciais = POD do deus ÷ 25 (dão 5% de chance). PM adicionais: cada 1 PM = +5% de chance.',
+ test:'Rolar 1D100 contra a chance total acumulada (máx. 99%).',
+ effect:'A divindade parte de volta para sua dimensão de origem. Pode ser conjurado a qualquer hora e lugar, diferente da versão Convocar.',
+ duration:'Permanente se bem-sucedido.'},
+
+// ══ CANÔNICOS — INVOCAR/VINCULAR ══
+{id:'c34',type:'canon',cat:'Invocar',skill:'POD vs. POD',name:'Invocar/Vincular Byakhee',mp:'1 por 10% de chance',san:'1D4',difficulty:'Alta',
+ how:'5 minutos por PM gasto. Soprar apito de liga de prata e meteorito enquanto entoa. Apenas quando Aldebaran está acima do horizonte (out-mar, hemisfério norte).',
+ test:'Rolar 1D100 contra % de chance (PM gastos × 10). 96-100 = sempre falha. Vincular: teste resistido de POD vs. byakhee.',
+ effect:'Um byakhee desce gelado do espaço sideral. Se vinculado, obedece um comando. Após executado, retorna ao espaço.',
+ duration:'Até o comando ser cumprido ou o conjurador morrer.'},
+
+{id:'c35',type:'canon',cat:'Invocar',skill:'POD vs. POD',name:'Invocar/Vincular Vampiro de Fogo',mp:'1 por 10% de chance',san:'1D4',difficulty:'Alta',
+ how:'À noite com Fomalhaut visível (set-nov, hemisfério norte). Presença de fogueira ou chamas necessária.',
+ test:'Rolar 1D100 contra % de chance. Vincular: teste resistido de POD vs. criatura.',
+ effect:'Um vampiro de fogo cai dos céus como estrela cadente. Vinculado, obedece um comando.',
+ duration:'Até o comando ser cumprido.'},
+
+{id:'c36',type:'canon',cat:'Invocar',skill:'POD vs. POD',name:'Invocar/Vincular Horror Caçador',mp:'1 por 10% de chance',san:'1D4',difficulty:'Alta',
+ how:'Apenas à noite, ao ar livre. Sem sacrifício preparado: o horror captura o conjurador ao aparecer.',
+ test:'Rolar 1D100 contra % de chance. Vincular: teste resistido de POD. Sacrifício de sangue senciente necessário.',
+ effect:'O horror caçador aparece instantaneamente. Vinculado, obedece um comando. Sem vínculo: ataca o conjurador.',
+ duration:'Até o comando ser cumprido.'},
+
+{id:'c37',type:'canon',cat:'Invocar',skill:'POD vs. POD',name:'Invocar/Vincular Noitesguio',mp:'1 por 10% de chance',san:'1D4',difficulty:'Alta',
+ how:'Noites sem lua. Pedra inscrita com o Símbolo Ancestral deve estar presente.',
+ test:'Rolar 1D100 contra % de chance. Vincular: teste resistido de POD.',
+ effect:'A singular silhueta horripilante do horror alado sem rosto aparece. Vinculado, obedece um comando.',
+ duration:'Até o comando ser cumprido.'},
+
+{id:'c38',type:'canon',cat:'Invocar',skill:'POD vs. POD',name:'Invocar/Vincular Serviçal dos Deuses Exteriores',mp:'3 por 10% de chance',san:'3D4',difficulty:'Muito Alta',
+ how:'Flauta necessária para conjurar. Custo triplo de PM. Noites especialmente profanas (Véspera do Solstício, Samhain, Noite de Santa Valburga).',
+ test:'Rolar 1D100 contra % de chance (3 PM = 10%). 96-100 = sempre falha. Vincular: flauta encantada dá dado de bônus.',
+ effect:'O serviçal dos Deuses Exteriores aparece entre ecos de flautas insanas. Pode responder perguntas sobre Azathoth (+1D3 Mitos). Toca suas flautas: ouvintes ficam obcecados com recriar as escalas cósmicas.',
+ duration:'Até completar a tarefa ou ser dispensado.'},
+
+// ══ CANÔNICOS — PORTAIS ══
+{id:'c39',type:'canon',cat:'Portal',skill:'POD (custo permanente)',name:'Criar Portal',mp:'variável para usar',san:'1 por viagem',difficulty:'Muito Alta',
+ how:'Uma hora por ponto de POD gasto. Custo de POD = log₁₀(distância em km) × 7,5. Usar o portal custa PM = 1/5 do POD original gasto.',
+ test:'Nenhum — se o POD for sacrificado corretamente, o portal existe permanentemente.',
+ effect:'Cria uma porta entre dois pontos do espaço. Qualquer pessoa pode atravessar. Chave secreta pode ser adicionada. Custo de viagem: 1 San por travessia.',
+ duration:'Permanente.'},
+
+{id:'c40',type:'canon',cat:'Portal',skill:'POD (custo permanente)',name:'Portal Temporal',mp:'variável para usar',san:'1 por viagem',difficulty:'Lendária',
+ how:'Como Criar Portal, mas o custo de POD é baseado nos anos a serem viajados, não quilômetros. Leva para instante próximo ao desejado.',
+ test:'Nenhum — se o POD for sacrificado corretamente.',
+ effect:'Portal para o futuro ou passado. Versão visceral: múltiplos destinos temporais — apenas o conjurador sabe qual caminho leva a qual época.',
+ duration:'Permanente.'},
+
+// ══ KARMA ETERNO — HOMEBREW ══
+{id:'h1',type:'homebrew',cat:'Confronto Mediúnico',skill:'POD vs. POD',name:'Sussurro do Anterior',mp:'2',san:'0/1D4',difficulty:'Baixa',
+ how:'Tocar uma superfície com a palma da mão e fechar os olhos por 1 minuto em local de concentração temporal.',
+ test:'POD vs. POD da entidade mais próxima. Alta Memória concede dado de bônus.',
+ effect:'Ouve ecos de eventos passados no local. Fragmentos chegam distorcidos. Custo: Memória +1D4, Permanência −1D4. Alta Memória = mais clareza. Baixa Memória = mais distorção.',
+ duration:'Enquanto a mão tocar a superfície (máx. 5 minutos).'},
+
+{id:'h2',type:'homebrew',cat:'Memória',skill:'Oculto',name:'Marca da Fundação',mp:'5',san:'1D6',difficulty:'Média',
+ how:'Gravar o símbolo da Fundação em qualquer superfície com ferramenta de metal. Demora 15 minutos. O símbolo precisa ser perfeito.',
+ test:'Teste de Oculto. Falha: o símbolo não carrega energia. Falha crítica: o símbolo registra algo indesejado.',
+ effect:'Grava um "ponto de memória" permanente no local. Futuros usuários de Sussurro do Anterior verão este momento com clareza cristalina. Irreversível.',
+ duration:'Permanente.'},
+
+{id:'h3',type:'homebrew',cat:'Ilusão',skill:'POD',name:'Véu de Novavera',mp:'2',san:'0',difficulty:'Baixa',
+ how:'Concentrar-se em "pertencer ao ambiente" por 1 ação.',
+ test:'Nenhum teste para uso básico. Para manter contra entidades alertas: teste de POD vs. INT da entidade.',
+ effect:'O conjurador torna-se psiquicamente ignorado. Entidades com INT < 10 ignoram por 1D4 turnos extras. Entidades muito antigas são imunes.',
+ duration:'1 turno de invisibilidade social garantida.'},
+
+{id:'h4',type:'homebrew',cat:'Vínculo',skill:'POD',name:'Pacto dos Treze',mp:'13',san:'1D10',difficulty:'Muito Alta',
+ how:'Todos os participantes presentes, cada um gastar 13 PM simultaneamente. Ritual de 13 minutos no mesmo local. Irreversível.',
+ test:'Todos testam POD. Qualquer falha: o ritual falha e custa San igualmente.',
+ effect:'Cria vínculo místico permanente entre 2-4 investigadores. Cada um sente o nível de Sanidade dos outros. Compartilham sonhos e pesadelos. Em momentos de crise, podem enviar 1D3 San a outro membro.',
+ duration:'Permanente e irreversível.'},
+
+{id:'h5',type:'homebrew',cat:'Profecia',skill:'POD',name:'Olho de Valdecir',mp:'4',san:'1D4',difficulty:'Média',
+ how:'Fechar os olhos, concentrar por 5 minutos em silêncio absoluto.',
+ test:'Teste de POD. Falha: a visão é incoerente. Falha crítica: a visão enlouquece (1D6 San extra).',
+ effect:'Fragmentos de visões futuras — o Mestre fornece uma pista vaga. A visão pode ser enganosa, metafórica ou incompleta.',
+ duration:'Não pode ser repetida para o mesmo evento futuro.'},
+
+{id:'h6',type:'homebrew',cat:'Ambiental',skill:'Oculto',name:'Silêncio da Área Verde',mp:'3',san:'1D3',difficulty:'Baixa',
+ how:'Estender as mãos e recitar o Canto do Silêncio em voz baixa. Pode ser feito em 1 ação.',
+ test:'Teste de Oculto. Falha: o silêncio é incompleto.',
+ effect:'Bolha de silêncio absoluto de 5m ao redor do conjurador. Sons não entram nem saem. Em locais de poder, dura o dobro.',
+ duration:'1D6 minutos.'},
+
+{id:'h7',type:'homebrew',cat:'Invocação',skill:'Oculto',name:'Chamado do Rio Vermelho',mp:'6',san:'1D6',difficulty:'Alta',
+ how:'Próximo a um rio ou corpo dagua. Oferenda de grãos, sal e cachaça jogada na água.',
+ test:'Teste de Oculto. A entidade não é controlada — apenas convocada.',
+ effect:'Invoca entidade fluvial da região. Pode revelar segredos de corpos dagua, guiar até pontos submersos. Deve ser tratada com respeito.',
+ duration:'A entidade permanece por 1 cena.'},
+
+{id:'h8',type:'homebrew',cat:'Memória',skill:'História ou Oculto',name:'Memória de Pedra',mp:'4',san:'1D4',difficulty:'Média',
+ how:'Tocar a fundação ou parede mais antiga de uma construção e manter contato por 3 minutos.',
+ test:'Teste de História ou Oculto.',
+ effect:'Aprende quem construiu o local, com que intenção, e os eventos mais marcantes. Em fundações muito antigas, pode revelar símbolos originais.',
+ duration:'Visão dura até 10 minutos.'},
+
+{id:'h9',type:'homebrew',cat:'Memória',skill:'POD',name:'Herança Sanguínea',mp:'3',san:'1D3',difficulty:'Baixa',
+ how:'Segurar um objeto pessoal de um ancestral direto e concentrar por 5 minutos.',
+ test:'Teste de POD. Falha: memórias fragmentadas demais.',
+ effect:'Acessa memórias de um ancestral direto — vê o que essa pessoa viu e sentiu em um momento específico.',
+ duration:'Até 15 minutos de concentração.'},
+
+{id:'h10',type:'homebrew',cat:'Temporal',skill:'Conhecimento Proibido ou Oculto',name:'Cicatriz Temporal',mp:'7',san:'1D6',difficulty:'Alta',
+ how:'Ritual de 30 minutos no local alvo, gravando três símbolos em pontos distintos do espaço.',
+ test:'Teste de Conhecimento Proibido ou Oculto. Falha: dura apenas 1D6 dias.',
+ effect:'O local resiste à passagem do tempo. Objetos não envelhecem, documentos não deterioram, sangue não seca. Não afeta seres vivos.',
+ duration:'1 ano. Pode ser renovado.'},
 ];
 
 const BESTIARY = [];
@@ -1912,7 +2286,7 @@ let state = {
   diary: [],
   bestiary: [],
   wizard: {
-    nome:'',idade:'',genero:'',era:'anos60',origem:'',residencia:'',
+    nome:'',idade:'',genero:'',era:'moderna',origem:'',residencia:'',
     profissao:'',crenca:'',pessoa:'',lugar:'',objeto:'',traço:'',
     attrs:{FOR:0,CON:0,TAM:0,DES:0,APA:0,INT:0,POD:0,EDU:0},
     skills:{},
@@ -2028,12 +2402,21 @@ function calcDerived() {
   const pv = Math.floor((a.CON + a.TAM) / 10);
   const san = a.POD;
   const mp = Math.floor(a.POD / 5);
-  const sorte = (roll(6)+roll(6)+roll(6))*5;
-  state.wizard.pv = pv; state.wizard.san = san; state.wizard.mp = mp; state.wizard.sorte = sorte;
+  const sorte = state.wizard.sorte || (roll(6)+roll(6)+roll(6))*5;
+  const mem = Math.floor(((a.POD||0)+(a.INT||0))/10);
+  const perm = 20 - mem;
+  state.wizard.pv = pv; state.wizard.san = san; state.wizard.mp = mp;
+  state.wizard.sorte = sorte; state.wizard.memoria = mem;
   document.getElementById('d-pv').textContent = pv;
   document.getElementById('d-san').textContent = san;
   document.getElementById('d-mp').textContent = mp;
   document.getElementById('d-sorte').textContent = sorte;
+  const dMem = document.getElementById('d-mem');
+  const dPerm = document.getElementById('d-perm');
+  if(dMem) dMem.textContent = mem;
+  if(dPerm) dPerm.textContent = perm;
+  const memColor = mem>=16?'#e070e0':mem>=11?'#e07070':mem>=6?'#c8a060':'#8bc87f';
+  if(dMem) dMem.style.color = memColor;
   document.getElementById('derived-stats').style.display = 'block';
 }
 
@@ -2125,7 +2508,11 @@ function buildReview() {
       <div><strong style="color:var(--gold)">Profissão:</strong> ${profName}</div>
       <div><strong style="color:var(--gold)">Era:</strong> ${ERAS[w.era]}</div>
       <div><strong style="color:var(--gold)">Origem:</strong> ${w.origem||'—'}</div>
-      <div><strong style="color:var(--gold)">PV:</strong> ${w.pv} | <strong style="color:var(--gold)">San:</strong> ${w.san} | <strong style="color:var(--gold)">MP:</strong> ${w.mp}</div>
+      <div><strong style="color:var(--gold)">PV:</strong> ${w.pv} | <strong style="color:var(--gold)">San:</strong> ${w.san} | <strong style="color:var(--gold)">MP:</strong> ${w.mp} | <strong style="color:var(--gold)">Sorte:</strong> ${w.sorte}</div>
+      <div style="margin-top:4px">
+        <strong style="color:#c8a060">Memória:</strong> ${w.memoria||Math.floor(((w.attrs.POD||0)+(w.attrs.INT||0))/10)} / 19 &nbsp;·&nbsp;
+        <strong style="color:#8a7ec8">Permanência:</strong> ${20-(w.memoria||Math.floor(((w.attrs.POD||0)+(w.attrs.INT||0))/10))} / 19
+      </div>
     </div>
     <div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--muted)">
       ${Object.entries(w.attrs).map(([k,v])=>`<strong style="color:var(--gold);font-size:11px">${k}:</strong> ${v} `).join('  ')}
@@ -2137,6 +2524,10 @@ function updateSkillsPreview() {
   const profData = PROF_SKILLS[prof];
   if(!profData) { document.getElementById('skills-preview').innerHTML = ''; return; }
   document.getElementById('skills-preview').innerHTML = `
+    <div style="background:rgba(154,122,42,0.08);border:1px solid rgba(154,122,42,0.2);padding:10px;margin-bottom:8px">
+      <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:4px">Pontos de Perícia</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--parch)">${profData.formula} — distribua entre as perícias abaixo</div>
+    </div>
     <div style="font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:6px">Perícias da Profissão</div>
     <div style="display:flex;flex-wrap:wrap;gap:4px">
       ${profData.skills.map(s=>`<span class="tag tipo">${s}</span>`).join('')}
@@ -2173,6 +2564,7 @@ function criarFicha() {
     mpMax: w.mp, mpCur: w.mp,
     sorte: w.sorte,
     skills: JSON.parse(JSON.stringify(w.skills||{})),
+    memoria: w.memoria || Math.floor(((w.attrs.POD||0)+(w.attrs.INT||0))/10),
   };
 
   showToast('Ficha criada com sucesso!');
@@ -2208,6 +2600,7 @@ function renderFicha() {
   updateStatDisplay('pv');
   updateStatDisplay('san');
   updateStatDisplay('mp');
+  updateMemPermDisplay();
 
   // Atributos
   const editMode = window._fichaEditMode || false;
@@ -2228,6 +2621,24 @@ function renderFicha() {
       <div class="attr-half">${Math.floor(v/2)} / ${Math.floor(v/5)}</div>
     </div>`;
   }).join('');
+
+  // Karma Eterno — Vida Passada e Lembranças (campos de texto)
+  const keSection = document.getElementById('f-ke-attrs');
+  if(keSection) {
+    keSection.innerHTML = `
+      <div style="background:rgba(0,0,0,0.3);border:1px solid rgba(154,122,42,0.15);padding:8px 10px;margin-bottom:6px">
+        <div style="font-family:'Cinzel',serif;font-size:7px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:4px">✦ Vida Passada — Fragmentos</div>
+        <textarea id="ke-vida-passada" placeholder="Fragmentos de memórias de vidas anteriores que emergiram..." 
+          style="width:100%;background:transparent;border:none;color:var(--parch);font-family:'Cormorant Garamond',serif;font-size:13px;resize:none;outline:none;min-height:52px;line-height:1.6"
+          oninput="saveVidaPassada(this.value)">${f.vidaPassada||''}</textarea>
+      </div>
+      <div style="background:rgba(0,0,0,0.3);border:1px solid rgba(154,122,42,0.15);padding:8px 10px">
+        <div style="font-family:'Cinzel',serif;font-size:7px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:4px">✦ Lembranças por Sessão</div>
+        <textarea id="ke-lembracas" placeholder="Memórias involuntárias desta sessão — de onde vieram, o que mostraram..." 
+          style="width:100%;background:transparent;border:none;color:var(--parch);font-family:'Cormorant Garamond',serif;font-size:13px;resize:none;outline:none;min-height:44px;line-height:1.6"
+          oninput="saveLembrancas(this.value)">${f.lembrancasSessao||''}</textarea>
+      </div>`;
+  }
 
   // Perícias
   const skills = f.skills || {};
@@ -3032,6 +3443,59 @@ function liveUpdateSkill(name, val, safeId) {
   const v = parseInt(val)||0;
   const el = document.getElementById('live-sk-half-'+safeId);
   if(el) el.textContent = Math.floor(v/2) + ' / ' + Math.floor(v/5);
+}
+
+function adjustMemoria(delta) {
+  if(!state.ficha) return;
+  const cur = state.ficha.memoria || Math.floor(((state.ficha.attrs.POD||0)+(state.ficha.attrs.INT||0))/10);
+  state.ficha.memoria = Math.max(1, Math.min(19, cur + delta));
+  updateMemPermDisplay();
+}
+function saveVidaPassada(val) {
+  if(state.ficha) state.ficha.vidaPassada = val;
+}
+function saveLembrancas(val) {
+  if(state.ficha) state.ficha.lembrancasSessao = val;
+}
+
+function updateMemPermDisplay() {
+  if(!state.ficha) return;
+  const f = state.ficha;
+  const mem = f.memoria || Math.floor(((f.attrs.POD||0)+(f.attrs.INT||0))/10);
+  const perm = Math.max(0, 20 - mem);
+
+  // update counters
+  const memEl = document.getElementById('f-mem-cur');
+  const permEl = document.getElementById('f-perm-cur');
+  if(memEl) memEl.textContent = mem;
+  if(permEl) permEl.textContent = perm;
+
+  // color and label based on Memória level
+  const memLabel = document.getElementById('mem-label');
+  const memColor = mem >= 16 ? '#e070e0' : mem >= 11 ? '#e07070' : mem >= 6 ? '#c8a060' : '#8bc87f';
+  const memText  = mem >= 16 ? '⚠ MEMÓRIA — LIMIAR' : mem >= 11 ? '⚠ MEMÓRIA — SOBREPOSIÇÃO' : mem >= 6 ? 'MEMÓRIA — PERMEÁVEL' : 'MEMÓRIA — ESTÁVEL';
+  const permColor = perm <= 4 ? '#e070e0' : perm <= 9 ? '#e07070' : perm <= 14 ? '#c8a060' : '#8bc87f';
+  if(memLabel) { memLabel.textContent = memText; memLabel.style.color = memColor; }
+  const permLabel = document.querySelector('#mem-perm-section .perm-label');
+  if(permLabel) { permLabel.style.color = permColor; }
+
+  // tracks
+  const memTrack = document.getElementById('mem-track');
+  const permTrack = document.getElementById('perm-track');
+  if(memTrack) {
+    memTrack.innerHTML = Array.from({length:19},(_,i)=>{
+      const filled = i < mem;
+      const col = i >= 15 ? '#e070e0' : i >= 10 ? '#e07070' : i >= 5 ? '#c8a060' : '#8bc87f';
+      return `<div class="stat-pip ${filled?'filled':''}" style="${filled?'background:'+col+';border-color:'+col:''}"></div>`;
+    }).join('');
+  }
+  if(permTrack) {
+    permTrack.innerHTML = Array.from({length:19},(_,i)=>{
+      const filled = i < perm;
+      const col = perm <= 4 ? '#e070e0' : perm <= 9 ? '#e07070' : perm <= 14 ? '#c8a060' : '#8bc87f';
+      return `<div class="stat-pip ${filled?'filled':''}" style="${filled?'background:'+col+';border-color:'+col:''}"></div>`;
+    }).join('');
+  }
 }
 </script>
 </body>
