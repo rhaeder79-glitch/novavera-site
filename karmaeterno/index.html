@@ -1724,10 +1724,15 @@ function renderDossie(dossie){
   return h;
 }
 
-// Toggle de uma parte específica
+// Toggle de uma parte específica (acordeão — abrir uma fecha as outras)
 function dossieTogglePart(num){
   const el = document.getElementById('dossie-parte-'+num);
-  if(el) el.classList.toggle('open');
+  if(!el) return;
+  const jaAberta = el.classList.contains('open');
+  // fecha todas as outras
+  document.querySelectorAll('.dossie-parte').forEach(p=>p.classList.remove('open'));
+  // se não estava aberta, abre ela
+  if(!jaAberta) el.classList.add('open');
 }
 // Expandir/recolher todas
 function dossieToggleAll(abrir){
