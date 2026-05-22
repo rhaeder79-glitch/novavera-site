@@ -73,14 +73,14 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
 .book-inner.compact{padding:32px 48px}
 
 /* ── TYPOGRAPHY ────────────────────────────────────────────── */
-.t-eyebrow{font-family:"Cinzel",serif;font-size:8px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.8;margin-bottom:6px}
+.t-eyebrow{font-family:"Cinzel",serif;font-size:9.5px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:1;margin-bottom:6px;font-weight:600}
 .t-title{font-family:"Cinzel Decorative",serif;font-size:32px;font-weight:700;color:var(--blood);line-height:1.15;margin-bottom:10px}
 .t-title.lg{font-size:42px}
-.t-sub{font-family:"IM Fell English",serif;font-style:italic;font-size:15.5px;color:var(--ash);opacity:.85}
-.t-body{font-family:"Cormorant Garamond",serif;font-size:17px;line-height:1.85;color:var(--ink-soft);text-align:justify;hyphens:auto;margin-bottom:16px}
+.t-sub{font-family:"IM Fell English",serif;font-style:italic;font-size:17px;color:var(--ash);opacity:1;font-weight:500}
+.t-body{font-family:"Cormorant Garamond",serif;font-size:18.5px;font-weight:500;line-height:1.78;color:var(--ink);text-align:justify;hyphens:auto;margin-bottom:16px}
 .t-body.dc::first-letter{font-family:"Cinzel Decorative",serif;font-size:76px;font-weight:900;float:left;line-height:.72;margin:10px 10px 0 -4px;color:var(--blood)}
-.t-label{font-family:"Cinzel",serif;font-size:10.5px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin:20px 0 5px;opacity:.85}
-.t-sec{font-family:"Cinzel",serif;font-size:16px;font-weight:600;color:var(--blood);letter-spacing:.5px;margin:42px 0 14px;padding-bottom:8px;border-bottom:1px solid rgba(107,15,15,.25);display:flex;align-items:center;gap:9px}
+.t-label{font-family:"Cinzel",serif;font-size:12px;letter-spacing:3.5px;color:var(--gold);text-transform:uppercase;margin:20px 0 6px;opacity:1;font-weight:700}
+.t-sec{font-family:"Cinzel",serif;font-size:17.5px;font-weight:700;color:var(--blood);letter-spacing:.5px;margin:42px 0 14px;padding-bottom:8px;border-bottom:1px solid rgba(107,15,15,.3);display:flex;align-items:center;gap:9px}
 .t-sec .g{color:var(--gold);opacity:.65;font-size:20px;font-family:serif;font-weight:400}
 .t-ss{font-family:"Cinzel",serif;font-size:21px;font-weight:700;color:var(--gold-lt);letter-spacing:3.5px;text-transform:uppercase;margin:28px 0 10px}
 
@@ -95,7 +95,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
 /* ── BLOCKQUOTE ────────────────────────────────────────────── */
 .bq{margin:22px 14px;padding:18px 24px 18px 28px;border-left:3px solid var(--blood);background:linear-gradient(to right,rgba(107,15,15,.05),transparent);position:relative}
 .bq::before{content:"C";position:absolute;top:-6px;left:8px;font-family:"Cinzel Decorative",serif;font-size:54px;color:var(--blood);opacity:.15;line-height:1}
-.bq p{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:17.5px;line-height:1.72;color:var(--ink)}
+.bq p{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:19px;font-weight:500;line-height:1.7;color:var(--ink)}
 
 /* ── WARN BOX ──────────────────────────────────────────────── */
 .warn-box{margin:26px 0;padding:20px 26px;border:1px solid rgba(107,15,15,.3);background:repeating-linear-gradient(-45deg,transparent,transparent 7px,rgba(107,15,15,.025) 7px,rgba(107,15,15,.025) 8px);position:relative}
@@ -172,7 +172,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
 .doc-fv{font-family:"IM Fell English",serif;font-size:17.5px;color:var(--ink);line-height:1.45}
 .doc-note{margin-top:13px;padding:10px 13px;border-left:2px solid var(--blood);background:rgba(107,15,15,.04)}
 .doc-nl{font-family:"Cinzel",serif;font-size:11.5px;letter-spacing:3px;color:var(--blood);text-transform:uppercase;margin-bottom:4px;opacity:.75}
-.doc-nt{font-family:"IM Fell English",serif;font-style:italic;font-size:15px;color:var(--ink-soft);line-height:1.6}
+.doc-nt{font-family:"IM Fell English",serif;font-style:italic;font-size:17px;color:var(--ink);line-height:1.6;font-weight:500}
 .redact{background:var(--ink);color:transparent;user-select:none;padding:0 3px;display:inline}
 
 /* ── DIARY ─────────────────────────────────────────────────── */
@@ -303,7 +303,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
 .lore-block .lb-title{font-family:"Cinzel",serif;font-size:15px;font-weight:700;color:var(--blood);letter-spacing:1px;margin-bottom:8px}
 .nm-box{margin:18px 0;padding:16px 22px;border:1px solid rgba(107,15,15,.32);background:rgba(107,15,15,.045);position:relative}
 .nm-box .nm-lbl{font-family:"Cinzel",serif;font-size:9px;letter-spacing:5px;color:var(--blood);text-transform:uppercase;margin-bottom:7px;opacity:.85}
-.nm-box .nm-txt{font-family:"Cormorant Garamond",serif;font-size:16.5px;line-height:1.78;color:var(--ink-soft);font-style:italic}
+.nm-box .nm-txt{font-family:"Cormorant Garamond",serif;font-size:18px;font-weight:500;line-height:1.72;color:var(--ink);font-style:italic}
 
 /* ── CAMADAS DE ANTAGONISMO ── */
 .camada{margin:14px 0;padding:18px 22px;border-left:3px solid var(--blood);background:linear-gradient(to right,rgba(107,15,15,.06),transparent)}
@@ -335,7 +335,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
 /* ── BLOCO INSTRUCIONAL (sinais, monólogos, etc) ── */
 .signal-block{margin:12px 0;padding:14px 20px;border:1px solid rgba(154,122,42,.25);background:rgba(154,122,42,.03)}
 .signal-num{font-family:"Cinzel",serif;font-size:10px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:5px}
-.signal-txt{font-family:"Cormorant Garamond",serif;font-size:16.5px;line-height:1.72;color:var(--ink-soft)}
+.signal-txt{font-family:"Cormorant Garamond",serif;font-size:18px;font-weight:500;line-height:1.7;color:var(--ink)}
 
 /* ── ENVELOPE PAGE ── */
 .env-page{margin:12px 0;padding:16px 22px;border:1px dashed rgba(90,74,48,.5);background:rgba(90,74,48,.035)}
@@ -381,20 +381,20 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
 .subpane.active{display:block}
 
 /* ── EPISÓDIO DETALHADO (lapidação T1) — sobre fundo pergaminho ── */
-.ep-abertura{font-family:"Cormorant Garamond",serif;font-size:16.5px;line-height:1.8;color:var(--ink-soft);font-style:italic;margin:6px 0 18px;padding:14px 20px;border-left:3px solid var(--gold);background:linear-gradient(to right,rgba(154,122,42,.1),transparent)}
+.ep-abertura{font-family:"Cormorant Garamond",serif;font-size:18px;font-weight:500;line-height:1.78;color:var(--ink);font-style:italic;margin:6px 0 18px;padding:14px 20px;border-left:3px solid var(--gold);background:linear-gradient(to right,rgba(154,122,42,.12),transparent)}
 .det-grupo{margin:22px 0 10px}
 .det-grupo-titulo{font-family:"Cinzel",serif;font-size:13.5px;font-weight:700;color:var(--blood);letter-spacing:1.5px;text-transform:uppercase;padding-bottom:7px;border-bottom:1px solid rgba(107,15,15,.3);display:flex;align-items:center;gap:8px}
 .det-grupo-titulo::before{content:"❧";color:var(--gold-dim);opacity:.7;font-size:15px}
 .det-ponto{margin:12px 0;padding:14px 18px;background:rgba(107,15,15,.035);border:1px solid rgba(90,74,48,.22);border-left:2px solid rgba(154,122,42,.4);transition:border-color .2s}
 .det-ponto:hover{border-left-color:var(--blood)}
-.det-ponto-texto{font-family:"Cormorant Garamond",serif;font-size:16.5px;line-height:1.75;color:var(--ink-soft)}
+.det-ponto-texto{font-family:"Cormorant Garamond",serif;font-size:18px;font-weight:500;line-height:1.72;color:var(--ink)}
 .det-refs{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
 .ref-btn{display:inline-flex;align-items:center;gap:5px;font-family:"Cinzel",serif;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;color:var(--blood);background:rgba(154,122,42,.1);border:1px solid rgba(107,15,15,.28);padding:4px 10px;cursor:pointer;transition:all .18s;text-align:left;line-height:1.35}
 .ref-btn:hover{background:rgba(107,15,15,.12);border-color:var(--blood);color:var(--blood-deep)}
 .ref-btn::before{content:"→";opacity:.65;font-size:11px}
 .det-gancho{margin:20px 0 6px;padding:16px 20px;border:1px solid rgba(107,15,15,.35);background:repeating-linear-gradient(-45deg,transparent,transparent 8px,rgba(107,15,15,.04) 8px,rgba(107,15,15,.04) 9px)}
 .det-gancho-lbl{font-family:"Cinzel",serif;font-size:9px;letter-spacing:4px;color:var(--blood);text-transform:uppercase;margin-bottom:7px;opacity:.85}
-.det-gancho-texto{font-family:"Cormorant Garamond",serif;font-size:16.5px;line-height:1.78;color:var(--ink-soft)}
+.det-gancho-texto{font-family:"Cormorant Garamond",serif;font-size:18px;font-weight:500;line-height:1.74;color:var(--ink)}
 /* destaque temporário ao chegar via referência cruzada */
 .local-flash{animation:localFlash 2.2s ease}
 
@@ -403,52 +403,52 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
    ════════════════════════════════════════════════ */
 .dossie-wrap{margin:14px 0}
 .dossie-epigrafe{text-align:center;margin:8px 0 6px;padding:14px 22px;border-top:1px solid rgba(154,122,42,.3);border-bottom:1px solid rgba(154,122,42,.3)}
-.dossie-citacao{font-family:"Cormorant Garamond",serif;font-size:18px;font-style:italic;color:var(--blood);line-height:1.5}
-.dossie-fonte{font-family:"Cinzel",serif;font-size:9.5px;letter-spacing:2.5px;color:var(--gold-dim);text-transform:uppercase;margin-top:6px}
-.dossie-data{text-align:center;font-family:"Cinzel",serif;font-size:11px;letter-spacing:4px;color:var(--gold-lt);text-transform:uppercase;margin-bottom:22px}
+.dossie-citacao{font-family:"Cormorant Garamond",serif;font-size:21px;font-style:italic;font-weight:600;color:var(--blood);line-height:1.45}
+.dossie-fonte{font-family:"Cinzel",serif;font-size:10.5px;letter-spacing:2.5px;color:var(--gold-dim);text-transform:uppercase;margin-top:6px;font-weight:600}
+.dossie-data{text-align:center;font-family:"Cinzel",serif;font-size:12px;letter-spacing:4px;color:var(--gold-lt);text-transform:uppercase;margin-bottom:22px;font-weight:600}
 .dossie-parte{margin:28px 0;padding-top:20px;border-top:2px solid rgba(107,15,15,.35)}
 .dossie-parte-hdr{text-align:center;margin-bottom:18px}
-.dossie-parte-num{font-family:"Cinzel",serif;font-size:10.5px;letter-spacing:5px;color:var(--blood);text-transform:uppercase;opacity:.85}
-.dossie-parte-titulo{font-family:"Cinzel Decorative","Cinzel",serif;font-size:24px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:1px}
+.dossie-parte-num{font-family:"Cinzel",serif;font-size:11.5px;letter-spacing:5px;color:var(--blood);text-transform:uppercase;opacity:.95;font-weight:600}
+.dossie-parte-titulo{font-family:"Cinzel Decorative","Cinzel",serif;font-size:26px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:1px}
 .dossie-secao{margin:18px 0 4px;padding:14px 0}
-.dossie-sec-titulo{font-family:"Cinzel",serif;font-size:14.5px;font-weight:700;color:var(--blood);letter-spacing:1.4px;text-transform:uppercase;padding-bottom:8px;border-bottom:1px solid rgba(107,15,15,.3);margin-bottom:12px;display:flex;align-items:center;gap:8px}
-.dossie-sec-titulo::before{content:"❧";color:var(--gold-dim);opacity:.7;font-size:15px}
-.dossie-para-quem{font-style:italic;color:var(--ash);margin-bottom:10px;font-size:14.5px;font-family:"Cormorant Garamond",serif}
-.dossie-narracao{background:rgba(154,122,42,.06);border-left:3px solid var(--gold);padding:14px 18px;margin:10px 0;font-family:"Cormorant Garamond",serif;font-size:15.5px;line-height:1.78;color:var(--ink-soft);font-style:italic;white-space:normal}
-.dossie-fala{background:rgba(107,15,15,.06);border:1px solid rgba(107,15,15,.22);padding:10px 16px;margin:8px 0;font-family:"Cormorant Garamond",serif;font-size:15.5px;line-height:1.7;color:var(--ink-soft);font-style:italic}
-.dossie-fala-nota{font-style:normal;font-size:13px;color:var(--ash);font-family:"Cinzel",serif;letter-spacing:.5px}
-.dossie-dlg-ctx{font-family:"Cinzel",serif;font-size:9.5px;letter-spacing:2.5px;color:var(--gold-dim);text-transform:uppercase;margin:12px 0 4px}
-.dossie-subbloco{margin:14px 0;padding:14px 18px;background:rgba(154,122,42,.05);border:1px solid rgba(90,74,48,.18);border-left:3px solid rgba(154,122,42,.45)}
-.dossie-sub-titulo{font-family:"Cinzel",serif;font-size:12px;font-weight:700;color:var(--blood);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px}
-.dossie-transcr{margin:6px 0;font-family:"Cormorant Garamond",serif;font-size:15.5px;line-height:1.65;color:var(--ink-soft)}
-.dossie-transcr-nome{font-family:"Cinzel",serif;font-size:11px;letter-spacing:1.5px;font-weight:700;color:var(--blood);text-transform:uppercase}
+.dossie-sec-titulo{font-family:"Cinzel",serif;font-size:15.5px;font-weight:700;color:var(--blood);letter-spacing:1.4px;text-transform:uppercase;padding-bottom:8px;border-bottom:1px solid rgba(107,15,15,.3);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.dossie-sec-titulo::before{content:"❧";color:var(--gold-dim);opacity:.85;font-size:16px}
+.dossie-para-quem{font-style:italic;color:var(--ink-soft);margin-bottom:10px;font-size:16px;font-family:"Cormorant Garamond",serif;font-weight:500}
+.dossie-narracao{background:rgba(154,122,42,.1);border-left:4px solid var(--gold);padding:16px 20px;margin:12px 0;font-family:"Cormorant Garamond",serif;font-size:17.5px;line-height:1.75;color:var(--ink);font-style:italic;font-weight:500;white-space:normal}
+.dossie-fala{background:rgba(107,15,15,.08);border:1px solid rgba(107,15,15,.28);padding:12px 18px;margin:10px 0;font-family:"Cormorant Garamond",serif;font-size:17.5px;line-height:1.7;color:var(--ink);font-style:italic;font-weight:500}
+.dossie-fala-nota{font-style:normal;font-size:13.5px;color:var(--ash);font-family:"Cinzel",serif;letter-spacing:.5px;font-weight:600}
+.dossie-dlg-ctx{font-family:"Cinzel",serif;font-size:10.5px;letter-spacing:2.5px;color:var(--gold-dim);text-transform:uppercase;margin:14px 0 4px;font-weight:700}
+.dossie-subbloco{margin:16px 0;padding:16px 20px;background:rgba(154,122,42,.08);border:1px solid rgba(90,74,48,.25);border-left:3px solid rgba(154,122,42,.55)}
+.dossie-sub-titulo{font-family:"Cinzel",serif;font-size:13px;font-weight:700;color:var(--blood);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px}
+.dossie-transcr{margin:8px 0;font-family:"Cormorant Garamond",serif;font-size:17px;line-height:1.65;color:var(--ink);font-weight:500}
+.dossie-transcr-nome{font-family:"Cinzel",serif;font-size:12px;letter-spacing:1.5px;font-weight:700;color:var(--blood);text-transform:uppercase}
 
-.warn-box{margin:14px 0;padding:14px 18px;background:rgba(107,15,15,.07);border:1px solid rgba(107,15,15,.4);border-left:4px solid var(--blood)}
-.warn-lbl{font-family:"Cinzel",serif;font-size:10px;letter-spacing:3px;color:var(--blood);text-transform:uppercase;margin-bottom:6px;font-weight:700}
-.warn-txt{font-family:"Cormorant Garamond",serif;font-size:15.5px;line-height:1.72;color:var(--ink-soft)}
+.warn-box{margin:16px 0;padding:16px 20px;background:rgba(107,15,15,.1);border:1px solid rgba(107,15,15,.45);border-left:4px solid var(--blood)}
+.warn-lbl{font-family:"Cinzel",serif;font-size:11px;letter-spacing:3px;color:var(--blood);text-transform:uppercase;margin-bottom:8px;font-weight:700}
+.warn-txt{font-family:"Cormorant Garamond",serif;font-size:17px;line-height:1.7;color:var(--ink);font-weight:500}
 
-.info-grid{display:grid;grid-template-columns:130px 1fr;gap:8px 14px;margin:10px 0 14px;padding:12px 14px;background:rgba(154,122,42,.05);border:1px solid rgba(90,74,48,.18)}
-.info-k{font-family:"Cinzel",serif;font-size:10px;letter-spacing:1.8px;color:var(--gold-dim);text-transform:uppercase;align-self:start}
-.info-v{font-family:"Cormorant Garamond",serif;font-size:15px;line-height:1.6;color:var(--ink-soft)}
+.info-grid{display:grid;grid-template-columns:140px 1fr;gap:10px 16px;margin:12px 0 16px;padding:14px 16px;background:rgba(154,122,42,.08);border:1px solid rgba(90,74,48,.25)}
+.info-k{font-family:"Cinzel",serif;font-size:11px;letter-spacing:1.8px;color:var(--gold-dim);text-transform:uppercase;align-self:start;font-weight:700}
+.info-v{font-family:"Cormorant Garamond",serif;font-size:16.5px;line-height:1.6;color:var(--ink);font-weight:500}
 
-.stbl{width:100%;border-collapse:collapse;margin:10px 0;font-family:"Cormorant Garamond",serif;font-size:14.5px}
-.stbl th{background:rgba(107,15,15,.15);color:var(--blood);font-family:"Cinzel",serif;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;padding:8px 10px;text-align:left;border:1px solid rgba(107,15,15,.3)}
-.stbl td{padding:8px 10px;border:1px solid rgba(90,74,48,.2);color:var(--ink-soft);line-height:1.55;vertical-align:top}
-.stbl tr:nth-child(even) td{background:rgba(154,122,42,.04)}
+.stbl{width:100%;border-collapse:collapse;margin:12px 0;font-family:"Cormorant Garamond",serif;font-size:16px;font-weight:500}
+.stbl th{background:rgba(107,15,15,.18);color:var(--blood);font-family:"Cinzel",serif;font-size:11.5px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;padding:10px 12px;text-align:left;border:1px solid rgba(107,15,15,.35)}
+.stbl td{padding:10px 12px;border:1px solid rgba(90,74,48,.25);color:var(--ink);line-height:1.55;vertical-align:top}
+.stbl tr:nth-child(even) td{background:rgba(154,122,42,.06)}
 
-ol.ol{margin:10px 0;padding-left:24px;font-family:"Cormorant Garamond",serif;font-size:15.5px;line-height:1.72;color:var(--ink-soft)}
-ol.ol li{margin:6px 0}
+ol.ol{margin:12px 0;padding-left:26px;font-family:"Cormorant Garamond",serif;font-size:17.5px;line-height:1.72;color:var(--ink);font-weight:500}
+ol.ol li{margin:8px 0}
 
 /* ════════════════════════════════════════════════
    ENVELOPES — Aba dedicada
    ════════════════════════════════════════════════ */
 .env-card{background:linear-gradient(135deg,#f7ecd2 0%,#f0e3c1 100%) !important}
 .env-hdr{text-align:center;padding-bottom:14px;margin-bottom:14px;border-bottom:1px solid rgba(107,15,15,.3)}
-.env-numero{font-family:"Cinzel",serif;font-size:10px;letter-spacing:4px;color:var(--gold-dim);text-transform:uppercase}
-.env-papel{font-family:"Cinzel Decorative","Cinzel",serif;font-size:26px;font-weight:700;color:var(--blood);margin:4px 0;letter-spacing:2px}
-.env-subtitulo{font-family:"Cormorant Garamond",serif;font-size:15px;font-style:italic;color:var(--ash)}
+.env-numero{font-family:"Cinzel",serif;font-size:11px;letter-spacing:4px;color:var(--gold-dim);text-transform:uppercase;font-weight:600}
+.env-papel{font-family:"Cinzel Decorative","Cinzel",serif;font-size:28px;font-weight:700;color:var(--blood);margin:4px 0;letter-spacing:2px}
+.env-subtitulo{font-family:"Cormorant Garamond",serif;font-size:16.5px;font-style:italic;color:var(--ink-soft);font-weight:500}
 .env-pagina{margin:18px 0;padding:18px 22px;background:rgba(255,253,247,.5);border:1px dashed rgba(107,15,15,.3);position:relative}
-.env-pagina-lbl{font-family:"Cinzel",serif;font-size:11px;letter-spacing:3.5px;color:var(--blood);text-transform:uppercase;font-weight:700;text-align:center;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid rgba(107,15,15,.2)}
+.env-pagina-lbl{font-family:"Cinzel",serif;font-size:12px;letter-spacing:3.5px;color:var(--blood);text-transform:uppercase;font-weight:700;text-align:center;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid rgba(107,15,15,.2)}
 
 /* ════════════════════════════════════════════════
    NPCs DE APOIO — cards compactos
@@ -456,12 +456,12 @@ ol.ol li{margin:6px 0}
 .apoio-card{cursor:pointer;padding:14px 18px;margin:8px 0;background:rgba(255,247,225,.04);border:1px solid rgba(154,122,42,.32);border-left:3px solid rgba(154,122,42,.6);transition:all .2s}
 .apoio-card:hover{background:rgba(154,122,42,.12);border-left-color:var(--blood-lt);transform:translateX(2px)}
 .apoio-hdr{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:4px}
-.apoio-nome{font-family:"Cinzel",serif;font-size:15.5px;font-weight:700;color:var(--gold-lt);letter-spacing:.6px}
-.apoio-epi{font-family:"Cormorant Garamond",serif;font-size:13.5px;font-style:italic;color:var(--blood-lt);margin-top:2px}
-.apoio-idade{font-family:"Cinzel",serif;font-size:10px;letter-spacing:1.5px;color:var(--gold-dim);text-transform:uppercase;white-space:nowrap}
-.apoio-profissao{font-family:"Cormorant Garamond",serif;font-size:13.5px;color:var(--ash);margin-bottom:8px}
-.apoio-resumo{font-family:"Cormorant Garamond",serif;font-size:14.5px;line-height:1.6;color:rgba(212,192,154,.85)}
-.apoio-cta{font-family:"Cinzel",serif;font-size:9.5px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-top:10px;text-align:right;opacity:.85}
+.apoio-nome{font-family:"Cinzel",serif;font-size:16.5px;font-weight:700;color:var(--gold-lt);letter-spacing:.6px}
+.apoio-epi{font-family:"Cormorant Garamond",serif;font-size:14.5px;font-style:italic;color:var(--blood-lt);margin-top:2px;font-weight:500}
+.apoio-idade{font-family:"Cinzel",serif;font-size:11px;letter-spacing:1.5px;color:var(--gold-dim);text-transform:uppercase;white-space:nowrap;font-weight:600}
+.apoio-profissao{font-family:"Cormorant Garamond",serif;font-size:14.5px;color:var(--ash);margin-bottom:8px;font-weight:500}
+.apoio-resumo{font-family:"Cormorant Garamond",serif;font-size:15.5px;line-height:1.6;color:rgba(212,192,154,.92);font-weight:500}
+.apoio-cta{font-family:"Cinzel",serif;font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-top:10px;text-align:right;opacity:.95;font-weight:600}
 
 @keyframes localFlash{0%,100%{box-shadow:0 0 0 0 rgba(154,122,42,0)}25%,60%{box-shadow:0 0 0 2px rgba(184,146,46,.6),0 0 22px rgba(184,146,46,.25)}}
 
