@@ -1731,8 +1731,15 @@ function dossieTogglePart(num){
   const jaAberta = el.classList.contains('open');
   // fecha todas as outras
   document.querySelectorAll('.dossie-parte').forEach(p=>p.classList.remove('open'));
-  // se não estava aberta, abre ela
-  if(!jaAberta) el.classList.add('open');
+  // se não estava aberta, abre ela e rola até ela ficar visível
+  if(!jaAberta){
+    el.classList.add('open');
+    // aguarda o reflow para calcular a posição correta após o fechamento das outras
+    requestAnimationFrame(()=>{
+      const hdr = el.querySelector('.dossie-parte-hdr');
+      if(hdr) hdr.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  }
 }
 // Expandir/recolher todas
 function dossieToggleAll(abrir){
