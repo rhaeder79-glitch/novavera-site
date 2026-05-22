@@ -77,7 +77,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
 .t-title{font-family:"Cinzel Decorative",serif;font-size:32px;font-weight:700;color:var(--blood);line-height:1.15;margin-bottom:10px}
 .t-title.lg{font-size:42px}
 .t-sub{font-family:"IM Fell English",serif;font-style:italic;font-size:17px;color:var(--ash);opacity:1;font-weight:500}
-.t-body{font-family:"Cormorant Garamond",serif;font-size:18.5px;font-weight:500;line-height:1.78;color:var(--ink);text-align:justify;hyphens:auto;margin-bottom:16px}
+.t-body{font-family:"Cormorant Garamond",serif;font-size:19px;font-weight:600;line-height:1.72;color:var(--ink);text-align:justify;hyphens:auto;margin-bottom:16px}
 .t-body.dc::first-letter{font-family:"Cinzel Decorative",serif;font-size:76px;font-weight:900;float:left;line-height:.72;margin:10px 10px 0 -4px;color:var(--blood)}
 .t-label{font-family:"Cinzel",serif;font-size:12px;letter-spacing:3.5px;color:var(--gold);text-transform:uppercase;margin:20px 0 6px;opacity:1;font-weight:700}
 .t-sec{font-family:"Cinzel",serif;font-size:17.5px;font-weight:700;color:var(--blood);letter-spacing:.5px;margin:42px 0 14px;padding-bottom:8px;border-bottom:1px solid rgba(107,15,15,.3);display:flex;align-items:center;gap:9px}
@@ -95,7 +95,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
 /* ── BLOCKQUOTE ────────────────────────────────────────────── */
 .bq{margin:22px 14px;padding:18px 24px 18px 28px;border-left:3px solid var(--blood);background:linear-gradient(to right,rgba(107,15,15,.05),transparent);position:relative}
 .bq::before{content:"C";position:absolute;top:-6px;left:8px;font-family:"Cinzel Decorative",serif;font-size:54px;color:var(--blood);opacity:.15;line-height:1}
-.bq p{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:19px;font-weight:500;line-height:1.7;color:var(--ink)}
+.bq p{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:19px;font-weight:600;line-height:1.7;color:var(--ink)}
 
 /* ── WARN BOX ──────────────────────────────────────────────── */
 .warn-box{margin:26px 0;padding:20px 26px;border:1px solid rgba(107,15,15,.3);background:repeating-linear-gradient(-45deg,transparent,transparent 7px,rgba(107,15,15,.025) 7px,rgba(107,15,15,.025) 8px);position:relative}
@@ -145,17 +145,24 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
 .npc-attr strong{color:var(--gold);letter-spacing:2px;text-transform:uppercase;font-size:11.5px}
 
 /* ── EPISODE CARD ──────────────────────────────────────────── */
-.ep-card{background:var(--parch);background-image:radial-gradient(ellipse at 15% 0%,rgba(180,140,80,.1) 0%,transparent 55%);border-left:3px solid transparent;padding:24px 28px;cursor:pointer;transition:all .22s;position:relative}
+.ep-card{background:var(--parch);background-image:radial-gradient(ellipse at 15% 0%,rgba(180,140,80,.1) 0%,transparent 55%);border-left:3px solid transparent;padding:24px 28px;transition:all .22s;position:relative}
 .ep-card:hover{background-image:radial-gradient(ellipse at 15% 0%,rgba(180,140,80,.18) 0%,transparent 55%);border-left-color:rgba(107,15,15,.4)}
 .ep-card.done{border-left-color:var(--blood)}
 .ep-card.current{border-left-color:var(--gold)}
-.ep-card.current::before{content:"EM ANDAMENTO";position:absolute;top:10px;right:14px;font-family:"Cinzel",serif;font-size:11px;letter-spacing:3px;color:var(--gold);opacity:.7}
-.ep-num{font-family:"Cinzel Decorative",serif;font-size:38px;font-weight:900;color:var(--blood);opacity:.15;position:absolute;top:12px;right:20px;line-height:1}
-.ep-label{font-family:"Cinzel",serif;font-size:8px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.75;margin-bottom:5px}
-.ep-title{font-family:"Cinzel",serif;font-size:21px;font-weight:700;color:var(--blood);margin-bottom:5px;letter-spacing:.5px}
-.ep-q{font-family:"IM Fell English",serif;font-style:italic;font-size:15.5px;color:var(--ash);margin-bottom:8px}
-.ep-body{font-family:"Cormorant Garamond",serif;font-size:21px;line-height:1.7;color:var(--ink-soft)}
+.ep-card.current::before{content:"EM ANDAMENTO";position:absolute;top:10px;right:14px;font-family:"Cinzel",serif;font-size:11px;letter-spacing:3px;color:var(--gold);opacity:.85;font-weight:600}
+.ep-card-hdr{cursor:pointer;position:relative;padding-right:30px;transition:transform .15s}
+.ep-card-hdr:hover .ep-title{color:var(--blood-deep)}
+.ep-chev{position:absolute;right:0;top:50%;transform:translateY(-50%);font-size:22px;color:var(--gold-dim);transition:transform .25s}
+.ep-card:has(.ep-detail.open) .ep-chev{transform:translateY(-50%) rotate(180deg);color:var(--blood)}
+.ep-num{font-family:"Cinzel Decorative",serif;font-size:38px;font-weight:900;color:var(--blood);opacity:.15;position:absolute;top:12px;right:20px;line-height:1;pointer-events:none}
+.ep-label{font-family:"Cinzel",serif;font-size:9.5px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;opacity:.95;margin-bottom:5px;font-weight:700}
+.ep-title{font-family:"Cinzel",serif;font-size:23px;font-weight:800;color:var(--blood);margin-bottom:5px;letter-spacing:.5px;transition:color .2s}
+.ep-q{font-family:"IM Fell English",serif;font-style:italic;font-size:17px;color:var(--ink-soft);margin-bottom:8px;font-weight:500}
+.ep-body{font-family:"Cormorant Garamond",serif;font-size:21px;line-height:1.65;color:var(--ink);font-weight:600}
 .ep-detail{display:none;margin-top:18px;padding-top:18px;border-top:1px solid rgba(154,122,42,.22)}
+.ep-close-row{display:flex;justify-content:center;margin:22px 0 4px}
+.ep-close{font-family:"Cinzel",serif;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);background:rgba(154,122,42,.12);border:1px solid rgba(154,122,42,.4);padding:9px 22px;cursor:pointer;transition:all .2s;font-weight:700}
+.ep-close:hover{background:rgba(107,15,15,.15);border-color:var(--blood);color:var(--blood)}
 .ep-detail.open{display:block}
 .ep-status{display:flex;gap:8px;align-items:center;margin-top:12px}
 .ep-btn{font-family:"Cinzel",serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;padding:5px 14px;border:1px solid;cursor:pointer;transition:all .2s;background:none}
@@ -172,7 +179,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
 .doc-fv{font-family:"IM Fell English",serif;font-size:17.5px;color:var(--ink);line-height:1.45}
 .doc-note{margin-top:13px;padding:10px 13px;border-left:2px solid var(--blood);background:rgba(107,15,15,.04)}
 .doc-nl{font-family:"Cinzel",serif;font-size:11.5px;letter-spacing:3px;color:var(--blood);text-transform:uppercase;margin-bottom:4px;opacity:.75}
-.doc-nt{font-family:"IM Fell English",serif;font-style:italic;font-size:17px;color:var(--ink);line-height:1.6;font-weight:500}
+.doc-nt{font-family:"IM Fell English",serif;font-style:italic;font-size:17.5px;color:var(--ink);line-height:1.6;font-weight:600}
 .redact{background:var(--ink);color:transparent;user-select:none;padding:0 3px;display:inline}
 
 /* ── DIARY ─────────────────────────────────────────────────── */
@@ -303,7 +310,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
 .lore-block .lb-title{font-family:"Cinzel",serif;font-size:15px;font-weight:700;color:var(--blood);letter-spacing:1px;margin-bottom:8px}
 .nm-box{margin:18px 0;padding:16px 22px;border:1px solid rgba(107,15,15,.32);background:rgba(107,15,15,.045);position:relative}
 .nm-box .nm-lbl{font-family:"Cinzel",serif;font-size:9px;letter-spacing:5px;color:var(--blood);text-transform:uppercase;margin-bottom:7px;opacity:.85}
-.nm-box .nm-txt{font-family:"Cormorant Garamond",serif;font-size:18px;font-weight:500;line-height:1.72;color:var(--ink);font-style:italic}
+.nm-box .nm-txt{font-family:"Cormorant Garamond",serif;font-size:18.5px;font-weight:600;line-height:1.68;color:var(--ink);font-style:italic}
 
 /* ── CAMADAS DE ANTAGONISMO ── */
 .camada{margin:14px 0;padding:18px 22px;border-left:3px solid var(--blood);background:linear-gradient(to right,rgba(107,15,15,.06),transparent)}
@@ -335,7 +342,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
 /* ── BLOCO INSTRUCIONAL (sinais, monólogos, etc) ── */
 .signal-block{margin:12px 0;padding:14px 20px;border:1px solid rgba(154,122,42,.25);background:rgba(154,122,42,.03)}
 .signal-num{font-family:"Cinzel",serif;font-size:10px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:5px}
-.signal-txt{font-family:"Cormorant Garamond",serif;font-size:18px;font-weight:500;line-height:1.7;color:var(--ink)}
+.signal-txt{font-family:"Cormorant Garamond",serif;font-size:18.5px;font-weight:600;line-height:1.66;color:var(--ink)}
 
 /* ── ENVELOPE PAGE ── */
 .env-page{margin:12px 0;padding:16px 22px;border:1px dashed rgba(90,74,48,.5);background:rgba(90,74,48,.035)}
@@ -381,20 +388,20 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
 .subpane.active{display:block}
 
 /* ── EPISÓDIO DETALHADO (lapidação T1) — sobre fundo pergaminho ── */
-.ep-abertura{font-family:"Cormorant Garamond",serif;font-size:18px;font-weight:500;line-height:1.78;color:var(--ink);font-style:italic;margin:6px 0 18px;padding:14px 20px;border-left:3px solid var(--gold);background:linear-gradient(to right,rgba(154,122,42,.12),transparent)}
+.ep-abertura{font-family:"Cormorant Garamond",serif;font-size:18.5px;font-weight:600;line-height:1.72;color:var(--ink);font-style:italic;margin:6px 0 18px;padding:14px 20px;border-left:3px solid var(--gold);background:linear-gradient(to right,rgba(154,122,42,.14),transparent)}
 .det-grupo{margin:22px 0 10px}
 .det-grupo-titulo{font-family:"Cinzel",serif;font-size:13.5px;font-weight:700;color:var(--blood);letter-spacing:1.5px;text-transform:uppercase;padding-bottom:7px;border-bottom:1px solid rgba(107,15,15,.3);display:flex;align-items:center;gap:8px}
 .det-grupo-titulo::before{content:"❧";color:var(--gold-dim);opacity:.7;font-size:15px}
 .det-ponto{margin:12px 0;padding:14px 18px;background:rgba(107,15,15,.035);border:1px solid rgba(90,74,48,.22);border-left:2px solid rgba(154,122,42,.4);transition:border-color .2s}
 .det-ponto:hover{border-left-color:var(--blood)}
-.det-ponto-texto{font-family:"Cormorant Garamond",serif;font-size:18px;font-weight:500;line-height:1.72;color:var(--ink)}
+.det-ponto-texto{font-family:"Cormorant Garamond",serif;font-size:18.5px;font-weight:600;line-height:1.66;color:var(--ink)}
 .det-refs{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
 .ref-btn{display:inline-flex;align-items:center;gap:5px;font-family:"Cinzel",serif;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;color:var(--blood);background:rgba(154,122,42,.1);border:1px solid rgba(107,15,15,.28);padding:4px 10px;cursor:pointer;transition:all .18s;text-align:left;line-height:1.35}
 .ref-btn:hover{background:rgba(107,15,15,.12);border-color:var(--blood);color:var(--blood-deep)}
 .ref-btn::before{content:"→";opacity:.65;font-size:11px}
 .det-gancho{margin:20px 0 6px;padding:16px 20px;border:1px solid rgba(107,15,15,.35);background:repeating-linear-gradient(-45deg,transparent,transparent 8px,rgba(107,15,15,.04) 8px,rgba(107,15,15,.04) 9px)}
 .det-gancho-lbl{font-family:"Cinzel",serif;font-size:9px;letter-spacing:4px;color:var(--blood);text-transform:uppercase;margin-bottom:7px;opacity:.85}
-.det-gancho-texto{font-family:"Cormorant Garamond",serif;font-size:18px;font-weight:500;line-height:1.74;color:var(--ink)}
+.det-gancho-texto{font-family:"Cormorant Garamond",serif;font-size:18.5px;font-weight:600;line-height:1.68;color:var(--ink)}
 /* destaque temporário ao chegar via referência cruzada */
 .local-flash{animation:localFlash 2.2s ease}
 
@@ -406,37 +413,54 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
 .dossie-citacao{font-family:"Cormorant Garamond",serif;font-size:21px;font-style:italic;font-weight:600;color:var(--blood);line-height:1.45}
 .dossie-fonte{font-family:"Cinzel",serif;font-size:10.5px;letter-spacing:2.5px;color:var(--gold-dim);text-transform:uppercase;margin-top:6px;font-weight:600}
 .dossie-data{text-align:center;font-family:"Cinzel",serif;font-size:12px;letter-spacing:4px;color:var(--gold-lt);text-transform:uppercase;margin-bottom:22px;font-weight:600}
-.dossie-parte{margin:28px 0;padding-top:20px;border-top:2px solid rgba(107,15,15,.35)}
-.dossie-parte-hdr{text-align:center;margin-bottom:18px}
-.dossie-parte-num{font-family:"Cinzel",serif;font-size:11.5px;letter-spacing:5px;color:var(--blood);text-transform:uppercase;opacity:.95;font-weight:600}
-.dossie-parte-titulo{font-family:"Cinzel Decorative","Cinzel",serif;font-size:26px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:1px}
+/* TOC do dossiê — controles para expandir/recolher */
+.dossie-toc{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin:22px 0 6px;padding:14px 18px;background:rgba(107,15,15,.07);border:1px solid rgba(107,15,15,.25)}
+.dossie-toc-lbl{font-family:"Cinzel",serif;font-size:11.5px;letter-spacing:2.5px;color:var(--blood);text-transform:uppercase;font-weight:700}
+.dossie-toc-actions{display:flex;gap:8px;flex-wrap:wrap}
+.dossie-toc-btn{font-family:"Cinzel",serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);background:rgba(154,122,42,.12);border:1px solid rgba(154,122,42,.4);padding:7px 14px;cursor:pointer;transition:all .2s;font-weight:700}
+.dossie-toc-btn:hover{background:rgba(154,122,42,.22);border-color:var(--gold);color:var(--blood)}
+
+/* Partes do dossiê expandíveis */
+.dossie-parte{margin:18px 0;border:1px solid rgba(107,15,15,.3);background:rgba(255,247,225,.4);overflow:hidden;transition:background .2s}
+.dossie-parte:hover:not(.open){background:rgba(255,247,225,.6)}
+.dossie-parte.open{background:transparent;border-color:rgba(107,15,15,.5)}
+.dossie-parte-hdr{display:flex;align-items:center;gap:16px;padding:16px 22px;cursor:pointer;position:relative;transition:background .2s}
+.dossie-parte-hdr:hover{background:rgba(107,15,15,.07)}
+.dossie-parte.open .dossie-parte-hdr{background:rgba(107,15,15,.1);border-bottom:2px solid rgba(107,15,15,.35)}
+.dossie-parte-num{font-family:"Cinzel",serif;font-size:11.5px;letter-spacing:4px;color:var(--blood);text-transform:uppercase;font-weight:700;white-space:nowrap}
+.dossie-parte-titulo{font-family:"Cinzel Decorative","Cinzel",serif;font-size:22px;font-weight:700;color:var(--ink);letter-spacing:1px;flex:1}
+.dossie-parte-chev{font-size:22px;color:var(--gold-dim);transition:transform .25s;font-weight:700}
+.dossie-parte.open .dossie-parte-chev{transform:rotate(180deg);color:var(--blood)}
+.dossie-parte-body{display:none;padding:20px 24px;animation:partFadeIn .3s ease}
+.dossie-parte.open .dossie-parte-body{display:block}
+@keyframes partFadeIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
 .dossie-secao{margin:18px 0 4px;padding:14px 0}
 .dossie-sec-titulo{font-family:"Cinzel",serif;font-size:15.5px;font-weight:700;color:var(--blood);letter-spacing:1.4px;text-transform:uppercase;padding-bottom:8px;border-bottom:1px solid rgba(107,15,15,.3);margin-bottom:12px;display:flex;align-items:center;gap:8px}
 .dossie-sec-titulo::before{content:"❧";color:var(--gold-dim);opacity:.85;font-size:16px}
-.dossie-para-quem{font-style:italic;color:var(--ink-soft);margin-bottom:10px;font-size:16px;font-family:"Cormorant Garamond",serif;font-weight:500}
-.dossie-narracao{background:rgba(154,122,42,.1);border-left:4px solid var(--gold);padding:16px 20px;margin:12px 0;font-family:"Cormorant Garamond",serif;font-size:17.5px;line-height:1.75;color:var(--ink);font-style:italic;font-weight:500;white-space:normal}
-.dossie-fala{background:rgba(107,15,15,.08);border:1px solid rgba(107,15,15,.28);padding:12px 18px;margin:10px 0;font-family:"Cormorant Garamond",serif;font-size:17.5px;line-height:1.7;color:var(--ink);font-style:italic;font-weight:500}
+.dossie-para-quem{font-style:italic;color:var(--ink);margin-bottom:10px;font-size:17px;font-family:"Cormorant Garamond",serif;font-weight:600}
+.dossie-narracao{background:rgba(154,122,42,.12);border-left:4px solid var(--gold);padding:16px 20px;margin:12px 0;font-family:"Cormorant Garamond",serif;font-size:18px;line-height:1.7;color:var(--ink);font-style:italic;font-weight:600;white-space:normal}
+.dossie-fala{background:rgba(107,15,15,.1);border:1px solid rgba(107,15,15,.32);padding:12px 18px;margin:10px 0;font-family:"Cormorant Garamond",serif;font-size:18px;line-height:1.65;color:var(--ink);font-style:italic;font-weight:600}
 .dossie-fala-nota{font-style:normal;font-size:13.5px;color:var(--ash);font-family:"Cinzel",serif;letter-spacing:.5px;font-weight:600}
 .dossie-dlg-ctx{font-family:"Cinzel",serif;font-size:10.5px;letter-spacing:2.5px;color:var(--gold-dim);text-transform:uppercase;margin:14px 0 4px;font-weight:700}
 .dossie-subbloco{margin:16px 0;padding:16px 20px;background:rgba(154,122,42,.08);border:1px solid rgba(90,74,48,.25);border-left:3px solid rgba(154,122,42,.55)}
 .dossie-sub-titulo{font-family:"Cinzel",serif;font-size:13px;font-weight:700;color:var(--blood);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px}
-.dossie-transcr{margin:8px 0;font-family:"Cormorant Garamond",serif;font-size:17px;line-height:1.65;color:var(--ink);font-weight:500}
+.dossie-transcr{margin:8px 0;font-family:"Cormorant Garamond",serif;font-size:17.5px;line-height:1.6;color:var(--ink);font-weight:600}
 .dossie-transcr-nome{font-family:"Cinzel",serif;font-size:12px;letter-spacing:1.5px;font-weight:700;color:var(--blood);text-transform:uppercase}
 
 .warn-box{margin:16px 0;padding:16px 20px;background:rgba(107,15,15,.1);border:1px solid rgba(107,15,15,.45);border-left:4px solid var(--blood)}
 .warn-lbl{font-family:"Cinzel",serif;font-size:11px;letter-spacing:3px;color:var(--blood);text-transform:uppercase;margin-bottom:8px;font-weight:700}
-.warn-txt{font-family:"Cormorant Garamond",serif;font-size:17px;line-height:1.7;color:var(--ink);font-weight:500}
+.warn-txt{font-family:"Cormorant Garamond",serif;font-size:17.5px;line-height:1.68;color:var(--ink);font-weight:600}
 
 .info-grid{display:grid;grid-template-columns:140px 1fr;gap:10px 16px;margin:12px 0 16px;padding:14px 16px;background:rgba(154,122,42,.08);border:1px solid rgba(90,74,48,.25)}
 .info-k{font-family:"Cinzel",serif;font-size:11px;letter-spacing:1.8px;color:var(--gold-dim);text-transform:uppercase;align-self:start;font-weight:700}
-.info-v{font-family:"Cormorant Garamond",serif;font-size:16.5px;line-height:1.6;color:var(--ink);font-weight:500}
+.info-v{font-family:"Cormorant Garamond",serif;font-size:17px;line-height:1.58;color:var(--ink);font-weight:600}
 
-.stbl{width:100%;border-collapse:collapse;margin:12px 0;font-family:"Cormorant Garamond",serif;font-size:16px;font-weight:500}
+.stbl{width:100%;border-collapse:collapse;margin:12px 0;font-family:"Cormorant Garamond",serif;font-size:16.5px;font-weight:600}
 .stbl th{background:rgba(107,15,15,.18);color:var(--blood);font-family:"Cinzel",serif;font-size:11.5px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;padding:10px 12px;text-align:left;border:1px solid rgba(107,15,15,.35)}
 .stbl td{padding:10px 12px;border:1px solid rgba(90,74,48,.25);color:var(--ink);line-height:1.55;vertical-align:top}
 .stbl tr:nth-child(even) td{background:rgba(154,122,42,.06)}
 
-ol.ol{margin:12px 0;padding-left:26px;font-family:"Cormorant Garamond",serif;font-size:17.5px;line-height:1.72;color:var(--ink);font-weight:500}
+ol.ol{margin:12px 0;padding-left:26px;font-family:"Cormorant Garamond",serif;font-size:18px;line-height:1.68;color:var(--ink);font-weight:600}
 ol.ol li{margin:8px 0}
 
 /* ════════════════════════════════════════════════
@@ -1673,22 +1697,43 @@ function renderDossie(dossie){
       <div class="dossie-citacao">"${esc(dossie.epigrafe)}"</div>
       <div class="dossie-fonte">— ${esc(dossie.epigrafe_fonte)}</div>
     </div>
-    <div class="dossie-data">${esc(dossie.data_ficcional)}</div>`;
+    <div class="dossie-data">${esc(dossie.data_ficcional)}</div>
+    <div class="dossie-toc">
+      <div class="dossie-toc-lbl">Índice do Dossiê — clique para expandir</div>
+      <div class="dossie-toc-actions">
+        <button class="dossie-toc-btn" onclick="dossieToggleAll(true)">Expandir todas</button>
+        <button class="dossie-toc-btn" onclick="dossieToggleAll(false)">Recolher todas</button>
+      </div>
+    </div>`;
 
   dossie.partes.forEach(parte=>{
-    h += `<div class="dossie-parte">
-      <div class="dossie-parte-hdr">
+    h += `<div class="dossie-parte" id="dossie-parte-${parte.numero}">
+      <div class="dossie-parte-hdr" onclick="dossieTogglePart(${parte.numero})">
         <div class="dossie-parte-num">PARTE ${parte.numero}</div>
         <div class="dossie-parte-titulo">${esc(parte.titulo)}</div>
-      </div>`;
+        <div class="dossie-parte-chev">▾</div>
+      </div>
+      <div class="dossie-parte-body">`;
     parte.secoes.forEach(sec=>{
       h += renderDossieSec(sec);
     });
-    h += `</div>`;
+    h += `</div></div>`;
   });
 
   h += `</div>`;
   return h;
+}
+
+// Toggle de uma parte específica
+function dossieTogglePart(num){
+  const el = document.getElementById('dossie-parte-'+num);
+  if(el) el.classList.toggle('open');
+}
+// Expandir/recolher todas
+function dossieToggleAll(abrir){
+  document.querySelectorAll('.dossie-parte').forEach(el=>{
+    if(abrir) el.classList.add('open'); else el.classList.remove('open');
+  });
 }
 
 function renderDossieSec(sec){
@@ -1918,12 +1963,17 @@ function renderTemporadas(){
       inner+=`<div class="div-orn">❧ ✦ ❧</div>
         <div style="font-family:'Cinzel',serif;font-size:13px;letter-spacing:4px;color:var(--gold-lt);text-transform:uppercase;margin-bottom:16px;text-align:center">Os Dez Episódios</div>`;
       inner+=DATA.episodios.map((e,ei)=>`
-        <div class="ep-card ${e.status==='concluido'?'done':''} ${e.numero===DATA.meta.episodio_atual?'current':''}" onclick="toggleEp(${ei})">
-          <div class="ep-num">${roman(e.numero)}</div>
-          <div class="ep-label">Episódio ${roman(e.numero)}</div>
-          <div class="ep-title">${esc(e.titulo)}</div>
-          <div class="ep-q">${esc(e.subtitulo)}</div>
-          <div class="ep-detail" id="ep-${ei}">${renderEpDetail(e)}</div>
+        <div class="ep-card ${e.status==='concluido'?'done':''} ${e.numero===DATA.meta.episodio_atual?'current':''}" id="ep-card-${ei}">
+          <div class="ep-card-hdr" onclick="toggleEp(${ei})">
+            <div class="ep-num">${roman(e.numero)}</div>
+            <div class="ep-label">Episódio ${roman(e.numero)}</div>
+            <div class="ep-title">${esc(e.titulo)}</div>
+            <div class="ep-q">${esc(e.subtitulo)}</div>
+            <div class="ep-chev" aria-hidden="true">▾</div>
+          </div>
+          <div class="ep-detail" id="ep-${ei}">${renderEpDetail(e)}
+            <div class="ep-close-row"><button class="ep-close" onclick="event.stopPropagation();toggleEp(${ei})">▴ Recolher episódio</button></div>
+          </div>
         </div>`).join('');
     }
     return `<div class="subpane ${i===0?'active':''}" id="temppane-${i}">${inner}</div>`;
