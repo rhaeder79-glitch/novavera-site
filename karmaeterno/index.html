@@ -397,6 +397,34 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
 .det-ponto-texto{font-family:"Cormorant Garamond",serif;font-size:18.5px;font-weight:600;line-height:1.66;color:var(--ink)}
 .det-refs{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
 .ref-btn{display:inline-flex;align-items:center;gap:5px;font-family:"Cinzel",serif;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;color:var(--blood);background:rgba(154,122,42,.1);border:1px solid rgba(107,15,15,.28);padding:4px 10px;cursor:pointer;transition:all .18s;text-align:left;line-height:1.35}
+
+/* Links automáticos inline (NPCs e locais mencionados em narrações/diálogos) */
+.auto-link{color:var(--blood);text-decoration:none;border-bottom:1px dotted rgba(107,15,15,.4);cursor:pointer;transition:all .15s;padding:0 1px}
+.auto-link:hover{color:var(--blood-deep);background:rgba(154,122,42,.18);border-bottom-color:var(--blood);border-bottom-style:solid}
+.dossie-narracao .auto-link,.dossie-fala .auto-link{color:#5e0e0e;font-style:inherit}
+em .auto-link,em.dossie-fala .auto-link{font-style:italic}
+
+/* ════════════════════════════════════════════════
+   BLOCO "NO EPISÓDIO 1" — em cards de NPC e Local
+   ════════════════════════════════════════════════ */
+.ep1-block{margin-top:18px;padding:18px 20px;background:linear-gradient(135deg,rgba(107,15,15,.06),rgba(154,122,42,.08));border:1px solid rgba(107,15,15,.3);border-left:4px solid var(--blood);position:relative}
+.ep1-block::before{content:"";position:absolute;top:-1px;left:-1px;right:-1px;height:3px;background:linear-gradient(90deg,var(--blood),var(--gold),var(--blood));opacity:.5}
+.ep1-eyebrow{font-family:"Cinzel",serif;font-size:10.5px;letter-spacing:4px;color:var(--blood);text-transform:uppercase;font-weight:700;margin-bottom:10px}
+.ep1-presenca{font-family:"Cormorant Garamond",serif;font-size:18px;font-weight:600;font-style:italic;color:var(--ink);margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid rgba(107,15,15,.18)}
+.ep1-label{font-family:"Cinzel",serif;font-size:11px;letter-spacing:2.5px;color:var(--blood);text-transform:uppercase;margin:14px 0 6px;font-weight:700}
+.ep1-narracao{font-family:"Cormorant Garamond",serif;font-size:17px;font-weight:500;line-height:1.65;color:var(--ink);font-style:italic;background:rgba(154,122,42,.08);padding:10px 14px;border-left:3px solid var(--gold);margin-bottom:8px}
+.ep1-p{font-family:"Cormorant Garamond",serif;font-size:17px;font-weight:600;line-height:1.6;color:var(--ink);margin-bottom:8px}
+.ep1-subbloco{margin:8px 0;padding:10px 14px;background:rgba(255,247,225,.5);border:1px solid rgba(154,122,42,.3);border-left:2px solid rgba(154,122,42,.6)}
+.ep1-sub-tit{font-family:"Cinzel",serif;font-size:11.5px;font-weight:700;color:var(--blood);letter-spacing:1.2px;text-transform:uppercase;margin-bottom:5px}
+.ep1-sub-txt{font-family:"Cormorant Garamond",serif;font-size:17px;font-weight:500;line-height:1.6;color:var(--ink)}
+.ep1-sub-rol{font-family:"Cormorant Garamond",serif;font-size:15.5px;font-weight:600;line-height:1.55;color:var(--blood-deep);margin-top:6px;padding-top:6px;border-top:1px dashed rgba(107,15,15,.2)}
+.ep1-ul{margin:6px 0;padding-left:22px;font-family:"Cormorant Garamond",serif;font-size:17px;font-weight:500;line-height:1.55;color:var(--ink)}
+.ep1-ul li{margin:5px 0}
+.ep1-warn{margin:10px 0;padding:10px 14px;background:rgba(107,15,15,.1);border:1px solid var(--blood);border-left:4px solid var(--blood)}
+.ep1-warn-lbl{font-family:"Cinzel",serif;font-size:10px;letter-spacing:2.5px;color:var(--blood);text-transform:uppercase;font-weight:700;margin-bottom:4px}
+.ep1-warn-txt{font-family:"Cormorant Garamond",serif;font-size:17px;font-weight:600;line-height:1.6;color:var(--ink)}
+.ep1-conexoes{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.ep1-conexao{display:inline-block;font-family:"Cinzel",serif;font-size:10px;letter-spacing:1.2px;color:var(--ink);background:rgba(154,122,42,.15);border:1px solid rgba(90,74,48,.3);padding:4px 10px;font-weight:600}
 .ref-btn:hover{background:rgba(107,15,15,.12);border-color:var(--blood);color:var(--blood-deep)}
 .ref-btn::before{content:"→";opacity:.65;font-size:11px}
 .det-gancho{margin:20px 0 6px;padding:16px 20px;border:1px solid rgba(107,15,15,.35);background:repeating-linear-gradient(-45deg,transparent,transparent 8px,rgba(107,15,15,.04) 8px,rgba(107,15,15,.04) 9px)}
@@ -982,9 +1010,140 @@ function paras(txt){
 }
 function fmtInline(s){
   // escapa e destaca falas entre aspas curvas/retas em itálico suave
-  return esc(s).replace(/\n/g,'<br>')
+  let out = esc(s).replace(/\n/g,'<br>')
     .replace(/"([^"]+)"/g,'<em style="color:var(--ink);font-style:italic">&ldquo;$1&rdquo;</em>')
     .replace(/“([^”]+)”/g,'<em style="color:var(--ink);font-style:italic">&ldquo;$1&rdquo;</em>');
+  // auto-link de NPCs/locais
+  out = linkify(out);
+  return out;
+}
+
+// ═══════════════════════════════════════════════════════════
+// AUTO-LINKING — varre texto e substitui menções a NPC/local
+// por botões clicáveis. Não substitui dentro de tags HTML existentes.
+// ═══════════════════════════════════════════════════════════
+function linkify(html){
+  if(!DATA.link_index || !DATA.link_index.length) return html;
+  // proteger tags HTML existentes — extrai temporariamente
+  const placeholders = [];
+  const protect = (s)=> s.replace(/<[^>]+>/g, m=>{
+    placeholders.push(m);
+    return `\x00${placeholders.length-1}\x00`;
+  });
+  let working = protect(html);
+
+  // Para cada termo no índice (ordenado: maiores primeiro)
+  const jaLinkado = new Set();
+  for(const e of DATA.link_index){
+    if(jaLinkado.has(e.ref)) continue;
+    const escaped = e.termo.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+    const re = new RegExp(`(^|[^\\p{L}\\p{N}_\\x00])(${escaped})(?=[^\\p{L}\\p{N}_\\x00]|$)`, 'iu');
+    const m = working.match(re);
+    if(m){
+      const idx = m.index + m[1].length;
+      const matched = m[2];
+      const before = working.slice(0, idx);
+      const after = working.slice(idx + matched.length);
+      // Cria o link e PROTEGE ele em placeholder pra que não seja varrido nas próximas iterações
+      const linkHtml = `<a class="auto-link" onclick="captureOrigin();goRef('${e.ref}')" title="Ir para ${refLabel(e.ref).replace(/'/g,"&apos;")}">${matched}</a>`;
+      placeholders.push(linkHtml);
+      const ph = `\x00${placeholders.length-1}\x00`;
+      working = before + ph + after;
+      jaLinkado.add(e.ref);
+    }
+  }
+
+  // restaura placeholders
+  working = working.replace(/\x00(\d+)\x00/g, (_,i)=>placeholders[parseInt(i)]);
+  return working;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RENDERIZAR BLOCO "NO EPISÓDIO 1" — para cards de NPC e Local
+   ═══════════════════════════════════════════════════════════ */
+function renderLocalEp1(ep1){
+  let h = `<div class="ep1-block">
+    <div class="ep1-eyebrow">No Episódio 1</div>`;
+  if(ep1.presenca_ep1) h += `<div class="ep1-presenca">${fmtInline(ep1.presenca_ep1)}</div>`;
+  if(ep1.como_narrar) h += `<div class="ep1-label">Como narrar este lugar</div><div class="ep1-narracao">${fmtInline(ep1.como_narrar).replace(/\n/g,'<br>')}</div>`;
+  if(ep1.como_narrar_dia){ h += `<div class="ep1-label">De dia</div><div class="ep1-narracao">${fmtInline(ep1.como_narrar_dia).replace(/\n/g,'<br>')}</div>`; }
+  if(ep1.como_narrar_noite){ h += `<div class="ep1-label">De noite</div><div class="ep1-narracao">${fmtInline(ep1.como_narrar_noite).replace(/\n/g,'<br>')}</div>`; }
+  if(ep1.mecanicas){
+    h += `<div class="ep1-label">Mecânicas no local</div>`;
+    ep1.mecanicas.forEach(m=>{
+      h += `<div class="ep1-subbloco"><div class="ep1-sub-tit">${esc(m.titulo)}</div><div class="ep1-sub-txt">${fmtInline(m.texto).replace(/\n/g,'<br>')}</div></div>`;
+    });
+  }
+  if(ep1.encontrar_terra_central){
+    const t = ep1.encontrar_terra_central;
+    h += `<div class="ep1-label">${esc(t.titulo)}</div><div class="ep1-subbloco"><div class="ep1-sub-txt">${fmtInline(t.texto)}</div>`;
+    if(t.rolagem) h += `<div class="ep1-sub-rol">${fmtInline(t.rolagem).replace(/\n/g,'<br>')}</div>`;
+    h += `</div>`;
+  }
+  if(ep1.como_chegar){
+    h += `<div class="ep1-label">Como chegar aqui</div><ul class="ep1-ul">${ep1.como_chegar.map(i=>`<li>${fmtInline(i)}</li>`).join('')}</ul>`;
+  }
+  if(ep1.fechadura) h += `<div class="ep1-label">Fechadura / Acesso</div><p class="ep1-p">${fmtInline(ep1.fechadura)}</p>`;
+  if(ep1.estrutura){ h += `<div class="ep1-label">Estrutura do espaço</div><ul class="ep1-ul">${ep1.estrutura.map(i=>`<li>${fmtInline(i)}</li>`).join('')}</ul>`; }
+  if(ep1.achados){
+    h += `<div class="ep1-label">Achados / Itens importantes</div>`;
+    ep1.achados.forEach(a=>{
+      h += `<div class="ep1-subbloco"><div class="ep1-sub-tit">${esc(a.titulo)}</div><div class="ep1-sub-txt">${fmtInline(a.texto)}</div></div>`;
+    });
+  }
+  if(ep1.cenas_que_acontecem){ h += `<div class="ep1-label">Cenas que acontecem aqui</div><ul class="ep1-ul">${ep1.cenas_que_acontecem.map(i=>`<li>${fmtInline(i)}</li>`).join('')}</ul>`; }
+  if(ep1.a_placa){ h += `<div class="ep1-label">${esc(ep1.a_placa.titulo)}</div><div class="ep1-subbloco"><div class="ep1-sub-txt">${fmtInline(ep1.a_placa.texto)}</div></div>`; }
+  if(ep1.marca_de_cal_atras){ h += `<div class="ep1-label">${esc(ep1.marca_de_cal_atras.titulo)}</div><div class="ep1-subbloco"><div class="ep1-sub-txt">${fmtInline(ep1.marca_de_cal_atras.texto)}</div></div>`; }
+  if(ep1.o_simbolo_na_calcada){ h += `<div class="ep1-label">${esc(ep1.o_simbolo_na_calcada.titulo)}</div><div class="ep1-subbloco"><div class="ep1-sub-txt">${fmtInline(ep1.o_simbolo_na_calcada.texto)}</div></div>`; }
+  if(ep1.seu_aparecido){ h += `<div class="ep1-label">${esc(ep1.seu_aparecido.titulo)}</div><div class="ep1-subbloco"><div class="ep1-sub-txt">${fmtInline(ep1.seu_aparecido.texto)}</div></div>`; }
+  if(ep1.seu_geraldo){ h += `<div class="ep1-label">Seu Geraldo no local</div><p class="ep1-p">${fmtInline(ep1.seu_geraldo)}</p>`; }
+  if(ep1.marisa_funcionaria){ h += `<div class="ep1-label">Marisa no local</div><p class="ep1-p">${fmtInline(ep1.marisa_funcionaria)}</p>`; }
+  if(ep1.outros_detalhes){ h += `<div class="ep1-label">Outros detalhes</div><ul class="ep1-ul">${ep1.outros_detalhes.map(i=>`<li>${fmtInline(i)}</li>`).join('')}</ul>`; }
+  if(ep1.particularidades){ h += `<div class="ep1-label">Particularidades do bairro</div><ul class="ep1-ul">${ep1.particularidades.map(i=>`<li>${fmtInline(i)}</li>`).join('')}</ul>`; }
+  if(ep1.vizinhanca){ h += `<div class="ep1-label">Vizinhança imediata</div><ul class="ep1-ul">${ep1.vizinhanca.map(i=>`<li>${fmtInline(i)}</li>`).join('')}</ul>`; }
+  if(ep1.contexto) h += `<div class="ep1-label">Contexto</div><p class="ep1-p">${fmtInline(ep1.contexto)}</p>`;
+  if(ep1.o_que_revela){
+    h += `<div class="ep1-label">O que se revela aqui</div>`;
+    ep1.o_que_revela.forEach(r=>{
+      h += `<div class="ep1-subbloco"><div class="ep1-sub-tit">${esc(r.titulo)}</div><div class="ep1-sub-txt">${fmtInline(r.texto)}</div></div>`;
+    });
+  }
+  if(ep1.o_que_aconteceu_aqui) h += `<div class="ep1-label">O que aconteceu aqui</div><p class="ep1-p">${fmtInline(ep1.o_que_aconteceu_aqui)}</p>`;
+  if(ep1.o_que_entrega) h += `<div class="ep1-label">O que se entrega aqui</div><p class="ep1-p">${fmtInline(ep1.o_que_entrega)}</p>`;
+  if(ep1.info_critica) h += `<div class="ep1-warn"><div class="ep1-warn-lbl">Informação crítica</div><div class="ep1-warn-txt">${fmtInline(ep1.info_critica)}</div></div>`;
+  if(ep1.gancho) h += `<div class="ep1-label">Gancho</div><p class="ep1-p">${fmtInline(ep1.gancho)}</p>`;
+  if(ep1.como_abrir_caderno) h += `<div class="ep1-label">Como abrir o caderno</div><p class="ep1-p">${fmtInline(ep1.como_abrir_caderno)}</p>`;
+  if(ep1.climax) h += `<div class="ep1-warn"><div class="ep1-warn-lbl">Clímax do episódio</div><div class="ep1-warn-txt">${fmtInline(ep1.climax)}</div></div>`;
+  if(ep1.o_carro) h += `<div class="ep1-label">O carro</div><p class="ep1-p">${fmtInline(ep1.o_carro)}</p>`;
+  if(ep1.personagens_associados && ep1.personagens_associados.length){
+    h += `<div class="ep1-label">Conectado a</div><div class="ep1-conexoes">${ep1.personagens_associados.map(p=>`<span class="ep1-conexao">${fmtInline(p)}</span>`).join('')}</div>`;
+  }
+  h += `</div>`;
+  return h;
+}
+
+function renderNpcEp1(ep1){
+  let h = `<div class="ep1-block">
+    <div class="ep1-eyebrow">No Episódio 1</div>`;
+  if(ep1.presenca_ep1) h += `<div class="ep1-presenca">${fmtInline(ep1.presenca_ep1)}</div>`;
+  if(ep1.como_interpretar){ h += `<div class="ep1-label">Como interpretar</div><div class="ep1-narracao">${fmtInline(ep1.como_interpretar)}</div>`; }
+  if(ep1.no_episodio){
+    h += `<div class="ep1-label">Onde aparece no episódio</div>`;
+    ep1.no_episodio.forEach(c=>{
+      h += `<div class="ep1-subbloco"><div class="ep1-sub-tit">${esc(c.titulo)}</div><div class="ep1-sub-txt">${fmtInline(c.texto)}</div></div>`;
+    });
+  }
+  if(ep1.pistas_que_deixa){
+    h += `<div class="ep1-label">Pistas que deixa</div><ul class="ep1-ul">${ep1.pistas_que_deixa.map(i=>`<li>${fmtInline(i)}</li>`).join('')}</ul>`;
+  }
+  if(ep1.reconstrucao_ultima_noite){
+    h += `<div class="ep1-warn"><div class="ep1-warn-lbl">Reconstrução da última noite</div><div class="ep1-warn-txt">${fmtInline(ep1.reconstrucao_ultima_noite)}</div></div>`;
+  }
+  if(ep1.ganchos_pos_ep1){
+    h += `<div class="ep1-label">Ganchos pós-Ep1</div><p class="ep1-p">${fmtInline(ep1.ganchos_pos_ep1)}</p>`;
+  }
+  h += `</div>`;
+  return h;
 }
 function ulList(arr){
   if(!arr||!arr.length) return '';
@@ -1239,6 +1398,7 @@ function renderCidade(){
       </div>
       <p class="t-body" style="margin-bottom:8px">${fmtInline(l.descricao)}</p>
       <div class="doc-note" style="margin:0"><div class="doc-nl">Detalhe</div><div class="doc-nt">${fmtInline(l.detalhe)}</div></div>
+      ${l.ep1 ? renderLocalEp1(l.ep1) : ''}
     </div>`;
   });
 
@@ -1554,6 +1714,10 @@ function openNpc(i){
       ${ulList(n.attrs)}
       <div class="t-label">A História</div>
       ${paras(n.historia)}`;
+  // ── NOVA seção: NO EPISÓDIO 1 ──
+  if(n.ep1){
+    h += renderNpcEp1(n.ep1);
+  }
   if(n.como_interpretar&&n.como_interpretar.length){
     h+=`<div class="t-label">Como Interpretar / Pontos-Chave</div>${ulList(n.como_interpretar)}`;
   }
