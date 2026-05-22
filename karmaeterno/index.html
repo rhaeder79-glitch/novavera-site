@@ -397,6 +397,72 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
 .det-gancho-texto{font-family:"Cormorant Garamond",serif;font-size:16.5px;line-height:1.78;color:var(--ink-soft)}
 /* destaque temporário ao chegar via referência cruzada */
 .local-flash{animation:localFlash 2.2s ease}
+
+/* ════════════════════════════════════════════════
+   DOSSIÊ DO EPISÓDIO 1 — scroll único expandido
+   ════════════════════════════════════════════════ */
+.dossie-wrap{margin:14px 0}
+.dossie-epigrafe{text-align:center;margin:8px 0 6px;padding:14px 22px;border-top:1px solid rgba(154,122,42,.3);border-bottom:1px solid rgba(154,122,42,.3)}
+.dossie-citacao{font-family:"Cormorant Garamond",serif;font-size:18px;font-style:italic;color:var(--blood);line-height:1.5}
+.dossie-fonte{font-family:"Cinzel",serif;font-size:9.5px;letter-spacing:2.5px;color:var(--gold-dim);text-transform:uppercase;margin-top:6px}
+.dossie-data{text-align:center;font-family:"Cinzel",serif;font-size:11px;letter-spacing:4px;color:var(--gold-lt);text-transform:uppercase;margin-bottom:22px}
+.dossie-parte{margin:28px 0;padding-top:20px;border-top:2px solid rgba(107,15,15,.35)}
+.dossie-parte-hdr{text-align:center;margin-bottom:18px}
+.dossie-parte-num{font-family:"Cinzel",serif;font-size:10.5px;letter-spacing:5px;color:var(--blood);text-transform:uppercase;opacity:.85}
+.dossie-parte-titulo{font-family:"Cinzel Decorative","Cinzel",serif;font-size:24px;font-weight:700;color:var(--ink);margin-top:4px;letter-spacing:1px}
+.dossie-secao{margin:18px 0 4px;padding:14px 0}
+.dossie-sec-titulo{font-family:"Cinzel",serif;font-size:14.5px;font-weight:700;color:var(--blood);letter-spacing:1.4px;text-transform:uppercase;padding-bottom:8px;border-bottom:1px solid rgba(107,15,15,.3);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.dossie-sec-titulo::before{content:"❧";color:var(--gold-dim);opacity:.7;font-size:15px}
+.dossie-para-quem{font-style:italic;color:var(--ash);margin-bottom:10px;font-size:14.5px;font-family:"Cormorant Garamond",serif}
+.dossie-narracao{background:rgba(154,122,42,.06);border-left:3px solid var(--gold);padding:14px 18px;margin:10px 0;font-family:"Cormorant Garamond",serif;font-size:15.5px;line-height:1.78;color:var(--ink-soft);font-style:italic;white-space:normal}
+.dossie-fala{background:rgba(107,15,15,.06);border:1px solid rgba(107,15,15,.22);padding:10px 16px;margin:8px 0;font-family:"Cormorant Garamond",serif;font-size:15.5px;line-height:1.7;color:var(--ink-soft);font-style:italic}
+.dossie-fala-nota{font-style:normal;font-size:13px;color:var(--ash);font-family:"Cinzel",serif;letter-spacing:.5px}
+.dossie-dlg-ctx{font-family:"Cinzel",serif;font-size:9.5px;letter-spacing:2.5px;color:var(--gold-dim);text-transform:uppercase;margin:12px 0 4px}
+.dossie-subbloco{margin:14px 0;padding:14px 18px;background:rgba(154,122,42,.05);border:1px solid rgba(90,74,48,.18);border-left:3px solid rgba(154,122,42,.45)}
+.dossie-sub-titulo{font-family:"Cinzel",serif;font-size:12px;font-weight:700;color:var(--blood);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px}
+.dossie-transcr{margin:6px 0;font-family:"Cormorant Garamond",serif;font-size:15.5px;line-height:1.65;color:var(--ink-soft)}
+.dossie-transcr-nome{font-family:"Cinzel",serif;font-size:11px;letter-spacing:1.5px;font-weight:700;color:var(--blood);text-transform:uppercase}
+
+.warn-box{margin:14px 0;padding:14px 18px;background:rgba(107,15,15,.07);border:1px solid rgba(107,15,15,.4);border-left:4px solid var(--blood)}
+.warn-lbl{font-family:"Cinzel",serif;font-size:10px;letter-spacing:3px;color:var(--blood);text-transform:uppercase;margin-bottom:6px;font-weight:700}
+.warn-txt{font-family:"Cormorant Garamond",serif;font-size:15.5px;line-height:1.72;color:var(--ink-soft)}
+
+.info-grid{display:grid;grid-template-columns:130px 1fr;gap:8px 14px;margin:10px 0 14px;padding:12px 14px;background:rgba(154,122,42,.05);border:1px solid rgba(90,74,48,.18)}
+.info-k{font-family:"Cinzel",serif;font-size:10px;letter-spacing:1.8px;color:var(--gold-dim);text-transform:uppercase;align-self:start}
+.info-v{font-family:"Cormorant Garamond",serif;font-size:15px;line-height:1.6;color:var(--ink-soft)}
+
+.stbl{width:100%;border-collapse:collapse;margin:10px 0;font-family:"Cormorant Garamond",serif;font-size:14.5px}
+.stbl th{background:rgba(107,15,15,.15);color:var(--blood);font-family:"Cinzel",serif;font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;padding:8px 10px;text-align:left;border:1px solid rgba(107,15,15,.3)}
+.stbl td{padding:8px 10px;border:1px solid rgba(90,74,48,.2);color:var(--ink-soft);line-height:1.55;vertical-align:top}
+.stbl tr:nth-child(even) td{background:rgba(154,122,42,.04)}
+
+ol.ol{margin:10px 0;padding-left:24px;font-family:"Cormorant Garamond",serif;font-size:15.5px;line-height:1.72;color:var(--ink-soft)}
+ol.ol li{margin:6px 0}
+
+/* ════════════════════════════════════════════════
+   ENVELOPES — Aba dedicada
+   ════════════════════════════════════════════════ */
+.env-card{background:linear-gradient(135deg,#f7ecd2 0%,#f0e3c1 100%) !important}
+.env-hdr{text-align:center;padding-bottom:14px;margin-bottom:14px;border-bottom:1px solid rgba(107,15,15,.3)}
+.env-numero{font-family:"Cinzel",serif;font-size:10px;letter-spacing:4px;color:var(--gold-dim);text-transform:uppercase}
+.env-papel{font-family:"Cinzel Decorative","Cinzel",serif;font-size:26px;font-weight:700;color:var(--blood);margin:4px 0;letter-spacing:2px}
+.env-subtitulo{font-family:"Cormorant Garamond",serif;font-size:15px;font-style:italic;color:var(--ash)}
+.env-pagina{margin:18px 0;padding:18px 22px;background:rgba(255,253,247,.5);border:1px dashed rgba(107,15,15,.3);position:relative}
+.env-pagina-lbl{font-family:"Cinzel",serif;font-size:11px;letter-spacing:3.5px;color:var(--blood);text-transform:uppercase;font-weight:700;text-align:center;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid rgba(107,15,15,.2)}
+
+/* ════════════════════════════════════════════════
+   NPCs DE APOIO — cards compactos
+   ════════════════════════════════════════════════ */
+.apoio-card{cursor:pointer;padding:14px 18px;margin:8px 0;background:rgba(255,247,225,.04);border:1px solid rgba(154,122,42,.32);border-left:3px solid rgba(154,122,42,.6);transition:all .2s}
+.apoio-card:hover{background:rgba(154,122,42,.12);border-left-color:var(--blood-lt);transform:translateX(2px)}
+.apoio-hdr{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:4px}
+.apoio-nome{font-family:"Cinzel",serif;font-size:15.5px;font-weight:700;color:var(--gold-lt);letter-spacing:.6px}
+.apoio-epi{font-family:"Cormorant Garamond",serif;font-size:13.5px;font-style:italic;color:var(--blood-lt);margin-top:2px}
+.apoio-idade{font-family:"Cinzel",serif;font-size:10px;letter-spacing:1.5px;color:var(--gold-dim);text-transform:uppercase;white-space:nowrap}
+.apoio-profissao{font-family:"Cormorant Garamond",serif;font-size:13.5px;color:var(--ash);margin-bottom:8px}
+.apoio-resumo{font-family:"Cormorant Garamond",serif;font-size:14.5px;line-height:1.6;color:rgba(212,192,154,.85)}
+.apoio-cta{font-family:"Cinzel",serif;font-size:9.5px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-top:10px;text-align:right;opacity:.85}
+
 @keyframes localFlash{0%,100%{box-shadow:0 0 0 0 rgba(154,122,42,0)}25%,60%{box-shadow:0 0 0 2px rgba(184,146,46,.6),0 0 22px rgba(184,146,46,.25)}}
 
 /* botão "voltar para a origem" — aparece ao chegar via referência cruzada */
@@ -665,6 +731,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
 
     <div class="nav-section">A Investigação</div>
     <button class="nav-item" data-page="temporadas"><span class="nav-icon">❧</span>Temporadas</button>
+    <button class="nav-item" data-page="envelopes"><span class="nav-icon">✉</span>Envelopes</button>
     <button class="nav-item" data-page="causalidade"><span class="nav-icon">⟁</span>Causalidade</button>
     <button class="nav-item" data-page="timeline"><span class="nav-icon">⧗</span>Linha do Tempo</button>
     <button class="nav-item" data-page="documentos"><span class="nav-icon">❦</span>Documentos</button>
@@ -765,6 +832,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
     <div class="scroll-content" id="npcsScroll">
       <div id="npcsList" class="grid-auto"></div>
       <div id="quemSabeWrap"></div>
+      <div id="npcsApoioWrap"></div>
       <div id="npcDetailWrap"></div>
     </div>
   </section>
@@ -780,6 +848,16 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
       <div class="subtabs" id="tempSubtabs"></div>
       <div id="tempPanes"></div>
     </div>
+  </section>
+
+  <!-- ENVELOPES -->
+  <section class="page" id="page-envelopes">
+    <div class="page-hdr">
+      <div class="page-eyebrow">Os Quatro Personagens · 1650</div>
+      <h2>Envelopes</h2>
+      <p>O Julgamento de São Miguel do Sertão — e o que cada um herdou</p>
+    </div>
+    <div class="scroll-content" id="envelopesBody"></div>
   </section>
 
   <!-- CAUSALIDADE -->
@@ -916,6 +994,7 @@ function initApp(){
   renderNpcs();
   renderQuemSabe();
   renderTemporadas();
+  renderEnvelopes();
   renderCausalidade();
   renderTimeline();
   renderDocumentos();
@@ -931,7 +1010,9 @@ document.querySelectorAll('.nav-item').forEach(btn=>{
     NAV_ORIGIN=null;
     // ao entrar manualmente em NPCs/Documentos, volta para a lista
     if(btn.dataset.page==='npcs' && document.getElementById('npcDetailWrap').innerHTML){
-      closeNpc();
+      // pode estar aberto um NPC principal ou de apoio — closeNpc serve para ambos os casos
+      const npcDetailHasApoioBtn = document.getElementById('npcDetailWrap').querySelector('button[onclick*="closeApoio"]');
+      if(npcDetailHasApoioBtn) closeApoio(); else closeNpc();
     }
     if(btn.dataset.page==='documentos' && document.getElementById('docDetailWrap').innerHTML){
       closeDoc();
@@ -1345,11 +1426,92 @@ function renderNpcs(){
         <div class="npc-excerpt">${esc(n.resumo)}</div>
       </div>
     </div>`).join('');
+
+  // ── NPCs DE APOIO (secundários do Ep1) — formato compacto ──
+  const apoio = DATA.npcs_apoio || [];
+  const ment  = DATA.npcs_mencionados || [];
+  if(!apoio.length && !ment.length){ document.getElementById('npcsApoioWrap').innerHTML=''; return; }
+  let h = `<div class="div-orn">❧ ✦ ❧</div>
+    <div style="font-family:'Cinzel',serif;font-size:13px;letter-spacing:4px;color:var(--gold-lt);text-transform:uppercase;text-align:center;margin:6px 0 18px">NPCs de Apoio</div>
+    <p class="t-body" style="text-align:center;margin-bottom:18px;font-style:italic;color:var(--ash)">Personagens que aparecem em cenas específicas e dão cor à cidade — alguns podem reaparecer pontualmente.</p>`;
+  apoio.forEach((n,i)=>{
+    h += `<div class="apoio-card" onclick="openApoio(${i})" id="apoio-${esc(n.id)}">
+      <div class="apoio-hdr">
+        <div>
+          <div class="apoio-nome">${esc(n.nome)}</div>
+          <div class="apoio-epi">${esc(n.epiteto)}</div>
+        </div>
+        <div class="apoio-idade">${esc(n.idade)}</div>
+      </div>
+      <div class="apoio-profissao">${esc(n.profissao||'')}</div>
+      <div class="apoio-resumo">${fmtInline((n.conexao||'').slice(0,200))}${(n.conexao||'').length>200?'…':''}</div>
+      <div class="apoio-cta">Ver detalhes →</div>
+    </div>`;
+  });
+
+  // Mencionados (apenas referência rápida)
+  if(ment.length){
+    h += `<div class="div-orn" style="margin-top:24px">✦</div>
+      <div style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--gold-dim);text-transform:uppercase;text-align:center;margin:6px 0 14px">NPCs Mencionados Apenas</div>
+      <p class="t-body" style="text-align:center;font-style:italic;color:var(--ash);margin-bottom:14px">Aparecem nominalmente mas não em cena. São referências.</p>`;
+    ment.forEach(m=>{
+      h += `<div class="apar-item"><div class="apar-origem">${esc(m.nome)}</div><div class="apar-texto">${fmtInline(m.texto)}</div></div>`;
+    });
+  }
+  document.getElementById('npcsApoioWrap').innerHTML = h;
+}
+
+// abre detalhes de um NPC de apoio
+function openApoio(i){
+  const n = DATA.npcs_apoio[i];
+  document.getElementById('npcsList').style.display='none';
+  document.getElementById('quemSabeWrap').style.display='none';
+  document.getElementById('npcsApoioWrap').style.display='none';
+  const w = document.getElementById('npcDetailWrap');
+  let h = `${originBackButton()}
+    <button class="back-btn" onclick="closeApoio()">Voltar aos NPCs</button>
+    <div class="book-card"><div class="book-inner">
+      <div class="t-eyebrow">${esc(n.epiteto)}</div>
+      <div class="t-title">${esc(n.nome)}</div>
+      <p class="t-sub" style="display:block;margin-bottom:14px">${esc(n.profissao||'')}</p>
+      <div class="info-grid">
+        <div class="info-k">Nome completo</div><div class="info-v">${esc(n.nome_completo)}</div>
+        <div class="info-k">Idade</div><div class="info-v">${esc(n.idade)}</div>
+        <div class="info-k">Aparência</div><div class="info-v">${fmtInline(n.aparencia||'—')}</div>
+      </div>`;
+  if(n.historia){ h+=`<div class="t-sec"><span class="g">❧</span>História</div><p class="t-body">${fmtInline(n.historia)}</p>`; }
+  if(n.conexao){ h+=`<div class="t-sec"><span class="g">⚜</span>Conexão com a história</div><p class="t-body">${fmtInline(n.conexao)}</p>`; }
+  if(n.personalidade){ h+=`<div class="t-label">Personalidade</div><p class="t-body">${fmtInline(n.personalidade)}</p>`; }
+  if(n.o_que_sabe){ h+=`<div class="t-label">O Que Sabe</div><p class="t-body">${fmtInline(n.o_que_sabe)}</p>`; }
+  if(n.o_que_entrega){ h+=`<div class="t-label">O Que Entrega</div><p class="t-body">${fmtInline(n.o_que_entrega)}</p>`; }
+  if(n.como_age){ h+=`<div class="t-label">Como Age</div><p class="t-body">${fmtInline(n.como_age)}</p>`; }
+  if(n.sobre_simbolo){ h+=`<div class="t-label">Sobre o Símbolo</div><p class="t-body">${fmtInline(n.sobre_simbolo)}</p>`; }
+  if(n.o_que_acontece){ h+=`<div class="t-label">O Que Acontece com Ela</div><p class="t-body">${fmtInline(n.o_que_acontece)}</p>`; }
+  if(n.o_que_faz){ h+=`<div class="t-label">O Que Faz no Episódio 1</div><p class="t-body">${fmtInline(n.o_que_faz)}</p>`; }
+  if(n.apos_testemunho){ h+=`<div class="t-label">Após o Testemunho</div><p class="t-body">${fmtInline(n.apos_testemunho)}</p>`; }
+  if(n.reaparece){ h+=`<div class="nm-box"><div class="nm-lbl">Pode Reaparecer Em</div><div class="nm-txt">${fmtInline(n.reaparece)}</div></div>`; }
+
+  const refs = [];
+  if(n.local_ref) refs.push({label:refLabel(n.local_ref),ref:n.local_ref});
+  if(n.ligacao_npc) refs.push({label:refLabel(n.ligacao_npc),ref:n.ligacao_npc});
+  if(refs.length) h += `<div class="t-label">Onde Aparece</div><div class="det-refs">${refs.map(refButton).join('')}</div>`;
+
+  h += `</div></div>`;
+  w.innerHTML = h;
+  document.getElementById('npcsScroll').scrollTop = 0;
+}
+function closeApoio(){
+  NAV_ORIGIN=null;
+  document.getElementById('npcDetailWrap').innerHTML='';
+  document.getElementById('npcsList').style.display='grid';
+  document.getElementById('quemSabeWrap').style.display='block';
+  document.getElementById('npcsApoioWrap').style.display='block';
 }
 function openNpc(i){
   const n=DATA.npcs[i];
   document.getElementById('npcsList').style.display='none';
   document.getElementById('quemSabeWrap').style.display='none';
+  document.getElementById('npcsApoioWrap').style.display='none';
   const w=document.getElementById('npcDetailWrap');
   let h=`${originBackButton()}
     <button class="back-btn" onclick="closeNpc()">Voltar aos NPCs</button>
@@ -1400,6 +1562,7 @@ function closeNpc(){
   document.getElementById('npcDetailWrap').innerHTML='';
   document.getElementById('npcsList').style.display='grid';
   document.getElementById('quemSabeWrap').style.display='block';
+  document.getElementById('npcsApoioWrap').style.display='block';
 }
 
 /* ── TABELA "QUEM SABE O QUÊ" ─────────────────────────────── */
@@ -1425,6 +1588,285 @@ function renderQuemSabe(){
 /* ═══════════════════════════════════════════════════════════
    TEMPORADAS — subtabs T1 / T2 / T3
    ═══════════════════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════════════
+   ENVELOPES — Julgamento de 1650 + 4 envelopes
+   ═══════════════════════════════════════════════════════════ */
+function renderEnvelopes(){
+  const e = DATA.envelopes_aba;
+  const intro = e.introducao;
+  let h = `<div class="book-card"><div class="book-inner">
+    <div class="t-eyebrow">Introdução</div>
+    <h3 class="t-title">${esc(intro.titulo)}</h3>
+    <p class="t-sub" style="display:block;margin-bottom:14px">${esc(intro.subtitulo)}</p>
+    <p class="t-body dc">${fmtInline(intro.abertura)}</p>
+
+    <div class="t-sec"><span class="g">❧</span>O que aconteceu</div>
+    <p class="t-body">${fmtInline(intro.o_que_aconteceu)}</p>
+
+    <p class="t-body">${fmtInline(intro.quatro_pessoas_intro)}</p>
+    ${intro.quatro_pessoas.map(p=>`
+      <div class="apar-item">
+        <div class="apar-origem">${esc(p.papel)}</div>
+        <div class="apar-texto">${fmtInline(p.texto)}</div>
+      </div>`).join('')}
+
+    <div class="t-sec"><span class="g">❧</span>Como terminou</div>
+    ${paras(intro.como_terminou)}
+
+    <div class="t-label">${esc(intro.teia_titulo)}</div>
+    ${ulList(intro.teia)}
+
+    <div class="div-orn">✦ ✦ ✦</div>
+    <div class="warn-box">
+      <div class="warn-lbl">Instrução para o Mestre</div>
+      <div class="warn-txt">${fmtInline(e.instrucao_mestre)}</div>
+    </div>
+  </div></div>`;
+
+  // 4 envelopes
+  e.envelopes.forEach(env=>{
+    h += `<div class="book-card env-card"><div class="book-inner">
+      <div class="env-hdr">
+        <div class="env-numero">Envelope ${env.numero}</div>
+        <div class="env-papel">${esc(env.papel)}</div>
+        <div class="env-subtitulo">${esc(env.subtitulo)}</div>
+      </div>`;
+    env.paginas.forEach(p=>{
+      h += `<div class="env-pagina">
+        <div class="env-pagina-lbl">Página ${p.numero} — ${esc(p.titulo)}</div>
+        ${paras(p.paragrafos.join('\n\n'))}`;
+      if(p.destaque){
+        h += `<div class="nm-box"><div class="nm-lbl">${esc(p.destaque_titulo||'O Padrão')}</div><div class="nm-txt">${fmtInline(p.destaque)}</div></div>`;
+      }
+      if(p.fecho_titulo){
+        h += `<div class="t-label">${esc(p.fecho_titulo)}</div>${paras(p.fecho_paragrafos.join('\n\n'))}`;
+      }
+      h += `</div>`;
+    });
+    h += `</div></div>`;
+  });
+
+  // Guia do Mestre
+  const gm = e.guia_mestre;
+  h += `<div class="book-card"><div class="book-inner">
+    <div class="t-eyebrow">Confidencial · Uso Interno do Mestre</div>
+    <h3 class="t-title">${esc(gm.titulo)}</h3>`;
+  gm.secoes.forEach(s=>{
+    h += `<div class="t-sec"><span class="g">☞</span>${esc(s.titulo)}</div>`;
+    if(s.paragrafos) h += paras(s.paragrafos.join('\n\n'));
+    if(s.intro) h += `<p class="t-body">${fmtInline(s.intro)}</p>`;
+    if(s.lista_titulo) h += `<div class="t-label">${esc(s.lista_titulo)}</div>`;
+    if(s.lista) h += ulList(s.lista);
+    if(s.fecho) h += `<p class="t-body" style="margin-top:10px">${fmtInline(s.fecho)}</p>`;
+  });
+  h += `</div></div>`;
+
+  document.getElementById('envelopesBody').innerHTML = h;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   DOSSIÊ DO EPISÓDIO 1 — 10 partes expandidas
+   ═══════════════════════════════════════════════════════════ */
+function renderDossie(dossie){
+  let h = `<div class="dossie-wrap">
+    <div class="dossie-epigrafe">
+      <div class="dossie-citacao">"${esc(dossie.epigrafe)}"</div>
+      <div class="dossie-fonte">— ${esc(dossie.epigrafe_fonte)}</div>
+    </div>
+    <div class="dossie-data">${esc(dossie.data_ficcional)}</div>`;
+
+  dossie.partes.forEach(parte=>{
+    h += `<div class="dossie-parte">
+      <div class="dossie-parte-hdr">
+        <div class="dossie-parte-num">PARTE ${parte.numero}</div>
+        <div class="dossie-parte-titulo">${esc(parte.titulo)}</div>
+      </div>`;
+    parte.secoes.forEach(sec=>{
+      h += renderDossieSec(sec);
+    });
+    h += `</div>`;
+  });
+
+  h += `</div>`;
+  return h;
+}
+
+function renderDossieSec(sec){
+  let h = `<div class="dossie-secao">
+    <div class="dossie-sec-titulo">${esc(sec.titulo)}</div>`;
+  if(sec.para_quem) h += `<div class="dossie-para-quem">${esc(sec.para_quem)}</div>`;
+  if(sec.ref){
+    h += `<div class="det-refs" style="margin-bottom:10px"><button class="ref-btn" onclick="goRef('${esc(sec.ref)}')">${esc(refLabel(sec.ref))}</button></div>`;
+  }
+  if(sec.intro) h += `<p class="t-body" style="margin-bottom:10px">${fmtInline(sec.intro)}</p>`;
+  if(sec.paragrafos) h += paras(sec.paragrafos.join('\n\n'));
+  if(sec.narracao) h += `<div class="dossie-narracao">${fmtInline(sec.narracao).replace(/\n/g,'<br>')}</div>`;
+  if(sec.nota_mestre) h += `<div class="nm-box"><div class="nm-lbl">Nota do Mestre</div><div class="nm-txt">${fmtInline(sec.nota_mestre)}</div></div>`;
+
+  if(sec.lista_titulo) h += `<div class="t-label">${esc(sec.lista_titulo)}</div>`;
+  if(sec.lista) h += ulList(sec.lista);
+  if(sec.lista_numerada){
+    h += '<ol class="ol">'+sec.lista_numerada.map(i=>`<li>${fmtInline(i)}</li>`).join('')+'</ol>';
+  }
+  if(sec.conclusao) h += `<p class="t-body" style="font-weight:600;color:var(--blood);margin-top:10px">${fmtInline(sec.conclusao)}</p>`;
+  if(sec.fala_unica) h += `<div class="dossie-fala">"${esc(sec.fala_unica)}"</div>`;
+
+  if(sec.tabela){
+    h += `<table class="stbl"><thead><tr>${(sec.tabela_cab||[]).map(c=>`<th>${esc(c)}</th>`).join('')}</tr></thead><tbody>`;
+    sec.tabela.forEach(row=>{
+      h += `<tr>${row.map(c=>`<td>${fmtInline(c)}</td>`).join('')}</tr>`;
+    });
+    h += `</tbody></table>`;
+  }
+
+  if(sec.campos){
+    h += `<div class="info-grid">`;
+    sec.campos.forEach(([k,v])=>{
+      h += `<div class="info-k">${esc(k)}</div><div class="info-v">${fmtInline(v)}</div>`;
+    });
+    h += `</div>`;
+  }
+
+  if(sec.regra_critica){
+    h += `<div class="warn-box"><div class="warn-lbl">Regra de Interpretação Crítica</div><div class="warn-txt">${fmtInline(sec.regra_critica)}</div></div>`;
+  }
+
+  if(sec.dialogos){
+    sec.dialogos.forEach(dlg=>{
+      if(dlg.contexto) h += `<div class="dossie-dlg-ctx">${esc(dlg.contexto)}</div>`;
+      h += `<div class="dossie-fala">"${esc(dlg.fala)}"${dlg.nota?` <span class="dossie-fala-nota">${esc(dlg.nota)}</span>`:''}</div>`;
+    });
+  }
+
+  if(sec.psicologia) h += `<div class="signal-block"><div class="signal-num">Psicologia</div><div class="signal-txt">${fmtInline(sec.psicologia)}</div></div>`;
+
+  if(sec.sinal_abel){
+    const sa = sec.sinal_abel;
+    h += `<div class="signal-block" style="border-color:rgba(107,15,15,.3)">
+      <div class="signal-num" style="color:var(--blood)">${esc(sa.titulo||'Sinal de Abel')}</div>`;
+    if(sa.paragrafos) h += paras(sa.paragrafos.join('\n\n'));
+    if(sa.fala) h += `<div class="dossie-fala">"${esc(sa.fala)}"</div>`;
+    if(sa.nota) h += `<p class="t-body">${fmtInline(sa.nota)}</p>`;
+    if(sa.fala2) h += `<div class="dossie-fala">"${esc(sa.fala2)}"</div>`;
+    if(sa.fecho) h += `<p class="t-body" style="font-style:italic;margin-top:8px">${fmtInline(sa.fecho)}</p>`;
+    h += `</div>`;
+  }
+
+  if(sec.fecho){
+    h += `<p class="t-body" style="font-style:italic;margin-top:10px">${fmtInline(sec.fecho)}</p>`;
+  }
+  // sub-titulos repetidos
+  ['sub_titulo','sub_titulo2','sub_titulo3'].forEach((k,idx)=>{
+    if(sec[k]){
+      h += `<div class="t-label" style="margin-top:14px">${esc(sec[k])}</div>`;
+      const pkey = 'paragrafos'+(idx+2);
+      if(sec[pkey]) h += paras(sec[pkey].join('\n\n'));
+      const nkey = 'narracao'+(idx+2);
+      if(sec[nkey]) h += `<div class="dossie-narracao">${fmtInline(sec[nkey]).replace(/\n/g,'<br>')}</div>`;
+    }
+  });
+
+  if(sec.subblocos){
+    sec.subblocos.forEach(sb=>{
+      h += `<div class="dossie-subbloco">
+        <div class="dossie-sub-titulo">${esc(sb.titulo)}</div>`;
+      if(sb.ref) h += `<div class="det-refs" style="margin:6px 0 8px"><button class="ref-btn" onclick="goRef('${esc(sb.ref)}')">${esc(refLabel(sb.ref))}</button></div>`;
+      if(sb.paragrafos) h += paras(sb.paragrafos.join('\n\n'));
+      if(sb.intro) h += `<p class="t-body" style="margin-bottom:8px">${fmtInline(sb.intro)}</p>`;
+      if(sb.fala) h += `<div class="dossie-fala">"${esc(sb.fala)}"</div>`;
+      if(sb.nota) h += `<p class="t-body">${fmtInline(sb.nota)}</p>`;
+      if(sb.fala2) h += `<div class="dossie-fala">"${esc(sb.fala2)}"</div>`;
+      if(sb.lista) h += ulList(sb.lista);
+      if(sb.fecho) h += `<p class="t-body" style="font-style:italic;margin-top:8px">${fmtInline(sb.fecho)}</p>`;
+      if(sb.nota_final) h += `<p class="t-body" style="margin-top:8px">${fmtInline(sb.nota_final)}</p>`;
+      h += `</div>`;
+    });
+  }
+
+  if(sec.subblocos_itens){
+    sec.subblocos_itens.forEach(sb=>{
+      h += `<div class="dossie-subbloco">
+        <div class="dossie-sub-titulo">${esc(sb.titulo)}</div>
+        ${paras(sb.paragrafos.join('\n\n'))}
+      </div>`;
+    });
+  }
+
+  if(sec.blocos_npc){
+    sec.blocos_npc.forEach(bn=>{
+      h += `<div class="apar-item">
+        <div class="apar-origem">${esc(bn.npc)}</div>
+        <div class="apar-texto">${fmtInline(bn.texto)}</div>`;
+      if(bn.ref) h += `<div class="det-refs" style="margin-top:6px"><button class="ref-btn" onclick="goRef('${esc(bn.ref)}')">${esc(refLabel(bn.ref))}</button></div>`;
+      h += `</div>`;
+    });
+  }
+
+  if(sec.refs){
+    h += `<div class="det-refs">${sec.refs.map(refButton).join('')}</div>`;
+  }
+
+  if(sec.transcricao){
+    h += `<div class="t-label">${esc(sec.transcricao_titulo||'Transcrição')}</div>`;
+    sec.transcricao.forEach(t=>{
+      if(t.falante){
+        h += `<div class="dossie-transcr"><span class="dossie-transcr-nome">${esc(t.falante)}</span>: <em>"${esc(t.fala)}"</em>${t.nota?` <span class="dossie-fala-nota">(${esc(t.nota)})</span>`:''}</div>`;
+      } else {
+        h += `<div class="dossie-transcr" style="font-style:italic;opacity:.75">${esc(t.fala)}</div>`;
+      }
+    });
+  }
+
+  if(sec.destaque_titulo && sec.destaque){
+    h += `<div class="warn-box"><div class="warn-lbl">${esc(sec.destaque_titulo)}</div><div class="warn-txt">${fmtInline(sec.destaque)}</div></div>`;
+  }
+
+  if(sec.dialogos2){
+    sec.dialogos2.forEach(dlg=>{
+      if(dlg.contexto) h += `<div class="dossie-dlg-ctx">${esc(dlg.contexto)}</div>`;
+      h += `<div class="dossie-fala">"${esc(dlg.fala)}"</div>`;
+    });
+  }
+
+  if(sec.extra) h += `<p class="t-body" style="margin-top:10px">${fmtInline(sec.extra)}</p>`;
+
+  if(sec.fecho_titulo){
+    h += `<div class="t-label">${esc(sec.fecho_titulo)}</div>`;
+    if(sec.lista_final) h += ulList(sec.lista_final);
+  }
+
+  if(sec.fecho2){
+    h += `<p class="t-body" style="font-style:italic;margin-top:10px">${fmtInline(sec.fecho2)}</p>`;
+  }
+
+  if(sec.lista_numerada2){
+    h += `<div class="t-label">${esc(sec.sub_titulo||'')}</div>` + '<ol class="ol">'+sec.lista_numerada2.map(i=>`<li>${fmtInline(i)}</li>`).join('')+'</ol>';
+  }
+
+  h += `</div>`;
+  return h;
+}
+
+// rótulo amigável para uma referência (ex: "npc:valdecir" -> "Valdecir")
+function refLabel(ref){
+  const [tipo,id]=String(ref).split(':');
+  if(tipo==='npc'){
+    const n=DATA.npcs.find(x=>x.id===id) || (DATA.npcs_apoio||[]).find(x=>x.id===id);
+    if(n) return n.nome;
+  }
+  if(tipo==='local'){
+    const l=DATA.cidade.locais.find(x=>x.id===id);
+    if(l) return l.nome;
+  }
+  if(tipo==='doc'){
+    const dc=DATA.documentos.find(x=>x.id===id);
+    if(dc) return dc.titulo;
+  }
+  if(tipo==='caus') return 'Causalidade — '+(DATA.causalidade[parseInt(id)]?DATA.causalidade[parseInt(id)].pergunta:'pergunta');
+  if(tipo==='page') return {caim:'Caim',abel:'Abel',profetas:'Profetas',regras:'Regras & Sistema',cidade:'A Cidade',timeline:'Linha do Tempo',temporadas:'Temporadas',envelopes:'Envelopes',npcs:'NPCs',grimorio:'Grimório'}[id]||id;
+  return id;
+}
+
 function renderTemporadas(){
   const tabs=document.getElementById('tempSubtabs');
   const panes=document.getElementById('tempPanes');
@@ -1508,8 +1950,12 @@ function goRef(ref){
   captureOrigin();
   if(tipo==='npc'){
     navigate('npcs');
+    // primeiro tenta entre os NPCs principais
     const idx=DATA.npcs.findIndex(n=>n.id===id);
-    if(idx>=0) setTimeout(()=>openNpc(idx),140);
+    if(idx>=0){ setTimeout(()=>openNpc(idx),140); return; }
+    // depois entre os NPCs de apoio
+    const idxA=(DATA.npcs_apoio||[]).findIndex(n=>n.id===id);
+    if(idxA>=0){ setTimeout(()=>openApoio(idxA),140); }
   }
   else if(tipo==='doc'){
     navigate('documentos');
@@ -1549,6 +1995,7 @@ function goRef(ref){
 // captura de onde o usuário veio (episódio aberto na aba Temporadas)
 function captureOrigin(){
   const tempAtiva=document.getElementById('page-temporadas').classList.contains('active');
+  const envAtiva=document.getElementById('page-envelopes').classList.contains('active');
   if(tempAtiva){
     // qual episódio está aberto e visível
     let epIdx=null;
@@ -1562,6 +2009,10 @@ function captureOrigin(){
       return;
     }
     NAV_ORIGIN={label:'Temporadas',page:'temporadas',epIndex:null};
+    return;
+  }
+  if(envAtiva){
+    NAV_ORIGIN={label:'Envelopes',page:'envelopes',epIndex:null};
     return;
   }
   // veio de outro lugar (busca, navegação normal) — sem origem
@@ -1601,6 +2052,12 @@ function highlightLocal(id){
 
 function renderEpDetail(e){
   let h='';
+  // ── DOSSIÊ COMPLETO (só o Ep1 tem) — vem no topo, scroll único ──
+  if(e.dossie){
+    h+=renderDossie(e.dossie);
+    h+=`<div class="div-orn">✦ ✦ ✦</div>
+        <div style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;text-align:center;margin:14px 0 18px">Resumo da Bíblia · Pontos-Chave</div>`;
+  }
   // parágrafo de abertura (literal da Bíblia) — só o ep1 tem
   if(e.abertura){
     h+=`<div class="ep-abertura">${fmtInline(e.abertura)}</div>`;
