@@ -385,35 +385,106 @@
         "nome": "O Centro Cívico",
         "descricao": "Construído sobre o ponto de maior densidade do nó. Toda decisão política tomada ali carrega um peso que os que decidem não percebem. Prefeitos de Novavera têm taxa estatisticamente improvável de mortes prematuras e decisões que contradizem o que defendiam antes de assumir.",
         "detalhe": "A placa comemorativa da fundação inclui Benedito Braga — \"em memória de quem tornou possível\" — postumamente incluído. A foto ao lado do nome mostra um homem que parece ter quarenta anos. Ele nasceu em 1908, morreu em 1969.",
-        "nivel_perigo": "alto"
+        "nivel_perigo": "alto",
+        "ep1": {
+          "presenca_ep1": "Variação genérica do local — ver 'Centro Cívico de Novavera + Praça' para detalhes do Ep1.",
+          "como_narrar": "Ver 'Centro Cívico de Novavera + Praça' (entrada detalhada).",
+          "personagens_associados": [
+            "Marisa",
+            "Armindo"
+          ]
+        }
       },
       {
         "id": "bairro-fundacao",
         "nome": "O Bairro Fundação",
         "descricao": "Casas construídas antes do projeto oficial, com arquitetura levemente diferente dos outros bairros. Os moradores mais velhos têm memórias que não batem com as datas oficiais e nunca falam sobre isso diretamente. Três moradores têm versões diferentes de quando o bairro foi construído — cada um absolutamente convicto.",
         "detalhe": "Natalina Braga mora aqui desde 1978 — veio logo após a construção da Área Verde ser paralisada.",
-        "nivel_perigo": "medio"
+        "nivel_perigo": "medio",
+        "ep1": {
+          "presenca_ep1": "Onde Valdecir morava (Rua Pitangueiras 14). Onde Natalina mora.",
+          "como_narrar": "Arquitetura diferente dos outros bairros — telhados mais baixos, janelas menores, reboco que não se usa mais. Como se esse pedaço da cidade tivesse sido construído com um manual diferente.",
+          "particularidades": [
+            "Rua sem saída que o mapa do Google não mostra — termina em parede de tijolos sem reboco. Não parece abandono. Parece intenção.",
+            "Casa com janela permanentemente fechada com madeira pregada por fora — não abandono, intenção.",
+            "Numeração das casas não segue a lógica do resto da cidade — os números saltam de forma estranha. Matemática ou Contabilidade 35: a numeração original tinha mais casas. Algumas foram removidas do registro."
+          ],
+          "personagens_associados": [
+            "Natalina",
+            "Valdecir",
+            "Dona Neuza",
+            "Dona Cida",
+            "Carmem",
+            "Gabriel"
+          ]
+        }
       },
       {
         "id": "area-verde",
         "nome": "A Área Verde",
         "descricao": "Construção parou em 1978 sem explicação registrada — na verdade foi paralisada por ordem de Armindo quando os trabalhadores começaram a escavar fundas demais e o símbolo nas fundações antigas ficou em risco de ser exposto. Um trabalhador viu algo naquela semana e morreu três dias depois. Laudo: acidente de trabalho. Seu sobrenome era o mesmo de uma das 33 vítimas de 1972.",
         "detalhe": "O muro baixo ao redor foi construído anonimamente em 1980. Crianças de Novavera nunca brincam ali. Não há pássaros em nenhuma parte do terreno.",
-        "nivel_perigo": "extremo"
+        "nivel_perigo": "extremo",
+        "ep1": {
+          "presenca_ep1": "Local da morte de Valdecir. Destino central da investigação. Ativo neste dia como há décadas não estava.",
+          "como_narrar_dia": "Terreno fechado por muro baixo de um metro e meio. Vegetação alta do cerrado por cima. Sem identificação — sem placa, sem letreiro. Atmosfera de lugar abandonado, mas algo no abandono é organizado demais para parecer natural. Não há pássaros em nenhum lugar do terreno. Nem no muro, nem na vegetação, nem voando acima. Sem ameaça imediata. Mas qualquer um que passar mais de cinco minutos olhando o terreno sente um leve mal-estar — não vai conseguir nomear, mas vai querer ir embora.",
+          "como_narrar_noite": "Não há razão específica para assustar. É um terreno. Terra. Ervas. O muro baixo tem metro e meio — fácil de escalar. Do lado de dentro, as ervas chegam na altura do joelho. Ao fundo, fundações cobertas de vegetação — concreto antigo, rachado, raízes crescendo pelas fendas. O que se nota depois de alguns minutos dentro: não há vento. Não é que o vento parou — é que não está chegando aqui. O ar do lado de dentro existe numa temperatura ligeiramente diferente, numa pressão ligeiramente diferente. Você ouve algo. Não com os ouvidos — a palavra é errada. Você sente algo que, se tivesse forma de som, seria alguém dizendo um nome. Não o seu nome. Um nome de outra língua, de outro tempo.",
+          "mecanicas": [
+            {
+              "titulo": "Cobrança por tempo dentro",
+              "texto": "Mais de 10 min: POD 45. Falha = Memória +1 + fragmento sensorial.\nMais de 20 min: POD 55. Falha = Memória +1D3 + desorientação temporal.\nMais de 30 min: POD 65. Falha = Memória +1D6 + sobreposição temporal severa."
+            },
+            {
+              "titulo": "Fragmentos sensoriais por personagem",
+              "texto": "Abel: vê céu interrompido — outro, mais antigo, mais vazio. Sensação de algo mais antes disso.\nO Cobrador: ouve passos. Os próprios passos de direção diferente, como correr para longe.\nO Silencioso: peso físico de palavras não ditas. Pressão no peito. Não sabe o que palavras são.\nO Juiz: imagem de papel sendo assinado. A própria mão. Certeza absoluta de estar fazendo o certo."
+            },
+            {
+              "titulo": "Sobreposição temporal (>30min)",
+              "texto": "Por 2-3 minutos, está aqui e em outubro de 1972 simultaneamente. Não vê as 33 mortes — sente o peso delas. Quando volta, tem terra preta nas mãos que não estava lá antes. A mesma terra de Valdecir."
+            }
+          ],
+          "encontrar_terra_central": {
+            "titulo": "A terra que reconhece — chave para o caderno",
+            "texto": "No centro geométrico das fundações (resolução do Enigma 1) — ou identificável por Percepção 35 pela diferença térmica de alguns graus. Sob fina camada de terra vermelha normal, 5cm abaixo: terra preta, úmida, densa. Mesma textura da terra nas mãos de Valdecir. Quando se toca, algo passa pelo corpo. Não é dor. Não é frio. É a sensação física de ser olhado de muito perto por algo que conhece você por outro nome.",
+            "rolagem": "Toque: POD 50. Sucesso = sente sem custo. Falha = Memória +1 e cambaleia. Para Abel: descrição diferente — não como ser olhado, mas como ser reconhecido por voz que se calou há muito tempo e está prestes a falar de novo."
+          },
+          "outros_detalhes": [
+            "O símbolo nas fundações (Ocultismo 50 ou Observação 40): mesmo símbolo do caixão mas com abertura completamente FECHADA. Data ao lado: 17 de junho de 1974. Sem explicação no Ep1 — pergunta para Eps 5 e 7.",
+            "Pegada no chão perto do muro (Observação 30): calçado de homem, tamanho médio, deixada nas últimas 3-4h. Vai EM DIREÇÃO ao terreno. Não saindo dele. (É a pegada do investigador particular.)"
+          ],
+          "personagens_associados": [
+            "Valdecir",
+            "Dona Neuza",
+            "O Investigador Particular",
+            "Dalva Monteiro (via Dona Cida)"
+          ]
+        }
       },
       {
         "id": "arquivo-historico",
         "nome": "O Arquivo Histórico Municipal",
         "descricao": "Dirigido por Armindo. Dois caixas cobrem 1972–1974 — período que deveria ter dezenas. A porta do subsolo tem dois cilindros de fechadura.",
         "detalhe": "Cilindro 1: abre com a chave de Valdecir. Cilindro 2: não tem chave física — tem sequência de toques no símbolo gravado na porta. Sueli sabe. Sala separada dentro do subsolo: abre com a chave que Armindo entrega no episódio 7. Menor. Mesa, quatro cadeiras. Armindo já estava lá.",
-        "nivel_perigo": "alto"
+        "nivel_perigo": "alto",
+        "ep1": {
+          "presenca_ep1": "Não visitado no Ep1. Gancho para Eps 2+.",
+          "como_narrar": "Aberto das 8h ao meio-dia e das 14h às 18h. Armindo dirige. Tem material sobre a história espírita da região e sobre a fundação da cidade.",
+          "gancho": "Armindo convida no velório: 'Se tiverem interesse na história local, o Arquivo fica aberto amanhã. Tenho prazer em receber.' Convite sincero — Armindo realmente quer que vocês investiguem.",
+          "personagens_associados": [
+            "Armindo"
+          ]
+        }
       },
       {
         "id": "rua-anterior",
         "nome": "A Rua do Anterior",
         "descricao": "Aparece no mapa original de 1961 — diagonal, do sudoeste ao nordeste, passando pelo ponto marcado na Área Verde. Não existe na cidade real.",
         "detalhe": "A fundação diagonal existe sob a calçada. Nas fundações: o símbolo gravado com a abertura fechada. Data entalhada: 17 de junho de 1974 — exatamente 13 anos depois do mapa. Armindo fechou o símbolo em 1974 via Natalina, que não sabia o que estava cobrindo.",
-        "nivel_perigo": "extremo"
+        "nivel_perigo": "extremo",
+        "ep1": {
+          "presenca_ep1": "Não visitada no Ep1.",
+          "como_narrar": "Local de episódios futuros."
+        }
       },
       {
         "id": "posto-gasolina",
@@ -421,7 +492,22 @@
         "nivel_perigo": "baixo",
         "descricao": "Beira da BR-060, aproximadamente 200 metros após a placa de entrada de Novavera. Posto simples de beira de rodovia. Duas bombas (uma funcionando, uma fora de uso). Loja de conveniência pequena com balcão e algumas prateleiras. Banheiro externo. Estacionamento de terra batida. Um cão velho dorme na sombra.",
         "detalhe": "Aberto das 6h às 23h. Aparecido geralmente está presente em horário comercial. Rosângela faz turno da tarde e noite (14h às 23h). Significado para a história: Primeira \"porta\" pela qual os personagens chegam à cidade — e ponto de monitoramento ativo de Ezequiel via Aparecido. Pode reaparecer em qualquer episódio em que personagens entrem ou saiam da cidade pelo sul.",
-        "novo": true
+        "novo": true,
+        "ep1": {
+          "presenca_ep1": "Chegada 1 (quem vem de fora pela BR-060). Ponto de monitoramento ativo.",
+          "como_narrar": "Placa de Novavera aparece no acostamento. O posto fica 200m depois — cachorro dorme na sombra de uma bomba fora de uso. Dois caminhões. Mulher atrás do balcão olhando TV. O que se nota, e leva um momento para nomear, é o som. Ou a AUSÊNCIA de um som específico: cerrado em março, fim de tarde, sol ainda quente — deveriam ter pássaros. Muitos pássaros. Não há nenhum.",
+          "seu_aparecido": {
+            "titulo": "O informante involuntário",
+            "texto": "Recebe R$ 1.500/mês de um 'advogado de Brasília que estuda história da região.' Sua função: avisar quando aparece gente de fora fazendo perguntas sobre a cidade antiga. Não sabe que trabalha para Ezequiel. Se o personagem perguntar sobre cidade/Valdecir/Área Verde, Aparecido pega o celular com naturalidade — 'avisando a minha mulher que vou atrasar o jantar.' Observação 35 percebe a discrepância — ele não estava verificando a hora."
+          },
+          "o_carro": "Quando o personagem sair: Gol prata parado numa rua lateral a 50m. Motor desligado. Vidros fechados. Se andar na direção, motor liga e o carro vai embora sem pressa.",
+          "personagens_associados": [
+            "Seu Aparecido",
+            "Rosângela",
+            "O Investigador Particular",
+            "Ezequiel (remotamente, via Aparecido)"
+          ]
+        }
       },
       {
         "id": "rodoviaria",
@@ -429,7 +515,21 @@
         "nivel_perigo": "baixo",
         "descricao": "Rua João Pessoa, número 102, centro de Novavera. Prédio simples de um andar. Cinco plataformas de embarque, bar pequeno servindo café em copo plástico, salinha de espera com bancos de plástico azul, banheiros públicos. Movimento moderado. Ônibus para Goiânia, Brasília, Anápolis e cidades próximas.",
         "detalhe": "A calçada em frente à rodoviária tem riscos antigos de carvão/giz que voltam periodicamente — alguém em Novavera desenha o símbolo de Caim nessa calçada de tempos em tempos. Quem? Por quê? Mistério em aberto para episódios futuros. Pode reaparecer em episódios em que personagens fizerem viagens.",
-        "novo": true
+        "novo": true,
+        "ep1": {
+          "presenca_ep1": "Chegada 2 (quem vem de ônibus). Primeira aparição do símbolo.",
+          "como_narrar": "Cinco plataformas, bar que serve café em copo plástico. O personagem fica parado no degrau do ônibus por dois segundos antes de descer. Não sabe por quê. Uma hesitação sem origem.",
+          "o_simbolo_na_calcada": {
+            "titulo": "Peça 1 do Enigma 1 — Triangulação",
+            "texto": "Na calçada em frente à rodoviária: riscos de giz ou carvão que alguém começou a apagar com o pé mas não completamente. Círculos. Dentro de círculos. Dentro de mais círculos. Preciso demais para ser brincadeira. Observação 40 reconhece a estrutura: três camadas concêntricas, abertura aponta para o NORTE. A calçada não tem câmera — quem desenhou? Quando?"
+          },
+          "seu_geraldo": "Se perguntado sobre os riscos: 'Criança. Deve ter sido criança. Fica desenhando aí de vez em quando. (pausa) Mas criança não vem muito pra esse lado da rodoviária não. Fica mais no outro lado.' Não explica a contradição. Genuinamente não quer pensar mais nisso.",
+          "o_carro": "Corolla preto estacionado em frente há tempo suficiente para acumular folha seca no capô. Mas o motor está quente — dá para sentir o calor se passar perto.",
+          "personagens_associados": [
+            "Seu Geraldo",
+            "O Investigador Particular"
+          ]
+        }
       },
       {
         "id": "centro-civico-praca",
@@ -437,7 +537,25 @@
         "nivel_perigo": "medio",
         "descricao": "Rua Prefeito Benedito Braga, número 1, esquina com Avenida Central. Prédio público de dois andares, fachada de concreto pintado de branco. Bandeiras (Brasil, Goiás, Novavera) no mastro à frente. Praça pequena com bancos de concreto, três palmeiras imperiais, e a placa comemorativa de bronze logo na entrada.",
         "detalhe": "A placa: \"Em memória dos que tornaram possível — Novavera, fundada em 1974.\" Lista de fundadores com nome, datas, e foto em medalha. Benedito Serafim Costa Lima (1908–1969) está aqui — com foto que mostra ele com 40 anos. Atrás do prédio: Área de serviço com lixeira, transformador elétrico, calçada de cimento. Aqui está a marca de cal com o símbolo — desenhada recentemente (menos de duas semanas). Alguém em Novavera está mantendo o símbolo ativo. Pode reaparecer em episódios 2, 3 e provavelmente o 7.",
-        "novo": true
+        "novo": true,
+        "ep1": {
+          "presenca_ep1": "Chegada 3 (quem vem de carro). Tem o primeiro enigma do dia.",
+          "como_narrar": "Prédio público de dois andares, fachada de concreto pintado de branco. Bandeiras (Brasil, Goiás, Novavera) no mastro. Praça pequena com bancos de concreto, três palmeiras imperiais, e a placa comemorativa de bronze logo na entrada.",
+          "a_placa": {
+            "titulo": "O primeiro enigma — Placa de bronze",
+            "texto": "'Em memória dos que tornaram possível — Novavera, fundada em 1974.' Lista de nomes com fotos em medalha. Um para o olhar: Benedito Serafim Costa Lima. 1908–1969. Fundador. A foto mostra um homem que parece ter quarenta anos. Nascido em 1908, morto em 1969, é 'fundador' de uma cidade criada em 1974."
+          },
+          "marca_de_cal_atras": {
+            "titulo": "A marca atrás do prédio — Peça 3 do Enigma 1 (Triangulação)",
+            "texto": "Para o personagem ter motivo de rodear: cachorro latindo persistentemente nos fundos, morador apontando, ou simplesmente dar a volta no prédio para estacionar. Observação 35: marca de cal quase apagada no chão de cimento atrás. Mesmo símbolo de três camadas concêntricas que vai aparecer no caixão. Abertura aponta para o LESTE. Observação 45: a cal foi colocada recentemente — não tem mais de duas semanas. Alguém em Novavera está mantendo este símbolo ativo."
+          },
+          "marisa_funcionaria": "Quando questionada sobre Benedito da placa, reage com desconforto genuíno — nunca tinha pensado nisso. Vai embora mais rápido do que precisaria. Momento de desestabilização cognitiva mostra aos jogadores que moradores têm pontos cegos sobre a própria cidade.",
+          "o_carro": "Quando o personagem voltar ao carro: marca de mão na poeira do capô. Pequena, como se alguém tivesse se apoiado por um momento para olhar para dentro. Não há ninguém por perto.",
+          "personagens_associados": [
+            "Marisa",
+            "Armindo (diretor do Arquivo Histórico)"
+          ]
+        }
       },
       {
         "id": "igreja-santo-antonio",
@@ -445,7 +563,39 @@
         "nivel_perigo": "medio",
         "descricao": "Rua das Flores, número 47, centro de Novavera. Igreja católica pequena de cidade do interior. Nave com bancos de madeira para cerca de 200 pessoas. Altar simples. Crucifixo de madeira escura. Estacionamento lateral entre a igreja e a casa vizinha — usado pelo sacristão e pelo padre. Sacristia atrás do altar (acesso restrito).",
         "detalhe": "Padre Joaquim (não aparece no Ep 1) vem rezar missa aos domingos. Sacristão Seu Benedito está presente quase todos os dias. Igreja fica aberta durante o dia para visitação. Trancada à noite, exceto em ocasiões especiais. No Episódio 1: Local do velório de Valdecir. Onde Armindo entrou às 18h15 e gravou o símbolo no caixão. Onde Ronaldo sai pela porta lateral para atender a ligação intimidadora.",
-        "novo": true
+        "novo": true,
+        "ep1": {
+          "presenca_ep1": "Local do velório. Centro social do bloco 2.",
+          "como_narrar": "Igreja católica pequena de cidade do interior. Capacidade para 200 pessoas — talvez 80 estão aqui. Velas. Flores de plástico cor de laranja (a igreja guarda para esses momentos). Caixão simples de madeira escura no centro. Nenhuma família — Valdecir era o último.\n\nNa parede direita, um homem de uns cinquenta anos, terno cinza, de pé olhando para o caixão. Não chora. Não conversa. Só está lá. Esse é Armindo Vasconcelos.\n\nUm delegado numa cadeira perto da entrada — veio sem farda, como civil. Postura de quem está de serviço mesmo quando não está.",
+          "estrutura": [
+            "Nave principal (80 pessoas, caixão central)",
+            "Porta lateral (Ronaldo sai por ela para atender ligação)",
+            "Estacionamento lateral (Ronaldo conversa baixo aqui)",
+            "Sacristia atrás do altar (acesso restrito — Seu Benedito estava aqui das 17h30 às 19h)",
+            "Degraus da entrada (Gabriel desenha aqui)"
+          ],
+          "cenas_que_acontecem": [
+            "Caixão com símbolo gravado na lateral — abertura nordeste",
+            "Armindo apresenta-se / sinal 1 com Abel",
+            "Natalina entrega os três níveis de cadernos",
+            "Dona Neuza conta como encontrou o corpo",
+            "Seu Benedito confirma janela de tempo de Armindo (18h15-18h25)",
+            "Seu João (funerária) menciona Dr. Meireles ficando sentado olhando o corpo",
+            "Gabriel nos degraus + SINAL 1 com Abel: 'Você não tem fragmentos'",
+            "Ligação de Ronaldo (20h-20h30) — cena de tensão"
+          ],
+          "info_critica": "Armindo entrou pela porta lateral às 18h15 e ficou 10 min com o caixão. O sacristão Seu Benedito estava na sacristia separando paramentos — não viu o que Armindo fez exatamente, mas confirma a janela de tempo se perguntado. Foi nesse intervalo que o símbolo foi gravado.",
+          "personagens_associados": [
+            "Valdecir",
+            "Armindo",
+            "Ronaldo",
+            "Natalina",
+            "Dona Neuza",
+            "Seu João",
+            "Seu Benedito",
+            "Gabriel"
+          ]
+        }
       },
       {
         "id": "funeraria-paz",
@@ -453,7 +603,16 @@
         "nivel_perigo": "baixo",
         "descricao": "Rua dos Cravos, número 88, próximo ao centro. Funerária simples de cidade do interior. Sala de recepção pequena, corredor com duas câmaras de velório (raramente usadas — a maioria dos velórios acontece nas igrejas), sala de preparação nos fundos com iluminação fria e azulejo branco.",
         "detalhe": "Família Carvalho gerencia há 20 anos. Quatro funcionários (Seu João é o mais antigo). Pode reaparecer no Episódio 2 (se investigarem como o caixão chegou à Igreja sem ninguém saber quem gravou o símbolo). Episódios posteriores se houver mais mortes.",
-        "novo": true
+        "novo": true,
+        "ep1": {
+          "presenca_ep1": "Pouco visitada no Ep1, mas Seu João aparece no velório.",
+          "como_narrar": "Funerária simples de cidade do interior. Sala de recepção, corredor com duas câmaras de velório raramente usadas (a maioria dos velórios acontece nas igrejas), sala de preparação com iluminação fria e azulejo branco.",
+          "o_que_entrega": "Seu João Carvalho, no velório, confirma janela crítica: 'A funerária terminou de arrumar tudo umas 5h30 da tarde. Saíram. O Seu Benedito (sacristão) ficou. O Dr. Meireles ficou um tempão olhando pro corpo essa manhã. Mais que o normal. Médico vê morto todo dia. Não fica sentado olhando.' Aponta para Dr. Meireles + para janela de Armindo na igreja.",
+          "personagens_associados": [
+            "Seu João Carvalho",
+            "Dr. Meireles (mencionado)"
+          ]
+        }
       },
       {
         "id": "casa-valdecir",
@@ -461,7 +620,43 @@
         "nivel_perigo": "alto",
         "descricao": "Rua das Pitangueiras, 14, Bairro Fundação. Casa térrea simples. Fachada baixa, tijolo aparente em algumas partes. Pequeno quintal frontal com cerca de madeira. Três degraus até a porta. Interior: Sala (poltrona, televisão antiga, estante com livros, calendário na parede, mesinha de centro com agenda); Cozinha (modesta, mesa pequena, fogão a gás, geladeira antiga, porta dos fundos com ferrolho que pode estar destrancado); Quarto (cama de solteiro, guarda-roupa, mesinha de cabeceira, fotografia antiga na parede, caderno na mesinha); Banheiro simples.",
         "detalhe": "Janela da sala dá para a rua, com vista para a Área Verde no fim. Embaixo da cama do quarto: caixa de sapato com três itens (foto, envelope com chave, recorte de jornal). Em cima da mesinha de cabeceira: o caderno com a passagem de 1987. Provavelmente reaparece em episódios futuros — local sentimental, ponto de retorno se os personagens precisarem revisitar memórias de Valdecir.",
-        "novo": true
+        "novo": true,
+        "ep1": {
+          "presenca_ep1": "Visita central do meio do episódio. Onde o caderno é encontrado, onde o clímax acontece.",
+          "como_narrar": "Cheiro específico dos lugares onde alguém viveu sozinho por muitos anos — não sujo, concentrado. Como se o ar tivesse se acostumado à presença de uma única pessoa e ficasse levemente desorientado agora.\n\nSala: poltrona, televisão antiga, estante com livros de espírita e dois volumes de história de Goiás. Calendário 2025 aberto em março — dois círculos vermelhos: 18/03 e 07/04. Sem texto dentro.\n\nCozinha: limpa. Escorredor com uma xícara e um prato. Refeição de uma pessoa. A xícara tem café da manhã de hoje — frio.\n\nQuarto: lavanda e papel velho. Cama feita com a precisão de quem fez essa cama do mesmo jeito por 50 anos. Fotografia na parede em preto e branco — homem jovem sorrindo, terreno de cerrado ao fundo. Escrito à caneta desbotada: 'O lugar onde o tempo pede as contas.'",
+          "como_chegar": [
+            "Natalina menciona o caderno guardado",
+            "Armindo menciona a biblioteca: 'Pena que ninguém vai ler os livros dele agora.'",
+            "Dona Neuza menciona a luz do quarto acesa pela primeira vez em 40 anos"
+          ],
+          "fechadura": "Porta da frente trancada — Natalina tem a chave. Sem ela, arrombamento simples (Mecânica ou Furtividade 30). A porta da cozinha foi destrancada por dentro pelo investigador particular às 14h — só importa no clímax.",
+          "achados": [
+            {
+              "titulo": "Caixa de sapato sob a cama",
+              "texto": "3 itens: (1) Fotografia P&B anos 70 do cerrado vazio, escrito 'Antes' — é a Área Verde antes de 1974; (2) Envelope lacrado com 'Valdecir' escrito por outra letra contendo chave antiga e pesada com gravação quase apagada (talvez 2, talvez 7); (3) Recorte de jornal sem data sobre o trabalhador Monteiro morto em 1978."
+            },
+            {
+              "titulo": "Calendário na sala",
+              "texto": "Aberto em março. Círculos em 18/03 (hoje) e 07/04 (3 semanas à frente). Nada escrito. Só os círculos."
+            },
+            {
+              "titulo": "Agenda na mesinha",
+              "texto": "Aberta no dia 18 de março. Anotação: '10h — S.N.' Iniciais."
+            },
+            {
+              "titulo": "Caderno principal (cabeceira do quarto)",
+              "texto": "Envolvido em fita de couro escuro com nó complexo. A fita tem partículas escuras costuradas — mesma serragem do caixão. Em cima do caderno, bilhete trêmulo recente: 'Quem vier — o que abre isso está onde isso veio. Não confiem em ninguém que não tenha sujado as mãos no mesmo lugar.'"
+            }
+          ],
+          "como_abrir_caderno": "Esfregar a terra preta da Área Verde na fita. A fita se desfaz (não rasga — dispersa como pó). Caderno abre sozinho na página de setembro de 1987.",
+          "climax": "Retorno após Área Verde. Lerão o caderno. Receberão SMS personalizado às 23h14. Dona Cida bate à porta. Possessão por Dalva. Saída convulsiva da entidade. Investigador na janela. Última imagem: pegada de terra preta entrando na casa — sem nenhuma saindo.",
+          "personagens_associados": [
+            "Valdecir",
+            "Natalina",
+            "Dona Cida (clímax)",
+            "O Investigador Particular"
+          ]
+        }
       },
       {
         "id": "posto-saude",
@@ -469,7 +664,35 @@
         "nivel_perigo": "baixo",
         "descricao": "Avenida Central, número 234. Edifício público pequeno e antigo. Sala de espera com cadeiras de ferro alinhadas, balcão de recepção, dois consultórios médicos, sala de procedimentos simples, depósito de medicamentos. Iluminação de fluorescente.",
         "detalhe": "Dr. Cláudio Meireles é o médico titular. Atende das 8h às 17h, mas fica até tarde quando há emergência ou quando — como no dia 18 de março — não consegue ir embora. Pode reaparecer no Episódio 9 e qualquer outro com necessidade de cuidados médicos para os personagens ou outros NPCs.",
-        "novo": true
+        "novo": true,
+        "ep1": {
+          "presenca_ep1": "Onde Dr. Meireles está. Onde o laudo foi alterado. Pista física da ameaça humana.",
+          "como_narrar": "Edifício público pequeno e antigo. Sala de espera com cadeiras de ferro, balcão de recepção, dois consultórios, sala de procedimentos, depósito. Iluminação fluorescente. Dr. Meireles fica até tarde por causa da dor de cabeça que não passa desde a manhã — tomou três analgésicos.",
+          "contexto": "Às 15h32 do dia 18/03, antes de qualquer personagem chegar, Dr. Meireles recebeu uma ligação. Ezequiel pessoalmente, usando chip pré-pago descartável de Goiânia. Mencionou nomes da esposa Renata (professora) e da filha mais velha (2º ano de medicina em Goiânia). Não foi ameaça explícita — Dr. Meireles queria que tivesse sido. 'Quando é explícito você sabe o que fazer.' Anotou o número, tentou ligar de volta: 'Número não atribuído.'",
+          "o_que_revela": [
+            {
+              "titulo": "Persuasão 45 (tom empático) ou Intimidação 50",
+              "texto": "Revela a ligação intimidadora. Mostra papel anotado: número (62) 9XXXX-XXXX e horário 15h32. Esta é a primeira pista física da ameaça humana."
+            },
+            {
+              "titulo": "Se pressionado sobre o laudo original",
+              "texto": "Os três detalhes removidos: (1) temperatura corporal 4°C abaixo, (2) terra preta nas mãos segurada ativamente, (3) 'expressão de reconhecimento ativo, inconsistente com morte súbita por parada cardíaca.'"
+            },
+            {
+              "titulo": "Sobre a expressão de Valdecir",
+              "texto": "'Ele estava segurando a terra. Ativamente. Com força. Quem faz isso depois de morrer de parada cardíaca? E a expressão. O rosto do Valdecir tinha a expressão de alguém que reconheceu alguma coisa. Na última coisa que viu. E ficou contente com isso.'"
+            }
+          ],
+          "como_chegar": [
+            "Seu João da funerária menciona Dr. Meireles ficando sentado olhando o corpo",
+            "Ronaldo evade sobre o laudo, sugere falar com Dr. Meireles"
+          ],
+          "personagens_associados": [
+            "Dr. Cláudio Meireles",
+            "Ronaldo (indiretamente)",
+            "Ezequiel (via ligação)"
+          ]
+        }
       },
       {
         "id": "rua-pitangueiras",
@@ -477,7 +700,21 @@
         "nivel_perigo": "medio",
         "descricao": "A rua específica onde fica a casa de Valdecir. Casas baixas, arquitetura mais antiga que o resto do bairro, calçada irregular.",
         "detalhe": "A casa de Dona Neuza fica em frente à de Valdecir. A casa de Dona Cida fica três casas adiante. A rua tem aproximadamente 200 metros — termina na esquina com a Rua das Acácias.",
-        "novo": true
+        "novo": true,
+        "ep1": {
+          "presenca_ep1": "A rua onde Valdecir morava.",
+          "como_narrar": "Casas baixas, arquitetura mais antiga que o resto do bairro, calçada irregular. Aproximadamente 200m, termina na esquina com a Rua das Acácias.",
+          "vizinhanca": [
+            "Casa de Valdecir (nº 14)",
+            "Casa de Dona Neuza — em frente à de Valdecir",
+            "Casa de Dona Cida — três casas adiante"
+          ],
+          "personagens_associados": [
+            "Valdecir",
+            "Dona Neuza",
+            "Dona Cida"
+          ]
+        }
       },
       {
         "id": "rua-acacias",
@@ -485,7 +722,16 @@
         "nivel_perigo": "alto",
         "descricao": "A rua perpendicular à Rua das Pitangueiras. É a rua que passa pelo limite externo da Área Verde.",
         "detalhe": "Foi onde Dona Neuza encontrou o corpo de Valdecir, encostado no muro do terreno.",
-        "novo": true
+        "novo": true,
+        "ep1": {
+          "presenca_ep1": "Onde Dona Neuza encontrou o corpo de Valdecir.",
+          "como_narrar": "Rua perpendicular à Rua das Pitangueiras. Passa pelo limite externo da Área Verde — é onde o muro baixo do terreno fica visível.",
+          "o_que_aconteceu_aqui": "Madrugada de 18/03, ~5h-5h30. Dona Neuza estava em sua caminhada matinal habitual quando viu Valdecir sentado encostado no muro externo da Área Verde. Pernas estendidas, costas no muro, mãos viradas para dentro do terreno (como se tivesse pegado algo de lá), olhos abertos olhando para o chão na frente dele. A mão estava fria de um jeito que não era de morte.",
+          "personagens_associados": [
+            "Valdecir",
+            "Dona Neuza"
+          ]
+        }
       }
     ],
     "simbolo": {
@@ -888,7 +1134,38 @@
           "ref": "page:temporadas",
           "texto": "No quarto de Valdecir, caderno aberto numa página de 1987 com os nomes dos personagens. Escritos trinta e oito anos antes de qualquer um deles ter razão para estar em Novavera."
         }
-      ]
+      ],
+      "ep1": {
+        "presenca_ep1": "Morto. Centro de toda a investigação.",
+        "como_interpretar": "Valdecir já está morto quando o episódio começa — mas sua presença é sentida em cada cena. Cinquenta anos vivendo em Novavera, sabendo, anotando, esperando. Os cadernos dele são a voz que ficou. Quando o Mestre lê trechos dos cadernos em voz alta, deve fazê-lo devagar, com peso — é a única vez que Valdecir vai falar diretamente nesta temporada.",
+        "no_episodio": [
+          {
+            "titulo": "Manhã (06h14)",
+            "texto": "Corpo encontrado por Dona Neuza encostado no muro externo da Área Verde, na Rua das Acácias. Mãos viradas para dentro do terreno, segurando ativamente terra preta. Temperatura corporal 4°C abaixo do normal. Expressão de reconhecimento ativo."
+          },
+          {
+            "titulo": "Velório (19h–21h)",
+            "texto": "Caixão na Igreja de Santo Antônio. Símbolo gravado na lateral — entalhe recente feito por Armindo entre 18h15 e 18h25, com abertura apontando para nordeste (Área Verde)."
+          },
+          {
+            "titulo": "Casa (a partir das 22h)",
+            "texto": "Os personagens descobrem que ele preparou tudo para eles — caderno com fita de couro misturada com terra do nó, bilhete trêmulo: 'Quem vier — o que abre isso está onde isso veio. Não confiem em ninguém que não tenha sujado as mãos no mesmo lugar.'"
+          },
+          {
+            "titulo": "O caderno (madrugada, ~23h)",
+            "texto": "Quando abrem o caderno principal, a página aberta é de setembro de 1987: 'Vieram no sonho de novo. Os quatro. Ainda não sei os nomes. Mas reconheço os rostos de outro lugar — de muitos outros lugares, talvez.' Memória +1 automático para todos os personagens."
+          }
+        ],
+        "pistas_que_deixa": [
+          "Três cadernos (um no quarto / um com Natalina / um de observações pessoais de Natalina dela própria)",
+          "Caixa de sapato embaixo da cama (foto antiga do cerrado, envelope com chave pesada, recorte do trabalhador Monteiro 1978)",
+          "Calendário marcado em 18/03 e 07/04 (sem texto, só círculos vermelhos)",
+          "Agenda: '10h — S.N.' — compromisso não cumprido com Sueli Nascimento",
+          "Poltrona virada para a janela com vista para a Área Verde"
+        ],
+        "reconstrucao_ultima_noite": "Madrugada de 17/03: Valdecir foi à Área Verde, voltou com terra nas mãos, fez café, sentou na poltrona virada para a janela olhando o lugar onde voltaria, depois voltou para morrer ali. Suicídio voluntário — escolheu morrer.",
+        "ganchos_pos_ep1": "O caderno entregue por Natalina (Ep2). A chave da caixa de sapato (Ep5+). Sonhos recorrentes de quem leu o caderno (Ep2+)."
+      }
     },
     {
       "id": "vera",
@@ -945,7 +1222,22 @@
           "ref": "page:temporadas",
           "texto": "Vera Monteiro faz contato — escolhe o personagem mais capaz de ouvir sem hostilidade."
         }
-      ]
+      ],
+      "ep1": {
+        "presenca_ep1": "Mencionada apenas no recorte de jornal. Não aparece em cena.",
+        "como_interpretar": "Vera Monteiro existe como nome apenas — é o sobrenome do trabalhador morto em 1978 mencionado no recorte (Monteiro). Os jogadores podem deduzir conexão com Dalva Monteiro (a entidade que possui Dona Cida) e suspeitar que há uma família Monteiro presa neste lugar há gerações.",
+        "no_episodio": [
+          {
+            "titulo": "Casa de Valdecir — recorte de jornal",
+            "texto": "Item 3 da caixa de sapato: 'O trabalhador encontrado morto nas obras seria identificado apenas pelo sobrenome: Monteiro.' Frase sublinhada à caneta vermelha por Valdecir."
+          },
+          {
+            "titulo": "Possessão de Dona Cida",
+            "texto": "A voz que sai dela é de uma mulher de uns trinta anos. Dalva Monteiro. Os jogadores podem começar a perguntar quem é Vera Monteiro e que vínculo tem com Dalva."
+          }
+        ],
+        "ganchos_pos_ep1": "Vera vai entrar em cena no Episódio 5 — momento em que a teia Monteiro começa a se desenhar."
+      }
     },
     {
       "id": "gabriel",
@@ -1006,7 +1298,30 @@
           "ref": "page:temporadas",
           "texto": "Novavera muda: três acidentes sem causa, dois internados sem diagnóstico, Gabriel com febre. Gabriel acorda curado e em silêncio. O silêncio o assusta mais que os fragmentos."
         }
-      ]
+      ],
+      "ep1": {
+        "presenca_ep1": "Aparece nos degraus da Igreja durante o velório. Não entra na cerimônia.",
+        "como_interpretar": "Nove anos, criança calma, desenha enquanto a mãe Carmem conversa dentro. Os desenhos dele têm a fundação da Área Verde com uma figura nova, sem rosto, no centro. Não tem proporções corretas. 'Fica aparecendo. Não sei o que é. Ontem não tinha.' Cuidado: Carmem é protetora — abordagens estranhas com Gabriel a fazem aparecer e levar o menino embora, fechando acesso a ele nos próximos episódios.",
+        "no_episodio": [
+          {
+            "titulo": "Degraus da Igreja (velório)",
+            "texto": "'Você veio pro velório? O Seu Valdecir era legal. Ele me deixava ficar sentado na praça quando minha mãe ia fazer compra. Não ficava me mandando embora.'"
+          },
+          {
+            "titulo": "O caderno de desenhos",
+            "texto": "Hoje tem uma figura nova: alta, sem rosto, no centro das fundações da Área Verde. Termômetro de Gabriel marcou 36.2°C — a mãe achou que estava quebrado."
+          },
+          {
+            "titulo": "SINAL 1 DE ABEL",
+            "texto": "Se Abel se aproxima, Gabriel para de desenhar. Olha de baixo pra cima. 'Você não tem fragmentos.' Pausa. 'Eu não sei explicar direito. Todo mundo tem fragmentos. Partes de outros lugares que ficam grudadas. Você não tem. É tudo inteiro. Isso é raro.'"
+          },
+          {
+            "titulo": "MECÂNICA SECRETA",
+            "texto": "Qualquer conversa substantiva com Gabriel: Memória +1 em segredo para o personagem que conversou. Não anuncia."
+          }
+        ],
+        "ganchos_pos_ep1": "Gabriel sabe mais do que diz e do que pode dizer. Aparecer de novo no Episódio 6 quando o preço de ser médium começa a cobrar dele."
+      }
     },
     {
       "id": "natalina",
@@ -1069,7 +1384,26 @@
           "ref": "page:temporadas",
           "texto": "Natalina: \"Ele tinha certeza que vocês viriam. Faz tempo. Ele sabia.\" Natalina confrontada — confirma que cobriu, não sabia o que era, caderno entregue."
         }
-      ]
+      ],
+      "ep1": {
+        "presenca_ep1": "Vista no Bairro Fundação na chegada de um personagem, e novamente no velório.",
+        "como_interpretar": "Cabelo branco, avental, fala como quem já decidiu o que faz e o que não faz desta vida. Não vai procurar os personagens — vai esperar. Quando aborda, é direta: 'Você é um dos que vão ao velório do Valdecir.' Não é pergunta. Guarda três coisas: o caderno que Valdecir deixou para entregar, o caderno principal de Valdecir na casa dele, e o caderno de observações pessoais dela própria (que é peça do Enigma 2).",
+        "no_episodio": [
+          {
+            "titulo": "Bairro Fundação (chegada)",
+            "texto": "Varrendo a calçada de uma casa de esquina. Avalia o personagem com olhar não-hostil. 'Ele falava de vez em quando que iam vir pessoas. Não sei quando, não sei de onde. Falava assim — quando vierem, Natalina, trata bem.'"
+          },
+          {
+            "titulo": "Velório — sobre os cadernos",
+            "texto": "Sem perceber, entrega três níveis de informação: o caderno guardado (gancho Ep2), o caderno principal na casa (caso dos personagens forem visitar), e o caderno de observações dela própria que é peça do Enigma 2."
+          },
+          {
+            "titulo": "Velório — sobre a Área Verde",
+            "texto": "'Lugar ruim. Sempre foi. A construção parou lá em setenta e oito e nunca mais voltou. Ninguém sabe por quê — ninguém pergunta muito. É assim que é em Novavera.'"
+          }
+        ],
+        "ganchos_pos_ep1": "Entrega o caderno guardado no Episódio 2 se procurada. O caderno de observações pessoais dela é peça do Enigma 2 — temperatura anormal há décadas."
+      }
     },
     {
       "id": "decio",
@@ -1129,7 +1463,18 @@
           "ref": "page:temporadas",
           "texto": "Décio entrega uma folha. Uma palavra circulada: Armindo Laerte Vasconcelos. Décio: dois minutos de clareza — última janela real, entrega algo crucial dos cadernos 16–22."
         }
-      ]
+      ],
+      "ep1": {
+        "presenca_ep1": "Não aparece no Ep1. Mencionado em referências futuras.",
+        "como_interpretar": "Décio é peça de episódios posteriores. No Ep1 ele não aparece — está esperando.",
+        "no_episodio": [
+          {
+            "titulo": "Sem participação direta",
+            "texto": "Décio não tem cena no Ep1. Sua função se ativa quando os personagens começam a entender o tecido mais antigo da cidade."
+          }
+        ],
+        "ganchos_pos_ep1": "Aparece a partir do Episódio 3-4."
+      }
     },
     {
       "id": "ronaldo",
@@ -1181,7 +1526,30 @@
           "ref": "page:temporadas",
           "texto": "Ronaldo investigando sozinho encontra o caso de 1978. Ronaldo chega à Área Verde com tudo que descobriu."
         }
-      ]
+      ],
+      "ep1": {
+        "presenca_ep1": "Presente no velório (sem farda, como civil). Tem cena de tensão.",
+        "como_interpretar": "Delegado, mas no velório veio como amigo do Valdecir. Postura de quem está de serviço mesmo quando não está. Sabe mais do que diz — viu o laudo original que Dr. Meireles editou, fotografou em segredo, recebeu ligação anônima de manhã: 'O laudo está correto. Qualquer outra versão seria um problema.' Não é vilão — é alguém em decisão adiada.",
+        "no_episodio": [
+          {
+            "titulo": "Cronologia da manhã",
+            "texto": "7h31 chegou ao posto de saúde. Leu o laudo original por acidente. Fotografou em segredo. 9h recebeu a ligação anônima. Está com o telefone no bolso desde então."
+          },
+          {
+            "titulo": "Ligação no velório (20h–20h30)",
+            "texto": "Celular vibra. Expressão muda. Sai pela porta lateral. Se algum personagem o seguir com Furtividade 35, ouve apenas o lado dele: '...eu sei. Eu sei disso... Não é o que você pensa. Eles são só... não sei quem são. Chegaram hoje... Não vou fazer isso... Não estou dizendo que vou contar. Estou dizendo que não vou fazer isso... Entendido.'"
+          },
+          {
+            "titulo": "Se abordado depois",
+            "texto": "'Isso foi uma conversa privada. Se tiverem questões sobre a morte do Valdecir, a delegacia funciona amanhã das oito.' Psicologia 45 — sabe mais. Tensão é de decisão adiada, não do luto."
+          },
+          {
+            "titulo": "Confronto com Enigma 2 resolvido",
+            "texto": "Se os personagens cruzaram as 4 peças do Enigma 2 antes da segunda ligação, Ronaldo cede uma informação: o número de Goiânia que ligou de manhã (não existe mais quando tentarem retornar). Primeira pista física da ameaça humana."
+          }
+        ],
+        "ganchos_pos_ep1": "Pressão sobre Ronaldo cresce no Ep2. Decisão adiada vai exigir resposta."
+      }
     },
     {
       "id": "sueli",
@@ -1247,7 +1615,26 @@
           "ref": "page:temporadas",
           "texto": "Sombra de Sueli passando pela janela por menos de um minuto. Sueli faz contato direto — oferece acesso ao subsolo. Sueli entrega o critério secundário."
         }
-      ]
+      ],
+      "ep1": {
+        "presenca_ep1": "Chega à beira da rodovia às 17h40 mas NÃO entra na cidade. Fica no carro 40 minutos.",
+        "como_interpretar": "Está em Goiânia quando soube. Decidiu vir mas trava na beira da rodovia. Passa devagar pelo velório em marcha lenta, sem parar. Os personagens podem nem vê-la — mas se alguém ficar na entrada da cidade ou no caminho do velório, pode notar um carro estranho passando duas vezes. Sueli é o 'S.N.' da agenda de Valdecir — o compromisso das 10h que não foi cumprido.",
+        "no_episodio": [
+          {
+            "titulo": "17h40 — beira da rodovia",
+            "texto": "Chega no limite de Novavera. Fica no carro 40 minutos. Não entra. Decide algo."
+          },
+          {
+            "titulo": "Durante o velório",
+            "texto": "Passa devagar pelo velório em marcha lenta. Sem parar. Não desce. Vai embora antes que ninguém possa identificar quem é."
+          },
+          {
+            "titulo": "A pista que deixa",
+            "texto": "A agenda de Valdecir na sala: '10h — S.N.' Iniciais. Os personagens podem anotar — só vai fazer sentido no Episódio 7."
+          }
+        ],
+        "ganchos_pos_ep1": "Aparece formalmente no Episódio 7. Se os personagens deduziram a iniciativa nos olhos certos durante o Ep1, ganham vantagem narrativa quando ela se revelar."
+      }
     }
   ],
   "quem_sabe": [
@@ -6105,5 +6492,417 @@
         }
       ]
     }
-  }
+  },
+  "link_index": [
+    {
+      "termo": "posto de gasolina da entrada sul",
+      "ref": "local:posto-gasolina",
+      "palavras": 6
+    },
+    {
+      "termo": "Dona Neuza Aparecida da Silva",
+      "ref": "npc:neuza",
+      "palavras": 5
+    },
+    {
+      "termo": "Posto de Saúde de Novavera",
+      "ref": "local:posto-saude",
+      "palavras": 5
+    },
+    {
+      "termo": "Aparecido Marques de Souza",
+      "ref": "npc:aparecido",
+      "palavras": 4
+    },
+    {
+      "termo": "João Carvalho de Oliveira",
+      "ref": "npc:joao-funeraria",
+      "palavras": 4
+    },
+    {
+      "termo": "Centro Cívico de Novavera",
+      "ref": "local:centro-civico-praca",
+      "palavras": 4
+    },
+    {
+      "termo": "Neuza Aparecida da Silva",
+      "ref": "npc:neuza",
+      "palavras": 4
+    },
+    {
+      "termo": "Igreja de Santo Antônio",
+      "ref": "local:igreja-santo-antonio",
+      "palavras": 4
+    },
+    {
+      "termo": "Ezequiel Drummond Cavalcanti",
+      "ref": "page:profetas",
+      "palavras": 3
+    },
+    {
+      "termo": "Arquivo Histórico Municipal",
+      "ref": "local:arquivo-historico",
+      "palavras": 3
+    },
+    {
+      "termo": "Aparecida Coelho Rodrigues",
+      "ref": "npc:cida",
+      "palavras": 3
+    },
+    {
+      "termo": "Armindo Laerte Vasconcelos",
+      "ref": "page:profetas",
+      "palavras": 3
+    },
+    {
+      "termo": "Senhor Valdecir Conceição",
+      "ref": "npc:valdecir",
+      "palavras": 3
+    },
+    {
+      "termo": "o investigador particular",
+      "ref": "npc:investigador",
+      "palavras": 3
+    },
+    {
+      "termo": "rodoviária de Novavera",
+      "ref": "local:rodoviaria",
+      "palavras": 3
+    },
+    {
+      "termo": "Geraldo Vieira Mendes",
+      "ref": "npc:geraldo",
+      "palavras": 3
+    },
+    {
+      "termo": "Rosângela dos Santos",
+      "ref": "npc:rosangela",
+      "palavras": 3
+    },
+    {
+      "termo": "Marisa Pereira Costa",
+      "ref": "npc:marisa",
+      "palavras": 3
+    },
+    {
+      "termo": "Seu Benedito Pacheco",
+      "ref": "npc:benedito-sacristao",
+      "palavras": 3
+    },
+    {
+      "termo": "Rua das Pitangueiras",
+      "ref": "local:rua-pitangueiras",
+      "palavras": 3
+    },
+    {
+      "termo": "Carmem Lúcia Tostes",
+      "ref": "npc:carmem",
+      "palavras": 3
+    },
+    {
+      "termo": "Seu João Carvalho",
+      "ref": "npc:joao-funeraria",
+      "palavras": 3
+    },
+    {
+      "termo": "posto de gasolina",
+      "ref": "local:posto-gasolina",
+      "palavras": 3
+    },
+    {
+      "termo": "Casa de Valdecir",
+      "ref": "local:casa-valdecir",
+      "palavras": 3
+    },
+    {
+      "termo": "casa de Valdecir",
+      "ref": "local:casa-valdecir",
+      "palavras": 3
+    },
+    {
+      "termo": "Rua das Acácias",
+      "ref": "local:rua-acacias",
+      "palavras": 3
+    },
+    {
+      "termo": "Rua do Anterior",
+      "ref": "local:rua-anterior",
+      "palavras": 3
+    },
+    {
+      "termo": "posto de saúde",
+      "ref": "local:posto-saude",
+      "palavras": 3
+    },
+    {
+      "termo": "investigador particular",
+      "ref": "npc:investigador",
+      "palavras": 2
+    },
+    {
+      "termo": "Valdecir Conceição",
+      "ref": "npc:valdecir",
+      "palavras": 2
+    },
+    {
+      "termo": "Arquivo Histórico",
+      "ref": "local:arquivo-historico",
+      "palavras": 2
+    },
+    {
+      "termo": "delegado Ronaldo",
+      "ref": "npc:ronaldo",
+      "palavras": 2
+    },
+    {
+      "termo": "Sueli Nascimento",
+      "ref": "npc:sueli",
+      "palavras": 2
+    },
+    {
+      "termo": "Senhor Valdecir",
+      "ref": "npc:valdecir",
+      "palavras": 2
+    },
+    {
+      "termo": "Bairro Fundação",
+      "ref": "local:bairro-fundacao",
+      "palavras": 2
+    },
+    {
+      "termo": "Gabriel Tostes",
+      "ref": "npc:gabriel",
+      "palavras": 2
+    },
+    {
+      "termo": "Natalina Braga",
+      "ref": "npc:natalina",
+      "palavras": 2
+    },
+    {
+      "termo": "Ronaldo Seabra",
+      "ref": "npc:ronaldo",
+      "palavras": 2
+    },
+    {
+      "termo": "O Investigador",
+      "ref": "npc:investigador",
+      "palavras": 2
+    },
+    {
+      "termo": "Doutor Armindo",
+      "ref": "page:profetas",
+      "palavras": 2
+    },
+    {
+      "termo": "Vera Monteiro",
+      "ref": "npc:vera",
+      "palavras": 2
+    },
+    {
+      "termo": "Seu Aparecido",
+      "ref": "npc:aparecido",
+      "palavras": 2
+    },
+    {
+      "termo": "Carmem Tostes",
+      "ref": "npc:carmem",
+      "palavras": 2
+    },
+    {
+      "termo": "Centro Cívico",
+      "ref": "local:centro-civico-praca",
+      "palavras": 2
+    },
+    {
+      "termo": "Funerária Paz",
+      "ref": "local:funeraria-paz",
+      "palavras": 2
+    },
+    {
+      "termo": "Centro Cívico",
+      "ref": "local:centro-civico",
+      "palavras": 2
+    },
+    {
+      "termo": "Seu Benedito",
+      "ref": "npc:benedito-sacristao",
+      "palavras": 2
+    },
+    {
+      "termo": "O Silencioso",
+      "ref": "page:envelopes",
+      "palavras": 2
+    },
+    {
+      "termo": "Décio Murta",
+      "ref": "npc:decio",
+      "palavras": 2
+    },
+    {
+      "termo": "Seu Geraldo",
+      "ref": "npc:geraldo",
+      "palavras": 2
+    },
+    {
+      "termo": "Dr. Armindo",
+      "ref": "page:profetas",
+      "palavras": 2
+    },
+    {
+      "termo": "Dona Neuza",
+      "ref": "npc:neuza",
+      "palavras": 2
+    },
+    {
+      "termo": "Área Verde",
+      "ref": "local:area-verde",
+      "palavras": 2
+    },
+    {
+      "termo": "O Cobrador",
+      "ref": "page:envelopes",
+      "palavras": 2
+    },
+    {
+      "termo": "Dona Cida",
+      "ref": "npc:cida",
+      "palavras": 2
+    },
+    {
+      "termo": "Seu João",
+      "ref": "npc:joao-funeraria",
+      "palavras": 2
+    },
+    {
+      "termo": "O Juiz",
+      "ref": "page:envelopes",
+      "palavras": 2
+    },
+    {
+      "termo": "rodoviária",
+      "ref": "local:rodoviaria",
+      "palavras": 1
+    },
+    {
+      "termo": "Silencioso",
+      "ref": "page:envelopes",
+      "palavras": 1
+    },
+    {
+      "termo": "Aparecido",
+      "ref": "npc:aparecido",
+      "palavras": 1
+    },
+    {
+      "termo": "Rosângela",
+      "ref": "npc:rosangela",
+      "palavras": 1
+    },
+    {
+      "termo": "sacristão",
+      "ref": "npc:benedito-sacristao",
+      "palavras": 1
+    },
+    {
+      "termo": "funerária",
+      "ref": "local:funeraria-paz",
+      "palavras": 1
+    },
+    {
+      "termo": "Valdecir",
+      "ref": "npc:valdecir",
+      "palavras": 1
+    },
+    {
+      "termo": "Natalina",
+      "ref": "npc:natalina",
+      "palavras": 1
+    },
+    {
+      "termo": "Ezequiel",
+      "ref": "page:profetas",
+      "palavras": 1
+    },
+    {
+      "termo": "Cobrador",
+      "ref": "page:envelopes",
+      "palavras": 1
+    },
+    {
+      "termo": "Gabriel",
+      "ref": "npc:gabriel",
+      "palavras": 1
+    },
+    {
+      "termo": "Ronaldo",
+      "ref": "npc:ronaldo",
+      "palavras": 1
+    },
+    {
+      "termo": "Geraldo",
+      "ref": "npc:geraldo",
+      "palavras": 1
+    },
+    {
+      "termo": "Arquivo",
+      "ref": "local:arquivo-historico",
+      "palavras": 1
+    },
+    {
+      "termo": "Armindo",
+      "ref": "page:profetas",
+      "palavras": 1
+    },
+    {
+      "termo": "Marisa",
+      "ref": "npc:marisa",
+      "palavras": 1
+    },
+    {
+      "termo": "Carmem",
+      "ref": "npc:carmem",
+      "palavras": 1
+    },
+    {
+      "termo": "Igreja",
+      "ref": "local:igreja-santo-antonio",
+      "palavras": 1
+    },
+    {
+      "termo": "Décio",
+      "ref": "npc:decio",
+      "palavras": 1
+    },
+    {
+      "termo": "Sueli",
+      "ref": "npc:sueli",
+      "palavras": 1
+    },
+    {
+      "termo": "Neuza",
+      "ref": "npc:neuza",
+      "palavras": 1
+    },
+    {
+      "termo": "Vera",
+      "ref": "npc:vera",
+      "palavras": 1
+    },
+    {
+      "termo": "Caim",
+      "ref": "page:caim",
+      "palavras": 1
+    },
+    {
+      "termo": "Abel",
+      "ref": "page:abel",
+      "palavras": 1
+    },
+    {
+      "termo": "Juiz",
+      "ref": "page:envelopes",
+      "palavras": 1
+    }
+  ]
 }
