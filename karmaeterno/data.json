@@ -414,6 +414,78 @@
         "descricao": "Aparece no mapa original de 1961 — diagonal, do sudoeste ao nordeste, passando pelo ponto marcado na Área Verde. Não existe na cidade real.",
         "detalhe": "A fundação diagonal existe sob a calçada. Nas fundações: o símbolo gravado com a abertura fechada. Data entalhada: 17 de junho de 1974 — exatamente 13 anos depois do mapa. Armindo fechou o símbolo em 1974 via Natalina, que não sabia o que estava cobrindo.",
         "nivel_perigo": "extremo"
+      },
+      {
+        "id": "posto-gasolina",
+        "nome": "Posto de Gasolina da Entrada Sul (BR-060)",
+        "nivel_perigo": "baixo",
+        "descricao": "Beira da BR-060, aproximadamente 200 metros após a placa de entrada de Novavera. Posto simples de beira de rodovia. Duas bombas (uma funcionando, uma fora de uso). Loja de conveniência pequena com balcão e algumas prateleiras. Banheiro externo. Estacionamento de terra batida. Um cão velho dorme na sombra.",
+        "detalhe": "Aberto das 6h às 23h. Aparecido geralmente está presente em horário comercial. Rosângela faz turno da tarde e noite (14h às 23h). Significado para a história: Primeira \"porta\" pela qual os personagens chegam à cidade — e ponto de monitoramento ativo de Ezequiel via Aparecido. Pode reaparecer em qualquer episódio em que personagens entrem ou saiam da cidade pelo sul.",
+        "novo": true
+      },
+      {
+        "id": "rodoviaria",
+        "nome": "Rodoviária de Novavera",
+        "nivel_perigo": "baixo",
+        "descricao": "Rua João Pessoa, número 102, centro de Novavera. Prédio simples de um andar. Cinco plataformas de embarque, bar pequeno servindo café em copo plástico, salinha de espera com bancos de plástico azul, banheiros públicos. Movimento moderado. Ônibus para Goiânia, Brasília, Anápolis e cidades próximas.",
+        "detalhe": "A calçada em frente à rodoviária tem riscos antigos de carvão/giz que voltam periodicamente — alguém em Novavera desenha o símbolo de Caim nessa calçada de tempos em tempos. Quem? Por quê? Mistério em aberto para episódios futuros. Pode reaparecer em episódios em que personagens fizerem viagens.",
+        "novo": true
+      },
+      {
+        "id": "centro-civico-praca",
+        "nome": "Centro Cívico de Novavera + Praça",
+        "nivel_perigo": "medio",
+        "descricao": "Rua Prefeito Benedito Braga, número 1, esquina com Avenida Central. Prédio público de dois andares, fachada de concreto pintado de branco. Bandeiras (Brasil, Goiás, Novavera) no mastro à frente. Praça pequena com bancos de concreto, três palmeiras imperiais, e a placa comemorativa de bronze logo na entrada.",
+        "detalhe": "A placa: \"Em memória dos que tornaram possível — Novavera, fundada em 1974.\" Lista de fundadores com nome, datas, e foto em medalha. Benedito Serafim Costa Lima (1908–1969) está aqui — com foto que mostra ele com 40 anos. Atrás do prédio: Área de serviço com lixeira, transformador elétrico, calçada de cimento. Aqui está a marca de cal com o símbolo — desenhada recentemente (menos de duas semanas). Alguém em Novavera está mantendo o símbolo ativo. Pode reaparecer em episódios 2, 3 e provavelmente o 7.",
+        "novo": true
+      },
+      {
+        "id": "igreja-santo-antonio",
+        "nome": "Igreja de Santo Antônio",
+        "nivel_perigo": "medio",
+        "descricao": "Rua das Flores, número 47, centro de Novavera. Igreja católica pequena de cidade do interior. Nave com bancos de madeira para cerca de 200 pessoas. Altar simples. Crucifixo de madeira escura. Estacionamento lateral entre a igreja e a casa vizinha — usado pelo sacristão e pelo padre. Sacristia atrás do altar (acesso restrito).",
+        "detalhe": "Padre Joaquim (não aparece no Ep 1) vem rezar missa aos domingos. Sacristão Seu Benedito está presente quase todos os dias. Igreja fica aberta durante o dia para visitação. Trancada à noite, exceto em ocasiões especiais. No Episódio 1: Local do velório de Valdecir. Onde Armindo entrou às 18h15 e gravou o símbolo no caixão. Onde Ronaldo sai pela porta lateral para atender a ligação intimidadora.",
+        "novo": true
+      },
+      {
+        "id": "funeraria-paz",
+        "nome": "Funerária Paz",
+        "nivel_perigo": "baixo",
+        "descricao": "Rua dos Cravos, número 88, próximo ao centro. Funerária simples de cidade do interior. Sala de recepção pequena, corredor com duas câmaras de velório (raramente usadas — a maioria dos velórios acontece nas igrejas), sala de preparação nos fundos com iluminação fria e azulejo branco.",
+        "detalhe": "Família Carvalho gerencia há 20 anos. Quatro funcionários (Seu João é o mais antigo). Pode reaparecer no Episódio 2 (se investigarem como o caixão chegou à Igreja sem ninguém saber quem gravou o símbolo). Episódios posteriores se houver mais mortes.",
+        "novo": true
+      },
+      {
+        "id": "casa-valdecir",
+        "nome": "Casa de Valdecir",
+        "nivel_perigo": "alto",
+        "descricao": "Rua das Pitangueiras, 14, Bairro Fundação. Casa térrea simples. Fachada baixa, tijolo aparente em algumas partes. Pequeno quintal frontal com cerca de madeira. Três degraus até a porta. Interior: Sala (poltrona, televisão antiga, estante com livros, calendário na parede, mesinha de centro com agenda); Cozinha (modesta, mesa pequena, fogão a gás, geladeira antiga, porta dos fundos com ferrolho que pode estar destrancado); Quarto (cama de solteiro, guarda-roupa, mesinha de cabeceira, fotografia antiga na parede, caderno na mesinha); Banheiro simples.",
+        "detalhe": "Janela da sala dá para a rua, com vista para a Área Verde no fim. Embaixo da cama do quarto: caixa de sapato com três itens (foto, envelope com chave, recorte de jornal). Em cima da mesinha de cabeceira: o caderno com a passagem de 1987. Provavelmente reaparece em episódios futuros — local sentimental, ponto de retorno se os personagens precisarem revisitar memórias de Valdecir.",
+        "novo": true
+      },
+      {
+        "id": "posto-saude",
+        "nome": "Posto de Saúde de Novavera",
+        "nivel_perigo": "baixo",
+        "descricao": "Avenida Central, número 234. Edifício público pequeno e antigo. Sala de espera com cadeiras de ferro alinhadas, balcão de recepção, dois consultórios médicos, sala de procedimentos simples, depósito de medicamentos. Iluminação de fluorescente.",
+        "detalhe": "Dr. Cláudio Meireles é o médico titular. Atende das 8h às 17h, mas fica até tarde quando há emergência ou quando — como no dia 18 de março — não consegue ir embora. Pode reaparecer no Episódio 9 e qualquer outro com necessidade de cuidados médicos para os personagens ou outros NPCs.",
+        "novo": true
+      },
+      {
+        "id": "rua-pitangueiras",
+        "nome": "Rua das Pitangueiras (Bairro Fundação)",
+        "nivel_perigo": "medio",
+        "descricao": "A rua específica onde fica a casa de Valdecir. Casas baixas, arquitetura mais antiga que o resto do bairro, calçada irregular.",
+        "detalhe": "A casa de Dona Neuza fica em frente à de Valdecir. A casa de Dona Cida fica três casas adiante. A rua tem aproximadamente 200 metros — termina na esquina com a Rua das Acácias.",
+        "novo": true
+      },
+      {
+        "id": "rua-acacias",
+        "nome": "Rua das Acácias",
+        "nivel_perigo": "alto",
+        "descricao": "A rua perpendicular à Rua das Pitangueiras. É a rua que passa pelo limite externo da Área Verde.",
+        "detalhe": "Foi onde Dona Neuza encontrou o corpo de Valdecir, encostado no muro do terreno.",
+        "novo": true
       }
     ],
     "simbolo": {
@@ -1308,6 +1380,30 @@
       {
         "nome": "Sistema de Dívida",
         "corpo": "Cada personagem tem uma dívida de vida anterior com três componentes:\n— A natureza: o que foi feito ou deixado por fazer\n— O credor: alguém desta vida que representa a dívida\n— O padrão: a decisão que o personagem tende a repetir sem perceber\n\nQuando numa situação que ressoa com o padrão, o Mestre pode pedir rolagem de POD. Falha: o Mestre descreve a ação — não o jogador. Raramente. Com peso. Não é punição. É o universo cobrando."
+      },
+      {
+        "nome": "Memória Involuntária — Calibração para o Episódio 1",
+        "corpo": "A bíblia original estabeleceu que Memória sobe ao acessar fragmentos voluntariamente. O Episódio 1 expandiu para incluir várias formas involuntárias de subida de Memória.\n\nConversa substantiva com médium não treinado: Automática (sem rolagem) — Memória +1 em segredo.\n\nTocar terra extraída de nó temporal ativo: POD 50 — Memória +1 e sensação física de reconhecimento.\n\nLer texto premonitório que cita o personagem: Automática — Memória +1 para todos os afetados.\n\nTestemunhar manifestação espírita inegável: Automática — Memória +1 e Permanência -1 para todos.\n\nSofrer dano físico de entidade possuindo corpo: Automática — Memória +1 adicional ao dano físico.\n\nPrincípio: o Sistema cobra quando o personagem é exposto ao sobrenatural — não importa se procurou ou não. A inocência não protege."
+      },
+      {
+        "nome": "Confronto Mediúnico com Entidade Possuindo Corpo",
+        "corpo": "Variação da regra original de Confronto Mediúnico. Quando uma entidade está usando um corpo humano vivo:\n\nIniciativa: Como sempre, declaração de intenção.\n\nRolagem: POD vs POD da entidade. Bônus +10 na dificuldade porque há a interferência do corpo humano vivo como mediador.\n\nCusto (sucesso): Memória +1D4, Permanência -1D4 (padrão), mais +1 Memória adicional pela conexão com a alma do corpo possuído.\n\nCusto (falha): Memória +1D6, Permanência -1D6.\n\nEfeito do sucesso: A entidade cede temporariamente. Pode parar de atacar, escutar, dialogar. Mas não sai do corpo automaticamente — sai quando quer ou quando o corpo não suporta mais.\n\nImportante: matar o corpo possuído não mata a entidade. A entidade simplesmente volta ao plano de origem. Mas matar um humano possuído tem todas as consequências de matar um humano — legais, morais, psicológicas."
+      },
+      {
+        "nome": "Mecânica de Possessão",
+        "corpo": "Quando uma das 33 almas se manifesta usando o corpo de um vivo:\n\nQuem pode ser possuído: Médiuns inconscientes (como Gabriel ou Ronaldo) ou pessoas em estado de receptividade aumentada (sonho, devoção religiosa intensa, choque emocional, doença). Dona Cida foi escolhida por ser idosa, devota, e estar próxima fisicamente.\n\nAtributos durante a possessão: Força física aumentada substancialmente (em Dona Cida foi de 35 para 75). Constituição aumentada (40→60). Destreza aumentada se a entidade for jovem. INT, EDU: mantidas as do corpo (a entidade não traz conhecimento técnico). Aparência: pode parecer \"errada\" — olhos focando lugares estranhos, sotaque diferente, postura diferente.\n\nDuração: Limitada pela resistência física do corpo. Dona Cida aguentou ~20 minutos. Corpos mais jovens ou mais fortes podem aguentar mais. Corpos frágeis podem morrer da possessão.\n\nConsequências para o possuído: Inconsciência ao final da possessão (sempre). Choque profundo (pode parecer morte clínica nos primeiros segundos). Amnésia parcial ou total do evento. Possíveis sequelas físicas se houver violência durante a possessão. Sonhos recorrentes posteriores com elementos relacionados à entidade."
+      },
+      {
+        "nome": "Sistema de Pistas Físicas e Distribuição de Informação",
+        "corpo": "O Episódio 1 estabeleceu um modelo de distribuição de informação que pode ser replicado:\n\nPrincípio das três fontes: Cada pista crucial deve ter pelo menos três fontes que apontam para ela — para que nenhum grupo de jogadores fique travado se errar uma abordagem.\n\nExemplo aplicado no Ep 1: Casa de Valdecir como destino (gancho via Natalina + Armindo + Dona Neuza — 3 fontes). Área Verde como destino (gancho via símbolo no caixão + Dona Neuza + Rosângela — 3 fontes). Dr. Meireles como recurso (gancho via Ronaldo + Seu João + Armindo — 3 fontes).\n\nPrincípio da escalada de pistas: Cada pista tem três níveis de revelação: Nível superficial (o que qualquer um percebe). Nível médio (acessível por rolagem média de habilidade 35–45). Nível profundo (acessível por rolagem alta 50+ ou conexão entre múltiplas fontes)."
+      },
+      {
+        "nome": "SMS Personalizado como Ferramenta Narrativa",
+        "corpo": "Nova ferramenta estabelecida no Episódio 1: mensagens vindas de fora do mundo do jogo (celulares reais dos jogadores ou papéis físicos) que vazam para dentro do jogo para criar quebra de realidade.\n\nPrincípios para usar bem: Cada jogador recebe algo único, baseado no envelope de karma. A mensagem é ambígua — pode ser sobre a vida atual ou sobre vida passada. O efeito é mais forte quando os jogadores comparam e descobrem que cada um recebeu algo diferente. Deve ser usado raramente — talvez uma vez por temporada no máximo."
+      },
+      {
+        "nome": "A Apresentação do Sobrenatural — Princípio Episódico",
+        "corpo": "O Episódio 1 estabeleceu uma sequência canônica para apresentar o sobrenatural em Karma Eterno:\n\nFase 1 — Ambiguidade (sessão 1, início): Coisas estranhas que podem ser coincidência. Temperatura. Comportamento de animais. Padrões visuais que parecem repetidos.\n\nFase 2 — Inegabilidade Privada (sessão 1, meio): Memórias involuntárias chegando. Sensações físicas sem origem. Algo que UM personagem experimenta sem que os outros vejam.\n\nFase 3 — Confirmação Visceral (sessão 1, clímax): Manifestação que TODOS os personagens testemunham simultaneamente. Sem volta. O sobrenatural deixa de ser hipótese.\n\nApós a Fase 3, o tom da campanha muda. Os personagens não conseguem mais negar. As decisões deles a partir daqui carregam o peso de saber."
       }
     ],
     "envelope": {
@@ -1944,6 +2040,1857 @@
             }
           ]
         }
+      },
+      "dossie": {
+        "epigrafe": "O tempo não passa. O tempo cobra.",
+        "epigrafe_fonte": "Valdecir Conceição, caderno pessoal, 1987",
+        "data_ficcional": "18 de março de 2025 · Terça-feira",
+        "partes": [
+          {
+            "numero": 1,
+            "titulo": "VISÃO GERAL",
+            "secoes": [
+              {
+                "titulo": "O Que É Este Episódio",
+                "paragrafos": [
+                  "O episódio 1 é a porta de entrada — mas não uma porta tranquila. É uma porta que range. Que abre para um corredor escuro onde você consegue ver que há algo lá no fundo, mas não o que é.",
+                  "O horror aqui é psicológico e duplo: há uma ameaça humana concreta — alguém em Novavera não quer que os personagens investiguem — e há uma ameaça sobrenatural que começa a vazar pelos cantos, nunca explícita, sempre negável. As duas se alimentam. A ameaça humana abre espaço para o sobrenatural aparecer. O sobrenatural torna a ameaça humana mais perturbadora."
+                ],
+                "lista_titulo": "O que os jogadores precisam sentir ao final:",
+                "lista": [
+                  "Que vieram para cá por uma razão que vai além do que acreditavam",
+                  "Que alguém em Novavera já sabe que eles chegaram — e não ficou feliz",
+                  "Que o sobrenatural não é metáfora. É real. E já começou a cobrar."
+                ]
+              },
+              {
+                "titulo": "Estrutura da Sessão — 3 Horas",
+                "tabela_cab": [
+                  "Bloco",
+                  "Tempo",
+                  "Conteúdo"
+                ],
+                "tabela": [
+                  [
+                    "Bloco 1 — Chegadas",
+                    "35 min",
+                    "Cenas solo individuais. Cada uma planta sementes."
+                  ],
+                  [
+                    "Bloco 2 — Velório",
+                    "45 min",
+                    "Convergência. NPCs. O símbolo. A ligação de Ronaldo."
+                  ],
+                  [
+                    "Bloco 3 — Investigação",
+                    "30 min",
+                    "Dr. Meireles e/ou outras pistas iniciais."
+                  ],
+                  [
+                    "Bloco 4 — Casa de Valdecir (1ª visita)",
+                    "20 min",
+                    "Exploração da casa. Caixa de sapato. Caderno trancado com bilhete."
+                  ],
+                  [
+                    "Bloco 5 — Área Verde",
+                    "25 min",
+                    "Símbolo nas fundações. Terra especial. Algo passa pelo corpo."
+                  ],
+                  [
+                    "Bloco 6 — Retorno e Clímax",
+                    "25 min",
+                    "Abrir o caderno. SMS personalizados. A invasão."
+                  ],
+                  [
+                    "Gancho Final",
+                    "5 min",
+                    "A marca na poltrona. A pegada que vai mas não volta."
+                  ]
+                ]
+              },
+              {
+                "titulo": "Linha do Tempo Cronológica do Dia",
+                "intro": "Para o Mestre saber em que ordem as coisas acontecem no mundo do jogo:",
+                "tabela_cab": [
+                  "Horário",
+                  "Evento"
+                ],
+                "tabela": [
+                  [
+                    "06h14",
+                    "Dona Neuza encontra o corpo de Valdecir"
+                  ],
+                  [
+                    "06h47",
+                    "Dr. Meireles chega — começa a editar o laudo"
+                  ],
+                  [
+                    "07h31",
+                    "Ronaldo chega e lê o laudo original por acidente"
+                  ],
+                  [
+                    "08h15",
+                    "Armindo é avisado por Ronaldo — 11 segundos de silêncio"
+                  ],
+                  [
+                    "09h00",
+                    "Natalina sabe pela vizinha — fica 40 min imóvel antes de agir"
+                  ],
+                  [
+                    "10h00",
+                    "Armindo vai à Igreja sozinho — fica 10 minutos com o caixão"
+                  ],
+                  [
+                    "11h00",
+                    "Sueli sabe em Goiânia — começa a decidir se vai"
+                  ],
+                  [
+                    "12h47",
+                    "Ezequiel é notificado por sistema automático sobre obituário de Valdecir"
+                  ],
+                  [
+                    "13h00",
+                    "Investigador particular acionado por Ezequiel — sai de Goiânia rumo a Novavera"
+                  ],
+                  [
+                    "14h00",
+                    "Caixão entregue na Igreja. Investigador chega em Novavera. Entra na casa de Valdecir (vazia) pelos fundos. Destranca a porta da cozinha por dentro. Sai."
+                  ],
+                  [
+                    "14h–18h",
+                    "Chegadas dos personagens à cidade (em momentos diferentes)"
+                  ],
+                  [
+                    "15h32",
+                    "Ezequiel liga pessoalmente para Dr. Meireles — chip descartável"
+                  ],
+                  [
+                    "17h30",
+                    "Funerária termina arrumação e sai da Igreja"
+                  ],
+                  [
+                    "17h40",
+                    "Sueli chega à beira da rodovia em Novavera (fica no carro)"
+                  ],
+                  [
+                    "18h15",
+                    "Armindo entra pela porta lateral da Igreja — sozinho, 10 min"
+                  ],
+                  [
+                    "18h25",
+                    "Armindo sai. Apenas o sacristão Seu Benedito está na Igreja."
+                  ],
+                  [
+                    "19h00",
+                    "Velório começa"
+                  ],
+                  [
+                    "19h–19h45",
+                    "Chegada dos personagens ao velório"
+                  ],
+                  [
+                    "20h–20h30",
+                    "Ligação de Ronaldo no celular dele"
+                  ],
+                  [
+                    "21h00",
+                    "Velório se dispersa naturalmente"
+                  ],
+                  [
+                    "21h–22h",
+                    "Investigação inicial — Dr. Meireles, seguidor"
+                  ],
+                  [
+                    "22h",
+                    "Investigador reporta a Ezequiel que personagens estão indo à casa de Valdecir"
+                  ],
+                  [
+                    "22h15",
+                    "Ezequiel autoriza intimidação física. Capangas (já em Novavera de prontidão) são acionados."
+                  ],
+                  [
+                    "22h–23h",
+                    "Personagens visitam casa de Valdecir, encontram caderno trancado, vão à Área Verde"
+                  ],
+                  [
+                    "23h14",
+                    "Mensagem de texto chega — personagens já voltaram da Área Verde"
+                  ],
+                  [
+                    "23h20–23h45",
+                    "A invasão dos capangas"
+                  ]
+                ]
+              },
+              {
+                "titulo": "Tom — Como Narrar Este Episódio",
+                "campos": [
+                  [
+                    "Ritmo",
+                    "Lento no início, crescendo. As primeiras cenas são quase normais. O desconforto vai aumentando por acumulação — não de golpe."
+                  ],
+                  [
+                    "Vocabulário",
+                    "Concreto, sensorial. Não dizer \"assustador\" — descrever o que é assustador. Não dizer \"estranho\" — descrever o que é estranho."
+                  ],
+                  [
+                    "Temperatura",
+                    "Tudo em Novavera é ligeiramente mais frio que o esperado para março no cerrado. O suficiente para notar depois de um tempo."
+                  ],
+                  [
+                    "Sons",
+                    "Ausência específica. Pássaros que não existem. Crianças que não brincam perto da Área Verde. Uma cidade de quinze mil pessoas que soa como oito mil."
+                  ],
+                  [
+                    "A ameaça humana",
+                    "Nunca explícita no Episódio 1. É um carro parado do outro lado da rua. É uma mensagem de número desconhecido. É Ronaldo saindo para uma ligação durante o velório. Os personagens precisam deduzir — o Mestre nunca confirma."
+                  ]
+                ]
+              },
+              {
+                "titulo": "Guia de Mapas — Episódio 1",
+                "intro": "🗺 MAPA NOVO = mapa 3D criado para este episódio · 📖 SÓ NARRAÇÃO = cena narrada pelo Mestre verbalmente",
+                "tabela_cab": [
+                  "Cena",
+                  "Tipo",
+                  "Referência"
+                ],
+                "tabela": [
+                  [
+                    "Chegada — posto de gasolina",
+                    "📖 SÓ NARRAÇÃO",
+                    "Mestre descreve"
+                  ],
+                  [
+                    "Chegada — rodoviária",
+                    "📖 SÓ NARRAÇÃO",
+                    "Mestre descreve"
+                  ],
+                  [
+                    "Chegada — Centro Cívico (frente, com placa)",
+                    "📖 SÓ NARRAÇÃO",
+                    "Mestre descreve"
+                  ],
+                  [
+                    "Chegada — Bairro Fundação",
+                    "📖 SÓ NARRAÇÃO",
+                    "Mestre descreve"
+                  ],
+                  [
+                    "Velório (interior + estacionamento lateral)",
+                    "🗺 MAPA NOVO",
+                    "MAP-01 — Igreja de Santo Antônio"
+                  ],
+                  [
+                    "Investigação na cidade (rua, deslocamentos, seguidor)",
+                    "🗺 MAPA NOVO",
+                    "MAP-04 — Rua Principal"
+                  ],
+                  [
+                    "Atrás do Centro Cívico (marca de cal)",
+                    "📖 SÓ NARRAÇÃO",
+                    "Pode reutilizar MAP-04 ou narrar"
+                  ],
+                  [
+                    "Dr. Meireles no posto de saúde",
+                    "🗺 MAPA NOVO",
+                    "MAP-05 — Posto de Saúde"
+                  ],
+                  [
+                    "Casa de Valdecir (exploração)",
+                    "🗺 MAPA NOVO",
+                    "MAP-02 — Casa de Valdecir"
+                  ],
+                  [
+                    "Área Verde — exterior e interior",
+                    "🗺 MAPA NOVO",
+                    "MAP-03 — Área Verde"
+                  ],
+                  [
+                    "Bairro Fundação — exploração geral",
+                    "📖 SÓ NARRAÇÃO",
+                    "Mestre descreve"
+                  ]
+                ],
+                "fecho": "Total de mapas físicos: 5"
+              }
+            ]
+          },
+          {
+            "numero": 2,
+            "titulo": "ESTADO DO MUNDO",
+            "secoes": [
+              {
+                "titulo": "O Que É Verdade Nesta Manhã",
+                "paragrafos": [
+                  "Valdecir Conceição morreu na madrugada de 17 para 18 de março. Corpo encontrado às 6h14 por Dona Neuza na beira da Área Verde."
+                ]
+              },
+              {
+                "titulo": "Os Três Detalhes Removidos do Laudo",
+                "intro": "Dr. Cláudio Meireles ficou 42 minutos com o corpo antes de chamar a polícia. Editou o laudo três vezes. Os três detalhes removidos:",
+                "lista_numerada": [
+                  "Temperatura corporal impossível — 4°C abaixo do que deveria estar para o horário. Como se tivesse passado horas num ambiente muito mais frio. Mas Novavera estava a 26°C naquela madrugada.",
+                  "A terra nas mãos — Valdecir tinha terra preta nas mãos, fechada ativamente. Não caiu sobre — segurou. Terra da camada de 1972, identificável por composição específica.",
+                  "A expressão facial — o laudo original descrevia \"expressão de reconhecimento ativo, inconsistente com morte súbita por parada cardíaca.\""
+                ]
+              },
+              {
+                "titulo": "O Que Cada NPC Sabe e Está Fazendo",
+                "blocos_npc": [
+                  {
+                    "npc": "Ronaldo Seabra",
+                    "ref": "npc:ronaldo",
+                    "texto": "Chegou às 7h31. Leu o original por acidente. Fotografou em segredo. Às 9h recebeu uma ligação anônima: \"O laudo está correto. Qualquer outra versão seria um problema.\" Está com o telefone no bolso desde então."
+                  },
+                  {
+                    "npc": "Armindo Laerte Vasconcelos",
+                    "ref": "page:profetas",
+                    "texto": "Soube às 8h15. Onze segundos de silêncio antes de responder. Às 10h foi à Igreja pela porta lateral — ficou dez minutos sozinho com o caixão. O sacristão Seu Benedito (72 anos) viu mas não achou estranho."
+                  },
+                  {
+                    "npc": "Sueli Nascimento",
+                    "ref": "npc:sueli",
+                    "texto": "Está em Goiânia. Soube às 11h. Chegará à beira da rodovia às 17h40 e ficará no carro por 40 minutos antes de entrar em Novavera. Passa devagar pelo velório em marcha lenta, sem parar."
+                  },
+                  {
+                    "npc": "Gabriel Tostes",
+                    "ref": "npc:gabriel",
+                    "texto": "Está em casa. Desenhando. O mesmo lugar de sempre — mas hoje há uma figura nova no desenho: de pé, no centro das fundações. Sem rosto. Termômetro marcou 36.2°C. A mãe achou que o termômetro estava quebrado."
+                  }
+                ]
+              },
+              {
+                "titulo": "Quem Está Monitorando os Personagens",
+                "paragrafos": [
+                  "A ameaça humana no Episódio 1 tem rosto — mas os personagens não vão saber quem é até o Episódio 4 ou 5.",
+                  "Ezequiel Drummond Cavalcanti, em Brasília, sabe que o nó de Novavera está sendo perturbado. Tem um informante local — Seu Aparecido, 58 anos, dono do posto de gasolina da entrada sul. Aparecido não sabe para quem trabalha realmente — só sabe que recebe um depósito mensal para \"avisar quando aparecer gente de fora fazendo perguntas sobre a cidade antiga.\"",
+                  "Quando o primeiro personagem chegar e fizer qualquer pergunta sobre Valdecir ou a Área Verde, Aparecido vai ao banheiro e manda uma mensagem. Em 20 minutos, Ezequiel sabe que os investigadores chegaram."
+                ],
+                "lista_titulo": "Cronologia da ameaça humana no Episódio 1",
+                "lista": [
+                  "Manhã (08h–09h): Ezequiel liga para Dr. Meireles intimidando — antes mesmo de saber dos investigadores.",
+                  "Tarde (assim que Aparecido manda a mensagem): Ezequiel aciona um investigador particular contratado por dois intermediários — vem para observar e reportar, não para intimidar ainda.",
+                  "23h14: Manda a mensagem de texto para um dos personagens: \"Vão embora enquanto podem\" — número de Goiânia que não existe mais quando tentarem ligar de volta."
+                ],
+                "refs": [
+                  {
+                    "label": "Ezequiel — O Arquiteto",
+                    "ref": "page:profetas"
+                  },
+                  {
+                    "label": "Seu Aparecido (NPC de Apoio)",
+                    "ref": "npc:aparecido"
+                  },
+                  {
+                    "label": "Investigador Particular",
+                    "ref": "npc:investigador"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "numero": 3,
+            "titulo": "AS CHEGADAS INDIVIDUAIS",
+            "secoes": [
+              {
+                "titulo": "Como Conduzir as Cenas Solo",
+                "paragrafos": [
+                  "Cada personagem tem uma cena de chegada individual — os outros jogadores ouvem mas seus personagens não estão presentes. Máximo 25 minutos por cena. Cada chegada planta uma semente diferente e termina com o personagem tendo uma razão para ir ao velório.",
+                  "Em todas as chegadas: o personagem deve notar, em algum momento, um carro escuro parado do outro lado da rua ou de uma esquina próxima. Não é o mesmo carro — são carros diferentes, mas todos escuros, todos com o vidro fechado, todos parados de forma que quem está dentro consegue ver sem ser claramente visto. O Mestre nunca confirma se é monitoramento ou coincidência."
+                ]
+              },
+              {
+                "titulo": "Chegada 1 — Posto de Gasolina (Entrada Sul)",
+                "para_quem": "Para personagem que vem de fora do estado — ônibus ou carro pela BR-060.",
+                "narracao": "A placa de Novavera aparece no acostamento às 14h37. O primeiro posto de gasolina fica duzentos metros depois — um cachorro dorme na sombra de uma bomba fora de uso. Dois caminhões. Uma mulher atrás do balcão olhando a televisão.\n\nVocê para para abastecer ou usar o banheiro. Nada disso seria notável em qualquer cidade do interior de Goiás.\n\nO que você nota — e vai levar um momento para nomear — é o som. Ou a ausência de um som específico. Cerrado em março, fim de tarde, sol ainda quente. Deveriam ter pássaros. Muitos pássaros. Não há nenhum.",
+                "subblocos": [
+                  {
+                    "titulo": "Seu Aparecido — dono do posto",
+                    "ref": "npc:aparecido",
+                    "paragrafos": [
+                      "O informante de Ezequiel. Aparecido não sabe disso conscientemente — acha que faz um \"favor de amigo\" para um advogado de Brasília que \"estuda a história da região.\" É afável, gordo, usa boné de brinde de agroquímica.",
+                      "Se o personagem fizer qualquer pergunta sobre a cidade, Valdecir, ou a Área Verde:"
+                    ],
+                    "fala": "Novavera é tranquila. Bem tranquila. Só que hoje tá diferente porque faleceu um senhor aqui, o Valdecir Conceição. O velório é às sete na Igreja de Santo Antônio. Conhecia ele?",
+                    "nota": "Enquanto fala, pega o celular com naturalidade — como se fosse verificar a hora. Na verdade manda uma mensagem.\n\nObservação 35: o personagem percebe a discrepância — ele não estava só verificando a hora.",
+                    "fala2": "Avisando a minha mulher que vou atrasar o jantar. Por quê? (Tom defensivo, rápido demais para a pergunta.)",
+                    "nota_final": "O carro: quando o personagem sair do posto, há um Gol prata parado numa rua lateral a cinquenta metros. Motor desligado. Vidros fechados. Se o personagem andar na direção dele, o motor liga e o carro vai embora sem pressa."
+                  }
+                ]
+              },
+              {
+                "titulo": "Chegada 2 — Rodoviária",
+                "para_quem": "Para personagem que vem de ônibus.",
+                "narracao": "A rodoviária de Novavera tem cinco plataformas e um bar que serve café em copo plástico. Você é o segundo a desembarcar.\n\nVocê ficou parado no degrau do ônibus por dois segundos antes de descer. Não sabe por quê. Uma hesitação sem origem.\n\nO que você nota primeiro, na calçada em frente à rodoviária: riscos de giz ou carvão que alguém começou a apagar com o pé mas não completamente. São círculos. Dentro de círculos. Dentro de mais círculos. Não é brincadeira de criança — é preciso demais para ser brincadeira.",
+                "subblocos": [
+                  {
+                    "titulo": "Seu Geraldo — funcionário (18 anos no cargo)",
+                    "ref": "npc:geraldo",
+                    "fala": "Procurando alguma coisa? Hotel tem ali na Rua das Flores. Se for pro velório do Valdecir, a Igreja de Santo Antônio é reto e vira na esquerda depois do banco.",
+                    "nota": "Se perguntarem sobre os riscos na calçada:",
+                    "fala2": "(olha, franze o cenho) Criança. Deve ter sido criança. Fica desenhando aí de vez em quando. (pausa) Mas criança não vem muito pra esse lado da rodoviária não. Fica mais no outro lado. (Não explica a contradição. Volta a varrer. Não está escondendo — genuinamente não quer pensar mais nisso.)"
+                  },
+                  {
+                    "titulo": "O Enigma dos Círculos",
+                    "paragrafos": [
+                      "Observação 40: os riscos não são aleatórios. São três camadas concêntricas — a mesma estrutura do símbolo que vai encontrar no caixão mais tarde. Quem desenhou? Quando? A calçada da rodoviária não tem câmera.",
+                      "A abertura da figura interna aponta para o NORTE. (Esta é a Peça 1 do Enigma 1 — Triangulação do Símbolo.)",
+                      "O carro: um Corolla preto está estacionado em frente à rodoviária há tempo suficiente para ter acumulado uma folha seca no capô. Mas o motor está quente — dá para sentir o calor se passar perto."
+                    ]
+                  }
+                ]
+              },
+              {
+                "titulo": "Chegada 3 — De Carro pelo Centro",
+                "para_quem": "Para personagem que vem dirigindo.",
+                "narracao": "O GPS diz que você chegou ao destino quando ainda tem três quarteirões pela frente. Você para no meio da rua por um segundo tentando entender por que o aplicativo acha que já chegou.\n\nNão há resposta óbvia. Você continua.\n\nO Centro Cívico fica à esquerda — prédio de governo de dois andares, bandeiras, praça na frente. Normal. Mas há uma placa comemorativa de bronze que você quase passa sem ver.\n\nVocê encosta o carro.",
+                "subblocos": [
+                  {
+                    "titulo": "A Placa do Centro Cívico — o primeiro enigma",
+                    "ref": "local:centro-civico",
+                    "fala": "'Em memória dos que tornaram possível — Novavera, fundada em 1974.' Uma lista de nomes. Fotos em medalha ao lado de cada nome.\n\nVocê lê os nomes sem intenção específica. Um para o seu olhar: Benedito Serafim Costa Lima. 1908–1969. Fundador.\n\nA foto mostra um homem que parece ter quarenta anos.\n\nVocê olha para a data de nascimento. Para a data de morte. Para a data de fundação da cidade.\n\nUm homem nascido em 1908, morto em 1969, é 'fundador' de uma cidade criada em 1974."
+                  },
+                  {
+                    "titulo": "Marisa — funcionária do Centro Cívico (35 anos)",
+                    "ref": "npc:marisa",
+                    "fala": "Ah, a placa. É da fundação. O Dr. Armindo sabe tudo sobre isso — ele ainda mora aqui, dirige o Arquivo Histórico.",
+                    "nota": "Sobre Benedito:",
+                    "fala2": "Benedito Braga... (olha, para) Nossa. Nunca tinha notado. (desconforto breve) Deve ser uma foto antiga, né. Da época que ele era jovem. (Algo no rosto dela muda. Ela vai embora mais rápido do que precisaria.)"
+                  },
+                  {
+                    "titulo": "A Marca de Cal Atrás do Prédio",
+                    "paragrafos": [
+                      "Para o personagem ter motivo de rodear o Centro Cívico, ofereça um gancho natural — ele ouve um cachorro latindo persistentemente nos fundos, ou nota que um morador apontou para alguma coisa lá atrás, ou pode ser simplesmente que ao estacionar o carro tenha que dar a volta no prédio.",
+                      "Observação 35: Há uma marca no chão de cimento atrás do prédio. Cal, quase apagada pela chuva mas ainda visível se vista de perto. Mesmo símbolo de três camadas concêntricas que vai aparecer no caixão e na calçada da rodoviária. A abertura aponta para o LESTE.",
+                      "Se examinar com cuidado (Observação 45): a cal foi colocada recentemente — não tem mais de duas semanas. Alguém em Novavera tem mantido este símbolo ativo. (Esta é a Peça 3 do Enigma 1 — Triangulação.)",
+                      "O carro: quando o personagem voltar para o carro, há uma marca de mão na poeira do capô. Pequena, como se alguém tivesse se apoiado por um momento para olhar para dentro. Não há ninguém por perto."
+                    ]
+                  }
+                ]
+              },
+              {
+                "titulo": "Chegada 4 — Pelo Bairro Fundação",
+                "para_quem": "Para personagem com conexão prévia ou que foi diretamente indicado.",
+                "narracao": "O Bairro Fundação tem arquitetura diferente dos outros bairros — telhados mais baixos, janelas menores, um tipo de reboco que não se usa mais. Como se esse pedaço da cidade tivesse sido construído com um manual diferente.\n\nHá uma mulher varrendo a calçada de uma casa de esquina. Cabelo branco, avental. Ela te vê chegar. Não para de varrer. Mas acompanha com o olhar de uma forma que não é hostil — é avaliativa.\n\nQuando você está a dois metros ela para.\n\n'Você é um dos que vão ao velório do Valdecir.' Não é uma pergunta.",
+                "subblocos": [
+                  {
+                    "titulo": "Esta É Natalina Braga — primeira conversa",
+                    "ref": "npc:natalina",
+                    "fala": "Ele falava de vez em quando que iam vir pessoas. Não sei quando, não sei de onde. Falava assim — 'quando vierem, Natalina, trata bem.' (pausa, volta a varrer) Ele tinha certeza que vocês viriam. Faz tempo que ele tinha.",
+                    "nota": "Se perguntarem o que ela quer dizer:",
+                    "fala2": "O Valdecir era um homem bom. Mas nos últimos dois meses ele acordava diferente. Não doente diferente. Outro diferente. Como quando alguém tomou uma decisão e tá em paz com ela mas você não sabe qual foi a decisão. (para completamente) O velório é às sete na Igreja de Santo Antônio. Você come alguma coisa antes."
+                  },
+                  {
+                    "titulo": "O Que Mais Há no Bairro Fundação",
+                    "ref": "local:bairro-fundacao",
+                    "intro": "Se o personagem explorar antes do velório:",
+                    "lista": [
+                      "Uma rua sem saída que o mapa do Google não mostra — termina numa parede de tijolos sem reboco. Não parece abandono. Parece intenção.",
+                      "Uma casa com janela permanentemente fechada com madeira pregada por fora — não abandono, intenção.",
+                      "Numeração das casas que não segue a lógica do resto da cidade — os números saltam de forma estranha. Com Matemática ou Contabilidade 35: a numeração original tinha mais casas. Algumas foram removidas do registro."
+                    ],
+                    "fecho": "O carro: uma Saveiro branca está parada na esquina há tempo demais para estar esperando alguém. O motorista olha para o celular mas o ângulo está errado para que seja confortável."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "numero": 4,
+            "titulo": "O VELÓRIO",
+            "secoes": [
+              {
+                "titulo": "A Convergência",
+                "paragrafos": [
+                  "Os personagens chegam ao velório entre 19h e 19h45 — em momentos diferentes, cada um vindo do ponto onde chegou a cidade. O Mestre descreve brevemente a chegada de cada um antes de começar as interações coletivas."
+                ],
+                "narracao": "A Igreja de Santo Antônio tem capacidade para duzentas pessoas. Há talvez oitenta aqui. Velas. Flores de plástico cor de laranja — a Igreja guarda para esses momentos. Um caixão simples de madeira escura no centro.\n\nNenhuma família. Valdecir era o último.\n\nHá um homem de uns cinquenta anos, terno cinza, de pé perto da parede direita, olhando para o caixão. Não está chorando. Não está conversando com ninguém. Só está lá.\n\nEsse é Armindo Laerte Vasconcelos, diretor do Arquivo Histórico de Novavera. Você ainda não sabe o nome dele.\n\nE há um delegado numa cadeira perto da entrada — veio sem farda, veio como civil. Mas tem postura de quem está de serviço mesmo quando não está."
+              },
+              {
+                "titulo": "O Caixão e o Símbolo",
+                "intro": "Quando qualquer personagem se aproxima do caixão:",
+                "narracao": "Valdecir Conceição tem o rosto sereno. Setenta e um anos, cabelo branco, mãos cruzadas sobre o peito.\n\nNa lateral do caixão, na altura da sua cintura, há um entalhe na madeira escura. Não é decorativo — é preciso demais para ser decorativo e impreciso demais para ser industrial. Feito à mão com ferramenta específica.\n\nTrês camadas concêntricas. Um círculo externo com doze pontos equidistantes. Uma figura interna que quase fecha — mas não fecha, há uma abertura deliberada no ponto que corresponde ao nordeste. E dentro dessa figura, uma espiral que gira para dentro mas não chega ao centro — termina num ponto levemente deslocado.\n\nVocê não sabe o que é. Mas seu olho fica nele mais tempo do que deveria.",
+                "lista_titulo": "Rolagens",
+                "lista": [
+                  "Ocultismo 40: Reconhece estrutura de sigil. Símbolos assim têm função, não são decorativos.",
+                  "Medicina ou Observação 35: Há resíduos de serragem fresca na base. O símbolo foi gravado APÓS a preparação do corpo.",
+                  "Ocultismo crítico: A abertura no nordeste não é erro. É instrução. Esse símbolo diz onde olhar.",
+                  "Percepção 45: O ponto nordeste aponta para uma direção fora da Igreja. Se o personagem sair e verificar, aponta para a Área Verde."
+                ],
+                "fecho": "A abertura do símbolo no caixão aponta para o NORDESTE. (Esta é a Peça 2 do Enigma 1 — Triangulação.)"
+              },
+              {
+                "titulo": "Armindo — Como Interpretar no Velório",
+                "ref": "page:profetas",
+                "campos": [
+                  [
+                    "Posição",
+                    "De pé perto da parede direita. Sozinho. Olhando para o caixão."
+                  ],
+                  [
+                    "Aparência",
+                    "Sessenta e poucos anos aparentes. Alto, cabelo grisalho bem cuidado, terno escuro simples. Anel de ouro na mão direita — nunca tira. Uma presença que ocupa mais espaço do que o corpo fisicamente ocupa."
+                  ]
+                ],
+                "regra_critica": "Armindo nunca deve parecer suspeito no Episódio 1. Nunca esquivo, nunca nervoso, nunca ameaçador. A cordialidade é real — não é performance. O Mestre que interpretar Armindo como suspeito óbvio vai estragar o arco das próximas sete sessões.",
+                "dialogos": [
+                  {
+                    "contexto": "Como se apresenta",
+                    "fala": "Armindo Vasconcelos. Trabalho no Arquivo Histórico aqui da cidade. Conhecia o Valdecir há muitos anos. Um homem bom. Do tipo que faz falta de formas que a gente só percebe depois."
+                  },
+                  {
+                    "contexto": "Sobre a morte",
+                    "fala": "Coração, disseram. Mas o Valdecir era do tipo que morria como vivia — nos próprios termos. Sempre achei que ele ia escolher a hora. Não sei por que acho isso. É só impressão."
+                  },
+                  {
+                    "contexto": "Sobre a cidade",
+                    "fala": "Novavera tem uma história interessante. Cidade planejada, fundada em setenta e quatro. Se tiverem interesse na história local, o Arquivo fica aberto amanhã das oito ao meio-dia e das duas às seis. Tenho prazer em receber."
+                  },
+                  {
+                    "contexto": "Em algum momento, Armindo menciona casualmente (gancho para a casa de Valdecir)",
+                    "fala": "Pena que ninguém vai ler os livros dele agora. Valdecir tinha uma biblioteca interessante sobre a história espírita da região. Cinquenta anos coletando. Provavelmente vai virar entulho — não tem família para ficar com nada. (pausa) Se tiverem curiosidade sobre o tipo de homem que ele era, a biblioteca dele diz mais que eu posso dizer."
+                  },
+                  {
+                    "contexto": "Sobre o símbolo no caixão (se mencionado)",
+                    "fala": "(pausa natural de um segundo) Interessante que você tenha notado. (olha brevemente para o caixão) Deve ser algum enfeite da funerária. Tradição local talvez — Novavera tem suas particularidades. (muda de assunto com elegância natural) Vocês vêm de onde?"
+                  }
+                ],
+                "psicologia": "Psicologia 50: a mudança de assunto foi elegante demais para ser inconsciente. Ele sabia exatamente o que era o símbolo e escolheu não dizer. Mas o personagem não consegue determinar se é porque esconde algo ou porque acha que os personagens não estão prontos.",
+                "sinal_abel": {
+                  "titulo": "O Momento com Abel — SINAL 1",
+                  "paragrafos": [
+                    "Quando Armindo e Abel estão no mesmo espaço pela primeira vez — em qualquer momento do velório — Armindo para por um segundo. Não dramaticamente. É uma pausa de meio segundo, como quando você está caminhando e tropeça em pensamento.",
+                    "Olha para Abel. Olhar longo — dois segundos. Não ameaçador. Melancólico.",
+                    "Se o jogador de Abel notar e perguntar diretamente:"
+                  ],
+                  "fala": "Desculpe. Você lembra alguém. Muito. (pausa) Deve ser coincidência.",
+                  "fecho": "(Não elabora. O assunto muda. Este é o SINAL 1 DE ABEL — plantar agora, não explicar nunca no Episódio 1.)"
+                }
+              },
+              {
+                "titulo": "Natalina — O Que Entrega no Velório",
+                "ref": "npc:natalina",
+                "campos": [
+                  [
+                    "Posição",
+                    "Circulando — recebendo pessoas, arrumando flores."
+                  ]
+                ],
+                "dialogos": [
+                  {
+                    "contexto": "Quando abordada",
+                    "fala": "Vieram por causa do Valdecir. Eu sabia que iam vir. Ele falava nisso. (pausa) Não sei o que ele sabia, honestamente. Sei que ele sabia que vocês viriam. E que era importante que vocês vissem as coisas certas."
+                  },
+                  {
+                    "contexto": "Se perguntarem o que são 'as coisas certas'",
+                    "fala": "Não sei. Ele nunca explicou. Só disse que quando as pessoas chegassem, elas iam saber o que procurar. Que era assim que funcionava."
+                  },
+                  {
+                    "contexto": "Sobre a Área Verde",
+                    "fala": "Lugar ruim. Sempre foi. A construção parou lá em setenta e oito e nunca mais voltou. Ninguém sabe por quê — ninguém pergunta muito. É assim que é em Novavera. Tem coisas que são assim e a gente não pergunta."
+                  },
+                  {
+                    "contexto": "Sobre o caderno que ela guarda (gancho para o Episódio 2)",
+                    "fala": "Tenho um caderno que o Valdecir me deu pra guardar há uns três anos. Disse que eu entregasse 'pra quem viesse perguntar.' Nunca veio ninguém perguntar. Até hoje. (pausa) Podem vir amanhã se quiserem ver."
+                  },
+                  {
+                    "contexto": "Sobre o caderno principal de Valdecir (gancho para a casa)",
+                    "fala": "Mas tem outro — um maior, mais grosso — que ele nunca tirou da casa dele. Falava muito desse. Disse que era 'pra ficar lá, no quarto, na cabeceira.' Que era importante que ficasse lá."
+                  },
+                  {
+                    "contexto": "Se mencionarem temperatura, anomalias ou Área Verde (abre acesso ao caderno DELA — peça do Enigma 2)",
+                    "fala": "Eu sempre anotei essas coisas. Não sei por quê. Desde menina. Tempo, temperatura, quem nasceu, quem morreu. Tenho um caderno só meu cheio dessas anotações. (pausa) Se vocês quiserem dar uma olhada um dia, podem. Não tem nada de mais — só dados."
+                  }
+                ],
+                "fecho": "(Com isso, Natalina sem perceber está entregando os três níveis de informação: o caderno guardado, o caderno pessoal, e o caderno de observações dela própria que é peça do Enigma 2.)"
+              },
+              {
+                "titulo": "Seu Benedito — O Sacristão (NPC de Apoio)",
+                "ref": "npc:benedito-sacristao",
+                "campos": [
+                  [
+                    "Quem",
+                    "Benedito da Silva Pacheco, 72 anos, sacristão da Igreja de Santo Antônio há 41 anos. Sem parentesco com Benedito Braga da placa do Centro Cívico — coincidência de nome comum em Goiás."
+                  ],
+                  [
+                    "Onde encontrar",
+                    "No fundo da Igreja, organizando velas e flores. Discreto. Não interrompe ninguém durante o velório."
+                  ],
+                  [
+                    "Comportamento",
+                    "Cordial mas econômico nas palavras. Trabalha enquanto fala."
+                  ]
+                ],
+                "dialogos": [
+                  {
+                    "contexto": "Sobre quem entrou na Igreja antes do velório (pista crucial — peça extra do Enigma do Símbolo)",
+                    "fala": "A funerária terminou de arrumar tudo umas cinco e meia. Saíram. Eu fiquei aqui — sempre fico, é minha função. (pausa) O Dr. Armindo passou aqui umas seis e quinze. Ficou uns dez minutos sentado num dos bancos da frente. Rezando, eu imaginei. Ele e o Valdecir eram amigos de muitos anos. (pausa) Eu não fiquei na nave porque tava na sacristia separando paramentos. Não vi nada de mais."
+                  },
+                  {
+                    "contexto": "Se perguntarem se Armindo estava perto do caixão",
+                    "fala": "Não vi exatamente onde ele tava. A sacristia tem a porta pra outro lado. (pausa) Mas é estranho perguntar isso. Por quê?"
+                  }
+                ],
+                "fecho": "(Esta é a pista que confirma o Enigma 4 sobre o símbolo no caixão. Armindo teve 10 minutos sozinho com o caixão, no horário compatível com a gravação. Mas isso só vai fazer sentido para os jogadores se já tiverem percebido que o símbolo é recente.)"
+              },
+              {
+                "titulo": "Dona Neuza — A Que Encontrou o Corpo",
+                "ref": "npc:neuza",
+                "campos": [
+                  [
+                    "Posição",
+                    "Sentada num dos bancos do meio do velório. 68 anos, viúva, moradora do Bairro Fundação há 40 anos."
+                  ],
+                  [
+                    "Aparência",
+                    "Senhora simples, vestido escuro de velório. Chora baixinho de vez em quando — com a dignidade de quem já chorou muitas vezes na vida."
+                  ],
+                  [
+                    "Como abordá-la",
+                    "Não vai procurar os personagens. Se aproximada com gentileza, fala. Se abordada com pressa ou autoridade, fecha — fica em monossílabos."
+                  ]
+                ],
+                "dialogos": [
+                  {
+                    "contexto": "Persuasão 30 ou simplesmente sentar do lado dela e oferecer um copo de água",
+                    "fala": "Eu faço caminhada todo dia, sabe. Desde que meu marido morreu. Cinco horas, cinco e meia da manhã, antes do sol forte. O Valdecir tava na rotina dele também — ele caminhava pela manhã. A gente se cumprimentava de vez em quando.\n\nHoje eu tava passando pela Rua das Acácias quando vi ele. Tava do lado de fora do muro da Área Verde. Sentado encostado no muro. Eu pensei que tava descansando.\n\nCheguei mais perto pra falar bom dia.\n\nEle não respondeu."
+                  },
+                  {
+                    "contexto": "Detalhes específicos sobre a posição do corpo (gancho para a Área Verde)",
+                    "fala": "Ele tava sentado. As pernas estendidas. As costas no muro. (pausa) Mas as mãos dele... as mãos tavam viradas pra dentro do terreno. Como se ele tivesse pegado alguma coisa de lá. (pausa) E os olhos tavam abertos. Olhando pro chão na frente dele."
+                  },
+                  {
+                    "contexto": "Sobre a temperatura (peça 1 do Enigma 2)",
+                    "fala": "Eu toquei na mão dele pra ver se reagia. (pausa) A mão dele tava fria de um jeito que não era de morte. Eu já vi muita gente morta. Não era a frieza de morte. Era... outra coisa. Como se ele tivesse passado a noite num lugar muito mais frio."
+                  },
+                  {
+                    "contexto": "Se perguntarem se viu mais alguém ou algo estranho",
+                    "fala": "Não vi ninguém. Mas... (pausa, parece decidir se conta) ...quando cheguei perto do Valdecir, eu olhei pra dentro do terreno. Não sei por quê. Olhei. E me deu uma vontade de ir embora dali que eu não senti em outro lugar da minha vida. Sai correndo. Liguei pro SAMU da casa do seu Antônio que mora ali do lado."
+                  },
+                  {
+                    "contexto": "Se perguntarem sobre os hábitos de Valdecir nas últimas semanas (gancho para a casa)",
+                    "fala": "Eu morava em frente a ele há quarenta anos. Quarenta anos. (pausa) Toda noite, dez horas, ele apagava a luz do quarto. Quarenta anos, sempre na mesma hora. (pausa, voz mais baixa) Essa madrugada, quando eu sai pra caminhar, a luz do quarto dele tava acesa. Pela primeira vez em quarenta anos."
+                  }
+                ]
+              },
+              {
+                "titulo": "Seu João — Funcionário da Funerária",
+                "ref": "npc:joao-funeraria",
+                "campos": [
+                  [
+                    "Quem",
+                    "Seu João Carvalho, 51 anos, trabalha na Funerária Paz há 22 anos. Está no velório por dever profissional — esperando para fechar o caixão ao final."
+                  ],
+                  [
+                    "Onde encontrar",
+                    "Em pé perto da entrada da igreja, discreto, conferindo o relógio de vez em quando."
+                  ],
+                  [
+                    "Comportamento",
+                    "Fala se abordado. É discreto sobre seu trabalho mas não evasivo."
+                  ]
+                ],
+                "dialogos": [
+                  {
+                    "contexto": "Sobre a preparação do corpo",
+                    "fala": "Foi um caso rápido. Sem complicações. O corpo já tinha sido lavado e preparado pelo Dr. Meireles antes de chegar pra gente — o que é incomum, normalmente vem do hospital sem essa parte feita. Mas eu não perguntei."
+                  },
+                  {
+                    "contexto": "Sobre Dr. Meireles (gancho para o posto de saúde)",
+                    "fala": "O Dr. Meireles... (pausa) ele ficou um tempão olhando pro corpo essa manhã. Mais que o normal, sabe. Eu fui buscar o corpo no posto de saúde por volta das nove e ele ainda tava lá com o Valdecir. Sentado numa cadeira. Olhando. (Se perguntarem se isso é normal:) Não. (pausa) Médico vê morto todo dia. Não fica sentado olhando."
+                  },
+                  {
+                    "contexto": "Sobre o caixão",
+                    "fala": "Caixão simples, padrão municipal. Foi entregue na Igreja às duas da tarde. A gente arrumou aqui mesmo — flores, posicionamento, essas coisas. Saí daqui umas cinco e meia. (pausa) O velório começou às sete. Quem chegou antes? Não sei. A Igreja fica aberta por dentro pelo sacristão. (pausa) O Seu Benedito, o sacristão, talvez saiba."
+                  }
+                ]
+              },
+              {
+                "titulo": "Gabriel — A Cena dos Degraus",
+                "ref": "npc:gabriel",
+                "paragrafos": [
+                  "Gabriel Tostes, 9 anos, está sentado nos degraus da entrada da Igreja. Não entrou. Desenhando.",
+                  "Sobre a mãe — Carmem Tostes, 38 anos: Está dentro da Igreja, no fundo, conversando baixinho com outras mães do bairro. Não vai notar a aproximação dos personagens com Gabriel a menos que dure mais de cinco minutos ou que algum personagem faça algo que pareça inapropriado. Carmem é protetora — qualquer abordagem que pareça estranha pode resultar em ela aparecer e levar Gabriel embora imediatamente, fechando o acesso a ele nos episódios seguintes."
+                ],
+                "dialogos": [
+                  {
+                    "contexto": "Para qualquer personagem",
+                    "fala": "Você veio pro velório? (pausa) O Seu Valdecir era legal. Ele me deixava ficar sentado na praça quando minha mãe ia fazer compra. Não ficava me mandando embora."
+                  }
+                ],
+                "extra": "O caderninho: se pedirem para ver, fecha antes de mostrar, depois abre com hesitação. O desenho de hoje tem algo novo — uma figura de pé no centro das fundações da Área Verde. Sem rosto. Alta, sem proporções corretas. \"Fica aparecendo. Não sei o que é. (pausa) Ontem não tinha.\"",
+                "sinal_abel": {
+                  "titulo": "O Momento de Abel — SINAL 1",
+                  "paragrafos": [
+                    "Se o personagem de Abel se aproximar de Gabriel em qualquer momento:",
+                    "Gabriel para de desenhar. Completamente. Olha para Abel de baixo para cima. A expressão não é de medo nem de espanto — é de reconhecimento. Como quando você vê alguém de costas e sabe quem é antes de ver o rosto.",
+                    "(Silêncio de quatro ou cinco segundos.)"
+                  ],
+                  "fala": "Você não tem fragmentos.",
+                  "nota": "Se Abel perguntar o que isso significa:",
+                  "fala2": "Eu não sei explicar direito. Todo mundo tem fragmentos. Partes de outros lugares que ficam grudadas. Você não tem. É tudo inteiro. (pausa) Isso é raro.",
+                  "fecho": "(Fecha o caderninho. Vai para dentro encontrar a mãe. Não explica mais nada.)\n\nMECÂNICA SECRETA: qualquer conversa substantiva com Gabriel — Memória +1 para o personagem que conversou, sem aviso."
+                }
+              },
+              {
+                "titulo": "A Ligação de Ronaldo — Cena de Tensão",
+                "ref": "npc:ronaldo",
+                "intro": "Em algum momento entre 20h e 20h30 — o Mestre escolhe o momento de maior movimento social no velório — o celular de Ronaldo vibra.",
+                "narracao": "O delegado — que você aprendeu que se chama Ronaldo Seabra — olha para o celular. A expressão dele muda de forma que é difícil nomear. Não é medo. Não exatamente. É o rosto de alguém que esperava essa ligação e não queria que chegasse.\n\nEle se levanta. Sai pela porta lateral da Igreja.",
+                "paragrafos": [
+                  "Se algum personagem o seguir: deve ser feito com Furtividade 35 para não ser percebido. Ronaldo vai até o estacionamento lateral. Fala baixo mas não sussurrando.",
+                  "Os personagens ouvem apenas o lado de Ronaldo:"
+                ],
+                "fala_unica": "...eu sei. Eu sei disso. (pausa longa) Não é o que você pensa. Eles são só... (pausa) ...não sei quem são. Chegaram hoje. (pausa) Não vou fazer isso. (pausa) Não estou dizendo que vou contar. Estou dizendo que não vou fazer isso. (pausa mais longa) Entendido.",
+                "extra": "Desliga. Fica parado por trinta segundos. Depois volta para dentro.\n\nO que os jogadores não sabem: a ligação era de Ezequiel, via intermediário. Ronaldo não sabe com quem falou realmente. A voz era de um advogado que Ronaldo conhece superficialmente — alguém que, segundo esse advogado, \"representa interesses relacionados à história da cidade.\"",
+                "dialogos": [
+                  {
+                    "contexto": "Se algum personagem abordar Ronaldo depois (Observação 40 dele contra Furtividade do personagem — se percebeu que foi seguido)",
+                    "fala": "Isso foi uma conversa privada. (pausa) Se tiverem questões sobre a morte do Valdecir, a delegacia funciona amanhã das oito."
+                  },
+                  {
+                    "contexto": "Conversa direta com Ronaldo no velório (se abordado sem furtividade)",
+                    "fala": "Vim como amigo do Valdecir. Não como delegado. Embora... (pausa) ...seja difícil separar as coisas às vezes."
+                  },
+                  {
+                    "contexto": "Sobre a morte",
+                    "fala": "Coração. Isso que o laudo diz. (A ênfase no 'diz' é sutil.)"
+                  },
+                  {
+                    "contexto": "Se pressionado sobre o laudo",
+                    "fala": "O laudo foi feito pelo Dr. Meireles. Tudo dentro do protocolo. Se tiverem alguma questão técnica, ele talvez possa esclarecer. (pausa) Eu não posso falar sobre o caso até a investigação fechar. (Gancho indireto para o Dr. Meireles.)"
+                  }
+                ],
+                "fecho": "Psicologia ou Perspicácia 45: Ronaldo sabe mais do que está dizendo. Tensão específica que não é do luto — é de decisão adiada."
+              }
+            ]
+          },
+          {
+            "numero": 5,
+            "titulo": "A INVESTIGAÇÃO ATIVA",
+            "secoes": [
+              {
+                "titulo": "Como Cada Gancho do Velório Leva a Uma Cena",
+                "paragrafos": [
+                  "Esta parte cobre tudo que acontece durante e depois do velório — quando os personagens começam a investigar ativamente. As cenas podem acontecer em qualquer ordem, mas cada uma tem um gancho específico que veio do velório ou das chegadas.",
+                  "Importante para o Mestre: algumas dessas cenas (especialmente o Dr. Meireles no posto de saúde) podem ser visitadas ANTES do velório se os jogadores chegarem cedo à cidade. Adapte conforme o ritmo da mesa — não force a ordem cronológica do dossiê se os jogadores tomarem outra iniciativa."
+                ],
+                "tabela_cab": [
+                  "Gancho recebido no velório",
+                  "Leva à cena"
+                ],
+                "tabela": [
+                  [
+                    "Natalina menciona o caderno de Valdecir",
+                    "Casa de Valdecir (Parte 6)"
+                  ],
+                  [
+                    "Armindo menciona a biblioteca de Valdecir",
+                    "Casa de Valdecir (Parte 6)"
+                  ],
+                  [
+                    "Dona Neuza: \"luz acesa pela 1a vez em 40 anos\"",
+                    "Casa de Valdecir (Parte 6)"
+                  ],
+                  [
+                    "Seu João: \"Dr. Meireles ficou sentado olhando\"",
+                    "Posto de Saúde (esta parte)"
+                  ],
+                  [
+                    "Ronaldo evade sobre o laudo",
+                    "Posto de Saúde (esta parte)"
+                  ],
+                  [
+                    "Símbolo no caixão aponta para nordeste",
+                    "Área Verde (Parte 7)"
+                  ],
+                  [
+                    "Dona Neuza: \"mãos viradas para dentro\"",
+                    "Área Verde (Parte 7)"
+                  ],
+                  [
+                    "Rosângela: \"achado bem no muro\"",
+                    "Área Verde (Parte 7)"
+                  ],
+                  [
+                    "Tensão de Ronaldo / carros nas chegadas",
+                    "O seguidor pela cidade (esta parte)"
+                  ],
+                  [
+                    "Bilhete de Valdecir: \"o que abre isso está onde isso veio\"",
+                    "Casa → Area Verde → Casa (Parte 6/7/9)"
+                  ]
+                ],
+                "fecho": "Ordem ideal do fluxo: Pós-velório → Investigação inicial (Dr. Meireles) → 1a visita à Casa de Valdecir (encontram caderno trancado) → Área Verde (encontram a terra que destranca) → Retorno à Casa (abrem o caderno, leem, recebem SMS, invasão) → Gancho Final."
+              },
+              {
+                "titulo": "Dr. Cláudio Meireles — O Médico Com Medo",
+                "campos": [
+                  [
+                    "Onde encontrar",
+                    "No posto de saúde. Se os personagens forem antes do velório ou depois, ele está lá — fica até tarde por causa da dor de cabeça que não passa desde a manhã."
+                  ],
+                  [
+                    "Aparência",
+                    "44 anos que parecem 52. Cabelo começando a escassear. Está com dor de cabeça desde a manhã — tomou três analgésicos, não adiantou."
+                  ]
+                ],
+                "sub_titulo": "Contexto que o Mestre precisa saber",
+                "paragrafos": [
+                  "Às 15h32 do dia 18 de março, antes de qualquer personagem chegar à cidade, o Dr. Meireles recebeu uma ligação. Não foi intermediário — foi Ezequiel pessoalmente, usando um chip pré-pago descartável de Goiânia.",
+                  "Como Ezequiel sabia tão rápido: Sistema automático que monitora obituários de cidades próximas aos sete nós o notificou às 12h47, quando o nome de Valdecir apareceu no obituário online de Novavera. Ezequiel passou duas horas pesquisando o caso antes de ligar — encontrou o nome do médico no portal de transparência da prefeitura (telefones de servidores municipais são públicos por lei)."
+                ],
+                "transcricao_titulo": "O que Ezequiel falou na ligação:",
+                "transcricao": [
+                  {
+                    "falante": "Ezequiel",
+                    "fala": "Doutor Cláudio. Boa tarde. Não vou tomar muito do seu tempo. Sei que o senhor teve uma manhã difícil com o caso do Senhor Valdecir Conceição.",
+                    "nota": "voz calma, formal, sem pressa"
+                  },
+                  {
+                    "falante": "",
+                    "fala": "(Dr. Meireles em silêncio, esperando.)",
+                    "nota": ""
+                  },
+                  {
+                    "falante": "Ezequiel",
+                    "fala": "O laudo que o senhor finalizou descreve parada cardiorrespiratória. Causa natural. Está coerente com a idade do paciente. Quero apenas confirmar com o senhor que essa é a versão oficial — e que vai permanecer a versão oficial.",
+                    "nota": ""
+                  },
+                  {
+                    "falante": "Dr. Meireles",
+                    "fala": "Quem está falando?",
+                    "nota": ""
+                  },
+                  {
+                    "falante": "Ezequiel",
+                    "fala": "Alguém com interesse genuíno na estabilidade da cidade de Novavera. O senhor mora ali há quanto tempo? Catorze anos? A sua esposa é Renata, professora da Escola Municipal Tancredo Neves. Sua filha mais velha está no segundo ano de medicina em Goiânia. O senhor construiu uma vida boa lá.",
+                    "nota": ""
+                  },
+                  {
+                    "falante": "",
+                    "fala": "(Pausa de cinco segundos. Dr. Meireles entendeu o tom.)",
+                    "nota": ""
+                  },
+                  {
+                    "falante": "Ezequiel",
+                    "fala": "Não estou ameaçando ninguém, doutor. Estou descrevendo. O senhor vive uma vida estável em Novavera porque a cidade é estável. E a estabilidade depende de certas versões oficiais permanecerem oficiais. O laudo do Senhor Valdecir é um exemplo. Há outros, ao longo das décadas. Eles fizeram parte do que mantém Novavera funcionando.",
+                    "nota": ""
+                  },
+                  {
+                    "falante": "Dr. Meireles",
+                    "fala": "O senhor está me dizendo para mentir?",
+                    "nota": ""
+                  },
+                  {
+                    "falante": "Ezequiel",
+                    "fala": "Estou dizendo que o senhor já fez o que era razoável fazer. E que não há razão para revisitar a decisão. Se alguém perguntar — e talvez ninguém pergunte — a causa da morte foi parada cardiorrespiratória. Os detalhes acessórios que o senhor pode ter considerado e descartado não são relevantes. Era essa a conversa que eu queria ter. Tenha uma boa noite, doutor.",
+                    "nota": ""
+                  },
+                  {
+                    "falante": "",
+                    "fala": "(Ezequiel desligou. Quebrou o chip ao meio. Jogou fora.)",
+                    "nota": ""
+                  }
+                ],
+                "lista_titulo": "O que o Dr. Meireles fez depois:",
+                "lista": [
+                  "Ficou paralisado por dez minutos",
+                  "Anotou o número que ligou num pedaço de papel — DDD 62, número de Goiânia",
+                  "Tentou ligar de volta — mensagem automática: \"Número não atribuído\"",
+                  "Anotou tudo que conseguia lembrar da conversa num diário pessoal que guarda em casa (este diário pode aparecer em episódios futuros)",
+                  "Tomou o terceiro analgésico do dia",
+                  "Tentou trabalhar normalmente o resto da tarde"
+                ],
+                "dialogos": [
+                  {
+                    "contexto": "O que diz por padrão",
+                    "fala": "O laudo está correto. Parada cardiorrespiratória, causa natural, consistente com a idade do paciente."
+                  },
+                  {
+                    "contexto": "Persuasão 40 — tom profissional",
+                    "fala": "Se tiverem questões técnicas sobre o procedimento, podem solicitar revisão formal através do Conselho Regional de Medicina de Goiás. O processo leva alguns meses."
+                  },
+                  {
+                    "contexto": "Psicologia 45 — tom empático",
+                    "fala": "(pausa longa) Ouçam. Eu... (para) O laudo está correto. Isso é o que posso dizer."
+                  },
+                  {
+                    "contexto": "Intimidação 50 OU Persuasão 45 com tom empático",
+                    "fala": "(olha para os lados — porta fechada, ninguém ouvindo) Eu recebi uma ligação. Hoje à tarde, três e meia da tarde. Uma voz de homem que eu nunca ouvi. (pausa) Não foi ameaça explícita — eu queria que tivesse sido. Quando é explícito você sabe o que fazer. Mas esse... ele só descreveu a minha família. Os nomes da minha esposa, da minha filha. Onde ela estuda. Tudo. Como se quisesse que eu entendesse que ele sabia."
+                  },
+                  {
+                    "contexto": "Se pressionarem",
+                    "fala": "Disse que o laudo estava correto. Que era pra manter assim. Falou da 'estabilidade' de Novavera como se fosse algo que eu também tinha responsabilidade de proteger."
+                  },
+                  {
+                    "contexto": "Se perguntarem se sabe quem é",
+                    "fala": "(longa pausa) Eu anotei o número de onde ele ligou. (abre uma gaveta, tira um papel) Tentei ligar de volta. Foi uma mensagem automática. 'Número não atribuído.' Anotei a hora também. Três e trinta e dois."
+                  }
+                ],
+                "extra": "O papel: O número anotado é (62) 9XXXX-XXXX — DDD de Goiânia. Esta é a primeira pista física da ameaça humana que os personagens podem investigar. O Dr. Meireles pode entregar o papel ou anotar para os personagens.",
+                "dialogos2": [
+                  {
+                    "contexto": "Se perguntarem o que ele vai fazer",
+                    "fala": "Eu vou pra casa hoje e abraço minha filha mais nova. Amanhã vou trabalhar normalmente. (pausa) O senhor faria diferente?"
+                  },
+                  {
+                    "contexto": "Sobre o laudo original — o que Meireles removeu (se perguntarem o que havia de errado)",
+                    "fala": "(longa pausa — está calculando quanto revelar) A temperatura estava errada. Muito errada. E havia terra nas mãos dele que... (para) Eu sou médico. Não sou o tipo de pessoa que acredita em certas coisas. Mas o que eu vi naquela manhã não tem explicação que eu consiga dar com o vocabulário que aprendi na faculdade."
+                  },
+                  {
+                    "contexto": "Se pressionarem por mais",
+                    "fala": "Ele estava segurando a terra. Ativamente. Com força. Quem faz isso depois de morrer de parada cardíaca? (para, voz mais baixa) E a expressão. Eu já atendi muita morte, sabe. Parada cardíaca tem uma expressão específica. O rosto do Valdecir tinha a expressão de alguém que... reconheceu alguma coisa. Na última coisa que viu. E ficou contente com isso."
+                  }
+                ],
+                "fecho_titulo": "O que essa cena entrega",
+                "lista_final": [
+                  "Confirmação de que o laudo foi alterado",
+                  "Os três detalhes removidos: temperatura, terra, expressão",
+                  "A imagem de Valdecir segurando a terra ativamente — ele escolheu estar ali",
+                  "Primeira pista física da ameaça humana: o número de Goiânia",
+                  "Confirmação de que alguém com poder e informação detalhada sobre vidas privadas está envolvido"
+                ]
+              },
+              {
+                "titulo": "O Seguidor pela Cidade",
+                "ref": "npc:investigador",
+                "paragrafos": [
+                  "Quando os personagens estão se movendo pela cidade à noite — depois do velório, indo até a casa de Valdecir ou para a Área Verde — o seguidor aparece."
+                ],
+                "narracao": "Vocês estão caminhando pela rua em direção à (localização atual). O calçadão está vazio — são quase vinte e uma horas num dia de semana numa cidade do interior.\n\nAtrás de vocês, a uma distância que não é próxima o suficiente para ser conversa mas não é distante o suficiente para ser casual, há passos. Quando vocês param, os passos param. Quando vocês continuam, os passos continuam.",
+                "paragrafos2": [
+                  "Se tentarem ver quem é: Quem para e olha rápido vê: um homem de uns quarenta anos, jaqueta escura, olhando para o celular. Quando percebe que olharam, começa a caminhar numa direção diferente.",
+                  "Observação 45: É o mesmo homem que estava num carro perto de onde o personagem chegou — postura, altura, forma de andar. Mas sem o carro agora.",
+                  "Se tentarem confrontá-lo: Ele se vira. Expressão calma. Leve sotaque de outra região."
+                ],
+                "dialogos": [
+                  {
+                    "contexto": "Quando confrontado",
+                    "fala": "Posso ajudar vocês em alguma coisa?"
+                  },
+                  {
+                    "contexto": "Se perguntarem por que estava seguindo",
+                    "fala": "Não estava seguindo ninguém. Estou voltando pro hotel. (Continua andando. Não corre. Não ameaça. É o tipo de resposta de quem foi treinado para situações assim.)"
+                  }
+                ],
+                "fecho": "O que ele é: Um investigador particular contratado por Ezequiel através de dois intermediários. Está em Novavera para observar e reportar — não para intimidar ainda."
+              }
+            ]
+          },
+          {
+            "numero": 6,
+            "titulo": "CASA DE VALDECIR (1ª VISITA)",
+            "secoes": [
+              {
+                "titulo": "Como Chegar Lá — Múltiplos Ganchos",
+                "intro": "Para garantir que os jogadores não dependam de um único gancho, há várias razões convergentes para irem à casa:",
+                "lista_numerada": [
+                  "Natalina menciona o caderno que Valdecir guardou na casa — \"um maior, mais grosso, que ele nunca tirou de lá\"",
+                  "Armindo menciona a biblioteca — \"se tiverem curiosidade sobre o tipo de homem que ele era, a biblioteca dele diz mais que eu posso dizer\"",
+                  "Dona Neuza pode mencionar — \"Eu morava em frente a ele. Ele deixou a luz do quarto acesa essa madrugada. Pela primeira vez em quarenta anos, ele esqueceu a luz acesa.\""
+                ],
+                "campos": [
+                  [
+                    "Endereço",
+                    "Rua das Pitangueiras, 14, Bairro Fundação. Qualquer morador do bairro sabe."
+                  ],
+                  [
+                    "Fechadura",
+                    "A porta da frente está trancada com fechadura simples — Natalina tem a chave (ela vai junto se acionada). Sem ela, basta arrombamento simples (Mecânica ou Furtividade 30)."
+                  ]
+                ],
+                "fecho": "O que os personagens não sabem ainda: A porta da cozinha foi destrancada por dentro durante a tarde. O investigador particular entrou na casa às 14h, fez reconhecimento, e saiu deixando a porta dos fundos destrancada — preparando o terreno para o que viria. Isso só vai importar no clímax."
+              },
+              {
+                "titulo": "A Casa",
+                "ref": "local:casa-valdecir",
+                "narracao": "A casa de Valdecir tem o cheiro específico dos lugares onde alguém viveu sozinho por muitos anos — não sujo, mas concentrado. Como se o ar tivesse se acostumado à presença de uma única pessoa e ficasse levemente desorientado agora.\n\nA sala tem uma poltrona, uma televisão antiga, uma estante com livros de espírita e dois volumes sobre história de Goiás. Na parede, um calendário de 2025 aberto em março. Dois círculos em datas específicas com caneta vermelha — o dia de hoje, 18 de março, e um dia três semanas à frente, 7 de abril. Nada escrito dentro dos círculos. Só os círculos.\n\nA cozinha está limpa. No escorredor: uma xícara e um prato. Refeição de uma pessoa. A xícara tem café ainda — frio, mas da manhã de hoje.",
+                "nota_mestre": "(Valdecir fez café hoje de manhã. Estava planejando seu dia. Depois foi até a Área Verde e não voltou. Isso não é dito — é para os jogadores deduzirem. Faz parte do Enigma 3.)",
+                "sub_titulo": "Detalhes adicionais na sala — para o Enigma 3",
+                "paragrafos2": [
+                  "Observação 30 — a agenda na mesinha de centro: Aberta no dia 18 de março. Uma anotação: \"10h — S.N.\" Iniciais. Sem mais contexto. O compromisso era para o dia em que Valdecir morreu.",
+                  "Observação 40 — a poltrona: Está virada para a janela que dá vista para a Área Verde. Marcas no carpete — onde os pés da poltrona normalmente ficam — mostram que ela foi virada recentemente."
+                ]
+              },
+              {
+                "titulo": "O Quarto",
+                "narracao": "O quarto cheira a lavanda e papel velho. A cama está feita com a precisão de alguém que fez essa cama da mesma forma por cinquenta anos.\n\nHá uma fotografia na parede — preto e branco, anos quarenta talvez. Um homem jovem sorrindo, de costas para um terreno de cerrado que você não reconhece ainda. Escrito à caneta desbotada embaixo: 'O lugar onde o tempo pede as contas.'\n\nEm cima da mesinha: um copo d'água pela metade. Óculos de leitura dobrados. E um caderno.\n\nO caderno está aberto."
+              },
+              {
+                "titulo": "A Caixa de Sapato",
+                "intro": "Embaixo da cama. Três itens:",
+                "subblocos_itens": [
+                  {
+                    "titulo": "Item 1 — Fotografia em preto e branco (anos 70)",
+                    "paragrafos": [
+                      "Terra vermelha, terreno vazio, algumas árvores do cerrado ao fundo. No canto inferior direito, escrito à mão: \"Antes.\"",
+                      "Fotografia 40: Antes de 1974. O terreno da foto é consistente com a localização atual da Área Verde — mesma orientação das árvores.",
+                      "Percepção 35: Há algo no centro do terreno, quase invisível — o início de fundações que foram cobertas depois."
+                    ]
+                  },
+                  {
+                    "titulo": "Item 2 — Envelope lacrado com \"Valdecir\" escrito",
+                    "paragrafos": [
+                      "A letra não é de Valdecir. Dentro: uma chave. Metal pesado, antigo, com patina de décadas.",
+                      "Percepção 30: O metal é incomum para chaves domésticas. Se o personagem visitar o Arquivo Histórico em episódios futuros, vai reconhecer — é idêntico ao metal das dobradiças da porta do subsolo.",
+                      "Crítico: No cabo da chave, quase apagada, há uma gravação. Parece um número — talvez 2, talvez 7."
+                    ]
+                  },
+                  {
+                    "titulo": "Item 3 — Recorte de jornal sem data",
+                    "paragrafos": [
+                      "Só o trecho foi recortado — sem manchete, sem nome de jornal. Notícia sobre a paralisação da construção da Área Verde em 1978. Uma linha sublinhada à caneta vermelha: \"O trabalhador encontrado morto nas obras seria identificado apenas pelo sobrenome: Monteiro.\"",
+                      "História ou Biblioteconomia 35: Papel e tipo de impressão dos anos 70-80, consistente com 1978.",
+                      "Conexão futura: Há uma Vera Monteiro em Novavera (Episódio 5). Há uma Dalva Monteiro nas fichas (Episódio 4). Um trabalhador morto de sobrenome Monteiro em 1978."
+                    ]
+                  }
+                ]
+              },
+              {
+                "titulo": "O Caderno Trancado — O Que Direciona à Área Verde",
+                "intro": "Quando os personagens tentarem ler o caderno na mesinha de cabeceira:",
+                "narracao": "Você pega o caderno. Espera abrir — mas ele não abre.\n\nHá uma fita de couro escuro envolvendo o caderno, amarrada com um nó complexo. A fita não é cinta de livro comum — é grossa, áspera, e algo nela parece costurado: pequenas partículas dispersas como serragem fina ao longo de toda a extensão. A mesma serragem que você viu na lateral do caixão hoje à noite.\n\nVocê tenta puxar a fita para soltar o nó. A fita resiste — não é fechada com força mecânica, mas sua mão recua. Por algum motivo que você não consegue articular, você hesita em forçar.",
+                "paragrafos": [
+                  "Rolagem POD 40 se algum personagem tentar cortar a fita com faca:",
+                  "Sucesso: consegue cortar mas, no momento do corte, sente uma onda física desconfortável — náusea breve, vista turva por dois segundos. Memória +1.",
+                  "Falha: a mão treme. A faca escorrega. Não consegue cortar. Não há dano físico ao personagem — mas há a sensação clara de que a fita não quer ser forçada."
+                ],
+                "sub_titulo": "O bilhete",
+                "paragrafos2": [
+                  "Em cima do caderno, dobrado em três partes, há um pequeno papel. Caligrafia trêmula de Valdecir, escrito recentemente — possivelmente nas últimas semanas:"
+                ],
+                "fala_unica": "Quem vier — o que abre isso está onde isso veio. Não confiem em ninguém que não tenha sujado as mãos no mesmo lugar.",
+                "lista_titulo": "Interpretação que os jogadores precisam fazer:",
+                "lista": [
+                  "\"O que abre isso está onde isso veio\" → a chave para soltar a fita está no lugar de onde a fita (ou o caderno) veio. A serragem na fita é a mesma do caixão. E ambas vêm da Área Verde — onde Valdecir foi achado, onde sua morte conecta tudo.",
+                  "\"Não confiem em ninguém que não tenha sujado as mãos no mesmo lugar\" → a confiança neste mundo depende de quem foi à Área Verde. Quem esteve lá. Os personagens precisam ir."
+                ],
+                "fecho": "Se os jogadores perderem essa conexão, o Mestre pode oferecer pistas adicionais: A serragem da fita, examinada com Observação 35, não é de madeira comum — é fina demais, escura demais. Como terra moída e seca. Como a terra do limite da Área Verde que aparece nas pegadas. Ou Natalina (se chamada) pode dizer: \"Ele me falou uma vez que tinha coisa de lá que ele guardava aqui. Da Área Verde. Que era a única coisa real.\""
+              },
+              {
+                "titulo": "O Que os Personagens Levam para a Área Verde",
+                "lista": [
+                  "O caderno (ainda trancado)",
+                  "O bilhete de Valdecir",
+                  "A chave da caixa de sapato (se pegaram)",
+                  "A consciência de que precisam ir à Área Verde para destrancar o caderno"
+                ],
+                "fecho": "Se forem extremamente cuidadosos, podem perceber pequenos detalhes que farão sentido no clímax: Percepção 50 na cozinha: a porta dos fundos não está totalmente travada — o ferrolho está numa posição estranha. Como se alguém tivesse fechado por fora deixando destravado por dentro. (Detalhe que vai voltar quando os invasores chegarem.)"
+              }
+            ]
+          },
+          {
+            "numero": 7,
+            "titulo": "A ÁREA VERDE",
+            "secoes": [
+              {
+                "titulo": "Aproximação Diurna",
+                "ref": "local:area-verde",
+                "intro": "Se os personagens passarem pela Área Verde durante o dia — ou se apenas observarem de longe ao chegarem à cidade:",
+                "narracao": "O terreno é fechado por um muro baixo de um metro e meio. Vegetação alta do cerrado por cima. Sem identificação — sem placa, sem letreiro. Atmosfera de lugar abandonado, mas algo no abandono é organizado demais para parecer natural.\n\nNão há pássaros. Em nenhum lugar do terreno. Nem no muro, nem na vegetação, nem voando acima.",
+                "fecho": "Não há ameaça imediata durante o dia. Mas qualquer personagem que passar mais de cinco minutos olhando o terreno sente um leve mal-estar — não vai conseguir nomear, mas vai querer ir embora."
+              },
+              {
+                "titulo": "Aproximação Noturna — Mecânicas",
+                "intro": "Se os personagens entrarem na Área Verde durante o Episódio 1 — especialmente à noite, após o velório — o nó começa a cobrar.",
+                "narracao": "A Área Verde à noite não tem uma razão específica para assustar. É um terreno. Terra. Ervas. O muro baixo tem metro e meio de altura — fácil de escalar.\n\nDo lado de dentro, as ervas do cerrado chegam na altura do joelho. Mais ao fundo, fundações cobertas de vegetação — concreto antigo, rachado, com raízes crescendo pelas fendas.\n\nO que você nota depois de alguns minutos dentro é que não há vento. Não é que o vento parou — é que não está chegando aqui. O ar do lado de dentro existe numa temperatura ligeiramente diferente, numa pressão ligeiramente diferente.\n\nVocê ouve algo. Não com os ouvidos — a palavra é errada. Você sente algo que, se tivesse forma de som, seria alguém dizendo um nome. Não o seu nome. Um nome de outra língua, de outro tempo.",
+                "sub_titulo": "Tabela de cobrança por tempo",
+                "tabela_cab": [
+                  "Tempo dentro",
+                  "Rolagem",
+                  "Falha"
+                ],
+                "tabela": [
+                  [
+                    "Mais de 10 min",
+                    "POD 45",
+                    "Memória +1, fragmento sensorial breve"
+                  ],
+                  [
+                    "Mais de 20 min",
+                    "POD 55",
+                    "Memória +1D3, desorientação temporal"
+                  ],
+                  [
+                    "Mais de 30 min",
+                    "POD 65",
+                    "Memória +1D6, sobreposição temporal severa"
+                  ]
+                ]
+              },
+              {
+                "titulo": "Fragmentos Sensoriais por Personagem",
+                "intro": "O fragmento é específico baseado na teia de dívidas (vidas anteriores):",
+                "blocos_npc": [
+                  {
+                    "npc": "Abel",
+                    "ref": "page:envelopes",
+                    "texto": "Vê brevemente um céu interrompido. Não o céu de agora — outro, mais antigo, mais vazio. E a sensação de que havia algo mais antes disso."
+                  },
+                  {
+                    "npc": "O Cobrador",
+                    "ref": "page:envelopes",
+                    "texto": "Ouve passos. Os próprios passos, mas de uma direção diferente, como se estivesse correndo para longe de algo."
+                  },
+                  {
+                    "npc": "O Silencioso",
+                    "ref": "page:envelopes",
+                    "texto": "Sente o peso específico de palavras não ditas. Como pressão física no peito. Não sabe o que palavras são."
+                  },
+                  {
+                    "npc": "O Juiz",
+                    "ref": "page:envelopes",
+                    "texto": "Vê por um segundo a imagem de um papel sendo assinado. A própria mão. A absoluta certeza de estar fazendo o certo."
+                  }
+                ]
+              },
+              {
+                "titulo": "Sobreposição Temporal Severa (mais de 30 min)",
+                "paragrafos": [
+                  "Se o personagem com Memória mais alta ficar mais de 30 minutos:",
+                  "Por dois ou três minutos, está aqui e em outubro de 1972 ao mesmo tempo. Não vê as 33 mortes — sente o peso delas. Quando volta, tem terra nas mãos que não estava lá antes. A mesma terra preta das mãos de Valdecir.",
+                  "Este é o momento mais intenso do Episódio 1 — e só acontece se os personagens buscarem ativamente."
+                ]
+              },
+              {
+                "titulo": "O Símbolo nas Fundações",
+                "intro": "Com Ocultismo 50 ou se o personagem examinar as fundações com cuidado — Observação 40:",
+                "narracao": "Entre as rachaduras do concreto mais antigo, quase completamente coberto de musgo e raízes, há um símbolo. O mesmo símbolo do caixão — três camadas concêntricas. Mas aqui a abertura está fechada. Completamente fechada.\n\nE ao lado, entalhado com mais precisão do que o resto, uma data: 17 de junho de 1974.",
+                "fecho": "(Isso não tem explicação no Episódio 1. É uma pergunta que fica para os Episódios 5 e 7.)"
+              },
+              {
+                "titulo": "A Terra Que Reconhece — Chave Para o Caderno",
+                "paragrafos": [
+                  "Se os personagens vieram à Área Verde porque o bilhete de Valdecir os direcionou, a próxima cena é crucial."
+                ],
+                "sub_titulo": "Onde está a terra especial",
+                "paragrafos2": [
+                  "No exato ponto que o Enigma 1 (Triangulação) aponta — o centro geométrico das fundações. Se os personagens resolveram o Enigma 1, sabem exatamente onde cavar. Se não resolveram, há uma forma alternativa:",
+                  "Sem resolver o Enigma 1 — qualquer personagem que andar próximo ao ponto central das fundações sente: a temperatura cai mais ali do que no resto do terreno. Não é dramático — é alguns graus a menos. Como passar por uma corrente de ar frio onde não deveria haver corrente.",
+                  "Rolagem Percepção 35 para identificar o ponto exato pela diferença térmica."
+                ],
+                "sub_titulo2": "O que encontram",
+                "narracao": "Sob uma fina camada de terra do cerrado — terra vermelha normal — há uma camada diferente, cerca de cinco centímetros mais abaixo.\n\nEssa terra é preta. Úmida. Densa. Tem a mesma textura da terra que estava nas mãos de Valdecir.\n\nQuando você toca, algo passa pelo seu corpo. Não é dor. Não é frio. É a sensação física de ser olhado de muito perto por algo que conhece você por outro nome.",
+                "sub_titulo3": "Mecânica do toque",
+                "paragrafos3": [
+                  "Qualquer personagem que tocar a terra:",
+                  "POD 50 — Sucesso: sente o reconhecimento mas se mantém firme. Sem custo adicional.",
+                  "POD 50 — Falha: sente o reconhecimento e cambaleia. Memória +1, sensação de ser pesado por dentro por alguns segundos.",
+                  "Para Abel especificamente: O Mestre descreve a sensação de forma diferente — não como ser olhado, mas como ser reconhecido por uma voz que se calou há muito tempo e está prestes a falar de novo. Sem dizer que é diferente para os outros. O jogador de Abel vai notar que sua descrição é distinta."
+                ]
+              },
+              {
+                "titulo": "Pegar a Terra e a Pegada que Vai até o Muro",
+                "paragrafos": [
+                  "Os personagens recolhem um pouco da terra preta — em qualquer recipiente: lenço, garrafa vazia, bolso. Vai ser usada para destrancar o caderno.",
+                  "Importante: todos os personagens que tocaram a terra estão agora marcados por algo. Os fragmentos sensoriais que possam vir no Episódio 2 vão chegar com mais facilidade — Memória sobe mais rápido a partir daqui.",
+                  "Antes de saírem da Área Verde, Observação 30 revela:"
+                ],
+                "narracao": "Há uma marca recente no chão, perto do muro de fora. Uma pegada — ou meia pegada. Calçado de homem, tamanho médio. Foi deixada nas últimas três ou quatro horas — a terra ao redor ainda está pressionada.\n\nMas a pegada vai em direção ao terreno. Não saindo dele.",
+                "fecho": "(Esta é a pegada do investigador particular que entrou na cidade às 13h e fez reconhecimento. Os personagens vão começar a se perguntar quem mais esteve na Área Verde hoje. Resposta: muita gente. Hoje é o dia em que o nó está mais ativo em décadas.)"
+              }
+            ]
+          },
+          {
+            "numero": 8,
+            "titulo": "OS ENIGMAS DO EPISÓDIO",
+            "secoes": [
+              {
+                "titulo": "Introdução aos Enigmas",
+                "paragrafos": [
+                  "Esta parte consolida todos os enigmas. Três são resolvíveis nesta sessão. Um fica em aberto para futuro."
+                ]
+              },
+              {
+                "titulo": "Enigma 1 — Triangulação do Símbolo (Resolvível)",
+                "intro": "O que os jogadores precisam descobrir: O símbolo aparece em três lugares diferentes em Novavera, e juntos eles apontam para algo específico.",
+                "sub_titulo": "As três peças",
+                "paragrafos": [
+                  "Peça 1 — Calçada da rodoviária (Chegada 2 — Observação 40 para identificar a estrutura): Três camadas concêntricas em giz/carvão. Abertura para o NORTE.",
+                  "Peça 2 — Caixão no velório (Parte 4 — Ocultismo 40 ou observação direta): Mesmo símbolo, gravado em madeira. Abertura para o NORDESTE.",
+                  "Peça 3 — Atrás do Centro Cívico (Chegada 3 — Observação 35 se o personagem rodear o prédio): Cal no chão, quase apagada. Abertura para o LESTE."
+                ],
+                "sub_titulo2": "Como o puzzle funciona visualmente",
+                "paragrafos2": [
+                  "O Mestre prepara (ou desenha na hora) um mapa simples de Novavera com os três pontos:"
+                ],
+                "lista": [
+                  "Rodoviária (sul da cidade) — seta para o norte",
+                  "Igreja de Santo Antônio (centro-leste) — seta para o nordeste",
+                  "Centro Cívico (oeste) — seta para o leste"
+                ],
+                "paragrafos3": [
+                  "Se os jogadores marcarem os três pontos e traçarem linhas a partir das aberturas, as três linhas convergem para o mesmo ponto: o centro exato da Área Verde."
+                ],
+                "sub_titulo3": "Como o Mestre apresenta",
+                "fala_unica": "Se vocês desenharem isso num papel — os três pontos da cidade com as setas da direção — talvez fique mais claro o que estão olhando.",
+                "fecho": "Não diz qual ponto é o destino — deixa eles concluírem cruzando com a geografia.\n\nRecompensa concreta: Sabem o ponto exato dentro da Área Verde onde algo está enterrado. Em episódios futuros isso vai economizar tempo. E dá sensação real de ter decifrado algo.\n\nBônus colaborativo: Como cada pista vem de uma chegada diferente, isso força os jogadores a compartilhar informação entre si. O puzzle só fecha se cooperarem. Excelente para criar o primeiro momento real de grupo na mesa."
+              },
+              {
+                "titulo": "Enigma 2 — Encobrimento em Camadas (Resolvível)",
+                "intro": "O que os jogadores precisam descobrir: O laudo foi alterado, e há alguém pressionando além do Dr. Meireles ter agido por conta própria.",
+                "sub_titulo": "As quatro peças",
+                "paragrafos": [
+                  "Peça 1 — A temperatura impossível (Dr. Meireles com Persuasão 45, ou Dona Neuza com gentileza): Corpo 4°C abaixo do esperado.",
+                  "Peça 2 — A previsão do tempo daquela madrugada (Pesquisável no celular ou perguntando a qualquer morador antigo): Novavera estava a 26°C entre 4h e 6h. Vento mínimo.",
+                  "Peça 3 — O caderno de observações pessoais de Natalina (Persuasão 35 com Natalina, ou se ela mostrar voluntariamente em conversa gentil)"
+                ],
+                "destaque_titulo": "ATENÇÃO — não confundir cadernos",
+                "destaque": "Há três cadernos diferentes nesta história:\n• Caderno pessoal de Valdecir (no quarto dele, com os sonhos de 1987) → Gancho Final\n• Caderno que Valdecir deu a Natalina para guardar → aparece no Episódio 2\n• Caderno de observações pessoais de Natalina → esta é a peça do Enigma 2",
+                "paragrafos2": [
+                  "O caderno de Natalina é dela própria — décadas de anotações sobre a vida no Bairro Fundação. Ela é metódica: anota tempo, temperatura, fatos cotidianos. Sem saber, registrou décadas de evidência de que a temperatura na área ao redor da Área Verde é anormalmente baixa em datas específicas. Sempre nas mesmas datas todos os anos. Sempre próximo ao muro. Sempre durante a madrugada.",
+                  "Para ela é diário pessoal. Para os jogadores é prova.",
+                  "Peça 4 — A foto antiga no quarto de Valdecir (Casa de Valdecir): A frase escrita à mão: \"O lugar onde o tempo pede as contas.\" Ganha significado mecânico — não é metáfora."
+                ],
+                "sub_titulo2": "Como o puzzle funciona",
+                "lista_numerada": [
+                  "A temperatura baixa do corpo não foi natural",
+                  "Esse lugar é a Área Verde",
+                  "É um padrão registrado há décadas — o caderno de Natalina prova"
+                ],
+                "fecho": "Recompensa concreta: Com essas quatro peças documentadas, os jogadores podem ir até Ronaldo na delegacia (ou abordá-lo no velório se ele ainda estiver) e fazer um confronto fundamentado. Ronaldo não entrega o laudo original — mas, vendo que os personagens têm evidência sólida, cede uma informação que ele ainda não revelou: a ligação anônima que recebeu de manhã.\n\nIsso confirma a ameaça humana e abre uma linha sobre QUEM está intimidando — linha que vai puxar para os Episódios 2 e 3.\n\nBônus narrativo: Se os jogadores chegarem nesse confronto antes de Ronaldo receber a segunda ligação (a do velório), Ronaldo pode mostrar o número que ligou — número de Goiânia que, quando tentarem retornar, não existe mais. Primeira pista física da ameaça humana."
+              },
+              {
+                "titulo": "Enigma 3 — Reconstrução da Última Noite (Resolvível)",
+                "intro": "O que os jogadores precisam descobrir: Valdecir não foi vítima. Foi atraído à Área Verde e escolheu morrer ali.",
+                "sub_titulo": "As cinco peças",
+                "lista": [
+                  "Peça 1 — A xícara de café fria (cozinha): Café fresco preparado, não restos. Valdecir começou a manhã normalmente.",
+                  "Peça 2 — A pegada de terra preta (calçada quando saem): Indo em direção à entrada. Não há pegadas saindo. Quem entrou tinha que ter saído. A não ser que tenha entrado mais de uma vez.",
+                  "Peça 3 — A terra nas mãos do corpo (Dr. Meireles ou Dona Neuza): Mesma terra que está na pegada da calçada.",
+                  "Peça 4 — A agenda na sala (Observação 30): \"10h — S.N.\" Iniciais. Compromisso para o dia em que Valdecir morreu.",
+                  "Peça 5 — A poltrona da sala (Observação 40): Virada para a janela que dá vista para a Área Verde. Marcas no carpete provam que foi virada recentemente."
+                ],
+                "sub_titulo2": "Como cruzar as peças — a reconstrução da noite",
+                "lista_numerada": [
+                  "Madrugada de 17 para 18: Valdecir foi à Área Verde — chamado/atraído por algo. Trouxe terra de lá nas mãos.",
+                  "Voltou à casa: preparou café como qualquer manhã normal.",
+                  "Sentou na poltrona virada para a Área Verde: olhou para o lugar onde ia voltar. Estava se preparando.",
+                  "Voltou à Área Verde: deixando a pegada. Não saiu de novo.",
+                  "Tinha um compromisso para as 10h que não cumpriria. Sabia disso."
+                ],
+                "conclusao": "Conclusão: Valdecir foi voluntário. Escolheu morrer ali.",
+                "fecho": "Recompensa concreta: Anote o nome \"S.N.\" na agenda. Isso vai aparecer no Episódio 7 quando Sueli Nascimento se revelar.\n\nBônus mecânico: O jogador que articular a reconstrução completa recebe direito a uma rolagem especial — POD 50. Se passar, recebe um insight breve em primeira pessoa do estado mental de Valdecir naquela madrugada:",
+                "fala_unica": "Você sente, por um momento que dura menos de um segundo, o que ele sentiu. Não é medo. Não é tristeza. É aceitação — do tipo que só existe em alguém que está em paz com uma decisão que custa tudo. E embaixo da aceitação, no fundo, algo que parece gratidão. Como se ele estivesse agradecendo. A quê, ou a quem, você não sabe.",
+                "fecho2": "Essa rolagem não cobra Memória. É recompensa por investigação bem-feita — primeira vez em toda a campanha que o sistema dá algo sem cobrar."
+              },
+              {
+                "titulo": "Enigma 4 — O Calendário (Fica em Aberto)",
+                "paragrafos": [
+                  "O calendário com os dois círculos vermelhos — 18/03 e 07/04. Nada escrito.",
+                  "O que os jogadores podem deduzir: Valdecir sabia que hoje era importante. E sabia que 7 de abril também seria.",
+                  "Pergunta do Mestre para a mesa:"
+                ],
+                "fala_unica": "Alguém quer fotografar o calendário antes de ir embora?",
+                "fecho": "(Se nenhum jogador fizer isso, nenhum personagem tem a referência para quando a data aparecer novamente.)\n\nO que o Mestre sabe e não diz: 7 de abril é o pico de pressão do nó — quando Dalva teria clareza para se manifestar para todos simultaneamente. A mesma data aparece num fragmento de papel que o personagem com Memória mais alta vai encontrar no Episódio 8."
+              }
+            ]
+          },
+          {
+            "numero": 9,
+            "titulo": "O CLÍMAX E O GANCHO FINAL",
+            "secoes": [
+              {
+                "titulo": "Sobre o Clímax",
+                "paragrafos": [
+                  "Este é o coração emocional do episódio. Tudo que veio antes converge aqui. Não pode ser feito apressado — o Mestre deve reservar pelo menos 25 minutos para conduzir essa sequência com peso."
+                ]
+              },
+              {
+                "titulo": "Retorno à Casa de Valdecir",
+                "paragrafos": [
+                  "Os personagens voltam da Área Verde carregando a terra preta. A casa está como deixaram. Aparentemente.",
+                  "Detalhes sutis se Observação 45:"
+                ],
+                "lista": [
+                  "A poltrona da sala parece estar a uns dois ou três centímetros de onde estava",
+                  "O ar da cozinha está ligeiramente mais frio que o resto da casa",
+                  "Uma janela fechada não fecha completamente — alguém abriu e voltou a fechar mal"
+                ],
+                "fecho": "(Os personagens podem ou não notar. Se notarem, vai pesar mais quando os eventos seguintes começarem. Se não notarem, vai criar surpresa maior.)"
+              },
+              {
+                "titulo": "Abrindo o Caderno — A Leitura",
+                "intro": "Os personagens esfregam a terra preta na fita de couro.",
+                "narracao": "A fita se desfaz. Não rasga, não se desata — simplesmente se dispersa, como se nunca tivesse sido uma coisa só. Cai no chão como pó.\n\nO caderno abre sozinho. Não numa página aleatória — numa página específica, do meio, que tem a textura de ter sido lida e relida muitas vezes.",
+                "sub_titulo": "A leitura — O Mestre lê em voz alta, devagar",
+                "destaque_titulo": "SETEMBRO DE 1987",
+                "fala_unica": "Vieram no sonho de novo. Os quatro. Ainda não sei os nomes. Mas reconheço os rostos de outro lugar — de muitos outros lugares, talvez. Quando chegarem — e vão chegar — precisam saber que o que está na Área Verde não é o que parece ser. Não é o que ficou. É o que estava antes.",
+                "fecho": "Você fecha o caderno para verificar a data. 1987. Trinta e oito anos atrás. Quando o mais novo de vocês tinha, no máximo, alguns anos de vida.\n\nValdecir Conceição sonhou com vocês trinta e oito anos antes de vocês terem qualquer razão para estar em Novavera.\n\nMemória +1 para todos os personagens — automático, sem rolagem. Não pede para rolar — só anota."
+              },
+              {
+                "titulo": "23h14 — As Mensagens SMS Personalizadas",
+                "paragrafos": [
+                  "Logo depois da leitura — talvez dois ou três minutos depois, enquanto ainda estão processando o que leram — todos os celulares dos personagens vibram simultaneamente.",
+                  "Não é a mesma mensagem para todos. Cada um recebe algo personalizado. Cada mensagem vem de um número diferente, mas todos com DDD 62 (Goiânia). Todos os números, quando os personagens tentarem ligar de volta, vão dar a mesma mensagem automática: \"número não atribuído.\""
+                ],
+                "sub_titulo": "Como o Mestre prepara as mensagens",
+                "paragrafos2": [
+                  "O Mestre deve escrever quatro mensagens diferentes antes da sessão — uma para cada jogador. Cada uma deve referenciar algo do envelope de karma do personagem, criando arrepio real."
+                ],
+                "lista_titulo": "Princípio das mensagens:",
+                "lista": [
+                  "Ambíguas o suficiente para parecer sobre a vida atual ou sobre algo mais antigo",
+                  "Nenhuma menciona nomes reais nem vidas anteriores diretamente",
+                  "Mais perturbadoras se tocarem no padrão de karma sem nomear"
+                ],
+                "sub_titulo2": "Mensagens-tipo (adaptar à mesa)",
+                "blocos_npc": [
+                  {
+                    "npc": "Para Abel (O Inocente)",
+                    "ref": "page:envelopes",
+                    "texto": "\"O senhor não deveria ter vindo. Por favor. Vão embora antes que eles entendam quem você é.\" (O remetente parece estar do lado dele. É súplica, não ameaça. Confunde: quem mandou? Como sabe?)"
+                  },
+                  {
+                    "npc": "Para O Cobrador (Aquele Que Escapou)",
+                    "ref": "page:envelopes",
+                    "texto": "\"A porta que você ouve bater não é a primeira vez. Vão embora antes que abra de vez.\" (Faz referência velada à dívida — e essa frase específica vai ressoar com algo que Dalva vai dizer minutos depois. Conexão sutil entre lados opostos.)"
+                  },
+                  {
+                    "npc": "Para O Silencioso (Aquele Que Sabia)",
+                    "ref": "page:envelopes",
+                    "texto": "\"O senhor sempre soube o momento certo de não dizer nada. Que esta noite seja um desses momentos. Boa noite.\" (Provocação psicológica direta ao padrão dele.)"
+                  },
+                  {
+                    "npc": "Para O Juiz (Aquele Que Julgou)",
+                    "ref": "page:envelopes",
+                    "texto": "\"O senhor tem o costume de decidir rápido. Decida agora. Amanhã estão fora ou vão entender que estavam errados sobre vir.\" (Mesmo princípio — provocar o padrão.)"
+                  }
+                ],
+                "fecho": "Cada personagem recebe sua mensagem em segredo. O Mestre pode entregar fisicamente um pedaço de papel para cada jogador, ou enviar por celular real se estiverem online.\n\nDeixe os jogadores reagirem. Eles vão querer comparar — descobrir que cada um recebeu algo diferente. Esse momento de comparação dura três ou quatro minutos.\n\nÉ no meio dessa comparação que três batidas lentas tocam na porta da frente."
+              },
+              {
+                "titulo": "As Três Batidas",
+                "narracao": "Toc.\n\nToc.\n\nToc.\n\nPausadas. Espaçadas. Cada batida com uma respiração inteira entre uma e outra.",
+                "intro": "Se os personagens olharem pelo olho mágico ou pela janela:",
+                "narracao2": "Do outro lado da porta há uma senhora idosa. Setenta anos talvez, baixinha, cabelo branco arrumado, vestido florido de quem vai à igreja. Está parada calmamente segurando uma vassoura velha — daquelas de palha trançada que os mais antigos ainda usam para varrer fora de casa.\n\nEla não olha pra você. Está olhando pra porta. Esperando.",
+                "fecho": "Quem é ela: Dona Cida, 70 anos, viúva, mora a três casas de Valdecir. Mulher do bairro, cumprimentava Valdecir na rua. Estava voltando da vigília da quarta-feira na Igreja.\n\nO que os personagens não sabem ainda: Dona Cida é o veículo. Quem está dentro dela agora é outra pessoa.",
+                "ref": "npc:cida"
+              },
+              {
+                "titulo": "A Possessão — Dona Cida com Dalva Dentro",
+                "intro": "No momento exato em que abrem a porta — ela ataca.",
+                "sub_titulo": "A força impossível",
+                "narracao": "Você abre a porta. Ela não espera. Empurra a porta com violência. A porta voa pra dentro com força que não combina com o corpo dela — quem estava atrás é jogado contra a parede ou contra o móvel mais próximo.\n\nEla entra na casa em três passos. A vassoura na mão dela deixou de ser vassoura — está sendo segurada como porrete. Ela bate no abajur da sala. O vidro estoura. Bate na televisão antiga. A tela racha mas não quebra.\n\nEla para no meio da sala. Olha para os quatro.\n\nOs olhos dela estão errados. Não estão olhando para vocês. Estão olhando através — focados em algo atrás de vocês que não existe.",
+                "paragrafos": [
+                  "A voz que sai dela: Grave. Raspada. Sotaque do interior de Goiás de outra geração. Não é a voz de Dona Cida. Quem fala é uma mulher de uns trinta anos, furiosa."
+                ],
+                "fala_unica": "VOCÊS NÃO DEVERIAM TER TRAZIDO ESSA TERRA AQUI.",
+                "sub_titulo2": "Mecânica da força aumentada",
+                "paragrafos2": [
+                  "O corpo de Dona Cida está sendo forçado além do limite por Dalva. Os personagens podem dominar fisicamente — mas com dificuldade. Use os atributos físicos dela aumentados:"
+                ],
+                "tabela_cab": [
+                  "Atributo",
+                  "Valor normal de Dona Cida",
+                  "Valor com Dalva"
+                ],
+                "tabela": [
+                  [
+                    "Força",
+                    "35",
+                    "75"
+                  ],
+                  [
+                    "Constituição",
+                    "40",
+                    "60"
+                  ],
+                  [
+                    "Destreza",
+                    "30",
+                    "50"
+                  ],
+                  [
+                    "Tamanho",
+                    "45",
+                    "45 (não muda)"
+                  ]
+                ],
+                "paragrafos3": [
+                  "Cada golpe que ela acerta causa 1D4+2 de dano (não letal por design — vai ferir, machucar, deixar hematomas, mas não matar). Pode quebrar pulso, rachar costela, abrir corte na cabeça com a ponta da vassoura. O Mestre deve evitar dano em órgãos vitais.",
+                  "Confronto Mediúnico opcional: se algum personagem tentar acessar Dalva mediumicamente em vez de combater fisicamente — POD vs POD 70 da entidade. Custo padrão: Memória +1D4 / Permanência -1D4.",
+                  "Sucesso no confronto mediúnico: a fúria de Dalva diminui imediatamente. Ela para, larga a vassoura, senta no chão. Pula direto para a parte do aviso.",
+                  "Falha: o personagem que tentou sente um peso físico no peito — Memória +1D6 adicional. Dalva continua atacando."
+                ],
+                "sub_titulo3": "Quando a fúria se acalma",
+                "paragrafos4": [
+                  "Mesmo sem confronto mediúnico, em algum momento (escolha do Mestre, idealmente quando os personagens estão prestes a serem feridos com gravidade ou se mostraram dispostos a se defender sem matar):"
+                ],
+                "narracao2": "Ela para no meio de um golpe. A vassoura cai da mão dela.\n\nOs olhos mudam. Ainda não estão focando em vocês — mas a fúria saiu deles. Restou cansaço. O cansaço de alguém que esteve gritando por décadas e finalmente pôde gritar uma vez.\n\nEla senta no chão da sala. Pernas dobradas, vestido florido sujo de poeira da casa. A vassoura caída ao lado.\n\nA voz, quando sai de novo, é mais baixa. Mais lenta. Continua não sendo a voz dela."
+              },
+              {
+                "titulo": "O Aviso em Parábolas",
+                "intro": "Dalva fala devagar, olhando para o nada. Cada frase é uma parábola. Cada uma planta dúvida em vez de entregar resposta.",
+                "dialogos": [
+                  {
+                    "contexto": "",
+                    "fala": "Vocês trouxeram terra do meu chão. A terra lembra de mim. Eu lembro dela.",
+                    "nota": "(Pausa longa.)"
+                  },
+                  {
+                    "contexto": "",
+                    "fala": "Tinha uma menina. Sete anos. Brincava com pedrinhas no quintal. As pedrinhas não eram pedrinhas. Eram dentes. Ela não sabia. Achava que era brincadeira.",
+                    "nota": "(Olha para um dos personagens — o Mestre escolhe, idealmente Abel ou o Cobrador.)"
+                  },
+                  {
+                    "contexto": "",
+                    "fala": "Você. Já contou alguém? Sobre o céu? Sobre o que estava antes do céu?",
+                    "nota": "(Não espera resposta. Olha para outro personagem — preferencialmente o Cobrador, especialmente se ele recebeu a mensagem SMS sobre a porta batendo.)"
+                  },
+                  {
+                    "contexto": "",
+                    "fala": "E você. A porta que você ouviu bater há trinta anos. Você sabe quem estava do outro lado. Sempre soube. Mentiu pra si mesmo que não sabia.",
+                    "nota": "(Pausa. Olha para os quatro.)"
+                  },
+                  {
+                    "contexto": "",
+                    "fala": "Vocês vão receber doçura. Cuidado com doçura. Quem mente com mel mata sem que você sinta o veneno. Quem mente com fogo, ao menos queima.",
+                    "nota": "(Pausa mais longa.)"
+                  },
+                  {
+                    "contexto": "",
+                    "fala": "Tem um nome. Não é o meu. Não é o dele. É de outro. Mais velho. Mais antigo que o muro. Mais antigo que a cidade. Quando vocês ouvirem esse nome — e vão ouvir — não repitam. Nem em pensamento.",
+                    "nota": "(Mais baixo, quase para si mesma:)"
+                  },
+                  {
+                    "contexto": "",
+                    "fala": "A criança que desenha sabe. Mas não fala. Já tiraram demais dela. Não tirem mais.",
+                    "nota": "(Volta a olhar para os personagens. A voz endurece brevemente.)"
+                  },
+                  {
+                    "contexto": "",
+                    "fala": "Vão embora amanhã. Voltem em uma semana. Não antes. Não depois. Se ficarem agora, vão pagar com coisa que ainda não sabem ter. Se voltarem tarde, alguém vai ter pago por vocês.",
+                    "nota": ""
+                  }
+                ],
+                "sub_titulo": "O que essas parábolas plantam",
+                "tabela_cab": [
+                  "Frase de Dalva",
+                  "O que vai pagar"
+                ],
+                "tabela": [
+                  [
+                    "\"Pedrinhas que eram dentes\"",
+                    "Aparece em episódios futuros — práticas rituais, ossos da Operação Semente"
+                  ],
+                  [
+                    "\"O céu antes do céu\"",
+                    "Memória de Abel — confirmará na T3"
+                  ],
+                  [
+                    "\"A porta batendo há trinta anos\"",
+                    "Específico do envelope do Cobrador — conexão com SMS dele"
+                  ],
+                  [
+                    "\"Doçura que mata sem fogo\"",
+                    "Os jogadores vão suspeitar de Armindo — mas Dalva fala de algo mais"
+                  ],
+                  [
+                    "\"Nome mais antigo que o muro\"",
+                    "Caim — sem nunca dizer Caim"
+                  ],
+                  [
+                    "\"A criança que desenha\"",
+                    "Gabriel — e a confirmação de que falar com ele tira algo"
+                  ],
+                  [
+                    "\"Pagar com coisa que ainda não sabem ter\"",
+                    "Os karmas. A presença de Abel. O que ainda não compreendem"
+                  ],
+                  [
+                    "\"Voltem em uma semana\"",
+                    "Janela de tempo importante — conecta com 7 de abril? Não. Conecta com outra coisa."
+                  ]
+                ],
+                "fecho": "A conexão SMS-Dalva: Se o jogador do Cobrador recebeu o SMS sobre \"a porta que você ouve bater,\" vai sentir o arrepio quando Dalva mencionar \"a porta que você ouviu bater há trinta anos.\" Como dois lados opostos sabem da mesma coisa? Os personagens vão demorar para perceber: Ezequiel via investigador, Dalva via plano espiritual. Mesma estrutura, dois ângulos."
+              },
+              {
+                "titulo": "A Saída da Entidade",
+                "paragrafos": [
+                  "Depois das parábolas, Dalva fica em silêncio por alguns segundos. Os olhos dela continuam não focando.",
+                  "Então o corpo de Dona Cida convulsiona violentamente."
+                ],
+                "narracao": "Os braços dela espasmam para os lados. As pernas se enrijecem. A cabeça joga pra trás de um jeito que parece que vai quebrar. Os olhos rolam pra cima. A garganta dela faz um som que não é humano — algo entre um grito e um gemido contido.\n\nPor dois ou três segundos, ela parece estar morrendo na frente de vocês.\n\nDepois, para. O corpo afunda. A cabeça cai para frente.\n\nDona Cida desaba no chão da sala. Inconsciente.",
+                "sub_titulo": "O momento de pavor real",
+                "paragrafos2": [
+                  "Os personagens vão acreditar que ela morreu. Não há sinais vitais óbvios nos primeiros segundos.",
+                  "Medicina ou Primeiros Socorros 30: o pulso está lá. Fraco mas presente. Está em choque profundo, não morta.",
+                  "Falha na rolagem ou ninguém testar: os personagens podem realmente acreditar que mataram uma idosa. Esse pavor de quase trinta segundos pode ser o pico emocional do episódio inteiro."
+                ]
+              },
+              {
+                "titulo": "O Investigador na Janela",
+                "intro": "Enquanto lidam com Dona Cida — verificando pulso, decidindo o que fazer — alguém vai à janela. Ou apenas olha por instinto.",
+                "narracao": "Do outro lado da rua, no ponto onde está mais escuro entre dois postes, há uma figura.\n\nO homem que vocês viram seguindo vocês mais cedo. Ele está parado lá. Não está escondido — só não está iluminado. Está olhando para a janela. Para vocês.\n\nA expressão dele é diferente da que tinha mais cedo. Mais cedo ele tinha a calma de quem é treinado para esse tipo de trabalho.\n\nAgora ele tem o rosto de alguém que acabou de ver algo que não sabe explicar.",
+                "fecho": "Ele viu. Não tudo — viu o que dava para ver da janela. A senhora atacando. A vassoura sendo usada como porrete. Os personagens reagindo. E agora a senhora caída no chão.\n\nMas ele não sabe que era possessão. Pode ter interpretado como: uma senhora idosa surtou e tentou atacar os investigadores, e eles a feriram em legítima defesa. Ou: algo aconteceu ali que ele não entende.\n\nO que ele faz: sai andando. Não corre. Mas anda mais rápido do que andou em qualquer momento antes. Ele vai reportar a Ezequiel — e agora Ezequiel tem informação que muda o jogo do Episódio 2."
+              },
+              {
+                "titulo": "O Dilema Imediato",
+                "intro": "Os personagens precisam decidir, em ordem de urgência:",
+                "lista_numerada": [
+                  "Dona Cida está machucada e inconsciente. Chamar SAMU? Carregar até a casa dela? Fingir que não aconteceu?",
+                  "Eles mesmos estão machucados. Quem tem o que? Sangue, costela, pulso? Precisam de cuidados.",
+                  "A casa está parcialmente destruída. Vidros quebrados, móveis caídos. Vão ter que limpar ou deixar?",
+                  "Ronaldo vai querer explicações. Se chamarem SAMU, Ronaldo vai aparecer. O que vão dizer?",
+                  "O investigador viu. Quanto tempo até a próxima ameaça?"
+                ],
+                "destaque": "Não há saída limpa. O Mestre não deve oferecer nenhuma. Cada decisão tem consequência para o Episódio 2.",
+                "sub_titulo": "Encaminhamentos possíveis",
+                "blocos_npc": [
+                  {
+                    "npc": "Se chamarem SAMU",
+                    "ref": "",
+                    "texto": "Dr. Meireles aparece de novo. Não vai cobrar muitas perguntas — ele entende que algo aconteceu, mas não vai investigar publicamente. Ronaldo aparece. Vai querer respostas. Vai aceitar versão razoável (\"ela invadiu a casa, parecia drogada, tentamos contê-la\"). Mas vai abrir inquérito formal. Dona Cida vai sobreviver. Vai ficar três dias internada. Quando voltar, não vai lembrar de nada — exceto de \"uma menina com pedrinhas no quintal\" que ela viu em sonho."
+                  },
+                  {
+                    "npc": "Se não chamarem SAMU",
+                    "ref": "",
+                    "texto": "Carregam Dona Cida até a casa dela três casas adiante. Colocam na cama. Saem. Pela manhã, alguém vai encontrá-la. Vai chamar SAMU. Vai parecer derrame ou AVC. Provavelmente vai sobreviver mas com sequelas. Os personagens carregam culpa pessoal. Mas têm tempo de fugir."
+                  },
+                  {
+                    "npc": "Se ferirem fatalmente algum personagem jogador",
+                    "ref": "",
+                    "texto": "Não deveria acontecer com os atributos calibrados acima. Mas se acontecer, primeiros socorros estabilizam — sem mortes na Sessão 1."
+                  }
+                ]
+              },
+              {
+                "titulo": "A Última Imagem",
+                "paragrafos": [
+                  "Depois de tudo — Dona Cida levada ou abandonada, ferimentos atendidos, investigador desaparecido — os personagens vão estar exaustos. Adrenalina caindo. Pode ser duas, três da manhã."
+                ],
+                "narracao": "Você está em pé no meio da sala. A casa de um homem morto que vocês mal conheciam, agora destruída em partes, com sangue talvez no carpete, com a memória de uma senhora idosa caída onde agora não tem mais ninguém.\n\nVocê olha em volta. Tudo o que aconteceu nas últimas seis horas — o velório, as conversas, as caminhadas pela cidade, a Área Verde, a terra, o caderno, o SMS, a possessão — tudo parece ter acontecido na mesma noite e em sete vidas diferentes.\n\nVocê caminha até a poltrona da sala. Aquela virada para a janela.\n\nOlha de perto.\n\nO assento tem uma marca de pressão recente. Alguém sentou ali nos últimos minutos. Não foi nenhum de vocês. Dona Cida não chegou a sentar — atacou e caiu no chão. Os invasores nunca existiram — foi outra coisa que veio.\n\nEntão quem sentou na poltrona?",
+                "narracao2": "Você olha para a janela. A vista é a Área Verde no fim da rua, na escuridão.\n\nE na calçada em frente à entrada da casa — a calçada que vocês usaram pra entrar — há uma marca nova de terra. Preta. Úmida. Em forma de pegada.\n\nIndo em direção à entrada.\n\nMais nenhuma saindo.\n\nComo se alguém tivesse entrado na casa durante todo esse tempo. E não tivesse saído ainda.",
+                "fecho": "O episódio termina antes de qualquer um de vocês conseguir articular o que está vendo."
+              },
+              {
+                "titulo": "Notas para o Mestre — Como Calibrar o Clímax",
+                "lista_numerada": [
+                  "A possessão deve durar 20–30 minutos de tempo de mesa. Menos vira anedota, mais perde força.",
+                  "Dalva não fala diretamente — fala em parábolas. Se o Mestre for tentado a \"explicar\" via Dalva, deve resistir. O poder da cena vem da ambiguidade. Os jogadores vão sair com perguntas, não respostas.",
+                  "Dona Cida não morre. Independente do que acontecer fisicamente, ela sobrevive. Mata-la criaria problema mecânico real e tonal — uma idosa vítima de possessão sendo morta em legítima defesa pelos personagens é peso demais para a Sessão 1.",
+                  "O ataque deve parecer letal. Os personagens devem se sentir em perigo real. O Mestre pode descrever golpes próximos da cabeça, vassoura quase acertando o pescoço, a velha jogando o peso impossível dela contra um personagem caído. A aparência de letalidade é o que dá tensão. A realidade letal nunca chega.",
+                  "O testemunho do investigador é a semente do Episódio 2. Ezequiel agora sabe que algo sobrenatural está em jogo. Vai recalibrar. No Episódio 2, a ameaça humana vai operar de forma diferente — mais cuidadosa, talvez recuando temporariamente para entender o que enfrenta."
+                ],
+                "sub_titulo": "O peso na temporada",
+                "paragrafos": [
+                  "A possessão estabelece quatro coisas críticas:"
+                ],
+                "lista_numerada2": [
+                  "O sobrenatural é inegável. Os jogadores viram. Não há volta.",
+                  "Há aliados do outro lado. Dalva avisou. Não mata-los foi escolha dela.",
+                  "Há nomes que não devem ser ditos. Os jogadores vão tomar cuidado com o que falam em voz alta a partir de agora.",
+                  "Eles não têm tempo confortável. \"Vão embora amanhã. Voltem em uma semana.\" Cria pressão real sobre as escolhas do Episódio 2."
+                ],
+                "fecho": "Isso justifica a urgência dos próximos episódios sem alterar nada do planejamento original."
+              }
+            ]
+          },
+          {
+            "numero": 10,
+            "titulo": "REFERÊNCIA RÁPIDA",
+            "secoes": [
+              {
+                "titulo": "As Cinco Perguntas Que Devem Estar Vivas ao Final",
+                "lista_numerada": [
+                  "\"Como Valdecir sabia?\"",
+                  "\"O que aconteceu em 1972 nesta cidade?\"",
+                  "\"Quem não quer que investigemos — e por quê?\"",
+                  "\"O que está na Área Verde que não é o que ficou?\"",
+                  "\"O que a chave abre?\""
+                ],
+                "fecho": "Se essas cinco perguntas estiverem vivas na cabeça dos jogadores, o Episódio 1 funcionou."
+              },
+              {
+                "titulo": "Perigos e Consequências",
+                "blocos_npc": [
+                  {
+                    "npc": "Perigo 1 — A Área Verde à Noite",
+                    "ref": "",
+                    "texto": "Mecânicas detalhadas na Parte 7. O perigo é Memória subindo involuntariamente — o nó começa a cobrar antes do personagem estar pronto. Não há morte no Episódio 1, mas há custo real e permanente."
+                  },
+                  {
+                    "npc": "Perigo 2 — Confrontar o Seguidor de Forma Agressiva",
+                    "ref": "",
+                    "texto": "Ezequiel sabe que os personagens são agressivos e calibra a resposta. No Episódio 2, a ameaça humana escala — documentos desaparecem, testemunhas ficam menos disponíveis."
+                  },
+                  {
+                    "npc": "Perigo 3 — Forçar o Laudo com Ronaldo",
+                    "ref": "",
+                    "texto": "Ronaldo pode deter qualquer personagem para \"esclarecimentos\" — informalmente, o que consome tempo e cria adversários que vão complicar os próximos episódios."
+                  },
+                  {
+                    "npc": "Perigo 4 — Passar da Meia-Noite na Área Verde",
+                    "ref": "",
+                    "texto": "O personagem com Memória mais alta sofre sobreposição temporal — por dois ou três minutos está aqui e em outubro de 1972 ao mesmo tempo. Não vê as 33 mortes — sente o peso. Quando volta, tem terra preta nas mãos que não estava lá antes."
+                  },
+                  {
+                    "npc": "Perigo 5 — A Possessão de Dona Cida (Clímax)",
+                    "ref": "",
+                    "texto": "Detalhada na Parte 9. O perigo aqui é duplo: Físico (dano de 1D4+2 por golpe, com força impossível para o corpo da idosa. Pode quebrar ossos, abrir cortes graves). Psicológico (Memória +1 automático para todos os personagens por testemunhar o sobrenatural inegável. Permanência -1 também automático). Moral (o pavor real de ter matado uma idosa quando ela cair convulsionando)."
+                  }
+                ]
+              },
+              {
+                "titulo": "Tabela de Memória Involuntária",
+                "tabela_cab": [
+                  "Situação",
+                  "Rolagem",
+                  "Efeito se Falhar"
+                ],
+                "tabela": [
+                  [
+                    "Área Verde > 10min",
+                    "POD 45",
+                    "Memória +1, fragmento sensorial"
+                  ],
+                  [
+                    "Área Verde > 20min",
+                    "POD 55",
+                    "Memória +1D3, desorientação temporal"
+                  ],
+                  [
+                    "Área Verde > 30min",
+                    "POD 65",
+                    "Memória +1D6, sobreposição temporal"
+                  ],
+                  [
+                    "Conversa com Gabriel",
+                    "Automático",
+                    "Memória +1 em segredo"
+                  ],
+                  [
+                    "Ler o caderno de Valdecir",
+                    "POD 50",
+                    "Memória +1, sensação de reconhecimento"
+                  ],
+                  [
+                    "Tocar a chave (personagem específico)",
+                    "POD 40",
+                    "Memória +1, imagem breve"
+                  ],
+                  [
+                    "Meia-noite na Área Verde",
+                    "POD 70",
+                    "Ver Perigo 4"
+                  ],
+                  [
+                    "Resolver Enigma 3",
+                    "POD 50",
+                    "RECOMPENSA — não cobra Memória"
+                  ]
+                ]
+              },
+              {
+                "titulo": "Tabela de Rolagens",
+                "tabela_cab": [
+                  "Habilidade",
+                  "Situação",
+                  "Dif.",
+                  "Sucesso"
+                ],
+                "tabela": [
+                  [
+                    "Ocultismo",
+                    "Símbolo no caixão",
+                    "40",
+                    "Reconhece estrutura de sigil"
+                  ],
+                  [
+                    "Ocultismo",
+                    "Símbolo no caixão",
+                    "Crítico",
+                    "Abertura nordeste = instrução para Área Verde"
+                  ],
+                  [
+                    "Ocultismo",
+                    "Símbolo nas fundações",
+                    "50",
+                    "Mesmo símbolo, fechado, data 17/06/1974"
+                  ],
+                  [
+                    "Medicina / Observação",
+                    "Examinar o caixão",
+                    "35",
+                    "Serragem fresca — símbolo recente"
+                  ],
+                  [
+                    "Observação",
+                    "Riscos na calçada da rodoviária",
+                    "40",
+                    "Mesma estrutura do símbolo no caixão"
+                  ],
+                  [
+                    "Observação",
+                    "Atrás do Centro Cívico",
+                    "35",
+                    "Marca de cal — terceiro símbolo"
+                  ],
+                  [
+                    "Observação",
+                    "Ronaldo durante ligação",
+                    "45",
+                    "Ele sabe mais do que diz"
+                  ],
+                  [
+                    "Observação",
+                    "Aparecido no celular",
+                    "35",
+                    "Mandou mensagem enquanto conversava"
+                  ],
+                  [
+                    "Observação",
+                    "Carro parado",
+                    "30",
+                    "Motor quente / parado há pouco"
+                  ],
+                  [
+                    "Observação",
+                    "O seguidor",
+                    "45",
+                    "Mesmo homem de um dos carros"
+                  ],
+                  [
+                    "Observação",
+                    "Agenda de Valdecir",
+                    "30",
+                    "Anotação \"10h — S.N.\""
+                  ],
+                  [
+                    "Observação",
+                    "Poltrona da sala",
+                    "40",
+                    "Marcas no carpete — virada recentemente"
+                  ],
+                  [
+                    "Psicologia",
+                    "Armindo",
+                    "50",
+                    "Cordialidade real mas gerenciada"
+                  ],
+                  [
+                    "Psicologia",
+                    "Dr. Meireles",
+                    "40",
+                    "Medo genuíno — foi ameaçado"
+                  ],
+                  [
+                    "Persuasão",
+                    "Dr. Meireles (empatia)",
+                    "45",
+                    "Revela detalhes do laudo original"
+                  ],
+                  [
+                    "Persuasão",
+                    "Natalina",
+                    "35",
+                    "Menciona o caderno de observações dela"
+                  ],
+                  [
+                    "Persuasão",
+                    "Natalina (insistente)",
+                    "40",
+                    "Mostra o caderno (peça do Enigma 2)"
+                  ],
+                  [
+                    "Persuasão",
+                    "Dona Neuza (gentileza)",
+                    "30",
+                    "Detalhes do corpo e da posição"
+                  ],
+                  [
+                    "Persuasão",
+                    "Ronaldo",
+                    "45",
+                    "Sugere falar com Dr. Meireles"
+                  ],
+                  [
+                    "Intimidação ou Direito",
+                    "Dr. Meireles",
+                    "50",
+                    "Revela a ligação intimidadora"
+                  ],
+                  [
+                    "Furtividade",
+                    "Seguir Ronaldo",
+                    "35",
+                    "Ouve o lado dele da ligação"
+                  ],
+                  [
+                    "Fotografia",
+                    "Foto no quarto",
+                    "40",
+                    "Antes de 1974 — terreno da Área Verde"
+                  ],
+                  [
+                    "História",
+                    "Recorte de jornal",
+                    "35",
+                    "Décadas 70-80"
+                  ],
+                  [
+                    "Percepção",
+                    "A chave",
+                    "30",
+                    "Metal incomum para fechadura doméstica"
+                  ],
+                  [
+                    "Matemática",
+                    "Numeração do Bairro Fundação",
+                    "35",
+                    "Casas removidas do registro"
+                  ]
+                ]
+              },
+              {
+                "titulo": "Checklist do Mestre — Props Físicos",
+                "lista": [
+                  "Quatro envelopes de karma físicos, lacrados",
+                  "Fotografia impressa do cerrado (anos 70, preto e branco)",
+                  "Recorte de jornal preparado com a notícia do trabalhador Monteiro",
+                  "Calendário de março de 2025 com círculos em 18/03 e 07/04",
+                  "Chave física antiga e pesada (da caixa de sapato)",
+                  "Caderno de Valdecir com a fita de couro envolvendo — fita amarrada com partículas escuras coladas (areia de aquário misturada com cola)",
+                  "Bilhete dobrado em três com a mensagem de Valdecir",
+                  "Papel anotado pelo Dr. Meireles com o número (62) 9XXXX-XXXX e o horário 15h32",
+                  "Quatro mensagens SMS personalizadas — uma por jogador, em papéis separados ou prontas para envio digital às 23h14",
+                  "Texto impresso das parábolas de Dalva — para o Mestre ler em voz alta sem hesitar",
+                  "Mapa simples de Novavera para o Enigma 1 (Triangulação)",
+                  "Agenda com a anotação \"10h — S.N.\" (pode ser parte da decoração da sala)"
+                ]
+              },
+              {
+                "titulo": "Durante a Sessão — O Que Monitorar",
+                "lista": [
+                  "Sorteio dos envelopes antes de qualquer cena",
+                  "Cenas solo de chegada — máximo 25 min cada, plantar o carro em todas",
+                  "Aparecido manda a mensagem quando perguntam sobre Valdecir / Área Verde",
+                  "Velório: Armindo apresentado como aliado potencial, NUNCA suspeito",
+                  "Sinal 1 de Abel com Gabriel plantado",
+                  "Ligação de Ronaldo — sair para atender em momento de movimento",
+                  "Dr. Meireles acessível antes ou depois do velório — revela número de Goiânia",
+                  "O seguidor aparece quando os personagens estão se movendo à noite",
+                  "1a visita à casa de Valdecir — caderno trancado com fita + bilhete",
+                  "Visita à Área Verde — terra preta no ponto central",
+                  "Retorno à casa — destrancam o caderno + leitura em voz alta",
+                  "Mensagens SMS personalizadas às 23h14 — uma por jogador",
+                  "Três batidas na porta — Dona Cida possuída por Dalva",
+                  "Possessão violenta — força impossível, vassoura como porrete, dano não letal",
+                  "Parábolas de Dalva — em voz baixa, sem explicar nada diretamente",
+                  "A convulsão e o desabamento — pavor real de que Dona Cida morreu",
+                  "Investigador na janela — viu o sobrenatural, vai reportar a Ezequiel",
+                  "Memórias involuntárias registradas em segredo",
+                  "Os três enigmas resolvíveis — oferecer espaço para os jogadores cruzarem informação",
+                  "Última imagem — marca na poltrona + pegada de terra preta entrando na casa"
+                ]
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -3678,5 +5625,485 @@
       "corpo": "Para cada pista que os personagens encontram, o Mestre sabe: o que ela revela e para onde ela aponta. Uma resposta sempre vem com pelo menos duas novas perguntas. O painel de investigação — quadro físico ou digital — é ferramenta central: o espectador vê o raciocínio em tempo real."
     },
     "epitafio": "O tempo não passa. O tempo cobra. E a primeira dívida nunca foi paga."
+  },
+  "npcs_apoio": [
+    {
+      "id": "aparecido",
+      "nome": "Seu Aparecido",
+      "epiteto": "O Informante Involuntário",
+      "nome_completo": "Aparecido Marques de Souza",
+      "idade": "58 anos",
+      "profissao": "Dono do posto de gasolina da entrada sul de Novavera (BR-060)",
+      "aparencia": "Gordo, baixo, sempre usa boné de brinde de agroquímica. Camisa polo desbotada com logo do posto. Mãos calejadas.",
+      "historia": "Mora em Novavera há 22 anos. Comprou o posto há 15 anos com economia da família. Tem esposa (Marlene) e três filhos. O caçula está prestes a entrar na faculdade — Aparecido precisa de dinheiro.",
+      "conexao": "Recebe um depósito mensal de R$ 1.500 desde 2019 de um \"advogado de Brasília que estuda história da região.\" A única coisa que precisa fazer: avisar quando aparecer gente de fora fazendo perguntas sobre a cidade antiga, Valdecir, ou a Área Verde. Não sabe que trabalha para Ezequiel.",
+      "personalidade": "Afável, conversador, atende bem. Genuinamente bom com clientes regulares. Tem culpa de baixo nível pelo que faz mas justifica: \"É só avisar quando aparece gente. Não tô fazendo mal pra ninguém.\"",
+      "como_age": "Pega o celular com naturalidade enquanto conversa, manda mensagem rápida. Observação 35 percebe a discrepância.",
+      "reaparece": "Episódios 2, 3 e 9. É observador permanente. Se os personagens descobrirem que ele é informante, podem usar isso para alimentar informação falsa para Ezequiel.",
+      "local_ref": "local:posto-gasolina"
+    },
+    {
+      "id": "rosangela",
+      "nome": "Rosângela",
+      "epiteto": "Atendente do Posto",
+      "nome_completo": "Rosângela dos Santos",
+      "idade": "41 anos",
+      "profissao": "Atendente do posto de gasolina (turno tarde-noite)",
+      "aparencia": "Magra, cabelo preso em rabo de cavalo, uniforme do posto.",
+      "historia": "Moradora de Novavera há 12 anos. Veio com o marido (separados há 4 anos). Tem uma filha de 13 anos. Trabalha no posto pela renda, não por escolha.",
+      "conexao": "Nenhuma. É testemunha comum da cidade. Sabe o que todo mundo sabe — que a Área Verde \"tem alguma coisa estranha\" mas nunca quis pensar a fundo.",
+      "o_que_sabe": "Que ninguém entra na Área Verde. Que crianças não vão perto. Que algumas pessoas em Novavera \"morrem de coração\" com frequência incomum. Nunca conectou as coisas.",
+      "reaparece": "Improvável. NPC de uma cena.",
+      "local_ref": "local:posto-gasolina"
+    },
+    {
+      "id": "geraldo",
+      "nome": "Seu Geraldo",
+      "epiteto": "Funcionário da Rodoviária",
+      "nome_completo": "Geraldo Vieira Mendes",
+      "idade": "52 anos",
+      "profissao": "Funcionário de limpeza e organização da rodoviária de Novavera (18 anos no cargo)",
+      "aparencia": "Magro, postura encurvada, uniforme cinza puído. Mãos grandes.",
+      "historia": "Nasceu em Anápolis, mudou-se para Novavera em 1995. Viúvo desde 2018. Mora sozinho num apartamento simples no Bairro Fundação.",
+      "conexao": "Já viu coisas inexplicáveis em Novavera ao longo das décadas — pessoas \"esquisitas\" perto da Área Verde, sons estranhos à noite, padrões estranhos na cidade — mas decidiu há muito tempo não pensar mais nisso. Sobreviver em Novavera para Seu Geraldo significa não fazer perguntas.",
+      "o_que_sabe": "Mais do que conta. Mas não vai contar. Se pressionado, evade.",
+      "sobre_simbolo": "Vê crianças desenhando lá às vezes — sem identificar o símbolo conscientemente. Sabe que \"criança não vem muito pra esse lado da rodoviária\" — porque, sem perceber, sente que o lado da rodoviária com os riscos é desconfortável.",
+      "reaparece": "Improvável. NPC de uma cena.",
+      "local_ref": "local:rodoviaria"
+    },
+    {
+      "id": "marisa",
+      "nome": "Marisa",
+      "epiteto": "Funcionária do Centro Cívico",
+      "nome_completo": "Marisa Pereira Costa",
+      "idade": "35 anos",
+      "profissao": "Secretária administrativa do Centro Cívico (8 anos no cargo)",
+      "aparencia": "Magra, óculos, cabelo curto, roupas de trabalho discretas.",
+      "historia": "Filha de servidor público local. Cresceu em Novavera. Casada, sem filhos.",
+      "conexao": "Nenhuma direta. Mas trabalha sob Armindo indiretamente (já que ele é figura pública influente). Conhece a placa de bronze do Centro Cívico de cor — passa por ela todos os dias.",
+      "o_que_entrega": "Quando confrontada com a anomalia da foto de Benedito Braga (1908–1969 com aparência de 40 anos), reage com desconforto genuíno. Nunca tinha pensado nisso. Esse momento de desestabilização cognitiva é importante — mostra aos jogadores que os moradores de Novavera têm pontos cegos sobre a própria cidade.",
+      "reaparece": "Episódios 2 e 3, se os personagens forem ao Centro Cívico investigar registros oficiais.",
+      "local_ref": "local:centro-civico"
+    },
+    {
+      "id": "neuza",
+      "nome": "Dona Neuza",
+      "epiteto": "A Que Encontrou o Corpo",
+      "nome_completo": "Neuza Aparecida da Silva",
+      "idade": "68 anos",
+      "profissao": "Aposentada (foi costureira)",
+      "aparencia": "Senhora simples, baixa, cabelos brancos curtos, roupas escuras de luto desde que enviuvou.",
+      "historia": "Mora no Bairro Fundação há 40 anos. Viúva há 5 anos (marido — Antônio — morreu de câncer). Tem dois filhos adultos que moram em Goiânia. Mora em frente à casa de Valdecir — conheceu ele por 40 anos cumprimentando na rua.",
+      "conexao": "Encontrou o corpo de Valdecir na manhã de 18 de março, durante caminhada matinal. Testemunha-chave — viu a posição do corpo, sentiu a temperatura impossível, sentiu a vontade de fugir da Área Verde.",
+      "o_que_sabe": "Os hábitos de Valdecir (caminhada matinal, luz do quarto sempre apagada às 22h). A posição exata do corpo (mãos viradas para dentro do terreno). A temperatura impossível da mão dele. Pista crucial: a luz do quarto de Valdecir esteve acesa na última madrugada — pela primeira vez em 40 anos.",
+      "personalidade": "Religiosa, espírita (frequenta centro espírita aos domingos), prática. Trata da morte com dignidade de quem já enterrou muita gente.",
+      "reaparece": "Episódios 2, 3 e 5. É moradora estável do Bairro Fundação e pode ser fonte de informações sobre o que aconteceu no bairro ao longo das décadas. Não sabe que a Área Verde tem 33 almas presas, mas tem intuição forte sobre o lugar.",
+      "local_ref": "local:rua-pitangueiras"
+    },
+    {
+      "id": "joao-funeraria",
+      "nome": "Seu João Carvalho",
+      "epiteto": "Funcionário da Funerária Paz",
+      "nome_completo": "João Carvalho de Oliveira",
+      "idade": "51 anos",
+      "profissao": "Auxiliar de funerária (22 anos na Funerária Paz)",
+      "aparencia": "Médio, calvo, óculos de aro grosso, terno preto sempre usado, mãos cuidadosas.",
+      "historia": "Trabalha na funerária desde os 29 anos. Casado, dois filhos crescidos. Vive de forma simples, religioso (católico).",
+      "conexao": "Trabalhou no preparo do caixão de Valdecir. Testemunha-chave sobre dois fatos: O corpo chegou na funerária já preparado pelo Dr. Meireles — incomum. O Dr. Meireles ficou sentado olhando o corpo por horas naquela manhã — também incomum.",
+      "personalidade": "Discreto profissionalmente — não fala sobre familiares de mortos, não compartilha detalhes íntimos. Mas se perguntado diretamente sobre procedimentos, responde com naturalidade. Não esconde por má-fé.",
+      "o_que_entrega": "A janela de tempo em que a Igreja ficou só com o sacristão entre 17h30 e 19h — janela em que Armindo entrou e gravou o símbolo.",
+      "reaparece": "Possível. Se houver mais mortes em Novavera ao longo da temporada, ele estará presente. Não é peça central mas pode confirmar padrões.",
+      "local_ref": "local:funeraria-paz"
+    },
+    {
+      "id": "carmem",
+      "nome": "Carmem Tostes",
+      "epiteto": "Mãe de Gabriel",
+      "nome_completo": "Carmem Lúcia Tostes",
+      "idade": "38 anos",
+      "profissao": "Auxiliar administrativa em escritório de contabilidade",
+      "aparencia": "Magra, cabelos pretos, olheiras permanentes. Roupas simples mas cuidadas.",
+      "historia": "Casada com Roberto Tostes (mecânico). Gabriel é filho único. Mora no Bairro Fundação desde 2018. Religiosa, frequenta a Igreja de Santo Antônio.",
+      "conexao": "Mãe protetora de Gabriel. Não sabe — não conscientemente — que o filho é médium. Mas sabe que algo é diferente com ele. Que os desenhos são esquisitos. Que ele às vezes diz coisas que não fazem sentido.",
+      "personalidade": "Defensiva quando se trata de Gabriel. Cordial em outros contextos. Vai criar barreira protetora se qualquer abordagem com Gabriel parecer estranha — e essa barreira vai fechar o acesso a Gabriel nos episódios seguintes.",
+      "reaparece": "Episódio 6 — quando Gabriel cobra o preço de ser médium e Carmem precisa lidar com isso.",
+      "ligacao_npc": "npc:gabriel"
+    },
+    {
+      "id": "benedito-sacristao",
+      "nome": "Seu Benedito Pacheco",
+      "epiteto": "O Sacristão",
+      "nome_completo": "Benedito da Silva Pacheco",
+      "idade": "72 anos",
+      "profissao": "Sacristão da Igreja de Santo Antônio (41 anos no cargo)",
+      "aparencia": "Alto para a idade, magro, cabelo branco fino, sempre de calça social escura e camisa branca.",
+      "historia": "Católico devoto desde a infância. Importante: sem parentesco com Benedito Braga da placa do Centro Cívico — coincidência de nome comum em Goiás.",
+      "conexao": "Trabalhava na sacristia entre 17h30 e 19h da noite de 18 de março. Viu Armindo entrar na Igreja pela porta lateral às 18h15 e ficar 10 minutos. Achou normal — Armindo e Valdecir eram amigos antigos.",
+      "o_que_sabe": "Não viu o que Armindo fez exatamente — estava na sacristia separando paramentos. Mas confirma a janela de tempo se perguntado.",
+      "personalidade": "Sereno, religioso, fala pouco. Trabalha enquanto conversa.",
+      "reaparece": "Improvável. Mas se houver investigação eclesiástica formal em outros episódios, ele será fonte.",
+      "local_ref": "local:igreja-santo-antonio"
+    },
+    {
+      "id": "cida",
+      "nome": "Dona Cida",
+      "epiteto": "A Possuída",
+      "nome_completo": "Aparecida Coelho Rodrigues",
+      "idade": "70 anos",
+      "profissao": "Aposentada (foi cozinheira)",
+      "aparencia": "Baixa (1,58m), cabelos brancos sempre arrumados, vestidos floridos. Frágil aparentemente — tem artrose nos joelhos, anda devagar.",
+      "historia": "Viúva há 12 anos. Mora a três casas de Valdecir no Bairro Fundação. Conhecia Valdecir de cumprimentar na rua. Frequenta a vigília de quarta-feira na Igreja.",
+      "conexao": "No Episódio 1, é o veículo de Dalva Monteiro — uma das 33 almas. Não escolheu ser possuída — foi escolhida por proximidade física, por estar voltando da vigília à noite, e por compatibilidade espiritual com a alma de Dalva.",
+      "o_que_acontece": "Possuída por Dalva entre 23h30 e 23h50 aproximadamente. Atacada por força impossível durante a possessão (Força 75 enquanto Dalva está no corpo). Convulsiona quando Dalva sai. Cai inconsciente — não morta, mas em choque profundo. Vai ser internada por 3 dias se chamarem SAMU. Não vai lembrar de nada quando voltar — exceto de \"uma menina com pedrinhas no quintal\" que ela viu em sonho.",
+      "reaparece": "Pode reaparecer no Episódio 5 ou 6 mencionando o sonho recorrente da menina, se os personagens perguntarem. Mas a peça central foi Dalva, não ela.",
+      "local_ref": "local:rua-pitangueiras"
+    },
+    {
+      "id": "investigador",
+      "nome": "O Investigador Particular",
+      "epiteto": "Sem nome revelado",
+      "nome_completo": "Não revelado no Episódio 1",
+      "idade": "40 e poucos anos",
+      "profissao": "Investigador particular contratado por intermediários de Ezequiel",
+      "aparencia": "Estatura média, jaqueta escura, calça jeans. Leve sotaque de outra região (provavelmente São Paulo). Treinado para passar despercebido.",
+      "historia": "Profissional. Trabalha por contrato. Acionado por uma agência de Goiânia que recebe pedidos de \"consultoria em vigilância.\" Não conhece o cliente final — Ezequiel.",
+      "conexao": "Chegou em Novavera às 14h do dia 18 de março — antes dos personagens. Entrou na casa de Valdecir pelos fundos, fez reconhecimento, destrancou a porta da cozinha por dentro (preparando o terreno caso fosse necessário acesso futuro). Saiu sem deixar rastro óbvio. Depois passou o dia observando a chegada dos personagens.",
+      "o_que_faz": "Observa as chegadas dos personagens. Reporta a Ezequiel via mensagem criptografada (cada 2 horas). Segue um dos personagens à noite — quando confrontado, recua sem violência. Testemunha o ataque de Dalva pelo lado de fora — vê o suficiente para reportar que algo sobrenatural está acontecendo.",
+      "apos_testemunho": "Vai embora andando rapidamente. Reporta a Ezequiel. A partir desse momento, Ezequiel sabe que não está lidando apenas com perturbação do nó — está lidando com manifestação ativa. Isso vai mudar a calibração dele no Episódio 2.",
+      "personalidade": "Profissional, calmo, treinado. Mas o testemunho do sobrenatural quebrou algo nele. Não acredita em fantasma, mas o que viu foi inegável. Vai começar a fazer perguntas internas sobre o que está fazendo — e essas perguntas podem ser exploradas se os personagens o abordarem com inteligência no Ep 2.",
+      "reaparece": "Episódios 2 e 3 — provavelmente em outra forma de atuação, talvez abordagem direta para tentar negociar com os personagens."
+    }
+  ],
+  "npcs_mencionados": [
+    {
+      "nome": "Renata Meireles",
+      "texto": "Esposa do Dr. Cláudio Meireles. Professora da Escola Municipal Tancredo Neves em Novavera. Mencionada por Ezequiel durante a ligação intimidadora — para mostrar ao médico que ele tem informação detalhada sobre a vida privada."
+    },
+    {
+      "nome": "Filha do Dr. Meireles (sem nome)",
+      "texto": "No segundo ano de medicina em Goiânia. Também mencionada por Ezequiel. Razão concreta pela qual Dr. Meireles cede à intimidação."
+    },
+    {
+      "nome": "Marlene de Souza",
+      "texto": "Esposa de Aparecido. Sem participação direta. Aparecido usa \"avisar a mulher\" como desculpa para mandar mensagem no celular."
+    },
+    {
+      "nome": "Roberto Tostes",
+      "texto": "Marido de Carmem, pai de Gabriel. Mecânico. Não aparece no Episódio 1."
+    },
+    {
+      "nome": "Antônio (in memoriam)",
+      "texto": "Falecido marido de Dona Neuza. Mencionado quando ela fala de sua viuvez."
+    },
+    {
+      "nome": "Seu Antônio (vizinho)",
+      "texto": "Vizinho de Dona Neuza, mora \"ali do lado.\" É a casa onde ela liga para o SAMU. Sem participação direta na história."
+    }
+  ],
+  "envelopes_aba": {
+    "introducao": {
+      "titulo": "O Julgamento de São Miguel do Sertão",
+      "subtitulo": "Interior de Goiás, 1650",
+      "abertura": "Uma missão jesuíta recém-estabelecida numa aldeia de contato — índios Kayapó convertidos, colonos portugueses, e quatro pessoas no centro de um evento que destruiu tudo.",
+      "o_que_aconteceu": "Uma criança indígena morreu dentro da missão. As circunstâncias eram ambíguas — podia ser acidente, podia ser assassinato. O padre responsável pela missão precisava de uma resposta rápida antes que os colonos usassem a morte como pretexto para atacar a aldeia.",
+      "quatro_pessoas_intro": "Quatro pessoas sabiam detalhes diferentes sobre o que realmente aconteceu:",
+      "quatro_pessoas": [
+        {
+          "papel": "Abel",
+          "texto": "Era o padre assistente da missão. Viu algo na noite da morte mas não entendeu o que era. Não tinha informação suficiente para acusar ninguém. Tentou protelar o julgamento para investigar mais. Foi ignorado."
+        },
+        {
+          "papel": "O Juiz",
+          "texto": "Era o representante da Coroa portuguesa na região. Tinha autoridade para julgar. Com as informações que recebeu — incompletas, filtradas por outros — condenou um jovem colono. Acreditava genuinamente que estava certo. O jovem era inocente."
+        },
+        {
+          "papel": "O Silencioso",
+          "texto": "Era o intérprete da missão, mestiço, filho de colono com indígena. Sabia a verdade — viu o que Abel não conseguiu interpretar. Mas revelar a verdade significava destruir alguém que amava. Ficou em silêncio. O jovem foi condenado com base numa verdade incompleta que o Silencioso tinha e não entregou."
+        },
+        {
+          "papel": "O Cobrador",
+          "texto": "Era o jovem colono condenado injustamente. Mas antes de ser preso, numa noite de desespero, fugiu — e para fugir, usou Abel como distração sem o consentimento dele. Abel foi interrogado, humilhado, quase expulso da ordem. O Cobrador salvou a própria pele às custas de Abel. Nunca foi cobrado por isso porque morreu logo depois — a condenação o alcançou de outra forma."
+        }
+      ],
+      "como_terminou": "O jovem colono morreu preso antes do julgamento formal — condições da prisão. O Juiz nunca soube que estava errado. O Silencioso viveu com o peso até o fim da vida. Abel foi reabilitado mas nunca esqueceu a humilhação. A aldeia foi atacada pelos colonos de qualquer forma — a morte da criança foi usada como pretexto independente do julgamento.\n\nNinguém ganhou. Todos perderam algo diferente.",
+      "teia_titulo": "A teia que isso cria:",
+      "teia": [
+        "O Cobrador deve a Abel — usou Abel sem consentimento para salvar a própria pele",
+        "O Silencioso deve ao Cobrador — o silêncio dele condenou o Cobrador injustamente",
+        "O Juiz deve ao Silencioso — julgou com informação incompleta, condenou com convicção, nunca buscou mais",
+        "Abel não deve a nenhum dos três — foi usado, humilhado, e ainda assim tentou fazer o certo. A dívida dele é com Caim desde muito antes disso."
+      ]
+    },
+    "instrucao_mestre": "Antes da primeira sessão, prepare quatro envelopes físicos lacrados. Cada envelope tem três folhas dentro — A Dívida, A Memória, A Conexão. Os jogadores sorteiam os envelopes antes de criar as fichas. O conteúdo do envelope define quem o personagem foi — não quem ele é. O jogador cria a história desta vida em cima do que o envelope revela. Ninguém mostra o envelope para os outros jogadores. O Mestre sabe o conteúdo de todos os quatro.\n\nAbel é sorteado — não escolhido. Ninguém sabe quem é Abel até abrir o envelope. Nem o jogador que sortear.",
+    "envelopes": [
+      {
+        "numero": 1,
+        "papel": "ABEL",
+        "subtitulo": "O Inocente Que Não Sabe Que É Inocente",
+        "paginas": [
+          {
+            "numero": 1,
+            "titulo": "A DÍVIDA",
+            "paragrafos": [
+              "Em algum momento que você não lembra com clareza, numa vida que você não lembra como sua, algo foi tirado de você antes do tempo.",
+              "Não por acidente. Por escolha de outro.",
+              "Você foi usado como instrumento sem o seu consentimento — sua reputação, sua posição, sua confiança. A pessoa que fez isso não era má. Era desesperada. E pagou por isso de formas que você nunca soube.",
+              "Você não deve nada a ninguém nesta vida.",
+              "Mas alguém deve tudo a você. E não é só um. São três — cada um carregando uma parte do que aconteceu naquela noite de 1650, numa missão jesuíta no interior do que hoje é Goiás, onde uma criança morreu e quatro pessoas fizeram escolhas que ecoam até hoje.",
+              "Você vai reconhecê-los antes de entender por quê. Há algo neles que seu corpo sabe antes da sua mente. Um peso. Uma familiaridade incômoda. Como quando você reconhece uma música mas não consegue lembrar a letra.",
+              "Quando entender por quê, vai ter que decidir se quer cobrar."
+            ],
+            "destaque_titulo": "O padrão que esta vida criou em você",
+            "destaque": "Você protege quando deveria se proteger. Testemunha quando deveria agir. Perdoa quando o sistema inteiro diz que não deveria. Não é fraqueza — é uma disposição tão antiga que parece natureza. Mas há um custo que você ainda não calculou completamente.",
+            "fecho_titulo": "Uma última coisa:",
+            "fecho_paragrafos": [
+              "Há algo nesta vida que é diferente de tudo que veio antes. Você vai sentir isso em Novavera — uma clareza que os outros não têm, uma ausência de ruído que em outros contextos seria paz mas aqui vai parecer solidão. Como se você existisse numa frequência que os outros não conseguem sintonizar completamente.",
+              "Isso não é problema. É quem você é.",
+              "O problema é que tem uma coisa que consegue sintonizar você perfeitamente.",
+              "E você ainda não sabe o nome dela."
+            ]
+          },
+          {
+            "numero": 2,
+            "titulo": "A MEMÓRIA",
+            "paragrafos": [
+              "Você está em pé.",
+              "É noite. Não sabe onde — só que o chão é de terra batida e o ar cheira a madeira queimada e algo mais doce que não consegue identificar. Velas. Muitas velas.",
+              "Há uma criança no chão à sua frente.",
+              "Você está olhando para ela há muito tempo — tempo suficiente para que seus joelhos doam de estar agachado, mas você não se lembra de ter se agachado. Só está lá.",
+              "A criança está quieta. Não dormindo — você sabe a diferença, mesmo sem entender como sabe.",
+              "Você levanta a cabeça e olha para a porta. Há alguém do lado de fora — uma sombra contra a luz fraca que vem de fora. A sombra fica parada por um momento. Depois some.",
+              "Você não sabe quem era.",
+              "Vai passar anos sem saber.",
+              "O que você sabe — o que seu corpo sabe enquanto está ali agachado no chão de terra com o cheiro de velas e de algo mais doce — é que a resposta para o que aconteceu está na sombra que você não viu completamente.",
+              "E que alguém na sala ao lado ouviu tudo.",
+              "E não vai dizer nada."
+            ]
+          },
+          {
+            "numero": 3,
+            "titulo": "A CONEXÃO",
+            "paragrafos": [
+              "Um dos que chegaram com você carrega algo que não é dele.",
+              "Não é maldade. É peso acumulado de uma escolha que foi razoável no momento e irreversível depois. Você vai sentir isso nele antes de ver — uma espécie de aperto quando ele está perto, como quando você está numa sala com alguém que deve dinheiro a você e nenhum dos dois menciona.",
+              "Exceto que a dívida é de outra natureza.",
+              "E ele não sabe que deve.",
+              "Tenha paciência com isso. A cobrança, se vier, não vai ser sua decisão — vai ser do próprio sistema. Sua função, se tiver alguma, é testemunhar.",
+              "Como sempre foi."
+            ]
+          }
+        ]
+      },
+      {
+        "numero": 2,
+        "papel": "O COBRADOR",
+        "subtitulo": "Aquele Que Escapou Às Custas de Outro",
+        "paginas": [
+          {
+            "numero": 1,
+            "titulo": "A DÍVIDA",
+            "paragrafos": [
+              "Em algum momento que você não lembra com clareza, numa vida que você não lembra como sua, você escolheu sobreviver.",
+              "Não foi covardia. Foi instinto. Foi o tipo de decisão que se toma em três segundos quando o mundo está desmoronando e há uma saída e alguém no caminho dessa saída que não vai entender mas que vai sobreviver ao que você está prestes a fazer.",
+              "Você usou alguém.",
+              "Não de forma cruel. De forma funcional. Como se usa uma ferramenta quando não há outra opção. A pessoa sobreviveu. Você sobreviveu. A lógica parecia funcionar.",
+              "O que você não calculou: o custo que essa pessoa pagou depois. A humilhação. O interrogatório. Os meses reconstruindo uma reputação que você desfez em três segundos de desespero.",
+              "Você morreu antes de poder pagar de volta. A dívida ficou.",
+              "Existe nesta vida uma pessoa a quem você deve tudo — e ela não sabe que é credora. Você vai reconhecê-la. Não de forma dramática — vai ser um incômodo pequeno que cresce. Uma razão que não consegue explicar para querer que ela esteja bem. Para se posicionar entre ela e o perigo antes de ter pensado conscientemente em fazer isso.",
+              "O padrão que esta vida criou em você não é crueldade. É o oposto — você é generoso, presente, disposto a ajudar. Mas quando a situação exige escolher entre você mesmo e outro em algo que realmente custa, algo antigo acorda. E você encontra uma justificativa que convence até você mesmo."
+            ],
+            "destaque_titulo": "O padrão que esta vida criou em você",
+            "destaque": "Quando a situação exige escolher entre si mesmo e outro — especialmente quando o custo é alto e a saída é inteligente — você escolhe si mesmo. Sempre com uma razão que parece razoável. Sempre com uma lógica que sustenta. O problema não é que você é egoísta. O problema é que você é convincente.\n\nEspecialmente consigo mesmo."
+          },
+          {
+            "numero": 2,
+            "titulo": "A MEMÓRIA",
+            "paragrafos": [
+              "Você está correndo.",
+              "Não com medo — com urgência. Há uma diferença e você a conhece: medo paralisa, urgência move. Você está se movendo através de algo escuro — não consegue ver bem, só sentir o chão irregular sob os pés e o ar quente e o som de vozes atrás de você que ainda estão longe mas não vão ficar longe por muito tempo.",
+              "Você vira para a direita e há alguém ali.",
+              "Você não para. Você faz algo — empurra, desvia, usa o corpo da outra pessoa como cobertura por um segundo, um segundo só, tempo suficiente para que as vozes atrás se confundam sobre qual direção seguir.",
+              "A pessoa não entende o que está acontecendo. Você vê isso na expressão dela no segundo em que os olhos se encontram.",
+              "Você continua correndo.",
+              "Não olha para trás.",
+              "O que fica: a expressão dela. Não de raiva — de surpresa. Como alguém que não esperava que você fizesse isso. Como alguém que, se você tivesse pedido, teria ajudado de outra forma.",
+              "Você nunca vai saber se teria."
+            ]
+          },
+          {
+            "numero": 3,
+            "titulo": "A CONEXÃO",
+            "paragrafos": [
+              "Um dos que chegaram com você sabe algo que não disse.",
+              "Não agora — não nesta vida. Em outra. Mas o peso do que não foi dito chegou até aqui de alguma forma, como chega tudo que fica incompleto. Você vai sentir isso nele como uma espécie de distância — não hostilidade, distância. Como alguém que está sempre ligeiramente fora do alcance quando você precisa de algo essencial.",
+              "Não é pessoal.",
+              "É karma.",
+              "O dele, não o seu — desta vez.",
+              "Há também outro nos que chegaram com você que carrega uma certeza sobre as coisas que às vezes vai parecer excessiva. Que julga rápido e para de buscar depois que formou uma opinião. Você vai sentir a tentação de concordar com as conclusões dele porque são convincentes.",
+              "Resista quando sentir que falta alguma coisa.",
+              "Da última vez que alguém concordou com uma conclusão incompleta, custou uma vida."
+            ]
+          }
+        ]
+      },
+      {
+        "numero": 3,
+        "papel": "O SILENCIOSO",
+        "subtitulo": "Aquele Que Sabia e Não Disse",
+        "paginas": [
+          {
+            "numero": 1,
+            "titulo": "A DÍVIDA",
+            "paragrafos": [
+              "Em algum momento que você não lembra com clareza, numa vida que você não lembra como sua, você soube de algo e não disse.",
+              "Não porque era covarde. Porque revelar a verdade significava destruir alguém que amava. E você calculou — rapidamente, sob pressão, da forma que se calculam essas coisas quando não há tempo — que o custo de falar era maior do que o custo de ficar em silêncio.",
+              "Você estava errado.",
+              "O silêncio não protegeu quem você queria proteger. E destruiu alguém que não merecia ser destruído — alguém que foi condenado com base numa verdade incompleta que só você tinha e não entregou. Esse alguém morreu por isso.",
+              "A dívida não é de ação. É de omissão.",
+              "O credor desta vida é alguém que vive com as consequências do seu silêncio sem saber que existe um culpado. Você vai reconhecê-lo. Vai sentir o peso específico de estar perto de alguém a quem você deve uma verdade — como respirar num quarto onde o ar está ligeiramente errado, suficiente para notar, insuficiente para identificar."
+            ],
+            "destaque_titulo": "O padrão que esta vida criou em você",
+            "destaque": "Quando a verdade custa algo pessoal — quando dizê-la completamente exige expor algo que preferia guardar — você encontra uma forma de não dizê-la completamente. Não mente. Omite. Fala o suficiente para não ser chamado de mentiroso. Guarda o resto.\n\nA diferença entre o que você diz e o que você sabe é onde as pessoas que dependem de você se machucam.\n\nVocê sabe disso. E continua fazendo.\n\nIsso é o padrão."
+          },
+          {
+            "numero": 2,
+            "titulo": "A MEMÓRIA",
+            "paragrafos": [
+              "Você está numa sala com duas pessoas.",
+              "Uma delas está falando — acusando alguém que não está presente. As palavras são precisas, a voz é calma, a lógica é impecável. Tudo que está sendo dito é verdade.",
+              "Tudo que está sendo dito é verdade — e é incompleto.",
+              "Você sabe o que falta. Está aqui, dentro de você, pesando. Não é uma informação pequena — é a informação que muda tudo. Que desfaz a acusação. Que salva a pessoa que não está presente para se defender.",
+              "A outra pessoa na sala olha para você.",
+              "Não com expectativa — com abertura. Como alguém que ainda está construindo uma opinião e está disposto a ouvir mais.",
+              "Você abre a boca.",
+              "E diz algo verdadeiro que não é completo.",
+              "A outra pessoa aceita. Fecha a opinião. A conversa termina.",
+              "Você sai da sala carregando o que não disse.",
+              "Vai carregar por anos. Vai carregar até morrer naquela vida. E alguma coisa — não sabe o que, não sabe como — trouxe até aqui."
+            ]
+          },
+          {
+            "numero": 3,
+            "titulo": "A CONEXÃO",
+            "paragrafos": [
+              "Um dos que chegaram com você foi condenado por algo que o seu silêncio permitiu.",
+              "Não nesta vida. Em outra. Mas você vai sentir o peso disso quando estiver perto dele — uma urgência difusa de fazer algo por ele sem saber exatamente o quê. Como uma dívida que o corpo lembra mesmo quando a mente esqueceu.",
+              "Não confunda isso com culpa. Culpa paralisa.",
+              "Isso é outra coisa. É o sistema cobrando de forma que você ainda não entende completamente.",
+              "Há também outro nos que chegaram com você que tem uma clareza sobre as coisas que às vezes vai parecer sobrenatural. Que vê o que os outros não veem, que está presente de uma forma que os outros não estão. Você vai sentir a tentação de confiar nele completamente.",
+              "É uma tentação razoável.",
+              "Mas lembre que da última vez que você protegeu alguém com um silêncio bem-intencionado, foi porque confiou demais na sua própria avaliação do que precisava ser protegido.",
+              "A pergunta não é em quem confiar.",
+              "A pergunta é o que você faz quando o que precisa ser dito vai custar algo seu."
+            ]
+          }
+        ]
+      },
+      {
+        "numero": 4,
+        "papel": "O JUIZ",
+        "subtitulo": "Aquele Que Condenou Com Convicção e Informação Incompleta",
+        "paginas": [
+          {
+            "numero": 1,
+            "titulo": "A DÍVIDA",
+            "paragrafos": [
+              "Em algum momento que você não lembra com clareza, numa vida que você não lembra como sua, você tomou uma decisão irreversível sobre a vida de outro.",
+              "Não por corrupção. Por convicção.",
+              "Você tinha autoridade. Tinha responsabilidade. E tinha informação suficiente para formar uma opinião sólida — ou assim acreditava. O que você não tinha, e não buscou porque a opinião já estava formada, era o resto. A parte que estava com alguém que não disse.",
+              "Você condenou alguém inocente.",
+              "E nunca soube.",
+              "Morreu naquela vida convicto de que havia feito o certo. Não há nada mais perturbador que isso — não a má-fé, mas a boa consciência de quem errou completamente e foi embora tranquilo.",
+              "O condenado existe nesta vida. A injustiça nunca foi reparada porque você nunca soube que havia uma injustiça.",
+              "Há também alguém que tinha a informação que faltava e não entregou. Essa pessoa também está aqui. Entre você e ela existe uma dívida que nenhum dos dois compreende completamente ainda."
+            ],
+            "destaque_titulo": "O padrão que esta vida criou em você",
+            "destaque": "Quando você tem informação suficiente para formar uma opinião, você para de buscar informação. A certeza prematura funciona como proteção — contra a complexidade, contra a ambiguidade, contra a possibilidade de que o que parece claro não seja.\n\nVocê não é arrogante. É eficiente. Há uma diferença — mas nos momentos que importam, ela desaparece.\n\nO custo disso ainda está sendo calculado."
+          },
+          {
+            "numero": 2,
+            "titulo": "A MEMÓRIA",
+            "paragrafos": [
+              "Você está assinando algo.",
+              "A mão não treme. Você acredita completamente no que está fazendo — essa é a parte que fica, não o papel, não a pena, mas a absoluta ausência de dúvida no momento em que a assinatura acontece.",
+              "Você levanta a cabeça depois de assinar.",
+              "Há alguém na sala — não a pessoa que será afetada pelo documento, mas outra. Alguém que esteve quieto durante toda a conversa. Você olha para ele por um segundo, esperando alguma coisa — confirmação, talvez, ou o conforto de que outra pessoa também acredita no que você acabou de fazer.",
+              "Ele não diz nada.",
+              "Você interpreta o silêncio como concordância.",
+              "Anos depois — numa vida diferente, num lugar diferente, num corpo diferente que não sabe que é diferente — você vai entender que o silêncio não era concordância.",
+              "Era o peso de algo que ele sabia e não disse.",
+              "E que você não perguntou."
+            ]
+          },
+          {
+            "numero": 3,
+            "titulo": "A CONEXÃO",
+            "paragrafos": [
+              "Um dos que chegaram com você sabe algo que não disse.",
+              "Você vai sentir isso nele como uma espécie de incompletude — como quando alguém responde uma pergunta com precisão técnica mas você sabe que a resposta tem mais. Você vai querer pressionar. Vai sentir que tem o direito de saber.",
+              "Talvez tenha. Talvez não seja desta forma que funciona.",
+              "Há também outro nos que chegaram com você que carrega algo que foi tirado dele — não material, não desta vida. Algo mais antigo. Você vai sentir uma clareza nele que vai contrastar com a sua própria tendência de fechar opiniões cedo. Isso vai ser incômodo às vezes.",
+              "Deixa ser.",
+              "A última vez que você ignorou alguém que ainda estava procurando quando você já havia encontrado, custou uma vida que não era sua para custar."
+            ]
+          }
+        ]
+      }
+    ],
+    "guia_mestre": {
+      "titulo": "Guia do Mestre — Os Quatro Envelopes",
+      "secoes": [
+        {
+          "titulo": "O Que Cada Jogador Sabe Sobre os Outros",
+          "paragrafos": [
+            "Ninguém sabe o conteúdo do envelope dos outros.",
+            "Mas as Páginas 3 de cada envelope dão pistas sobre um ou dois dos outros personagens — sem nomeá-los. Ao longo da temporada, os jogadores vão começar a cruzar essas pistas com o que observam uns dos outros.",
+            "Isso é intencional. O reconhecimento entre eles deve ser gradual, incômodo, e nunca completamente confirmado pelo Mestre — eles precisam chegar lá sozinhos."
+          ]
+        },
+        {
+          "titulo": "Quando as Memórias Vazam",
+          "intro": "As Páginas 2 são fragmentos sensoriais da vida colonial de 1650. Ao longo da T1, o Mestre pode acionar esses fragmentos em momentos específicos:",
+          "lista": [
+            "Abel: a memória vaza quando está na Área Verde à noite ou em qualquer local com velas e terra batida. A criança no chão ressoa com as 33 almas presas.",
+            "O Cobrador: a memória vaza em momentos de fuga ou decisão rápida sob pressão — especialmente quando outro personagem está em risco e ele tem uma saída.",
+            "O Silencioso: a memória vaza quando está prestes a revelar informação crucial — especialmente se revelar essa informação tem custo pessoal. O Mestre pode acionar a rolagem de POD nesse momento.",
+            "O Juiz: a memória vaza quando forma uma conclusão sobre alguém ou algo sem ter toda a informação. O Mestre descreve a sensação de assinar algo sem ler completamente."
+          ]
+        },
+        {
+          "titulo": "Quando o Sistema de Dívida É Acionado",
+          "intro": "Cada padrão tem um gatilho específico:",
+          "lista": [
+            "Abel: quando a situação exige que ele se proteja em vez de proteger outro — POD ou a ação de proteção acontece automaticamente.",
+            "O Cobrador: quando a situação exige escolher entre si mesmo e outro com custo real — POD ou ele encontra uma justificativa para escolher a si mesmo.",
+            "O Silencioso: quando tem informação crucial e revelá-la custa algo pessoal — POD ou omite a parte que importa.",
+            "O Juiz: quando tem informação suficiente para uma opinião e há mais informação disponível — POD ou fecha a conclusão antes de buscar o resto."
+          ]
+        },
+        {
+          "titulo": "O Arco de Resolução ao Longo das Temporadas",
+          "paragrafos": [
+            "T1: Os personagens descobrem que têm padrões. Sentem o peso. Nenhum resolve ainda.",
+            "T2: O Cobrador e o Silencioso resolvem seus karmas — o Cobrador escolhe o outro em vez de si mesmo num momento que realmente custa; o Silencioso diz a verdade completa num momento onde guardar seria mais seguro.",
+            "T3: O Juiz resolve o karma — busca a informação que falta mesmo depois de ter formado uma opinião, e muda uma decisão irreversível de forma que custa tudo. Abel descobre que o karma dele não é com nenhum dos outros três. É com Caim. E a pergunta que fica: pode ser resolvido sem os dois presentes?"
+          ]
+        },
+        {
+          "titulo": "A Vida Colonial — O Que Vai Emergindo",
+          "paragrafos": [
+            "Os detalhes da missão de São Miguel do Sertão em 1650 emergem gradualmente através das memórias, das fichas encontradas, e de fragmentos que aparecem em locais específicos de Novavera.",
+            "O Mestre sabe a história completa. Os jogadores vão reconstruí-la peça por peça."
+          ],
+          "lista_titulo": "O que nunca é dito explicitamente pelo Mestre:",
+          "lista": [
+            "Que os quatro estiveram juntos em 1650",
+            "Que a criança que morreu naquela noite tem conexão com as 33 almas de Novavera",
+            "Que a missão jesuíta de 1650 ficava no mesmo ponto do cerrado onde Novavera foi construída"
+          ],
+          "fecho": "Essa última revelação — que Novavera foi construída exatamente onde a vida anterior aconteceu — é o plot twist do meio da T1 que muda tudo que veio antes."
+        }
+      ]
+    }
   }
 }
