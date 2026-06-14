@@ -251,7 +251,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;
 .search-input::placeholder{color:rgba(212,192,154,.3)}
 .search-results{max-height:320px;overflow-y:auto}
 .search-result{padding:12px 22px;cursor:pointer;border-bottom:1px solid rgba(154,122,42,.08);transition:background .15s}
-.search-result:hover{background:rgba(154,122,42,.07)}
+.search-result:hover,.search-result.active{background:linear-gradient(to right,rgba(107,15,15,.25),rgba(154,122,42,.08));border-left:3px solid var(--blood);padding-left:19px}
 .search-result-label{font-family:"Cinzel",serif;font-size:11.5px;letter-spacing:4px;color:var(--gold-dim);text-transform:uppercase;margin-bottom:3px}
 .search-result-title{font-family:"Cormorant Garamond",serif;font-size:20px;color:var(--parch)}
 .search-hint{font-family:"Cinzel",serif;font-size:11.5px;letter-spacing:3px;color:rgba(154,122,42,.35);text-transform:uppercase;padding:10px 22px;border-top:1px solid rgba(154,122,42,.1)}
@@ -453,6 +453,11 @@ em .auto-link,em.dossie-fala .auto-link{font-style:italic}
 .dossie-parte:hover:not(.open){background:rgba(255,247,225,.6)}
 .dossie-parte.open{background:transparent;border-color:rgba(107,15,15,.5)}
 .dossie-parte-hdr{display:flex;align-items:center;gap:16px;padding:16px 22px;cursor:pointer;position:relative;transition:background .2s}
+.dossie-toc-narrar{background:linear-gradient(135deg,var(--blood) 0%,var(--blood-deep) 100%) !important;color:#f5e7c8 !important;border-color:var(--blood) !important;font-weight:700 !important}
+.dossie-toc-narrar:hover{background:linear-gradient(135deg,var(--blood-deep) 0%,#4a0808 100%) !important;border-color:var(--gold) !important;color:#fff !important}
+.dossie-parte-narrar{padding:12px 22px 6px;border-bottom:1px dashed rgba(154,122,42,.25);margin-bottom:8px}
+.dossie-parte-narrar-btn{font-family:"Cinzel",serif;font-size:10.5px;letter-spacing:2px;color:var(--blood);background:linear-gradient(135deg,rgba(154,122,42,.15),rgba(107,15,15,.08));border:1px solid var(--blood-dim);padding:8px 16px;cursor:pointer;transition:all .2s;text-transform:uppercase;font-weight:700;width:100%;text-align:left}
+.dossie-parte-narrar-btn:hover{background:linear-gradient(135deg,var(--blood),var(--blood-deep));color:#f5e7c8;border-color:var(--blood)}
 .dossie-parte-hdr:hover{background:rgba(107,15,15,.07)}
 .dossie-parte.open .dossie-parte-hdr{background:rgba(107,15,15,.1);border-bottom:2px solid rgba(107,15,15,.35)}
 .dossie-parte-num{font-family:"Cinzel",serif;font-size:11.5px;letter-spacing:4px;color:var(--blood);text-transform:uppercase;font-weight:700;white-space:nowrap}
@@ -750,6 +755,270 @@ ol.ol li{margin:8px 0}
   .doc-prop, .diary-prop { break-inside: avoid; box-shadow: none !important; }
   @page { margin: 15mm; size: A4; }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   MODO NARRAR — página dedicada de narração cena a cena
+   ═══════════════════════════════════════════════════════════ */
+.nav-narrar{position:relative}
+.nav-narrar::after{content:"EP1";position:absolute;right:10px;top:50%;transform:translateY(-50%);font-family:"Cinzel",serif;font-size:8px;letter-spacing:1.5px;color:var(--gold);background:rgba(154,122,42,.18);padding:2px 6px;border:1px solid rgba(154,122,42,.4)}
+
+.narrar-shell{display:grid;grid-template-columns:280px 1fr;gap:0;height:calc(100vh - 60px);min-height:600px}
+.narrar-toc{background:rgba(0,0,0,.35);border-right:1px solid rgba(154,122,42,.25);padding:18px 0;overflow-y:auto;position:sticky;top:0}
+.narrar-toc-hdr{font-family:"Cinzel",serif;font-size:10.5px;letter-spacing:3.5px;color:var(--gold);text-transform:uppercase;text-align:center;padding:0 16px 14px;border-bottom:1px solid rgba(154,122,42,.2);font-weight:700}
+.narrar-toc-arco{padding:14px 0 4px}
+.narrar-toc-arco-ttl{font-family:"Cinzel",serif;font-size:9.5px;letter-spacing:2.5px;color:var(--blood);text-transform:uppercase;padding:0 18px;margin-bottom:6px;font-weight:700;opacity:.85}
+.narrar-toc-cena{display:flex;align-items:flex-start;gap:8px;padding:8px 18px;font-family:"Cormorant Garamond",serif;font-size:15.5px;font-weight:500;color:var(--parch);cursor:pointer;transition:all .15s;border-left:3px solid transparent;line-height:1.35}
+.narrar-toc-cena:hover{background:rgba(154,122,42,.1);border-left-color:rgba(154,122,42,.4)}
+.narrar-toc-cena.active{background:linear-gradient(to right,rgba(107,15,15,.25),transparent);border-left-color:var(--blood);color:#f5e7c8;font-weight:700}
+.narrar-toc-num{font-family:"Cinzel",serif;font-size:11px;color:var(--gold-dim);font-weight:700;min-width:22px;flex-shrink:0;padding-top:2px}
+.narrar-toc-cena.active .narrar-toc-num{color:var(--gold)}
+.narrar-toc-cena.visitada .narrar-toc-num::after{content:" ✓";color:var(--gold-dim);font-size:9px}
+
+/* Painel principal da cena */
+.narrar-main{background:var(--parch);color:var(--ink);overflow-y:auto;position:relative;padding-bottom:80px}
+.narrar-cena-hdr{position:sticky;top:0;background:linear-gradient(to bottom,var(--parch) 0%,var(--parch) 80%,rgba(244,234,216,.95) 100%);padding:24px 36px 16px;border-bottom:1px solid rgba(107,15,15,.25);z-index:10}
+.narrar-cena-meta{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:12px;margin-bottom:8px}
+.narrar-cena-pos{font-family:"Cinzel",serif;font-size:10px;letter-spacing:3px;color:var(--gold-dim);text-transform:uppercase;font-weight:700}
+.narrar-cena-arco{font-family:"Cinzel",serif;font-size:10px;letter-spacing:2px;color:var(--blood);text-transform:uppercase;font-weight:700}
+.narrar-cena-ttl{font-family:"Cinzel Decorative","Cinzel",serif;font-size:26px;font-weight:700;color:var(--blood);letter-spacing:.5px;margin-bottom:4px;line-height:1.2}
+.narrar-cena-sub{font-family:"IM Fell English",serif;font-style:italic;font-size:16px;color:var(--ink-soft);margin-bottom:4px}
+.narrar-cena-info{display:flex;gap:14px;flex-wrap:wrap;font-family:"Cinzel",serif;font-size:10px;letter-spacing:1.5px;color:var(--ash);text-transform:uppercase;margin-top:8px;font-weight:600}
+.narrar-cena-info span{display:inline-flex;align-items:center;gap:5px}
+
+.narrar-cena-body{padding:18px 36px}
+.narrar-atmosfera{font-family:"Cormorant Garamond",serif;font-size:19px;font-weight:600;font-style:italic;line-height:1.65;color:var(--ink);background:linear-gradient(135deg,rgba(154,122,42,.1),rgba(107,15,15,.04));border-left:3px solid var(--gold);padding:14px 20px;margin-bottom:24px}
+
+/* Beats — cada tipo tem estilo próprio */
+.beat{margin:18px 0;padding:14px 20px;position:relative}
+.beat-label{font-family:"Cinzel",serif;font-size:10px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:8px;font-weight:700;display:flex;align-items:center;gap:8px}
+.beat-label::before{content:"";width:18px;height:1px;background:var(--gold-dim)}
+.beat-titulo{font-family:"Cinzel",serif;font-size:14px;font-weight:700;color:var(--blood);margin-bottom:6px;letter-spacing:.5px}
+.beat-horario{font-family:"Cinzel",serif;font-size:10px;letter-spacing:2px;color:var(--gold-dim);font-weight:700;margin-left:auto}
+.beat-contexto{font-family:"Cormorant Garamond",serif;font-size:14px;font-style:italic;color:var(--ash);margin-bottom:6px;font-weight:600}
+
+/* Narração — texto para ler em voz alta */
+.beat.narracao{background:rgba(255,247,225,.45);border:1px solid rgba(154,122,42,.3);border-left:5px solid var(--gold);padding:18px 24px}
+.beat.narracao .beat-texto{font-family:"Cormorant Garamond",serif;font-size:21px;font-weight:600;line-height:1.7;color:var(--ink)}
+
+/* Fala de NPC */
+.beat.fala{background:rgba(107,15,15,.06);border:1px solid rgba(107,15,15,.3);border-left:4px solid var(--blood);padding:14px 20px}
+.beat.fala .beat-npc{font-family:"Cinzel",serif;font-size:11.5px;letter-spacing:2.5px;color:var(--blood);text-transform:uppercase;font-weight:700;margin-bottom:5px}
+.beat.fala .beat-texto{font-family:"Cormorant Garamond",serif;font-size:18px;font-weight:600;font-style:italic;line-height:1.6;color:var(--ink)}
+
+/* Teste / rolagem */
+.beat.teste{background:linear-gradient(135deg,rgba(90,74,48,.1),rgba(154,122,42,.06));border:1px dashed rgba(154,122,42,.5);padding:14px 20px}
+.beat.teste .beat-teste-line{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+.beat.teste .beat-atributo{font-family:"Cinzel",serif;font-size:12.5px;letter-spacing:2px;color:var(--blood);font-weight:700;text-transform:uppercase}
+.beat.teste .beat-dificuldade{font-family:"Cinzel",serif;font-size:18px;font-weight:900;color:var(--gold);background:rgba(107,15,15,.1);padding:3px 12px;border:1px solid rgba(107,15,15,.3)}
+.beat.teste .beat-destrava{font-family:"Cormorant Garamond",serif;font-size:17px;font-weight:600;line-height:1.55;color:var(--ink);margin-top:8px}
+
+/* Prop referenciado */
+.beat.prop{background:rgba(154,122,42,.1);border:1px solid rgba(154,122,42,.4);padding:12px 20px;cursor:pointer;transition:all .2s}
+.beat.prop:hover{background:rgba(154,122,42,.2);border-color:var(--gold)}
+.beat.prop .beat-prop-tit{font-family:"Cinzel",serif;font-size:12.5px;letter-spacing:2px;color:var(--blood);font-weight:700;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.beat.prop .beat-prop-tit::before{content:"❦";color:var(--gold);font-size:18px}
+.beat.prop .beat-prop-ctx{font-family:"Cormorant Garamond",serif;font-size:16px;font-weight:600;color:var(--ink);margin-top:5px}
+
+/* Escolha — opções */
+.beat.escolha{background:rgba(90,74,48,.08);border:1px solid rgba(90,74,48,.4);padding:14px 20px}
+.beat.escolha .beat-opcoes{margin-top:8px;padding-left:0;list-style:none}
+.beat.escolha .beat-opcoes li{font-family:"Cormorant Garamond",serif;font-size:17px;font-weight:600;line-height:1.55;color:var(--ink);padding:7px 0 7px 22px;position:relative;border-bottom:1px dashed rgba(90,74,48,.2)}
+.beat.escolha .beat-opcoes li:last-child{border-bottom:none}
+.beat.escolha .beat-opcoes li::before{content:"◆";position:absolute;left:0;color:var(--gold-dim);font-size:11px;top:11px}
+
+/* Momento de pavor */
+.beat.momento_pavor{background:linear-gradient(135deg,rgba(107,15,15,.15),rgba(107,15,15,.05));border:1px solid var(--blood);border-left:4px solid var(--blood);padding:16px 22px}
+.beat.momento_pavor .beat-label{color:var(--blood)}
+.beat.momento_pavor .beat-label::before{background:var(--blood)}
+.beat.momento_pavor .beat-titulo{color:var(--blood-deep);font-size:16px}
+.beat.momento_pavor .beat-texto{font-family:"Cormorant Garamond",serif;font-size:18px;font-weight:600;line-height:1.6;color:var(--ink)}
+
+/* Mecânica de jogo */
+.beat.mecanica{background:rgba(90,74,48,.12);border:1px solid rgba(154,122,42,.35);padding:14px 20px}
+.beat.mecanica .beat-titulo{color:var(--ash)}
+.beat.mecanica .beat-texto{font-family:"Cormorant Garamond",serif;font-size:17px;font-weight:600;line-height:1.6;color:var(--ink)}
+
+/* Observação do Mestre — pode ser ocultada pelo Modo Seguro */
+.beat.observacao_mestre{background:repeating-linear-gradient(45deg,rgba(0,0,0,.04),rgba(0,0,0,.04) 8px,rgba(0,0,0,.07) 8px,rgba(0,0,0,.07) 12px);border:1px solid rgba(90,74,48,.4);padding:12px 20px;position:relative}
+.beat.observacao_mestre::before{content:"MESTRE";position:absolute;top:-8px;right:14px;font-family:"Cinzel",serif;font-size:8.5px;letter-spacing:2.5px;color:var(--gold);background:var(--parch);padding:2px 8px;border:1px solid var(--gold-dim);font-weight:700}
+.beat.observacao_mestre .beat-titulo{font-size:13px;color:var(--ash)}
+.beat.observacao_mestre .beat-texto{font-family:"Cormorant Garamond",serif;font-size:16px;font-weight:600;line-height:1.55;color:var(--ink-soft);font-style:italic}
+body.modo-seguro .beat.observacao_mestre,
+body.modo-seguro .narrar-mestre-only{display:none}
+
+/* Mestre-only bloco no rodapé da cena */
+.narrar-mestre-only{margin-top:28px;padding:18px 22px;background:rgba(0,0,0,.06);border:1px dashed rgba(90,74,48,.6);position:relative}
+.narrar-mestre-only::before{content:"SEGREDO DO MESTRE";position:absolute;top:-10px;left:18px;background:var(--parch);padding:2px 10px;font-family:"Cinzel",serif;font-size:9.5px;letter-spacing:3px;color:var(--blood);font-weight:700;border:1px solid var(--blood-dim)}
+.narrar-mestre-only-txt{font-family:"Cormorant Garamond",serif;font-size:16px;font-weight:600;line-height:1.55;color:var(--ink);font-style:italic;margin-top:6px}
+
+/* Botões de navegação fixos no rodapé */
+.narrar-footer{position:sticky;bottom:0;background:linear-gradient(to top,var(--parch) 0%,var(--parch) 90%,rgba(244,234,216,.85) 100%);border-top:1px solid rgba(107,15,15,.25);padding:14px 36px;display:flex;justify-content:space-between;align-items:center;gap:14px;z-index:9}
+.narrar-nav-btn{font-family:"Cinzel",serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--blood);background:rgba(154,122,42,.12);border:1px solid var(--blood-dim);padding:10px 18px;cursor:pointer;transition:all .2s;font-weight:700}
+.narrar-nav-btn:hover{background:rgba(107,15,15,.15);color:var(--blood-deep);border-color:var(--blood)}
+.narrar-nav-btn:disabled{opacity:.35;cursor:not-allowed}
+.narrar-progresso{font-family:"Cinzel",serif;font-size:11px;letter-spacing:2px;color:var(--ash);font-weight:700}
+.narrar-modo-seguro{font-family:"Cinzel",serif;font-size:9.5px;letter-spacing:1.8px;color:var(--gold-dim);background:transparent;border:1px solid rgba(154,122,42,.4);padding:7px 12px;cursor:pointer;font-weight:700;text-transform:uppercase}
+.narrar-modo-seguro:hover{color:var(--gold);border-color:var(--gold)}
+.narrar-modo-seguro.ativo{background:var(--blood);color:#f5e7c8;border-color:var(--blood)}
+
+/* Indicador de destrava no fim da cena */
+.narrar-destrava{margin-top:22px;padding:16px 22px;background:linear-gradient(135deg,rgba(154,122,42,.1),rgba(107,15,15,.06));border:1px solid var(--gold);border-left:4px solid var(--gold)}
+.narrar-destrava-lbl{font-family:"Cinzel",serif;font-size:10.5px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;font-weight:700;margin-bottom:8px}
+.narrar-destrava-list{display:flex;flex-wrap:wrap;gap:8px}
+.narrar-destrava-btn{font-family:"Cinzel",serif;font-size:10.5px;letter-spacing:1.5px;color:var(--blood);background:rgba(255,247,225,.6);border:1px solid var(--blood-dim);padding:8px 14px;cursor:pointer;transition:all .2s;text-transform:uppercase;font-weight:700}
+.narrar-destrava-btn:hover{background:var(--blood);color:#f5e7c8}
+
+/* ═══════════════════════════════════════════════════════════
+   PEEK EMPILHÁVEL — modal lateral que abre por cima da cena
+   ═══════════════════════════════════════════════════════════ */
+.peek-overlay{position:fixed;inset:0;background:rgba(8,5,2,.6);z-index:100;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
+.peek-overlay.aberto{opacity:1;visibility:visible}
+
+.peek-painel{position:fixed;top:0;right:0;bottom:0;width:min(720px,68vw);background:var(--parch);box-shadow:-12px 0 32px rgba(0,0,0,.5);z-index:101;transform:translateX(100%);transition:transform .3s cubic-bezier(.5,0,.2,1);display:flex;flex-direction:column}
+.peek-painel.aberto{transform:translateX(0)}
+
+.peek-hdr{position:sticky;top:0;background:var(--parch);padding:14px 24px 12px;border-bottom:1px solid rgba(107,15,15,.25);display:flex;align-items:center;gap:12px;z-index:10}
+.peek-back{font-family:"Cinzel",serif;font-size:10.5px;letter-spacing:2px;color:var(--blood);background:rgba(154,122,42,.12);border:1px solid var(--blood-dim);padding:7px 12px;cursor:pointer;transition:all .2s;text-transform:uppercase;font-weight:700}
+.peek-back:hover{background:rgba(107,15,15,.15);color:var(--blood-deep)}
+.peek-back:disabled{opacity:.3;cursor:not-allowed}
+.peek-close{margin-left:auto;font-family:"Cinzel",serif;font-size:14px;color:var(--ash);background:transparent;border:1px solid var(--ash);width:32px;height:32px;cursor:pointer;transition:all .2s;font-weight:700}
+.peek-close:hover{background:var(--blood);color:#f5e7c8;border-color:var(--blood)}
+.peek-trilha{font-family:"Cinzel",serif;font-size:10px;letter-spacing:1.5px;color:var(--ash);text-transform:uppercase;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600}
+.peek-trilha-item{color:var(--gold-dim);font-weight:700}
+.peek-trilha-sep{margin:0 6px;color:var(--ash);opacity:.5}
+
+.peek-body{flex:1;overflow-y:auto;padding:22px 28px}
+.peek-tipo{font-family:"Cinzel",serif;font-size:10px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;font-weight:700;margin-bottom:6px}
+.peek-nome{font-family:"Cinzel Decorative","Cinzel",serif;font-size:28px;font-weight:700;color:var(--blood);letter-spacing:.5px;line-height:1.1;margin-bottom:6px}
+.peek-sub{font-family:"IM Fell English",serif;font-style:italic;font-size:16px;color:var(--ink-soft);margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid rgba(107,15,15,.18)}
+.peek-secao{margin:14px 0}
+.peek-secao-lbl{font-family:"Cinzel",serif;font-size:10.5px;letter-spacing:2.5px;color:var(--blood);text-transform:uppercase;font-weight:700;margin-bottom:8px}
+.peek-p{font-family:"Cormorant Garamond",serif;font-size:17px;font-weight:600;line-height:1.6;color:var(--ink);margin-bottom:8px}
+.peek-fala{background:rgba(107,15,15,.06);border-left:3px solid var(--blood);padding:10px 16px;margin:8px 0;font-family:"Cormorant Garamond",serif;font-size:17px;font-weight:600;font-style:italic;line-height:1.55;color:var(--ink)}
+.peek-fala-ctx{font-family:"Cinzel",serif;font-size:9.5px;letter-spacing:1.8px;color:var(--ash);text-transform:uppercase;margin-bottom:4px;font-weight:600}
+.peek-ul{margin:6px 0;padding-left:22px;font-family:"Cormorant Garamond",serif;font-size:17px;font-weight:600;line-height:1.55;color:var(--ink)}
+.peek-ul li{margin:4px 0}
+
+@media (max-width:900px){
+  .narrar-shell{grid-template-columns:1fr;height:auto}
+  .narrar-toc{position:relative;max-height:240px;border-right:none;border-bottom:1px solid rgba(154,122,42,.25)}
+  .peek-painel{width:100vw}
+}
+
+/* ═══════════════════════════════════════════════════════════
+   PÁGINA DAS 10 PRAGAS — grid de cards com status
+   ═══════════════════════════════════════════════════════════ */
+.pragas-wrap{padding:8px 36px 36px}
+.pragas-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:18px;margin-top:22px}
+.praga-card{background:linear-gradient(135deg,rgba(0,0,0,.25),rgba(0,0,0,.45));border:1px solid rgba(154,122,42,.3);position:relative;transition:all .25s;overflow:hidden}
+.praga-card:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.5)}
+.praga-card-hdr{padding:16px 20px 12px;border-bottom:1px solid rgba(154,122,42,.2);position:relative}
+.praga-numero{font-family:"Cinzel Decorative","Cinzel",serif;font-size:48px;font-weight:700;color:rgba(154,122,42,.18);position:absolute;top:6px;right:14px;line-height:1;pointer-events:none}
+.praga-nome{font-family:"Cinzel",serif;font-size:18px;font-weight:700;color:var(--blood);letter-spacing:1px;text-transform:uppercase;position:relative;z-index:1}
+.praga-mao{display:inline-block;font-family:"Cinzel",serif;font-size:9.5px;letter-spacing:2px;padding:3px 9px;margin-top:6px;text-transform:uppercase;font-weight:700;border:1px solid;position:relative;z-index:1}
+.praga-mao.armindo{color:var(--blood);background:rgba(107,15,15,.15);border-color:var(--blood-dim)}
+.praga-mao.no{color:var(--gold);background:rgba(154,122,42,.12);border-color:var(--gold-dim)}
+.praga-mao.ambigua{color:var(--ash);background:rgba(90,74,48,.15);border-color:var(--ash)}
+.praga-mao.armindo-sobre-si{color:#c79b3f;background:rgba(154,122,42,.22);border-color:var(--gold)}
+.praga-status{position:absolute;top:14px;right:14px;font-family:"Cinzel",serif;font-size:9px;letter-spacing:2px;padding:3px 9px;text-transform:uppercase;font-weight:700;border:1px solid;z-index:2}
+.praga-status.semeada{color:#fff;background:linear-gradient(135deg,var(--blood) 0%,var(--blood-deep) 100%);border-color:var(--blood)}
+.praga-status.pendente{color:var(--ash);background:rgba(90,74,48,.2);border-color:var(--ash);opacity:.7}
+.praga-status.descoberta{color:var(--gold);background:rgba(154,122,42,.18);border-color:var(--gold)}
+.praga-card-body{padding:14px 20px}
+.praga-vitima{font-family:"Cormorant Garamond",serif;font-size:16px;font-weight:600;line-height:1.5;color:var(--parch);margin-bottom:10px}
+.praga-secao{margin-top:10px}
+.praga-secao-lbl{font-family:"Cinzel",serif;font-size:9.5px;letter-spacing:2.5px;color:var(--gold-dim);text-transform:uppercase;font-weight:700;margin-bottom:5px}
+.praga-secao-txt{font-family:"Cormorant Garamond",serif;font-size:14.5px;font-weight:500;line-height:1.55;color:var(--parch-dim);font-style:italic}
+.praga-escalas{display:flex;flex-direction:column;gap:6px;margin-top:6px}
+.praga-escala{background:rgba(107,15,15,.08);border-left:3px solid var(--blood-dim);padding:7px 12px}
+.praga-escala-nome{font-family:"Cinzel",serif;font-size:9px;letter-spacing:2px;color:var(--blood);text-transform:uppercase;font-weight:700;margin-bottom:3px}
+.praga-escala-sinal{font-family:"Cormorant Garamond",serif;font-size:14px;font-weight:500;line-height:1.5;color:var(--parch-dim)}
+.praga-sessao{margin-top:12px;font-family:"Cinzel",serif;font-size:9px;letter-spacing:1.5px;color:var(--ash);text-transform:uppercase;padding-top:10px;border-top:1px dashed rgba(154,122,42,.2);font-weight:600}
+
+/* ═══════════════════════════════════════════════════════════
+   PÁGINA DE PROPS — grid de cards com toggle Mestre/Jogador
+   ═══════════════════════════════════════════════════════════ */
+.props-wrap{padding:8px 36px 36px}
+.props-toggle{display:flex;gap:0;margin:22px 0;background:rgba(0,0,0,.3);border:1px solid var(--gold-dim);padding:0;width:fit-content}
+.props-toggle-btn{font-family:"Cinzel",serif;font-size:11.5px;letter-spacing:2px;text-transform:uppercase;color:var(--ash);background:transparent;border:none;padding:11px 22px;cursor:pointer;transition:all .2s;font-weight:700}
+.props-toggle-btn.active{background:var(--blood);color:#f5e7c8}
+.props-toggle-btn:hover:not(.active){color:var(--gold);background:rgba(154,122,42,.1)}
+.props-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(420px,1fr));gap:18px}
+.prop-card{background:linear-gradient(135deg,rgba(244,234,216,.95),rgba(244,234,216,.85));color:var(--ink);border:1px solid rgba(107,15,15,.25);position:relative;overflow:hidden;transition:all .2s}
+.prop-card:hover{border-color:var(--blood);box-shadow:0 6px 18px rgba(0,0,0,.4)}
+.prop-card.mestre{background:linear-gradient(135deg,rgba(107,15,15,.12),rgba(90,74,48,.18));color:var(--parch);border-color:var(--blood)}
+.prop-card.mestre .prop-tit, .prop-card.mestre .prop-num{color:var(--gold)}
+.prop-card.mestre .prop-texto{color:var(--parch-dim);background:rgba(0,0,0,.25);border-color:rgba(154,122,42,.3)}
+.prop-card-hdr{padding:14px 20px 10px;border-bottom:1px dashed rgba(107,15,15,.25);display:flex;align-items:flex-start;gap:14px}
+.prop-num{font-family:"Cinzel Decorative","Cinzel",serif;font-size:30px;font-weight:700;color:var(--blood);line-height:1;min-width:46px}
+.prop-meta{flex:1}
+.prop-tit{font-family:"Cinzel",serif;font-size:14.5px;font-weight:700;color:var(--blood);letter-spacing:.5px;line-height:1.2}
+.prop-dest{font-family:"Cinzel",serif;font-size:9px;letter-spacing:2px;color:var(--gold-dim);text-transform:uppercase;font-weight:700;margin-top:3px}
+.prop-tag-mestre{position:absolute;top:14px;right:14px;font-family:"Cinzel",serif;font-size:9px;letter-spacing:2px;color:var(--gold);background:var(--blood);padding:3px 9px;text-transform:uppercase;font-weight:700;border:1px solid var(--gold)}
+.prop-card-body{padding:14px 20px}
+.prop-instr{font-family:"Cinzel",serif;font-size:9.5px;letter-spacing:1.5px;color:var(--ash);text-transform:uppercase;font-weight:700;margin-bottom:6px}
+.prop-instr-txt{font-family:"Cormorant Garamond",serif;font-size:14px;font-weight:500;font-style:italic;line-height:1.5;color:var(--ink-soft);margin-bottom:12px}
+.prop-card.mestre .prop-instr-txt{color:var(--parch-dim)}
+.prop-texto{font-family:"Courier New",monospace;font-size:13.5px;line-height:1.6;color:var(--ink);background:rgba(0,0,0,.04);border:1px solid rgba(107,15,15,.18);padding:12px 14px;white-space:pre-wrap;margin-bottom:12px;max-height:280px;overflow-y:auto}
+.prop-tira{background:rgba(107,15,15,.05);border-left:3px solid var(--blood);padding:8px 12px;margin:6px 0;font-family:"Courier New",monospace;font-size:13px;line-height:1.5}
+.prop-tira-pc{font-family:"Cinzel",serif;font-size:8.5px;letter-spacing:2px;color:var(--blood);text-transform:uppercase;font-weight:700;margin-bottom:3px}
+.prop-uso{font-family:"Cinzel",serif;font-size:9.5px;letter-spacing:1.5px;color:var(--gold);text-transform:uppercase;font-weight:700;margin:8px 0 4px;padding-top:8px;border-top:1px dashed rgba(107,15,15,.2)}
+.prop-uso-txt{font-family:"Cormorant Garamond",serif;font-size:14px;font-weight:600;line-height:1.55;color:var(--ink)}
+.prop-card.mestre .prop-uso-txt{color:var(--parch)}
+body.props-modo-jogador .prop-card.mestre{display:none}
+body.props-modo-jogador .prop-uso,
+body.props-modo-jogador .prop-uso-txt{display:none}
+
+/* ═══════════════════════════════════════════════════════════
+   PÁGINA DO PROFETA — Armindo (camada de vilão)
+   ═══════════════════════════════════════════════════════════ */
+.armindo-wrap{padding:8px 36px 36px;max-width:1100px;margin:0 auto}
+.armindo-hero{background:linear-gradient(135deg,rgba(107,15,15,.18),rgba(0,0,0,.4));border:1px solid var(--blood-dim);padding:24px 28px;margin-bottom:24px;position:relative}
+.armindo-hero::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent 0%,var(--blood) 50%,transparent 100%)}
+.armindo-hero-ttl{font-family:"Cinzel Decorative","Cinzel",serif;font-size:24px;font-weight:700;color:var(--blood);letter-spacing:.5px;line-height:1.15;margin-bottom:6px}
+.armindo-hero-sub{font-family:"IM Fell English",serif;font-style:italic;font-size:17px;color:var(--gold);margin-bottom:14px}
+.armindo-hero-txt{font-family:"Cormorant Garamond",serif;font-size:18px;font-weight:600;line-height:1.65;color:var(--parch)}
+.armindo-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px}
+@media (max-width:900px){.armindo-grid{grid-template-columns:1fr}}
+.armindo-pane{background:rgba(0,0,0,.28);border:1px solid rgba(154,122,42,.25);padding:18px 22px}
+.armindo-pane-ttl{font-family:"Cinzel",serif;font-size:11px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;font-weight:700;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid rgba(154,122,42,.2)}
+.armindo-pane-txt{font-family:"Cormorant Garamond",serif;font-size:16px;font-weight:600;line-height:1.6;color:var(--parch)}
+.armindo-pane-txt p{margin:0 0 10px}
+.armindo-pane-txt p:last-child{margin-bottom:0}
+.armindo-quote{background:linear-gradient(135deg,rgba(107,15,15,.1),rgba(154,122,42,.06));border-left:3px solid var(--blood);padding:14px 20px;margin:14px 0;font-family:"Cormorant Garamond",serif;font-size:18px;font-weight:600;font-style:italic;line-height:1.6;color:var(--parch)}
+.armindo-quote-fonte{font-family:"Cinzel",serif;font-size:10px;letter-spacing:2px;color:var(--gold-dim);text-transform:uppercase;margin-top:8px;font-weight:700}
+.armindo-pragas-mao{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.armindo-praga-pill{font-family:"Cinzel",serif;font-size:10px;letter-spacing:1.2px;padding:6px 12px;background:rgba(107,15,15,.18);border:1px solid var(--blood-dim);color:var(--parch);text-transform:uppercase;font-weight:700;cursor:pointer;transition:all .15s}
+.armindo-praga-pill:hover{background:var(--blood);border-color:var(--gold)}
+
+/* ═══════════════════════════════════════════════════════════
+   DIA 18 — CRONOLOGIA VERTICAL
+   ═══════════════════════════════════════════════════════════ */
+.dia18-wrap{padding:8px 36px 36px;max-width:1000px;margin:0 auto}
+.dia18-intro{font-family:"Cormorant Garamond",serif;font-size:17px;font-weight:600;font-style:italic;line-height:1.6;color:var(--parch);margin:18px 0 28px;background:rgba(107,15,15,.08);border-left:3px solid var(--blood);padding:14px 20px}
+.dia18-timeline{position:relative;padding-left:160px}
+.dia18-timeline::before{content:"";position:absolute;left:140px;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,var(--gold-dim) 0%,var(--blood) 50%,var(--gold-dim) 100%)}
+.dia18-evento{position:relative;margin-bottom:22px;padding-left:30px}
+.dia18-evento::before{content:"";position:absolute;left:-8px;top:8px;width:14px;height:14px;border-radius:50%;background:var(--blood);border:3px solid var(--parch);box-shadow:0 0 0 2px var(--blood-dim)}
+.dia18-evento.major::before{background:var(--gold);box-shadow:0 0 0 2px var(--gold)}
+.dia18-evento.climax::before{background:#c93030;box-shadow:0 0 0 3px var(--blood);animation:pulse 2.5s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 3px var(--blood)}50%{box-shadow:0 0 0 5px rgba(201,48,48,.3)}}
+.dia18-hora{position:absolute;left:-160px;top:6px;width:120px;text-align:right;font-family:"Cinzel",serif;font-size:14px;font-weight:700;color:var(--gold);letter-spacing:1px}
+.dia18-evento.major .dia18-hora{font-size:16px;color:var(--gold)}
+.dia18-evento.climax .dia18-hora{color:#e85050}
+.dia18-card{background:rgba(0,0,0,.25);border:1px solid rgba(154,122,42,.25);padding:12px 18px;transition:all .2s}
+.dia18-card:hover{border-color:var(--gold);background:rgba(0,0,0,.35)}
+.dia18-evento.major .dia18-card{border-color:var(--gold);background:linear-gradient(135deg,rgba(154,122,42,.1),rgba(0,0,0,.3))}
+.dia18-evento.climax .dia18-card{border-color:var(--blood);background:linear-gradient(135deg,rgba(107,15,15,.15),rgba(0,0,0,.35))}
+.dia18-titulo{font-family:"Cinzel",serif;font-size:14px;font-weight:700;color:var(--parch);letter-spacing:.5px;margin-bottom:5px}
+.dia18-descricao{font-family:"Cormorant Garamond",serif;font-size:15px;font-weight:500;line-height:1.55;color:var(--parch-dim)}
+.dia18-tag{display:inline-block;font-family:"Cinzel",serif;font-size:9px;letter-spacing:1.5px;color:var(--gold-dim);text-transform:uppercase;font-weight:700;background:rgba(154,122,42,.12);padding:2px 7px;margin-right:6px;border:1px solid rgba(154,122,42,.3)}
+.dia18-tag.oculto{color:var(--blood);background:rgba(107,15,15,.12);border-color:var(--blood-dim)}
+@media (max-width:900px){
+  .dia18-timeline{padding-left:80px}
+  .dia18-timeline::before{left:60px}
+  .dia18-hora{left:-80px;width:55px;font-size:12px}
+}
 </style>
 <body>
 
@@ -782,7 +1051,12 @@ ol.ol li{margin:8px 0}
     <button class="nav-item" data-page="npcs"><span class="nav-icon">☥</span>NPCs</button>
 
     <div class="nav-section">A Investigação</div>
+    <button class="nav-item nav-narrar" data-page="narrar"><span class="nav-icon">▶</span>Modo Narrar</button>
     <button class="nav-item" data-page="temporadas"><span class="nav-icon">❧</span>Temporadas</button>
+    <button class="nav-item" data-page="pragas"><span class="nav-icon">☣</span>As 10 Pragas</button>
+    <button class="nav-item" data-page="props"><span class="nav-icon">❦</span>Props do Ep1</button>
+    <button class="nav-item" data-page="armindo"><span class="nav-icon">☩</span>O Profeta</button>
+    <button class="nav-item" data-page="dia18"><span class="nav-icon">⧗</span>Dia 18 · Cronologia</button>
     <button class="nav-item" data-page="envelopes"><span class="nav-icon">✉</span>Envelopes</button>
     <button class="nav-item" data-page="causalidade"><span class="nav-icon">⟁</span>Causalidade</button>
     <button class="nav-item" data-page="timeline"><span class="nav-icon">⧗</span>Linha do Tempo</button>
@@ -890,6 +1164,51 @@ ol.ol li{margin:8px 0}
   </section>
 
   <!-- TEMPORADAS -->
+  <!-- MODO NARRAR -->
+  <section class="page" id="page-narrar">
+    <div class="narrar-shell" id="narrarShell"></div>
+  </section>
+
+  <!-- AS 10 PRAGAS -->
+  <section class="page" id="page-pragas">
+    <div class="page-hdr">
+      <div class="page-eyebrow">Êxodo Caps. 7–12 · Operacionalizado em Novavera</div>
+      <h2>As 10 Pragas</h2>
+      <p>A marcha semi-consciente do profeta rumo a se oferecer como sinal final</p>
+    </div>
+    <div class="scroll-content" id="pragasScroll"></div>
+  </section>
+
+  <!-- PROPS DO EP1 -->
+  <section class="page" id="page-props">
+    <div class="page-hdr">
+      <div class="page-eyebrow">15 Handouts · Ep1 · Mestre & Jogador</div>
+      <h2>Props do Episódio 1</h2>
+      <p>Tudo que vai à mesa em papel — bilhetes, cartões, fotos, páginas, recortes</p>
+    </div>
+    <div class="scroll-content" id="propsScroll"></div>
+  </section>
+
+  <!-- O PROFETA (Armindo) -->
+  <section class="page" id="page-armindo">
+    <div class="page-hdr">
+      <div class="page-eyebrow">Camada de Vilão · Temporada I</div>
+      <h2>Armindo Vasconcellos</h2>
+      <p>O profeta das pragas — não vilão</p>
+    </div>
+    <div class="scroll-content" id="armindoScroll"></div>
+  </section>
+
+  <!-- DIA 18 — CRONOLOGIA -->
+  <section class="page" id="page-dia18">
+    <div class="page-hdr">
+      <div class="page-eyebrow">18 de março de 2025 · Terça-feira</div>
+      <h2>Dia 18 — Cronologia</h2>
+      <p>De 5h da manhã (corpo achado) até 2h da madrugada (a pegada)</p>
+    </div>
+    <div class="scroll-content" id="dia18Scroll"></div>
+  </section>
+
   <section class="page" id="page-temporadas">
     <div class="page-hdr">
       <div class="page-eyebrow">Temporadas I · II · III</div>
@@ -1865,12 +2184,14 @@ function renderDossie(dossie){
     <div class="dossie-toc">
       <div class="dossie-toc-lbl">Índice do Dossiê — clique para expandir</div>
       <div class="dossie-toc-actions">
+        <button class="dossie-toc-btn dossie-toc-narrar" onclick="navigate('narrar')">▶ Abrir no Modo Narrar</button>
         <button class="dossie-toc-btn" onclick="dossieToggleAll(true)">Expandir todas</button>
         <button class="dossie-toc-btn" onclick="dossieToggleAll(false)">Recolher todas</button>
       </div>
     </div>`;
 
   dossie.partes.forEach(parte=>{
+    const cenaPart = narrarPrimeiraCenaDaParte(parte.numero);
     h += `<div class="dossie-parte" id="dossie-parte-${parte.numero}">
       <div class="dossie-parte-hdr" onclick="dossieTogglePart(${parte.numero})">
         <div class="dossie-parte-num">PARTE ${parte.numero}</div>
@@ -1878,6 +2199,9 @@ function renderDossie(dossie){
         <div class="dossie-parte-chev">▾</div>
       </div>
       <div class="dossie-parte-body">`;
+    if(cenaPart){
+      h += `<div class="dossie-parte-narrar"><button class="dossie-parte-narrar-btn" onclick="event.stopPropagation();narrarAbrirPart('${cenaPart.id}')">▶ Narrar esta parte — abre na cena "${esc(cenaPart.titulo)}"</button></div>`;
+    }
     parte.secoes.forEach(sec=>{
       h += renderDossieSec(sec);
     });
@@ -1886,6 +2210,22 @@ function renderDossie(dossie){
 
   h += `</div>`;
   return h;
+}
+
+// Acha a primeira cena cujo secao_dossie começa com "Parte {numero}"
+function narrarPrimeiraCenaDaParte(numero){
+  if(!DATA.cenas) return null;
+  const prefixo = `Parte ${numero}`;
+  return DATA.cenas.find(c => c.secao_dossie && c.secao_dossie.indexOf(prefixo)===0);
+}
+
+// Wrapper para navegar para o Modo Narrar e abrir cena específica
+function narrarAbrirPart(cenaId){
+  // salva qual cena queremos antes de navegar
+  const state = narrarLoadState();
+  state.cenaId = cenaId;
+  narrarSaveState(state);
+  navigate('narrar');
 }
 
 // Toggle de uma parte específica (acordeão — abrir uma fecha as outras)
@@ -2636,17 +2976,30 @@ function exportNote(){
    ═══════════════════════════════════════════════════════════ */
 function buildSearchIndex(){
   const idx=[];
+  // Páginas e seções
   idx.push({label:'Crônica',title:'Grimório — O Universo',page:'grimorio'});
   DATA.regras.forEach(r=>idx.push({label:'Regra',title:'Regra '+r.numero+' — '+r.titulo,page:'grimorio'}));
   idx.push({label:'Sistema',title:'Regras & Sistema',page:'regras'});
   idx.push({label:'Cidade',title:'Novavera',page:'cidade'});
-  DATA.cidade.locais.forEach(l=>idx.push({label:'Local',title:l.nome,page:'cidade'}));
+  // Cenas — abrem direto no Modo Narrar
+  (DATA.cenas||[]).forEach(c=>idx.push({label:'Cena #'+c.ordem,title:c.titulo,action:'cena',ref:c.id}));
+  // PCs — abrem como peek
+  (DATA.pcs||[]).forEach(p=>idx.push({label:'PC',title:p.nome+' — '+(p.epiteto||''),action:'peek',ref:'pc:'+p.id}));
+  // NPCs — abrem como peek
+  DATA.npcs.forEach(n=>idx.push({label:'NPC · '+n.role,title:n.nome,action:'peek',ref:'npc:'+n.id}));
+  (DATA.npcs_apoio||[]).forEach(n=>idx.push({label:'NPC apoio',title:n.nome,action:'peek',ref:'npc:'+n.id}));
+  // Locais — abrem como peek
+  (DATA.cidade?.locais||[]).forEach(l=>idx.push({label:'Local',title:l.nome,action:'peek',ref:'local:'+l.id}));
+  // Pragas — abrem como peek
+  (DATA.pragas||[]).forEach(p=>idx.push({label:'Praga #'+p.numero,title:p.nome,action:'peek',ref:'praga:'+p.id}));
+  // Props — abrem como peek
+  (DATA.props||[]).forEach(p=>idx.push({label:'Prop #'+p.numero+(p.tipo==='mestre'?' · Mestre':''),title:p.nome,action:'peek',ref:'prop:'+p.id}));
+  // Lore pages
   idx.push({label:'Antagonista',title:'Caim — A Origem de Tudo',page:'caim'});
   DATA.encarnacoes.forEach(e=>idx.push({label:'Encarnação',title:e.titulo+' ('+e.data+')',page:'caim'}));
   idx.push({label:'Antagonista',title:'Abel — O Outro Lado',page:'abel'});
   idx.push({label:'Profeta',title:DATA.profetas.ezequiel.nome,page:'profetas'});
   idx.push({label:'Profeta',title:DATA.profetas.armindo.nome,page:'profetas'});
-  DATA.npcs.forEach(n=>idx.push({label:'NPC · '+n.role,title:n.nome,page:'npcs'}));
   DATA.temporadas.forEach(t=>idx.push({label:'Temporada',title:'T'+roman(t.numero)+' — '+t.titulo,page:'temporadas'}));
   DATA.episodios.forEach(e=>idx.push({label:'Episódio '+roman(e.numero),title:e.titulo,page:'temporadas'}));
   DATA.causalidade.forEach(c=>idx.push({label:'Causalidade',title:c.pergunta,page:'causalidade'}));
@@ -2656,10 +3009,12 @@ function buildSearchIndex(){
   return idx;
 }
 let SEARCH_IDX=[];
+let SEARCH_SELECTED=0;
 function openSearch(){
   document.getElementById('searchOverlay').classList.add('open');
   document.getElementById('searchInput').value='';
   document.getElementById('searchInput').focus();
+  SEARCH_SELECTED=0;
   runSearch();
 }
 function closeSearch(){document.getElementById('searchOverlay').classList.remove('open');}
@@ -2668,21 +3023,781 @@ function runSearch(){
   let res=SEARCH_IDX;
   if(q) res=SEARCH_IDX.filter(r=>(r.title+' '+r.label).toLowerCase().includes(q));
   res=res.slice(0,40);
-  document.getElementById('searchResults').innerHTML=res.length?res.map(r=>
-    `<div class="search-result" onclick="navigate('${r.page}');closeSearch()">
+  // ordena: cenas e PCs primeiro se houver query (mais úteis para sessão)
+  if(q){
+    res.sort((a,b)=>{
+      const w = (r) => r.action==='cena' ? 0
+                : (r.action==='peek' && r.ref?.startsWith('pc:')) ? 1
+                : r.action==='peek' ? 2
+                : 3;
+      return w(a)-w(b);
+    });
+  }
+  SEARCH_RESULTS = res;
+  SEARCH_SELECTED = Math.min(SEARCH_SELECTED, Math.max(0, res.length-1));
+  document.getElementById('searchResults').innerHTML=res.length?res.map((r,i)=>{
+    const onclick = r.action==='cena'
+      ? `closeSearch();narrarAbrirPart('${r.ref}')`
+      : r.action==='peek'
+        ? `closeSearch();goRefPeek('${r.ref}')`
+        : `navigate('${r.page}');closeSearch()`;
+    const isActive = i===SEARCH_SELECTED ? 'active' : '';
+    return `<div class="search-result ${isActive}" data-idx="${i}" onclick="${onclick}" onmouseover="searchSelect(${i})">
       <div class="search-result-label">${esc(r.label)}</div>
       <div class="search-result-title">${esc(r.title)}</div>
-    </div>`).join(''):'<div class="search-result"><div class="search-result-title">Nada encontrado.</div></div>';
+    </div>`;
+  }).join(''):'<div class="search-result"><div class="search-result-title">Nada encontrado.</div></div>';
+}
+let SEARCH_RESULTS=[];
+function searchSelect(i){
+  SEARCH_SELECTED=i;
+  document.querySelectorAll('.search-result').forEach((el,idx)=>el.classList.toggle('active', idx===i));
+}
+function searchActivateCurrent(){
+  const r = SEARCH_RESULTS[SEARCH_SELECTED];
+  if(!r) return;
+  if(r.action==='cena'){ closeSearch(); narrarAbrirPart(r.ref); }
+  else if(r.action==='peek'){ closeSearch(); goRefPeek(r.ref); }
+  else { navigate(r.page); closeSearch(); }
 }
 document.addEventListener('keydown',e=>{
-  if(e.key==='Escape')closeSearch();
-  if((e.ctrlKey||e.metaKey)&&e.key==='k'){e.preventDefault();openSearch();}
+  if(e.key==='Escape'){ if(document.getElementById('searchOverlay').classList.contains('open')) closeSearch(); else if(PEEK_STACK.length>0) peekClose(); }
+  // Cmd+K / Ctrl+K
+  if((e.ctrlKey||e.metaKey)&&(e.key==='k'||e.key==='K')){e.preventDefault();openSearch();}
+  // Atalho '/' — só se não estiver dentro de input/textarea
+  if(e.key==='/' && !['INPUT','TEXTAREA'].includes(document.activeElement?.tagName)){
+    e.preventDefault(); openSearch();
+  }
+  // Navegação dentro do search aberto
+  if(document.getElementById('searchOverlay').classList.contains('open')){
+    if(e.key==='ArrowDown'){ e.preventDefault(); SEARCH_SELECTED=Math.min(SEARCH_SELECTED+1, SEARCH_RESULTS.length-1); searchSelect(SEARCH_SELECTED); document.querySelector('.search-result.active')?.scrollIntoView({block:'nearest'}); }
+    if(e.key==='ArrowUp'){ e.preventDefault(); SEARCH_SELECTED=Math.max(SEARCH_SELECTED-1, 0); searchSelect(SEARCH_SELECTED); document.querySelector('.search-result.active')?.scrollIntoView({block:'nearest'}); }
+    if(e.key==='Enter'){ e.preventDefault(); searchActivateCurrent(); }
+  }
 });
 
 /* ── BOOT ────────────────────────────────────────────────── */
+/* ═══════════════════════════════════════════════════════════════════════
+   MODO NARRAR — implementação completa
+   ═══════════════════════════════════════════════════════════════════════ */
+const NARRAR_STATE_KEY = 'karma-narrar-state-v1';
+const NARRAR_VISITADAS_KEY = 'karma-narrar-visitadas-v1';
+
+function narrarLoadState(){
+  try{
+    const raw = localStorage.getItem(NARRAR_STATE_KEY);
+    if(raw) return JSON.parse(raw);
+  }catch(e){}
+  return { cenaId: null, modoSeguro: false };
+}
+function narrarSaveState(s){
+  try{ localStorage.setItem(NARRAR_STATE_KEY, JSON.stringify(s)); }catch(e){}
+}
+function narrarMarcarVisitada(cenaId){
+  try{
+    const raw = localStorage.getItem(NARRAR_VISITADAS_KEY);
+    const arr = raw ? JSON.parse(raw) : [];
+    if(!arr.includes(cenaId)){ arr.push(cenaId); localStorage.setItem(NARRAR_VISITADAS_KEY, JSON.stringify(arr)); }
+  }catch(e){}
+}
+function narrarVisitadas(){
+  try{ const raw = localStorage.getItem(NARRAR_VISITADAS_KEY); return raw ? JSON.parse(raw) : []; }
+  catch(e){ return []; }
+}
+
+function renderNarrar(){
+  const shell = document.getElementById('narrarShell');
+  if(!shell || !DATA.cenas || !DATA.cenas.length) return;
+  const state = narrarLoadState();
+  const visitadas = narrarVisitadas();
+  // se body classlist tem modo-seguro coerente com state
+  document.body.classList.toggle('modo-seguro', !!state.modoSeguro);
+  // determina cena atual: do state OU primeira cena
+  const cenaAtualId = state.cenaId || DATA.cenas[0].id;
+  // renderiza TOC + main
+  shell.innerHTML = `${renderNarrarTOC(cenaAtualId, visitadas)}${renderNarrarMain(cenaAtualId)}`;
+}
+
+function renderNarrarTOC(cenaAtualId, visitadas){
+  // agrupa por arco
+  const arcos = {};
+  DATA.cenas.forEach(c=>{
+    if(!arcos[c.arco]) arcos[c.arco] = { titulo: c.arco_titulo, cenas: [] };
+    arcos[c.arco].cenas.push(c);
+  });
+  let h = `<div class="narrar-toc">
+    <div class="narrar-toc-hdr">Episódio I · 19 Cenas</div>`;
+  Object.entries(arcos).forEach(([arcoId, arco])=>{
+    h += `<div class="narrar-toc-arco">
+      <div class="narrar-toc-arco-ttl">${esc(arco.titulo)}</div>`;
+    arco.cenas.forEach(c=>{
+      const ativo = c.id===cenaAtualId ? 'active' : '';
+      const visitada = visitadas.includes(c.id) && c.id!==cenaAtualId ? 'visitada' : '';
+      h += `<div class="narrar-toc-cena ${ativo} ${visitada}" onclick="narrarAbrir('${c.id}')">
+        <div class="narrar-toc-num">#${c.ordem}</div>
+        <div>${esc(c.titulo)}</div>
+      </div>`;
+    });
+    h += `</div>`;
+  });
+  h += `</div>`;
+  return h;
+}
+
+function renderNarrarMain(cenaId){
+  const cena = DATA.cenas.find(c=>c.id===cenaId);
+  if(!cena) return '<div class="narrar-main">Cena não encontrada</div>';
+  const idx = DATA.cenas.indexOf(cena);
+  const total = DATA.cenas.length;
+  const prev = idx>0 ? DATA.cenas[idx-1] : null;
+  const next = idx<total-1 ? DATA.cenas[idx+1] : null;
+  const state = narrarLoadState();
+  const modoSeguro = state.modoSeguro;
+
+  let h = `<div class="narrar-main">
+    <div class="narrar-cena-hdr">
+      <div class="narrar-cena-meta">
+        <div class="narrar-cena-pos">Cena ${cena.ordem} de ${total}</div>
+        <div class="narrar-cena-arco">${esc(cena.arco_titulo)}</div>
+      </div>
+      <div class="narrar-cena-ttl">${esc(cena.titulo)}</div>
+      <div class="narrar-cena-sub">${esc(cena.subtitulo||'')}</div>
+      <div class="narrar-cena-info">
+        ${cena.duracao_estimada?`<span>⏱ ${esc(cena.duracao_estimada)}</span>`:''}
+        ${cena.local_ref?`<span>⌖ <a class="auto-link" onclick="goRefPeek('${cena.local_ref}')">${esc(narrarRefLabel(cena.local_ref))}</a></span>`:''}
+        ${cena.pc_focal_ref?`<span>★ <a class="auto-link" onclick="goRefPeek('${cena.pc_focal_ref}')">${esc(narrarRefLabel(cena.pc_focal_ref))}</a></span>`:''}
+      </div>
+    </div>
+    <div class="narrar-cena-body">`;
+
+  if(cena.atmosfera_abertura){
+    h += `<div class="narrar-atmosfera">${fmtInlinePeek(cena.atmosfera_abertura)}</div>`;
+  }
+  // beats em ordem
+  const beats = (cena.beats||[]).slice().sort((a,b)=>(a.ordem||0)-(b.ordem||0));
+  beats.forEach(b=>{ h += renderBeat(b); });
+  // mestre_only — bloco final
+  if(cena.mestre_only && !modoSeguro){
+    h += `<div class="narrar-mestre-only">
+      <div class="narrar-mestre-only-txt">${fmtInlinePeek(cena.mestre_only)}</div>
+    </div>`;
+  }
+  // destrava — botões de navegação contextual
+  if(cena.destrava_para && cena.destrava_para.length){
+    h += `<div class="narrar-destrava">
+      <div class="narrar-destrava-lbl">Esta cena destrava</div>
+      <div class="narrar-destrava-list">`;
+    cena.destrava_para.forEach(ref=>{
+      const [tipo,id] = ref.split(':');
+      if(tipo==='cena'){
+        const target = DATA.cenas.find(c=>c.id===id);
+        if(target){ h += `<button class="narrar-destrava-btn" onclick="narrarAbrir('${id}')">→ ${esc(target.titulo)}</button>`; }
+      }
+    });
+    h += `</div></div>`;
+  }
+
+  h += `</div>
+    <div class="narrar-footer">
+      <button class="narrar-nav-btn" onclick="narrarAbrir('${prev?prev.id:''}')" ${prev?'':'disabled'}>◂ Cena Anterior</button>
+      <div class="narrar-progresso">${cena.ordem} / ${total}</div>
+      <button class="narrar-modo-seguro ${modoSeguro?'ativo':''}" onclick="narrarToggleModoSeguro()" title="Esconder informações do Mestre">${modoSeguro?'◉ Modo Seguro ATIVO':'◎ Modo Seguro'}</button>
+      <button class="narrar-nav-btn" onclick="narrarAbrir('${next?next.id:''}')" ${next?'':'disabled'}>Próxima Cena ▸</button>
+    </div>
+  </div>`;
+  return h;
+}
+
+function renderBeat(b){
+  const tipo = b.tipo || 'narracao';
+  if(tipo==='narracao'){
+    return `<div class="beat narracao">
+      <div class="beat-label">Narração ${b.horario?'<span class="beat-horario">'+esc(b.horario)+'</span>':''}</div>
+      ${b.titulo?`<div class="beat-titulo">${esc(b.titulo)}</div>`:''}
+      <div class="beat-texto">${fmtInlinePeek(b.texto||'')}</div>
+    </div>`;
+  }
+  if(tipo==='fala'){
+    const npc = b.npc_ref ? narrarRefLabel(b.npc_ref) : 'NPC';
+    return `<div class="beat fala">
+      <div class="beat-npc">${b.npc_ref?`<a class="auto-link" onclick="goRefPeek('${b.npc_ref}')">${esc(npc)}</a>`:esc(npc)}</div>
+      ${b.contexto?`<div class="beat-contexto">${esc(b.contexto)}</div>`:''}
+      <div class="beat-texto">"${fmtInlinePeek(b.texto||'')}"</div>
+    </div>`;
+  }
+  if(tipo==='teste'){
+    return `<div class="beat teste">
+      <div class="beat-label">Teste / Rolagem</div>
+      <div class="beat-teste-line">
+        <span class="beat-atributo">${esc(b.atributo||'')}</span>
+        <span class="beat-dificuldade">${esc(b.dificuldade||'')}</span>
+      </div>
+      ${b.contexto?`<div class="beat-contexto">${esc(b.contexto)}</div>`:''}
+      ${b.o_que_destrava?`<div class="beat-destrava">${fmtInlinePeek(b.o_que_destrava)}</div>`:''}
+    </div>`;
+  }
+  if(tipo==='prop'){
+    const propRef = b.prop_ref;
+    const prop = propRef ? (DATA.props||[]).find(p=>('prop:'+p.id)===propRef) : null;
+    return `<div class="beat prop" onclick="goRefPeek('${propRef||''}')">
+      <div class="beat-prop-tit">Prop · ${esc(prop?prop.nome:'Item')}</div>
+      ${b.contexto?`<div class="beat-prop-ctx">${fmtInlinePeek(b.contexto)}</div>`:''}
+    </div>`;
+  }
+  if(tipo==='escolha'){
+    return `<div class="beat escolha">
+      <div class="beat-label">Escolha dos PCs</div>
+      ${b.titulo?`<div class="beat-titulo">${esc(b.titulo)}</div>`:''}
+      <ul class="beat-opcoes">
+        ${(b.opcoes||[]).map(o=>`<li>${fmtInlinePeek(o)}</li>`).join('')}
+      </ul>
+      ${b.observacao?`<div class="beat-contexto" style="margin-top:8px">${fmtInlinePeek(b.observacao)}</div>`:''}
+      ${b.texto?`<div class="beat-texto" style="margin-top:8px;font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;line-height:1.55;color:var(--ink)">${fmtInlinePeek(b.texto)}</div>`:''}
+    </div>`;
+  }
+  if(tipo==='momento_pavor'){
+    return `<div class="beat momento_pavor">
+      <div class="beat-label">Momento de Pavor</div>
+      ${b.titulo?`<div class="beat-titulo">${esc(b.titulo)}</div>`:''}
+      <div class="beat-texto">${fmtInlinePeek(b.texto||'')}</div>
+    </div>`;
+  }
+  if(tipo==='mecanica'){
+    return `<div class="beat mecanica">
+      <div class="beat-label">Mecânica</div>
+      ${b.titulo?`<div class="beat-titulo">${esc(b.titulo)}</div>`:''}
+      <div class="beat-texto">${fmtInlinePeek(b.texto||'')}</div>
+    </div>`;
+  }
+  if(tipo==='observacao_mestre'){
+    return `<div class="beat observacao_mestre">
+      ${b.titulo?`<div class="beat-titulo">${esc(b.titulo)}</div>`:''}
+      <div class="beat-texto">${fmtInlinePeek(b.texto||'')}</div>
+    </div>`;
+  }
+  return '';
+}
+
+function narrarRefLabel(ref){
+  if(!ref) return '';
+  const [tipo,id] = ref.split(':');
+  if(tipo==='npc'){
+    const n = DATA.npcs.find(x=>x.id===id) || (DATA.npcs_apoio||[]).find(x=>x.id===id);
+    return n?n.nome:id;
+  }
+  if(tipo==='local'){
+    const l = (DATA.cidade?.locais||[]).find(x=>x.id===id);
+    return l?l.nome:id;
+  }
+  if(tipo==='praga'){
+    const p = (DATA.pragas||[]).find(x=>x.id===id);
+    return p?'Praga #'+p.numero+' · '+p.nome:id;
+  }
+  if(tipo==='prop'){
+    const p = (DATA.props||[]).find(x=>x.id===id);
+    return p?p.nome:id;
+  }
+  if(tipo==='cena'){
+    const c = (DATA.cenas||[]).find(x=>x.id===id);
+    return c?c.titulo:id;
+  }
+  if(tipo==='pc'){
+    const p = (DATA.pcs||[]).find(x=>x.id===id);
+    return p?p.nome:id;
+  }
+  if(typeof refLabel==='function') return refLabel(ref);
+  return id;
+}
+
+function narrarAbrir(cenaId){
+  if(!cenaId) return;
+  const cena = DATA.cenas.find(c=>c.id===cenaId);
+  if(!cena) return;
+  const state = narrarLoadState();
+  state.cenaId = cenaId;
+  narrarSaveState(state);
+  narrarMarcarVisitada(cenaId);
+  // re-renderiza
+  renderNarrar();
+  // scroll do main pra topo
+  setTimeout(()=>{
+    const main = document.querySelector('.narrar-main');
+    if(main) main.scrollTop = 0;
+  }, 50);
+}
+
+function narrarToggleModoSeguro(){
+  const state = narrarLoadState();
+  state.modoSeguro = !state.modoSeguro;
+  narrarSaveState(state);
+  renderNarrar();
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   PEEK EMPILHÁVEL — modal lateral estilo Obsidian
+   ═══════════════════════════════════════════════════════════════════════ */
+window.PEEK_STACK = [];
+
+function goRefPeek(ref){
+  if(!ref) return;
+  // adiciona à pilha
+  PEEK_STACK.push(ref);
+  peekRenderTop();
+  // abre overlay e painel
+  document.getElementById('peekOverlay').classList.add('aberto');
+  document.getElementById('peekPainel').classList.add('aberto');
+}
+
+function peekBack(){
+  if(PEEK_STACK.length<=1){ peekClose(); return; }
+  PEEK_STACK.pop();
+  peekRenderTop();
+}
+
+function peekClose(){
+  PEEK_STACK = [];
+  document.getElementById('peekOverlay').classList.remove('aberto');
+  document.getElementById('peekPainel').classList.remove('aberto');
+}
+
+function peekRenderTop(){
+  if(PEEK_STACK.length===0) return;
+  const ref = PEEK_STACK[PEEK_STACK.length-1];
+  const painel = document.getElementById('peekPainel');
+  const trilha = PEEK_STACK.map((r,i)=>{
+    const label = narrarRefLabel(r);
+    return `<span class="peek-trilha-item">${esc(label)}</span>`;
+  }).join('<span class="peek-trilha-sep">›</span>');
+  const conteudo = renderPeek(ref);
+  painel.innerHTML = `
+    <div class="peek-hdr">
+      <button class="peek-back" onclick="peekBack()" ${PEEK_STACK.length>1?'':'disabled'}>◂ Voltar</button>
+      <div class="peek-trilha">${trilha}</div>
+      <button class="peek-close" onclick="peekClose()">✕</button>
+    </div>
+    <div class="peek-body">${conteudo}</div>`;
+  // scroll do body do peek pra topo
+  setTimeout(()=>{
+    const body = painel.querySelector('.peek-body');
+    if(body) body.scrollTop = 0;
+  }, 30);
+}
+
+function renderPeek(ref){
+  const [tipo,id] = ref.split(':');
+  if(tipo==='npc') return renderPeekNpc(id);
+  if(tipo==='local') return renderPeekLocal(id);
+  if(tipo==='praga') return renderPeekPraga(id);
+  if(tipo==='prop') return renderPeekProp(id);
+  if(tipo==='cena') return renderPeekCena(id);
+  if(tipo==='pc') return renderPeekPc(id);
+  if(tipo==='page') return renderPeekPage(id);
+  return `<div class="peek-tipo">Referência</div><div class="peek-nome">${esc(ref)}</div><p class="peek-p">Tipo de referência não suportado no peek ainda.</p>`;
+}
+
+function renderPeekNpc(id){
+  const n = DATA.npcs.find(x=>x.id===id) || (DATA.npcs_apoio||[]).find(x=>x.id===id);
+  if(!n) return `<div class="peek-tipo">NPC</div><div class="peek-nome">${esc(id)}</div><p class="peek-p">NPC não encontrado.</p>`;
+  let h = `<div class="peek-tipo">NPC · ${esc(n.role||'')}</div>
+    <div class="peek-nome">${esc(n.nome)}</div>
+    <div class="peek-sub">${esc(n.funcao||n.idade||'')}</div>`;
+  if(n.resumo) h += `<div class="peek-secao"><div class="peek-secao-lbl">Resumo</div><p class="peek-p">${fmtInlinePeek(n.resumo)}</p></div>`;
+  if(n.ep1){
+    const e = n.ep1;
+    h += `<div class="peek-secao"><div class="peek-secao-lbl">No Episódio 1</div>`;
+    if(e.presenca_ep1) h += `<p class="peek-p" style="font-style:italic">${fmtInlinePeek(e.presenca_ep1)}</p>`;
+    if(e.como_interpretar) h += `<div style="margin-top:8px"><div class="peek-secao-lbl" style="color:var(--gold-dim)">Como interpretar</div><p class="peek-p">${fmtInlinePeek(e.como_interpretar)}</p></div>`;
+    if(e.no_episodio){
+      h += `<div style="margin-top:10px"><div class="peek-secao-lbl" style="color:var(--gold-dim)">Onde aparece</div>`;
+      e.no_episodio.forEach(c=>{ h += `<div class="peek-fala"><div class="peek-fala-ctx">${esc(c.titulo)}</div>${fmtInlinePeek(c.texto)}</div>`; });
+      h += `</div>`;
+    }
+    h += `</div>`;
+  }
+  if(n.historia){
+    h += `<div class="peek-secao"><div class="peek-secao-lbl">História</div><p class="peek-p">${fmtInlinePeek(typeof n.historia==='string'?n.historia:(Array.isArray(n.historia)?n.historia[0]:''))}</p></div>`;
+  }
+  return h;
+}
+
+function renderPeekLocal(id){
+  const l = (DATA.cidade?.locais||[]).find(x=>x.id===id);
+  if(!l) return `<div class="peek-tipo">Local</div><div class="peek-nome">${esc(id)}</div><p class="peek-p">Local não encontrado.</p>`;
+  let h = `<div class="peek-tipo">Local · ${esc(l.nivel_perigo||'')}</div>
+    <div class="peek-nome">${esc(l.nome)}</div>
+    <div class="peek-sub">${esc(l.descricao||'')}</div>`;
+  if(l.detalhe) h += `<div class="peek-secao"><div class="peek-secao-lbl">Detalhe</div><p class="peek-p">${fmtInlinePeek(l.detalhe)}</p></div>`;
+  if(l.ep1){
+    const e = l.ep1;
+    h += `<div class="peek-secao"><div class="peek-secao-lbl">No Episódio 1</div>`;
+    if(e.presenca_ep1) h += `<p class="peek-p" style="font-style:italic">${fmtInlinePeek(e.presenca_ep1)}</p>`;
+    if(e.como_narrar) h += `<div class="peek-fala"><div class="peek-fala-ctx">Como narrar</div>${fmtInlinePeek(e.como_narrar)}</div>`;
+    if(e.como_narrar_dia) h += `<div class="peek-fala"><div class="peek-fala-ctx">De dia</div>${fmtInlinePeek(e.como_narrar_dia)}</div>`;
+    if(e.como_narrar_noite) h += `<div class="peek-fala"><div class="peek-fala-ctx">De noite</div>${fmtInlinePeek(e.como_narrar_noite)}</div>`;
+    h += `</div>`;
+  }
+  return h;
+}
+
+function renderPeekPraga(id){
+  const p = (DATA.pragas||[]).find(x=>x.id===id);
+  if(!p) return `<p>Praga não encontrada.</p>`;
+  let h = `<div class="peek-tipo">Praga #${p.numero}</div>
+    <div class="peek-nome">${esc(p.nome)}</div>
+    <div class="peek-sub">Mão: ${esc(p.mao||'-')} · Status: ${esc(p.status||'-')}</div>`;
+  if(p.vitima) h += `<div class="peek-secao"><div class="peek-secao-lbl">Vítima / Sinal</div><p class="peek-p">${fmtInlinePeek(p.vitima)}</p></div>`;
+  if(p.disfarce) h += `<div class="peek-secao"><div class="peek-secao-lbl">Disfarce</div><p class="peek-p">${fmtInlinePeek(p.disfarce)}</p></div>`;
+  if(p.assinatura_oculta) h += `<div class="peek-secao"><div class="peek-secao-lbl">Assinatura oculta</div><p class="peek-p">${fmtInlinePeek(p.assinatura_oculta)}</p></div>`;
+  if(p.escalas){
+    h += `<div class="peek-secao"><div class="peek-secao-lbl">Escalas</div>`;
+    p.escalas.forEach(e=>{ h += `<div class="peek-fala"><div class="peek-fala-ctx">${esc(e.escala)}</div>${fmtInlinePeek(e.sinal)}</div>`; });
+    h += `</div>`;
+  }
+  if(p.vetores_descoberta){ h += `<div class="peek-secao"><div class="peek-secao-lbl">Vetores de descoberta</div><ul class="peek-ul">${p.vetores_descoberta.map(v=>`<li>${fmtInlinePeek(v)}</li>`).join('')}</ul></div>`; }
+  return h;
+}
+
+function renderPeekProp(id){
+  const p = (DATA.props||[]).find(x=>x.id===id);
+  if(!p) return `<p>Prop não encontrado.</p>`;
+  let h = `<div class="peek-tipo">Prop #${p.numero} · ${esc(p.tipo||'')}</div>
+    <div class="peek-nome">${esc(p.nome)}</div>`;
+  if(p.destinatario_pc) h += `<div class="peek-sub">Destinatário: ${esc(p.destinatario_pc)}</div>`;
+  if(p.texto) h += `<div class="peek-secao"><div class="peek-secao-lbl">Texto do prop</div><div class="peek-fala">${esc(p.texto).replace(/\n/g,'<br>')}</div></div>`;
+  if(p.tiras){
+    h += `<div class="peek-secao"><div class="peek-secao-lbl">As 4 tiras</div>`;
+    p.tiras.forEach(t=>{ h += `<div class="peek-fala"><div class="peek-fala-ctx">Para ${esc(t.pc)}</div>${esc(t.texto)}</div>`; });
+    h += `</div>`;
+  }
+  if(p.uso_em_cena) h += `<div class="peek-secao"><div class="peek-secao-lbl">Uso em cena</div><p class="peek-p">${fmtInlinePeek(p.uso_em_cena)}</p></div>`;
+  if(p.instrucoes_impressao) h += `<div class="peek-secao"><div class="peek-secao-lbl">Instruções de impressão</div><p class="peek-p">${fmtInlinePeek(p.instrucoes_impressao)}</p></div>`;
+  return h;
+}
+
+function renderPeekCena(id){
+  const c = DATA.cenas.find(x=>x.id===id);
+  if(!c) return `<p>Cena não encontrada.</p>`;
+  let h = `<div class="peek-tipo">Cena #${c.ordem}</div>
+    <div class="peek-nome">${esc(c.titulo)}</div>
+    <div class="peek-sub">${esc(c.subtitulo||'')}</div>`;
+  if(c.atmosfera_abertura) h += `<div class="peek-secao"><div class="peek-secao-lbl">Atmosfera</div><p class="peek-p" style="font-style:italic">${fmtInlinePeek(c.atmosfera_abertura)}</p></div>`;
+  h += `<div class="peek-secao" style="margin-top:18px"><button class="narrar-destrava-btn" onclick="peekClose();narrarAbrir('${c.id}')">▶ Abrir esta cena no Modo Narrar</button></div>`;
+  return h;
+}
+
+function renderPeekPc(id){
+  const p = (DATA.pcs||[]).find(x=>x.id===id);
+  if(!p) return `<p>PC não encontrado.</p>`;
+  let h = `<div class="peek-tipo">Personagem</div>
+    <div class="peek-nome">${esc(p.nome)}</div>
+    <div class="peek-sub">${esc(p.epiteto||'')}</div>`;
+  h += `<div class="peek-secao"><div class="peek-secao-lbl">Atributos</div><p class="peek-p">Corpo ${p.atributos.corpo} · Reflexos ${p.atributos.reflexos} · Mente ${p.atributos.mente} · Saber ${p.atributos.saber} · Alma ${p.atributos.alma}<br><strong>Sanidade Inicial:</strong> ${p.sanidade_inicial}</p></div>`;
+  if(p.no_ep1) h += `<div class="peek-secao"><div class="peek-secao-lbl">No Episódio 1</div><p class="peek-p">${fmtInlinePeek(p.no_ep1)}</p></div>`;
+  if(p.arco_temporada) h += `<div class="peek-secao"><div class="peek-secao-lbl">Arco</div><p class="peek-p">${fmtInlinePeek(p.arco_temporada)}</p></div>`;
+  return h;
+}
+
+function renderPeekPage(id){
+  // fallback: navega de verdade pra essa page
+  return `<div class="peek-tipo">Página da Lore</div>
+    <div class="peek-nome">${esc(id.charAt(0).toUpperCase()+id.slice(1))}</div>
+    <p class="peek-p">Esta referência aponta para uma página inteira da lore.</p>
+    <div class="peek-secao"><button class="narrar-destrava-btn" onclick="peekClose();navigate('${id}')">▶ Abrir página ${esc(id)}</button></div>`;
+}
+
+/* fmtInlinePeek — versão de fmtInline que converte auto-links para usarem goRefPeek
+   (em vez de goRef que NAVEGA pra outra página) */
+function fmtInlinePeek(s){
+  let out = fmtInline(s);
+  // troca onclicks de captureOrigin();goRef(...) por goRefPeek(...)
+  out = out.replace(/onclick="captureOrigin\(\);goRef\(/g, 'onclick="goRefPeek(');
+  return out;
+}
+
+/* Hook do navigate: ao entrar no modo Narrar, renderiza */
+const _origNavigate = navigate;
+navigate = function(page){
+  _origNavigate(page);
+  if(page==='narrar') setTimeout(renderNarrar, 20);
+  if(page==='pragas') setTimeout(renderPragas, 20);
+  if(page==='props') setTimeout(renderProps, 20);
+  if(page==='armindo') setTimeout(renderArmindo, 20);
+  if(page==='dia18') setTimeout(renderDia18, 20);
+};
+
+/* ═══════════════════════════════════════════════════════════════════════
+   PÁGINA DAS 10 PRAGAS
+   ═══════════════════════════════════════════════════════════════════════ */
+function renderPragas(){
+  const root = document.getElementById('pragasScroll');
+  if(!root || !DATA.pragas) return;
+  let h = `<div class="pragas-wrap">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;font-style:italic;line-height:1.65;color:var(--parch);max-width:780px;margin:6px 0 8px">
+      Dez sinais semeados por <a class="auto-link" onclick="captureOrigin();goRef('page:profetas')">Armindo Vasconcellos</a> ao longo de meses, lidos pelos PCs como mortes naturais isoladas — e que só revelam o padrão quando vistos em sequência. A sétima fratura o método: ali, o sigilo acorda além do controle do profeta. A décima é o próprio Armindo dissolvendo no fechamento do nó.
+    </div>
+    <div class="pragas-grid">`;
+  DATA.pragas.forEach(p=>{
+    const maoClass = (p.mao||'').toLowerCase().replace(/[ó+]/g,'').replace(/\s+/g,'-').replace('armindo-(sobre-si-mesmo)','armindo-sobre-si').replace('o-n','no');
+    const maoNorm = p.mao==='O Nó' ? 'no' : p.mao==='Nó + Armindo' ? 'no' : p.mao==='Ambígua' ? 'ambigua' : p.mao==='Armindo (sobre si mesmo)' ? 'armindo-sobre-si' : 'armindo';
+    h += `<div class="praga-card" onclick="goRefPeek('praga:${p.id}')">
+      <div class="praga-numero">${p.numero}</div>
+      <div class="praga-status ${p.status||'pendente'}">${esc(p.status||'pendente')}</div>
+      <div class="praga-card-hdr">
+        <div class="praga-nome">${esc(p.nome)}</div>
+        <div class="praga-mao ${maoNorm}">Mão: ${esc(p.mao)}</div>
+      </div>
+      <div class="praga-card-body">`;
+    if(p.vitima) h += `<div class="praga-vitima">${fmtInline(p.vitima)}</div>`;
+    if(p.disfarce){ h += `<div class="praga-secao"><div class="praga-secao-lbl">Disfarce</div><div class="praga-secao-txt">${fmtInline(p.disfarce)}</div></div>`; }
+    if(p.assinatura_oculta){ h += `<div class="praga-secao"><div class="praga-secao-lbl">Assinatura oculta</div><div class="praga-secao-txt">${fmtInline(p.assinatura_oculta)}</div></div>`; }
+    if(p.escalas && p.escalas.length){
+      h += `<div class="praga-secao"><div class="praga-secao-lbl">Três escalas</div><div class="praga-escalas">`;
+      p.escalas.forEach(e=>{ h += `<div class="praga-escala"><div class="praga-escala-nome">${esc(e.escala)}</div><div class="praga-escala-sinal">${fmtInline(e.sinal)}</div></div>`; });
+      h += `</div></div>`;
+    }
+    if(p.sessao_apresentacao) h += `<div class="praga-sessao">Apresentação: Sessão ${p.sessao_apresentacao}${p.sessao_descoberta_completa?` · Descoberta completa: Sessão ${p.sessao_descoberta_completa}`:''}${p.sessao_resolucao?` · Resolução: Sessão ${p.sessao_resolucao}`:''}</div>`;
+    h += `</div></div>`;
+  });
+  h += `</div></div>`;
+  root.innerHTML = h;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   PÁGINA DE PROPS — toggle Mestre/Jogador
+   ═══════════════════════════════════════════════════════════════════════ */
+const PROPS_MODO_KEY = 'karma-props-modo-v1';
+function propsLoadModo(){ try{ return localStorage.getItem(PROPS_MODO_KEY) || 'mestre'; }catch(e){ return 'mestre'; } }
+function propsSaveModo(m){ try{ localStorage.setItem(PROPS_MODO_KEY, m); }catch(e){} }
+function propsToggleModo(modo){
+  propsSaveModo(modo);
+  document.body.classList.toggle('props-modo-jogador', modo==='jogador');
+  document.querySelectorAll('.props-toggle-btn').forEach(b=>{ b.classList.toggle('active', b.dataset.modo===modo); });
+}
+function renderProps(){
+  const root = document.getElementById('propsScroll');
+  if(!root || !DATA.props) return;
+  const modoSalvo = propsLoadModo();
+  document.body.classList.toggle('props-modo-jogador', modoSalvo==='jogador');
+  let h = `<div class="props-wrap">
+    <div class="props-toggle">
+      <button class="props-toggle-btn ${modoSalvo==='mestre'?'active':''}" data-modo="mestre" onclick="propsToggleModo('mestre')">◉ Modo Mestre</button>
+      <button class="props-toggle-btn ${modoSalvo==='jogador'?'active':''}" data-modo="jogador" onclick="propsToggleModo('jogador')">◎ Modo Jogador</button>
+    </div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:500;font-style:italic;color:var(--ash);margin-bottom:18px">
+      <strong>Modo Mestre:</strong> mostra todos os 15 props com instruções de impressão e uso em cena.<br>
+      <strong>Modo Jogador:</strong> esconde props marcados como "mestre" e oculta o "Uso em cena" (texto interno do GM).
+    </div>
+    <div class="props-grid">`;
+  DATA.props.forEach(p=>{
+    const isMestre = p.tipo==='mestre';
+    h += `<div class="prop-card ${isMestre?'mestre':''}">
+      ${isMestre?'<div class="prop-tag-mestre">Mestre</div>':''}
+      <div class="prop-card-hdr">
+        <div class="prop-num">#${p.numero}</div>
+        <div class="prop-meta">
+          <div class="prop-tit">${esc(p.nome)}</div>
+          ${p.destinatario_pc?`<div class="prop-dest">→ ${esc(p.destinatario_pc)}</div>`:''}
+        </div>
+      </div>
+      <div class="prop-card-body">`;
+    if(p.instrucoes_impressao){
+      h += `<div class="prop-instr">Instruções de impressão</div>
+      <div class="prop-instr-txt">${fmtInline(p.instrucoes_impressao)}</div>`;
+    }
+    if(p.texto){
+      h += `<div class="prop-instr">Texto do prop</div>
+      <div class="prop-texto">${esc(p.texto)}</div>`;
+    }
+    if(p.tiras && p.tiras.length){
+      h += `<div class="prop-instr">As 4 tiras</div>`;
+      p.tiras.forEach(t=>{ h += `<div class="prop-tira"><div class="prop-tira-pc">Para ${esc(t.pc)}</div>${esc(t.texto)}</div>`; });
+    }
+    if(p.tabela_decifragem){
+      h += `<div class="prop-instr">Tabela de decifragem</div><div class="prop-texto">`;
+      p.tabela_decifragem.forEach(d=>{ h += `${d.par}  →  P.${d.pergunta} · ${d.posicao} palavra  →  ${d.palavra}\n`; });
+      h += `</div>`;
+    }
+    if(p.acrostico) h += `<div class="prop-instr">Acróstico</div><div class="prop-instr-txt">${fmtInline(p.acrostico)}</div>`;
+    if(p.uso_em_cena){
+      h += `<div class="prop-uso">Uso em cena (Mestre)</div>
+      <div class="prop-uso-txt">${fmtInline(p.uso_em_cena)}</div>`;
+    }
+    if(p.obs_redacao){
+      h += `<div class="prop-uso">Observação de redação</div>
+      <div class="prop-uso-txt">${fmtInline(p.obs_redacao)}</div>`;
+    }
+    h += `</div></div>`;
+  });
+  h += `</div></div>`;
+  root.innerHTML = h;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   PÁGINA DO PROFETA — Armindo Vasconcellos (camada de vilão T1)
+   ═══════════════════════════════════════════════════════════════════════ */
+function renderArmindo(){
+  const root = document.getElementById('armindoScroll');
+  if(!root) return;
+  const armindo = DATA.profetas?.armindo;
+  if(!armindo){ root.innerHTML='<div style="padding:36px;color:var(--ash)">Dados do Armindo não encontrados em DATA.profetas.armindo</div>'; return; }
+  // pragas que ele assina diretamente
+  const minhasPragas = (DATA.pragas||[]).filter(pr=>pr.mao && pr.mao.toLowerCase().includes('armindo') && !pr.mao.toLowerCase().includes('nó'));
+  // pragas em que ele NÃO assina (Nó / Ambígua / Co-mão)
+  const outrasPragas = (DATA.pragas||[]).filter(pr=>!minhasPragas.includes(pr));
+
+  let h = `<div class="armindo-wrap">
+    <div class="armindo-hero">
+      <div class="armindo-hero-ttl">${esc(armindo.nome||'Armindo Vasconcellos')}</div>
+      <div class="armindo-hero-sub">${esc(armindo.epiteto||'O Profeta das Pragas')}</div>
+      <div class="armindo-hero-txt">${fmtInline(armindo.resumo||armindo.descricao||'')}</div>
+    </div>`;
+
+  // grid de dois painéis: identidade + função
+  h += `<div class="armindo-grid">`;
+  if(armindo.identidade || armindo.idade || armindo.cargo){
+    h += `<div class="armindo-pane">
+      <div class="armindo-pane-ttl">Identidade pública</div>
+      <div class="armindo-pane-txt">${fmtInline(armindo.identidade || (armindo.idade?`${armindo.idade} anos · `:'')+(armindo.cargo||''))}</div>
+    </div>`;
+  }
+  if(armindo.identidade_secreta){
+    h += `<div class="armindo-pane" style="border-color:var(--blood-dim);background:rgba(107,15,15,.12)">
+      <div class="armindo-pane-ttl" style="color:var(--blood)">Identidade secreta</div>
+      <div class="armindo-pane-txt">${fmtInline(armindo.identidade_secreta)}</div>
+    </div>`;
+  }
+  h += `</div>`;
+
+  // método
+  if(armindo.metodo){
+    h += `<div class="armindo-pane" style="margin-bottom:18px">
+      <div class="armindo-pane-ttl">O método das pragas</div>
+      <div class="armindo-pane-txt">${fmtInline(armindo.metodo)}</div>
+    </div>`;
+  }
+
+  // pragas que ele assina vs as outras
+  h += `<div class="armindo-pane" style="margin-bottom:18px">
+    <div class="armindo-pane-ttl">As pragas pela mão dele (${minhasPragas.length} de 10)</div>
+    <div class="armindo-pragas-mao">`;
+  minhasPragas.forEach(pr=>{
+    h += `<div class="armindo-praga-pill" onclick="goRefPeek('praga:${pr.id}')">#${pr.numero} · ${esc(pr.nome)}</div>`;
+  });
+  h += `</div></div>`;
+
+  h += `<div class="armindo-pane" style="margin-bottom:18px">
+    <div class="armindo-pane-ttl">As pragas fora da mão dele</div>
+    <div class="armindo-pragas-mao">`;
+  outrasPragas.forEach(pr=>{
+    h += `<div class="armindo-praga-pill" style="background:rgba(154,122,42,.12);border-color:var(--gold-dim)" onclick="goRefPeek('praga:${pr.id}')">#${pr.numero} · ${esc(pr.nome)} <span style="color:var(--gold-dim);font-size:8.5px;margin-left:4px">(${esc(pr.mao)})</span></div>`;
+  });
+  h += `</div>
+    <div class="armindo-pane-txt" style="margin-top:10px;font-style:italic;color:var(--ash);font-size:14.5px">A sétima e a nona são onde o método dele racha — sinais de que o sigilo acordou além do controle.</div>
+  </div>`;
+
+  // arco trágico / dramatúrgico
+  if(armindo.arco_tragico || armindo.dramaturgia){
+    h += `<div class="armindo-pane" style="margin-bottom:18px;border-color:var(--blood-dim)">
+      <div class="armindo-pane-ttl" style="color:var(--blood)">Como interpretar — não vilão, profeta trágico</div>
+      <div class="armindo-pane-txt">${fmtInline(armindo.arco_tragico || armindo.dramaturgia || '')}</div>
+    </div>`;
+  }
+
+  // citações (se houver)
+  if(armindo.citacoes && armindo.citacoes.length){
+    h += `<div class="armindo-pane" style="margin-bottom:18px">
+      <div class="armindo-pane-ttl">Vozes do profeta</div>`;
+    armindo.citacoes.forEach(c=>{
+      h += `<div class="armindo-quote">"${esc(typeof c==='string'?c:c.texto)}"
+        ${typeof c==='object'&&c.contexto?`<div class="armindo-quote-fonte">— ${esc(c.contexto)}</div>`:''}
+      </div>`;
+    });
+    h += `</div>`;
+  }
+
+  // outros campos genéricos
+  ['historia','motivacao','futuro','no_ep1','final_t1','observacoes_mestre','linhas_vermelhas'].forEach(k=>{
+    if(armindo[k]){
+      const label = {historia:'História',motivacao:'Motivação',futuro:'O que faz a seguir',no_ep1:'No Episódio 1',final_t1:'Final da Temporada I',observacoes_mestre:'Observações do Mestre',linhas_vermelhas:'Linhas vermelhas'}[k] || k;
+      const val = typeof armindo[k]==='string' ? `<p>${fmtInline(armindo[k])}</p>` : (Array.isArray(armindo[k]) ? armindo[k].map(p=>`<p>${fmtInline(p)}</p>`).join('') : '');
+      h += `<div class="armindo-pane" style="margin-bottom:18px">
+        <div class="armindo-pane-ttl">${esc(label)}</div>
+        <div class="armindo-pane-txt">${val}</div>
+      </div>`;
+    }
+  });
+
+  h += `</div>`;
+  root.innerHTML = h;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   DIA 18 — CRONOLOGIA DOS EVENTOS DO EP1
+   ═══════════════════════════════════════════════════════════════════════ */
+function renderDia18(){
+  const root = document.getElementById('dia18Scroll');
+  if(!root) return;
+  // Eventos do dia 18 — em ordem cronológica
+  const eventos = [
+    { hora: '05:00', nivel:'major', tags:['descoberta'], titulo:'Valdecir é encontrado morto', desc:'Dona Neuza Aparecida, em caminhada matinal, encontra o corpo encostado no muro externo da Área Verde. Mãos viradas para dentro do terreno. Frio impossível.' },
+    { hora: '~08:00', nivel:'normal', tags:['oculto'], titulo:'Dr. Meireles examina o corpo', desc:'Quatro anomalias: temperatura 4°C abaixo do normal, terra preta nas mãos segurada ativamente, expressão de reconhecimento, lágrimas de sangue. Ele apaga a quarta do laudo.' },
+    { hora: '~09:00', nivel:'normal', tags:[], titulo:'Seu João leva o corpo à funerária', desc:'Quando vai buscar, Meireles ainda está sentado olhando para Valdecir. "Médico vê morto todo dia. Não fica sentado olhando."' },
+    { hora: '14:00', nivel:'normal', tags:['oculto'], titulo:'Reinaldo Furtado faz reconhecimento', desc:'Investigador particular contratado por Ezequiel. Destranca o ferrolho da cozinha de Valdecir por dentro. Deixa pegada perto do muro da Área Verde — indo para dentro.' },
+    { hora: '14:00', nivel:'normal', tags:[], titulo:'Caixão entregue por Seu João', desc:'Funerária deixa o caixão na Igreja de Santo Antônio. Sai por volta das 17h30.' },
+    { hora: '15:32', nivel:'major', tags:['oculto'], titulo:'Ezequiel liga para Dr. Meireles', desc:'Chip pré-pago descartável de Goiânia. Descreve a família do médico sem fazer ameaça explícita. Meireles edita o laudo. O papel com o número fica na gaveta.' },
+    { hora: '~16:00', nivel:'normal', tags:['SP'], titulo:'Lucas Andrade é condenado em SP', desc:'Sentença lida diante de Vinicius Fonseca. Otávio Drumond — o assassino real — sorri no fundo da sala.' },
+    { hora: '~16:35', nivel:'major', tags:['SP'], titulo:'Vinicius mata Otávio no beco', desc:'Surto dissociativo. POD 50 contra contenção. +1 Marca aplicada. Sanidade −1d6. O sangue na manga vai ser notado depois.' },
+    { hora: '~16:40', nivel:'climax', tags:['impossível'], titulo:'O vagão de metrô — Valdecir morto agindo como vivo', desc:'Vinicius entra no vagão de SP. Valdecir senta na frente dele. Conversa. Entrega o cartão "Quando o tempo cobrar". A descida é em Novavera — estação que não existe.' },
+    { hora: '~18:15', nivel:'normal', tags:['oculto'], titulo:'Armindo grava o símbolo no caixão', desc:'Janela 18h15-18h25. Seu Benedito está na sacristia, separando paramentos. "Não vi exatamente onde ele tava." A serragem fresca prova o tempo.' },
+    { hora: '17:45', nivel:'major', tags:[], titulo:'Sergie chega — Centro Cívico', desc:'Detetive de Goiânia. GPS faz coisa estranha. Vê a placa de bronze com o nome "Hélio Drummond Vasconcellos" e percebe a inconsistência das datas dos fundadores. Marca de mão fresca no capô do carro.' },
+    { hora: '18:00', nivel:'major', tags:[], titulo:'Floriano chega — Bairro Fundação', desc:'Padre afastado. Encontra Natalina varrendo a calçada. "Você é um dos que vão ao velório do Valdecir." Pista de graça: Valdecir e Armindo se afastaram nos últimos meses.' },
+    { hora: '18:00', nivel:'major', tags:['SP→GO'], titulo:'Vinicius emerge no Posto Aparecido', desc:'BR-060, ainda no terno. Lava o sangue da manga no banheiro. Aparecido reporta o forasteiro para Ezequiel — "avisando a minha mulher que vou atrasar o jantar".' },
+    { hora: '18:05', nivel:'major', tags:[], titulo:'Gyeno chega — Rodoviária', desc:'Soldado da reserva. Vê o símbolo de três círculos riscado a giz na calçada — reconhece visceralmente (Ucrânia, fevereiro). Memória +1 automático. Seu Geraldo entrega o soco: "Valdecir morreu hoje."' },
+    { hora: '19:00', nivel:'major', tags:['convergência'], titulo:'Velório começa — Igreja de Santo Antônio', desc:'80 pessoas. Vela. Flor de plástico. Caixão simples. Nenhuma família. O ar mais frio do que março permite. Sergie reconhece Armindo da foto. Vinicius reconhece Valdecir do vagão.' },
+    { hora: '~20:30', nivel:'major', tags:['convergência'], titulo:'A foto rasgada se monta', desc:'Os 4 PCs convergem e juntam os pedaços. FILHOS DA PRIMEIRA TERRA. Memória +1 para todos.' },
+    { hora: '20:00-20:30', nivel:'normal', tags:['oculto'], titulo:'Ronaldo recebe ligação na lateral', desc:'Expressão de quem esperava a ligação e torcia para que não viesse. "Não vou fazer isso." Pressão da Casa sobre o delegado.' },
+    { hora: '21:00', nivel:'normal', tags:[], titulo:'Velório encerra', desc:'Caixão fica até o enterro. As pessoas saem. PCs se reagrupam. Próxima decisão: Posto de Saúde, casa de Valdecir, ou pousada.' },
+    { hora: '21:00-21:30', nivel:'normal', tags:[], titulo:'Dr. Meireles cede em 4 camadas', desc:'No Posto de Saúde fechado. Persuasão 45 ou Intimidação 50 abrem a Camada 3. As 4 anomalias do laudo. A ligação do número de Goiânia.' },
+    { hora: '~22:00', nivel:'major', tags:[], titulo:'PCs entram na casa de Valdecir', desc:'Chave sob o vaso azul, ou via Natalina. Calendário 18/03 e 7/04 marcados em vermelho. Agenda "10h — S.N." Caderno fechado por fita de couro com partículas de terra. Caixa de sapato sob a cama.' },
+    { hora: '~22:30', nivel:'normal', tags:[], titulo:'O guarda-roupa — Regras da Mesa', desc:'Caixa de madeira com sal grosso, 4 velas, sininho e a folha das Regras. A mesa entende que terra de lá abre o que foi fechado com terra de lá.' },
+    { hora: '22:45-23:10', nivel:'major', tags:[], titulo:'Área Verde — primeira visita', desc:'Não há vento dentro. Cobrança por tempo: POD 45 / 55 / 65. Fragmentos sensoriais por PC. Símbolo nas fundações + data 17/06/1974. Pegada de homem indo para dentro do terreno, nenhuma saindo.' },
+    { hora: '~23:13', nivel:'major', tags:[], titulo:'Caderno se abre + cifra Kardec', desc:'Terra preta esfregada na fita. Página de setembro de 1987. Memória +1 automático. A cifra: PROCUREM QUEM GUARDA O NASCIMENTO. O TEMPO COBRA.' },
+    { hora: '23:14', nivel:'climax', tags:['acróstico'], titulo:'Os 4 SMS chegam juntos', desc:'Números diferentes, todos DDD 62, todos "não atribuídos". Acróstico final: AQUI FICAM TODOS, DE VEZ. SMS do Gyeno: "o que você é" — não "quem".' },
+    { hora: '~23:30', nivel:'normal', tags:[], titulo:'Sessão de comunicação — Floriano monta o círculo', desc:'Círculo de sal, EMF K-II, gravador, vela. Três tentativas: sintonia, pergunta específica, pergunta perigosa. Falha na terceira: grito de mulher, vela apaga, três batidas na porta.' },
+    { hora: '~23:45', nivel:'climax', tags:['horror'], titulo:'Dona Cida bate à porta', desc:'A vizinha do número 8. Veio ela mesma — preocupada de verdade. O horror é que há algo solto na casa que ela acabou de entrar no raio. Quatro saídas A/B/C/D. As parábolas. A morte.' },
+    { hora: '00:00+', nivel:'major', tags:[], titulo:'A polícia chega — Ronaldo conduz', desc:'SAMU constata óbito. Ronaldo, à paisana, segundo corpo do dia. Diálogo na varanda: "Dois corpos no mesmo dia. Nessa cidade, isso não acontecia há muito tempo." Inquérito aberto.' },
+    { hora: '~02:30', nivel:'climax', tags:['gancho'], titulo:'A pegada de terra preta na calçada', desc:'A poltrona virada para a janela tem marca de pressão recente — alguém sentou ali. Pela janela, pegada de terra preta INDO em direção à casa, nenhuma saindo. Foi Valdecir. O episódio termina.' }
+  ];
+  let h = `<div class="dia18-wrap">
+    <div class="dia18-intro">
+      Do corpo encontrado às 5h da manhã do dia 18 até a pegada de terra preta vista pela janela depois das 2h da madrugada do dia 19 — 21 horas em que a investigação compreende que o tempo está cobrando. Em cinza: eventos ocultos que os PCs só vão entender depois. Em vermelho: pontos de virada.
+    </div>
+    <div class="dia18-timeline">`;
+  eventos.forEach(e=>{
+    h += `<div class="dia18-evento ${e.nivel}">
+      <div class="dia18-hora">${esc(e.hora)}</div>
+      <div class="dia18-card">
+        ${e.tags && e.tags.length?e.tags.map(t=>`<span class="dia18-tag ${t==='oculto'?'oculto':''}">${esc(t)}</span>`).join(''):''}
+        <div class="dia18-titulo">${esc(e.titulo)}</div>
+        <div class="dia18-descricao">${fmtInline(e.desc)}</div>
+      </div>
+    </div>`;
+  });
+  h += `</div></div>`;
+  root.innerHTML = h;
+}
+
+/* Tecla ESC fecha peek */
+document.addEventListener('keydown', e=>{
+  if(e.key==='Escape' && PEEK_STACK.length>0){ peekClose(); }
+});
+
 window.addEventListener('DOMContentLoaded',()=>{
   loadData().then(()=>{ SEARCH_IDX=buildSearchIndex(); });
 });
 </script>
+<!-- Peek empilhável: overlay + painel deslizante -->
+<div class="peek-overlay" id="peekOverlay" onclick="peekClose()"></div>
+<div class="peek-painel" id="peekPainel"></div>
 </body>
 </html>
