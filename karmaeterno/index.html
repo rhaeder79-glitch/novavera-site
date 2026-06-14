@@ -775,7 +775,7 @@ ol.ol li{margin:8px 0}
 .narrar-toc-cena.visitada .narrar-toc-num::after{content:" ✓";color:var(--gold-dim);font-size:9px}
 
 /* Painel principal da cena */
-.narrar-main{background:var(--parch);color:var(--ink);overflow-y:auto;position:relative;padding-bottom:80px}
+.narrar-main{background:var(--parch);color:var(--ink);overflow-y:auto;position:relative;display:flex;flex-direction:column}
 .narrar-cena-hdr{position:sticky;top:0;background:linear-gradient(to bottom,var(--parch) 0%,var(--parch) 80%,rgba(244,234,216,.95) 100%);padding:24px 36px 16px;border-bottom:1px solid rgba(107,15,15,.25);z-index:10}
 .narrar-cena-meta{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:12px;margin-bottom:8px}
 .narrar-cena-pos{font-family:"Cinzel",serif;font-size:10px;letter-spacing:3px;color:var(--gold-dim);text-transform:uppercase;font-weight:700}
@@ -785,7 +785,7 @@ ol.ol li{margin:8px 0}
 .narrar-cena-info{display:flex;gap:14px;flex-wrap:wrap;font-family:"Cinzel",serif;font-size:10px;letter-spacing:1.5px;color:var(--ash);text-transform:uppercase;margin-top:8px;font-weight:600}
 .narrar-cena-info span{display:inline-flex;align-items:center;gap:5px}
 
-.narrar-cena-body{padding:18px 36px}
+.narrar-cena-body{padding:18px 36px 40px;flex:1 0 auto}
 .narrar-atmosfera{font-family:"Cormorant Garamond",serif;font-size:19px;font-weight:600;font-style:italic;line-height:1.65;color:var(--ink);background:linear-gradient(135deg,rgba(154,122,42,.1),rgba(107,15,15,.04));border-left:3px solid var(--gold);padding:14px 20px;margin-bottom:24px}
 
 /* Beats — cada tipo tem estilo próprio */
@@ -852,7 +852,7 @@ body.modo-seguro .narrar-mestre-only{display:none}
 .narrar-mestre-only-txt{font-family:"Cormorant Garamond",serif;font-size:16px;font-weight:600;line-height:1.55;color:var(--ink);font-style:italic;margin-top:6px}
 
 /* Botões de navegação fixos no rodapé */
-.narrar-footer{position:sticky;bottom:0;background:linear-gradient(to top,var(--parch) 0%,var(--parch) 90%,rgba(244,234,216,.85) 100%);border-top:1px solid rgba(107,15,15,.25);padding:14px 36px;display:flex;justify-content:space-between;align-items:center;gap:14px;z-index:9}
+.narrar-footer{position:sticky;bottom:0;background:linear-gradient(to top,var(--parch) 0%,var(--parch) 90%,rgba(244,234,216,.85) 100%);border-top:1px solid rgba(107,15,15,.25);padding:14px 36px;display:flex;justify-content:space-between;align-items:center;gap:14px;z-index:9;flex-shrink:0;margin-top:auto}
 .narrar-nav-btn{font-family:"Cinzel",serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--blood);background:rgba(154,122,42,.12);border:1px solid var(--blood-dim);padding:10px 18px;cursor:pointer;transition:all .2s;font-weight:700}
 .narrar-nav-btn:hover{background:rgba(107,15,15,.15);color:var(--blood-deep);border-color:var(--blood)}
 .narrar-nav-btn:disabled{opacity:.35;cursor:not-allowed}
@@ -1975,7 +1975,7 @@ function renderNpcs(){
         <div class="npc-role">${esc(n.role)}</div>
         <div class="npc-name">${esc(n.nome)}</div>
         <div class="npc-tag">${esc(n.tag)}</div>
-        <div class="npc-excerpt">${esc(n.resumo)}</div>
+        <div class="npc-excerpt">${fmtInline(n.resumo)}</div>
       </div>
     </div>`).join('');
 
@@ -2634,8 +2634,8 @@ function goRef(ref){
 }
 // captura de onde o usuário veio (episódio aberto na aba Temporadas)
 function captureOrigin(){
-  const tempAtiva=document.getElementById('page-temporadas').classList.contains('active');
-  const envAtiva=document.getElementById('page-envelopes').classList.contains('active');
+  const tempEl=document.getElementById('page-temporadas');
+  const tempAtiva=tempEl?tempEl.classList.contains('active'):false;
   if(tempAtiva){
     // qual episódio está aberto e visível
     let epIdx=null;
@@ -2649,10 +2649,6 @@ function captureOrigin(){
       return;
     }
     NAV_ORIGIN={label:'Temporadas',page:'temporadas',epIndex:null};
-    return;
-  }
-  if(envAtiva){
-    NAV_ORIGIN={label:'Envelopes',page:'envelopes',epIndex:null};
     return;
   }
   // veio de outro lugar (busca, navegação normal) — sem origem
