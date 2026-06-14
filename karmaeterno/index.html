@@ -905,6 +905,13 @@ body.modo-seguro .narrar-mestre-only{display:none}
   .peek-painel{width:100vw}
 }
 
+/* Placeholder para seções em reconstrução */
+.em-reconstrucao{padding:48px 36px;max-width:760px;margin:48px auto;background:linear-gradient(135deg,rgba(154,122,42,.08),rgba(107,15,15,.06));border:1px dashed var(--gold-dim);text-align:center}
+.em-reconstrucao-icone{font-size:48px;color:var(--gold);margin-bottom:14px;opacity:.7}
+.em-reconstrucao-titulo{font-family:"Cinzel",serif;font-size:18px;letter-spacing:3px;color:var(--blood);text-transform:uppercase;font-weight:700;margin-bottom:14px}
+.em-reconstrucao-txt{font-family:"Cormorant Garamond",serif;font-size:18px;font-weight:600;line-height:1.6;color:var(--parch);margin-bottom:18px}
+.em-reconstrucao-rodape{font-family:"Cinzel",serif;font-size:10px;letter-spacing:2px;color:var(--ash);text-transform:uppercase;font-weight:600;padding-top:14px;border-top:1px solid rgba(154,122,42,.25)}
+
 /* ═══════════════════════════════════════════════════════════
    PÁGINA DAS 10 PRAGAS — grid de cards com status
    ═══════════════════════════════════════════════════════════ */
@@ -1046,7 +1053,6 @@ body.props-modo-jogador .prop-uso-txt{display:none}
 
     <div class="nav-section">As Almas</div>
     <button class="nav-item" data-page="caim"><span class="nav-icon">☉</span>Caim</button>
-    <button class="nav-item" data-page="abel"><span class="nav-icon">☓</span>Abel</button>
     <button class="nav-item" data-page="profetas"><span class="nav-icon">†</span>Profetas</button>
     <button class="nav-item" data-page="npcs"><span class="nav-icon">☥</span>NPCs</button>
 
@@ -1057,13 +1063,12 @@ body.props-modo-jogador .prop-uso-txt{display:none}
     <button class="nav-item" data-page="props"><span class="nav-icon">❦</span>Props do Ep1</button>
     <button class="nav-item" data-page="armindo"><span class="nav-icon">☩</span>O Profeta</button>
     <button class="nav-item" data-page="dia18"><span class="nav-icon">⧗</span>Dia 18 · Cronologia</button>
-    <button class="nav-item" data-page="envelopes"><span class="nav-icon">✉</span>Envelopes</button>
-    <button class="nav-item" data-page="causalidade"><span class="nav-icon">⟁</span>Causalidade</button>
-    <button class="nav-item" data-page="timeline"><span class="nav-icon">⧗</span>Linha do Tempo</button>
-    <button class="nav-item" data-page="documentos"><span class="nav-icon">❦</span>Documentos</button>
+    <button class="nav-item" data-page="causalidade" style="display:none"><span class="nav-icon">⟁</span>Causalidade</button>
+    <button class="nav-item" data-page="timeline" style="display:none"><span class="nav-icon">⧗</span>Linha do Tempo</button>
+    <button class="nav-item" data-page="documentos" style="display:none"><span class="nav-icon">❦</span>Documentos</button>
 
     <div class="nav-section">O Mestre</div>
-    <button class="nav-item" data-page="notas-mestre"><span class="nav-icon">☞</span>Notas do Mestre</button>
+    <button class="nav-item" data-page="notas-mestre" style="display:none"><span class="nav-icon">☞</span>Notas do Mestre</button>
     <button class="nav-item" data-page="anotacoes"><span class="nav-icon">✎</span>Anotações</button>
   </nav>
   <div class="sidebar-footer">
@@ -1101,9 +1106,9 @@ body.props-modo-jogador .prop-uso-txt{display:none}
   <!-- REGRAS & SISTEMA -->
   <section class="page" id="page-regras">
     <div class="page-hdr">
-      <div class="page-eyebrow">Chamado de Cthulhu Adaptado</div>
+      <div class="page-eyebrow">Sistema próprio · Alpha v1.23</div>
       <h2>Regras &amp; Sistema</h2>
-      <p>Memória, Permanência, Integridade — e o preço de saber</p>
+      <p>Marcas, Permanência, Sanidade · Patronos · 7 Despertares · D8 da Aceitação/Redenção</p>
     </div>
     <div class="scroll-content"><div class="book-card"><div class="book-inner" id="regrasBody"></div></div></div>
   </section>
@@ -1129,15 +1134,6 @@ body.props-modo-jogador .prop-uso-txt{display:none}
   </section>
 
   <!-- ABEL -->
-  <section class="page" id="page-abel">
-    <div class="page-hdr">
-      <div class="page-eyebrow">O Outro Lado</div>
-      <h2>Abel</h2>
-      <p>Meio-anjo pela completude — e um dos quatro jogadores</p>
-    </div>
-    <div class="scroll-content"><div class="book-card"><div class="book-inner" id="abelBody"></div></div></div>
-  </section>
-
   <!-- PROFETAS -->
   <section class="page" id="page-profetas">
     <div class="page-hdr">
@@ -1219,16 +1215,6 @@ body.props-modo-jogador .prop-uso-txt{display:none}
       <div class="subtabs" id="tempSubtabs"></div>
       <div id="tempPanes"></div>
     </div>
-  </section>
-
-  <!-- ENVELOPES -->
-  <section class="page" id="page-envelopes">
-    <div class="page-hdr">
-      <div class="page-eyebrow">Os Quatro Personagens · 1650</div>
-      <h2>Envelopes</h2>
-      <p>O Julgamento de São Miguel do Sertão — e o que cada um herdou</p>
-    </div>
-    <div class="scroll-content" id="envelopesBody"></div>
   </section>
 
   <!-- CAUSALIDADE -->
@@ -1328,10 +1314,13 @@ function paras(txt){
     .map(p=>`<p class="t-body">${fmtInline(p)}</p>`).join('');
 }
 function fmtInline(s){
+  if(!s) return '';
   // escapa e destaca falas entre aspas curvas/retas em itálico suave
   let out = esc(s).replace(/\n/g,'<br>')
     .replace(/"([^"]+)"/g,'<em style="color:var(--ink);font-style:italic">&ldquo;$1&rdquo;</em>')
     .replace(/“([^”]+)”/g,'<em style="color:var(--ink);font-style:italic">&ldquo;$1&rdquo;</em>');
+  // markdown leve: **negrito**
+  out = out.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
   // auto-link de NPCs/locais
   out = linkify(out);
   return out;
@@ -1491,16 +1480,18 @@ function initApp(){
   renderRegras();
   renderCidade();
   renderCaim();
-  renderAbel();
+  // renderAbel() removido — seção purgada (Abel é alma futura, não PC)
   renderProfetas();
   renderNpcs();
-  renderQuemSabe();
+  // renderQuemSabe() removido — seção purgada
   renderTemporadas();
-  renderEnvelopes();
-  renderCausalidade();
-  renderTimeline();
-  renderDocumentos();
-  renderNotasMestre();
+  // renderEnvelopes() removido — aba 1650 purgada (props canônicos continuam em /props)
+  // renderCausalidade() removido — dados purgados, reescrever Onda 2
+  // renderTimeline() removido — dados purgados, reescrever Onda 2
+  // renderDocumentos() removido — dados purgados, reescrever Onda 2
+  // renderNotasMestre() removido — dados purgados, reescrever Onda 2
+  // renderDocumentos();
+  // renderNotasMestre();
   loadNotes();
   handleHash();
 }
@@ -1563,31 +1554,31 @@ function renderHome(){
       <div class="stat-row"><span class="stat-label">Episódio Atual</span><span class="stat-value">${roman(m.episodio_atual)} de ${totalEp}</span></div>
       <div class="stat-row"><span class="stat-label">Início do Jogo</span><span class="stat-value">18 de março de 2025</span></div>
       <div class="stat-row"><span class="stat-label">Cidade</span><span class="stat-value">${esc(DATA.cidade.nome)}</span></div>
-      <div class="stat-row"><span class="stat-label">Vítimas — Operação Semente</span><span class="stat-value">33 em 11 dias</span></div>
-      <div class="stat-row"><span class="stat-label">Encarnações de Caim</span><span class="stat-value">9 documentadas</span></div>
+      <div class="stat-row"><span class="stat-label">Vítimas — Operação dos 33</span><span class="stat-value">33 em 11 dias · out/1972</span></div>
+      <div class="stat-row"><span class="stat-label">Linhagem brasileira</span><span class="stat-value">Kassner → Hélio → Messiah</span></div>
     </div>
     <div class="home-pane">
-      <div class="home-pane-title">As Três Camadas</div>
-      ${DATA.universo.camadas.map(c=>`
+      <div class="home-pane-title">Os Princípios do Universo</div>
+      ${(DATA.universo?.principios||[]).slice(0,4).map(p=>`
         <div class="stat-row" style="flex-direction:column;align-items:flex-start;gap:2px">
-          <span class="stat-label" style="color:var(--gold-lt)">${esc(c.numero)} · ${esc(c.titulo)}</span>
-          <span class="stat-value" style="font-size:15px">${esc(c.nome)}</span>
+          <span class="stat-label" style="color:var(--gold-lt)">${esc(p.titulo)}</span>
         </div>`).join('')}
       <div style="margin-top:14px">
         <button class="quick-link" onclick="navigate('caim')"><span class="ql-icon">☉</span>Dossiê de Caim</button>
-        <button class="quick-link" onclick="navigate('abel')"><span class="ql-icon">☓</span>Dossiê de Abel</button>
-        <button class="quick-link" onclick="navigate('profetas')"><span class="ql-icon">†</span>Os Profetas</button>
+        <button class="quick-link" onclick="navigate('armindo')"><span class="ql-icon">☩</span>O Profeta · Armindo</button>
+        <button class="quick-link" onclick="navigate('profetas')"><span class="ql-icon">†</span>Os Sete Profetas</button>
       </div>
     </div>
     <div class="home-pane">
       <div class="home-pane-title">Atalhos</div>
+      <button class="quick-link" onclick="navigate('narrar')"><span class="ql-icon">▶</span>Modo Narrar (Ep1 · 19 cenas)</button>
       <button class="quick-link" onclick="navigate('temporadas')"><span class="ql-icon">❧</span>As Três Temporadas</button>
+      <button class="quick-link" onclick="navigate('pragas')"><span class="ql-icon">☣</span>As 10 Pragas</button>
+      <button class="quick-link" onclick="navigate('props')"><span class="ql-icon">❦</span>Props do Ep1</button>
+      <button class="quick-link" onclick="navigate('dia18')"><span class="ql-icon">⧗</span>Dia 18 · Cronologia</button>
+      <button class="quick-link" onclick="navigate('cidade')"><span class="ql-icon">⌖</span>A Cidade</button>
       <button class="quick-link" onclick="navigate('npcs')"><span class="ql-icon">☥</span>NPCs Principais</button>
-      <button class="quick-link" onclick="navigate('documentos')"><span class="ql-icon">❦</span>Documentos Físicos</button>
-      <button class="quick-link" onclick="navigate('timeline')"><span class="ql-icon">⧗</span>Linha do Tempo</button>
-      <button class="quick-link" onclick="navigate('causalidade')"><span class="ql-icon">⟁</span>Bíblia de Causalidade</button>
       <button class="quick-link" onclick="navigate('regras')"><span class="ql-icon">⚖</span>Regras &amp; Sistema</button>
-      <button class="quick-link" onclick="navigate('notas-mestre')"><span class="ql-icon">☞</span>Notas do Mestre</button>
     </div>`;
 
   // bloco inferior — epígrafe
@@ -1606,35 +1597,20 @@ function renderHome(){
    GRIMÓRIO — universo + camadas + 5 regras
    ═══════════════════════════════════════════════════════════ */
 function renderGrimorio(){
-  const u=DATA.universo;
+  const u=DATA.universo||{};
   let h=`
     <div class="t-eyebrow">Parte I</div>
     <h3 class="t-title">O Que Este Universo É</h3>
-    <p class="t-body dc">${fmtInline(u.o_que_e)}</p>
-    <p class="t-body">${fmtInline(u.referencia)}</p>
+    <p class="t-body dc">${fmtInline(u.intro||'')}</p>
+    ${u.lema?`<div class="bq" style="text-align:center;font-size:22px;margin:24px 0"><p style="font-style:italic;color:var(--blood)">"${esc(u.lema)}"</p></div>`:''}
 
-    <div class="t-sec"><span class="g">❧</span>As Três Camadas de Antagonismo</div>
-    ${u.camadas.map(c=>`
+    <div class="t-sec"><span class="g">❧</span>Os Princípios do Universo</div>
+    ${(u.principios||[]).map(p=>`
       <div class="camada">
-        <div class="cm-num">${esc(c.numero)}</div>
-        <div class="cm-title">${esc(c.titulo)}</div>
-        <div class="cm-name">${esc(c.nome)}</div>
-        <div class="cm-body">${fmtInline(c.corpo)}</div>
-      </div>`).join('')}
+        <div class="cm-title">${esc(p.titulo)}</div>
+        <div class="cm-body">${fmtInline(p.corpo||'')}</div>
+      </div>`).join('')}`;
 
-    <div class="div-orn">✦ ✦ ✦</div>
-    <div class="t-eyebrow">As Leis do Mundo</div>
-    <h3 class="t-title">As Cinco Regras Fundamentais</h3>
-    <p class="t-body">Estas são as leis que governam o universo de Karma Eterno. Não estão escritas em nenhum livro. Nenhuma tradição as nomeou completamente. Os personagens vão descobri-las empiricamente. O Mestre já as conhece todas.</p>`;
-
-  DATA.regras.forEach(r=>{
-    h+=`<div class="t-sec"><span class="g">${esc(r.numero)}</span>Regra ${esc(r.numero)} — ${esc(r.titulo)}</div>
-        ${paras(r.corpo)}`;
-    if(r.nota_mestre){
-      h+=`<div class="nm-box"><div class="nm-lbl">O que o Mestre sabe e os personagens não</div>
-          <div class="nm-txt">${fmtInline(r.nota_mestre)}</div></div>`;
-    }
-  });
   document.getElementById('grimorioBody').innerHTML=h;
 }
 
@@ -1642,55 +1618,130 @@ function renderGrimorio(){
    REGRAS & SISTEMA
    ═══════════════════════════════════════════════════════════ */
 function renderRegras(){
-  const s=DATA.sistema;
+  const s=DATA.sistema||{};
+  if(s.em_reconstrucao || !s.atributos){
+    document.getElementById('regrasBody').innerHTML = renderEmReconstrucao('Regras & Sistema', 'O sistema novo do v1.23 está sendo destilado e indexado.');
+    return;
+  }
   let h=`
-    <div class="t-eyebrow">Parte IX</div>
-    <h3 class="t-title">Base: ${esc(s.base)}</h3>
-    <p class="t-body dc">${fmtInline(s.base_intro)}</p>
+    <div class="t-eyebrow">Sistema</div>
+    <h3 class="t-title">${esc(s.base||'')}</h3>
+    <p class="t-body dc">${fmtInline(s.base_intro||'')}</p>
 
+    <div class="t-sec"><span class="g">❧</span>Os Cinco Atributos</div>
+    <p class="t-body">Distribuição fixa de criação: <strong>70 · 60 · 55 · 50 · 40</strong> — um para cada.</p>
     <table class="stbl"><thead><tr><th>Atributo</th><th>Significado em Karma Eterno</th></tr></thead><tbody>
-    ${s.atributos.map(a=>`<tr><td style="font-family:'Cinzel',serif;color:var(--blood);font-size:13px;letter-spacing:1px">${esc(a.nome)}</td><td>${fmtInline(a.significado)}</td></tr>`).join('')}
-    </tbody></table>
+    ${s.atributos.map(a=>`<tr><td style="font-family:'Cinzel',serif;color:var(--blood);font-size:13px;letter-spacing:1px;font-weight:700">${esc(a.nome)}</td><td>${fmtInline(a.significado)}</td></tr>`).join('')}
+    </tbody></table>`;
 
-    <div class="div-orn">✦ ✦ ✦</div>
-    <div class="t-eyebrow">Os Dois Atributos Exclusivos</div>
-    <h3 class="t-title">Memória e Permanência</h3>
+  // RECURSOS ESPIRITUAIS (Marcas, Permanência, Sanidade)
+  if(s.recursos_espirituais){
+    const r = s.recursos_espirituais;
+    h+=`<div class="div-orn">✦ ✦ ✦</div>
+      <div class="t-eyebrow">Os Três Eixos Espirituais</div>
+      <h3 class="t-title">Marcas · Permanência · Sanidade</h3>
+      <p class="t-body dc">${fmtInline(r.intro||'')}</p>`;
 
-    <div class="t-sec"><span class="g">❧</span>Memória</div>
-    <p class="t-body">${fmtInline(s.memoria.descricao)}</p>
-    <div class="info-grid">
-      <div class="info-k">Valor inicial</div><div class="info-v">${fmtInline(s.memoria.calculo)}</div>
-      <div class="info-k">Sobe</div><div class="info-v">${fmtInline(s.memoria.sobe)}</div>
-      <div class="info-k">Desce</div><div class="info-v">${fmtInline(s.memoria.desce)}</div>
-      <div class="info-k">Piso</div><div class="info-v">${fmtInline(s.memoria.piso)}</div>
-    </div>
-    <table class="stbl"><thead><tr><th>Valor</th><th>Estado</th></tr></thead><tbody>
-    ${s.memoria.escala.map(e=>`<tr><td style="font-family:'Cinzel',serif;color:var(--gold);font-size:13px">${esc(e.faixa)}</td><td>${fmtInline(e.estado)}</td></tr>`).join('')}
-    </tbody></table>
+    if(r.marcas){
+      h+=`<div class="t-sec"><span class="g">☉</span>Marcas — acúmulo de exposição</div>
+        <p class="t-body">${fmtInline(r.marcas.descricao||'')}</p>
+        <p class="t-body">${fmtInline(r.marcas.ciclo||'')}</p>
+        <div class="warn-box"><div class="warn-lbl">Limiares dos 7 Despertares</div><div class="warn-txt">${fmtInline(r.marcas.limiares||'')}</div></div>
+        <p class="t-body">${fmtInline(r.marcas.visibilidade||'')}</p>`;
+      if(r.marcas.eventos_tipicos){
+        h+=`<div class="t-label">Tabela de ganhos típicos (referência ao Mestre)</div>${ulList(r.marcas.eventos_tipicos)}`;
+      }
+    }
+    if(r.permanencia){
+      h+=`<div class="t-sec"><span class="g">☉</span>Permanência — quanto você ainda é você</div>
+        <p class="t-body">${fmtInline(r.permanencia.descricao||'')}</p>
+        <p class="t-body">${fmtInline(r.permanencia.mecanica||'')}</p>
+        <div class="warn-box"><div class="warn-lbl">Permanência Zero</div><div class="warn-txt">${fmtInline(r.permanencia.zero||'')}</div></div>`;
+    }
+    if(r.sanidade){
+      h+=`<div class="t-sec"><span class="g">☉</span>Sanidade — capacidade de funcionar</div>
+        <p class="t-body">${fmtInline(r.sanidade.descricao||'')}</p>
+        <div class="nm-box"><div class="nm-lbl">Sanidade Inicial</div><div class="nm-txt">${fmtInline(r.sanidade.inicial||'')}</div></div>
+        <p class="t-body">${fmtInline(r.sanidade.maxima||'')}</p>`;
+    }
+  }
 
-    <div class="t-sec"><span class="g">❧</span>Permanência</div>
-    <p class="t-body">${fmtInline(s.permanencia.descricao)}</p>
-    <p class="t-body">${fmtInline(s.permanencia.mecanica)}</p>
-    <div class="warn-box"><div class="warn-lbl">Permanência Zero</div><div class="warn-txt">${fmtInline(s.permanencia.zero)}</div></div>
+  // MEMÓRIA (atributo derivado)
+  if(s.memoria){
+    h+=`<div class="div-orn">✦ ✦ ✦</div>
+      <div class="t-sec"><span class="g">❧</span>Memória — atributo derivado</div>
+      <p class="t-body">${fmtInline(s.memoria.descricao||'')}</p>
+      <div class="info-grid">
+        <div class="info-k">Valor inicial</div><div class="info-v">${fmtInline(s.memoria.calculo||'')}</div>
+        <div class="info-k">Sobe</div><div class="info-v">${fmtInline(s.memoria.sobe||'')}</div>
+        <div class="info-k">Desce</div><div class="info-v">${fmtInline(s.memoria.desce||'')}</div>
+        <div class="info-k">Piso</div><div class="info-v">${fmtInline(s.memoria.piso||'')}</div>
+      </div>
+      ${s.memoria.escala?`<table class="stbl"><thead><tr><th>Valor</th><th>Estado</th></tr></thead><tbody>
+      ${s.memoria.escala.map(e=>`<tr><td style="font-family:'Cinzel',serif;color:var(--gold);font-size:13px">${esc(e.faixa)}</td><td>${fmtInline(e.estado)}</td></tr>`).join('')}
+      </tbody></table>`:''}`;
+  }
 
-    <div class="t-sec"><span class="g">❧</span>Integridade — Atributo Exclusivo de Abel</div>
-    <p class="t-body">${fmtInline(s.integridade.descricao)}</p>
-    <div class="bq"><p>${fmtInline(s.integridade.manifestacao)}</p></div>
+  // OS 7 DESPERTARES + D8
+  if(s.despertares){
+    const d = s.despertares;
+    h+=`<div class="div-orn">✦ ✦ ✦</div>
+      <div class="t-eyebrow">A Jornada Espiritual</div>
+      <h3 class="t-title">Os Sete Despertares</h3>
+      <p class="t-body dc">${fmtInline(d.intro||'')}</p>
+      <div class="nm-box"><div class="nm-lbl">As Três Condições de Despertar</div><div class="nm-txt">${fmtInline(d.tres_condicoes||'')}</div></div>`;
+    if(d.os_sete){
+      h+=`<div class="t-label" style="margin-top:18px">Os Sete</div>`;
+      d.os_sete.forEach(de=>{
+        h+=`<div class="mech-box"><div class="mech-ttl">${esc(de.numero)} — ${esc(de.titulo)}</div><p class="t-body" style="margin:0">${fmtInline(de.corpo)}</p></div>`;
+      });
+    }
+    if(d.d8){
+      h+=`<div class="div-orn">⧗ ⧗ ⧗</div>
+        <div class="t-eyebrow">O Limiar Final</div>
+        <h3 class="t-title">D8 — Aceitação ou Redenção</h3>
+        <p class="t-body dc">${fmtInline(d.d8.intro||'')}</p>
+        <div class="grid-2">
+          <div class="mech-box" style="border-color:var(--gold)"><div class="mech-ttl" style="color:var(--gold)">Redenção</div><p class="t-body" style="margin:0">${fmtInline(d.d8.redencao||'')}</p></div>
+          <div class="mech-box" style="border-color:var(--blood)"><div class="mech-ttl" style="color:var(--blood)">Aceitação</div><p class="t-body" style="margin:0">${fmtInline(d.d8.aceitacao||'')}</p></div>
+        </div>`;
+    }
+  }
 
-    <div class="div-orn">✦ ✦ ✦</div>
-    <div class="t-eyebrow">Mecânicas Exclusivas</div>
-    <h3 class="t-title">As Regras de Mesa</h3>`;
+  // PATRONOS
+  if(s.patronos){
+    const p = s.patronos;
+    h+=`<div class="div-orn">✦ ✦ ✦</div>
+      <div class="t-eyebrow">Os Vínculos</div>
+      <h3 class="t-title">Patronos — Frontal e Posterior</h3>
+      <p class="t-body dc">${fmtInline(p.intro||'')}</p>`;
+    if(p.frontais){
+      h+=`<div class="t-sec"><span class="g">†</span>Patronos Frontais — manifestam no D3</div>`;
+      p.frontais.forEach(pa=>{
+        h+=`<div class="mech-box"><div class="mech-ttl">${esc(pa.nome)} — ${esc(pa.virtude)}</div><p class="t-body" style="margin:0">${fmtInline(pa.dom)}</p></div>`;
+      });
+    }
+    if(p.posteriores){
+      h+=`<div class="t-sec"><span class="g">⛤</span>Patronos Posteriores — manifestam no D5</div>`;
+      p.posteriores.forEach(pa=>{
+        h+=`<div class="mech-box" style="border-color:var(--blood-dim)"><div class="mech-ttl" style="color:var(--blood)">${esc(pa.nome)} — ${esc(pa.virtude)}</div><p class="t-body" style="margin:0">${fmtInline(pa.dom)}</p></div>`;
+      });
+    }
+    if(p.obs_combinacao){
+      h+=`<div class="warn-box"><div class="warn-lbl">Combinações raras</div><div class="warn-txt">${fmtInline(p.obs_combinacao)}</div></div>`;
+    }
+  }
 
-  s.mecanicas.forEach(m=>{
-    h+=`<div class="mech-box"><div class="mech-ttl">${esc(m.nome)}</div>${paras(m.corpo)}</div>`;
-  });
-
-  h+=`<div class="t-sec"><span class="g">❧</span>O Envelope Lacrado — Criação de Personagem</div>
-      <p class="t-body">${fmtInline(s.envelope.descricao)}</p>
-      ${s.envelope.paginas.map(p=>`
-        <div class="env-page"><div class="env-page-lbl">${esc(p.pagina)}</div>
-        <div class="env-page-txt">${fmtInline(p.texto)}</div></div>`).join('')}
-      <div class="nm-box"><div class="nm-lbl">A Teia Fechada</div><div class="nm-txt">${fmtInline(s.envelope.teia)}</div></div>`;
+  // MEDIUNIDADE INVESTIGATIVA
+  if(s.mediunidade_investigativa){
+    const m = s.mediunidade_investigativa;
+    h+=`<div class="div-orn">✦ ✦ ✦</div>
+      <div class="t-eyebrow">Cap 10b · Sessões de comunicação</div>
+      <h3 class="t-title">Mediunidade Investigativa</h3>
+      <p class="t-body dc">${fmtInline(m.intro||'')}</p>
+      <div class="mech-box"><div class="mech-ttl">Estrutura das 3 tentativas</div><p class="t-body" style="margin:0">${fmtInline(m.estrutura||'')}</p></div>
+      <div class="mech-box" style="border-color:var(--gold-dim)"><div class="mech-ttl" style="color:var(--gold)">Proteção (Regra 1 de Valdecir)</div><p class="t-body" style="margin:0">${fmtInline(m.protecao||'')}</p></div>`;
+  }
 
   document.getElementById('regrasBody').innerHTML=h;
 }
@@ -1738,35 +1789,51 @@ function renderCidade(){
 /* ═══════════════════════════════════════════════════════════
    CAIM — origem, marca, 9 encarnações
    ═══════════════════════════════════════════════════════════ */
+/* Placeholder para seções em reconstrução */
+function renderEmReconstrucao(titulo, mensagem){
+  return `<div class="em-reconstrucao">
+    <div class="em-reconstrucao-icone">⚙</div>
+    <div class="em-reconstrucao-titulo">${esc(titulo)} — em reconstrução</div>
+    <div class="em-reconstrucao-txt">${mensagem}</div>
+    <div class="em-reconstrucao-rodape">Cânone antigo purgado · Conteúdo novo sendo destilado da História Completa, Guia v3 e PDF Sistema v1.23</div>
+  </div>`;
+}
+
 function renderCaim(){
-  const c=DATA.caim;
+  const c=DATA.caim||{};
   let h=`
     <div class="t-eyebrow">Parte II</div>
     <h3 class="t-title lg">Caim — A Origem de Tudo</h3>
-    <p class="t-body dc">${fmtInline(c.intro)}</p>`;
+    <p class="t-body dc">${fmtInline(c.intro||'')}</p>`;
 
-  c.blocos.forEach(b=>{
+  (c.blocos||[]).forEach(b=>{
     h+=`<div class="t-sec"><span class="g">☉</span>${esc(b.titulo)}</div>${paras(b.corpo)}`;
   });
 
   // A Marca
-  h+=`<div class="div-orn">✦ ✦ ✦</div>
-      <div class="t-eyebrow">No Sistema CoC</div>
+  if(c.marca){
+    h+=`<div class="div-orn">✦ ✦ ✦</div>
+      <div class="t-eyebrow">No Sistema</div>
       <h3 class="t-title">A Marca de Caim</h3>
-      <p class="t-body">${fmtInline(c.marca.intro)}</p>
-      <div class="grid-2">
-        <div class="mech-box"><div class="mech-ttl">Benefícios</div>${ulList(c.marca.beneficios)}</div>
-        <div class="mech-box"><div class="mech-ttl">Custo</div>${ulList(c.marca.custo)}</div>
-      </div>
-      <div class="nm-box"><div class="nm-lbl">Paradoxo da Marca</div><div class="nm-txt">${fmtInline(c.marca.paradoxo)}</div></div>
+      <p class="t-body">${fmtInline(c.marca.intro||'')}</p>`;
+    if((c.marca.beneficios||[]).length || (c.marca.custo||[]).length){
+      h+=`<div class="grid-2">
+          <div class="mech-box"><div class="mech-ttl">Benefícios</div>${ulList(c.marca.beneficios||[])}</div>
+          <div class="mech-box"><div class="mech-ttl">Custo</div>${ulList(c.marca.custo||[])}</div>
+        </div>`;
+    }
+    if(c.marca.paradoxo){
+      h+=`<div class="nm-box"><div class="nm-lbl">Paradoxo da Marca</div><div class="nm-txt">${fmtInline(c.marca.paradoxo)}</div></div>`;
+    }
+  }
 
-      <div class="div-orn">⧗ ⧗ ⧗</div>
+  h+=`<div class="div-orn">⧗ ⧗ ⧗</div>
       <div class="t-eyebrow">Linha do Tempo Completa</div>
       <h3 class="t-title">As Encarnações de Caim</h3>
       <p class="t-body">Cinco mil e oitocentos anos. Nove encarnações com consciência plena, intercaladas por vidas menores de aprendizado. Clique em cada uma para abrir.</p>
       <div style="margin-top:18px">`;
 
-  DATA.encarnacoes.forEach((e,i)=>{
+  (DATA.encarnacoes||[]).forEach((e,i)=>{
     h+=`<div class="enc-card ${e.principal?'principal':'menor'}" onclick="toggleEnc(${i})">
       <div class="enc-marker">${e.principal?'☉':'·'}</div>
       <div class="enc-ordem">${esc(e.ordem)}</div>
@@ -1817,62 +1884,44 @@ function renderAbel(){
    PROFETAS — sistema + Ezequiel + Armindo
    ═══════════════════════════════════════════════════════════ */
 function renderProfetas(){
-  const p=DATA.profetas;
-  const ez=p.ezequiel, ar=p.armindo;
+  const p=DATA.profetas||{};
+  const ez=p.ezequiel||{}, ar=p.armindo||{};
+  if(!p.sistema || !p.sistema.intro){
+    document.getElementById('profetasBody').innerHTML = renderEmReconstrucao('Profetas', 'A página dedicada do Armindo está completa em "O Profeta". Esta página geral está sendo reescrita.');
+    return;
+  }
   let h=`
-    <div class="t-eyebrow">Parte IV</div>
-    <h3 class="t-title lg">Os Profetas</h3>
+    <div class="t-eyebrow">Parte V</div>
+    <h3 class="t-title lg">Os Sete Profetas</h3>
     <div class="t-sec"><span class="g">†</span>O Sistema dos Profetas</div>
-    <p class="t-body dc">${fmtInline(p.sistema.intro)}</p>
-    ${p.sistema.hierarquia.map(hi=>`<div class="hier"><div class="hier-nivel">${esc(hi.nivel)}</div><div class="hier-body">${fmtInline(hi.corpo)}</div></div>`).join('')}
+    <p class="t-body dc">${fmtInline(p.sistema.intro||'')}</p>
+    ${(p.sistema.hierarquia||[]).map(hi=>`<div class="hier"><div class="hier-nivel">${esc(hi.nivel)}</div><div class="hier-body">${fmtInline(hi.corpo)}</div></div>`).join('')}
+    ${p.sistema.estado_atual?`<div class="nm-box"><div class="nm-lbl">Estado atual — março de 2025</div><div class="nm-txt">${fmtInline(p.sistema.estado_atual)}</div></div>`:''}
 
     <div class="div-orn">✦ ✦ ✦</div>
-    <div class="t-eyebrow">O Primeiro Profeta · O Arquiteto</div>
-    <h3 class="t-title">${esc(ez.nome)}</h3>
+    <div class="t-eyebrow">Primeiro Profeta · Profeta das Pragas</div>
+    <h3 class="t-title">${esc(ar.nome||'Armindo')}</h3>
+    <p class="t-body" style="font-style:italic;color:var(--gold);font-size:17px">${esc(ar.epiteto||'')}</p>
     <div class="info-grid">
-      <div class="info-k">Papel</div><div class="info-v">${esc(ez.papel)}</div>
-      <div class="info-k">Idade</div><div class="info-v">${esc(ez.idade)}</div>
-      <div class="info-k">Localização</div><div class="info-v">${esc(ez.localizacao)}</div>
-      <div class="info-k">Profissão</div><div class="info-v">${esc(ez.profissao)}</div>
+      ${ar.idade?`<div class="info-k">Idade</div><div class="info-v">${esc(ar.idade)} anos</div>`:''}
+      ${ar.cargo?`<div class="info-k">Cargo</div><div class="info-v">${esc(ar.cargo)}</div>`:''}
     </div>
-    <div class="t-label">A História</div>
-    ${paras(ez.historia)}
-    <div class="t-label">Quem Ele É em 2025</div>
-    ${paras(ez.em_2025)}
-    <div class="info-grid">
-      <div class="info-k">Estado da Marca</div><div class="info-v">${fmtInline(ez.marca)}</div>
-      <div class="info-k">Como Opera</div><div class="info-v">${fmtInline(ez.como_opera)}</div>
-    </div>
-    <div class="nm-box"><div class="nm-lbl">O Confronto Final da T2</div><div class="nm-txt">${fmtInline(ez.confronto_t2)}</div></div>
-    <div class="nm-box"><div class="nm-lbl">O Que o Torna Diferente</div><div class="nm-txt">${fmtInline(ez.o_que_torna_diferente)}</div></div>
+    ${ar.resumo?`<div class="t-label">Resumo</div>${paras(ar.resumo)}`:''}
+    ${ar.metodo?`<div class="t-label">O método das pragas</div><p class="t-body">${fmtInline(ar.metodo)}</p>`:''}
+    ${ar.no_ep1?`<div class="nm-box"><div class="nm-lbl">No Episódio 1</div><div class="nm-txt">${fmtInline(ar.no_ep1)}</div></div>`:''}
+    ${ar.arco_tragico?`<div class="nm-box" style="border-color:var(--blood)"><div class="nm-lbl" style="color:var(--blood)">Arco trágico — não vilão, profeta</div><div class="nm-txt">${fmtInline(ar.arco_tragico)}</div></div>`:''}
+    <div style="margin-top:14px"><button class="quick-link" onclick="navigate('armindo')"><span class="ql-icon">☩</span>Página dedicada de Armindo (camada de vilão T1)</button></div>
 
     <div class="div-orn">✦ ✦ ✦</div>
-    <div class="t-eyebrow">O Último Profeta · O Fundador</div>
-    <h3 class="t-title">${esc(ar.nome)}</h3>
+    <div class="t-eyebrow">Profeta Conselheiro · O Operador</div>
+    <h3 class="t-title">${esc(ez.nome||'Ezequiel')}</h3>
+    <p class="t-body" style="font-style:italic;color:var(--gold);font-size:17px">${esc(ez.epiteto||'')}</p>
     <div class="info-grid">
-      <div class="info-k">Papel</div><div class="info-v">${esc(ar.papel)}</div>
-      <div class="info-k">Nascimento</div><div class="info-v">${esc(ar.nascimento)}</div>
-      <div class="info-k">Idade Real</div><div class="info-v">${esc(ar.idade_real)}</div>
-      <div class="info-k">Aparência</div><div class="info-v">${esc(ar.aparencia)}</div>
-      <div class="info-k">Função em 2025</div><div class="info-v">${esc(ar.funcao)}</div>
-      <div class="info-k">Identidades</div><div class="info-v">${esc(ar.identidades)}</div>
+      ${ez.localizacao?`<div class="info-k">Localização</div><div class="info-v">${esc(ez.localizacao)}</div>`:''}
     </div>
-    <div class="t-label">Por Que Caim o Escolheu</div>
-    ${paras(ar.por_que_escolhido)}
-    <div class="t-label">A História</div>
-    ${paras(ar.historia)}
-    <div class="nm-box"><div class="nm-lbl">A Tragédia de Armindo</div><div class="nm-txt">${fmtInline(ar.tragedia)}</div></div>
+    ${ez.resumo?`<div class="t-label">Resumo</div>${paras(ez.resumo)}`:''}
+    ${ez.no_ep1?`<div class="nm-box"><div class="nm-lbl">No Episódio 1</div><div class="nm-txt">${fmtInline(ez.no_ep1)}</div></div>`:''}`;
 
-    <div class="t-label">Como Interpretar Armindo</div>
-    ${ar.como_interpretar.map(f=>`<div class="signal-block"><div class="signal-num">${esc(f.fase)}</div><div class="signal-txt">${fmtInline(f.corpo)}</div></div>`).join('')}
-
-    <div class="t-label">Elementos Físicos</div>
-    ${ulList(ar.elementos_fisicos)}
-
-    <div class="t-label">Os Três Monólogos de Armindo</div>
-    ${ar.monologos.map(m=>`<div class="mono">${fmtInline(m)}</div>`).join('')}
-
-    <div class="nm-box"><div class="nm-lbl">O Que o Mestre Sabe e Ninguém Mais</div><div class="nm-txt">${fmtInline(ar.nota_mestre)}</div></div>`;
   document.getElementById('profetasBody').innerHTML=h;
 }
 
@@ -2431,51 +2480,76 @@ function refLabel(ref){
 function renderTemporadas(){
   const tabs=document.getElementById('tempSubtabs');
   const panes=document.getElementById('tempPanes');
+  const todasEmReconstrucao = (DATA.temporadas||[]).every(t=>t.em_reconstrucao);
+  if(todasEmReconstrucao){
+    tabs.innerHTML = '';
+    panes.innerHTML = renderEmReconstrucao('Temporadas','As três temporadas estão sendo reescritas.');
+    return;
+  }
   tabs.innerHTML=DATA.temporadas.map((t,i)=>
     `<button class="subtab ${i===0?'active':''}" onclick="switchTemp(${i})">T${roman(t.numero)} — ${esc(t.titulo)}</button>`).join('');
   panes.innerHTML=DATA.temporadas.map((t,i)=>{
     let inner=`
       <div class="season-card">
         <div class="season-num">${roman(t.numero)}</div>
-        <div class="season-eyebrow">Temporada ${roman(t.numero)}</div>
+        <div class="season-eyebrow">Temporada ${roman(t.numero)}${t.subtitulo?' · '+esc(t.subtitulo):''}</div>
         <div class="season-title">${esc(t.titulo)}</div>
-        <div class="season-period">${esc(t.periodo)}</div>
-        <div class="season-lema">&ldquo;${esc(t.lema)}&rdquo;</div>
-        <div class="doc-note" style="margin:0 0 14px"><div class="doc-nl">O arco em uma frase</div><div class="doc-nt">${fmtInline(t.arco)}</div></div>
-        <div class="t-label" style="margin-top:6px">Tom</div>
-        <p class="t-body" style="margin-bottom:4px">${fmtInline(t.tom)}</p>
+        <div class="season-period">${esc(t.periodo||'')}</div>
+        ${t.lema?`<div class="season-lema">&ldquo;${esc(t.lema)}&rdquo;</div>`:''}
+        ${t.arco?`<div class="doc-note" style="margin:0 0 14px"><div class="doc-nl">O arco em uma frase</div><div class="doc-nt">${fmtInline(t.arco)}</div></div>`:''}
+        ${t.tom?`<div class="t-label" style="margin-top:6px">Tom</div><p class="t-body" style="margin-bottom:4px">${fmtInline(t.tom)}</p>`:''}
+        ${t.arco_mecanico?`<div class="t-label">Arco mecânico</div><p class="t-body" style="margin-bottom:4px">${fmtInline(t.arco_mecanico)}</p>`:''}
       </div>`;
-    if(t.estabelece){
+    if(t.estabelece && t.estabelece.length){
       inner+=`<div class="book-card"><div class="book-inner compact">
         <div class="t-sec" style="margin-top:0"><span class="g">❧</span>O Que a T${roman(t.numero)} Estabelece</div>
         ${ulList(t.estabelece)}</div></div>`;
     }
-    if(t.estrutura){
+    if(t.estrutura && t.estrutura.length){
       inner+=`<div class="book-card"><div class="book-inner compact">
-        <div class="t-sec" style="margin-top:0"><span class="g">❧</span>Estrutura</div>
-        ${ulList(t.estrutura)}</div></div>`;
+        <div class="t-sec" style="margin-top:0"><span class="g">❧</span>Estrutura das Sessões</div>`;
+      // estrutura agora é lista de dicts {sessoes, titulo, corpo}
+      t.estrutura.forEach(s=>{
+        if(typeof s==='string'){ inner+=`<p class="t-body">${fmtInline(s)}</p>`; }
+        else { inner+=`<div class="signal-block"><div class="signal-num">Sessão ${esc(s.sessoes||'')}${s.titulo?' · '+esc(s.titulo):''}</div><div class="signal-txt">${fmtInline(s.corpo||'')}</div></div>`; }
+      });
+      inner+=`</div></div>`;
     }
-    if(t.revela){
+    if(t.resolucoes_karma && t.resolucoes_karma.length){
       inner+=`<div class="book-card"><div class="book-inner compact">
-        <div class="t-sec" style="margin-top:0"><span class="g">❧</span>O Que a T${roman(t.numero)} Revela</div>
-        ${ulList(t.revela)}</div></div>`;
+        <div class="t-sec" style="margin-top:0"><span class="g">⟁</span>Resoluções de karma</div>
+        ${ulList(t.resolucoes_karma)}</div></div>`;
     }
-    if(t.gancho){
+    if(t.confronto_messiah){
       inner+=`<div class="book-card"><div class="book-inner compact">
-        <div class="t-sec" style="margin-top:0"><span class="g">⟁</span>O Gancho</div>${paras(t.gancho)}</div></div>`;
+        <div class="t-sec" style="margin-top:0"><span class="g">☉</span>O confronto com Messiah</div>
+        <p class="t-body">${fmtInline(t.confronto_messiah)}</p></div></div>`;
     }
-    if(t.finale){
+    if(t.dilema_final && t.dilema_final.length){
       inner+=`<div class="book-card"><div class="book-inner compact">
-        <div class="t-sec" style="margin-top:0"><span class="g">☉</span>O Finale</div>${paras(t.finale)}
-        <div class="t-label">A Cena Mais Importante</div>${paras(t.cena_chave)}</div></div>`;
+        <div class="t-sec" style="margin-top:0"><span class="g">⛤</span>O dilema final — três vias, todas com custo cósmico</div>`;
+      t.dilema_final.forEach((d,di)=>{
+        inner+=`<div class="mech-box" style="border-color:${di===2?'var(--gold)':'var(--blood-dim)'}"><div class="mech-ttl">${esc(d.opcao)}</div><p class="t-body" style="margin:0">${fmtInline(d.consequencia)}</p></div>`;
+      });
+      if(t.comentario_dilema){
+        inner+=`<div class="nm-box" style="border-color:var(--gold)"><div class="nm-lbl" style="color:var(--gold)">Comentário</div><div class="nm-txt">${fmtInline(t.comentario_dilema)}</div></div>`;
+      }
+      inner+=`</div></div>`;
     }
-    if(t.ganchos){
+    if(t.sentimento_final){
       inner+=`<div class="book-card"><div class="book-inner compact">
-        <div class="t-sec" style="margin-top:0"><span class="g">⟁</span>Ganchos em Aberto</div>
-        ${ulList(t.ganchos)}</div></div>`;
+        <div class="t-sec" style="margin-top:0"><span class="g">❦</span>Sentimento ao final</div>
+        <p class="t-body">${fmtInline(t.sentimento_final)}</p></div></div>`;
     }
-    // Episódios apenas para T1
-    if(t.numero===1){
+    if(t.gancho_t2||t.gancho_t3){
+      const g = t.gancho_t2 || t.gancho_t3;
+      const next = t.gancho_t2 ? 'T2' : 'T3';
+      inner+=`<div class="book-card"><div class="book-inner compact">
+        <div class="t-sec" style="margin-top:0"><span class="g">⟁</span>O gancho para a ${next}</div>
+        <p class="t-body">${fmtInline(g)}</p></div></div>`;
+    }
+    // Episódios — só na T1
+    if(t.numero===1 && DATA.episodios && DATA.episodios.length){
       inner+=`<div class="div-orn">❧ ✦ ❧</div>
         <div style="font-family:'Cinzel',serif;font-size:13px;letter-spacing:4px;color:var(--gold-lt);text-transform:uppercase;margin-bottom:16px;text-align:center">Os Dez Episódios</div>`;
       inner+=DATA.episodios.map((e,ei)=>`
@@ -2484,10 +2558,10 @@ function renderTemporadas(){
             <div class="ep-num">${roman(e.numero)}</div>
             <div class="ep-label">Episódio ${roman(e.numero)}</div>
             <div class="ep-title">${esc(e.titulo)}</div>
-            <div class="ep-q">${esc(e.subtitulo)}</div>
+            <div class="ep-q">${esc(e.subtitulo||'')}</div>
             <div class="ep-chev" aria-hidden="true">▾</div>
           </div>
-          <div class="ep-detail" id="ep-${ei}">${renderEpDetail(e)}
+          <div class="ep-detail" id="ep-${ei}">${typeof renderEpDetail==='function'?renderEpDetail(e):''}
             <div class="ep-close-row"><button class="ep-close" onclick="event.stopPropagation();toggleEp(${ei})">▴ Recolher episódio</button></div>
           </div>
         </div>`).join('');
@@ -2978,7 +3052,7 @@ function buildSearchIndex(){
   const idx=[];
   // Páginas e seções
   idx.push({label:'Crônica',title:'Grimório — O Universo',page:'grimorio'});
-  DATA.regras.forEach(r=>idx.push({label:'Regra',title:'Regra '+r.numero+' — '+r.titulo,page:'grimorio'}));
+  (DATA.regras||[]).forEach(r=>idx.push({label:'Regra',title:'Regra '+r.numero+' — '+r.titulo,page:'grimorio'}));
   idx.push({label:'Sistema',title:'Regras & Sistema',page:'regras'});
   idx.push({label:'Cidade',title:'Novavera',page:'cidade'});
   // Cenas — abrem direto no Modo Narrar
@@ -2996,14 +3070,14 @@ function buildSearchIndex(){
   (DATA.props||[]).forEach(p=>idx.push({label:'Prop #'+p.numero+(p.tipo==='mestre'?' · Mestre':''),title:p.nome,action:'peek',ref:'prop:'+p.id}));
   // Lore pages
   idx.push({label:'Antagonista',title:'Caim — A Origem de Tudo',page:'caim'});
-  DATA.encarnacoes.forEach(e=>idx.push({label:'Encarnação',title:e.titulo+' ('+e.data+')',page:'caim'}));
-  idx.push({label:'Antagonista',title:'Abel — O Outro Lado',page:'abel'});
-  idx.push({label:'Profeta',title:DATA.profetas.ezequiel.nome,page:'profetas'});
-  idx.push({label:'Profeta',title:DATA.profetas.armindo.nome,page:'profetas'});
-  DATA.temporadas.forEach(t=>idx.push({label:'Temporada',title:'T'+roman(t.numero)+' — '+t.titulo,page:'temporadas'}));
-  DATA.episodios.forEach(e=>idx.push({label:'Episódio '+roman(e.numero),title:e.titulo,page:'temporadas'}));
-  DATA.causalidade.forEach(c=>idx.push({label:'Causalidade',title:c.pergunta,page:'causalidade'}));
-  DATA.documentos.forEach(d=>idx.push({label:'Documento',title:d.titulo,page:'documentos'}));
+  (DATA.encarnacoes||[]).forEach(e=>idx.push({label:'Encarnação',title:e.titulo+' ('+e.data+')',page:'caim'}));
+  // Abel removido — não há mais aba abel
+  if(DATA.profetas?.ezequiel?.nome) idx.push({label:'Profeta',title:DATA.profetas.ezequiel.nome,page:'profetas'});
+  if(DATA.profetas?.armindo?.nome) idx.push({label:'Profeta',title:DATA.profetas.armindo.nome,page:'armindo'});
+  (DATA.temporadas||[]).forEach(t=>idx.push({label:'Temporada',title:'T'+roman(t.numero)+' — '+t.titulo,page:'temporadas'}));
+  (DATA.episodios||[]).forEach(e=>idx.push({label:'Episódio '+roman(e.numero),title:e.titulo,page:'temporadas'}));
+  (DATA.causalidade||[]).forEach(c=>idx.push({label:'Causalidade',title:c.pergunta,page:'causalidade'}));
+  (DATA.documentos||[]).forEach(d=>idx.push({label:'Documento',title:d.titulo,page:'documentos'}));
   idx.push({label:'Mestre',title:'Notas Finais do Mestre',page:'notas-mestre'});
   idx.push({label:'Crônica',title:'Linha do Tempo Master',page:'timeline'});
   return idx;
