@@ -6500,6 +6500,11 @@
       "palavras": 6
     },
     {
+      "termo": "a primeira visita à Área Verde",
+      "ref": "cena:area-verde",
+      "palavras": 6
+    },
+    {
       "termo": "Dona Neuza Aparecida da Silva",
       "ref": "npc:neuza",
       "palavras": 5
@@ -6507,6 +6512,21 @@
     {
       "termo": "Posto de Saúde de Novavera",
       "ref": "local:posto-saude",
+      "palavras": 5
+    },
+    {
+      "termo": "página de setembro de 1987",
+      "ref": "prop:p08-pagina-1987",
+      "palavras": 5
+    },
+    {
+      "termo": "as quatro tiras de SMS",
+      "ref": "prop:p06-sms-23h14",
+      "palavras": 5
+    },
+    {
+      "termo": "a invasão de Dona Cida",
+      "ref": "cena:climax-dona-cida",
       "palavras": 5
     },
     {
@@ -6530,14 +6550,59 @@
       "palavras": 4
     },
     {
+      "termo": "FILHOS DA PRIMEIRA TERRA",
+      "ref": "prop:p14-foto-rasgada-em-quatro",
+      "palavras": 4
+    },
+    {
       "termo": "Igreja de Santo Antônio",
       "ref": "local:igreja-santo-antonio",
       "palavras": 4
     },
     {
-      "termo": "Ezequiel Drummond Cavalcanti",
-      "ref": "page:profetas",
-      "palavras": 3
+      "termo": "a sessão de comunicação",
+      "ref": "cena:climax-sms-sessao",
+      "palavras": 4
+    },
+    {
+      "termo": "foto rasgada em quatro",
+      "ref": "prop:p14-foto-rasgada-em-quatro",
+      "palavras": 4
+    },
+    {
+      "termo": "a página das pragas",
+      "ref": "prop:p15-pagina-pragas-valdecir",
+      "palavras": 4
+    },
+    {
+      "termo": "a folha das pragas",
+      "ref": "prop:p15-pagina-pragas-valdecir",
+      "palavras": 4
+    },
+    {
+      "termo": "As Regras da Mesa",
+      "ref": "prop:p07-regras-da-mesa",
+      "palavras": 4
+    },
+    {
+      "termo": "a cifra de Kardec",
+      "ref": "prop:p09-pagina-cifrada",
+      "palavras": 4
+    },
+    {
+      "termo": "a página de 1987",
+      "ref": "prop:p08-pagina-1987",
+      "palavras": 4
+    },
+    {
+      "termo": "o ciclo de Abel",
+      "ref": "page:abel",
+      "palavras": 4
+    },
+    {
+      "termo": "os 33 de 1972",
+      "ref": "page:envelopes",
+      "palavras": 4
     },
     {
       "termo": "Arquivo Histórico Municipal",
@@ -6545,13 +6610,13 @@
       "palavras": 3
     },
     {
-      "termo": "Aparecida Coelho Rodrigues",
-      "ref": "npc:cida",
+      "termo": "Hélio Drummond Vasconcellos",
+      "ref": "page:caim",
       "palavras": 3
     },
     {
-      "termo": "Armindo Laerte Vasconcelos",
-      "ref": "page:profetas",
+      "termo": "Aparecida Coelho Rodrigues",
+      "ref": "npc:cida",
       "palavras": 3
     },
     {
@@ -6595,8 +6660,48 @@
       "palavras": 3
     },
     {
+      "termo": "praga dos gafanhotos",
+      "ref": "praga:p8-gafanhotos",
+      "palavras": 3
+    },
+    {
+      "termo": "morte do primogênito",
+      "ref": "praga:p10-morte-do-primogenito",
+      "palavras": 3
+    },
+    {
       "termo": "Carmem Lúcia Tostes",
       "ref": "npc:carmem",
+      "palavras": 3
+    },
+    {
+      "termo": "afogamento sem água",
+      "ref": "praga:p2-rãs",
+      "palavras": 3
+    },
+    {
+      "termo": "chegada de Floriano",
+      "ref": "cena:chegada-floriano",
+      "palavras": 3
+    },
+    {
+      "termo": "chegada de Vinicius",
+      "ref": "cena:chegada-vinicius",
+      "palavras": 3
+    },
+    {
+      "termo": "abertura do caderno",
+      "ref": "cena:climax-caderno",
+      "palavras": 3
+    },
+    {
+      "termo": "lágrimas de sangue",
+      "ref": "praga:p1-aguas-em-sangue",
+      "palavras": 3
+    },
+    {
+      "termo": "posto de gasolina",
+      "ref": "local:posto-gasolina",
       "palavras": 3
     },
     {
@@ -6605,8 +6710,13 @@
       "palavras": 3
     },
     {
-      "termo": "posto de gasolina",
-      "ref": "local:posto-gasolina",
+      "termo": "página das pragas",
+      "ref": "prop:p15-pagina-pragas-valdecir",
+      "palavras": 3
+    },
+    {
+      "termo": "chegada de Sergie",
+      "ref": "cena:chegada-sergie",
       "palavras": 3
     },
     {
@@ -6620,6 +6730,31 @@
       "palavras": 3
     },
     {
+      "termo": "piolhos da terra",
+      "ref": "praga:p3-piolhos-da-terra",
+      "palavras": 3
+    },
+    {
+      "termo": "praga das moscas",
+      "ref": "praga:p4-moscas",
+      "palavras": 3
+    },
+    {
+      "termo": "praga das trevas",
+      "ref": "praga:p9-trevas",
+      "palavras": 3
+    },
+    {
+      "termo": "a página cifrada",
+      "ref": "prop:p09-pagina-cifrada",
+      "palavras": 3
+    },
+    {
+      "termo": "chegada de Gyeno",
+      "ref": "cena:chegada-gyeno",
+      "palavras": 3
+    },
+    {
       "termo": "Rua das Acácias",
       "ref": "local:rua-acacias",
       "palavras": 3
@@ -6630,13 +6765,78 @@
       "palavras": 3
     },
     {
+      "termo": "Operação dos 33",
+      "ref": "page:envelopes",
+      "palavras": 3
+    },
+    {
+      "termo": "águas em sangue",
+      "ref": "praga:p1-aguas-em-sangue",
+      "palavras": 3
+    },
+    {
       "termo": "posto de saúde",
       "ref": "local:posto-saude",
       "palavras": 3
     },
     {
+      "termo": "água em sangue",
+      "ref": "praga:p1-aguas-em-sangue",
+      "palavras": 3
+    },
+    {
+      "termo": "granizo e fogo",
+      "ref": "praga:p7-granizo-e-fogo",
+      "palavras": 3
+    },
+    {
+      "termo": "Regras da Mesa",
+      "ref": "prop:p07-regras-da-mesa",
+      "palavras": 3
+    },
+    {
+      "termo": "a foto rasgada",
+      "ref": "prop:p14-foto-rasgada-em-quatro",
+      "palavras": 3
+    },
+    {
+      "termo": "o gancho final",
+      "ref": "cena:gancho-final",
+      "palavras": 3
+    },
+    {
+      "termo": "praga das rãs",
+      "ref": "praga:p2-rãs",
+      "palavras": 3
+    },
+    {
+      "termo": "peste do gado",
+      "ref": "praga:p5-peste-no-gado",
+      "palavras": 3
+    },
+    {
+      "termo": "peste no gado",
+      "ref": "praga:p5-peste-no-gado",
+      "palavras": 3
+    },
+    {
+      "termo": "SMS das 23h14",
+      "ref": "prop:p06-sms-23h14",
+      "palavras": 3
+    },
+    {
+      "termo": "fogo do céu",
+      "ref": "praga:p7-granizo-e-fogo",
+      "palavras": 3
+    },
+    {
       "termo": "investigador particular",
       "ref": "npc:investigador",
+      "palavras": 2
+    },
+    {
+      "termo": "Messiah Vasconcellos",
+      "ref": "page:profetas",
       "palavras": 2
     },
     {
@@ -6660,6 +6860,16 @@
       "palavras": 2
     },
     {
+      "termo": "Floriano Peixoto",
+      "ref": "pc:floriano",
+      "palavras": 2
+    },
+    {
+      "termo": "Vinicius Fonseca",
+      "ref": "pc:vinicius",
+      "palavras": 2
+    },
+    {
       "termo": "Senhor Valdecir",
       "ref": "npc:valdecir",
       "palavras": 2
@@ -6667,6 +6877,16 @@
     {
       "termo": "Bairro Fundação",
       "ref": "local:bairro-fundacao",
+      "palavras": 2
+    },
+    {
+      "termo": "O Investigador",
+      "ref": "npc:investigador",
+      "palavras": 2
+    },
+    {
+      "termo": "Ronaldo Seabra",
+      "ref": "npc:ronaldo",
       "palavras": 2
     },
     {
@@ -6680,23 +6900,23 @@
       "palavras": 2
     },
     {
-      "termo": "Ronaldo Seabra",
-      "ref": "npc:ronaldo",
+      "termo": "Hélio Drummond",
+      "ref": "page:caim",
       "palavras": 2
     },
     {
-      "termo": "O Investigador",
-      "ref": "npc:investigador",
+      "termo": "Padre Floriano",
+      "ref": "pc:floriano",
       "palavras": 2
     },
     {
-      "termo": "Doutor Armindo",
-      "ref": "page:profetas",
+      "termo": "primeira praga",
+      "ref": "praga:p1-aguas-em-sangue",
       "palavras": 2
     },
     {
-      "termo": "Vera Monteiro",
-      "ref": "npc:vera",
+      "termo": "terceira praga",
+      "ref": "praga:p3-piolhos-da-terra",
       "palavras": 2
     },
     {
@@ -6705,13 +6925,18 @@
       "palavras": 2
     },
     {
+      "termo": "Centro Cívico",
+      "ref": "local:centro-civico-praca",
+      "palavras": 2
+    },
+    {
       "termo": "Carmem Tostes",
       "ref": "npc:carmem",
       "palavras": 2
     },
     {
-      "termo": "Centro Cívico",
-      "ref": "local:centro-civico-praca",
+      "termo": "Vera Monteiro",
+      "ref": "npc:vera",
       "palavras": 2
     },
     {
@@ -6725,12 +6950,67 @@
       "palavras": 2
     },
     {
+      "termo": "O Determinado",
+      "ref": "pc:vinicius",
+      "palavras": 2
+    },
+    {
+      "termo": "segunda praga",
+      "ref": "praga:p2-rãs",
+      "palavras": 2
+    },
+    {
       "termo": "Seu Benedito",
       "ref": "npc:benedito-sacristao",
       "palavras": 2
     },
     {
+      "termo": "Sergie Faria",
+      "ref": "pc:sergie",
+      "palavras": 2
+    },
+    {
       "termo": "O Silencioso",
+      "ref": "pc:floriano",
+      "palavras": 2
+    },
+    {
+      "termo": "quarta praga",
+      "ref": "praga:p4-moscas",
+      "palavras": 2
+    },
+    {
+      "termo": "quinta praga",
+      "ref": "praga:p5-peste-no-gado",
+      "palavras": 2
+    },
+    {
+      "termo": "sétima praga",
+      "ref": "praga:p7-granizo-e-fogo",
+      "palavras": 2
+    },
+    {
+      "termo": "oitava praga",
+      "ref": "praga:p8-gafanhotos",
+      "palavras": 2
+    },
+    {
+      "termo": "décima praga",
+      "ref": "praga:p10-morte-do-primogenito",
+      "palavras": 2
+    },
+    {
+      "termo": "as parábolas",
+      "ref": "cena:climax-dona-cida",
+      "palavras": 2
+    },
+    {
+      "termo": "Seu Geraldo",
+      "ref": "npc:geraldo",
+      "palavras": 2
+    },
+    {
+      "termo": "Operação 33",
       "ref": "page:envelopes",
       "palavras": 2
     },
@@ -6740,13 +7020,13 @@
       "palavras": 2
     },
     {
-      "termo": "Seu Geraldo",
-      "ref": "npc:geraldo",
+      "termo": "Gyeno Rossi",
+      "ref": "pc:gyeno",
       "palavras": 2
     },
     {
-      "termo": "Dr. Armindo",
-      "ref": "page:profetas",
+      "termo": "sexta praga",
+      "ref": "praga:p6-ulceras",
       "palavras": 2
     },
     {
@@ -6761,7 +7041,12 @@
     },
     {
       "termo": "O Cobrador",
-      "ref": "page:envelopes",
+      "ref": "pc:vinicius",
+      "palavras": 2
+    },
+    {
+      "termo": "nona praga",
+      "ref": "praga:p9-trevas",
       "palavras": 2
     },
     {
@@ -6770,14 +7055,44 @@
       "palavras": 2
     },
     {
+      "termo": "O Curioso",
+      "ref": "pc:floriano",
+      "palavras": 2
+    },
+    {
+      "termo": "o velório",
+      "ref": "cena:velorio-chegada",
+      "palavras": 2
+    },
+    {
       "termo": "Seu João",
       "ref": "npc:joao-funeraria",
       "palavras": 2
     },
     {
-      "termo": "O Juiz",
-      "ref": "page:envelopes",
+      "termo": "a cifra",
+      "ref": "prop:p09-pagina-cifrada",
       "palavras": 2
+    },
+    {
+      "termo": "O Juiz",
+      "ref": "pc:sergie",
+      "palavras": 2
+    },
+    {
+      "termo": "O Frio",
+      "ref": "pc:sergie",
+      "palavras": 2
+    },
+    {
+      "termo": "os SMS",
+      "ref": "prop:p06-sms-23h14",
+      "palavras": 2
+    },
+    {
+      "termo": "primogênito",
+      "ref": "praga:p10-morte-do-primogenito",
+      "palavras": 1
     },
     {
       "termo": "rodoviária",
@@ -6785,8 +7100,13 @@
       "palavras": 1
     },
     {
-      "termo": "Silencioso",
-      "ref": "page:envelopes",
+      "termo": "furúnculos",
+      "ref": "praga:p6-ulceras",
+      "palavras": 1
+    },
+    {
+      "termo": "gafanhotos",
+      "ref": "praga:p8-gafanhotos",
       "palavras": 1
     },
     {
@@ -6820,28 +7140,18 @@
       "palavras": 1
     },
     {
-      "termo": "Ezequiel",
+      "termo": "Floriano",
+      "ref": "pc:floriano",
+      "palavras": 1
+    },
+    {
+      "termo": "Vinicius",
+      "ref": "pc:vinicius",
+      "palavras": 1
+    },
+    {
+      "termo": "Messiah",
       "ref": "page:profetas",
-      "palavras": 1
-    },
-    {
-      "termo": "Cobrador",
-      "ref": "page:envelopes",
-      "palavras": 1
-    },
-    {
-      "termo": "Gabriel",
-      "ref": "npc:gabriel",
-      "palavras": 1
-    },
-    {
-      "termo": "Ronaldo",
-      "ref": "npc:ronaldo",
-      "palavras": 1
-    },
-    {
-      "termo": "Geraldo",
-      "ref": "npc:geraldo",
       "palavras": 1
     },
     {
@@ -6850,8 +7160,28 @@
       "palavras": 1
     },
     {
-      "termo": "Armindo",
-      "ref": "page:profetas",
+      "termo": "Geraldo",
+      "ref": "npc:geraldo",
+      "palavras": 1
+    },
+    {
+      "termo": "Ronaldo",
+      "ref": "npc:ronaldo",
+      "palavras": 1
+    },
+    {
+      "termo": "Gabriel",
+      "ref": "npc:gabriel",
+      "palavras": 1
+    },
+    {
+      "termo": "úlceras",
+      "ref": "praga:p6-ulceras",
+      "palavras": 1
+    },
+    {
+      "termo": "Igreja",
+      "ref": "local:igreja-santo-antonio",
       "palavras": 1
     },
     {
@@ -6865,18 +7195,13 @@
       "palavras": 1
     },
     {
-      "termo": "Igreja",
-      "ref": "local:igreja-santo-antonio",
+      "termo": "Sergie",
+      "ref": "pc:sergie",
       "palavras": 1
     },
     {
-      "termo": "Décio",
-      "ref": "npc:decio",
-      "palavras": 1
-    },
-    {
-      "termo": "Sueli",
-      "ref": "npc:sueli",
+      "termo": "trevas",
+      "ref": "praga:p9-trevas",
       "palavras": 1
     },
     {
@@ -6885,24 +7210,2562 @@
       "palavras": 1
     },
     {
-      "termo": "Vera",
-      "ref": "npc:vera",
+      "termo": "Sueli",
+      "ref": "npc:sueli",
       "palavras": 1
     },
     {
-      "termo": "Caim",
+      "termo": "Décio",
+      "ref": "npc:decio",
+      "palavras": 1
+    },
+    {
+      "termo": "Hélio",
       "ref": "page:caim",
       "palavras": 1
     },
     {
-      "termo": "Abel",
-      "ref": "page:abel",
+      "termo": "Gyeno",
+      "ref": "pc:gyeno",
       "palavras": 1
     },
     {
-      "termo": "Juiz",
-      "ref": "page:envelopes",
+      "termo": "Vera",
+      "ref": "npc:vera",
       "palavras": 1
+    }
+  ],
+  "pcs": [
+    {
+      "id": "sergie",
+      "nome": "Sergie Faria",
+      "epiteto": "\"O Frio\" · O Juiz",
+      "idade": 33,
+      "ocupacao": "Detetive de Polícia Civil — Goiás",
+      "ocupacao_obs": "Em Novavera sem autorização oficial. Quanto mais usa a placa, mais rastro deixa.",
+      "equipamento": "Glock G19",
+      "atributos": {
+        "corpo": 50,
+        "reflexos": 60,
+        "mente": 70,
+        "saber": 55,
+        "alma": 40
+      },
+      "sanidade_inicial": 40,
+      "sanidade_atual": 40,
+      "permanencia": 8,
+      "tipo_alma": "Antiga",
+      "marcas_iniciais": 0,
+      "patronos": {
+        "luz": "Verdade → Gabriel (Frontal)",
+        "sombra": "Peso → Azazel (Posterior)",
+        "obs": "Combinação que alimenta o ciclo. Quanto mais persegue a verdade e assume fardos, mais frio e isolado fica."
+      },
+      "divida_principal": "Em vida anterior teve poder de proteger e escolheu não usar, por cálculo frio. Alguém morreu. Cobra: vulneráveis atraem sua atenção; em momento crítico, o padrão pede o cálculo frio. Paga: salvar alguém quando a razão manda não.",
+      "vinculo": "Roberto Faria — tio, figura paterna executada em 2016 por se aproximar de Novavera.",
+      "ciclo": "Minha alma sempre escolhe o todo sobre o um, e sempre perde alguém que poderia ter salvado.",
+      "arco_temporada": "T3 — O Juiz. O último a se fechar. O que mais investiu em ser quem é.",
+      "no_ep1": "Recebeu envelope datilografado anônimo em Goiânia, dia 16/03. Decide ir. Chega via Centro Cívico às 17h45. Encontra o nome 'Hélio Drummond Vasconcellos' na placa da fundação — não sabe ainda quem foi. Tem ficha do tio Roberto: assinatura de aprovação 'A.V.' — Armindo Vasconcellos."
+    },
+    {
+      "id": "floriano",
+      "nome": "Floriano Peixoto",
+      "epiteto": "\"O Curioso\" · O Silencioso",
+      "idade": 36,
+      "ocupacao": "Padre afastado / estudante do oculto",
+      "ocupacao_obs": "Doado à Igreja bebê, criado pelo Bispo Josias Montes. Fé real e conflituosa.",
+      "equipamento": "Valise de exorcismo + medidor EMF K-II + gravador (comprados em 2020, nunca usados — instrumentos da sessão do clímax do Ep1).",
+      "atributos": {
+        "corpo": 40,
+        "reflexos": 50,
+        "mente": 55,
+        "saber": 60,
+        "alma": 70
+      },
+      "sanidade_inicial": 70,
+      "sanidade_atual": 70,
+      "permanencia": 8,
+      "tipo_alma": "Antiga",
+      "marcas_iniciais": 0,
+      "patronos": {
+        "luz": "Cura → Rafael (Frontal)",
+        "sombra": "Peso → Azazel (Posterior)",
+        "obs": "Maior buffer de Sanidade dos quatro."
+      },
+      "divida_principal": "O orgulho intelectual de sacerdote — em vida anterior, deixou alguém morrer sob seus cuidados por achar que sabia. Cobra: situações em que admitir que não sabe pareceria fraqueza. Paga: reconhecer o próprio limite e pedir ajuda, a um custo de humilhação real, salvando alguém que o orgulho condenaria.",
+      "vinculos": [
+        "Bispo Josias Montes (paterno, vivo)",
+        "Miguel Aparecido (a criança que deixou morrer em Pirassuá, 2019). Carrega Miguel como visão nas crises de Sanidade."
+      ],
+      "ciclo": "Minha alma sempre acredita que sabe o suficiente, e alguém morre por causa dessa certeza.",
+      "arco_temporada": "T2 — O Silencioso. Sabia algo crucial e não agiu. Resolve o karma quando Pirassuá revelar suas verdades.",
+      "no_ep1": "Recebeu envelope em Goiânia, dia 16/03, com foto de Miguel + bilhete assinado 'Valdecir' + cartão: 'os três círculos do colar... pense no que significa.' Anagrama 'Nova Vera'. Vai de Fiat Uno. Chega ao Bairro Fundação às 18h00. Natalina está varrendo. Tem a valise de exorcismo e o EMF — equipamentos críticos para o clímax."
+    },
+    {
+      "id": "vinicius",
+      "nome": "Vinicius Fonseca",
+      "epiteto": "\"O Determinado\" · O Cobrador",
+      "idade": 32,
+      "ocupacao": "Defensor Público — São Paulo",
+      "ocupacao_obs": "Cresceu vendo o pai esmagado pelo sistema quando a família perdeu a casa para o governo. Tornou-se quem defende quem não tem defesa.",
+      "equipamento": "Chega só com o terno do corpo, pasta, celular, carteira da OAB. Sem carro.",
+      "atributos": {
+        "corpo": 50,
+        "reflexos": 55,
+        "mente": 70,
+        "saber": 60,
+        "alma": 40
+      },
+      "sanidade_inicial": 40,
+      "sanidade_atual": 40,
+      "permanencia": 8,
+      "tipo_alma": "Antiga",
+      "marcas_iniciais": 1,
+      "marcas_obs": "+1 Marca aplicada após matar Otávio às 16h35 do dia 18.",
+      "mecanica_surto": {
+        "nome": "Fúria dissociativa",
+        "gatilho": "POD 50",
+        "duracao": "Mestre controla o personagem por 2–5 min",
+        "frequencia": "1–2x por temporada",
+        "custo": "Sanidade −1d6 e +1 Marca",
+        "obs": "Foi num surto desses que matou Otávio no metrô às 16h35 do dia 18, durante o vagão."
+      },
+      "patronos": {
+        "luz": "Defesa → Miguel (Frontal)",
+        "sombra": "Desejo → Asmodeus (Posterior)"
+      },
+      "divida_principal": "Em vida anterior foi autoridade legítima (juiz/magistrado) que cumpriu o protocolo em vez de impedir uma injustiça, e inocentes morreram. Agora a alma oscila para o extremo oposto — transgride, pune, mata. Paga: aprender a confiar no processo mesmo insuficiente, sem ceder ao impulso de ser juiz e carrasco.",
+      "vinculos": [
+        "Mariana (irmã, viva, âncora)",
+        "Lucas Andrade (o inocente que ele não salvou, preso por engano)"
+      ],
+      "ciclo": "Minha alma oscila entre o protocolo covarde e a fúria que destrói — e nunca encontra o meio.",
+      "arco_temporada": "T2 — O Cobrador. Fugiu do peso do que fez. Resolve o karma quando parar de fugir.",
+      "no_ep1": "Sentença favorável a Lucas Andrade às 16h. Mata Otávio no vagão de metrô às 16h35 num surto. Em seguida, encontra Valdecir morto agindo como vivo no vagão. Descida impossível em Novavera (estação que não existe). Chega ao Posto Aparecido na BR-060 às 18h00. Tem cartão de Valdecir no bolso: 'Quando o tempo cobrar, e ele cobra, a porta tá encostada.'"
+    },
+    {
+      "id": "gyeno",
+      "nome": "Gyeno Rossi",
+      "epiteto": "O outsider kármico",
+      "idade": 20,
+      "ocupacao": "Soldado da reserva",
+      "ocupacao_obs": "Voltou há semanas de um mês de guerra na Europa (Ucrânia, fev/2025).",
+      "equipamento": "Sem carro. Sem equipamento especial.",
+      "atributos": {
+        "corpo": 70,
+        "reflexos": 60,
+        "mente": 55,
+        "saber": 40,
+        "alma": 50
+      },
+      "sanidade_inicial": 50,
+      "sanidade_atual": 50,
+      "permanencia": 9,
+      "tipo_alma": "Jovem",
+      "tipo_alma_obs": "O PONTO CENTRAL. Sem ciclo antigo, sem dívidas profundas, inteiro e novo. A culpa pelos dois desertores é dor real desta vida, não dívida kármica antiga.",
+      "marcas_iniciais": 0,
+      "tept": {
+        "descricao": "Trauma sem vocabulário: viu cinco desertores brasileiros se cortarem desenhando um símbolo no próprio corpo, em coro ('O messias, ele está próximo'), e matou dois deles. Os cinco eram fiéis fugidos de Pirassuá.",
+        "mecanica": "Alma 50 vs gatilho; falha = dissociação, Sanidade −1d4",
+        "cura": "Por vínculo humano (conversa com Floriano ou Vinicius), não por mecânica fria."
+      },
+      "patronos": {
+        "luz_1": "Defesa → Miguel (Frontal)",
+        "luz_2": "Cura → Rafael (Frontal)",
+        "obs": "LUZ + LUZ — combinação rara que ATRAI HOSTILIDADE ATIVA DA SOMBRA. Os mensageiros do culto tratam Gyeno diferente: 'antes que entendam o que você é.'"
+      },
+      "natureza": "Justamente por estar fora dos ciclos, é o único que pode QUEBRÁ-LOS. O silêncio dele na Área Verde é a pista. Os cinco desertores vieram de Pirassuá — entrelaçando o destino dele ao de Floriano na T2. NÃO É ABEL.",
+      "arco_temporada": "Coringa. Sua natureza se revela em temporadas futuras.",
+      "no_ep1": "Recebeu pedaço de foto rasgada no dia 16/03. SMS de Valdecir à 23h40: 'Procure por mim quando chegar. Valdecir.' Sai dia 17/03. Chega à Rodoviária às 18h05. Vê símbolo na calçada (Peça 1 do Enigma 1) — o reconhece visceralmente: é o mesmo símbolo que viu nos cinco desertores na Ucrânia. Seu Geraldo dá o soco: 'Valdecir morreu hoje.' Na Área Verde sente SILÊNCIO ABSOLUTO — onde os outros sentem peso esmagador."
+    }
+  ],
+  "pragas": [
+    {
+      "id": "p1-aguas-em-sangue",
+      "numero": 1,
+      "nome": "Águas em sangue",
+      "vitima": "Valdecir Conceição, o espião — encontrado às 5h da manhã do dia 18, encostado no muro externo da Área Verde.",
+      "disfarce": "Parada cardíaca (laudo editado por Dr. Meireles)",
+      "assinatura_oculta": "Três escalas semeadas:",
+      "escalas": [
+        {
+          "escala": "Corpo",
+          "sinal": "Lágrimas de sangue — a quarta anomalia que Dr. Meireles removeu do laudo por medo."
+        },
+        {
+          "escala": "Casa",
+          "sinal": "Água escura na cabeceira do quarto de Valdecir + torneira da cozinha verteu água cor de ferrugem por alguns minutos na manhã do dia 17."
+        },
+        {
+          "escala": "Cidade",
+          "sinal": "A 'água limpa' de Novavera — a fonte pública da praça — saiu turva por algumas horas na madrugada do dia 18. Marisa do Centro Cívico viu. Ninguém comentou."
+        }
+      ],
+      "mao": "Armindo",
+      "mao_obs": "Armindo mandou matar. Diz que o ritual exigia; chora a morte do amigo e vê a justeza dolorosa nela na mesma frase.",
+      "vetores_descoberta": [
+        "Dr. Meireles confessa a 4ª anomalia se pressionado (lágrimas de sangue)",
+        "A torneira de Valdecir (visita à casa) — secou agora mas o esmalte tem mancha leve",
+        "Gabriel desenhou 'o homem que chora vermelho' antes de saberem da morte",
+        "A página das pragas (Prop 15) cita 'as águas que perderam o nome'",
+        "Sueli, quando aparecer na T2: 'O Valdecir foi a primeira praga. Vocês não viam ainda.'"
+      ],
+      "status": "semeada",
+      "sessao_apresentacao": 1,
+      "sessao_descoberta_completa": 4,
+      "obs_mestre": "Os PCs sentem que algo não fecha mas não nomeiam ainda. Anote em segredo cada vez que algum jogador toca uma das três escalas."
+    },
+    {
+      "id": "p2-rãs",
+      "numero": 2,
+      "nome": "Rãs",
+      "vitima": "Um morador de Novavera — provavelmente Severino, idoso solitário (a definir conforme a mesa) — encontrado afogado em casa, cômodo alagado sem vazamento aparente, sapos pequenos juntos à porta.",
+      "disfarce": "Afogamento doméstico / acidente — 'deu um troço e deixou a água correndo'",
+      "assinatura_oculta": "Anfíbios onde não deveria haver. Água por toda parte num cômodo fechado.",
+      "mao": "Armindo",
+      "vetores_descoberta": [
+        "O corpo é encontrado pelos vizinhos algumas horas depois — bombeiros constatam afogamento",
+        "Os sapos foram empurrados para o canto pela água (sem ataque), mas em número impossível pra cômodo seco",
+        "Gabriel desenhou pés dentro d'água + sapos pequenos saindo de uma porta"
+      ],
+      "status": "pendente",
+      "sessao_apresentacao": 3
+    },
+    {
+      "id": "p3-piolhos-da-terra",
+      "numero": 3,
+      "nome": "Piolhos / mosquitos (do pó da terra)",
+      "vitima": "O cuidador do cemitério — homem que mexia na terra — morto por infecção fulminante de origem indefinida.",
+      "disfarce": "Doença fulminante (sepse cutânea?)",
+      "assinatura_oculta": "A praga que SOBE DO CHÃO. Eco direto do trabalhador de 1978 que cavou fundo demais.",
+      "mao": "Armindo",
+      "vetores_descoberta": [
+        "Dr. Meireles atesta velocidade médica impossível",
+        "O cemitério ficou fechado por 'sanitização' por dois dias — depois reabriu sem explicação",
+        "Gabriel desenhou linhas pretas saindo da terra"
+      ],
+      "status": "pendente",
+      "sessao_apresentacao": 3
+    },
+    {
+      "id": "p4-moscas",
+      "numero": 4,
+      "nome": "Moscas",
+      "vitima": "Alguém recluso — corpo achado um dia depois, coberto de moscas em número impossível, vindas do nada.",
+      "disfarce": "Morte que passou despercebida; idade avançada",
+      "assinatura_oculta": "A corrupção como marca. O enxame que NÃO TEM ORIGEM — não há lixo, não há sujeira, não há ferida aberta antes.",
+      "mao": "Armindo",
+      "vetores_descoberta": [
+        "Vizinhos relatam que as moscas chegaram em 'questão de minutos' depois da morte",
+        "Há padrão idêntico ao caso Severino de 2019 catalogado na página das pragas de Valdecir"
+      ],
+      "status": "pendente",
+      "sessao_apresentacao": 4
+    },
+    {
+      "id": "p5-peste-no-gado",
+      "numero": 5,
+      "nome": "Peste no gado",
+      "vitima": "O rebanho inteiro de um fazendeiro ligado à Casa amanhece morto.",
+      "disfarce": "Doença bovina (febre aftosa? outro?)",
+      "assinatura_oculta": "Sinal SEM vítima humana — varia o ritmo da sequência. O fazendeiro é poupado (desta vez).",
+      "mao": "Ambígua",
+      "mao_obs": "LINHA VERMELHA: a morte do gado é tratada off-screen, SEM nenhuma crueldade descrita. Os PCs ouvem do veterinário, leem no jornalzinho local. Não há cenas com animais.",
+      "vetores_descoberta": [
+        "Mateus Bezerra (veterinário local) examina e não consegue identificar a doença",
+        "A pasta fica sob investigação sanitária — nenhum animal vizinho contagiado"
+      ],
+      "status": "pendente",
+      "sessao_apresentacao": 5
+    },
+    {
+      "id": "p6-ulceras",
+      "numero": 6,
+      "nome": "Úlceras / furúnculos",
+      "vitima": "Alguém adoece de feridas súbitas na pele e morre rápido.",
+      "disfarce": "Infecção agressiva (estafilococos resistente?)",
+      "assinatura_oculta": "Úlceras que irrompem em velocidade medicamente impossível. Dr. Meireles VÊ a anomalia.",
+      "mao": "Armindo",
+      "vetores_descoberta": [
+        "Dr. Meireles está cada vez mais quebrado — pode (ou não) procurar os PCs",
+        "Há padrão idêntico no caso úlceras de 2022 da página das pragas de Valdecir"
+      ],
+      "status": "pendente",
+      "sessao_apresentacao": 6
+    },
+    {
+      "id": "p7-granizo-e-fogo",
+      "numero": 7,
+      "nome": "Granizo e fogo",
+      "vitima": "Um incêndio ou raio mata alguém — algo que 'cai do céu'.",
+      "disfarce": "Acidente / fenômeno climático",
+      "assinatura_oculta": "FOGO DO CÉU que nenhum velho de 80 anos teria como provocar. AQUI O MÉTODO DE ARMINDO QUEBRA.",
+      "mao": "O Nó",
+      "mao_obs": "ESTA É A FRATURA. Sétima praga = mão do nó. Os PCs podem perceber que esta morte QUEBRA O MÉTODO das outras (sem acesso humano possível, sem disfarce plausível). Essa inconsistência é a porta para entenderem que não enfrentam só um homem — enfrentam o próprio sigilo acordando. É o equivalente, em Karma Eterno, ao 'segundo assassino' — só que aqui o segundo assassino não é uma pessoa. É o sigilo acordando. Isso aterroriza até Armindo: prova de que a hora chegou de verdade, além do controle dele.",
+      "vetores_descoberta": [
+        "Análise pericial não consegue determinar origem do fogo/raio",
+        "A morte cai dentro da sequência das outras pragas — os PCs já têm o padrão",
+        "Ronaldo, se aliado, pode questionar oficialmente"
+      ],
+      "status": "pendente",
+      "sessao_apresentacao": 7
+    },
+    {
+      "id": "p8-gafanhotos",
+      "numero": 8,
+      "nome": "Gafanhotos",
+      "vitima": "Uma morte por consumição — alguém despojado de tudo (ruína, definhamento) e então morto; ou enxame sobre uma plantação com uma morte junto.",
+      "disfarce": "Falência / doença degenerativa",
+      "assinatura_oculta": "O DEVORAR. O ser deixado nu. O que estava cheio fica vazio.",
+      "mao": "Armindo",
+      "vetores_descoberta": [
+        "A vítima perdeu tudo nas semanas anteriores — patrimônio, saúde, vínculos",
+        "Cronologia da ruína é suspeitamente acelerada"
+      ],
+      "status": "pendente",
+      "sessao_apresentacao": 8
+    },
+    {
+      "id": "p9-trevas",
+      "numero": 9,
+      "nome": "Trevas",
+      "vitima": "Uma penumbra longa e inexplicada sobre Novavera por dias. Uma morte dentro do escuro, de quem 'não achou o caminho'.",
+      "disfarce": "Apagão prolongado / fenômeno atmosférico",
+      "assinatura_oculta": "A cidade em trevas antes da passagem. Um morto dentro da escuridão.",
+      "mao": "Nó + Armindo",
+      "mao_obs": "Co-mão. O nó manifesta a treva; Armindo orquestra a morte específica dentro dela.",
+      "vetores_descoberta": [
+        "Energia elétrica restaurada em ciclos curtos — sempre apaga de novo",
+        "Sueli, quando aliada, confirma o padrão"
+      ],
+      "status": "pendente",
+      "sessao_apresentacao": 9
+    },
+    {
+      "id": "p10-morte-do-primogenito",
+      "numero": 10,
+      "nome": "Morte do primogênito",
+      "vitima": "O próprio Armindo Vasconcellos.",
+      "vitima_obs": "NÃO MORRE CRIANÇA NENHUMA. O 'primogênito' é o primeiro filho do culto — o Primeiro Profeta.",
+      "disfarce": "—",
+      "assinatura_oculta": "Na lista original dos 33 de 1972, Armindo estava como a 34ª vítima. Retirou o próprio nome. O ciclo nunca pôde fechar por completo porque a conta principal ficou aberta — a dele. A sequência inteira de pragas é, no fundo, a marcha semiconsciente de Armindo rumo a se oferecer como o sinal final.",
+      "mao": "Armindo (sobre si mesmo)",
+      "mao_obs": "A décima praga É o confronto final resolvendo. Armindo se DISSOLVE quando o nó fecha (não morre — o espaço onde ele estava simplesmente deixa de ter sido preenchido). A escolha dos personagens no clímax: IMPEDIR ou DEIXAR a conta fechar.",
+      "vetores_descoberta": [
+        "Os PCs já mapearam as nove anteriores e estão na Casa pública (Sessão 5+)",
+        "O Caderno de Hélio (apreendido na Sessão 7) menciona o 34º nome",
+        "No confronto final, Armindo confessa em 'tristeza serena que confronta'"
+      ],
+      "status": "pendente",
+      "sessao_apresentacao": 10,
+      "sessao_resolucao": 10
+    }
+  ],
+  "props": [
+    {
+      "id": "p01-bilhete-sergie",
+      "numero": 1,
+      "nome": "Bilhete anônimo de Sergie",
+      "tipo": "jogador",
+      "destinatario_pc": "sergie",
+      "cena_ref": "chegada-sergie",
+      "instrucoes_impressao": "Papel branco neutro, datilografado (Courier 12pt). Sem assinatura. Envelope A5 pardo. Selo postal: Novavera, Goiás, 13 de março de 2025.",
+      "texto": "DETETIVE FARIA — DELEGACIA 6ª, GOIÂNIA.\n\nO senhor procurou pelo nome de Roberto. Procure também por NOVAVERA. Ele esteve lá em outubro de 2015 — cinco meses antes. Não voltou inteiro. Veio embora prometendo voltar para terminar.\n\nO que mataram foi a investigação, não o investigador. O que ele encontrou em Novavera está esperando por alguém com olhos para ver.\n\nVá. O senhor vai entender quando chegar.",
+      "uso_em_cena": "Entregue NO MOMENTO em que Sergie abre o envelope. Junto: Prop 2 (registro interno), Prop 3 (foto de Roberto com padre), e pedaço dele da foto rasgada (Prop 14)."
+    },
+    {
+      "id": "p02-registro-interno",
+      "numero": 2,
+      "nome": "Folha do registro interno — Roberto F.",
+      "tipo": "jogador",
+      "destinatario_pc": "sergie",
+      "cena_ref": "chegada-sergie",
+      "instrucoes_impressao": "Folha amarelada, letra de máquina, com marca d'água da Polícia Civil de Goiás. Texto em forma de relatório administrativo.",
+      "texto": "POLÍCIA CIVIL DO ESTADO DE GOIÁS\nDelegacia Especializada — Apurações Internas\nProtocolo 0517/2016\n\nINVESTIGADOR: Roberto Faria de Oliveira (1ª Classe)\nLINHA: Cidade de NOVAVERA / GO — denúncia anônima de irregularidades fundiárias e desaparecimentos não comunicados.\n\nCRONOLOGIA: Maio/2016 — Roberto F. apresentou relato preliminar.\nDeslocamento autorizado para diligência local.\nAutorização interna: A.V.\n\nSTATUS: investigação arquivada após óbito do agente (07/06/2016).",
+      "uso_em_cena": "Quando Sergie examinar, deixe-o procurar por 'A.V.' — o nome que assinou a autorização não está aqui. Vai aparecer em Novavera: Armindo Vasconcellos.\n\nDOBRADO DENTRO desta folha: o pedaço da foto rasgada de Sergie (Prop 14)."
+    },
+    {
+      "id": "p03-verso-foto-roberto",
+      "numero": 3,
+      "nome": "Verso da foto de Roberto Faria",
+      "tipo": "jogador",
+      "destinatario_pc": "sergie",
+      "cena_ref": "chegada-sergie",
+      "instrucoes_impressao": "Imprimir fotografia: Roberto Faria adulto, em pé ao lado de um padre alto de meia-idade (rosto meio sombreado pela luz lateral, anel de ouro na mão). Atrás dos dois, vê-se um pedaço de fachada de igreja. No verso, à caneta esferográfica preta, letra de Roberto:",
+      "texto": "[VERSO da foto]\n\n15 de outubro de 2015.\nIgreja de Santo Antônio.\nNovavera, GO.",
+      "uso_em_cena": "O padre na foto é Armindo Vasconcellos. Sergie não pode nomear sem ir até lá. Quando ver Armindo no velório no dia 18, vai reconhecer (mas não deve demonstrar)."
+    },
+    {
+      "id": "p04-bilhete-floriano",
+      "numero": 4,
+      "nome": "Bilhete + cartão de Floriano",
+      "tipo": "jogador",
+      "destinatario_pc": "floriano",
+      "cena_ref": "chegada-floriano",
+      "instrucoes_impressao": "Duas peças: (a) bilhete pequeno em papel pautado de caderno, letra trêmula; (b) cartão de visita branco, simples, datilografado.",
+      "texto": "[BILHETE]\nPadre,\n\nQuando você chegar, eu já não vou estar vivo. Não importa. O que importa é que você venha.\n\nOs três círculos do colar — pense no que significa. E o anagrama.\n\nValdecir.\n\n[CARTÃO]\nVALDECIR CONCEIÇÃO\nRua das Pitangueiras, 14 — Novavera, Goiás",
+      "uso_em_cena": "Junto com: foto de Miguel com o padre Armindo (colar dos três círculos visível). NO VERSO da foto de Miguel, colado de leve: o pedaço da foto rasgada de Floriano (Prop 14).\n\nO anagrama: 'Nova Vera' é 'arev avon' de trás para frente — as palavras que Miguel repetia na possessão de 2019."
+    },
+    {
+      "id": "p05-cartao-metro-vinicius",
+      "numero": 5,
+      "nome": "Cartão do metrô — Vinicius",
+      "tipo": "jogador",
+      "destinatario_pc": "vinicius",
+      "cena_ref": "chegada-vinicius",
+      "instrucoes_impressao": "Cartão de visita simples, papel quase amarelado. Sem logo, sem ornamentos. Tipografia clean.",
+      "texto": "VALDECIR CONCEIÇÃO\nNovavera, Goiás\n\n\"Quando o tempo cobrar, e ele cobra, a porta tá encostada.\"\n\nRua das Pitangueiras, 14",
+      "uso_em_cena": "Entregue durante o vagão de metrô, quando Valdecir 'morto agindo como vivo' põe nas mãos de Vinicius. Junto: pedaço de foto rasgada do Vinicius (Prop 14).\n\nDepois Vinicius vai notar que Valdecir morreu há horas — esse encontro foi a única travessia que Valdecir conseguiu fazer."
+    },
+    {
+      "id": "p06-sms-23h14",
+      "numero": 6,
+      "nome": "Quatro tiras de SMS — 23h14",
+      "tipo": "jogador",
+      "destinatario_pc": "todos",
+      "cena_ref": "climax-sms-sessao",
+      "instrucoes_impressao": "Imprimir cada SMS em uma tira de papel separada. Recortar individualmente. Estilo: layout de bolha de SMS de celular, fundo cinza claro, fonte clean. ENTREGAR EM SEGREDO INDIVIDUAL — cada PC só vê o seu.",
+      "tiras": [
+        {
+          "pc": "sergie",
+          "texto": "Seu tio também decidiu rápido demais. O senhor sabe como aquilo terminou. Vá embora. Aqui ninguém parte: todos FICAM."
+        },
+        {
+          "pc": "vinicius",
+          "texto": "A porta que você ouve bater não é a primeira vez. Vão embora antes que ela se abra DE VEZ."
+        },
+        {
+          "pc": "floriano",
+          "texto": "O senhor sempre soube a hora de calar. Cale-se e vá. Não há nada a salvar AQUI."
+        },
+        {
+          "pc": "gyeno",
+          "texto": "Você não devia ter vindo. Vá embora antes que entendam o que você é. O chão lembra de TODOS."
+        }
+      ],
+      "acrostico": "As palavras finais (FICAM / DE VEZ / AQUI / TODOS) reordenam para 'AQUI FICAM TODOS, DE VEZ.' Memória +1 ao grupo se montarem.",
+      "uso_em_cena": "Todos os celulares vibram juntos às 23h14, durante o clímax na casa. Números diferentes, todos DDD 62, todos 'não atribuídos' no retorno. Deixe 3-4 minutos de paranoia comparando.\n\nPISTA DE LONGO PRAZO: o SMS de Gyeno diz 'o que você é' — não 'quem'. É pista da natureza dele (Alma Jovem, outsider kármico)."
+    },
+    {
+      "id": "p07-regras-da-mesa",
+      "numero": 7,
+      "nome": "AS REGRAS DA MESA",
+      "tipo": "jogador",
+      "destinatario_pc": "todos",
+      "cena_ref": "casa-valdecir-3",
+      "instrucoes_impressao": "Folha dobrada, papel envelhecido, caligrafia firme e antiga — 'de quando a mão ainda não tremia'. Caneta-tinteiro preta, lentamente desbotada. Cabeçalho centralizado.",
+      "texto": "AS REGRAS DA MESA\n\n1. O sal fecha o círculo. Quem está dentro, está guardado. Quem sai no meio, sai sozinho.\n\n2. A terra de lá abre o que foi fechado com ela. O sal fecha o que ela abre. Uma desfaz a outra. Sempre.\n\n3. Nunca mais que três perguntas. Na terceira, não somos nós que perguntamos. São eles que ficam ouvindo.\n\n4. Quando eu não estiver mais — perguntem a mim. Eu deixei a porta encostada. Se eu puder, eu respondo.",
+      "uso_em_cena": "Encontrado no guarda-roupa do quarto de Valdecir, dentro de uma caixa de madeira contendo: pote de vidro com sal grosso pela metade, quatro velas brancas usadas, sininho de latão pequeno, e ESTA folha dobrada.\n\nResolve em cadeia: Regra 2 + bilhete-charada + partículas na fita do caderno + terra nas mãos do corpo + desenho de Gabriel → terra de lá abre → 'lá' = Área Verde → ponto é centro das fundações.\n\nRegra 1 = protocolo do círculo de sal no clímax.\nRegra 4 = convite explícito: o morto pediu que perguntassem a ele."
+    },
+    {
+      "id": "p08-pagina-1987",
+      "numero": 8,
+      "nome": "Página de setembro de 1987 — Caderno de Valdecir",
+      "tipo": "jogador",
+      "destinatario_pc": "todos",
+      "cena_ref": "climax-caderno",
+      "instrucoes_impressao": "Página de caderno comum (linhas horizontais), papel amarelado, caneta esferográfica preta um pouco apagada. Cabeçalho à mão: 'SETEMBRO DE 1987'. Letra de Valdecir aos 33 anos — firme, mais larga que a letra recente.",
+      "texto": "SETEMBRO DE 1987.\n\nVieram no sonho de novo. Os quatro.\n\nAinda não sei os nomes. Mas reconheço os rostos de outro lugar — de muitos outros lugares, talvez.\n\nQuando chegarem — e vão chegar — precisam saber que o que está na Área Verde não é o que parece ser.\n\nNão é o que ficou. É o que estava antes.",
+      "uso_em_cena": "Aberto quando os PCs esfregam a terra preta da Área Verde na fita de couro do caderno. A fita 'se desfaz' (não rasga — dispersa como pó). O caderno abre sozinho nesta página.\n\nLer DEVAGAR para a mesa. Memória +1 automático para TODOS, sem rolagem.\n\nGancho: 'o que estava antes' = camada anterior aos 33 de 1972. Eps 5-7."
+    },
+    {
+      "id": "p09-pagina-cifrada",
+      "numero": 9,
+      "nome": "Página cifrada — Caderno de Valdecir",
+      "tipo": "jogador",
+      "destinatario_pc": "todos",
+      "cena_ref": "climax-caderno",
+      "instrucoes_impressao": "Última página escrita do caderno. Letra mais trêmula que a de 1987 (Valdecir mais velho). Apenas pares de números, organizados em duas colunas, e uma linha de texto abaixo.",
+      "texto": "217-4\n88-1\n134-6\n9-2\n301-5\n412-3\n156-1\n277-7\n\n\"As perguntas certas já foram feitas. As respostas estão com os espíritos.\"",
+      "uso_em_cena": "Mecanismo: cada par é pergunta-palavra de 'O Livro dos Espíritos' (Kardec, 1.018 perguntas numeradas). Primeiro número = pergunta; segundo = posição da palavra na resposta.\n\nA frase 'as respostas estão com os espíritos' aponta para o livro na estante de Valdecir. As marcas de terra na lombada confirmam qual edição (Prop 10).\n\nDecifrado: 'PROCUREM QUEM GUARDA O NASCIMENTO. O TEMPO COBRA.'\n\nO clique duplo: 'quem guarda o nascimento' = sobrenome NASCIMENTO = S.N. (a iniciais da agenda de Valdecir, 10h). É Sueli Nascimento. 'O tempo cobra' é a senha que destrava Sueli no Ep2.\n\nCalibragem: 3-4 palavras já dão o clique; frase inteira leva 10-20 min com o Prop 10 em mãos. Se a sessão estiver no fim, vira dever de casa — ponte perfeita para o Ep2."
+    },
+    {
+      "id": "p10-paginas-falsas-kardec",
+      "numero": 10,
+      "nome": "Páginas falsas de 'O Livro dos Espíritos' (ed. 1957)",
+      "tipo": "mestre",
+      "tipo_obs": "Páginas a serem impressas e inseridas dentro de um exemplar real (ou aparência de). Mestre escolhe se usar pseudo-páginas avulsas ou intercaladas.",
+      "cena_ref": "climax-caderno",
+      "instrucoes_impressao": "Imprimir 8 perguntas numeradas com respostas FABRICADAS. Cada resposta tem a palavra crítica na posição certa. Layout: cabeçalho 'O LIVRO DOS ESPÍRITOS — Allan Kardec — Edição 1957', número da pergunta destacado, resposta em itálico.",
+      "tabela_decifragem": [
+        {
+          "par": "217-4",
+          "pergunta": 217,
+          "posicao": "4ª",
+          "palavra": "PROCUREM"
+        },
+        {
+          "par": "88-1",
+          "pergunta": 88,
+          "posicao": "1ª",
+          "palavra": "QUEM"
+        },
+        {
+          "par": "134-6",
+          "pergunta": 134,
+          "posicao": "6ª",
+          "palavra": "GUARDA"
+        },
+        {
+          "par": "9-2",
+          "pergunta": 9,
+          "posicao": "2ª",
+          "palavra": "O"
+        },
+        {
+          "par": "301-5",
+          "pergunta": 301,
+          "posicao": "5ª",
+          "palavra": "NASCIMENTO"
+        },
+        {
+          "par": "412-3",
+          "pergunta": 412,
+          "posicao": "3ª",
+          "palavra": "O"
+        },
+        {
+          "par": "156-1",
+          "pergunta": 156,
+          "posicao": "1ª",
+          "palavra": "TEMPO"
+        },
+        {
+          "par": "277-7",
+          "pergunta": 277,
+          "posicao": "7ª",
+          "palavra": "COBRA"
+        }
+      ],
+      "obs_redacao": "É preciso redigir 8 respostas mantendo cada palavra-chave EXATAMENTE na posição. Exemplo P.277: '...Aquilo que se deve, a vida COBRA, nesta existência ou na seguinte.' (cobra na 7ª posição).",
+      "uso_em_cena": "Item físico no quarto de Valdecir. Marcas de terra na lombada de uma edição específica indicam qual é a certa. Se os PCs cruzarem a página cifrada (Prop 9) com este livro, deciframem a frase.\n\nMENSAGEM REVELADA: 'PROCUREM QUEM GUARDA O NASCIMENTO. O TEMPO COBRA.'"
+    },
+    {
+      "id": "p11-papel-meireles",
+      "numero": 11,
+      "nome": "Papel anotado por Dr. Meireles — número intimidador",
+      "tipo": "jogador",
+      "destinatario_pc": "todos",
+      "cena_ref": "investigacao-meireles",
+      "instrucoes_impressao": "Folhinha pequena de bloco de receituário do Posto de Saúde de Novavera, papel branco simples. Letra trêmula do Dr. Meireles, caneta azul.",
+      "texto": "(62) 9____-____\n15h32",
+      "uso_em_cena": "Mostrado por Dr. Meireles se pressionado com Persuasão 45 (empática) ou Intimidação 50. Os números do meio estão ilegíveis por borrão — ele anotou no susto. Os 4 últimos dígitos foram apagados manualmente quando ele tentou ligar de volta e veio 'número não atribuído'.\n\nÉ a PRIMEIRA pista física da ameaça humana (Ezequiel ligou desse número de Goiânia)."
+    },
+    {
+      "id": "p12-legenda-foto-quarto",
+      "numero": 12,
+      "nome": "Legenda da foto do quarto de Valdecir",
+      "tipo": "jogador",
+      "destinatario_pc": "todos",
+      "cena_ref": "casa-valdecir-2",
+      "instrucoes_impressao": "Fotografia em preto e branco anos 40 — homem jovem sorrindo, de costas para terreno de cerrado vazio. Imprimir a foto inteira. Embaixo, à caneta esferográfica desbotada, escrito à mão:",
+      "texto": "O lugar onde o tempo pede as contas.",
+      "uso_em_cena": "Na parede do quarto de Valdecir. A foto é da Área Verde antes de 1974 (antes de virar o terreno fechado). A legenda é frase-tema da campanha inteira — vai ecoar no cartão do metrô ('quando o tempo cobrar, e ele cobra'), na cifra ('o tempo cobra'), e na fala da serva no clímax."
+    },
+    {
+      "id": "p13-recorte-1978",
+      "numero": 13,
+      "nome": "Recorte de jornal — paralisação das obras (1978)",
+      "tipo": "jogador",
+      "destinatario_pc": "todos",
+      "cena_ref": "casa-valdecir-3",
+      "instrucoes_impressao": "Recorte amarelado de jornal de cidade pequena, fim dos anos 70. Sem data clara — Valdecir cortou só o pedaço importante. Linha sublinhada em vermelho.",
+      "texto": "[Cabeçalho borrado]\n\nObras paralisadas na Área Verde\n\nA construção que dois anos atrás prometia transformar o terreno baldio do centro em complexo comercial está suspensa por tempo indeterminado. Operários abandonaram o sítio na semana passada citando 'sensações estranhas' e 'rumores' que se espalharam após o acidente.\n\nO trabalhador encontrado morto nas obras seria identificado apenas pelo sobrenome: Monteiro.\n\nA causa do óbito, segundo o laudo médico, foi soterramento — mas três operários afirmam que a vala onde o corpo apareceu estava aberta há mais de um mês [...]",
+      "uso_em_cena": "Item 3 da caixa de sapato sob a cama de Valdecir.\n\nA linha sublinhada em vermelho aponta para Vera Monteiro (Ep5). O sobrenome 'Monteiro' é o mesmo do trabalhador morto em 1978 — e é o sobrenome de Dalva Monteiro (a serva que possui Dona Cida no clímax). Há uma família Monteiro presa neste lugar há gerações."
+    },
+    {
+      "id": "p14-foto-rasgada-em-quatro",
+      "numero": 14,
+      "nome": "Foto rasgada em quatro pedaços",
+      "tipo": "jogador",
+      "destinatario_pc": "todos",
+      "cena_ref": "velorio-foto",
+      "instrucoes_impressao": "IMPORTANTE: imprimir UMA fotografia única e RASGAR À MÃO em quatro pedaços irregulares (não cortar com tesoura). Distribuir antes da sessão começar nos envelopes/props individuais dos 4 PCs:\n• Sergie: dobrado dentro do Prop 2 (folha do registro)\n• Floriano: colado atrás da foto de Miguel\n• Gyeno: dentro do envelope dos correios (sozinho, sem nada escrito)\n• Vinicius: na mão do morto, durante o vagão do metrô\n\nA FOTO mostra: chão de terra das fundações da Área Verde + o símbolo de três círculos concêntricos completamente fechado + a frase 'FILHOS DA PRIMEIRA TERRA' riscada na terra com algo pontiagudo.",
+      "texto": "[Fotografia que mostra:]\nTerra preta densa no primeiro plano. Concreto antigo das fundações da Área Verde no fundo.\n\nNo centro: três círculos concêntricos, FECHADOS, gravados na terra.\n\nAtrás do símbolo, escrito em letras grandes na própria terra (riscado com pau ou faca):\n\nFILHOS DA PRIMEIRA TERRA",
+      "uso_em_cena": "Durante o velório (cena 'velorio-foto'), os quatro PCs convergem e podem juntar os pedaços. Quando os quatro pedaços se encaixam, formam a foto inteira — primeira vez que o nome do culto aparece para eles.\n\nMemória +1 automático para todos. Memória +1 EXTRA se Floriano fizer a conexão com Miguel ('FILHOS DA PRIMEIRA TERRA' = a quem Miguel servia)."
+    },
+    {
+      "id": "p15-pagina-pragas-valdecir",
+      "numero": 15,
+      "nome": "A página das pragas — folha solta de Valdecir",
+      "tipo": "jogador",
+      "destinatario_pc": "todos",
+      "cena_ref": "casa-valdecir-3",
+      "instrucoes_impressao": "Folha solta, dobrada miúda, em papel envelhecido (chá ou café manchado nas bordas). Letra apertada, irregular, tinta de DUAS canetas diferentes (sugerir que foi escrita em dias separados, num momento de medo crescente). Termina abruptamente no meio de uma frase.",
+      "texto": "Os sermões dele mudaram. Faz uns meses. Não fala mais de conforto. Fala de sinais. De preparação. Começou a citar o Êxodo toda semana — as pragas, sempre as pragas.\n\nFui olhar os velhos. O Severino, 2019 — disseram coração. Mas a vizinha falou das moscas, que não vinham de lugar nenhum. A dona Aparecida, 2021 — afogou dentro de casa, sem água pra afogar. O menino do sítio, as feridas na pele que vieram do nada.\n\nEstou ficando louco? É isso? Ou ele está marcando as mortes? Cada uma um sinal. Como se a cidade inteira fosse o Egito e ele estivesse contando os dias até—\n\nSe for verdade, eu sou o próximo. Eu sou a água. Ele vai começar por mim.",
+      "uso_em_cena": "Item 4 da caixa de sapato, ESCONDIDO sob o forro. Achado com Percepção 30 ou se algum PC virar a caixa de cabeça pra baixo.\n\nÉ o handout-chave: permite à mesa teorizar sobre o padrão da temporada inteira SEM o Mestre explicar nada. Confirma que:\n1. O padrão é histórico — não começou com Valdecir\n2. Há três mortes antigas para cruzar (Severino 2019/moscas, Aparecida 2021/afogamento sem água, menino do sítio/úlceras)\n3. Valdecir sabia que seria o primeiro, sabia qual praga era ('eu sou a água')\n\nA última linha gela retroativamente quando a mesa junta as lágrimas de sangue, a água escura na cabeceira, e a fala do Armindo no velório.\n\nNÃO EXPLIQUE. Deixe a mesa teorizar."
+    }
+  ],
+  "cenas": [
+    {
+      "id": "chegada-sergie",
+      "ordem": 1,
+      "arco": "chegadas",
+      "arco_titulo": "Os Quatro Arcos de Chegada",
+      "arco_ordem": 1,
+      "titulo": "Sergie Faria — A Chegada do Detetive",
+      "subtitulo": "16/03 envelope · 18/03 17h45 Centro Cívico",
+      "duracao_estimada": "18–22 min",
+      "local_ref": "local:centro-civico-praca",
+      "pc_focal_ref": "pc:sergie",
+      "npcs_presentes": [
+        "npc:marisa",
+        "npc:reinaldo"
+      ],
+      "props_refs": [
+        "prop:p01-bilhete-sergie",
+        "prop:p02-registro-interno",
+        "prop:p03-verso-foto-roberto",
+        "prop:p14-foto-rasgada-em-quatro"
+      ],
+      "secao_dossie": "Parte 3 — As Chegadas Individuais",
+      "atmosfera_abertura": "Apartamento em penumbra, cortinas blackout, cheiro neutro, ventilador antigo ligado, tudo em ordem rigorosa há anos.",
+      "beats": [
+        {
+          "tipo": "narracao",
+          "ordem": 1,
+          "titulo": "S.1 — O envelope",
+          "horario": "16/03 · 19h22 · Goiânia",
+          "texto": "Domingo, dia 16 de março. Final de tarde. Você acabou de chegar de um plantão — nada de extraordinário: papelada, um interrogatório, trânsito.\n\nNa varredura visual de hábito antes de entrar, você nota: no chão, embaixo da porta, há correspondência. Quatro itens.\n\nUma fatura. Dois informativos do sindicato. E um envelope pardo, A5, sem remetente — só o seu nome e endereço, em letra de máquina antiga. Selo postal: Novavera, Goiás, 13 de março de 2025.\n\nVocê nunca foi a Novavera. Não conhece ninguém lá."
+        },
+        {
+          "tipo": "prop",
+          "ordem": 2,
+          "prop_ref": "prop:p01-bilhete-sergie",
+          "contexto": "Quando ele abrir o envelope, entregar JUNTO: o bilhete anônimo (Prop 1), folha do registro (Prop 2), foto de Roberto (Prop 3) e o pedaço da foto rasgada (Prop 14, dobrado dentro do Prop 2)."
+        },
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 3,
+          "texto": "Permita o silêncio. Reações comuns: examinar o envelope (nada além do selo; máquina anos 70-80, comum), a foto (o tio é inconfundível; o padre, alto, anel de ouro, rosto sombreado — reconhecível ao vivo, não nomeável pela foto), o pedaço rasgado (parece lixo, ou parte de outra foto — não monta nada sozinho)."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 4,
+          "npc_ref": "npc:tia-marlene",
+          "contexto": "Se Sergie ligar para a tia Marlene",
+          "texto": "Ele falou uma vez de uma cidade pequena, perto da divisa de Goiás com Minas. Disse que ia voltar lá porque tinha alguém pra conversar. Não disse o nome. Eu nunca perguntei. Eu deveria ter perguntado."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 5,
+          "npc_ref": "npc:tia-marlene",
+          "contexto": "Sobre quando",
+          "texto": "Início de 2016. Pouco antes... pouco antes."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 6,
+          "npc_ref": "npc:tia-marlene",
+          "contexto": "Sobre o padre da foto",
+          "texto": "Padre? Não. O Roberto não era homem de igreja, você sabe."
+        },
+        {
+          "tipo": "narracao",
+          "ordem": 7,
+          "titulo": "S.2 — A decisão e a saída",
+          "horario": "17–18/03",
+          "texto": "A decisão se forma sem dramatismo. Coletar, avaliar, agir. As evidências apontam para Novavera. Você vai. A questão é só logística.\n\nOfereça, sem impor: cópia de segurança do envelope (cofre de banco), celular pré-pago, conferir a Glock, mapear Novavera no Google (15 mil hab., três entradas, Igreja de Santo Antônio no centro), reler os autos do tio."
+        },
+        {
+          "tipo": "narracao",
+          "ordem": 8,
+          "titulo": "S.3 — A viagem",
+          "horario": "18/03 manhã · BR-060 · ~4h",
+          "texto": "Atmosfera: cerrado contínuo, asfalto razoável, calor seco. Conforme avança: menos pasto, mais cerrado denso, árvores retorcidas.\n\nUma placa: 'Novavera 47 km.'\n\nPergunta aberta ao jogador: 'Quatro horas de estrada. O que passa na sua cabeça? Tem algo que você revisita?' (Se não quiser elaborar, prossiga.)"
+        },
+        {
+          "tipo": "narracao",
+          "ordem": 9,
+          "titulo": "S.4 — Centro Cívico",
+          "horario": "17h45",
+          "texto": "Sol baixo alaranjado; praça com três bancos e dois jacarandás; pedra portuguesa irregular; um rádio AM tocando sertanejo antigo em alguma janela; nenhum pássaro (não nomeie — deixe faltar).\n\nO GPS faz algo estranho: anuncia 'você chegou ao destino' três quarteirões antes de qualquer coisa. Você olha o app, olha a rua. Nada justifica. Reinicia; volta ao normal.\n\nA praça central aparece à esquerda. O Centro Cívico é um prédio de dois andares, fachada amarela desbotada, três bandeiras — Brasil, Goiás e Novavera (fundo verde-escuro, um símbolo central que parece um sol estilizado)."
+        },
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 10,
+          "titulo": "A placa de bronze (se ele se aproximar; se não, plante o reflexo)",
+          "texto": "'EM MEMÓRIA DOS QUE TORNARAM POSSÍVEL — NOVAVERA, FUNDADA EM 1974.' Lista de nomes:\n\n1. Otávio Pereira de Andrade — 1920–1992 — Fundador\n2. Benedito Serafim Costa Lima — 1908–1969 — Fundador  ← morreu 5 anos ANTES da fundação\n3. Dr. Hélio Drummond Vasconcellos — 1925–1976 — Fundador (Coronel do Exército Brasileiro)  ← mesmo sobrenome do padre Armindo\n4. Maria Aparecida Souza — 1932–2001 — Fundadora\n5. José Francisco de Oliveira — 1918–1989 — Fundador\n\nSergie quase certamente nota a primeira inconsistência (Benedito). A segunda pode passar — melhor ainda."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 11,
+          "npc_ref": "npc:marisa",
+          "contexto": "Quando Marisa sair do prédio",
+          "texto": "Vai estar aberto amanhã das oito ao meio-dia, se quiser pesquisar a história. Hoje o diretor não pôde vir — é o Dr. Armindo, ele tá organizando o velório do Seu Valdecir, faleceu hoje cedo."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 12,
+          "npc_ref": "npc:marisa",
+          "contexto": "Se perguntada quem é o Dr. Armindo",
+          "texto": "Padre Armindo Vasconcellos. É o padre da Igreja de Santo Antônio e também diretor do Arquivo desde sempre. Pessoa querida demais, todo mundo respeita."
+        },
+        {
+          "tipo": "momento_pavor",
+          "ordem": 13,
+          "titulo": "Confirmação total para Sergie",
+          "texto": "O homem da foto é o Padre Armindo Vasconcellos. Sergie não pode demonstrar. A foto datada de 15/10/2015 mostra Roberto com o padre que assinou 'A.V.' a autorização da diligência. Cinco meses depois, Roberto foi executado."
+        },
+        {
+          "tipo": "teste",
+          "ordem": 14,
+          "atributo": "Observação",
+          "dificuldade": 35,
+          "contexto": "A marca de cal atrás do Centro Cívico (se Sergie der a volta — ofereça: 'hábito profissional — mapear fundos, saídas de serviço')",
+          "o_que_destrava": "No chão de cimento, perto da parede dos fundos: marca em cal branca, quase apagada pela chuva. Três círculos concêntricos, fechados. Doze pontos no anel externo. Espiral interna que termina deslocada do centro. CAL TEM MENOS DE DUAS SEMANAS — alguém mantém este símbolo ativo (manutenção da Casa, feita por Adílson)."
+        },
+        {
+          "tipo": "narracao",
+          "ordem": 15,
+          "titulo": "A marca de mão no capô",
+          "texto": "Ao voltar ao carro: sobre a poeira do dia de estrada, uma marca de mão. Pequena. Apoiada por um momento, como quem se inclinou para olhar dentro pela janela do passageiro. Dedos e palma nítidos. Fresca — dez minutos, no máximo. Não há ninguém na praça.\n\n[GM: foi o investigador particular, Reinaldo Furtado.]"
+        },
+        {
+          "tipo": "escolha",
+          "ordem": 16,
+          "titulo": "S.5 — Sergie escolhe o próximo passo",
+          "opcoes": [
+            "Ir direto à casa de Valdecir (Pitangueiras 14)",
+            "Ir à Igreja de Santo Antônio (velório começa às 19h)",
+            "Procurar uma pousada antes de qualquer movimento"
+          ],
+          "observacao": "Qualquer escolha leva ao velório. Casa de Valdecir está trancada (Natalina tem a chave). Pousada tem um quarto disponível. Igreja é onde a próxima cena acontece."
+        }
+      ],
+      "destrava_para": [
+        "cena:velorio-chegada"
+      ],
+      "mestre_only": "A marca de mão no capô é de Reinaldo Furtado, investigador particular contratado por Ezequiel. A cal atrás do prédio foi pintada por Adílson (núcleo duro da Casa) há ~10 dias, manutenção do sigilo. O 'Padre Armindo Vasconcellos' assinou A.V. a autorização da diligência de Roberto em 2016 — sabia que Roberto vinha investigar e organizou a execução fora de Novavera."
+    },
+    {
+      "id": "chegada-floriano",
+      "ordem": 2,
+      "arco": "chegadas",
+      "arco_titulo": "Os Quatro Arcos de Chegada",
+      "arco_ordem": 2,
+      "titulo": "Floriano Peixoto — A Chegada do Padre",
+      "subtitulo": "16/03 envelope · 18/03 18h00 Bairro Fundação",
+      "duracao_estimada": "18-22 min",
+      "local_ref": "local:bairro-fundacao",
+      "pc_focal_ref": "pc:floriano",
+      "npcs_presentes": [
+        "npc:natalina"
+      ],
+      "props_refs": [
+        "prop:p04-bilhete-floriano",
+        "prop:p14-foto-rasgada-em-quatro"
+      ],
+      "secao_dossie": "Parte 3 — As Chegadas Individuais",
+      "atmosfera_abertura": "Casa paroquial pequena, prateleiras de livros teológicos, crucifixo na parede, silêncio de fim de tarde de domingo.",
+      "beats": [
+        {
+          "tipo": "narracao",
+          "ordem": 1,
+          "titulo": "F.1 — A campainha",
+          "horario": "16/03 final de tarde",
+          "texto": "A campainha toca uma vez. O carteiro deixa a correspondência no batente. Cinco itens. O último: envelope pardo, sem remetente. Selo de Novavera, Goiás, 13 de março.\n\nVocê não conhece ninguém em Novavera. Mas quando pega o envelope, a palma da sua mão registra alguma coisa. Não é frio. Não é calor. É como tocar livro de igreja antiga depois de muitos anos."
+        },
+        {
+          "tipo": "prop",
+          "ordem": 2,
+          "prop_ref": "prop:p04-bilhete-floriano",
+          "contexto": "Quando abrir — entregar bilhete + cartão + foto de Miguel com o padre Armindo (colar dos três círculos visível). Junto: pedaço da foto rasgada (Prop 14) colado atrás da foto de Miguel."
+        },
+        {
+          "tipo": "narracao",
+          "ordem": 3,
+          "titulo": "A foto",
+          "texto": "Miguel — você o reconheceria em qualquer multidão, em qualquer década — vivo, com um sorriso nervoso, segurado pela mão por um padre de meia-idade que você nunca viu. No pescoço do padre, um colar com pingente: três círculos concêntricos. Os mesmos três círculos que Miguel desenhou em sangue na parede.\n\nAo fundo, um espelho. No reflexo, atrás dos dois, uma placa de cidade — espelhada, ilegível à primeira vista: 'areV avoN à sodnivneb majeS'."
+        },
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 4,
+          "titulo": "O anagrama — NÃO entregar",
+          "texto": "Deixe o jogador trabalhar. Se travar: numa releitura, o Mestre descreve Floriano segurando a foto diante do próprio espelho do corredor por reflexo de pensamento — e a placa se lê: 'Sejam bem-vindos à Nova Vera.' E então a memória fecha o circuito: 'arev avon', as palavras que Miguel repetia, é 'Nova Vera' de trás para frente. Miguel nunca falou língua demoníaca. Falou um endereço."
+        },
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 5,
+          "titulo": "Verificações que Floriano pode fazer (16-17/03)",
+          "texto": "• Contatos eclesiásticos: caso Miguel Aparecido, Pirassuá, out/2019, arquivado como 'morte natural sob investigação eclesiástica'.\n• Paróquia de Santo Antônio, Novavera: padre titular Armindo Vasconcellos, ordenado em 1969, sem mácula, respeitadíssimo.\n• 'Valdecir Conceição': nada online. Nome comum. (SEM obituário — ele ainda está vivo quando Floriano lê.)\n• O símbolo dos três círculos: nada casa exatamente em nenhuma tradição da biblioteca dele. Sincretismo não documentado."
+        },
+        {
+          "tipo": "narracao",
+          "ordem": 6,
+          "titulo": "F.2 — A saída",
+          "horario": "17/03",
+          "texto": "Você reza a noite inteira de joelhos na sala. A pergunta que você faz a Deus: 'Você quer que eu vá, ou está me testando?'\n\nDe manhã, você abre a valise de exorcismo pela primeira vez em seis anos para conferir o conteúdo: cruz de madeira escura, óleo consagrado, sal grosso bento, estola roxa, manual da diocese. E duas coisas que você comprou em 2020 e nunca usou: um medidor EMF K-II e um gravador de voz. Você leva tudo.\n\n[→ instrumentos da sessão no clímax]"
+        },
+        {
+          "tipo": "narracao",
+          "ordem": 7,
+          "titulo": "F.3 — A viagem",
+          "horario": "18/03 manhã · Fiat Uno cinza · ~4h",
+          "texto": "Música sacra baixa no rádio. Ele dirige devagar. Reza sem pedir nada — só se entrega."
+        },
+        {
+          "tipo": "narracao",
+          "ordem": 8,
+          "titulo": "F.4 — Bairro Fundação",
+          "horario": "18h00",
+          "texto": "Telhados mais baixos, janelas menores, reboco que não se usa mais — como se este pedaço da cidade tivesse sido construído com um manual diferente. Fim de tarde silencioso.\n\nHá uma mulher varrendo a calçada de uma casa de esquina. Cabelo branco, avental. Ela te vê chegar. Não para de varrer. Acompanha com o olhar — não é hostil; é avaliativa. Quando você está a dois metros, ela para."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 9,
+          "npc_ref": "npc:natalina",
+          "contexto": "Abertura — não é pergunta",
+          "texto": "Você é um dos que vão ao velório do Valdecir."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 10,
+          "npc_ref": "npc:natalina",
+          "contexto": "Como ela sabe",
+          "texto": "Ele falava de vez em quando que iam vir pessoas. Não sei quando, não sei de onde. Falava assim — 'quando vierem, Natalina, trata bem.' (volta a varrer) Ele tinha certeza que vocês viriam. Faz tempo que ele tinha."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 11,
+          "npc_ref": "npc:natalina",
+          "contexto": "Se ela percebe que ele é padre",
+          "texto": "O senhor é homem da Igreja. Eu vi de longe. O Valdecir gostava de homens da Igreja. Pena que é o Padre Armindo que vai dirigir o velório — eu sei que ele e o Valdecir tinham se afastado nos últimos meses. Mas vida é vida, morte é morte, padre é padre."
+        },
+        {
+          "tipo": "momento_pavor",
+          "ordem": 12,
+          "titulo": "Pista crítica entregue de graça",
+          "texto": "Valdecir e Armindo se afastaram nos últimos meses — confirma o aviso do bilhete sem Floriano perguntar nada."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 13,
+          "npc_ref": "npc:natalina",
+          "contexto": "Sobre Valdecir nos últimos meses",
+          "texto": "Ele andava diferente. Não doente diferente. Outro diferente. Como quem tomou uma decisão e tá em paz com ela, mas você não sabe qual foi. (para de varrer) O velório é às sete, na Igreja de Santo Antônio. Você come alguma coisa antes."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 14,
+          "npc_ref": "npc:natalina",
+          "contexto": "Sobre a casa",
+          "texto": "Casa do Valdecir é ali, a número 14. Tá vazia agora. Ele me deixou uma chave anos atrás, 'caso precisasse'. Eu nunca entrei na ausência dele — não é da minha conta. (pausa) Mas se o senhor é quem ele esperava, talvez seja da sua."
+        },
+        {
+          "tipo": "narracao",
+          "ordem": 15,
+          "titulo": "A Saveiro branca",
+          "texto": "Parada na esquina há tempo demais, motorista olhando o celular num ângulo desconfortável. [GM: morador banal. Ruído deliberado.]"
+        }
+      ],
+      "destrava_para": [
+        "cena:velorio-chegada"
+      ],
+      "mestre_only": "Natalina entrega TRÊS níveis de informação: caderno guardado dela (gancho Ep2), caderno principal de Valdecir na cabeceira do quarto (visita à casa esta noite), e o caderno de observações pessoais dela mesma (peça do Enigma 2). Ela ama Valdecir, sabe da morte iminente há semanas, e cumpre a missão sem expor mais que o necessário."
+    },
+    {
+      "id": "chegada-gyeno",
+      "ordem": 3,
+      "arco": "chegadas",
+      "arco_titulo": "Os Quatro Arcos de Chegada",
+      "arco_ordem": 3,
+      "titulo": "Gyeno Rossi — A Chegada do Soldado",
+      "subtitulo": "16/03 envelope · 18/03 18h05 Rodoviária",
+      "duracao_estimada": "15–18 min",
+      "local_ref": "local:rodoviaria",
+      "pc_focal_ref": "pc:gyeno",
+      "npcs_presentes": [
+        "npc:geraldo",
+        "npc:natalina"
+      ],
+      "props_refs": [
+        "prop:p14-foto-rasgada-em-quatro"
+      ],
+      "secao_dossie": "Parte 3 — As Chegadas Individuais",
+      "atmosfera_abertura": "Quarto de adolescente congelado no tempo — pôsteres de jogadores e skatistas. Madrugadas no computador desde fevereiro. Pesadelos com os cinco.",
+      "beats": [
+        {
+          "tipo": "narracao",
+          "ordem": 1,
+          "titulo": "G.1 — O pedaço de foto",
+          "horario": "16/03 · interior de SP",
+          "texto": "Sua mãe grita do portão que chegou carta pra você. Envelope pardo pequeno, sem remetente, selo de Goiás. Dentro: nada escrito. Só um pedaço rasgado de fotografia — terra escura e o canto de alguma coisa que parece uma letra riscada no chão. Só isso.\n\nVocê vira o pedaço. Nada no verso. Você não sabe o que é. Mas você guarda — porque desde fevereiro tudo que vem de Goiás te interessa."
+        },
+        {
+          "tipo": "prop",
+          "ordem": 2,
+          "prop_ref": "prop:p14-foto-rasgada-em-quatro",
+          "contexto": "Pedaço de Gyeno entregue sozinho no envelope, sem nada escrito"
+        },
+        {
+          "tipo": "narracao",
+          "ordem": 3,
+          "titulo": "G.2 — O SMS",
+          "horario": "16/03 · 23h40",
+          "texto": "Seu celular vibra. Número desconhecido, DDD 62.\n\n[ENTREGAR SMS IMPRESSO:]\n'Me encontre em Novavera, Rua das Pitangueiras, número 14. Eu sei o que você procura. Procure por mim quando chegar. Valdecir.'\n\nVocê liga de volta. 'Número não atribuído.' Você imprime o screenshot na lan house no dia seguinte — caso o celular falhe."
+        },
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 4,
+          "texto": "Permita o jogador decidir se responde, hesita, pesquisa 'Novavera' de novo — os blogs conspiracionistas que citam a cidade no 'eixo de fenômenos religiosos do cerrado' continuam lá."
+        },
+        {
+          "tipo": "narracao",
+          "ordem": 5,
+          "titulo": "G.3 — A saída",
+          "horario": "17/03 · 5h",
+          "texto": "Sua mãe não dormiu. Fez café e bolo. Te abraça e diz que tá orando por você. Você diz que tá tudo bem. Não tá. Você fala que vai 'viajar com uns amigos pra desestressar'.\n\nÔnibus interestadual SP → Goiânia (12h), conexão Goiânia → Novavera (2h). Mochila militar, canivete no bolso interno, o pedaço de foto e o SMS impresso. Você dorme em pedaços. Sonha em pedaços. Acorda toda vez que o de barba rala começa a se cortar."
+        },
+        {
+          "tipo": "narracao",
+          "ordem": 6,
+          "titulo": "G.4 — Rodoviária",
+          "horario": "18h05",
+          "texto": "Cinco plataformas, bar de café em copo plástico. Fim de tarde.\n\nVocê fica parado no degrau do ônibus por dois segundos antes de descer. Não sabe por quê. Uma hesitação sem origem.\n\nO que você nota primeiro, na calçada em frente: riscos de giz ou carvão que alguém começou a apagar com o pé, mas não completamente. Círculos. Dentro de círculos. Dentro de mais círculos. Fechados. Precisos demais para ser brincadeira."
+        },
+        {
+          "tipo": "momento_pavor",
+          "ordem": 7,
+          "titulo": "Reconhecimento imediato (sem rolagem)",
+          "texto": "É o símbolo da Ucrânia. O que os cinco desertores desenharam no próprio corpo, em coro, dizendo 'O messias, ele está próximo.'"
+        },
+        {
+          "tipo": "teste",
+          "ordem": 8,
+          "atributo": "Alma",
+          "dificuldade": 50,
+          "contexto": "Contra flashback",
+          "o_que_destrava": "Falha: 30 segundos de dissociação — o pátio, o coro baixo, as facas; Sanidade −1d4. Sucesso: ele segura — a mão vai sozinha ao bolso do canivete."
+        },
+        {
+          "tipo": "mecanica",
+          "ordem": 9,
+          "titulo": "Memória +1 automático",
+          "texto": "Anote em segredo. Gyeno acaba de reconhecer um símbolo de uma vida que ele nem sabia ter."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 10,
+          "npc_ref": "npc:geraldo",
+          "contexto": "Varrendo a outra ponta da calçada",
+          "texto": "Procurando alguma coisa, moço? Hotel é na Rua das Flores. Se for pro velório do Valdecir, a Igreja de Santo Antônio é reto e vira na esquerda depois do banco."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 11,
+          "npc_ref": "npc:geraldo",
+          "contexto": "Sobre os riscos na calçada",
+          "texto": "Criança. Deve ter sido criança. Fica desenhando aí de vez em quando. (pausa) Mas criança não vem muito pra esse lado da rodoviária, não. Fica mais no outro lado. (Não explica a contradição. Volta a varrer. Não está escondendo — genuinamente não quer pensar nisso.)"
+        },
+        {
+          "tipo": "fala",
+          "ordem": 12,
+          "npc_ref": "npc:geraldo",
+          "contexto": "Sobre Pitangueiras, 14",
+          "texto": "Bairro Fundação. Pega essa rua, segunda à direita, segue até a pracinha, mais duas quadras. Número 14? ...Casa do Seu Valdecir. Que morreu hoje. Você é parente?"
+        },
+        {
+          "tipo": "momento_pavor",
+          "ordem": 13,
+          "titulo": "O soco",
+          "texto": "A pessoa que ele veio encontrar morreu no dia em que ele chegou."
+        },
+        {
+          "tipo": "narracao",
+          "ordem": 14,
+          "titulo": "O Corolla preto",
+          "texto": "Em frente, folha seca no capô — mas motor quente ao passar perto. [GM: carro banal de morador; coincidência a serviço do pavor.]"
+        },
+        {
+          "tipo": "narracao",
+          "ordem": 15,
+          "titulo": "Encerramento — Pitangueiras 14",
+          "texto": "Gyeno vai direto à Pitangueiras 14. Bate; ninguém. Natalina, da esquina, o aborda:"
+        },
+        {
+          "tipo": "fala",
+          "ordem": 16,
+          "npc_ref": "npc:natalina",
+          "contexto": "Primeiro vínculo de Gyeno na cidade",
+          "texto": "Tá procurando o Valdecir, meu filho? ... Ele morreu hoje de manhã. O velório é às sete, na Igreja de Santo Antônio.\n\n(e oferece um copo d'água)"
+        }
+      ],
+      "destrava_para": [
+        "cena:velorio-chegada"
+      ],
+      "mestre_only": "O símbolo na calçada da rodoviária foi desenhado por Adílson (manutenção do sigilo), mesmas duas semanas que a cal atrás do Centro Cívico. A reação de reconhecimento de Gyeno é a primeira pista visceral de que o que ele viu na Ucrânia (com os cinco desertores de Pirassuá) é a mesma teia que se desfia em Novavera."
+    },
+    {
+      "id": "chegada-vinicius",
+      "ordem": 4,
+      "arco": "chegadas",
+      "arco_titulo": "Os Quatro Arcos de Chegada",
+      "arco_ordem": 4,
+      "titulo": "Vinicius Fonseca — A Chegada do Cobrador",
+      "subtitulo": "18/03 · 16h sentença SP · 16h35 metrô · 18h Posto Aparecido",
+      "duracao_estimada": "20–25 min",
+      "local_ref": "local:posto-gasolina",
+      "pc_focal_ref": "pc:vinicius",
+      "npcs_presentes": [
+        "npc:valdecir",
+        "npc:aparecido"
+      ],
+      "props_refs": [
+        "prop:p05-cartao-metro-vinicius",
+        "prop:p14-foto-rasgada-em-quatro"
+      ],
+      "secao_dossie": "Parte 3 — As Chegadas Individuais",
+      "atmosfera_abertura": "Fórum lotado, ar-condicionado falhando, cheiro de papel e suor de tribunal. Este arco é o que quebra a realidade — deixe-o por último.",
+      "beats": [
+        {
+          "tipo": "narracao",
+          "ordem": 1,
+          "titulo": "V.1 — A sentença e o beco",
+          "horario": "18/03 tarde · São Paulo",
+          "texto": "O juiz lê a sentença: dezoito anos. Lucas não chora — fica olhando para você, esperando que você diga que ainda tem recurso, que ainda tem alguma coisa. Você diz. Não acredita no que diz.\n\nNo fundo da sala, um homem que depôs como 'testemunha de moralidade' durante o processo sorri. Não é alívio. É satisfação de coisa dada certa.\n\nVocê sai do fórum. O homem sai depois. Quando você vira a esquina do beco que corta para a estação, ele está ali — esperando para ir embora, sem urgência."
+        },
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 2,
+          "titulo": "O surto",
+          "texto": "Vinicius pode (jogador escolhe) ativar a mecânica de surto. POD 50 contra contenção; falha = Mestre controla por 2-5 min. Resultado: o homem morre em meio à fúria. Sanidade −1d6 e +1 Marca aplicados.\n\nQUEM É: Otávio Drumond, fiel da Casa que tinha matado o jornalista Henrique Mota há um ano. Lucas foi preso por engano. Vinicius limpa as mãos no terno; o sangue na manga vai ser notado depois pelo Seu Aparecido. Ele desce para a estação de metrô."
+        },
+        {
+          "tipo": "narracao",
+          "ordem": 3,
+          "titulo": "V.2 — O vagão",
+          "horario": "~16h35",
+          "texto": "O vagão está quase vazio. Você senta. Tenta respirar. Tira o terno. Olha para a manga — limpa o que dá com saliva e o lenço.\n\nNa estação seguinte sobe um senhor de uns setenta anos, terno cinza simples, pasta de couro nos dois braços. Olha para você. Senta na sua frente. Espera o vagão andar."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 4,
+          "npc_ref": "npc:valdecir",
+          "contexto": "Vinicius pergunta quem é o senhor",
+          "texto": "Um velho que anota mortes. Faz tempo. O senhor tirou uma da minha lista hoje, sem saber. Por isso eu reconheci o senhor quando entrou."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 5,
+          "npc_ref": "npc:valdecir",
+          "contexto": "Se Vinicius nega/fecha/quer descer",
+          "texto": "Tudo bem. O senhor não me deve nada. Mas tem um nome que o senhor não vai conseguir esquecer: Lucas. O rapaz que vai pagar pelo que o Otávio fez. O senhor sabe que ele tá preso por nada. (pausa) Isso o senhor não deixa pra lá. Eu sei que não deixa."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 6,
+          "npc_ref": "npc:valdecir",
+          "contexto": "Pra quem o Otávio trabalhava?",
+          "texto": "Pra gente que reza num lugar onde não devia ter reza nenhuma. Eu não vou te explicar — o senhor ia achar que eu tô louco, e ia ter razão. Tem coisa que não se conta. Se vê. E o senhor vai ver."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 7,
+          "npc_ref": "npc:valdecir",
+          "contexto": "Por que eu?",
+          "texto": "Porque o senhor olhou pro Otávio rir no tribunal e enxergou o que ele era. Ninguém mais enxergou. Isso é raro. Faz falta no mundo, gente que enxerga."
+        },
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 8,
+          "titulo": "O que Valdecir NÃO diz em hipótese alguma",
+          "texto": "O nome da seita, Armindo, a Casa, Messiah, a Área Verde, que está morto. Ele aponta a porta; não atravessa por ninguém."
+        },
+        {
+          "tipo": "prop",
+          "ordem": 9,
+          "prop_ref": "prop:p05-cartao-metro-vinicius",
+          "contexto": "Valdecir entrega o cartão + o pedaço da foto rasgada (Prop 14, na mão dele)"
+        },
+        {
+          "tipo": "fala",
+          "ordem": 10,
+          "npc_ref": "npc:valdecir",
+          "contexto": "Diálogo obrigatório de descida",
+          "texto": "Desce comigo. A sua parada é essa. Procura a minha casa quando chegar — tá escrito aí no cartão. Lê o que eu deixei no quarto, na cabeceira, antes de qualquer outra coisa. (pausa) E não confia em padre, doutor. Nem em delegado. Não nessa cidade."
+        },
+        {
+          "tipo": "narracao",
+          "ordem": 11,
+          "titulo": "V.3 — A descida impossível",
+          "texto": "Não há anúncio de estação. As luzes piscam uma vez. A plataforma lá fora não é de metrô de São Paulo: é menor, mais velha, luzes amareladas, mato entre as placas do piso. Na parede de azulejo descascado, em letra de fôrma antiga: NOVAVERA.\n\nAs portas se abrem. O ar que entra é mais frio do que devia. E cheira a terra."
+        },
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 12,
+          "titulo": "Se Vinicius recusar descer",
+          "texto": "Valdecir diz apenas: 'O senhor já desceu, doutor. Só falta perceber' — e sai. Quando as portas fecham, o vagão está vazio, escuro e parado, e Vinicius está na plataforma de qualquer jeito."
+        },
+        {
+          "tipo": "narracao",
+          "ordem": 13,
+          "titulo": "Subindo",
+          "texto": "Você sobe a escada e emerge no fim de tarde. Quando se vira, não há estação: um portão de ferro enferrujado, acorrentado, mato na altura do peito — fechado há vinte anos, no mínimo.\n\n[→ a estação nunca reabre; se voltarem lá: não existe linha férrea em Novavera]"
+        },
+        {
+          "tipo": "narracao",
+          "ordem": 14,
+          "titulo": "V.4 — O Posto Aparecido",
+          "horario": "~18h00",
+          "texto": "Rua de terra batida nas margens, asfalto remendado; o posto a vinte metros — duas bombas, um cachorro dormindo na sombra de uma bomba fora de uso. E o som que falta: fim de tarde de cerrado, nenhum pássaro.\n\nVinicius provavelmente vai ao banheiro do posto lavar o sangue da manga — Aparecido repara, sem comentar."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 15,
+          "npc_ref": "npc:aparecido",
+          "contexto": "Diálogo obrigatório",
+          "texto": "Boa tarde. De onde o senhor vem? (qualquer resposta) Novavera é tranquila. Bem tranquila. Só que hoje tá diferente — faleceu um senhor aqui, o Valdecir Conceição. O velório é às sete, na Igreja de Santo Antônio. Conhecia ele?"
+        },
+        {
+          "tipo": "momento_pavor",
+          "ordem": 16,
+          "titulo": "O chão abre",
+          "texto": "O homem com quem ele acabou de conversar no trem MORREU DE MANHÃ. Não confirme nada. Deixe o jogador carregar a dúvida até o caixão."
+        },
+        {
+          "tipo": "teste",
+          "ordem": 17,
+          "atributo": "Observação",
+          "dificuldade": 35,
+          "contexto": "Durante a conversa, Aparecido pega o celular 'pra ver as horas' e digita",
+          "o_que_destrava": "Rápido demais para ver horas. Se confrontado: 'Avisando a minha mulher que vou atrasar o jantar. Por quê?' (defensivo, rápido demais). Está reportando o forasteiro a Ezequiel — pensa que trabalha pra 'um advogado de Brasília que estuda história'."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 18,
+          "npc_ref": "npc:aparecido",
+          "contexto": "Sobre a Área Verde, se surgir",
+          "texto": "É um terreno fechado, no centro. Desde sempre assim. (pausa) O Valdecir foi achado lá perto, hoje cedo. Bem no muro. (o tom de quem não acredita em coincidência)"
+        },
+        {
+          "tipo": "narracao",
+          "ordem": 19,
+          "titulo": "O Gol prata",
+          "texto": "Parado na rua lateral, a 50m, vidros fechados. Se Vinicius andar na direção dele, o motor liga e o carro sai sem pressa.\n\n[GM: Reinaldo, o investigador particular.]"
+        },
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 20,
+          "titulo": "Logística",
+          "texto": "Vinicius está a pé. A Igreja fica a ~25 min caminhando ou Aparecido indica 'o filho do Zé faz corrida de moto'. Ele chega ao velório entre 19h e 19h45 como os outros."
+        }
+      ],
+      "destrava_para": [
+        "cena:velorio-chegada"
+      ],
+      "mestre_only": "ESTA é a cena que quebra a realidade — por isso fica por último na rodada. Valdecir morreu às 5h da manhã do dia 18 mas faz UMA travessia (paga pela morte voluntária no sigilo): aparece para Vinicius no vagão. É o oposto exato da serva: um morto livre que age uma vez, contra uma morta escravizada que serve para sempre. Vinicius só vai entender que o homem do trem é o morto do velório quando chegar à igreja."
+    },
+    {
+      "id": "velorio-chegada",
+      "ordem": 5,
+      "arco": "velorio",
+      "arco_titulo": "O Velório (19h00–21h00)",
+      "arco_ordem": 1,
+      "titulo": "O Velório — Chegada e Primeiras Impressões",
+      "subtitulo": "19h00 · Igreja de Santo Antônio",
+      "duracao_estimada": "5-8 min",
+      "local_ref": "local:igreja-santo-antonio",
+      "npcs_presentes": [
+        "npc:armindo",
+        "npc:ronaldo",
+        "npc:natalina",
+        "npc:neuza",
+        "npc:joao-funeraria",
+        "npc:benedito-sacristao",
+        "npc:gabriel",
+        "npc:marta",
+        "npc:sueli"
+      ],
+      "secao_dossie": "Parte 4 — O Velório",
+      "atmosfera_abertura": "Noite completa; carros estacionados dos dois lados (raro em Novavera); luz amarela saindo pelas portas abertas; murmúrio contido; o ar esfriou mais do que março deveria permitir — algumas senhoras vestiram casaco; cheiro de vela acesa e flor velha.",
+      "beats": [
+        {
+          "tipo": "narracao",
+          "ordem": 1,
+          "titulo": "Entrando na Igreja",
+          "texto": "A Igreja de Santo Antônio tem capacidade para duzentas pessoas. Há talvez oitenta. Velas. Flores de plástico cor de laranja — a Igreja guarda para esses momentos. Um caixão simples de madeira escura no centro.\n\nNenhuma família ao redor do caixão. Nenhuma viúva, nenhum filho. O morto era o último da linhagem dele.\n\nHá um homem de uns oitenta anos, terno cinza, de pé perto da parede direita, olhando para o caixão. Não está chorando. Não está conversando com ninguém. Só está lá. A presença dele ocupa mais espaço do que o corpo.\n\nE há um homem de meia-idade numa cadeira perto da entrada — veio sem farda, veio como civil. Mas tem postura de quem está de serviço mesmo quando não está."
+        },
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 2,
+          "titulo": "Reconhecimentos",
+          "texto": "• Sergie reconhece Armindo da foto na hora. Não pode demonstrar.\n• Floriano sabe que é o padre titular (pesquisou online).\n• Vinicius e Gyeno não sabem quem é Armindo ainda.\n• VINICIUS, ao se aproximar do caixão, reconhece o rosto: É O SENHOR DO METRÔ. Não explique. Deixe o jogador afundar."
+        },
+        {
+          "tipo": "momento_pavor",
+          "ordem": 3,
+          "titulo": "Para Vinicius — o chão abre",
+          "texto": "O homem com quem ele conversou no trem há duas horas está deitado no caixão. Cabelo branco, mãos cruzadas sobre o peito. SETENTA E UM ANOS. Morto desde 5h da manhã."
+        },
+        {
+          "tipo": "narracao",
+          "ordem": 4,
+          "titulo": "Quem está onde",
+          "texto": "Armindo (parede direita) · Ronaldo (cadeira da entrada) · Natalina (circulando, bandeja de doce) · Dona Neuza (banco do meio, chorando baixo) · Seu João (entrada, conferindo relógio) · Seu Benedito (fundo, velas) · Gabriel (degraus de fora, desenhando; a mãe Carmem lá dentro) · Dona Marta (cozinha da paróquia, servindo café — cameo silencioso; ninguém sabe que ela posicionou o corpo)."
+        },
+        {
+          "tipo": "teste",
+          "ordem": 5,
+          "atributo": "Observação",
+          "dificuldade": 40,
+          "contexto": "~19h30 — o carro de Sueli passa devagar pela rua, sem parar",
+          "o_que_destrava": "Mulher ao volante, olhando a igreja, segue em frente. [→ Ep2 — Sueli Nascimento, o S.N. da agenda de Valdecir]"
+        }
+      ],
+      "destrava_para": [
+        "cena:velorio-simbolo"
+      ],
+      "mestre_only": "Dona Marta é o cameo crítico — ninguém SABE que ela é núcleo duro da Casa e posicionou o corpo de Valdecir na manhã. Ela serve café com naturalidade. Pista futura: vai reaparecer nas sessões 4-5 quando os PCs entrarem na Casa pública."
+    },
+    {
+      "id": "velorio-simbolo",
+      "ordem": 6,
+      "arco": "velorio",
+      "arco_titulo": "O Velório (19h00–21h00)",
+      "arco_ordem": 2,
+      "titulo": "O Caixão e o Símbolo",
+      "subtitulo": "19h05–19h15 · Igreja de Santo Antônio",
+      "duracao_estimada": "8-10 min",
+      "local_ref": "local:igreja-santo-antonio",
+      "npcs_presentes": [
+        "npc:valdecir"
+      ],
+      "secao_dossie": "Parte 4 — O Velório",
+      "atmosfera_abertura": "O caixão no centro. Madeira escura. Cheiro de vela mais forte aqui.",
+      "beats": [
+        {
+          "tipo": "narracao",
+          "ordem": 1,
+          "titulo": "O caixão de perto",
+          "texto": "Valdecir Conceição tem o rosto sereno. Setenta e um anos, cabelo branco, mãos cruzadas sobre o peito.\n\nNa lateral do caixão, na altura da sua cintura, há um entalhe na madeira escura. Preciso demais para ser decoração; imperfeito demais para ser industrial. Feito à mão, com ferramenta.\n\nTrês círculos concêntricos. Fechados. Completos. Doze pontos no anel externo. No centro, uma espiral que gira para dentro."
+        },
+        {
+          "tipo": "teste",
+          "ordem": 2,
+          "atributo": "Observação ou Medicina",
+          "dificuldade": 35,
+          "contexto": "Examinar o entalhe",
+          "o_que_destrava": "Resíduos de serragem fresca na base do entalhe. Gravado nas últimas horas — depois da preparação do corpo. (Peça da Etapa 1: a mesma textura das partículas da fita do caderno que vão encontrar na casa.)"
+        },
+        {
+          "tipo": "teste",
+          "ordem": 3,
+          "atributo": "Ocultismo",
+          "dificuldade": 40,
+          "contexto": "Floriano analisa o símbolo",
+          "o_que_destrava": "Estrutura de sigilo funcional, não ornamento. Não é decorativo — é ativo."
+        },
+        {
+          "tipo": "momento_pavor",
+          "ordem": 4,
+          "titulo": "Para Gyeno (automático)",
+          "texto": "É o símbolo da Ucrânia. Alma 50 contra flashback (falha: dissociação breve, Sanidade −1d4)."
+        },
+        {
+          "tipo": "teste",
+          "ordem": 5,
+          "atributo": "Alma",
+          "dificuldade": 50,
+          "contexto": "Gyeno contra flashback do símbolo no caixão",
+          "o_que_destrava": "Falha = dissociação breve, Sanidade −1d4. Sucesso = ele segura."
+        },
+        {
+          "tipo": "momento_pavor",
+          "ordem": 6,
+          "titulo": "Para Floriano (automático)",
+          "texto": "São os três círculos de Miguel — e do colar do padre da foto. O padre da foto está a três metros do caixão. Floriano não pode demonstrar."
+        }
+      ],
+      "destrava_para": [
+        "cena:velorio-dialogos"
+      ],
+      "mestre_only": "Armindo gravou o símbolo entre 18h15 e 18h25 — Seu Benedito (sacristão) estava na sacristia e confirma a janela de tempo se perguntado, mas não vê 'exatamente onde Armindo estava'. A abertura do sigilo no caixão aponta para NORDESTE — direção da Área Verde."
+    },
+    {
+      "id": "velorio-dialogos",
+      "ordem": 7,
+      "arco": "velorio",
+      "arco_titulo": "O Velório (19h00–21h00)",
+      "arco_ordem": 3,
+      "titulo": "Diálogos Obrigatórios — As Falas Que Destravam a História",
+      "subtitulo": "19h15–20h00 · Igreja de Santo Antônio",
+      "duracao_estimada": "30-40 min",
+      "local_ref": "local:igreja-santo-antonio",
+      "npcs_presentes": [
+        "npc:armindo",
+        "npc:natalina",
+        "npc:neuza",
+        "npc:joao-funeraria",
+        "npc:benedito-sacristao",
+        "npc:gabriel"
+      ],
+      "secao_dossie": "Parte 4 — O Velório · §5.4",
+      "atmosfera_abertura": "Os quatro PCs circulam, ouvem, observam. Cada NPC tem falas que devem ser entregues — esta é a cena mais densa de informação do episódio.",
+      "beats": [
+        {
+          "tipo": "fala",
+          "ordem": 1,
+          "npc_ref": "npc:armindo",
+          "contexto": "Apresentação — para qualquer PC que se aproxime",
+          "texto": "Armindo Vasconcellos. Trabalho no Arquivo Histórico aqui da cidade. Conhecia o Valdecir há muitos anos. Um homem bom. Do tipo que faz falta de formas que a gente só percebe depois."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 2,
+          "npc_ref": "npc:armindo",
+          "contexto": "A isca da biblioteca — gancho deliberado para mandar os PCs à casa",
+          "texto": "Pena que ninguém vai ler os livros dele agora. Valdecir tinha uma biblioteca interessante sobre a história espírita da região. Cinquenta anos coletando. Vai virar entulho — não tem família para ficar com nada. Se tiverem curiosidade sobre o tipo de homem que ele era, a biblioteca dele diz mais do que eu posso dizer."
+        },
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 3,
+          "titulo": "Ironia que nem Armindo conhece",
+          "texto": "A biblioteca diz LITERALMENTE mais — o Kardec com dedos de terra é a chave da cifra. Ele aponta a arma de Valdecir para os PCs."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 4,
+          "npc_ref": "npc:armindo",
+          "contexto": "A ÁGUA E O SANGUE — uma vez, em tom de elogio fúnebre, olhando o caixão. PRIMEIRA PRAGA escancarada para quem souber ouvir.",
+          "texto": "O Valdecir era a água desta cidade. Cinquenta anos. Quando a gente tinha sede de história, de memória, era nele que a gente bebia. (pausa, olhando o caixão) E a água, às vezes, escurece. Às vezes ela se torna outra coisa. Deus já fez isso uma vez — com um rio inteiro — pra ensinar um povo a partir. Não cabe à gente entender por que a água vira sangue. Cabe atravessar."
+        },
+        {
+          "tipo": "teste",
+          "ordem": 5,
+          "atributo": "Psicologia 45 / Saber 50",
+          "dificuldade": 45,
+          "contexto": "Ou um PC que conheça o Êxodo",
+          "o_que_destrava": "'água que vira sangue', 'ensinar um povo a partir' e 'atravessar' não são imagem de luto comum — é o vocabulário da PRIMEIRA PRAGA e da passagem. Quem registrar isso ganha o primeiro fio do padrão da temporada (anote em segredo; não confirme).\n\nSe confrontado, Armindo desvia com serenidade: 'É só a forma de um velho dizer que perdeu um amigo, meu filho.'"
+        },
+        {
+          "tipo": "fala",
+          "ordem": 6,
+          "npc_ref": "npc:natalina",
+          "contexto": "Os dois cadernos",
+          "texto": "Ele me deu um caderno pra guardar, faz uns três anos. Disse que eu entregasse 'pra quem viesse perguntar.' Nunca veio ninguém. Até hoje. Podem vir amanhã na minha casa. (pausa) Mas tem outro — um maior, mais grosso — que ele nunca tirou da casa. Dizia que era 'pra ficar lá, no quarto, na cabeceira.'"
+        },
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 7,
+          "titulo": "O caderno pequeno = gancho Ep2",
+          "texto": "Natalina só vai entregar no Ep2. Não force agora."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 8,
+          "npc_ref": "npc:natalina",
+          "contexto": "A semente da sessão + o saquinho de sal",
+          "texto": "O Valdecir era kardecista de mesa. Fazia sessão em casa, sozinho, há muitos anos. Dizia que conversava com a falecida filha dele. Todo mundo achava que era saudade. Eu nunca tive certeza de que era só saudade. (tira do bolso do avental um saquinho de pano amarrado) Ele me deu isso junto com o caderno. Disse: 'entrega junto, vão precisar.' Eu nunca entendi. É sal."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 9,
+          "npc_ref": "npc:neuza",
+          "contexto": "O achado do corpo — abordagem gentil destrava, pressa fecha",
+          "texto": "Eu faço caminhada todo dia. Cinco, cinco e meia. Hoje eu tava passando pela Rua das Acácias quando vi ele. Do lado de fora do muro da Área Verde. Sentado, encostado. Pensei que tava descansando. Cheguei perto pra falar bom dia. Ele não respondeu."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 10,
+          "npc_ref": "npc:neuza",
+          "contexto": "Os três detalhes (se a conversa continuar)",
+          "texto": "As mãos dele tavam viradas pra dentro do terreno. Como se ele tivesse pegado alguma coisa lá de dentro.\n\nEu toquei na mão dele. Tava fria de um jeito que não era de morte. Eu já vi muita gente morta. Era como se ele tivesse passado a noite num lugar muito mais frio.\n\nQuarenta anos morando em frente. Toda noite, dez horas, ele apagava a luz do quarto. Essa madrugada, a luz tava acesa. Pela primeira vez em quarenta anos."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 11,
+          "npc_ref": "npc:neuza",
+          "contexto": "A semente das velas (se o assunto tocar nos hábitos dele)",
+          "texto": "Às vezes, de madrugada, tinha luz de vela na sala dele. Vela, não lâmpada. Eu via a luz mexendo pela fresta da cortina. Nunca perguntei. Tem coisas que não se pergunta."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 12,
+          "npc_ref": "npc:joao-funeraria",
+          "contexto": "A ponte para Meireles",
+          "texto": "O corpo já veio lavado e preparado pelo Dr. Meireles — o que é incomum. E o doutor ficou um tempão olhando pro corpo de manhã. Fui buscar às nove e ele ainda tava lá, sentado, olhando. Médico vê morto todo dia. Não fica sentado olhando."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 13,
+          "npc_ref": "npc:joao-funeraria",
+          "contexto": "Mais baixo, se a conversa render (Psicologia 35 ou simples gentileza). LÁGRIMAS DE SANGUE — pista da primeira praga.",
+          "texto": "Uma coisa que me deixou sem dormir. Quando fui ajeitar o rosto dele, tinha uma marca fininha aqui, no canto dos olhos. Cor de ferrugem, seca. Já limparam, mas ficou sombra. Parecia... parecia que ele tinha chorado. Mas chorado vermelho. Eu nunca vi isso em corpo nenhum em trinta anos."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 14,
+          "npc_ref": "npc:joao-funeraria",
+          "contexto": "Janela de tempo do caixão",
+          "texto": "Caixão entregue às duas. Saí umas cinco e meia. O velório começou às sete. Quem entrou nesse meio tempo? A Igreja fica aberta por dentro, pelo sacristão. O Seu Benedito talvez saiba."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 15,
+          "npc_ref": "npc:benedito-sacristao",
+          "contexto": "A versão ensaiada — se perguntado sobre quem entrou",
+          "texto": "A funerária saiu umas cinco e meia. Eu fiquei — é função minha. O Dr. Armindo passou aqui umas seis e quinze. Ficou uns dez minutos sentado num banco da frente. Rezando, eu imaginei. Eu tava na sacristia separando paramentos. Não vi nada de mais."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 16,
+          "npc_ref": "npc:benedito-sacristao",
+          "contexto": "Se perguntarem se Armindo esteve perto do caixão",
+          "texto": "Não vi exatamente onde ele tava. A sacristia tem a porta pro outro lado. (pausa) Mas é estranho perguntar isso. Por quê?"
+        },
+        {
+          "tipo": "teste",
+          "ordem": 17,
+          "atributo": "Psicologia",
+          "dificuldade": 60,
+          "contexto": "Tentar quebrar Benedito",
+          "o_que_destrava": "Omissão — calmo demais para a estranheza da pergunta. Nenhuma rolagem o quebra hoje. A função dele já cumpriu: ARMINDO TEVE 10 MINUTOS SOZINHO COM O CAIXÃO no horário compatível com a serragem fresca."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 18,
+          "npc_ref": "npc:gabriel",
+          "contexto": "Nos degraus — conversa de mais de 5 min ou tom estranho → Carmem aparece e leva o menino, acesso fecha por episódios",
+          "texto": "Você veio pro velório? O Seu Valdecir era legal. Ele me deixava ficar na praça quando minha mãe ia fazer compra."
+        },
+        {
+          "tipo": "narracao",
+          "ordem": 19,
+          "titulo": "O caderninho de desenhos (se pedirem)",
+          "texto": "Ele fecha antes de mostrar, depois abre devagar.\n\nNo desenho de hoje: o terreno da Área Verde visto de cima, as fundações no centro. De pé, bem no meio das fundações, uma figura. Alta. Sem rosto. Proporções erradas."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 20,
+          "npc_ref": "npc:gabriel",
+          "contexto": "Sobre o desenho",
+          "texto": "Fica aparecendo. Não sei o que é. Ontem não tinha."
+        },
+        {
+          "tipo": "narracao",
+          "ordem": 21,
+          "titulo": "Numa página mais atrás — O HOMEM QUE CHORA VERMELHO",
+          "texto": "Outro desenho, mais simples, de criança: um rosto com dois riscos vermelhos descendo dos olhos. Embaixo, com letra torta: 'o home que chora vermeio.'"
+        },
+        {
+          "tipo": "fala",
+          "ordem": 22,
+          "npc_ref": "npc:gabriel",
+          "contexto": "O desenho premonitório — PRIMEIRA PRAGA confirmada",
+          "texto": "Esse é o Seu Valdecir. Sonhei com ele chorando assim. Antes de saber que ele morreu."
+        },
+        {
+          "tipo": "mecanica",
+          "ordem": 23,
+          "titulo": "Mecânica secreta",
+          "texto": "Conversa substantiva com Gabriel = Memória +1 (anote sem avisar). O desenho marca o ponto exato da terra preta na Área Verde."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 24,
+          "npc_ref": "npc:ronaldo",
+          "contexto": "Evento fixo 20h00-20h30: o celular vibra; a expressão é de quem esperava a ligação e torcia para que não viesse; ele sai pela lateral.",
+          "texto": "[Se um PC seguir com Furtividade 35, ouve só o lado dele:]\n\n...eu sei. Eu sei disso. (pausa longa) Não é o que você pensa. Eles são só... não sei quem são. Chegaram hoje. (pausa) Não vou fazer isso. (pausa) Não estou dizendo que vou contar. Estou dizendo que não vou fazer isso. (pausa) Entendido."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 25,
+          "npc_ref": "npc:ronaldo",
+          "contexto": "Abordado no velório",
+          "texto": "Vim como amigo do Valdecir. Não como delegado. Embora seja difícil separar as coisas, às vezes."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 26,
+          "npc_ref": "npc:ronaldo",
+          "contexto": "Sobre a morte",
+          "texto": "Coração. Isso que o laudo diz."
+        },
+        {
+          "tipo": "teste",
+          "ordem": 27,
+          "atributo": "Psicologia",
+          "dificuldade": 45,
+          "contexto": "Ronaldo sobre o laudo",
+          "o_que_destrava": "A ênfase no 'diz'. Ele sabe que o laudo foi editado. Não admite hoje — pressão é decisão adiada, não confronto direto."
+        }
+      ],
+      "destrava_para": [
+        "cena:velorio-foto"
+      ],
+      "mestre_only": "ESTA é a cena mais densa do episódio. Conduza ouvindo onde a mesa fixa: alguns PCs vão sentar com Armindo, outros com Natalina, outros com Neuza. Não force os 4 a ouvirem tudo — mas garanta que as pistas críticas saem em algum momento."
+    },
+    {
+      "id": "velorio-foto",
+      "ordem": 8,
+      "arco": "velorio",
+      "arco_titulo": "O Velório (19h00–21h00)",
+      "arco_ordem": 4,
+      "titulo": "A Convergência dos Quatro + A Foto Rasgada",
+      "subtitulo": "~20h30 · Igreja de Santo Antônio",
+      "duracao_estimada": "10-15 min",
+      "local_ref": "local:igreja-santo-antonio",
+      "npcs_presentes": [],
+      "props_refs": [
+        "prop:p14-foto-rasgada-em-quatro"
+      ],
+      "secao_dossie": "Parte 4 — O Velório · §5.5",
+      "atmosfera_abertura": "Em algum momento entre 20h e 20h45, os quatro percebem que cada um trouxe um pedaço rasgado de fotografia.",
+      "beats": [
+        {
+          "tipo": "narracao",
+          "ordem": 1,
+          "titulo": "Reconhecimento mútuo",
+          "texto": "Em algum momento, os quatro percebem — pela conversa, pelo olhar, pelo movimento de tirar algo do bolso — que cada um trouxe um pedaço rasgado de papel ou foto. Os pedaços têm a mesma textura. As bordas rasgadas casam."
+        },
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 2,
+          "titulo": "Como facilitar",
+          "texto": "Se a mesa não convergir naturalmente, ofereça um Beat de Atmosfera: 'O som da igreja cai por um instante. Vocês se olham. É a primeira vez que estão num lugar onde sabem que os outros três também precisam estar.'"
+        },
+        {
+          "tipo": "prop",
+          "ordem": 3,
+          "prop_ref": "prop:p14-foto-rasgada-em-quatro",
+          "contexto": "Os 4 PCs juntam os pedaços. Pela primeira vez, formam a foto inteira."
+        },
+        {
+          "tipo": "narracao",
+          "ordem": 4,
+          "titulo": "A foto montada",
+          "texto": "O chão de terra das fundações da Área Verde. No centro: três círculos concêntricos, fechados. Os mesmos do caixão. Atrás do símbolo, riscado na terra com algo pontiagudo, em letras grandes:\n\nFILHOS DA PRIMEIRA TERRA"
+        },
+        {
+          "tipo": "mecanica",
+          "ordem": 5,
+          "titulo": "Memória +1 para todos",
+          "texto": "Automático. Sem rolagem."
+        },
+        {
+          "tipo": "mecanica",
+          "ordem": 6,
+          "titulo": "Memória +1 EXTRA para Floriano se ele fizer a conexão",
+          "texto": "'FILHOS DA PRIMEIRA TERRA' = a quem Miguel servia. As palavras que Miguel repetia ('arev avon' = Nova Vera) era o ENDEREÇO. A criança não falava demoníaca — falava o nome da cidade onde a seita estava."
+        },
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 7,
+          "titulo": "Quem mandou os pedaços",
+          "texto": "Foi Valdecir. A foto inteira ficou na casa dele (ou em poder de Sueli — definir conforme a mesa). Rasgou em quatro nos últimos meses, enviou um pedaço por canal a cada um. Nenhum PC sabe ainda de onde vem; vão entender só na visita à casa quando virem outras fotos dele com a mesma textura."
+        }
+      ],
+      "destrava_para": [
+        "cena:investigacao-meireles",
+        "cena:casa-valdecir-1"
+      ],
+      "mestre_only": "Esta convergência é o momento em que os quatro deixam de ser 4 personagens em arcos paralelos e viram um grupo. Mestre: deixe o silêncio acontecer depois de montarem a foto. Não preencha. A mesa vai entender."
+    },
+    {
+      "id": "velorio-encerramento",
+      "ordem": 9,
+      "arco": "velorio",
+      "arco_titulo": "O Velório (19h00–21h00)",
+      "arco_ordem": 5,
+      "titulo": "Encerramento do Velório — Saída e Decisões",
+      "subtitulo": "21h00 · Igreja de Santo Antônio",
+      "duracao_estimada": "5-8 min",
+      "local_ref": "local:igreja-santo-antonio",
+      "npcs_presentes": [
+        "npc:armindo",
+        "npc:natalina",
+        "npc:ronaldo"
+      ],
+      "secao_dossie": "Parte 4 — O Velório · encerramento",
+      "atmosfera_abertura": "21h. O velório fecha. As pessoas começam a sair. O caixão fica até o enterro de manhã.",
+      "beats": [
+        {
+          "tipo": "narracao",
+          "ordem": 1,
+          "titulo": "As despedidas",
+          "texto": "As pessoas saem em duplas e trios. A noite está mais fria do que devia. Os PCs estão na frente da Igreja, na praça, no estacionamento. Não há razão óbvia para ir para um lugar específico — só a sensação coletiva de que alguma coisa precisa ser feita esta noite."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 2,
+          "npc_ref": "npc:armindo",
+          "contexto": "Se algum PC se despedir",
+          "texto": "Pode passar no Arquivo amanhã, das oito ao meio-dia. Vai estar tudo aberto. (sorri sem sorriso) Vocês têm cara de quem volta."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 3,
+          "npc_ref": "npc:natalina",
+          "contexto": "Se algum PC perguntar onde fica a casa de Valdecir",
+          "texto": "Mesma rua que a minha. Pitangueiras, 14. (pausa) Eu tenho a chave. Mas hoje não. Hoje é dia de velório, não é dia de mexer nas coisas dele. Amanhã, se quiserem. (pausa, decide) Ou não. Se acharem que precisam ir hoje, eu deixo a chave embaixo do vaso da minha varanda. Façam o que precisarem."
+        },
+        {
+          "tipo": "escolha",
+          "ordem": 4,
+          "titulo": "Próximo movimento",
+          "opcoes": [
+            "Posto de Saúde — pressionar Dr. Meireles (cena: investigacao-meireles)",
+            "Casa de Valdecir — entrar agora (cena: casa-valdecir-1)",
+            "Pousada do Cerrado — recuperar; deixar pra amanhã (gancho fora do Ep1)"
+          ],
+          "observacao": "Casa de Valdecir é a rota padrão (Armindo plantou a isca da biblioteca, Natalina ofereceu a chave). Posto de Saúde é alternativo se a mesa quer pressionar Meireles primeiro."
+        }
+      ],
+      "destrava_para": [
+        "cena:investigacao-meireles",
+        "cena:casa-valdecir-1"
+      ],
+      "mestre_only": "Reinaldo Furtado (investigador particular) está na praça, no carro Gol prata, anotando quem sai da Igreja, em que ordem, com quem conversa. Não age. Reporta a Ezequiel via WhatsApp depois."
+    },
+    {
+      "id": "investigacao-meireles",
+      "ordem": 10,
+      "arco": "investigacao",
+      "arco_titulo": "Investigação Pós-Velório (21h00–22h00)",
+      "arco_ordem": 1,
+      "titulo": "Dr. Meireles — Posto de Saúde",
+      "subtitulo": "21h00–21h30 · Posto de Saúde",
+      "duracao_estimada": "20-25 min",
+      "local_ref": "local:posto-saude",
+      "npcs_presentes": [
+        "npc:meireles"
+      ],
+      "props_refs": [
+        "prop:p11-papel-meireles"
+      ],
+      "secao_dossie": "Parte 5 — A Investigação Ativa · §6.1",
+      "atmosfera_abertura": "Posto fechado ao público; luz na sala dos fundos; Meireles atende a porta com cara de quem não dorme há vinte horas; 44 anos que hoje parecem 52; terceiro analgésico do dia, dor intacta.",
+      "beats": [
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 1,
+          "titulo": "Estrutura de camadas",
+          "texto": "O Dr. Meireles tem QUATRO camadas de informação. Cada uma exige uma abordagem melhor que a anterior. Não pule camadas — deixe a mesa SUBIR."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 2,
+          "npc_ref": "npc:meireles",
+          "contexto": "Camada 0 padrão",
+          "texto": "O laudo está correto. Parada cardiorrespiratória, causa natural, consistente com a idade."
+        },
+        {
+          "tipo": "teste",
+          "ordem": 3,
+          "atributo": "Persuasão",
+          "dificuldade": 40,
+          "contexto": "Camada 1 — tom profissional (CRM)",
+          "o_que_destrava": "Orienta a pedir revisão formal no CRM. Meses. Beco burocrático deliberado."
+        },
+        {
+          "tipo": "teste",
+          "ordem": 4,
+          "atributo": "Psicologia",
+          "dificuldade": 45,
+          "contexto": "Camada 2 — tom empático",
+          "o_que_destrava": "Meireles cede um centímetro. Psicologia revela: MEDO, não culpa."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 5,
+          "npc_ref": "npc:meireles",
+          "contexto": "Camada 2",
+          "texto": "(pausa longa) Ouçam. Eu... (para) O laudo está correto. Isso é o que eu posso dizer."
+        },
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 6,
+          "titulo": "Camada 3 — abre com QUALQUER um destes",
+          "texto": "• Persuasão 45 com empatia, OU\n• Intimidação 50, OU\n• Sergie revelando a placa de detetive, OU\n• Vinicius citando o CRM com precisão jurídica"
+        },
+        {
+          "tipo": "fala",
+          "ordem": 7,
+          "npc_ref": "npc:meireles",
+          "contexto": "Camada 3 — confissão",
+          "texto": "(fecha a porta da sala) Eu recebi uma ligação. Hoje, três e meia da tarde. Uma voz que eu nunca ouvi. Não foi ameaça explícita — eu queria que tivesse sido. Quando é explícito, você sabe o que fazer. Esse homem só... descreveu a minha família. O nome da minha esposa. Da minha filha. Onde ela estuda. Como quem queria que eu entendesse que ele sabia."
+        },
+        {
+          "tipo": "prop",
+          "ordem": 8,
+          "prop_ref": "prop:p11-papel-meireles",
+          "contexto": "Aberta a Camada 3, Meireles entrega o papel — abre a gaveta"
+        },
+        {
+          "tipo": "fala",
+          "ordem": 9,
+          "npc_ref": "npc:meireles",
+          "contexto": "Sobre o papel",
+          "texto": "Tentei ligar de volta. 'Número não atribuído.' Anotei a hora também."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 10,
+          "npc_ref": "npc:meireles",
+          "contexto": "O que removeu do laudo (se pressionado com cuidado)",
+          "texto": "A temperatura estava errada. Muito errada. E havia terra nas mãos dele que... (para) Ele estava segurando a terra. Ativamente. Com força. Quem faz isso depois de uma parada cardíaca? (voz baixa) E a expressão. Parada cardíaca tem expressão específica. O rosto do Valdecir tinha a expressão de alguém que reconheceu alguma coisa. Na última coisa que viu. E ficou contente."
+        },
+        {
+          "tipo": "momento_pavor",
+          "ordem": 11,
+          "titulo": "As quatro anomalias do laudo (Etapa 1 do enigma)",
+          "texto": "1. Temperatura 4°C abaixo do normal — corpo passou tempo em camadas de tempo diferentes\n2. Terra preta nas mãos, segurada ATIVAMENTE\n3. Expressão de reconhecimento ativo (não morte súbita)\n4. AINDA A REVELAR — lágrimas de sangue"
+        },
+        {
+          "tipo": "fala",
+          "ordem": 12,
+          "npc_ref": "npc:meireles",
+          "contexto": "A quarta anomalia — se Camada 3 estiver bem aberta, empatia real, ou ele já chorando",
+          "texto": "(a voz falha) Tinha mais uma coisa. Eu limpei antes de qualquer um ver. Limpei com a minha própria mão. (pausa) Ele tinha sangue saindo dos olhos. Não machucado, não trauma — saindo de dentro, como lágrima. Como se ele tivesse chorado sangue. Eu sou médico há vinte anos. Isso não acontece. Não desse jeito. Eu limpei o rosto dele e fiquei com aquilo na mão e não consegui... não consegui escrever no laudo. Como é que eu escrevo isso?"
+        },
+        {
+          "tipo": "momento_pavor",
+          "ordem": 13,
+          "titulo": "PRIMEIRA PRAGA confirmada",
+          "texto": "As lágrimas de sangue + a água escura na cabeceira (vão descobrir na casa) + a torneira (Neuza vai mencionar) + a fala de Armindo ('a água, às vezes, escurece') = ÁGUAS EM SANGUE. Valdecir é a primeira praga. Os PCs não nomeiam ainda — só se Saber 50 fizer a conexão com o Êxodo. Anote em segredo cada vez que um jogador tocar uma das escalas."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 14,
+          "npc_ref": "npc:meireles",
+          "contexto": "Encerramento — exaustão, não hostilidade",
+          "texto": "Por favor. Eu tenho uma família."
+        }
+      ],
+      "destrava_para": [
+        "cena:casa-valdecir-1",
+        "cena:investigacao-reinaldo"
+      ],
+      "mestre_only": "Ezequiel ligou pessoalmente às 15h32, chip pré-pago descartável de Goiânia. Não foi ameaça explícita — só descrição da família. 'Quando é explícito você sabe o que fazer.' Dr. Meireles editou o laudo por medo genuíno. Pode virar aliado dos PCs nas próximas sessões SE eles oferecerem proteção real."
+    },
+    {
+      "id": "investigacao-reinaldo",
+      "ordem": 11,
+      "arco": "investigacao",
+      "arco_titulo": "Investigação Pós-Velório (21h00–22h00)",
+      "arco_ordem": 2,
+      "titulo": "O Seguidor — Reinaldo Furtado",
+      "subtitulo": "Em qualquer momento do deslocamento noturno",
+      "duracao_estimada": "5-8 min",
+      "local_ref": "local:centro-civico-praca",
+      "local_obs": "Pode acontecer em qualquer rua/calçadão durante o deslocamento noturno entre velório/Posto de Saúde/casa de Valdecir.",
+      "npcs_presentes": [
+        "npc:reinaldo"
+      ],
+      "secao_dossie": "Parte 5 — A Investigação Ativa · §6.2",
+      "atmosfera_abertura": "Calçadão vazio, postes espaçados, sons de cidade pequena à noite.",
+      "beats": [
+        {
+          "tipo": "narracao",
+          "ordem": 1,
+          "titulo": "Os passos",
+          "texto": "O calçadão está vazio. Atrás de vocês, a uma distância que não é próxima o suficiente para ser conversa nem distante o suficiente para ser casual, há passos. Quando vocês param, os passos param."
+        },
+        {
+          "tipo": "escolha",
+          "ordem": 2,
+          "titulo": "Como os PCs reagem",
+          "opcoes": [
+            "Confrontar diretamente",
+            "Tentar uma emboscada",
+            "Ignorar e continuar",
+            "Apenas observar para identificar"
+          ]
+        },
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 3,
+          "titulo": "Se confrontado",
+          "texto": "Homem de uns 40, jaqueta escura, calmo, leve sotaque de fora (não é de Goiás)."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 4,
+          "npc_ref": "npc:reinaldo",
+          "contexto": "Quando abordado",
+          "texto": "Posso ajudar em alguma coisa? ... Não estava seguindo ninguém. Estou voltando pro hotel.\n\n(Continua andando. Não corre. Resposta de quem foi treinado.)"
+        },
+        {
+          "tipo": "teste",
+          "ordem": 5,
+          "atributo": "Observação",
+          "dificuldade": 45,
+          "contexto": "Comparar com o motorista do Gol prata do posto",
+          "o_que_destrava": "Mesmo porte. Mesmo carro. Mesmo homem. (GM: Reinaldo. Observa e reporta — não age fisicamente neste episódio.)"
+        },
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 6,
+          "titulo": "LINHA VERMELHA do Ep1",
+          "texto": "A ÚNICA presença hostil humana em campo é Reinaldo, e ele OBSERVA, NÃO AGE. Sem capangas, sem ataques. Se os PCs forem agressivos, ele se retira. Se cercarem, ele recusa conversa.\n\nReinaldo é o motivo visual que fecha o episódio (a pegada de calçado de homem indo PARA DENTRO da Área Verde sem nenhuma saindo — foi ele, na tarde, no reconhecimento). E é também quem destrancou o ferrolho da cozinha de Valdecir às 14h."
+        }
+      ],
+      "destrava_para": [
+        "cena:casa-valdecir-1"
+      ],
+      "mestre_only": "Reinaldo Furtado, 44, investigador particular contratado por Ezequiel via 'advogado de Brasília'. Ele reconhece o sobrenatural pelas evidências mas não acredita — relata para Ezequiel como 'forasteiros agindo de forma errática'. Ezequiel é quem entende o que o relatório significa.\n\nReinaldo NÃO é vilão pessoal — é profissional. Não tortura, não machuca, não atira. Faz vigilância e fotografia. No Ep2 vai escalar a missão dele se os PCs ficarem em Novavera; nos Eps 5+ pode virar aliado dúbio."
+    },
+    {
+      "id": "casa-valdecir-1",
+      "ordem": 12,
+      "arco": "casa",
+      "arco_titulo": "Casa de Valdecir (22h00–22h45)",
+      "arco_ordem": 1,
+      "titulo": "Sala e Cozinha — Entrada e Reconhecimento",
+      "subtitulo": "~22h00 · Pitangueiras 14",
+      "duracao_estimada": "12-15 min",
+      "local_ref": "local:casa-valdecir",
+      "npcs_presentes": [],
+      "secao_dossie": "Parte 6 — Casa de Valdecir · §7.1, 7.2",
+      "atmosfera_abertura": "Rua escura, postes espaçados; a casa de Dona Neuza em frente tem luz atrás da cortina; a casa de Valdecir cheira a lugar onde alguém viveu sozinho por muito tempo — não sujo; concentrado. Tudo limpo, modesto, ordenado.",
+      "beats": [
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 1,
+          "titulo": "Acesso",
+          "texto": "• Chave sob o vaso azul (fundos), se Natalina deixou\n• Chave de Natalina (se pedida)\n• Mecânica 30 (arrombamento)"
+        },
+        {
+          "tipo": "teste",
+          "ordem": 2,
+          "atributo": "Percepção",
+          "dificuldade": 50,
+          "contexto": "Na cozinha",
+          "o_que_destrava": "O ferrolho da porta dos fundos está DESTRAVADO POR DENTRO, em posição que ninguém deixa por descuido. [GM: Reinaldo, 14h. Paga no clímax — Saída C, ele pode entrar por aqui.]"
+        },
+        {
+          "tipo": "narracao",
+          "ordem": 3,
+          "titulo": "A sala",
+          "texto": "Uma poltrona, uma televisão antiga, uma estante de livros. Na parede, um calendário de 2025 aberto em março: dois círculos de caneta vermelha — 18 de março (hoje) e 7 de abril. Nada escrito dentro deles.\n\nNa pia da cozinha: uma xícara com café. Frio — mas de hoje de manhã."
+        },
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 4,
+          "titulo": "7 de abril",
+          "texto": "Data ritual da Casa — vai ser explorada nos Eps 4-5. Os PCs anotam mas ainda não sabem."
+        },
+        {
+          "tipo": "teste",
+          "ordem": 5,
+          "atributo": "Observação",
+          "dificuldade": 30,
+          "contexto": "A agenda na mesinha",
+          "o_que_destrava": "Aberta no dia 18. Uma única anotação: '10h — S.N.' (peça da cifra; o clique vem depois — vão entender quando decifrarem 'PROCUREM QUEM GUARDA O NASCIMENTO')"
+        },
+        {
+          "tipo": "teste",
+          "ordem": 6,
+          "atributo": "Observação",
+          "dificuldade": 40,
+          "contexto": "A poltrona",
+          "o_que_destrava": "Virada para a janela que enquadra a Área Verde no fim da rua. As marcas no carpete dizem: virada há pouco tempo. (GM: virou na madrugada. A pegada do gancho final vai voltar pra ela.)"
+        },
+        {
+          "tipo": "teste",
+          "ordem": 7,
+          "atributo": "Observação",
+          "dificuldade": 30,
+          "contexto": "O assoalho perto da mesinha de centro",
+          "o_que_destrava": "Um círculo desbotado de uns dois metros, resíduo branco entranhado nas frestas. Sal. Espalhado e varrido neste mesmo desenho, muitas vezes, ao longo de anos. (A casa é um local de sessão.)"
+        },
+        {
+          "tipo": "teste",
+          "ordem": 8,
+          "atributo": "Observação",
+          "dificuldade": 30,
+          "contexto": "A estante (~40 volumes) — automático se procurarem marcas de terra",
+          "o_que_destrava": "Um volume tem MARCAS DE DEDOS EM TERRA PRETA na lombada — 'O Livro dos Espíritos', Allan Kardec, edição de 1957, gasto de uso. (A chave da cifra. Provavelmente não entendem ainda — anotam e seguem.)"
+        },
+        {
+          "tipo": "narracao",
+          "ordem": 9,
+          "titulo": "A cozinha",
+          "texto": "Xícara fria de hoje. O ferrolho destravado (já notado). Nada mais — a normalidade da cozinha é parte do horror. Não há sinal de luta, não há janela quebrada, não há nada fora do lugar. Valdecir saiu por aqui, na madrugada, para a Área Verde. E voltou para morrer."
+        }
+      ],
+      "destrava_para": [
+        "cena:casa-valdecir-2"
+      ],
+      "mestre_only": "A casa é o centro orgânico do episódio — onde tudo conecta. Cada item aqui é peça de enigma futuro:\n• Calendário 18/03 + 07/04 = duas datas rituais\n• Agenda '10h — S.N.' = Sueli Nascimento (Ep2)\n• Poltrona virada = última posição de Valdecir vivo + posição da pegada de gancho final\n• Kardec 1957 = chave da cifra (Prop 9 + Prop 10)\n• Círculo desbotado de sal = casa de sessões há décadas\n\n[Mestre: Valdecir saiu pela porta dos fundos pé descalço, depois calçou no caminho. Voltou às 4h com terra nas mãos. Fez café. Sentou na poltrona virada para a janela. Olhou. Depois foi para o lugar onde voltaria a olhar.]"
+    },
+    {
+      "id": "casa-valdecir-2",
+      "ordem": 13,
+      "arco": "casa",
+      "arco_titulo": "Casa de Valdecir (22h00–22h45)",
+      "arco_ordem": 2,
+      "titulo": "O Quarto — Foto, Caderno Trancado, Caixa de Sapato",
+      "subtitulo": "~22h15 · Quarto de Valdecir",
+      "duracao_estimada": "15-20 min",
+      "local_ref": "local:casa-valdecir",
+      "npcs_presentes": [],
+      "props_refs": [
+        "prop:p12-legenda-foto-quarto",
+        "prop:p13-recorte-1978",
+        "prop:p15-pagina-pragas-valdecir"
+      ],
+      "secao_dossie": "Parte 6 — Casa de Valdecir · §7.3",
+      "atmosfera_abertura": "Cheiro de lavanda e papel velho. Cama feita com a precisão de cinquenta anos do mesmo gesto.",
+      "beats": [
+        {
+          "tipo": "narracao",
+          "ordem": 1,
+          "titulo": "O quarto",
+          "texto": "Cheiro de lavanda e papel velho. Cama feita com a precisão de cinquenta anos do mesmo gesto.\n\nNa parede, uma fotografia em preto e branco — anos quarenta, talvez: um homem jovem sorrindo, de costas para um terreno de cerrado. Embaixo, à caneta desbotada:\n\n'O lugar onde o tempo pede as contas.'"
+        },
+        {
+          "tipo": "prop",
+          "ordem": 2,
+          "prop_ref": "prop:p12-legenda-foto-quarto",
+          "contexto": "A foto na parede + a legenda"
+        },
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 3,
+          "titulo": "A foto é a Área Verde antes de 1974",
+          "texto": "Fotografia 40 confirma. Percepção 35: no centro, quase invisível, o início de fundações sendo escavadas. A legenda 'O lugar onde o tempo pede as contas' é frase-tema da campanha inteira — vai ecoar no cartão do metrô, na cifra, na fala da serva."
+        },
+        {
+          "tipo": "narracao",
+          "ordem": 4,
+          "titulo": "Na mesinha de cabeceira",
+          "texto": "Copo d'água pela metade, óculos dobrados — e um caderno grosso, fechado por uma fita de couro escuro amarrada num nó complexo. Sobre ele, um bilhete dobrado em três."
+        },
+        {
+          "tipo": "narracao",
+          "ordem": 5,
+          "titulo": "O bilhete-charada (sobre o caderno)",
+          "texto": "'Quem vier — o que abre isso está onde isso veio. Não confiem em ninguém que não tenha sujado as mãos no mesmo lugar.'"
+        },
+        {
+          "tipo": "teste",
+          "ordem": 6,
+          "atributo": "Observação",
+          "dificuldade": 35,
+          "contexto": "A fita de couro",
+          "o_que_destrava": "Costuradas ao couro, partículas escuras finas demais para serragem comum. TERRA MOÍDA E SECA. A mesma textura da serragem do caixão. [Etapa 1 resolvendo: a fita foi 'fechada' com terra DE LÁ. Terra da Área Verde abre o que foi fechado com terra da Área Verde.]"
+        },
+        {
+          "tipo": "teste",
+          "ordem": 7,
+          "atributo": "POD",
+          "dificuldade": 40,
+          "contexto": "Tentativa de cortar a fita à força",
+          "o_que_destrava": "A lâmina desliza como se o couro fosse mais denso do que parece. A FITA NÃO CEDE A CORTE.\n\nSucesso na rolagem: náusea breve, vista turva 2s, Memória +1.\nFalha: a mão treme, a faca escorrega — sem dano; só a certeza de que a fita NÃO QUER ser forçada."
+        },
+        {
+          "tipo": "narracao",
+          "ordem": 8,
+          "titulo": "A caixa de sapato sob a cama",
+          "texto": "Embaixo da cama, uma caixa de sapato de papelão amarelado. Quatro itens dentro."
+        },
+        {
+          "tipo": "teste",
+          "ordem": 9,
+          "atributo": "Fotografia / Percepção",
+          "dificuldade": 35,
+          "contexto": "Item 1: Foto P&B anos 70 — 'Antes'",
+          "o_que_destrava": "É a Área Verde pré-1974. Percepção 35: no centro, quase invisível, o início de fundações sendo escavadas em outubro de 1972."
+        },
+        {
+          "tipo": "teste",
+          "ordem": 10,
+          "atributo": "Percepção",
+          "dificuldade": 30,
+          "contexto": "Item 2: Envelope lacrado, 'Valdecir' escrito (letra que NÃO é dele)",
+          "o_que_destrava": "Dentro: uma chave de metal pesado, antigo. Gravação quase apagada no cabo — um número, 2 ou 7. [→ abre algo no subsolo do Arquivo Histórico; Ep3]"
+        },
+        {
+          "tipo": "prop",
+          "ordem": 11,
+          "prop_ref": "prop:p13-recorte-1978",
+          "contexto": "Item 3: Recorte de jornal sem data — paralisação da obra da Área Verde, 1978"
+        },
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 12,
+          "titulo": "A linha sublinhada em vermelho",
+          "texto": "'O trabalhador encontrado morto nas obras seria identificado apenas pelo sobrenome: Monteiro.' [→ Vera Monteiro; Ep5. E também: Dalva Monteiro, a serva que possui Dona Cida no clímax. Família Monteiro presa neste lugar há gerações.]"
+        },
+        {
+          "tipo": "teste",
+          "ordem": 13,
+          "atributo": "Percepção",
+          "dificuldade": 30,
+          "contexto": "Item 4: Uma folha solta, dobrada miúdo, escondida sob o forro da caixa",
+          "o_que_destrava": "Achada com Percepção 30 ou se algum PC virar a caixa de cabeça pra baixo. Letra apertada, tinta de duas canetas diferentes."
+        },
+        {
+          "tipo": "prop",
+          "ordem": 14,
+          "prop_ref": "prop:p15-pagina-pragas-valdecir",
+          "contexto": "A PÁGINA DAS PRAGAS — handout-chave do episódio"
+        },
+        {
+          "tipo": "momento_pavor",
+          "ordem": 15,
+          "titulo": "O que esta folha faz na mesa",
+          "texto": "• Confirma que o padrão é REAL e HISTÓRICO (não começou com Valdecir)\n• Dá três mortes antigas para os PCs cruzarem (Severino 2019/moscas, Aparecida 2021/afogamento sem água, menino do sítio/úlceras)\n• Mantém a dúvida ('estou ficando louco?') que segura a tensão de Sanidade\n• Fecha o sentido da própria morte de Valdecir — ele sabia que seria o primeiro, e sabia QUAL PRAGA era ('eu sou a água')\n\nA última linha gela retroativamente quando a mesa junta as lágrimas de sangue, a água escura na cabeceira, e a fala de Armindo no velório.\n\nNÃO EXPLIQUE. Deixe a mesa teorizar."
+        }
+      ],
+      "destrava_para": [
+        "cena:casa-valdecir-3"
+      ],
+      "mestre_only": "ESTE É O HANDOUT DA TEMPORADA. A página das pragas (Prop 15) sozinha permite à mesa teorizar sobre o ciclo das 10 pragas SEM o Mestre explicar nada. Aqui se planta o que vai brotar nas sessões 3-10."
+    },
+    {
+      "id": "casa-valdecir-3",
+      "ordem": 14,
+      "arco": "casa",
+      "arco_titulo": "Casa de Valdecir (22h00–22h45)",
+      "arco_ordem": 3,
+      "titulo": "O Guarda-Roupa — Kit da Mesa e Regras",
+      "subtitulo": "~22h30 · Casa de Valdecir",
+      "duracao_estimada": "8-10 min",
+      "local_ref": "local:casa-valdecir",
+      "npcs_presentes": [],
+      "props_refs": [
+        "prop:p07-regras-da-mesa"
+      ],
+      "secao_dossie": "Parte 6 — Casa de Valdecir · §7.4",
+      "atmosfera_abertura": "No guarda-roupa do quarto, atrás das roupas dobradas, uma caixa de madeira simples.",
+      "beats": [
+        {
+          "tipo": "narracao",
+          "ordem": 1,
+          "titulo": "A caixa de madeira",
+          "texto": "Uma caixa de madeira simples. Dentro: um pote de vidro com sal grosso pela metade. Quatro velas brancas usadas. Um sininho de latão pequeno. E uma folha dobrada, em caligrafia firme e antiga — de quando a mão ainda não tremia."
+        },
+        {
+          "tipo": "prop",
+          "ordem": 2,
+          "prop_ref": "prop:p07-regras-da-mesa",
+          "contexto": "AS REGRAS DA MESA — entregar impressa"
+        },
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 3,
+          "titulo": "O que esta folha resolve em cadeia",
+          "texto": "• Regra 2 + bilhete-charada + partículas na fita + terra nas mãos do corpo (Meireles/Neuza) + desenho de Gabriel → DEDUÇÃO de três fontes: a fita foi fechada com terra → terra de lá abre → 'lá' = Área Verde → o ponto é o centro das fundações. Eles vão buscar terra SABENDO PARA QUÊ.\n\n• Regra 1 → o círculo do clímax é protocolo do próprio Valdecir (o pote está aqui; o saquinho de Natalina reforça).\n\n• Regra 3 → o limite das três perguntas; a terceira vira transgressão CONSCIENTE.\n\n• Regra 4 → o convite: o morto pediu que perguntassem a ele. A sessão deixa de ser ideia do nada — é resposta a um chamado póstumo."
+        },
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 4,
+          "titulo": "Válvulas se a mesa travar na dedução",
+          "texto": "• Comparação espontânea fita/serragem (Observação 35 oferecida pelo Mestre)\n• Natalina por telefone: 'Ele falou uma vez que tinha coisa de lá que ele guardava em casa. Da Área Verde. Que era a única coisa real.'"
+        },
+        {
+          "tipo": "escolha",
+          "ordem": 5,
+          "titulo": "Próximo passo dos PCs",
+          "opcoes": [
+            "Ir à Área Verde agora pegar a terra preta",
+            "Tentar abrir o caderno por outros meios primeiro",
+            "Voltar à casa de Natalina perguntar mais",
+            "Sair da casa e descansar (não recomendado — perde o ritmo)"
+          ],
+          "observacao": "Se decidirem ir à Área Verde, levem o pote de sal e as velas — a Regra 1 já implantou a ideia do círculo de proteção."
+        }
+      ],
+      "destrava_para": [
+        "cena:area-verde"
+      ],
+      "mestre_only": "Esta é a cena que TRANSFORMA o episódio. Antes daqui, os PCs estavam investigando; daqui em diante, eles estão executando um protocolo do morto. Valdecir os trouxe e agora os instrui."
+    },
+    {
+      "id": "area-verde",
+      "ordem": 15,
+      "arco": "area-verde",
+      "arco_titulo": "A Área Verde (22h45–23h10)",
+      "arco_ordem": 1,
+      "titulo": "A Primeira Visita — A Cobrança do Lugar",
+      "subtitulo": "22h45–23h10 · Área Verde",
+      "duracao_estimada": "20-25 min",
+      "local_ref": "local:area-verde",
+      "npcs_presentes": [],
+      "secao_dossie": "Parte 7 — A Área Verde",
+      "atmosfera_abertura": "A Área Verde à noite não tem uma razão específica para assustar. É um terreno.",
+      "beats": [
+        {
+          "tipo": "narracao",
+          "ordem": 1,
+          "titulo": "A entrada",
+          "texto": "A Área Verde à noite não tem uma razão específica para assustar. É um terreno. Terra, ervas na altura do joelho, um muro de um metro e meio fácil de escalar. Mais ao fundo, fundações cobertas de vegetação — concreto antigo rachado, raízes nas fendas.\n\nO que se nota, depois de alguns minutos, é que não há vento. Não que ele tenha parado — é que ele não chega aqui. O ar de dentro existe numa temperatura ligeiramente diferente. Numa pressão ligeiramente diferente.\n\nE há algo que não é som. Se tivesse forma de som, seria alguém dizendo um nome. Não o seu. Um nome de outra língua, de outro tempo."
+        },
+        {
+          "tipo": "mecanica",
+          "ordem": 2,
+          "titulo": "Cobrança por tempo dentro",
+          "texto": "+10 min → POD 45 (falha: Memória +1, fragmento sensorial breve)\n+20 min → POD 55 (falha: Memória +1d3, desorientação temporal)\n+30 min → POD 65 (falha: Memória +1d6, sobreposição temporal severa)"
+        },
+        {
+          "tipo": "momento_pavor",
+          "ordem": 3,
+          "titulo": "Fragmentos sensoriais (na primeira falha de cada PC)",
+          "texto": "• SERGIE: um papel sendo assinado; a própria mão; a certeza absoluta de estar fazendo o certo. (Eco de 2021 — o caso arquivado. Ferida do Juiz.)\n\n• FLORIANO: o peso físico de palavras não ditas, como pressão no peito.\n\n• VINICIUS: os próprios passos vindo de outra direção — correndo para longe de algo.\n\n• GYENO: NADA. Silêncio absoluto dentro dele enquanto os outros vacilam. (Alma Jovem — o terreno não tem nada antigo para cobrar. Se o jogador estranhar, melhor: é pista da natureza dele.) [→ outsider kármico]"
+        },
+        {
+          "tipo": "teste",
+          "ordem": 4,
+          "atributo": "Observação",
+          "dificuldade": 40,
+          "contexto": "O símbolo nas fundações",
+          "o_que_destrava": "Entre as rachaduras do concreto mais antigo, sob o musgo, o mesmo símbolo do caixão — três círculos fechados. E ao lado, entalhada com mais precisão que o resto, uma data: 17 de junho de 1974."
+        },
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 5,
+          "titulo": "Sem enigma — só a confirmação que muda",
+          "texto": "O símbolo do caixão tem horas; este tem cinquenta anos. [→ a fundação do vértice; Eps 5/7]"
+        },
+        {
+          "tipo": "narracao",
+          "ordem": 6,
+          "titulo": "O ponto da terra",
+          "texto": "Quem viu o desenho de Gabriel sabe: o centro das fundações.\n\nSem o desenho: Percepção 35 — a temperatura cai alguns graus num ponto específico, como atravessar uma corrente de ar frio que não existe."
+        },
+        {
+          "tipo": "teste",
+          "ordem": 7,
+          "atributo": "Percepção",
+          "dificuldade": 35,
+          "contexto": "Localizar o ponto exato sem o desenho de Gabriel",
+          "o_que_destrava": "Sentir a temperatura cair. Sob uma camada fina de terra vermelha normal, cinco centímetros abaixo, há outra: PRETA. ÚMIDA. DENSA. A mesma textura da terra que estava nas mãos de Valdecir."
+        },
+        {
+          "tipo": "teste",
+          "ordem": 8,
+          "atributo": "POD",
+          "dificuldade": 50,
+          "contexto": "Ao tocar a terra preta",
+          "o_que_destrava": "Falha = Memória +1, e a sensação física de SER OLHADO DE MUITO PERTO POR ALGO QUE CONHECE VOCÊ POR OUTRO NOME. Todos que tocam ficam marcados (Memória sobe mais fácil daqui em diante)."
+        },
+        {
+          "tipo": "teste",
+          "ordem": 9,
+          "atributo": "Observação",
+          "dificuldade": 30,
+          "contexto": "Bônus — se montaram a foto rasgada no velório",
+          "o_que_destrava": "Este é o enquadramento EXATO da foto — o chão, o ângulo, o sigilo. ELES ESTÃO DE PÉ DENTRO DA FOTOGRAFIA."
+        },
+        {
+          "tipo": "teste",
+          "ordem": 10,
+          "atributo": "Observação",
+          "dificuldade": 30,
+          "contexto": "Saída — a pegada",
+          "o_que_destrava": "Meia pegada recente perto do muro, calçado masculino, das últimas três ou quatro horas. INDO PARA DENTRO DO TERRENO. NENHUMA SAINDO. [GM: Reinaldo, no reconhecimento da tarde. Primeira aparição do motivo visual que fecha o episódio.]"
+        }
+      ],
+      "destrava_para": [
+        "cena:climax-caderno"
+      ],
+      "mestre_only": "A Área Verde NÃO É nó temporal — é sigilo carregado de servas (33 sacrificados em out/1972). Os fragmentos sensoriais são memórias de vidas anteriores dos próprios PCs ressoando com servas que reconhecem partes deles.\n\nO silêncio de Gyeno é a pista mais valiosa do episódio. Se o jogador comentar, vale a pena destacar (sem explicar): 'Você é o único que não sente o peso aqui. Como se este lugar nem percebesse que você existe.'"
+    },
+    {
+      "id": "climax-caderno",
+      "ordem": 16,
+      "arco": "climax",
+      "arco_titulo": "Retorno e Clímax (23h10–00h30)",
+      "arco_ordem": 1,
+      "titulo": "A Abertura do Caderno + A Cifra",
+      "subtitulo": "23h10–23h13 · Casa de Valdecir (retorno)",
+      "duracao_estimada": "10-15 min",
+      "local_ref": "local:casa-valdecir",
+      "npcs_presentes": [],
+      "props_refs": [
+        "prop:p08-pagina-1987",
+        "prop:p09-pagina-cifrada",
+        "prop:p10-paginas-falsas-kardec"
+      ],
+      "secao_dossie": "Parte 8 — Retorno e Clímax · §9.1, 9.2",
+      "atmosfera_abertura": "Os PCs voltam da Área Verde com terra preta nas mãos (e o que sentiram). A casa está exatamente como deixaram. Tudo silencioso. A poltrona ainda virada.",
+      "beats": [
+        {
+          "tipo": "narracao",
+          "ordem": 1,
+          "titulo": "De volta ao quarto",
+          "texto": "Vocês esfregam a terra preta na fita. Ela não rasga, não desata — SE DESFAZ. Dispersa, como se nunca tivesse sido uma coisa só. Cai no chão como pó.\n\nO caderno abre sozinho. Não numa página qualquer — numa página do meio, com a textura de quem foi lida e relida muitas vezes."
+        },
+        {
+          "tipo": "prop",
+          "ordem": 2,
+          "prop_ref": "prop:p08-pagina-1987",
+          "contexto": "A página de 1987 — entregar impressa, ler devagar"
+        },
+        {
+          "tipo": "mecanica",
+          "ordem": 3,
+          "titulo": "Memória +1 para todos",
+          "texto": "Automático. Sem rolagem. Os quatro acabaram de ler o que um homem morto escreveu sobre eles 38 anos atrás."
+        },
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 4,
+          "titulo": "O gancho",
+          "texto": "'O que estava antes' = camada anterior aos 33 de 1972. Eps 5-7. Os PCs vão querer saber e Valdecir não respondeu — ele deixou para eles descobrirem."
+        },
+        {
+          "tipo": "narracao",
+          "ordem": 5,
+          "titulo": "A página cifrada",
+          "texto": "A última página escrita é diferente. Trios... não, PARES de números, organizados, pacientes:\n\n217-4 / 88-1 / 134-6 / 9-2 / 301-5 / 412-3 / 156-1 / 277-7\n\nE abaixo: 'As perguntas certas já foram feitas. As respostas estão com os espíritos.'"
+        },
+        {
+          "tipo": "prop",
+          "ordem": 6,
+          "prop_ref": "prop:p09-pagina-cifrada",
+          "contexto": "Entregar impressa"
+        },
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 7,
+          "titulo": "O mecanismo da cifra",
+          "texto": "Cada par é pergunta-palavra de 'O Livro dos Espíritos' (livro organizado em 1.018 perguntas numeradas). Primeiro número = pergunta; segundo = posição da palavra na resposta. A frase 'as respostas estão com os espíritos' aponta o livro na estante; as marcas de terra na lombada confirmam qual edição (1957)."
+        },
+        {
+          "tipo": "prop",
+          "ordem": 8,
+          "prop_ref": "prop:p10-paginas-falsas-kardec",
+          "contexto": "Páginas falsas de O Livro dos Espíritos — Mestre tem em mãos para os PCs consultarem"
+        },
+        {
+          "tipo": "momento_pavor",
+          "ordem": 9,
+          "titulo": "DECIFRADO",
+          "texto": "'PROCUREM QUEM GUARDA O NASCIMENTO. O TEMPO COBRA.'"
+        },
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 10,
+          "titulo": "O clique duplo",
+          "texto": "Quem viu a agenda ('10h — S.N.') fecha na hora: 'quem guarda o nascimento' = sobrenome NASCIMENTO = S.N. — Valdecir tinha encontro com essa pessoa às 10h do dia em que morreu, e nunca chegou.\n\n'O tempo cobra' é a senha que destrava Sueli no Ep2 e ecoa a legenda da foto do quarto e o cartão do metrô."
+        },
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 11,
+          "titulo": "Calibragem",
+          "texto": "3-4 palavras já dão o clique; a frase inteira leva 10-20 min com o Prop 10 em mãos. Se a sessão estiver no fim, vira dever de casa — PONTE PERFEITA para o Ep2. Ambos os desfechos funcionam."
+        }
+      ],
+      "destrava_para": [
+        "cena:climax-sms-sessao"
+      ],
+      "mestre_only": "Aqui o ritmo do clímax começa a apertar. Próximo evento é exatamente às 23h14 — os SMS chegando juntos. Encerre esta cena com 'O telefone vibra. Todos ao mesmo tempo.' e parta para a próxima."
+    },
+    {
+      "id": "climax-sms-sessao",
+      "ordem": 17,
+      "arco": "climax",
+      "arco_titulo": "Retorno e Clímax (23h10–00h30)",
+      "arco_ordem": 2,
+      "titulo": "Os SMS das 23h14 + A Sessão de Comunicação",
+      "subtitulo": "23h14 + sessão · Casa de Valdecir",
+      "duracao_estimada": "20-30 min",
+      "local_ref": "local:casa-valdecir",
+      "npcs_presentes": [],
+      "props_refs": [
+        "prop:p06-sms-23h14"
+      ],
+      "secao_dossie": "Parte 8 — Retorno e Clímax · §9.3, 9.4",
+      "atmosfera_abertura": "Todos os celulares vibram juntos.",
+      "beats": [
+        {
+          "tipo": "narracao",
+          "ordem": 1,
+          "titulo": "23h14",
+          "texto": "Todos os celulares vibram juntos. Números diferentes, todos DDD 62, todos 'não atribuídos' no retorno."
+        },
+        {
+          "tipo": "prop",
+          "ordem": 2,
+          "prop_ref": "prop:p06-sms-23h14",
+          "contexto": "4 tiras de SMS — entregar EM SEGREDO, individualmente. Cada PC só vê o seu."
+        },
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 3,
+          "titulo": "O acróstico",
+          "texto": "As palavras finais (FICAM / DE VEZ / AQUI / TODOS) reordenam para 'AQUI FICAM TODOS, DE VEZ.' Não é 'vão embora' — é o OPOSTO: ninguém que entra no sigilo SAI.\n\nMemória +1 ao grupo se montarem a frase. Liga com a fala final da serva e com o que a Área Verde é.\n\n[→ doutrina da Casa; o SMS de Gyeno — 'o que você é', não 'quem' — é pista de longo prazo da natureza dele]"
+        },
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 4,
+          "titulo": "3-4 minutos de paranoia",
+          "texto": "Deixe 3-4 minutos de paranoia comparando. É NO MEIO DISSO QUE A SESSÃO COMEÇA."
+        },
+        {
+          "tipo": "narracao",
+          "ordem": 5,
+          "titulo": "A sessão — Floriano monta o círculo",
+          "texto": "Floriano monta o círculo de sal grosso (das Regras), EMF e gravador no centro, vela acesa, luzes apagadas."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 6,
+          "npc_ref": "pc:floriano",
+          "contexto": "Fala obrigatória dele (ou de quem conduzir)",
+          "texto": "Vocês ficam dentro. Não importa o que aconteça lá fora — não saiam."
+        },
+        {
+          "tipo": "mecanica",
+          "ordem": 7,
+          "titulo": "TENTATIVA 1 — Sintonia (Alma Normal)",
+          "texto": "SUCESSO: piscada verde no EMF; o gravador capta respiração (descobrem na reprodução). Sanidade −1.\n\nFALHA: a vela tremula sem vento. Sanidade −1.\n\nEm ambos: ALGO ESCUTOU."
+        },
+        {
+          "tipo": "mecanica",
+          "ordem": 8,
+          "titulo": "TENTATIVA 2 — Pergunta específica (Alma Difícil)",
+          "texto": "SUCESSO: duas piscadas; o gravador capta uma palavra em voz de homem velho — '...vaso...' ou '...chave...' (Valdecir ajudando). Memória +1.\n\nFALHA: piscada vermelha intensa; o gravador capta RESPIRAÇÃO COLADA NO MICROFONE; a sala esfria; a poltrona parece ter se aproximado. Memória +1 (todos)."
+        },
+        {
+          "tipo": "mecanica",
+          "ordem": 9,
+          "titulo": "TENTATIVA 3 — A pergunta perigosa (Alma Extrema)",
+          "texto": "Transgride a Regra 3 — conscientemente.\n\nSUCESSO (raro): uma frase capturada, informação real; Memória +2, Sanidade −1d6 — e a serva vem mesmo assim, só com atraso.\n\nFALHA (provável):"
+        },
+        {
+          "tipo": "narracao",
+          "ordem": 10,
+          "titulo": "Falha na Tentativa 3",
+          "texto": "O EMF explode em vermelho e queima — fumaça, cheiro de eletrônica fritando. O gravador registra UM GRITO DE MULHER DE DOIS SEGUNDOS. A vela apaga sozinha. Escuridão total por três segundos.\n\nMemória +2 (todos). Sanidade −1d6 (todos).\n\nE então — TRÊS BATIDAS NA PORTA. Pausadas. Uma respiração inteira entre cada uma."
+        }
+      ],
+      "destrava_para": [
+        "cena:climax-dona-cida"
+      ],
+      "mestre_only": "O canal abriu. A serva está NA CASA, SEM CORPO (frio desce vários graus; um cachorro dispara a latir quintais dali; o poste pisca). ELA NÃO TOCA QUEM ESTÁ NO SAL. Espera. Minutos depois vai bater a porta — e quem está atrás é Dona Cida."
+    },
+    {
+      "id": "climax-dona-cida",
+      "ordem": 18,
+      "arco": "climax",
+      "arco_titulo": "Retorno e Clímax (23h10–00h30)",
+      "arco_ordem": 3,
+      "titulo": "A Invasão — Dona Cida, As Parábolas, A Morte",
+      "subtitulo": "~23h45–00h00 · Casa de Valdecir",
+      "duracao_estimada": "25-35 min",
+      "local_ref": "local:casa-valdecir",
+      "npcs_presentes": [
+        "npc:cida"
+      ],
+      "secao_dossie": "Parte 8 — Retorno e Clímax · §9.5",
+      "atmosfera_abertura": "Frio desce vários graus. Um cachorro dispara a latir quintais dali. O poste pisca. Três batidas na porta.",
+      "beats": [
+        {
+          "tipo": "narracao",
+          "ordem": 1,
+          "titulo": "Dona Cida chega sendo ela",
+          "texto": "Pelo olho mágico ou pela janela: uma senhora de setenta anos, camisola com casaco por cima, chinelo, lanterna pequena na mão. NENHUMA VASSOURA. Expressão de preocupação genuína."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 2,
+          "npc_ref": "npc:cida",
+          "contexto": "Voz normal, preocupação real. Psicologia confirma sinceridade total.",
+          "texto": "Tem alguém aí? Sou eu, a Cida, do número 8. Eu ouvi um barulho e vi um clarão na janela. Essa casa é do Seu Valdecir, que Deus o tenha — vocês são da família? Tá tudo bem aí dentro?"
+        },
+        {
+          "tipo": "momento_pavor",
+          "ordem": 3,
+          "titulo": "É ela mesma — esse é o horror",
+          "texto": "Voz normal, preocupação real. Qualquer teste de Psicologia confirma sinceridade total. O horror é esse: tem algo solto na casa, e a vizinha INOCENTE acabou de entrar no raio dele."
+        },
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 4,
+          "titulo": "ÁRVORE DE DECISÃO",
+          "texto": "Quatro caminhos possíveis — A, B, C, D. O Mestre não escolhe; a mesa escolhe."
+        },
+        {
+          "tipo": "escolha",
+          "ordem": 5,
+          "titulo": "Saída A — Deixam entrar / conversam fora do sal",
+          "texto": "No instante de maior naturalidade — idealmente no meio de uma frase dela — ela para no meio da palavra. A cabeça inclina dois centímetros, como quem ouve algo atrás da parede. A lanterna escorrega da mão e bate no chão. Quando os olhos sobem, NÃO ESTÃO OLHANDO PARA VOCÊS. Estão olhando ATRAVÉS.\n\nPossessão em cena → fúria → parábolas → saída → colapso."
+        },
+        {
+          "tipo": "escolha",
+          "ordem": 6,
+          "titulo": "Saída B — Não abrem / ignoram",
+          "texto": "Ela insiste, preocupada de verdade; depois dá a volta e acha a porta dos fundos destrancada (Reinaldo, 14h):\n\nDa cozinha, a voz dela: 'Gente? A porta de trás tava aberta... o Seu Valdecir nunca deixava essa porta aberta...'\n\nJá está dentro, fora do círculo, no escuro. A próxima vez que a virem, NÃO É MAIS ELA."
+        },
+        {
+          "tipo": "escolha",
+          "ordem": 7,
+          "titulo": "Saída C — Um PC quebra/sai do sal",
+          "texto": "A serva prefere o veículo mais forte. POD vs 70:\n• Resiste: vento gelado por dentro, Memória +1, Sanidade −1d4; a serva então toma Dona Cida (se ela estiver fora do sal).\n• FALHA: o PC é o veículo (1-2 min, Mestre assume). As parábolas podem sair da boca do próprio companheiro. Saídas: contenção física; exorcismo de Floriano (POD vs POD 70, vantagem com a cruz); resistência interna (POD vs 50). Custos: Marca +2, Sanidade −1d6, Permanência −1, ferimentos de contenção (1d4)."
+        },
+        {
+          "tipo": "escolha",
+          "ordem": 8,
+          "titulo": "Saída D — Puxam Dona Cida PARA DENTRO do círculo",
+          "texto": "Jogada de proteção. Recompensa raciocínio rápido (Regra 1: 'quem está dentro, está guardado'). Se conseguirem antes de a possessão completar, ELA FICA PROTEGIDA. A serva escala: cerco (pancadas, vidraça, objetos tentando espalhar o sal) + ISCA DAS VOZES tentando arrancar alguém para fora."
+        },
+        {
+          "tipo": "narracao",
+          "ordem": 9,
+          "titulo": "A isca das vozes (Saída D)",
+          "texto": "• Sergie: voz quase certa de homem mais velho — 'Sergie. Eu sei o que aconteceu. Sai daí. Eu tô aqui.' (Roberto)\n• Floriano: voz de criança — 'Padre. Eu tô com medo. Vem me buscar.' (Miguel)\n• Vinicius: voz de homem — 'Doutor. Eu te perdoo. Sai daí.' (Otávio)\n• Gyeno: vozes em coro — 'Soldado. A gente não te culpa. Sai daí.' (os cinco)"
+        },
+        {
+          "tipo": "teste",
+          "ordem": 10,
+          "atributo": "Alma",
+          "dificuldade": "Difícil",
+          "contexto": "Para resistir à isca",
+          "o_que_destrava": "Os outros podem segurar fisicamente quem cede. Quem sair pela isca cai na Saída C COM AGRAVANTE: a voz some no instante em que o pé cruza o sal — Sanidade adicional −1d4 pelo engano. X-CARD EXPLICITAMENTE DISPONÍVEL AQUI."
+        },
+        {
+          "tipo": "mecanica",
+          "ordem": 11,
+          "titulo": "Força possuída (referência de combate)",
+          "texto": "Corpo de 70 anos operando com FOR 75 / CON 60 / DES 50 emprestadas. Golpes 1d4+2, NÃO-LETAIS (a serva quer intimidar e marcar, não matar — ainda). Os PCs podem dominar com dificuldade; o horror é não querer machucar uma idosa."
+        },
+        {
+          "tipo": "narracao",
+          "ordem": 12,
+          "titulo": "AS PARÁBOLAS (quando a fúria cessa)",
+          "texto": "Lidas devagar, sem dramatização. Cada uma é um punhal específico.\n\n'Vocês trouxeram terra do meu chão. A terra lembra de cada um. Eu lembro de quem fez ela existir.'"
+        },
+        {
+          "tipo": "fala",
+          "ordem": 13,
+          "npc_ref": "npc:cida",
+          "contexto": "Parábola — Sergie",
+          "texto": "Você. O homem que ensinou você a procurar verdade morreu por isso. Você ainda não aprendeu a lição. Vai aprender."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 14,
+          "npc_ref": "npc:cida",
+          "contexto": "Parábola — Floriano",
+          "texto": "E você. Houve um menino. Você acreditou que o que estava dentro dele era inimigo. Não era. Era convite. Você recusou. O menino pagou por você."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 15,
+          "npc_ref": "npc:cida",
+          "contexto": "Parábola — Vinicius",
+          "texto": "E você. O homem que você matou virou serva também. Ele agradece. Disse que valeu a pena. Mas você ainda não é nada. Ainda é só carne com remorso."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 16,
+          "npc_ref": "npc:cida",
+          "contexto": "Parábola — Gyeno",
+          "texto": "E você, menino. Cinco irmãos seus tentaram fugir. Você ajudou eles a chegar onde queriam. Eles agradecem você toda noite, no plano onde estão agora. Você devia dormir melhor."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 17,
+          "npc_ref": "npc:cida",
+          "contexto": "Aviso final",
+          "texto": "(pausa longa) O Salvador sabe os nomes de vocês agora. Sabe os rostos. Sabe as fraquezas. Vão embora. Não voltem. Se voltarem, vocês viram servas também. E servas não têm volta."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 18,
+          "npc_ref": "npc:cida",
+          "contexto": "Quase doce",
+          "texto": "Ela vai morrer agora. Vocês trouxeram isso. Lembrem disso quando estiverem decidindo se ficam ou vão."
+        },
+        {
+          "tipo": "narracao",
+          "ordem": 19,
+          "titulo": "Desfecho padrão (recomendado)",
+          "texto": "A serva sai; o ar muda; Dona Cida olha para os PCs com confusão genuína por dois segundos, tenta falar, não consegue — e desaba. Pulso fraco, depois ausente. PRIMEIROS SOCORROS NÃO REVERTEM. Colapso espiritual: o corpo consumido por dentro pela carga. Sem sangue, sem detalhamento. Morre em minutos, diante deles."
+        },
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 20,
+          "titulo": "Variante de misericórdia (rara)",
+          "texto": "Só se a mesa jogar muito bem — Saída D sustentada, ou expulsão rápida da serva de um PC antes que alcance Cida.\n\nDona Cida SOBREVIVE. Desmaia, é hospitalizada, não lembra de nada — exceto de 'uma menina brincando com pedrinhas no quintal' que viu em sonho. A Casa fica sabendo que os quatro DERROTARAM a serva — muda a avaliação de ameaça de Ezequiel.\n\nA serva luta para impedir; a variante deve ser DIFÍCIL, NUNCA OFERECIDA."
+        },
+        {
+          "tipo": "mecanica",
+          "ordem": 21,
+          "titulo": "Custos consolidados do clímax",
+          "texto": "• Marca +1 a +2\n• Sanidade −1d6 a −2d4\n• Permanência −1 a −2\n• Memória +2 a +3\n• Ferimentos leves (1d4) conforme as saídas"
+        }
+      ],
+      "destrava_para": [
+        "cena:gancho-final"
+      ],
+      "mestre_only": "ESTA é a cena de horror mais densa do episódio. O X-card está EXPLICITAMENTE DISPONÍVEL na isca das vozes (Saída D). Se algum jogador hesitar com a voz de quem o PC perdeu, ofereça uma pausa fora de cena.\n\nA serva é DALVA MONTEIRO — uma das 33 sacrificadas em outubro de 1972. Sobrenome igual ao do trabalhador morto em 1978 (Prop 13). Os PCs ainda não conectam todas as pontas, mas a mesa pode teorizar."
+    },
+    {
+      "id": "gancho-final",
+      "ordem": 19,
+      "arco": "desfecho",
+      "arco_titulo": "Polícia e Gancho Final (00h00–00h45)",
+      "arco_ordem": 1,
+      "titulo": "A Polícia, A Pegada, O Gancho",
+      "subtitulo": "00h00–02h30 · Casa de Valdecir",
+      "duracao_estimada": "15-20 min",
+      "local_ref": "local:casa-valdecir",
+      "npcs_presentes": [
+        "npc:ronaldo",
+        "npc:meireles",
+        "npc:neuza"
+      ],
+      "secao_dossie": "Parte 9 — O Clímax e o Gancho Final · §9.6, 9.7",
+      "atmosfera_abertura": "Idosa morta, casa danificada, vidraça quebrada, quatro forasteiros. Dona Neuza, acordada do outro lado da rua, já chamou ao ouvir os vidros.",
+      "beats": [
+        {
+          "tipo": "narracao",
+          "ordem": 1,
+          "titulo": "Ordem de chegada",
+          "texto": "SAMU (cidade vizinha, ~20 min; constata óbito) → Ronaldo (à paisana, segundo corpo do dia; Psicologia 40: medo da forma do dia, não dos PCs) → Meireles (chamado ao exame; quando vê o corpo, a dor de cabeça atravessa o rosto; olha os PCs um segundo a mais; não fala na frente de Ronaldo)."
+        },
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 2,
+          "titulo": "Condução de Ronaldo",
+          "texto": "Ouve as versões; anota. A versão razoável ('ela invadiu, parecia fora de si, tentamos contê-la, teve um colapso') encontra um delegado DISPOSTO A ACEITAR — não por ingenuidade, mas porque a alternativa o obriga a escrever um relatório que ele não sabe escrever."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 3,
+          "npc_ref": "npc:ronaldo",
+          "contexto": "Diálogo obrigatório no fim, na varanda, longe dos outros",
+          "texto": "Dois corpos no mesmo dia. Nessa cidade, isso não acontecia há muito tempo. (pausa) Eu vou abrir inquérito. Vocês não saem de Novavera sem me avisar. Amanhã, dez horas, na delegacia — os quatro. (pausa, voz mais baixa) E se alguém quiser me contar o que aconteceu de verdade nessa casa... eu atendo fora do expediente também."
+        },
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 4,
+          "titulo": "Alavancas dos PCs",
+          "texto": "• Sergie revela a placa (trato entre pares + perguntas incômodas)\n• Vinicius assume formalmente como advogado dos quatro (blindagem jurídica imediata)\n• Floriano, padre, pede para fazer a encomendação do corpo (gesto que muda o tom da cena)"
+        },
+        {
+          "tipo": "narracao",
+          "ordem": 5,
+          "titulo": "O gancho final",
+          "texto": "Corpo levado, Ronaldo saiu. Duas, três da manhã. Os quatro na sala destruída.\n\nVocê caminha até a poltrona. Aquela virada para a janela. O assento tem uma marca de pressão recente. Alguém sentou ali nos últimos minutos. Não foi nenhum de vocês. Dona Cida não chegou a sentar.\n\nEntão quem sentou na poltrona?"
+        },
+        {
+          "tipo": "narracao",
+          "ordem": 6,
+          "titulo": "A pegada",
+          "texto": "(pausa)\n\nPela janela, a Área Verde no fim da rua, na escuridão. E na calçada em frente à entrada — a que vocês usaram para entrar — uma marca nova de terra. Preta. Úmida. Em forma de pegada.\n\nINDO EM DIREÇÃO À CASA. NENHUMA SAINDO.\n\nO episódio termina antes de qualquer um de vocês conseguir dizer o que está vendo."
+        },
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 7,
+          "titulo": "VERDADE DO MESTRE",
+          "texto": "Foi VALDECIR — a manifestação dele voltou para casa uma última vez enquanto o caos acontecia. O oposto da serva: um morto livre que veio se despedir. Os PCs talvez nunca confirmem. [→ tema: o tempo cobra; quem fica e quem se solta]"
+        },
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 8,
+          "titulo": "AS CINCO PERGUNTAS VIVAS NO FIM",
+          "texto": "1. Como Valdecir sabia — em 1987?\n2. Quem é S.N. / o que diz a cifra?\n3. O que está antes na Área Verde?\n4. O que aconteceu em 17/06/1974?\n5. Quem sentou na poltrona?\n\nNenhuma é respondida agora. Todas voltam nos Eps 2-7."
+        }
+      ],
+      "destrava_para": [],
+      "mestre_only": "Encerre a sessão com o silêncio. Não preencha. Deixe a mesa carregar a pegada para casa. O Ep2 começa com Sueli Nascimento.\n\nValdecir = morto livre que aparece UMA VEZ (no metrô para Vinicius) + UMA VEZ no gancho final. Total: duas travessias, pagas pela morte voluntária no sigilo. Depois disso, ele vai embora — não reaparece em sessões futuras."
     }
   ]
 }
