@@ -499,571 +499,917 @@
     {
       "id": "valdecir",
       "nome": "Valdecir",
-      "role": "O Guardião",
-      "tag": "71 Anos",
-      "sigil": "spiral",
-      "idade": "71 anos (ao morrer)",
-      "funcao": "Guardião informal da Área Verde desde antes de Novavera existir",
+      "role": "O Morto",
+      "tag": "O espião tardio que abriu o jogo",
+      "sigil": "anchor",
+      "idade": "67 anos",
+      "funcao": "Bibliotecário aposentado · ex-fiel dos Filhos da Primeira Terra · espião tardio",
       "attrs": [
-        "Morto na manhã de 18 de março de 2025",
-        "Caderno com os nomes dos personagens, escrito em 1987"
+        "Kardecista de mesa há décadas, fazia sessões em casa sozinho",
+        "Dizia conversar com a falecida filha Marlene",
+        "Cinquenta anos coletando a biblioteca espírita da região",
+        "Foi fiel da Casa entre 1972 (Operação dos 33) e 2009",
+        "Em 2009 descobriu que Marlene foi sacrificada em 2006 — rompeu por dentro",
+        "Postou os envelopes aos quatro PCs em 13/mar/2025",
+        "Encontrado morto na manhã do dia 18, encostado no muro da Área Verde"
       ],
-      "resumo": "Guardião informal da Área Verde. Encontrado morto no limite do terreno na manhã que abre a Temporada 1. Três detalhes foram removidos do laudo.",
-      "historia": "Encontrado no limite da Área Verde na manhã de 18 de março de 2025. Três detalhes removidos do laudo pelo Dr.",
-      "como_interpretar": [],
-      "elementos_fisicos": [],
+      "resumo": "O homem que enviou os envelopes. Bibliotecário aposentado, kardecista de mesa, espião tardio do culto. Foi fiel por 37 anos antes de descobrir, em 2009, que a Casa havia sacrificado a própria filha. Operou em silêncio até decidir, em 2025, abrir o jogo postando quatro envelopes a quatro forasteiros. Morreu na madrugada do dia 18 antes que pudesse acompanhar a chegada deles.",
+      "historia": "Recrutado por Hélio em 1971, ainda jovem, era um dos administrativos discretos da Operação dos 33 em outubro de 1972. Por décadas foi fiel convicto da Casa de Novavera, ajudando a manter o terreno e o sigilo. Em 2006 sua filha Marlene foi sacrificada aos 19 anos sob o pretexto de \"ofertar-se à Primeira Terra\". Valdecir não soube na hora — só em 2009 montou as peças e descobriu que ela foi enterrada literalmente sob a Área Verde. Daí em diante operou como um homem partido por dentro: continuou frequentando, continuou ajudando, mas começou a coletar evidências, mapear as Regras da Mesa, anotar nomes. Em 13 de março de 2025 postou os quatro envelopes — sabia que viver até a chegada era improvável. Na madrugada do dia 18, alguém ou algo o pegou na Área Verde. Morreu segurando terra nas mãos, com sangue saindo dos olhos.",
+      "como_interpretar": [
+        "Valdecir nunca aparece em cena. Está sempre presente pelos rastros: a biblioteca, o caderno cifrado, o saquinho de sal, os SMS que escreveu, as Regras da Mesa.",
+        "No mundo do Mestre, ele é o motor que põe a campanha em movimento. Sem ele, os PCs não chegam.",
+        "A escolha dos quatro não foi pessoal — foi por rastro de papel. Ele teve acesso a registros, viu padrões kármicos sem entender o que via, e escolheu por intuição treinada por 50 anos de mesa.",
+        "No clímax, ele pode aparecer brevemente como voz no canal da sessão de comunicação — uma palavra ou frase curta. **Não monologa. Não explica. Só confirma.**"
+      ],
+      "elementos_fisicos": [
+        "Caderno cifrado encadernado em couro no quarto, com cifra baseada nas marginais do Kardec",
+        "Saquinho de sal grosso entregue à Natalina junto com o caderno pequeno",
+        "Foto rasgada em quatro pedaços, um em cada envelope",
+        "Folha de \"Regras da Mesa\" no guarda-roupa, junto do kit de sessão",
+        "Página fragmentária das pragas, parcial, no quarto"
+      ],
       "monologos": [],
-      "nota_mestre": "Valdecir não foi vítima. Foi guardião que escolheu a hora. Era a última coisa que podia fazer — abrir o ciclo de forma que os quatro personagens chegassem com razão suficiente para investigar. Seu caderno com os nomes dos personagens foi escrito em 1987, em fragmentos recebidos que ele não compreendia na época. Ele não sabia quem seriam — só que viriam.",
+      "nota_mestre": "Valdecir é o **único cúmplice que abriu o jogo voluntariamente** em 50 anos de Casa de Novavera. Por isso a morte dele é tão importante para Armindo (que sabia, e tolerou enquanto não havia ameaça externa) e para Ezequiel (que ordenou a contenção). O horror que persegue Valdecir não é só o culto — é a culpa de ter sido fiel enquanto a filha era preparada para o sacrifício, **bem na frente dele.**",
       "sabe": [
-        "Tudo — escolheu ir"
+        "A existência do sigilo na Área Verde e o que está enterrado lá",
+        "A Operação dos 33 (1972) — participou administrativamente",
+        "Que Marlene foi sacrificada e onde foi enterrada",
+        "As Regras da Mesa (mecânica de proteção em sessões)",
+        "A cifra baseada no Kardec — como abrir o caderno grande",
+        "Que existe uma \"rede maior\" além de Novavera, mas só pelo nome \"outras Casas\""
       ],
-      "nao_sabe": [],
+      "nao_sabe": [
+        "O nome Messiah / a identidade plena de Caim",
+        "A estrutura do pentagrama nacional",
+        "A Vigília Final",
+        "A linhagem completa Kassner → Otaviano → Hélio → Messiah",
+        "Que Armindo é o primogênito da décima praga",
+        "Que os quatro PCs são uma \"resposta imune do sistema\" — ele os escolheu por rastro de papel, não por destino"
+      ],
       "aparicoes": [
         {
-          "origem": "A Cidade — O Arquivo Histórico",
-          "ref": "local:arquivo-historico",
-          "texto": "Cilindro 1: abre com a chave de Valdecir."
+          "origem": "Modo Narrar · Ep1 cena a cena",
+          "texto": "A presença de Valdecir atravessa todas as cenas do Ep1 — o velório, a casa, o caderno, a sessão.",
+          "ref": "page:narrar"
         },
         {
-          "origem": "A Cidade — O Símbolo da Área Verde",
-          "ref": "local:area-verde",
-          "texto": "Fotografia no quarto de Valdecir — fragmento do símbolo em cal, terreno vazio. Lateral do caixão de Valdecir — completo, gravado após a preparação do corpo. Por quem?"
+          "origem": "Os 10 Props",
+          "texto": "Quase todos os 15 props vêm da mão de Valdecir.",
+          "ref": "page:props"
         },
         {
-          "origem": "A Cidade — O Padrão 13",
-          "ref": "local:rua-anterior",
-          "texto": "O sonho de Valdecir: 1987 — exatamente 13 anos depois."
-        },
-        {
-          "origem": "Linha do Tempo — 1987",
-          "ref": "page:timeline",
-          "texto": "Valdecir anota sonho com os quatro personagens. Sueli nasce."
-        },
-        {
-          "origem": "Linha do Tempo — 2025",
-          "ref": "page:timeline",
-          "texto": "Valdecir morre. Temporada 1 começa."
-        },
-        {
-          "origem": "",
-          "ref": "caus:0",
-          "texto": "Escolheu Valdecir — que já a ouvia há décadas — para a mensagem mais importante."
-        },
-        {
-          "origem": "",
-          "ref": "doc:diario",
-          "texto": "Encontrado no subsolo do arquivo com a chave de Valdecir e o conhecimento de Sueli."
-        },
-        {
-          "origem": "NPCs — Gabriel Tostes",
-          "ref": "npc:gabriel",
-          "texto": "Que Valdecir voltava diferente na última semana antes de morrer."
-        },
-        {
-          "origem": "Temporadas — Episódio 1",
-          "ref": "page:temporadas",
-          "texto": "No quarto de Valdecir, caderno aberto numa página de 1987 com os nomes dos personagens. Escritos trinta e oito anos antes de qualquer um deles ter razão para estar em Novavera."
+          "origem": "Cronologia do Dia 18",
+          "texto": "A timeline do dia 18 começa na madrugada com a morte dele.",
+          "ref": "page:dia18"
         }
       ],
       "ep1": {
-        "presenca_ep1": "Morto. Centro de toda a investigação.",
-        "como_interpretar": "Valdecir já está morto quando o episódio começa — mas sua presença é sentida em cada cena. Cinquenta anos vivendo em Novavera, sabendo, anotando, esperando. Os cadernos dele são a voz que ficou. Quando o Mestre lê trechos dos cadernos em voz alta, deve fazê-lo devagar, com peso — é a única vez que Valdecir vai falar diretamente nesta temporada.",
+        "presenca_ep1": "Valdecir está morto desde a madrugada. Toda a investigação parte dele, mas ele nunca aparece em cena — apenas pelos objetos e pelos rastros. No clímax (sessão de comunicação), pode emergir como voz curta, confirmando algo essencial sem explicar.",
+        "pistas_que_deixa": [
+          "Quatro envelopes idênticos (carimbo 13/mar, postados de Novavera)",
+          "A biblioteca espírita \"que diz mais do que ele pode dizer\" (palavras de Armindo, ironia involuntária)",
+          "Caderno grande cifrado na cabeceira (cifra do Kardec)",
+          "Caderno pequeno deixado com Natalina \"pra quem viesse perguntar\"",
+          "Página fragmentária das pragas no quarto",
+          "Folha de \"Regras da Mesa\" + kit no guarda-roupa",
+          "Calendário na sala: dois círculos vermelhos — 18 de março (hoje) e 7 de abril (data ritual da Casa)"
+        ],
+        "reconstrucao_ultima_noite": "Saiu de casa entre 23h40 e 00h sob algum gatilho — possivelmente uma ligação que o convocou à Área Verde, ou a percepção de que o tempo acabou. Cruzou a cidade vazia. Chegou ao muro da Área Verde por volta de 1h. O que aconteceu dentro do terreno é o mistério central do Ep1: terra ativa nas mãos, temperatura anormal, expressão de reconhecimento contente, lágrimas de sangue. **Quem matou Valdecir foi a serva do sigilo, não uma pessoa — mas alguém abriu o terreno para ele.**",
+        "ganchos_pos_ep1": "No Ep2, mais material da biblioteca abre. O caderno pequeno entregue à Natalina ganha relevância. As anotações sobre Sueli começam a fazer sentido."
+      }
+    },
+    {
+      "id": "armindo",
+      "nome": "Armindo Vasconcellos",
+      "role": "O Primeiro Profeta",
+      "tag": "Profeta trágico das dez pragas",
+      "sigil": "badge",
+      "idade": "80 anos",
+      "funcao": "Padre da Igreja de Santo Antônio · Diretor do Arquivo Histórico de Novavera · Primeiro Profeta dos Filhos da Primeira Terra",
+      "attrs": [
+        "Recrutado por Hélio em 1971, recém-saído do seminário",
+        "Participou da organização administrativa da Operação dos 33 em outubro de 1972",
+        "Cinquenta anos como Diretor da Casa de Novavera após o \"acidente\" de Hélio em 1976",
+        "Conduz o ciclo das dez pragas (T1) acreditando santificar a cidade para a passagem do Verdadeiro Messias",
+        "Aparência de avô gentil, postura sacerdotal serena, voz baixa que se ouve",
+        "A décima praga — o primogênito — é ele mesmo, e ele caminha rumo ao próprio fim sem saber inteiramente"
+      ],
+      "resumo": "Vilão central do Episódio 1, ainda que os PCs cheguem ao final sem saber. Aparece no velório como o padre que conhecia Valdecir há décadas. Faz o elogio fúnebre da água/sangue — semeando a primeira praga em voz alta para quem souber ouvir. Manda os PCs à casa de Valdecir com a isca da biblioteca. **Não é vilão de cinema — é profeta trágico**: acredita em cada palavra que diz, serve genuinamente ao que entende como obra divina, e caminha sem saber inteiramente rumo a se oferecer como o sinal final.",
+      "historia": "Recrutado por Hélio Drummond Vasconcellos em 1971, quando era um seminarista promissor que terminava a formação em Goiânia. Participou da Operação dos 33 em 1972 — não puxou gatilho, mas viu, justificou e escolheu. Quando Hélio \"morreu\" em 1976, Armindo ficou como Diretor da Casa de Novavera, encarregado de manter o local ativo enquanto Caim (já reaparecido em São Paulo como Messiah) voltava a operar publicamente. Cinquenta anos esperando o cumprimento. Em 2025, Messiah finalmente avisou que a hora chegou — e Armindo iniciou o ciclo das dez pragas, replicando o Êxodo, certo de que santifica a cidade para a passagem. A camada que ele não vê: ele próprio é o primogênito, e o ciclo só fechará quando ele se oferecer. Algumas pragas escapam ao seu controle e nascem do nó (a sétima e a nona) — sinal de que o sigilo já não obedece inteiramente ao profeta.",
+      "como_interpretar": [
+        "**Não é vilão.** É profeta trágico. Acredita em cada palavra que diz. Genuinamente acolhedor.",
+        "No velório, o tom é o de quem perdeu um amigo. A frieza só aparece em quem é treinado em Psicologia.",
+        "A fala da água/sangue é elogio fúnebre — perfeitamente negável se confrontada.",
+        "A isca da biblioteca é cuidadosa: ele aponta a arma de Valdecir para os PCs **sem saber.** (Ironia: a biblioteca diz literalmente mais — o Kardec com dedos de terra é a chave da cifra.)",
+        "Em todo confronto até a Sessão 10, ele responde com serenidade triste, não com defesa.",
+        "No confronto final (T1, S10), confessa tudo em \"tristeza serena que confronta\" e **se dissolve** quando o nó fecha."
+      ],
+      "elementos_fisicos": [
+        "Batina sempre limpa, sapato gasto",
+        "Mãos artríticas que tremem levemente no descanso",
+        "Olhos claros, voz baixa e bem articulada",
+        "Frequenta a igreja de manhã, o Arquivo de tarde, a Casa à noite (em particular)",
+        "No bolso da batina: terço, lenço bordado, chave do Arquivo"
+      ],
+      "monologos": [
+        "Armindo Vasconcellos. Trabalho no Arquivo Histórico aqui da cidade. Conhecia o Valdecir há muitos anos. Um homem bom. Do tipo que faz falta de formas que a gente só percebe depois.",
+        "Pena que ninguém vai ler os livros dele agora. Valdecir tinha uma biblioteca interessante sobre a história espírita da região. Cinquenta anos coletando. Vai virar entulho — não tem família para ficar com nada. Se tiverem curiosidade sobre o tipo de homem que ele era, a biblioteca dele diz mais do que eu posso dizer.",
+        "O Valdecir era a água desta cidade. Cinquenta anos. Quando a gente tinha sede de história, de memória, era nele que a gente bebia. (pausa, olhando o caixão) E a água, às vezes, escurece. Às vezes ela se torna outra coisa. Deus já fez isso uma vez — com um rio inteiro — pra ensinar um povo a partir. Não cabe à gente entender por que a água vira sangue. Cabe atravessar."
+      ],
+      "nota_mestre": "Armindo é o **horror sem maldade**. O que torna a T1 tão difícil é exatamente isto: o vilão é genuíno, ama os fiéis, conduz a comunidade com cuidado real, e tudo o que faz crê que é serviço a Deus. Quando os PCs descobrirem (Sessão 6 em diante) que ele é o profeta das pragas, não vão odiá-lo — vão sentir pena. E quando, na Sessão 10, ele confessar tudo em tristeza serena e se dissolver junto com o fechamento do nó, **a vitória vai pesar.** Isso é desenho deliberado.",
+      "sabe": [
+        "Tudo sobre a Casa de Novavera, os 47 fiéis, o sigilo",
+        "A Operação dos 33 — participou administrativamente",
+        "Que Valdecir era espião e abriu o jogo para os quatro",
+        "O ciclo das dez pragas — o que ele orquestra, e o que está acontecendo dentro do método sem ele saber explicar (a sétima e a nona)",
+        "O calendário ritual — o 7 de abril como data próxima",
+        "A existência de Ezequiel (chama de \"o Operador\")",
+        "O nome \"Messiah\" — não como palavra falada, mas como verdade central"
+      ],
+      "nao_sabe": [
+        "A escala plena do pentagrama nacional (sabe que existem outras Casas, não sabe o desenho)",
+        "A natureza do plano da Vigília Final (sabe que vai acontecer, não sabe que é em escala de 3.333)",
+        "Que ele próprio é a décima praga, em sua estrutura mais nua — ele suspeita, mas mantém a suspeita reprimida",
+        "A linhagem cósmica de Caim em detalhe (sabe que Messiah é \"o Verdadeiro Messias\", não que é Caim em sentido bíblico literal)",
+        "Que Otaviano cultivou Hélio sem saber que servia ao mal"
+      ],
+      "aparicoes": [
+        {
+          "origem": "Modo Narrar · Velório",
+          "texto": "A cena de apresentação no velório com as três falas obrigatórias.",
+          "ref": "page:narrar"
+        },
+        {
+          "origem": "O Profeta",
+          "texto": "Página dedicada com o ciclo completo das 10 pragas pela mão dele e fora da mão dele.",
+          "ref": "page:armindo"
+        },
+        {
+          "origem": "Os Sete Profetas",
+          "texto": "Como Primeiro Profeta na hierarquia dos Filhos da Primeira Terra.",
+          "ref": "page:profetas"
+        }
+      ],
+      "ep1": {
+        "presenca_ep1": "Aparece no velório (Parte 5). Conduz as três falas obrigatórias: apresentação, isca da biblioteca, água/sangue. Esteve no caixão entre 18h15 e 18h25 (revelado por Seu João + Seu Benedito). Pode ser confrontado no Centro Cívico ou na Igreja durante o Ep1 — mas hoje **nenhuma rolagem o quebra**. Reaparece pequeno em todo Ep1 como presença na cidade.",
         "no_episodio": [
           {
-            "titulo": "Manhã (06h14)",
-            "texto": "Corpo encontrado por Dona Neuza encostado no muro externo da Área Verde, na Rua das Acácias. Mãos viradas para dentro do terreno, segurando ativamente terra preta. Temperatura corporal 4°C abaixo do normal. Expressão de reconhecimento ativo."
+            "titulo": "No velório (18h–22h)",
+            "texto": "Parede direita da nave da igreja. Conversa com qualquer PC que se aproxime. Três falas obrigatórias."
           },
           {
-            "titulo": "Velório (19h–21h)",
-            "texto": "Caixão na Igreja de Santo Antônio. Símbolo gravado na lateral — entalhe recente feito por Armindo entre 18h15 e 18h25, com abertura apontando para nordeste (Área Verde)."
+            "titulo": "A serragem fresca no caixão",
+            "texto": "Seu João confirma caixão entregue às 14h. Seu Benedito confirma Armindo passou às 18h15. **A serragem é fresca** — Armindo teve 10 min sozinho com o caixão."
           },
           {
-            "titulo": "Casa (a partir das 22h)",
-            "texto": "Os personagens descobrem que ele preparou tudo para eles — caderno com fita de couro misturada com terra do nó, bilhete trêmulo: 'Quem vier — o que abre isso está onde isso veio. Não confiem em ninguém que não tenha sujado as mãos no mesmo lugar.'"
-          },
-          {
-            "titulo": "O caderno (madrugada, ~23h)",
-            "texto": "Quando abrem o caderno principal, a página aberta é de setembro de 1987: 'Vieram no sonho de novo. Os quatro. Ainda não sei os nomes. Mas reconheço os rostos de outro lugar — de muitos outros lugares, talvez.' Memória +1 automático para todos os personagens."
+            "titulo": "Após o velório",
+            "texto": "Volta para a Casa Paroquial. Pode ser procurado depois das 22h — atende, sereno, hospitaleiro. Não rompe."
           }
         ],
         "pistas_que_deixa": [
-          "Três cadernos (um no quarto / um com Natalina / um de observações pessoais de Natalina dela própria)",
-          "Caixa de sapato embaixo da cama (foto antiga do cerrado, envelope com chave pesada, recorte do trabalhador Monteiro 1978)",
-          "Calendário marcado em 18/03 e 07/04 (sem texto, só círculos vermelhos)",
-          "Agenda: '10h — S.N.' — compromisso não cumprido com Sueli Nascimento",
-          "Poltrona virada para a janela com vista para a Área Verde"
+          "A fala da água/sangue (Psicologia 45 ou Saber 50 → registra a primeira praga)",
+          "A isca da biblioteca (manda os PCs à casa de Valdecir)",
+          "A serragem fresca no caixão (entregue às 14h, Armindo lá às 18h15)"
         ],
-        "reconstrucao_ultima_noite": "Madrugada de 17/03: Valdecir foi à Área Verde, voltou com terra nas mãos, fez café, sentou na poltrona virada para a janela olhando o lugar onde voltaria, depois voltou para morrer ali. Suicídio voluntário — escolheu morrer.",
-        "ganchos_pos_ep1": "O caderno entregue por Natalina (Ep2). A chave da caixa de sapato (Ep5+). Sonhos recorrentes de quem leu o caderno (Ep2+)."
-      }
-    },
-    {
-      "id": "vera",
-      "nome": "Vera Monteiro",
-      "role": "O Espelho",
-      "tag": "41 Anos",
-      "sigil": "circle",
-      "idade": "41 anos (nascida 1984)",
-      "funcao": "Em Novavera desde 2022",
-      "attrs": [
-        "",
-        "Armindo a monitora desde que chegou"
-      ],
-      "resumo": "Veio seguindo um sonho recorrente. O espelho para os personagens verem seus próprios padrões.",
-      "historia": "Chegou seguindo um sonho recorrente: terra vermelha de madrugada, mulher com o rosto da avó dizendo um nome que ela esquecia ao acordar. A família recebeu uma carta dizendo que havia emigrado.",
-      "como_interpretar": [
-        "O que ela fez com Rafael — mantê-lo próximo com manipulação, colocá-lo em segundo lugar — é o espelho que os personagens vão ver em si mesmos.",
-        "Quando confrontada: \"Eu sabia que estava fazendo. Sabia que era errado. Fiz mesmo assim. Você faria diferente?\""
-      ],
-      "elementos_fisicos": [],
-      "monologos": [],
-      "nota_mestre": "Vera é a pessoa através de quem essa dívida pode fechar — ou se aprofundar.",
-      "sabe": [
-        "Que veio por causa da avó",
-        "Que Armindo a observa"
-      ],
-      "nao_sabe": [
-        "Que é descendente direta de vítima",
-        ""
-      ],
-      "aparicoes": [
-        {
-          "origem": "Caim — O Mercador de Alexandria",
-          "ref": "page:caim",
-          "texto": "Vera Monteiro, antes de ir a Novavera, fez pesquisa acadêmica sobre gnosticismo no Brasil do século XIX — a raiz intelectual do espiritismo kardecista. Ela não sabe por que esse tema sempre a atraiu."
-        },
-        {
-          "origem": "Linha do Tempo — 1984 / 2022",
-          "ref": "page:timeline",
-          "texto": "Vera Monteiro nasce. Vera Monteiro (38 anos) chega a Novavera."
-        },
-        {
-          "origem": "Linha do Tempo — 1971",
-          "ref": "page:timeline",
-          "texto": "Armindo (40 anos) contata coronel do regime — foto encontrada por Vera."
-        },
-        {
-          "origem": "",
-          "ref": "",
-          "texto": "Avó de Vera Monteiro."
-        },
-        {
-          "origem": "Temporadas — Episódio 5",
-          "ref": "page:temporadas",
-          "texto": "Vera Monteiro faz contato — escolhe o personagem mais capaz de ouvir sem hostilidade."
-        }
-      ],
-      "ep1": {
-        "presenca_ep1": "Mencionada apenas no recorte de jornal. Não aparece em cena.",
-        "como_interpretar": "Vera Monteiro existe como nome apenas — é o sobrenome do trabalhador morto em 1978 mencionado no recorte (Monteiro).",
-        "no_episodio": [
-          {
-            "titulo": "Casa de Valdecir — recorte de jornal",
-            "texto": "Item 3 da caixa de sapato: 'O trabalhador encontrado morto nas obras seria identificado apenas pelo sobrenome: Monteiro.' Frase sublinhada à caneta vermelha por Valdecir."
-          },
-          {
-            "titulo": "Possessão de Dona Cida",
-            "texto": "A voz que sai dela é de uma mulher de uns trinta anos."
-          }
-        ],
-        "ganchos_pos_ep1": "Vera vai entrar em cena no Episódio 5 — momento em que a teia Monteiro começa a se desenhar."
-      }
-    },
-    {
-      "id": "gabriel",
-      "nome": "Gabriel Tostes",
-      "role": "O Arquivo",
-      "tag": "9 Anos",
-      "sigil": "eye",
-      "idade": "9 anos (nascido 2016)",
-      "funcao": "Médium sem saber",
-      "attrs": [
-        "Cobra memórias de quem acessa — sem saber que cobra",
-        "Desenha a Área Verde de cima sem nunca ter ido lá"
-      ],
-      "resumo": "Médium involuntário de 9 anos. Cada informação que entrega apaga algo da memória de quem recebe. Não sabe que cobra.",
-      "historia": "Pequeno para a idade. Desenha compulsivamente o mesmo lugar: terra vermelha, árvores do cerrado, fundações no centro — a Área Verde de cima. Nunca foi à Área Verde. Cada informação entregue por Gabriel apaga algo da pessoa que recebeu. Pequeno no começo, crescente. Não é punição — é o peso de informação de outro tempo precisando de espaço neste tempo para caber.",
-      "como_interpretar": [
-        "O nome de Abel de uma vida anterior — dito às vezes quando está quase dormindo",
-        "Sabe que o que está na Área Verde não é nenhuma das 33 almas — é \"o que estava antes\"",
-        "Sabe que Valdecir voltava diferente na última semana antes de morrer",
-        "Reação a Abel: Tenta ler o personagem de Abel e simplesmente para. Olha para ele com expressão de reconhecimento. Diz: \"Você não tem fragmentos. É tudo inteiro.\"",
-        "No episódio 10: acorda curado e sem receber mais nada. O silêncio o assusta mais que os fragmentos."
-      ],
-      "elementos_fisicos": [],
-      "monologos": [],
-      "nota_mestre": "",
-      "sabe": [
-        "Nome de Abel de vida anterior",
-        "O que está na Área Verde",
-        "Os fragmentos"
-      ],
-      "nao_sabe": [
-        "Que é médium",
-        "Que cobra memórias"
-      ],
-      "aparicoes": [
-        {
-          "origem": "Abel — Os Três Sinais",
-          "ref": "page:abel",
-          "texto": "Sinal 2: Gabriel — o médium de 9 anos — nunca consegue ler Abel. Tenta uma vez e simplesmente para. Olha para ele com expressão de reconhecimento — não de medo nem espanto. Diz apenas: \"Você não tem fragmentos. É tudo inteiro.\""
-        },
-        {
-          "origem": "Linha do Tempo — 2016",
-          "ref": "page:timeline",
-          "texto": "Gabriel Tostes nasce."
-        },
-        {
-          "origem": "Temporadas — Episódio 1",
-          "ref": "page:temporadas",
-          "texto": "Gabriel do lado de fora — olha para Abel um segundo a mais do que deveria."
-        },
-        {
-          "origem": "Temporadas — Episódio 6",
-          "ref": "page:temporadas",
-          "texto": "Contato mais substancial com Gabriel — o dilema ético do custo se torna urgente. Gabriel de passagem na rua: \"Você era diferente antes. Mas o erro foi o mesmo.\""
-        },
-        {
-          "origem": "Temporadas — Episódio 9 e 10",
-          "ref": "page:temporadas",
-          "texto": "Novavera muda: três acidentes sem causa, dois internados sem diagnóstico, Gabriel com febre. Gabriel acorda curado e em silêncio. O silêncio o assusta mais que os fragmentos."
-        }
-      ],
-      "ep1": {
-        "presenca_ep1": "Aparece nos degraus da Igreja durante o velório. Não entra na cerimônia.",
-        "como_interpretar": "Nove anos, criança calma, desenha enquanto a mãe Carmem conversa dentro. Os desenhos dele têm a fundação da Área Verde com uma figura nova, sem rosto, no centro. Não tem proporções corretas. 'Fica aparecendo. Não sei o que é. Ontem não tinha.' Cuidado: Carmem é protetora — abordagens estranhas com Gabriel a fazem aparecer e levar o menino embora, fechando acesso a ele nos próximos episódios.",
-        "no_episodio": [
-          {
-            "titulo": "Degraus da Igreja (velório)",
-            "texto": "'Você veio pro velório? O Seu Valdecir era legal. Ele me deixava ficar sentado na praça quando minha mãe ia fazer compra. Não ficava me mandando embora.'"
-          },
-          {
-            "titulo": "O caderno de desenhos",
-            "texto": "Hoje tem uma figura nova: alta, sem rosto, no centro das fundações da Área Verde. Termômetro de Gabriel marcou 36.2°C — a mãe achou que estava quebrado."
-          },
-          {
-            "titulo": "SINAL 1 DE ABEL",
-            "texto": "Se Abel se aproxima, Gabriel para de desenhar. Olha de baixo pra cima. 'Você não tem fragmentos.' Pausa. 'Eu não sei explicar direito. Todo mundo tem fragmentos. Partes de outros lugares que ficam grudadas. Você não tem. É tudo inteiro. Isso é raro.'"
-          },
-          {
-            "titulo": "MECÂNICA SECRETA",
-            "texto": "Qualquer conversa substantiva com Gabriel: Memória +1 em segredo para o personagem que conversou. Não anuncia."
-          }
-        ],
-        "ganchos_pos_ep1": "Gabriel sabe mais do que diz e do que pode dizer. Aparecer de novo no Episódio 6 quando o preço de ser médium começa a cobrar dele."
+        "ganchos_pos_ep1": "Continua presente em toda a T1. Confronto final na Sessão 10 — onde ele confessa e se dissolve."
       }
     },
     {
       "id": "natalina",
-      "nome": "Natalina Braga",
-      "role": "A Âncora",
-      "tag": "78 Anos",
-      "sigil": "anchor",
-      "idade": "78 anos (nascida 23 dez. 1947)",
-      "funcao": "Aposentada da administração municipal",
+      "nome": "Natalina",
+      "role": "A Kardecista",
+      "tag": "A guardiã do caderno pequeno e do saquinho de sal",
+      "sigil": "circle",
+      "idade": "~60 anos",
+      "funcao": "Kardecista de mesa de Novavera · amiga próxima de Valdecir há décadas",
       "attrs": [
-        "Segredo: Neta de Benedito Braga, cúmplice das execuções de 1972",
-        "Caderno com mapa do campo de influência do nó — sem saber"
+        "Kardecista de mesa há mais de 30 anos",
+        "Conhecia Valdecir desde os anos 1990, sabia que ele \"conversava com a falecida filha\"",
+        "Recebeu o caderno pequeno + saquinho de sal grosso de Valdecir há 3 anos, com a instrução: \"entrega pra quem vier perguntar\"",
+        "Aborda Floriano na chegada do Bairro Fundação (18h)",
+        "Aparece no velório circulando com bandeja de doce",
+        "Voz materna, gestos calmos, presença reconfortante"
       ],
-      "resumo": "Neta de Benedito Braga. Seu caderno de observações é o mapa mais preciso do campo de influência do nó que existe — e ela acredita que documenta um problema de arquitetura urbana.",
-      "historia": "Nasceu na fazenda que Benedito administrava. Na administração municipal desde 1974. Em 1974 recebeu ordem de cobrir uma fundação diagonal — não sabia o que era. A ordem veio de um assessor técnico — era Armindo com identidade falsa.",
+      "resumo": "A kardecista local que Valdecir escolheu como guardiã da primeira pista. Aparece logo na chegada de Floriano ao Bairro Fundação (18h), oferecendo o caderno pequeno que Valdecir lhe deixou \"para quem viesse perguntar\". Reaparece no velório circulando com a bandeja de doce, dizendo \"vocês\" no plural — semente da convergência. Tem o saquinho de sal grosso de Valdecir; sabe da regra mas não da escala do que está em jogo.",
+      "historia": "Conheceu Valdecir nos anos 1990, quando ele já frequentava sessões kardecistas pequenas da cidade. Tornou-se amiga próxima ao longo de décadas, ouvinte privilegiada do luto dele por Marlene. Em algum momento de 2022, Valdecir entregou a ela um caderno pequeno e um saquinho de pano com sal grosso, dizendo \"entrega junto, vão precisar\" — sem explicar. Natalina nunca abriu o caderno (ela respeita o sigilo da relação). Não sabe o tamanho do que vai destrancar — sabe apenas que \"tem coisas que não se pergunta\".",
       "como_interpretar": [
-        "Seu caderno de observações — décadas de padrões, taxas de insônia perto da Área Verde, relacionamentos que terminam sem explicação — é o mapa mais preciso do campo de influência do nó que existe.",
-        "A decisão moral mais pesada da T1: quando os personagens conectarem \"B.\" no diário com Benedito e com o sobrenome dela — contar ou não contar depende inteiramente do que a relação com os personagens construiu até aquele momento."
+        "Calma. Materna. Voz que se ouve sem esforço.",
+        "Não joga: oferece. As coisas que diz são verdade dela.",
+        "Não sabe o tamanho do que carrega — tratá-la como gente comum, não como peça do mistério.",
+        "Quando Floriano (padre) chega, ela é o primeiro NPC do Ep1. Pode ser a primeira pessoa que ele cruza após descer do carro."
       ],
-      "elementos_fisicos": [],
-      "monologos": [],
-      "nota_mestre": "",
+      "elementos_fisicos": [
+        "Avental de cozinha no velório, com bordado simples",
+        "Bandeja de doce circulando na nave",
+        "Caderno pequeno guardado em casa, junto com o saquinho de sal"
+      ],
+      "monologos": [
+        "Ele me deu um caderno pra guardar, faz uns três anos. Disse que eu entregasse \"pra quem viesse perguntar.\" Nunca veio ninguém. Até hoje. Podem vir amanhã na minha casa. (pausa) Mas tem outro — um maior, mais grosso — que ele nunca tirou da casa. Dizia que era \"pra ficar lá, no quarto, na cabeceira.\"",
+        "O Valdecir era kardecista de mesa. Fazia sessão em casa, sozinho, há muitos anos. Dizia que conversava com a falecida filha dele. Todo mundo achava que era saudade. Eu nunca tive certeza de que era só saudade. (tira do bolso do avental um saquinho de pano amarrado) Ele me deu isso junto com o caderno. Disse: \"entrega junto, vão precisar.\" Eu nunca entendi. É sal."
+      ],
+      "nota_mestre": "Natalina é a primeira respiração suave do Ep1 — antes do horror começar. Ela é uma pessoa boa em um mundo carregado, e a presença dela funciona como contraponto ao tom geral. **Manter assim:** ela não vai descobrir o que carrega, não vai virar peça mecânica. Permanece humana até o fim. (Detalhe para o Ep2: ela tem um sobrinho na Casa, mas não sabe o que a Casa é — gancho lateral.)",
       "sabe": [
-        "Mapa do nó (sem saber)",
-        "História de Novavera",
-        "Que cobriu a fundação"
+        "Que Valdecir conversava com a filha em sessão",
+        "Que ele lhe deixou um caderno pequeno + saquinho de sal \"pra quem vier perguntar\"",
+        "Hábitos kardecistas básicos: o sal, a vela, a oração de abertura"
       ],
       "nao_sabe": [
-        "Que Benedito era cúmplice",
-        "Que o caderno é o documento mais preciso sobre o nó"
+        "O conteúdo do caderno (nunca abriu)",
+        "A existência dos Filhos da Primeira Terra como organização",
+        "Que existe sigilo na Área Verde — para ela, é só terreno fechado",
+        "O nome Messiah ou qualquer parte da estrutura maior",
+        "Que Marlene foi sacrificada — acredita na versão pública (acidente em viagem, 2006)"
       ],
       "aparicoes": [
         {
-          "origem": "A Cidade — O Bairro Fundação",
-          "ref": "local:bairro-fundacao",
-          "texto": "Natalina Braga mora aqui desde 1978 — veio logo após a construção da Área Verde ser paralisada."
+          "origem": "Modo Narrar · F.4 — Chegada de Floriano",
+          "texto": "Aborda Floriano na calçada do Bairro Fundação (18h).",
+          "ref": "page:narrar"
         },
         {
-          "origem": "",
-          "ref": "local:rua-anterior",
-          "texto": "Armindo fechou o símbolo em 1974 via Natalina, que não sabia o que estava cobrindo."
-        },
-        {
-          "origem": "Linha do Tempo — 1947",
-          "ref": "page:timeline",
-          "texto": "Natalina Braga nasce em 23 de dezembro."
-        },
-        {
-          "origem": "Causalidade — Quem fechou o símbolo",
-          "ref": "caus:5",
-          "texto": "Armindo, em 1974, via Natalina que não sabia o que cobria. A ordem veio como assessor técnico — identidade falsa."
-        },
-        {
-          "origem": "Documentos — Ficha nº34 (Benedito)",
-          "ref": "doc:ficha-benedito",
-          "texto": "Avô de Natalina Braga. B. morreu em 1969. A dívida dele ficou com os descendentes — como sempre fica. Natalina não sabe. Não precisa saber ainda."
-        },
-        {
-          "origem": "Temporadas — Episódio 1 e 5",
-          "ref": "page:temporadas",
-          "texto": "Natalina: \"Ele tinha certeza que vocês viriam. Faz tempo. Ele sabia.\" Natalina confrontada — confirma que cobriu, não sabia o que era, caderno entregue."
+          "origem": "Modo Narrar · Velório",
+          "texto": "Circula com bandeja de doce; entrega as duas falas obrigatórias.",
+          "ref": "page:narrar"
         }
       ],
       "ep1": {
-        "presenca_ep1": "Vista no Bairro Fundação na chegada de um personagem, e novamente no velório.",
-        "como_interpretar": "Cabelo branco, avental, fala como quem já decidiu o que faz e o que não faz desta vida. Não vai procurar os personagens — vai esperar. Quando aborda, é direta: 'Você é um dos que vão ao velório do Valdecir.' Não é pergunta. Guarda três coisas: o caderno que Valdecir deixou para entregar, o caderno principal de Valdecir na casa dele, e o caderno de observações pessoais dela própria (que é peça do Enigma 2).",
+        "presenca_ep1": "Dois momentos: (1) aborda Floriano ao chegar no Bairro Fundação (18h), oferecendo o caderno pequeno. (2) Circula no velório, entrega as duas falas obrigatórias sobre Valdecir, e diz \"vocês\" no plural — semente da convergência.",
         "no_episodio": [
           {
-            "titulo": "Bairro Fundação (chegada)",
-            "texto": "Varrendo a calçada de uma casa de esquina. Avalia o personagem com olhar não-hostil. 'Ele falava de vez em quando que iam vir pessoas. Não sei quando, não sei de onde. Falava assim — quando vierem, Natalina, trata bem.'"
+            "titulo": "F.4 — Chegada de Floriano (18h)",
+            "texto": "Surge na calçada do Bairro Fundação assim que Floriano desce do Fiat Uno. Fala suave, gestos calmos."
           },
           {
-            "titulo": "Velório — sobre os cadernos",
-            "texto": "Sem perceber, entrega três níveis de informação: o caderno guardado (gancho Ep2), o caderno principal na casa (caso dos personagens forem visitar), e o caderno de observações dela própria que é peça do Enigma 2."
-          },
-          {
-            "titulo": "Velório — sobre a Área Verde",
-            "texto": "'Lugar ruim. Sempre foi. A construção parou lá em setenta e oito e nunca mais voltou. Ninguém sabe por quê — ninguém pergunta muito. É assim que é em Novavera.'"
+            "titulo": "Velório (19h em diante)",
+            "texto": "Bandeja de doce nas mãos, circulando. Entrega as duas falas: dois cadernos + saquinho de sal."
           }
         ],
-        "ganchos_pos_ep1": "Entrega o caderno guardado no Episódio 2 se procurada. O caderno de observações pessoais dela é peça do Enigma 2 — temperatura anormal há décadas."
+        "pistas_que_deixa": [
+          "A existência de dois cadernos (um pequeno com ela, um grande \"na cabeceira\" — o cifrado)",
+          "A frase \"eu nunca tive certeza de que era só saudade\" (semente para a sessão de comunicação)",
+          "O saquinho de sal grosso — primeira peça do kit do clímax"
+        ],
+        "ganchos_pos_ep1": "O caderno pequeno é desbloqueado no Ep2. Ela mesma reaparece como aliada periférica conforme a investigação avança."
       }
     },
     {
-      "id": "decio",
-      "nome": "Décio Murta",
-      "role": "O Precipício",
-      "tag": "46 Anos",
-      "sigil": "fracture",
-      "idade": "46 anos",
-      "funcao": "Jornalista investigativo — em Novavera há dois anos e meio",
+      "id": "meireles",
+      "nome": "Dr. Meireles",
+      "role": "O Médico",
+      "tag": "O que assinou o laudo e tem família",
+      "sigil": "eye",
+      "idade": "44 anos",
+      "funcao": "Médico do Posto de Saúde de Novavera · clínico geral · escreveu o laudo de Valdecir",
       "attrs": [
-        "Estado: Desorientação temporal avançada — Permanência em 2",
-        "23 cadernos numerados"
+        "Lavou e preparou o corpo de Valdecir na manhã do dia 18",
+        "Ficou um tempão sentado olhando para o corpo (Seu João testemunhou)",
+        "Documentou quatro anomalias antes de removê-las do laudo: temperatura errada, terra ativa nas mãos, expressão de reconhecimento contente, lágrimas de sangue",
+        "Recebeu uma ligação às 15h32 de número de Goiânia — voz desconhecida descreveu a esposa e a filha, sem fazer ameaça explícita",
+        "Tentou ligar de volta — \"número não atribuído\"",
+        "Anotou o número numa receita médica + a hora · guardou na gaveta",
+        "44 anos que hoje parecem 52 · terceiro analgésico do dia, dor intacta"
       ],
-      "resumo": "Jornalista investigativo de Brasília. Em desorientação temporal avançada. O espelho do que os personagens podem se tornar.",
-      "historia": "Jornalista investigativo de Brasília. Chegou seguindo um número parcialmente redigido num arquivo da Comissão Nacional da Verdade: 34. Cadernos 1–8: jornalismo normal. Cadernos 9–15: transição, fragmentado mas coerente. Cadernos 16–22: Caderno 23: atual, dissolução avançada.",
+      "resumo": "O médico que lavou o corpo de Valdecir e ficou um tempão olhando para ele. Documentou quatro anomalias que removeu do laudo final. Às 15h32 do dia 18 recebeu uma ligação de Goiânia: voz desconhecida descreveu a família dele, sem fazer ameaça explícita. Tem uma esposa e uma filha que estuda numa escola que o homem da ligação sabia o nome. Em quatro camadas de aproximação, pode entregar o laudo real, o número de Goiânia, e as lágrimas de sangue.",
+      "historia": "Clínico geral do interior. Vinte anos de carreira sem nada que pesasse. Mora em Novavera há 12 anos com a esposa e a filha (13 anos, escola particular). É médico legista informal da cidade — atende a funerária pequena quando a polícia não chama o IML de Goiânia. Hoje cedo lavou o corpo de Valdecir. O que viu não cabe num laudo. Removeu tudo o que não podia explicar. Às 15h32, três horas depois de assinar o laudo limpo, recebeu a ligação. **Não foi ameaça — foi catálogo.** O homem disse o nome da esposa, o nome da filha, onde a filha estuda, como ela vai à escola. Não disse \"ou então\". Não precisou.",
       "como_interpretar": [
-        "A janela de clareza: dois, três minutos, sem aviso, que os personagens precisam aprender a reconhecer. A janela fecha e não volta naquela sessão.",
-        "\"É como traduzir de uma língua que está se dissolvendo enquanto você fala.\"",
-        "Décio é o espelho do que os personagens podem se tornar. Cada cena com ele é um aviso que nunca é dito explicitamente."
+        "Exausto, não hostil. A face dele hoje é a de quem não dorme há vinte horas.",
+        "Camadas de defesa: laudo correto → CRM (beco) → empatia abre → confissão.",
+        "O que ele sente não é culpa. É **medo.** Psicologia revela isso, não malícia.",
+        "Quando ele entrega, entrega devagar. Cada anomalia uma de cada vez. A das lágrimas de sangue só sai na quarta camada, com empatia real.",
+        "Encerra com \"Por favor. Eu tenho uma família.\" Não como apelo — como verdade nua."
       ],
-      "elementos_fisicos": [],
-      "monologos": [],
-      "nota_mestre": "",
+      "elementos_fisicos": [
+        "Jaleco com a gola amassada · óculos descansando na ponte do nariz",
+        "Três frascos de analgésico na mesa, um aberto",
+        "Olheiras de quem dormiu duas horas",
+        "Gaveta com o papel do número (62) 9____-____ + a hora 15h32",
+        "No bolso da gaveta, embrulhado, um chumaço de algodão manchado de ferrugem — o que usou para limpar os olhos de Valdecir e não conseguiu jogar fora"
+      ],
+      "monologos": [
+        "O laudo está correto. Parada cardiorrespiratória, causa natural, consistente com a idade.",
+        "(pausa longa) Ouçam. Eu... (para) O laudo está correto. Isso é o que eu posso dizer.",
+        "(fecha a porta da sala) Eu recebi uma ligação. Hoje, três e meia da tarde. Uma voz que eu nunca ouvi. Não foi ameaça explícita — eu queria que tivesse sido. Quando é explícito, você sabe o que fazer. Esse homem só... descreveu a minha família. O nome da minha esposa. Da minha filha. Onde ela estuda. Como quem queria que eu entendesse que ele sabia.",
+        "A temperatura estava errada. Muito errada. E havia terra nas mãos dele que... (para) Ele estava segurando a terra. Ativamente. Com força. Quem faz isso depois de uma parada cardíaca? (voz baixa) E a expressão. Parada cardíaca tem expressão específica. O rosto do Valdecir tinha a expressão de alguém que reconheceu alguma coisa. Na última coisa que viu. E ficou contente.",
+        "(a voz falha) Tinha mais uma coisa. Eu limpei antes de qualquer um ver. Limpei com a minha própria mão. (pausa) Ele tinha sangue saindo dos olhos. Não machucado, não trauma — saindo de dentro, como lágrima. Como se ele tivesse chorado sangue. Eu sou médico há vinte anos. Isso não acontece. Não desse jeito. Eu limpei o rosto dele e fiquei com aquilo na mão e não consegui... não consegui escrever no laudo. Como é que eu escrevo isso?"
+      ],
+      "nota_mestre": "Meireles é a ponta de Ezequiel no Ep1. A ligação das 15h32 vem do Operador, em Brasília. **Ele não sabe quem ligou** — só que essa pessoa sabe demais sobre a família dele. Reaparece no Ep2 como um homem que está visivelmente quebrando — talvez tente tirar a família de Novavera; talvez não. Se os PCs forem cuidadosos com ele, o ganham como aliado mediano. Se forem brutos, ele fecha de vez.",
       "sabe": [
-        "Cronologia completa",
-        "Nome anterior de Armindo",
-        "Localização do subsolo",
-        "",
-        "As três fotografias"
+        "As quatro anomalias do corpo de Valdecir (documentadas, depois removidas)",
+        "Que recebeu ameaça velada de Goiânia",
+        "O número de telefone de onde a ligação veio (mesmo desativado, é prova)",
+        "Que Valdecir morreu segurando terra ativamente"
       ],
       "nao_sabe": [
-        "Como entregar o que sabe"
+        "Quem ligou (não sabe o nome Ezequiel)",
+        "Que existe um culto organizando isso",
+        "O que significam as lágrimas de sangue",
+        "A Área Verde como sigilo (sabe que é terreno fechado, nada mais)"
       ],
       "aparicoes": [
         {
-          "origem": "Grimório — Regra V",
-          "ref": "page:grimorio",
-          "texto": "É o estado em que Décio Murta se encontra agora — documentando sua própria dissolução com a lucidez de quem está se afogando e ainda faz anotações sobre a água."
+          "origem": "Modo Narrar · Posto de Saúde",
+          "texto": "A cena principal de Meireles (Parte 6.1) com as quatro camadas de aproximação.",
+          "ref": "page:narrar"
         },
         {
-          "origem": "Caim — O Escriba de Babilônia",
-          "ref": "page:caim",
-          "texto": "Um dos livros no apartamento de Décio em Novavera é uma edição acadêmica crítica do Antigo Testamento com anotações sobre interpolações textuais do período babilônico. Décio circulou três passagens e escreveu ao lado: \"isso não estava aqui antes.\""
-        },
-        {
-          "origem": "",
-          "ref": "page:caim",
-          "texto": "Décio encontrou as três fotografias. Estão nos cadernos 16 a 22. Os personagens vão ver essas fotos na T1 sem saber o que estão vendo — e só vão entender na T3."
-        },
-        {
-          "origem": "Regras & Sistema — Permanência",
-          "ref": "page:regras",
-          "texto": "Permanência zero: o personagem não consegue mais distinguir qual é o presente funcional. É o estado de Décio Murta."
-        },
-        {
-          "origem": "Temporadas — Episódio 4 e 9",
-          "ref": "page:temporadas",
-          "texto": "Décio entrega uma folha. Uma palavra circulada: Armindo Laerte Vasconcelos. Décio: dois minutos de clareza — última janela real, entrega algo crucial dos cadernos 16–22."
+          "origem": "Cronologia do Dia 18",
+          "texto": "A ligação das 15h32 está marcada na timeline.",
+          "ref": "page:dia18"
         }
       ],
       "ep1": {
-        "presenca_ep1": "Não aparece no Ep1. Mencionado em referências futuras.",
-        "como_interpretar": "Décio é peça de episódios posteriores. No Ep1 ele não aparece — está esperando.",
+        "presenca_ep1": "Cena dedicada no Posto de Saúde (Parte 6.1). Quatro camadas: laudo padrão → CRM (beco) → empatia abre confissão da ligação → empatia profunda revela as lágrimas de sangue. **Entrega o prop 11 — o papel com o número e a hora.**",
         "no_episodio": [
           {
-            "titulo": "Sem participação direta",
-            "texto": "Décio não tem cena no Ep1. Sua função se ativa quando os personagens começam a entender o tecido mais antigo da cidade."
+            "titulo": "Posto de Saúde · noite",
+            "texto": "Posto fechado ao público; luz acesa na sala dos fundos. Quatro camadas de aproximação."
           }
         ],
-        "ganchos_pos_ep1": "Aparece a partir do Episódio 3-4."
+        "pistas_que_deixa": [
+          "O laudo real (temperatura · terra ativa · expressão · lágrimas de sangue)",
+          "O papel com o número de Goiânia + a hora 15h32 (Prop 11)",
+          "O chumaço de algodão manchado (prop secundário, se o Mestre quiser dar)"
+        ],
+        "ganchos_pos_ep1": "No Ep2, Ezequiel pode pressionar de novo — Meireles pode quebrar de vez. A esposa dele já está descobrindo que algo está errado."
+      }
+    },
+    {
+      "id": "dona-cida",
+      "nome": "Dona Cida",
+      "role": "A Vizinha do Nº 8",
+      "tag": "A senhora inocente que entra no raio da serva",
+      "sigil": "spiral",
+      "idade": "70 anos",
+      "funcao": "Vizinha de Valdecir na mesma rua · cura natural da serva no clímax",
+      "attrs": [
+        "Mora há décadas no nº 8 da mesma rua de Valdecir",
+        "Sai à noite de camisola e casaco quando ouve barulho — gente que cuida da rua",
+        "Vai à casa de Valdecir genuinamente preocupada com o clarão na janela",
+        "Quando chega à porta, **ainda é ela mesma** — voz normal, preocupação real, Psicologia confirma sinceridade total",
+        "A serva da Área Verde a toma no meio de uma frase, em cena, na frente dos PCs",
+        "Pode morrer (padrão) ou sobreviver hospitalizada (variante de misericórdia)"
+      ],
+      "resumo": "A vizinha do número 8. Senhora de 70 anos, camisola com casaco por cima, chinelo, lanterna pequena. Sai à noite quando ouve barulho. Vai à casa de Valdecir genuinamente preocupada com o clarão na janela — **ela é ela mesma quando chega**. Qualquer teste de Psicologia confirma sinceridade total. O horror é esse: tem algo solto na casa, e a vizinha inocente acabou de entrar no raio dele. A serva a toma no meio de uma frase. O Mestre conduz uma das quatro saídas (A, B, C ou D).",
+      "historia": "Dona Cida vive sozinha desde que o marido morreu, há uns 15 anos. Filhos em São Paulo. Tem horta no quintal, fofocas sadias com Dona Neuza, e o hábito antigo de sair quando ouve barulho na rua. Conhecia Valdecir de bom-dia e cumprimento, nada mais. Quando ouviu o \"clarão\" e barulho na casa do vizinho falecido na noite do velório, fez o que sempre fez: vestiu o casaco e foi conferir. **O sistema não escolheu Dona Cida — ela apareceu disponível no momento errado.** A serva da Área Verde, atraída pela sessão de comunicação, precisava de corpo, e ela era o corpo mais próximo.",
+      "como_interpretar": [
+        "Quando chega à porta, é gente. Preocupação verdadeira. Lanterna na mão, voz tremida.",
+        "A possessão acontece **no meio de uma frase**, idealmente quando o jogador está descontraindo.",
+        "Após possessão: cabeça inclina dois centímetros, lanterna escorrega, e os olhos sobem olhando **através**.",
+        "Sob a serva: voz vinda de muito longe, parábolas precisas, golpes não-letais (a serva quer marcar, não matar).",
+        "Quando a serva sai: confusão de dois segundos, tentativa de fala, colapso. **Primeiros Socorros não revertem.**",
+        "Variante: se os PCs jogarem muito bem (Saída D), ela sobrevive, é hospitalizada, não lembra de nada."
+      ],
+      "elementos_fisicos": [
+        "Camisola amarelada com casaco marrom por cima",
+        "Chinelo de dedo",
+        "Lanterna pequena, pilhas fracas",
+        "**Nenhuma vassoura** (a vizinha que vai investigar barulho de noite sempre leva alguma coisa — Cida não levou)"
+      ],
+      "monologos": [
+        "Tem alguém aí? Sou eu, a Cida, do número 8. Eu ouvi um barulho e vi um clarão na janela. Essa casa é do Seu Valdecir, que Deus o tenha — vocês são da família? Tá tudo bem aí dentro?",
+        "(possuída, parábolas — exemplo) Vocês trouxeram terra do meu chão. A terra lembra de cada um. Eu lembro de quem fez ela existir.",
+        "(possuída, final) O Salvador sabe os nomes de vocês agora. Sabe os rostos. Sabe as fraquezas. Vão embora. Não voltem. Se voltarem, vocês viram servas também. E servas não têm volta.",
+        "(quase doce, último golpe) Ela vai morrer agora. Vocês trouxeram isso. Lembrem disso quando estiverem decidindo se ficam ou vão."
+      ],
+      "nota_mestre": "Dona Cida é o pivô do clímax. A morte dela (Saída A padrão) é o peso que o Ep1 deixa em cima dos PCs — eles tinham apenas o sal, e o sal protegeu quem estava dentro mas não conseguiu salvar quem estava fora. A variante de misericórdia (Saída D sustentada) exige raciocínio rápido e deve ser difícil, não anunciada. **X-card explicitamente disponível na cena da possessão**, especialmente na isca das vozes (Saída C com agravante). Em qualquer caso: ninguém aqui é vilão; ela é o corpo errado no momento errado.",
+      "sabe": [
+        "Que ouviu barulho e viu clarão na janela de Valdecir",
+        "Que Valdecir morreu",
+        "Os nomes da rua, hábitos antigos, fofocas",
+        "(nada do sobrenatural — é gente comum)"
+      ],
+      "nao_sabe": [
+        "A existência de servas, sigilos, ou qualquer coisa do culto",
+        "Que está entrando em raio de risco mortal",
+        "Que a Área Verde tem algo sob ela"
+      ],
+      "aparicoes": [
+        {
+          "origem": "Modo Narrar · Clímax · A invasão",
+          "texto": "A cena 9.5 inteira gira em torno dela.",
+          "ref": "page:narrar"
+        }
+      ],
+      "ep1": {
+        "presenca_ep1": "Aparece no clímax (Parte 9.5). Chega de fora durante a sessão de comunicação. **É ela mesma quando chega** — a serva ainda está sem corpo na casa. A possessão acontece em cena. O Mestre conduz a Árvore de Decisão (A/B/C/D).",
+        "no_episodio": [
+          {
+            "titulo": "Clímax · A invasão (~23h–00h)",
+            "texto": "Chega à porta com lanterna. Voz normal. Possessão acontece no meio de uma frase. Conduzir conforme a saída escolhida pelos PCs."
+          }
+        ],
+        "pistas_que_deixa": [
+          "As parábolas — uma específica para cada PC (Sergie/Floriano/Vinicius/Gyeno)",
+          "A confirmação de que \"O Salvador\" existe e sabe dos quatro",
+          "A regra explícita: \"vocês viram servas se voltarem\""
+        ],
+        "ganchos_pos_ep1": "Variante de misericórdia: ela sobrevive, hospitalizada. A Casa fica sabendo que os quatro derrotaram a serva — Ezequiel reavalia ameaça (gancho para Ep2)."
+      }
+    },
+    {
+      "id": "neuza",
+      "nome": "Dona Neuza",
+      "role": "A Que Achou o Corpo",
+      "tag": "Quarenta anos morando em frente",
+      "sigil": "eye",
+      "idade": "~68 anos",
+      "funcao": "Vizinha de Valdecir há 40 anos · achou o corpo dele às 5h da madrugada",
+      "attrs": [
+        "Mora em frente à casa de Valdecir há 40 anos",
+        "Caminhada todo dia às 5h–5h30 — hábito antigo",
+        "Achou o corpo na manhã do dia 18, encostado no muro da Área Verde, sentado",
+        "Três detalhes que ela viu antes de chegar a polícia: mãos viradas para dentro do terreno · frio anormal · luz acesa pela primeira vez em 40 anos",
+        "Sabe (sem entender) que Valdecir acendia vela na sala de madrugada — viu pela fresta da cortina ao longo dos anos"
+      ],
+      "resumo": "A vizinha em frente. Quarenta anos morando ali. Caminhada todo dia às 5h. Achou o corpo de Valdecir encostado no muro da Área Verde. Abordagem gentil destrava três detalhes essenciais: as mãos viradas pra dentro do terreno, o frio que não era frio de morte, e a luz acesa pela primeira vez em 40 anos. Pressa fecha. Tem também a semente das velas — sabe que ele acendia vela na sala de madrugada.",
+      "historia": "Dona de casa, viúva, mora sozinha. Filhos crescidos espalhados. Conhecia Valdecir como vizinhos se conhecem: bom-dia, troca de favores miúdos, ele cuidando do gato dela quando viajava. Nunca entrou na casa dele. Nunca foi convidada. Mas via a luz acesa de madrugada — luz de vela, não lâmpada — e nunca perguntou. \"Tem coisas que não se pergunta.\" Hoje cedo, saindo para caminhar, viu uma forma sentada no muro da Área Verde. Pensou que era ele descansando. Foi falar bom-dia. Não respondeu.",
+      "como_interpretar": [
+        "Calma, gentil. Bem-educada à moda antiga.",
+        "Fala devagar. Cada detalhe sai com pequenas pausas.",
+        "Se o PC for direto demais ou pressionar, ela fecha educadamente: \"Ah, eu não sei mais nada, meu filho/minha filha.\"",
+        "Se for gentil, ela continua. Os três detalhes saem em sequência.",
+        "O detalhe das velas só sai se a conversa tocar nos hábitos dele — não como pergunta direta, mas natural."
+      ],
+      "elementos_fisicos": [
+        "Roupa simples, cardigan de tricô",
+        "Casa em frente à de Valdecir, cortina entreaberta de propósito",
+        "Bíblia na sala"
+      ],
+      "monologos": [
+        "Eu faço caminhada todo dia. Cinco, cinco e meia. Hoje eu tava passando pela Rua das Acácias quando vi ele. Do lado de fora do muro da Área Verde. Sentado, encostado. Pensei que tava descansando. Cheguei perto pra falar bom dia. Ele não respondeu.",
+        "As mãos dele tavam viradas pra dentro do terreno. Como se ele tivesse pegado alguma coisa lá de dentro.",
+        "Eu toquei na mão dele. Tava fria de um jeito que não era de morte. Eu já vi muita gente morta. Era como se ele tivesse passado a noite num lugar muito mais frio.",
+        "Quarenta anos morando em frente. Toda noite, dez horas, ele apagava a luz do quarto. Essa madrugada, a luz tava acesa. Pela primeira vez em quarenta anos.",
+        "Às vezes, de madrugada, tinha luz de vela na sala dele. Vela, não lâmpada. Eu via a luz mexendo pela fresta da cortina. Nunca perguntei. Tem coisas que não se pergunta."
+      ],
+      "nota_mestre": "Dona Neuza é a primeira confirmação tangível de que algo está estranho na morte de Valdecir. Os três detalhes que ela dá (mãos · frio · luz) são as pistas de abertura do Ep1. **Não confirmar nada com ela** — ela conta o que viu, não interpreta. A semente das velas é a chave para os PCs entenderem mais tarde que ele fazia sessões kardecistas (que Natalina confirma).",
+      "sabe": [
+        "O estado do corpo quando ela achou (mãos · frio · expressão)",
+        "Que a luz da sala estava acesa pela primeira vez em 40 anos",
+        "Que ele acendia vela de madrugada — viu pela fresta da cortina",
+        "A rotina de Valdecir (apagava a luz às 10h, levantava cedo)"
+      ],
+      "nao_sabe": [
+        "O que ele fazia com a vela",
+        "Que ele era kardecista",
+        "Que existe algo sob a Área Verde",
+        "Nada do culto"
+      ],
+      "aparicoes": [
+        {
+          "origem": "Modo Narrar · Velório · falas obrigatórias",
+          "texto": "A cena dela está dentro do velório com as falas dos três detalhes + semente das velas.",
+          "ref": "page:narrar"
+        }
+      ],
+      "ep1": {
+        "presenca_ep1": "Aparece no velório (canto da igreja) ou pode ser visitada em casa antes/depois. **Abordagem gentil destrava — pressa fecha.** Confirmar com o Mestre o tom: se os PCs forem rudes, ela se cala.",
+        "pistas_que_deixa": [
+          "Os três detalhes do corpo (mãos · frio · luz acesa)",
+          "A semente das velas de madrugada",
+          "O fato de que ela mora em frente — testemunha permanente"
+        ]
+      }
+    },
+    {
+      "id": "joao-funeraria",
+      "nome": "Seu João",
+      "role": "O Funerário",
+      "tag": "A ponte para Meireles",
+      "sigil": "key",
+      "idade": "~62 anos",
+      "funcao": "Funerário de Novavera há 30 anos · trouxe o corpo de Valdecir",
+      "attrs": [
+        "Funerário há 30 anos, conhece todos os corpos da cidade",
+        "Recebeu o corpo de Valdecir já lavado e preparado por Dr. Meireles — o que é incomum",
+        "Notou marca fininha cor de ferrugem nos olhos do cadáver — sombra de algo limpo às pressas",
+        "Entregou o caixão na igreja às 14h, saiu às 17h30",
+        "\"O doutor ficou um tempão olhando pro corpo de manhã\"",
+        "Profissional, discreto, mas chama a atenção da estranheza"
+      ],
+      "resumo": "O funerário de Novavera há 30 anos. Recebeu o corpo de Valdecir já lavado por Meireles (incomum). Notou que o doutor ficou um tempão sentado olhando pro corpo, \"médico não fica sentado olhando\". Tem o detalhe que perdeu o sono: marca fininha cor de ferrugem no canto dos olhos do cadáver — limparam, mas ficou sombra. \"Parecia que ele tinha chorado vermelho.\" Entregou o caixão na igreja às 14h, saiu às 17h30. **A ponte deliberada para os PCs apertarem Meireles.**",
+      "historia": "Trabalha na funerária pequena de Novavera há três décadas. Já enterrou três gerações da cidade. Não é fofoqueiro, mas é observador. Sua cabeça hoje está cheia daquela marca fininha no canto dos olhos de Valdecir que ele limpou mas ficou na lembrança. Não sabe o que é. Médico vê morto todo dia — não fica sentado olhando. Algo no Doutor o assustou hoje também.",
+      "como_interpretar": [
+        "Profissional acima de tudo. Não fala mal de Meireles — só comenta o que viu.",
+        "A primeira fala (incomum) sai naturalmente, sem peso. A segunda (lágrimas vermelhas) só sai com Psicologia 35 ou gentileza.",
+        "É a única testemunha visual independente da primeira praga (junto com Meireles).",
+        "Pode dar a chave do timing: \"Caixão entregue às duas. Saí às cinco e meia. Quem entrou nesse meio tempo?\""
+      ],
+      "elementos_fisicos": [
+        "Camisa social discreta, calça preta",
+        "Mãos secas, manchas de cal",
+        "No bolso da camisa: lenço dobrado, caneta"
+      ],
+      "monologos": [
+        "O corpo já veio lavado e preparado pelo Dr. Meireles — o que é incomum. E o doutor ficou um tempão olhando pro corpo de manhã. Fui buscar às nove e ele ainda tava lá, sentado, olhando. Médico vê morto todo dia. Não fica sentado olhando.",
+        "Uma coisa que me deixou sem dormir. Quando fui ajeitar o rosto dele, tinha uma marca fininha aqui, no canto dos olhos. Cor de ferrugem, seca. Já limparam, mas ficou sombra. Parecia... parecia que ele tinha chorado. Mas chorado vermelho. Eu nunca vi isso em corpo nenhum em trinta anos.",
+        "Caixão entregue às duas. Saí umas cinco e meia. O velório começou às sete. Quem entrou nesse meio tempo? A Igreja fica aberta por dentro, pelo sacristão. O Seu Benedito talvez saiba."
+      ],
+      "nota_mestre": "Seu João é a **primeira confirmação independente das lágrimas de sangue** — antes de Meireles entregar. A função narrativa dele é dupla: (1) plantar a praga numa testemunha que não sabe que é praga, (2) apontar a janela 14h–17h30 para Armindo entrar no caixão. Não tem agenda própria; está apenas perturbado.",
+      "sabe": [
+        "O timing exato do dia (caixão às 14h, saída às 17h30)",
+        "A marca de ferrugem nos olhos do cadáver",
+        "Que Meireles ficou um tempão olhando pro corpo",
+        "Que a igreja fica aberta por dentro pelo sacristão (Seu Benedito)"
+      ],
+      "nao_sabe": [
+        "O que significam as lágrimas (não sabe que é praga)",
+        "Quem entrou na igreja entre 14h e 17h30 (Armindo)",
+        "Qualquer coisa do culto"
+      ],
+      "aparicoes": [
+        {
+          "origem": "Modo Narrar · Velório · falas obrigatórias",
+          "texto": "A cena dele está no velório, ponte para Meireles.",
+          "ref": "page:narrar"
+        }
+      ],
+      "ep1": {
+        "presenca_ep1": "Aparece no velório, na entrada, conferindo relógio. Pode ser abordado por qualquer PC. As três falas obrigatórias dele saem em ordem.",
+        "pistas_que_deixa": [
+          "Primeira confirmação das lágrimas de sangue (marca fininha cor de ferrugem)",
+          "Que Meireles ficou um tempão olhando — gancho para a abordagem ao médico",
+          "A janela 14h–17h30 com a igreja aberta por dentro — gancho para Seu Benedito"
+        ]
+      }
+    },
+    {
+      "id": "benedito",
+      "nome": "Seu Benedito",
+      "role": "O Sacristão",
+      "tag": "A versão ensaiada que nenhuma rolagem quebra hoje",
+      "sigil": "badge",
+      "idade": "~70 anos",
+      "funcao": "Sacristão da Igreja de Santo Antônio há décadas",
+      "attrs": [
+        "Sacristão da Igreja há mais de 30 anos",
+        "Estava na sacristia entre 14h e 19h do dia 18, separando paramentos",
+        "Confirma que Armindo passou às 18h15 e ficou 10 min sentado num banco",
+        "\"Eu tava na sacristia. Não vi nada de mais.\"",
+        "Psicologia 60 detecta omissão — calmo demais para a estranheza da pergunta",
+        "**Nenhuma rolagem o quebra hoje** — a função já foi cumprida"
+      ],
+      "resumo": "O sacristão da Igreja de Santo Antônio. Profissional, calmo, quieto. Tem a versão ensaiada: Armindo passou por volta de 18h15, ficou 10 minutos sentado num banco da frente, rezando. Ele estava na sacristia separando paramentos. Não viu nada de mais. **Psicologia 60** revela omissão. Mas nenhuma rolagem o quebra hoje — a função dele já cumpriu: confirmou que Armindo teve 10 minutos sozinhos com o caixão no horário compatível com a serragem fresca.",
+      "historia": "Sacristão da Igreja há décadas. Conhece Armindo desde que o padre foi designado a Novavera. Acredita nele. Não acredita ativamente no culto (não é fiel da Casa), mas confia no padre. **Ele sabe que Armindo passou perto do caixão.** Não sabe o que Armindo fez. E como confia, escolheu não olhar.",
+      "como_interpretar": [
+        "Calmo, polido, levemente formal.",
+        "A versão ensaiada sai pronta: nome, horário, ação, justificativa.",
+        "Quando perguntado se Armindo esteve perto do caixão: \"Não vi exatamente onde ele tava. (pausa) Mas é estranho perguntar isso. Por quê?\"",
+        "A omissão é detectável por Psicologia 60 — mas o Mestre **não permite** que ele quebre hoje. A peça dele está ali pra ser ouvida, não pra ceder."
+      ],
+      "elementos_fisicos": [
+        "Camisa de mangas longas dobradas até o cotovelo",
+        "Calça surrada, sapato gasto",
+        "Chave da sacristia no chaveiro do cinto"
+      ],
+      "monologos": [
+        "A funerária saiu umas cinco e meia. Eu fiquei — é função minha. O Dr. Armindo passou aqui umas seis e quinze. Ficou uns dez minutos sentado num banco da frente. Rezando, eu imaginei. Eu tava na sacristia separando paramentos. Não vi nada de mais.",
+        "(se perguntarem se Armindo esteve perto do caixão) Não vi exatamente onde ele tava. A sacristia tem a porta pro outro lado. (pausa) Mas é estranho perguntar isso. Por quê?"
+      ],
+      "nota_mestre": "A função estrutural de Seu Benedito é confirmar a janela em que Armindo plantou a serragem fresca no caixão. **Ele sabe que algo aconteceu.** Mas escolhe não olhar. Não vai quebrar no Ep1. No Ep2 ou Ep3, conforme a investigação avança, ele pode começar a falar — quando o peso da omissão ficar maior que o da lealdade. Por ora, **bloqueio narrativo deliberado.**",
+      "sabe": [
+        "Que Armindo passou às 18h15 e ficou 10 min",
+        "Que a porta da sacristia dá pro outro lado — a versão ensaiada se sustenta",
+        "Que o caixão ficou sozinho durante esses 10 minutos"
+      ],
+      "nao_sabe": [
+        "O que Armindo fez exatamente (porque escolheu não olhar)",
+        "Nada do culto além do que vê na superfície"
+      ],
+      "aparicoes": [
+        {
+          "origem": "Modo Narrar · Velório · falas obrigatórias",
+          "texto": "A cena dele está no velório, fundo da igreja com velas.",
+          "ref": "page:narrar"
+        }
+      ],
+      "ep1": {
+        "presenca_ep1": "Fica no fundo da igreja durante o velório, cuidando das velas. Pode ser abordado, mas dá apenas a versão ensaiada. Quem testar Psicologia 60 percebe omissão — mas nada quebra hoje.",
+        "pistas_que_deixa": [
+          "A janela 18h15–18h25 em que Armindo esteve sozinho com o caixão",
+          "A confirmação implícita: omissão detectada por Psicologia 60"
+        ]
       }
     },
     {
       "id": "ronaldo",
-      "nome": "Ronaldo Seabra",
-      "role": "O Instrumento",
-      "tag": "52 Anos",
+      "nome": "Ronaldo",
+      "role": "O Delegado",
+      "tag": "O amigo de Valdecir que vai agir na Sessão 10",
       "sigil": "badge",
-      "idade": "52 anos (nascido 1973)",
-      "funcao": "Delegado titular de Novavera",
+      "idade": "~55 anos",
+      "funcao": "Delegado de Novavera · amigo pessoal de Valdecir",
       "attrs": [
-        "Natureza oculta: Médium sem saber",
-        "Caderno de curiosidades: 15 nomes — 8 são das 33 vítimas de 1972"
+        "Delegado da cidade há ~15 anos",
+        "Amigo pessoal de Valdecir — frequentava as conversas longas dele à noite",
+        "No velório, cadeira da entrada, semblante carregado",
+        "Recebe uma ligação às 20h00–20h30 — sai pela lateral para atender",
+        "Frase ouvida (Furtividade 35): \"...não estou dizendo que vou contar. Estou dizendo que não vou fazer isso.\"",
+        "**Quer** que alguém aperte Meireles — é ponte deliberada"
       ],
-      "resumo": "Delegado titular de Novavera, amigo de Armindo há 18 anos. Médium sem saber — o que chama de pressentimento policial é informação de almas presas.",
-      "historia": "Amigo de Armindo há 18 anos. A amizade é real. Há três anos um processo administrativo grave foi arquivado com a ajuda de Armindo. Ronaldo nunca perguntou como. O que chama de pressentimento policial é informação fragmentada de almas presas. Em setembro de 2024 mencionou num jantar um pesquisador externo que havia consultado a delegacia sobre outubro de 1972 — sem saber que estava dando a Armindo o sinal de que o ciclo entrava na fase final.",
+      "resumo": "O delegado da cidade, amigo pessoal de Valdecir. Aparece no velório sentado na cadeira da entrada. Por volta das 20h recebe uma ligação que ele esperava e torcia para que não viesse — sai pela lateral para atender. Quem segue (Furtividade 35) ouve só o lado dele: \"eu sei. Não é o que você pensa. Não vou fazer isso.\" Abordado depois, diz que veio como amigo, não delegado. Sobre a morte: \"Coração. Isso que o laudo diz\" — Psicologia 45 ouve a ênfase no \"diz\". **Quer** que apertem Meireles.",
+      "historia": "Delegado da cidade há 15 anos. Bom delegado. Não é cúmplice do culto, mas sabe que existe algo errado em Novavera há muito tempo — só nunca conseguiu provar. Era amigo pessoal de Valdecir nas conversas longas das noites de sexta. Sabe que Valdecir andava \"diferente\" nos últimos anos. Recebeu a ligação das 20h — alguém da Casa lhe pediu para abrir um inquérito sumário ou enterrar o caso de uma vez. Ele se recusou. Mas sabe que disso pra ele virar problema é uma questão de dias. Vai agir antes — é ele quem vai prender Armindo na Sessão 10 da T1.",
       "como_interpretar": [
-        "No episódio 8: encontra o caso de 1978 — trabalhador morto, sobrenome idêntico a uma vítima de 1972. Esse é o momento onde Ronaldo para de escolher não saber."
+        "Carregado. Cabeça inclinada. Vai ao velório como amigo.",
+        "Não nega ser delegado, mas separa: \"vim como amigo\".",
+        "A ênfase no \"diz\" no \"Coração. Isso que o laudo diz\" é deliberada — quer ser ouvido sem ter que falar.",
+        "Pressionado, recua para o protocolo: \"Eu não posso falar do caso.\" Mas: \"Questão técnica, falem com ele.\" Aponta Meireles.",
+        "**Ponte para a Sessão 10:** ele já decidiu agir, só precisa de motivo legal. Os PCs trazem o motivo."
       ],
-      "elementos_fisicos": [],
-      "monologos": [],
-      "nota_mestre": "",
+      "elementos_fisicos": [
+        "Casaco escuro, camisa azul",
+        "Crachá guardado no bolso, não visível",
+        "Olheiras pequenas, mãos firmes",
+        "Celular discreto, vibrate, no bolso interno do casaco"
+      ],
+      "monologos": [
+        "(ao telefone, lateral da igreja) ...eu sei. Eu sei disso. (pausa longa) Não é o que você pensa. Eles são só... não sei quem são. Chegaram hoje. (pausa) Não vou fazer isso. (pausa) Não estou dizendo que vou contar. Estou dizendo que não vou fazer isso. (pausa) Entendido.",
+        "Vim como amigo do Valdecir. Não como delegado. Embora seja difícil separar as coisas, às vezes.",
+        "(sobre a morte) Coração. Isso que o laudo diz.",
+        "(pressionado) O laudo é do Dr. Meireles. Questão técnica, falem com ele. Eu não posso falar do caso."
+      ],
+      "nota_mestre": "Ronaldo é o aliado tardio dos PCs na T1. Não age agora (Ep1), age na Sessão 10 — quando os PCs lhe entregam evidência suficiente para abrir o inquérito sem precisar do superior. Ele é o **único poder legal** que ainda funciona em Novavera. A ligação das 20h é da Casa pedindo silêncio; ele se recusou. **Está em risco.** Se os PCs forem cuidadosos, ele sobrevive a T1.",
       "sabe": [
-        "Fragmentos das almas",
-        "Que Armindo não é o que parece"
+        "Que algo está errado em Novavera há muito tempo",
+        "Que Valdecir andava \"diferente\" nos últimos anos",
+        "Que a ligação das 20h era da Casa (não diz o nome aos PCs)",
+        "Que o laudo de Meireles está sob pressão",
+        "Que os PCs são forasteiros — verificou os documentos no canto, sem alarme"
       ],
       "nao_sabe": [
-        "Que é médium",
-        "Que o caderno tem nomes das vítimas",
-        "Natureza real de Armindo"
+        "A escala do plano (acha que é seita pequena, cidade pequena)",
+        "O nome Messiah, o pentagrama, a Vigília Final",
+        "Que Armindo é o profeta das pragas — acha que ele é só o líder discreto"
       ],
       "aparicoes": [
         {
-          "origem": "Linha do Tempo — 1973 / 2024",
-          "ref": "page:timeline",
-          "texto": "Ronaldo Seabra nasce. Ronaldo menciona pesquisador a Armindo num jantar."
+          "origem": "Modo Narrar · Velório · evento das 20h",
+          "texto": "A ligação dele às 20h é evento fixo do velório.",
+          "ref": "page:narrar"
         },
         {
-          "origem": "Causalidade — Como Armindo soube que viriam",
-          "ref": "caus:1",
-          "texto": "Em setembro de 2024, Ronaldo mencionou num jantar um pesquisador externo que havia consultado a delegacia sobre outubro de 1972. Armindo interpretou como sinal de que o ciclo entrava na fase final."
-        },
-        {
-          "origem": "Temporadas — Episódio 1",
-          "ref": "page:temporadas",
-          "texto": "Ronaldo fecha o laudo antes que consigam ler."
-        },
-        {
-          "origem": "Temporadas — Episódio 8 e 9",
-          "ref": "page:temporadas",
-          "texto": "Ronaldo investigando sozinho encontra o caso de 1978. Ronaldo chega à Área Verde com tudo que descobriu."
+          "origem": "Cronologia do Dia 18 · 20h00",
+          "texto": "A ligação está na timeline.",
+          "ref": "page:dia18"
         }
       ],
       "ep1": {
-        "presenca_ep1": "Presente no velório (sem farda, como civil). Tem cena de tensão.",
-        "como_interpretar": "Delegado, mas no velório veio como amigo do Valdecir. Postura de quem está de serviço mesmo quando não está. Sabe mais do que diz — viu o laudo original que Dr. Meireles editou, fotografou em segredo, recebeu ligação anônima de manhã: 'O laudo está correto. Qualquer outra versão seria um problema.' Não é vilão — é alguém em decisão adiada.",
-        "no_episodio": [
-          {
-            "titulo": "Cronologia da manhã",
-            "texto": "7h31 chegou ao posto de saúde. Leu o laudo original por acidente. Fotografou em segredo. 9h recebeu a ligação anônima. Está com o telefone no bolso desde então."
-          },
-          {
-            "titulo": "Ligação no velório (20h–20h30)",
-            "texto": "Celular vibra. Expressão muda. Sai pela porta lateral. Se algum personagem o seguir com Furtividade 35, ouve apenas o lado dele: '...eu sei. Eu sei disso... Não é o que você pensa. Eles são só... não sei quem são. Chegaram hoje... Não vou fazer isso... Não estou dizendo que vou contar. Estou dizendo que não vou fazer isso... Entendido.'"
-          },
-          {
-            "titulo": "Se abordado depois",
-            "texto": "'Isso foi uma conversa privada. Se tiverem questões sobre a morte do Valdecir, a delegacia funciona amanhã das oito.' Psicologia 45 — sabe mais. Tensão é de decisão adiada, não do luto."
-          },
-          {
-            "titulo": "Confronto com Enigma 2 resolvido",
-            "texto": "Se os personagens cruzaram as 4 peças do Enigma 2 antes da segunda ligação, Ronaldo cede uma informação: o número de Goiânia que ligou de manhã (não existe mais quando tentarem retornar). Primeira pista física da ameaça humana."
-          }
+        "presenca_ep1": "Cadeira da entrada da igreja durante o velório. Evento fixo às 20h: telefone vibra, ele sai pela lateral. Furtividade 35 ouve a frase. Aborda-se depois — diz menos do que sabe, aponta Meireles.",
+        "pistas_que_deixa": [
+          "A ênfase no \"diz\" do laudo (Psicologia 45)",
+          "A frase ao telefone (se Furtividade 35 funcionar)",
+          "A ponte deliberada para os PCs irem ao Posto e apertar Meireles"
         ],
-        "ganchos_pos_ep1": "Pressão sobre Ronaldo cresce no Ep2. Decisão adiada vai exigir resposta."
+        "ganchos_pos_ep1": "Aliado tardio na T1. Na Sessão 10 abre o inquérito que prende Armindo publicamente."
       }
     },
     {
       "id": "sueli",
-      "nome": "Sueli Nascimento",
-      "role": "A Fratura",
-      "tag": "38 Anos",
-      "sigil": "key",
-      "idade": "38 anos (nascida 1987)",
-      "funcao": "Recrutada por Armindo em 2015",
+      "nome": "Sueli",
+      "role": "A Que Passa Devagar",
+      "tag": "Aliada da T1 que só se revela na Sessão 9",
+      "sigil": "circle",
+      "idade": "~40 anos",
+      "funcao": "Investigadora independente (ainda invisível aos PCs no Ep1) · futura aliada da T1",
       "attrs": [
-        "Fratura: junho de 2023",
-        "As 11 fichas: envelope escondido em antiquário em Goiânia"
+        "No velório, às 19h30, o carro dela passa devagar pela rua — sem parar",
+        "Observação 40 capta: mulher ao volante, olhando a igreja, segue em frente",
+        "Os PCs não a conhecem nem ouvem o nome dela no Ep1",
+        "Vai se revelar como aliada apenas na Sessão 9 da T1",
+        "Está investigando Novavera há meses por outro fio — paralelo ao de Valdecir"
       ],
-      "resumo": "Recrutada por Armindo em 2015. Não falou com Armindo. É aliada — mas não revelar isso antes do episódio 7.",
-      "historia": "Recrutada por Armindo após conferência. Disse: o critério secundário existe, Armindo estava na lista como vítima, o que ele viu na fresta não é o que acredita. Sueli não falou com Armindo. Em maio de 2024 removeu as 11 fichas com anotações marginais e as escondeu em antiquário em Goiânia. O antiquário não sabe o que guarda.",
+      "resumo": "A presença mais discreta do Ep1. O carro dela passa devagar pela rua do velório por volta das 19h30, sem parar. Observação 40 capta apenas isso: mulher ao volante, olhando a igreja, segue em frente. Os PCs não sabem o nome dela aqui. Ela é aliada da T1 que só se revelará lá na Sessão 9 — está investigando Novavera há meses por um fio paralelo.",
+      "historia": "Investigadora independente de origem não revelada (será detalhada na Sessão 9 da T1). Está atrás dos Filhos da Primeira Terra por motivo próprio — possivelmente ligado a Pirassuá 2019 (gancho lateral). Chegou a Novavera há semanas, mantém perfil baixo, conhece o terreno mas não foi vista pelos fiéis. Hoje, passou para confirmar visualmente os quatro forasteiros que chegaram. Não vai abordar agora — observou e foi embora.",
       "como_interpretar": [
-        "O que os personagens vão interpretar errado: os rastros de Sueli — documentos sumidos, conexões cortadas — vão parecer sabotagem. São proteção.",
-        "Quando os personagens finalmente a encontrarem, duas investigações paralelas percebem que olhavam o mesmo problema de lados diferentes.",
-        "Não revelar que é aliada antes do episódio 7."
+        "Não interagir hoje. Apenas a observação visual (Observação 40).",
+        "Plantar memória: \"mulher ao volante, olhando a igreja\" — voltará à mente dos PCs quando ela se apresentar na Sessão 9.",
+        "Se um PC tentar perseguir o carro, ela perde o seguidor com facilidade — é treinada."
       ],
-      "elementos_fisicos": [],
+      "elementos_fisicos": [
+        "Carro discreto (sedã prateado, comum)",
+        "Janela fechada, vidro escuro",
+        "Olhar curto, deliberado"
+      ],
       "monologos": [],
-      "nota_mestre": "",
+      "nota_mestre": "Sueli é a **semente da Sessão 9**. O Mestre planta hoje, sem qualquer explicação, sem nome, sem rosto definido. Quando ela aparecer falando, os jogadores devem ter o flash do carro passando devagar. Por isso é fundamental dar a observação no Ep1, mesmo que ninguém capte agora.",
       "sabe": [
-        "Critério secundário",
-        "Localização das 11 fichas",
-        "Acesso ao subsolo"
+        "Que existem quatro forasteiros no velório",
+        "Que algo está em curso nos próximos dias",
+        "O nome Filhos da Primeira Terra (em ponto que não será revelado agora)"
       ],
       "nao_sabe": [
-        "Conteúdo completo do critério",
-        "Conexão dos personagens com as vítimas",
-        "Que Gabriel existe",
-        "Que Abel está no grupo"
+        "O nome dos quatro PCs",
+        "O nome Messiah, o pentagrama",
+        "Que Valdecir era espião"
       ],
       "aparicoes": [
         {
-          "origem": "A Cidade — O Arquivo Histórico",
-          "ref": "local:arquivo-historico",
-          "texto": "Cilindro 2: não tem chave física — tem sequência de toques no símbolo gravado na porta. Sueli sabe."
-        },
-        {
-          "origem": "Linha do Tempo — 1987 / 2015 / 2023 / 2024",
-          "ref": "page:timeline",
-          "texto": "Sueli nasce. Sueli Nascimento (28 anos) é recrutada por Armindo. Sueli remove as 11 fichas. Antiquário em Goiânia."
-        },
-        {
-          "origem": "A Operação Semente — O Critério Secundário",
-          "ref": "",
-          "texto": ""
-        },
-        {
-          "origem": "Causalidade — Por que Sueli removeu as 11 fichas",
-          "ref": "caus:8",
-          "texto": ""
-        },
-        {
-          "origem": "",
-          "ref": "doc:diario",
-          "texto": "Encontrado no subsolo do arquivo com a chave de Valdecir e o conhecimento de Sueli."
-        },
-        {
-          "origem": "Temporadas — Episódio 3, 7 e 8",
-          "ref": "page:temporadas",
-          "texto": "Sombra de Sueli passando pela janela por menos de um minuto. Sueli faz contato direto — oferece acesso ao subsolo. Sueli entrega o critério secundário."
+          "origem": "Modo Narrar · Velório · 19h30",
+          "texto": "O carro passa devagar pela rua. Observação 40 capta o detalhe.",
+          "ref": "page:narrar"
         }
       ],
       "ep1": {
-        "presenca_ep1": "Chega à beira da rodovia às 17h40 mas NÃO entra na cidade. Fica no carro 40 minutos.",
-        "como_interpretar": "Está em Goiânia quando soube. Decidiu vir mas trava na beira da rodovia. Passa devagar pelo velório em marcha lenta, sem parar. Os personagens podem nem vê-la — mas se alguém ficar na entrada da cidade ou no caminho do velório, pode notar um carro estranho passando duas vezes. Sueli é o 'S.N.' da agenda de Valdecir — o compromisso das 10h que não foi cumprido.",
-        "no_episodio": [
-          {
-            "titulo": "17h40 — beira da rodovia",
-            "texto": "Chega no limite de Novavera. Fica no carro 40 minutos. Não entra. Decide algo."
-          },
-          {
-            "titulo": "Durante o velório",
-            "texto": "Passa devagar pelo velório em marcha lenta. Sem parar. Não desce. Vai embora antes que ninguém possa identificar quem é."
-          },
-          {
-            "titulo": "A pista que deixa",
-            "texto": "A agenda de Valdecir na sala: '10h — S.N.' Iniciais. Os personagens podem anotar — só vai fazer sentido no Episódio 7."
-          }
+        "presenca_ep1": "Aparição mínima. Carro passando às 19h30, observação 40 capta apenas \"mulher ao volante, olhando a igreja, segue em frente\". **Não interage hoje.**",
+        "pistas_que_deixa": [
+          "A observação plantada (memória futura)",
+          "Que existe alguém olhando os PCs sem se identificar"
         ],
-        "ganchos_pos_ep1": "Aparece formalmente no Episódio 7. Se os personagens deduziram a iniciativa nos olhos certos durante o Ep1, ganham vantagem narrativa quando ela se revelar."
+        "ganchos_pos_ep1": "Se revela aliada na Sessão 9 da T1."
+      }
+    },
+    {
+      "id": "reinaldo",
+      "nome": "Reinaldo",
+      "role": "O Seguidor",
+      "tag": "Investigador particular contratado por Ezequiel",
+      "sigil": "fracture",
+      "idade": "~40 anos",
+      "funcao": "Investigador particular profissional · contratado pelo Operador (Ezequiel) para observar os PCs",
+      "attrs": [
+        "Jaqueta escura, calmo, leve sotaque de fora",
+        "Mesmo porte do homem visto no Gol prata estacionado na rua à tarde (Observação 45)",
+        "Esteve na casa de Valdecir às 14h do dia 18 — destrancou a porta dos fundos por dentro",
+        "Aparece quando os PCs se movem pela cidade à noite — distância calculada, passos audíveis",
+        "\"Posso ajudar em alguma coisa? Não estava seguindo ninguém. Estou voltando pro hotel.\"",
+        "Observa e reporta. Não age."
+      ],
+      "resumo": "O investigador particular contratado por Ezequiel para observar os quatro forasteiros. Aparece quando os PCs se movem pela cidade à noite — passos atrás, distância calculada que não é nem conversa nem casual. Confrontado, responde calmo, leve sotaque de fora, \"voltando pro hotel\". Resposta de quem foi treinado. **Esteve na casa de Valdecir às 14h** e destrancou a porta dos fundos — peça que paga no clímax (Saída C, Dona Cida entra por trás).",
+      "historia": "Investigador particular profissional. Não é fiel dos Filhos da Primeira Terra — não acredita em nada. Foi contratado por Ezequiel via intermediário a partir de Brasília. Sua tarefa: observar os quatro forasteiros que Ezequiel não esperava ver chegando, identificar pontos de pressão, mapear movimentos. Esteve na casa de Valdecir à tarde — não pra plantar nada, pra confirmar o cenário. Destrancou a porta dos fundos por descuido profissional (acreditou que ia voltar). À noite, segue os PCs sem pressa.",
+      "como_interpretar": [
+        "Treinado. Responde sem hesitar. Mantém ritmo de passo.",
+        "**Não age** — observa, reporta a Ezequiel por telefone (linha fora do município).",
+        "Quando confrontado, segue andando. Não corre. Mas não tenta convencer.",
+        "Se os PCs forçarem confronto físico, reage o mínimo necessário para escapar e some por dias.",
+        "Aparece de novo no Ep2 ou Ep3 — não é descartável."
+      ],
+      "elementos_fisicos": [
+        "Jaqueta escura, jeans comum",
+        "Sapato silencioso, sola de borracha",
+        "Telefone descartável no bolso interno",
+        "Gol prata estacionado em rua paralela à de Valdecir desde 13h"
+      ],
+      "monologos": [
+        "Posso ajudar em alguma coisa? ... Não estava seguindo ninguém. Estou voltando pro hotel."
+      ],
+      "nota_mestre": "Reinaldo é a **peça invisível** do Ep1 — o operador físico de Ezequiel. A função dele aqui é dupla: (1) confirmar que existe poder maior por trás de Armindo, (2) plantar a porta dos fundos destrancada que paga no clímax (Saída C, Dona Cida entra pela cozinha). Reaparece pequeno em todo Ep2. **Não é vilão de cinema** — é trabalho. Não tem agenda emocional. Se os PCs forem espertos, podem acabar virando-o aliado em alguma sessão futura — ele é mercenário, e mercenários trocam de lado se o preço for melhor.",
+      "sabe": [
+        "Que existem quatro forasteiros e por que estão em Novavera (mais ou menos)",
+        "Que foi contratado para observar e reportar",
+        "O número de Ezequiel (descartável)",
+        "A planta da casa de Valdecir (esteve lá às 14h)"
+      ],
+      "nao_sabe": [
+        "O conteúdo real do que está em jogo (acha que é só \"seita querendo proteger reputação\")",
+        "O nome Messiah",
+        "A natureza espiritual do que está sob a Área Verde"
+      ],
+      "aparicoes": [
+        {
+          "origem": "Modo Narrar · Posto · O seguidor",
+          "texto": "Aparece quando os PCs se movem à noite pela cidade.",
+          "ref": "page:narrar"
+        },
+        {
+          "origem": "Casa de Valdecir · porta dos fundos",
+          "texto": "A porta destrancada por dentro é peça dele.",
+          "ref": "page:narrar"
+        },
+        {
+          "origem": "Cronologia do Dia 18 · 14h",
+          "texto": "A presença dele às 14h está na timeline.",
+          "ref": "page:dia18"
+        }
+      ],
+      "ep1": {
+        "presenca_ep1": "Aparece quando os PCs se movem pela cidade à noite. Curta abordagem, escapa. Sua peça mecânica é a porta dos fundos da casa de Valdecir destrancada (paga no clímax).",
+        "pistas_que_deixa": [
+          "A confirmação de presença externa profissional",
+          "A porta dos fundos da casa de Valdecir destrancada (Percepção 50 capta)",
+          "O Gol prata observado na rua (Observação 45)"
+        ],
+        "ganchos_pos_ep1": "Reaparece em todo Ep2 — figura mercenária com possibilidade de vira-casaca."
+      }
+    },
+    {
+      "id": "gabriel",
+      "nome": "Gabriel",
+      "role": "O Profeta Involuntário",
+      "tag": "A criança que desenha os sinais antes da hora",
+      "sigil": "spiral",
+      "idade": "8 anos",
+      "funcao": "Criança de Novavera · profeta involuntário sem saber",
+      "attrs": [
+        "Filho de Carmem (que está no velório, dentro da igreja)",
+        "Senta nos degraus de fora da igreja, desenhando",
+        "O caderninho de desenhos tem o \"home que chora vermeio\" (Valdecir com lágrimas de sangue) — sonhou antes de saber que ele morreu",
+        "Numa página recente: o terreno da Área Verde visto de cima, fundações no centro, **figura sem rosto bem no meio** (\"Fica aparecendo. Não sei o que é. Ontem não tinha.\")",
+        "Conversa de mais de 5 min OU tom estranho → Carmem aparece e leva o menino",
+        "Conversa substantiva = **Memória +1** (sem avisar o jogador)"
+      ],
+      "resumo": "A criança que senta nos degraus da igreja desenhando enquanto a mãe está no velório. Aparenta 8 anos. O caderninho dele tem o desenho do \"home que chora vermeio\" — sonhou Valdecir com lágrimas de sangue antes de saber que ele morreu. Numa página recente, o terreno da Área Verde visto de cima, com uma figura sem rosto bem no centro: \"Fica aparecendo. Não sei o que é. Ontem não tinha.\" **Profeta involuntário** — não sabe o que é. Conversa de mais de 5 min → Carmem aparece e leva.",
+      "historia": "Filho único de Carmem (33 anos, separada). Frequenta a escola pública. Tem 8 anos, gosta de desenhar, é gente boa de criança. **Nada nele é místico no sentido aprendido** — não é médium treinado, não tem doutrina, não sabe o que é karma. Ele apenas tem sensibilidade aflorada (Alma alta para a idade). O canal abre nele sem que ele saiba. Sonha o que vai acontecer um ou dois dias antes, desenha o que sonha, e a mãe acha tudo \"coisa de menino\", até hoje. **Carmem está começando a perceber** — daí o reflexo protetor de tirá-lo do raio dos forasteiros se a conversa ficar estranha.",
+      "como_interpretar": [
+        "Criança real. Não fala em código místico. Não fala como adulto.",
+        "Mostra o caderno se pedirem com gentileza — fecha primeiro, depois abre devagar.",
+        "A frase \"Fica aparecendo. Não sei o que é. Ontem não tinha\" sai como criança falaria: simples, sem peso.",
+        "A página do \"home que chora vermeio\" sai depois, mais para baixo no caderno.",
+        "Tom estranho ou pressão → Carmem aparece em segundos.",
+        "**Mecânica secreta: conversa substantiva = Memória +1** (anote sem avisar). O desenho do terreno marca o ponto exato da terra preta."
+      ],
+      "elementos_fisicos": [
+        "Camiseta surrada, calção, tênis",
+        "Caderninho espiral pequeno, lápis preto, lápis vermelho gasto",
+        "Carmem aparece num casaco de lã marrom quando vem buscá-lo"
+      ],
+      "monologos": [
+        "Você veio pro velório? O Seu Valdecir era legal. Ele me deixava ficar na praça quando minha mãe ia fazer compra.",
+        "(mostra desenho do terreno) Fica aparecendo. Não sei o que é. Ontem não tinha.",
+        "(mostra o desenho do rosto com lágrimas vermelhas) Esse é o Seu Valdecir. Sonhei com ele chorando assim. Antes de saber que ele morreu."
+      ],
+      "nota_mestre": "Gabriel é a **face mais delicada do horror íntimo do Ep1**. Ele é a confirmação inegável de que o sobrenatural está vazando — porque uma criança não inventa que sonhou o cara morrer no jeito exato em que ele morreu. **Conversa substantiva dá Memória +1** sem avisar o jogador. O desenho do terreno marca o ponto da terra preta — peça crítica para a investigação na Área Verde. Carmem fecha o acesso após 5 min para proteger o filho — e tem razão. Se os PCs tentarem voltar nas sessões seguintes, ela não deixa.",
+      "sabe": [
+        "O que sonha (sem entender o que é)",
+        "Que Valdecir era legal",
+        "O que o caderno mostra (mas não interpreta)"
+      ],
+      "nao_sabe": [
+        "Que é profeta de qualquer coisa",
+        "Que existe culto, sigilo, ou nó",
+        "Que os desenhos têm significado",
+        "Nada do mundo adulto da história"
+      ],
+      "aparicoes": [
+        {
+          "origem": "Modo Narrar · Velório · degraus de fora",
+          "texto": "Cena de Gabriel está no velório.",
+          "ref": "page:narrar"
+        }
+      ],
+      "ep1": {
+        "presenca_ep1": "Degraus de fora da igreja durante o velório. Carmem dentro. Conversa abre se PC for gentil — fecha em 5 min ou se tom estranho. Mecânica secreta de Memória +1.",
+        "pistas_que_deixa": [
+          "O desenho do \"home que chora vermeio\" (lágrimas de sangue)",
+          "O desenho do terreno da Área Verde com figura sem rosto no centro",
+          "A regra \"ontem não tinha\" — sinal de que algo está se manifestando agora"
+        ],
+        "ganchos_pos_ep1": "Carmem fecha o acesso. Se os PCs quiserem voltar, vão ter que conquistar a mãe primeiro."
+      }
+    },
+    {
+      "id": "dona-marta",
+      "nome": "Dona Marta",
+      "role": "Cameo da Cozinha",
+      "tag": "A que posicionou o corpo — e ninguém sabe",
+      "sigil": "key",
+      "idade": "~65 anos",
+      "funcao": "Cozinha da paróquia · fiel da Casa de Novavera (núcleo duro)",
+      "attrs": [
+        "No velório, está na cozinha da paróquia servindo café — cameo silencioso",
+        "**Foi ela quem posicionou o corpo de Valdecir** encostado no muro da Área Verde na madrugada do dia 18",
+        "Ninguém na cidade sabe",
+        "Fiel da Casa há décadas, núcleo duro junto com Adílson",
+        "Aparência absolutamente comum: senhora gentil oferecendo café"
+      ],
+      "resumo": "A senhora silenciosa que serve café na cozinha da paróquia durante o velório. Cameo absolutamente comum aos olhos dos PCs. **A camada do Mestre:** foi ela quem posicionou o corpo de Valdecir encostado no muro da Área Verde na madrugada — limpou o que precisava, virou as mãos para dentro do terreno, deixou na cena que Dona Neuza descobriria às 5h. Ninguém na cidade sabe. Núcleo duro da Casa, junto com Adílson.",
+      "historia": "Fiel da Casa de Novavera há mais de 40 anos. Da geração que ainda lembra de Hélio Drummond Vasconcellos. Inteiramente crente — não é coagida, não é manipulada. Acredita que o sigilo deve continuar até a passagem do Verdadeiro Messias, e que sacrifícios são entrega legítima. Quando soube que Valdecir tinha se voltado, ofereceu-se para a tarefa: foi ela quem foi à Área Verde de madrugada, esperou Valdecir morrer (ou ajudou — depende de onde o Mestre quiser pesar), e posicionou o corpo da forma que Armindo prescreveu. Voltou pra casa, dormiu duas horas, foi servir café no velório.",
+      "como_interpretar": [
+        "Senhora gentil. Voz baixa. Bandeja firme.",
+        "Não dá pista alguma no Ep1. Pode até dizer \"que pena\" sobre Valdecir, com a casca que ela tem treinada por décadas.",
+        "Se um PC perguntar diretamente algo sobre ela, ela responde com generalidades educadas e oferece café.",
+        "Nada quebra no Ep1. **Camada do Mestre apenas.**"
+      ],
+      "elementos_fisicos": [
+        "Avental branco simples, cabelo preso atrás",
+        "Mãos calejadas, anel de aliança fino",
+        "Bandeja de café com xícaras pequenas"
+      ],
+      "monologos": [],
+      "nota_mestre": "Dona Marta é a **camada mais escondida do Ep1**. A pergunta \"quem posicionou o corpo?\" pode até passar pela cabeça dos PCs, mas eles não chegam a ela no Ep1. Ela só vira foco em Ep4–5 (quando a Casa cai). **Nessa hora, o horror é o reconhecimento**: a senhora que servia café era a mão que ajeitou o cadáver. Por enquanto, ela é o lembrete silencioso de que os fiéis convictos são gente comum.",
+      "sabe": [
+        "Posicionou o corpo de Valdecir na madrugada",
+        "A doutrina secreta da Casa em razoável profundidade",
+        "Que existem outras Casas (não sabe a estrutura do pentagrama)",
+        "Os hábitos íntimos da paróquia e da Casa"
+      ],
+      "nao_sabe": [
+        "O nome Messiah em sentido pleno",
+        "A linhagem cósmica de Caim",
+        "A escala da Vigília Final (sabe que algo grande virá; não a contagem 3.333)"
+      ],
+      "aparicoes": [
+        {
+          "origem": "Modo Narrar · Velório · cozinha da paróquia",
+          "texto": "Cameo silencioso durante o velório.",
+          "ref": "page:narrar"
+        }
+      ],
+      "ep1": {
+        "presenca_ep1": "Cozinha da paróquia, servindo café, durante o velório. **Cameo silencioso.** Os PCs não chegam a ela hoje.",
+        "pistas_que_deixa": [
+          "(Camada do Mestre apenas — nada visível aos PCs no Ep1)"
+        ],
+        "ganchos_pos_ep1": "Foco real entre Ep4–Ep6 da T1, quando a investigação fecha o cerco sobre os fiéis duros."
       }
     }
   ],
@@ -1465,11 +1811,6 @@
       "palavras": 5
     },
     {
-      "termo": "Aparecido Marques de Souza",
-      "ref": "npc:aparecido",
-      "palavras": 4
-    },
-    {
       "termo": "João Carvalho de Oliveira",
       "ref": "npc:joao-funeraria",
       "palavras": 4
@@ -1486,7 +1827,7 @@
     },
     {
       "termo": "FILHOS DA PRIMEIRA TERRA",
-      "ref": "prop:p14-foto-rasgada-em-quatro",
+      "ref": "page:profetas",
       "palavras": 4
     },
     {
@@ -1540,18 +1881,8 @@
       "palavras": 3
     },
     {
-      "termo": "Aparecida Coelho Rodrigues",
-      "ref": "npc:cida",
-      "palavras": 3
-    },
-    {
       "termo": "Senhor Valdecir Conceição",
       "ref": "npc:valdecir",
-      "palavras": 3
-    },
-    {
-      "termo": "o investigador particular",
-      "ref": "npc:investigador",
       "palavras": 3
     },
     {
@@ -1560,28 +1891,8 @@
       "palavras": 3
     },
     {
-      "termo": "Geraldo Vieira Mendes",
-      "ref": "npc:geraldo",
-      "palavras": 3
-    },
-    {
       "termo": "Fazenda Boa Esperança",
       "ref": "page:temporadas",
-      "palavras": 3
-    },
-    {
-      "termo": "Rosângela dos Santos",
-      "ref": "npc:rosangela",
-      "palavras": 3
-    },
-    {
-      "termo": "Marisa Pereira Costa",
-      "ref": "npc:marisa",
-      "palavras": 3
-    },
-    {
-      "termo": "Seu Benedito Pacheco",
-      "ref": "npc:benedito-sacristao",
       "palavras": 3
     },
     {
@@ -1597,11 +1908,6 @@
     {
       "termo": "morte do primogênito",
       "ref": "praga:p10-morte-do-primogenito",
-      "palavras": 3
-    },
-    {
-      "termo": "Carmem Lúcia Tostes",
-      "ref": "npc:carmem",
       "palavras": 3
     },
     {
@@ -1651,11 +1957,6 @@
     },
     {
       "termo": "Casa de Valdecir",
-      "ref": "local:casa-valdecir",
-      "palavras": 3
-    },
-    {
-      "termo": "casa de Valdecir",
       "ref": "local:casa-valdecir",
       "palavras": 3
     },
@@ -1775,13 +2076,13 @@
       "palavras": 3
     },
     {
-      "termo": "investigador particular",
-      "ref": "npc:investigador",
+      "termo": "Messiah Vasconcellos",
+      "ref": "page:profetas",
       "palavras": 2
     },
     {
-      "termo": "Messiah Vasconcellos",
-      "ref": "page:profetas",
+      "termo": "Armindo Vasconcellos",
+      "ref": "npc:armindo",
       "palavras": 2
     },
     {
@@ -1791,7 +2092,7 @@
     },
     {
       "termo": "Hélio Vasconcellos",
-      "ref": "enc:helio",
+      "ref": "page:caim",
       "palavras": 2
     },
     {
@@ -1840,8 +2141,8 @@
       "palavras": 2
     },
     {
-      "termo": "O Investigador",
-      "ref": "npc:investigador",
+      "termo": "Doutor Meireles",
+      "ref": "npc:meireles",
       "palavras": 2
     },
     {
@@ -1880,8 +2181,8 @@
       "palavras": 2
     },
     {
-      "termo": "Seu Aparecido",
-      "ref": "npc:aparecido",
+      "termo": "Dona Aparecida",
+      "ref": "page:npcs",
       "palavras": 2
     },
     {
@@ -1890,23 +2191,8 @@
       "palavras": 2
     },
     {
-      "termo": "Carmem Tostes",
-      "ref": "npc:carmem",
-      "palavras": 2
-    },
-    {
-      "termo": "Vera Monteiro",
-      "ref": "npc:vera",
-      "palavras": 2
-    },
-    {
       "termo": "Funerária Paz",
       "ref": "local:funeraria-paz",
-      "palavras": 2
-    },
-    {
-      "termo": "Centro Cívico",
-      "ref": "local:centro-civico",
       "palavras": 2
     },
     {
@@ -1932,11 +2218,6 @@
     {
       "termo": "Sete Profetas",
       "ref": "page:profetas",
-      "palavras": 2
-    },
-    {
-      "termo": "Seu Benedito",
-      "ref": "npc:benedito-sacristao",
       "palavras": 2
     },
     {
@@ -1990,13 +2271,13 @@
       "palavras": 2
     },
     {
-      "termo": "Seu Geraldo",
-      "ref": "npc:geraldo",
+      "termo": "Dr. Meireles",
+      "ref": "npc:meireles",
       "palavras": 2
     },
     {
-      "termo": "Décio Murta",
-      "ref": "npc:decio",
+      "termo": "Seu Benedito",
+      "ref": "npc:benedito",
       "palavras": 2
     },
     {
@@ -2035,8 +2316,8 @@
       "palavras": 2
     },
     {
-      "termo": "Dona Cida",
-      "ref": "npc:cida",
+      "termo": "Dona Marta",
+      "ref": "npc:dona-marta",
       "palavras": 2
     },
     {
@@ -2047,6 +2328,11 @@
     {
       "termo": "o velório",
       "ref": "cena:velorio-chegada",
+      "palavras": 2
+    },
+    {
+      "termo": "Dona Cida",
+      "ref": "npc:dona-cida",
       "palavras": 2
     },
     {
@@ -2115,21 +2401,6 @@
       "palavras": 1
     },
     {
-      "termo": "Aparecido",
-      "ref": "npc:aparecido",
-      "palavras": 1
-    },
-    {
-      "termo": "Rosângela",
-      "ref": "npc:rosangela",
-      "palavras": 1
-    },
-    {
-      "termo": "sacristão",
-      "ref": "npc:benedito-sacristao",
-      "palavras": 1
-    },
-    {
       "termo": "funerária",
       "ref": "local:funeraria-paz",
       "palavras": 1
@@ -2185,6 +2456,26 @@
       "palavras": 1
     },
     {
+      "termo": "Meireles",
+      "ref": "npc:meireles",
+      "palavras": 1
+    },
+    {
+      "termo": "Benedito",
+      "ref": "npc:benedito",
+      "palavras": 1
+    },
+    {
+      "termo": "Reinaldo",
+      "ref": "npc:reinaldo",
+      "palavras": 1
+    },
+    {
+      "termo": "Severino",
+      "ref": "page:npcs",
+      "palavras": 1
+    },
+    {
       "termo": "Messiah",
       "ref": "page:profetas",
       "palavras": 1
@@ -2192,11 +2483,6 @@
     {
       "termo": "Arquivo",
       "ref": "local:arquivo-historico",
-      "palavras": 1
-    },
-    {
-      "termo": "Geraldo",
-      "ref": "npc:geraldo",
       "palavras": 1
     },
     {
@@ -2220,18 +2506,23 @@
       "palavras": 1
     },
     {
+      "termo": "Armindo",
+      "ref": "npc:armindo",
+      "palavras": 1
+    },
+    {
+      "termo": "Marlene",
+      "ref": "page:npcs",
+      "palavras": 1
+    },
+    {
+      "termo": "Adílson",
+      "ref": "page:npcs",
+      "palavras": 1
+    },
+    {
       "termo": "Igreja",
       "ref": "local:igreja-santo-antonio",
-      "palavras": 1
-    },
-    {
-      "termo": "Marisa",
-      "ref": "npc:marisa",
-      "palavras": 1
-    },
-    {
-      "termo": "Carmem",
-      "ref": "npc:carmem",
       "palavras": 1
     },
     {
@@ -2250,6 +2541,16 @@
       "palavras": 1
     },
     {
+      "termo": "Carmem",
+      "ref": "page:npcs",
+      "palavras": 1
+    },
+    {
+      "termo": "Otávio",
+      "ref": "page:npcs",
+      "palavras": 1
+    },
+    {
       "termo": "Neuza",
       "ref": "npc:neuza",
       "palavras": 1
@@ -2257,11 +2558,6 @@
     {
       "termo": "Sueli",
       "ref": "npc:sueli",
-      "palavras": 1
-    },
-    {
-      "termo": "Décio",
-      "ref": "npc:decio",
       "palavras": 1
     },
     {
@@ -2290,11 +2586,6 @@
       "palavras": 1
     },
     {
-      "termo": "Vera",
-      "ref": "npc:vera",
-      "palavras": 1
-    },
-    {
       "termo": "ALMA",
       "ref": "page:regras",
       "palavras": 1
@@ -2302,6 +2593,11 @@
     {
       "termo": "Abel",
       "ref": "page:caim",
+      "palavras": 1
+    },
+    {
+      "termo": "Cida",
+      "ref": "npc:dona-cida",
       "palavras": 1
     }
   ],
@@ -4888,6 +5184,60 @@
       "cultivo_de_helio": "Em 1925, conheceu a família Drummond Vasconcellos e segurou no colo o bebê Hélio recém-nascido. Sentiu algo. Marcou aquele bebê para ser cultivado. Durante a infância e juventude de Hélio, apareceu na vida dele como \"tio espírita excêntrico da família\" — plantou disciplina mental, apresentou conceitos. Foi esse cultivo de décadas que, em 1970, abriu o canal para que Hélio reconhecesse-se como Caim.",
       "a_ilusao_tragica": "Otaviano **nunca soube que servia ao mal.** A doutrina que aprendeu de Kassner foi distorcida pelo próprio Caim: acreditava que Kassner era figura de **redenção**, não destruição. Viveu décadas preparando o terreno para algo que entendia ao contrário. Morreu acreditando ser servo fiel de uma obra de luz.",
       "morte": "Viveu até idade altíssima e morreu por circunstâncias suspeitas, sem revelar muito. Fica como mistério permanente para a campanha. Os personagens podem, lá na frente, esbarrar no atestado de óbito de um homem velhíssimo morto subitamente — e quem conectar os pontos toca no horror fundacional desta linhagem."
+    }
+  ],
+  "npcs_mencionados": [
+    {
+      "nome": "Marlene",
+      "texto": "Filha de Valdecir. Sacrificada pela Casa em 2006, aos 19 anos, sob pretexto de \"ofertar-se à Primeira Terra\". Enterrada literalmente sob a Área Verde. Valdecir descobriu em 2009. **Motor pessoal da virada de Valdecir contra a Casa.**"
+    },
+    {
+      "nome": "Carmem",
+      "texto": "Mãe de Gabriel. 33 anos, separada. Está no velório, dentro da igreja. **Vem buscar o filho** se a conversa com forasteiros passar de 5 minutos ou ficar estranha. Começa a desconfiar dos sonhos que ele tem."
+    },
+    {
+      "nome": "Severino",
+      "texto": "Morto em 2019 — segunda praga da T1 (rãs / a vinda das moscas, em camadas). Acidente disfarçado pela Casa. **Aparece como nome em registros antigos**, gancho da Sessão 4."
+    },
+    {
+      "nome": "Dona Aparecida",
+      "texto": "Morta em 2021 — afogamento na lagoa de Novavera. Quinta morte \"natural demais\" do ciclo. Nome em registros, conexão com a Sessão 4–5."
+    },
+    {
+      "nome": "Adílson",
+      "texto": "Núcleo duro da Casa de Novavera. Fiel desde antes da fundação. **Aparece pessoalmente apenas na Sessão 5** quando a Casa se revela publicamente. No Ep1, só nome em listas."
+    },
+    {
+      "nome": "Otávio",
+      "texto": "Fiel que Vinicius matou no metrô de São Paulo na tarde do dia 18 — virou serva no instante em que morreu pronunciando a doutrina. Aparece como voz na **isca do clímax** (Saída D): \"Doutor. Eu te perdoo. Sai daí.\""
+    },
+    {
+      "nome": "Hélio Drummond Vasconcellos",
+      "texto": "Coronel do regime militar, encarnação de Caim no século XX. Conduziu a Operação dos 33 em 1972, fundou Novavera em 1974, forjou a própria morte em 1976. **Morto há 30 anos** — nome em registros que aparecem nas Sessões 7–8."
+    },
+    {
+      "nome": "Otaviano Reis",
+      "texto": "O cultivador (1880–1996). Discípulo de Adam Kassner que nunca soube que servia ao mal. Plantou em Hélio a sensibilidade que abriu o canal. **Morto em circunstâncias suspeitas** — mistério permanente da campanha."
+    },
+    {
+      "nome": "Adam Kassner",
+      "texto": "Encarnação de Caim imediatamente anterior a Hélio. Europeu do leste, séc. XIX. Encontrou e instruiu Otaviano. Morreu antes de Hélio nascer. **Nome só aparece muito tarde na campanha.**"
+    },
+    {
+      "nome": "Messiah Vasconcellos",
+      "texto": "Caim hoje. 29 anos em 2025. Mora num campo isolado, não em São Paulo. Recluso. **Não aparece no Ep1** — o nome surge escrito pela primeira vez na Sessão 9. Antagonista plenamente revelado apenas na T3."
+    },
+    {
+      "nome": "Ezequiel",
+      "texto": "Profeta Conselheiro · O Operador. Em Brasília. Braço operacional de Messiah. **No Ep1, é a voz da ligação das 15h32 ao Dr. Meireles.** Contratou Reinaldo. Antagonista principal da T2."
+    },
+    {
+      "nome": "Davi Marques",
+      "texto": "Profeta menor rebaixado depois do fracasso de Pirassuá (2019). Aparece na T2. Resoluções do karma de Floriano e Gyeno passam por ele."
+    },
+    {
+      "nome": "Os 33",
+      "texto": "33 fiéis convictos sacrificados em outubro de 1972 no terreno da futura Área Verde — Operação dos 33. Cantavam quando morreram. Acreditavam. Servem ao sigilo como servas até hoje."
     }
   ]
 }
