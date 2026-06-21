@@ -4258,46 +4258,69 @@ function cbtAddBaseArma(cid, idx){ const c=cbtGet(cid); if(!c)return;
 function cbtLocais(){ return (cbtCfg().locais_acerto)||[{id:'tronco',rotulo:'Tronco',fator:1,efeito:'Dano normal'}]; }
 function cbtAtkRoll(cid, i){
   const c=cbtGet(cid); if(!c)return; const atk=c.ataques[i]; if(!atk)return;
+  // local pré-declarado → afeta DIFICULDADE da rolagem
   const sel=document.getElementById('loc_'+c.cid+'_'+i);
-  const localId=sel?sel.value:'tronco';
-  const local=cbtLocais().find(l=>l.id===localId)||cbtLocais()[0];
+  const preLoc=sel?sel.value:'tronco';
+  const local=cbtLocais().find(l=>l.id===preLoc)||cbtLocais()[0];
   const per=cbtAtkPericia(c,atk);
   const alvo=Math.max(1,Math.floor(per*(local.fator!=null?local.fator:1)));
   const roll=cbtD(100);
   const band=cbtBand(roll,per);
-  const acertou = band.sucesso && roll<=alvo;
+  const acertou=band.sucesso && roll<=alvo;
 
-  let danoTxt='', dmgObj=null;
+  // dano BASE (tier + BD, sem modificador de local — aplicado na hora do apply)
+  let baseDmg=0;
   if(acertou){
-    // dano base por nível
-    let base;
-    if(band.tier==='extremo') base=cbtMaxExpr(atk.dano); else { base=cbtRollExpr(atk.dano).total; if(band.tier==='bom') base+=1; }
-    // bônus de dano corporal (só melee/branca)
-    let bd=0; if(atk.bd){ const bde=cbtBdAtual(c); bd=(band.tier==='extremo')?cbtMaxExpr(bde):cbtRollExpr(bde).total; }
-    let total=Math.max(0, base+bd);
-    const ignPost = (localId==='cabeca'||localId==='coracao');
-    const ignVig  = (localId==='coracao');
-    const ignArm  = (localId==='cabeca');
-    if(localId==='cabeca') total*=2;
-    const insta = (localId==='cabeca' && roll<=5);
-    dmgObj={amount:total, ignPost, ignVig, ignArm, insta, tipoArma:atk.tipo};
-    danoTxt=` · dano <b>${total}</b>${band.tier==='extremo'?' (máx)':band.tier==='bom'?' (+1)':''}`+
-      (localId==='cabeca'?' ×2 fura Postura':'')+(localId==='coracao'?' direto no HP':'')+(insta?' · <b>MORTE</b>':'');
+    if(band.tier==='extremo') baseDmg=cbtMaxExpr(atk.dano);
+    else { baseDmg=cbtRollExpr(atk.dano).total; if(band.tier==='bom') baseDmg+=1; }
+    if(atk.bd){ const bde=cbtBdAtual(c); baseDmg+=(band.tier==='extremo')?cbtMaxExpr(bde):cbtRollExpr(bde).total; }
+    baseDmg=Math.max(0,baseDmg);
   }
-  const efeitoLoc = (localId!=='tronco') ? ` <span class="cbt-mini">[${esc(local.rotulo)}]</span>` : '';
-  const alvoSel = (acertou && dmgObj) ? cbtTargetSelect(cid, dmgObj) : '';
-  cbtLog(`<span class="lt-rnd">R${COMBATE.rodada}</span><em>${esc(c.nome)}</em> ataca com <b>${esc(atk.nome)}</b>${efeitoLoc} — `+
-    `d% <span class="lt-roll">${roll}</span> vs ${alvo} → <span class="tier-${band.tier}">${band.rotulo}</span>${danoTxt}`+
-    (alvoSel?`<div class="cbt-apply">${alvoSel}</div>`:''));
+  const tierTxt = acertou ? `${band.tier==='extremo'?' <em>(máx)</em>':band.tier==='bom'?' <em>(+1 bom)</em>':''}` : '';
+  const efeitoLoc=(preLoc!=='tronco')?` <span class="cbt-mini">[${esc(local.rotulo)} declarado]</span>`:'';
+  const applyUI=acertou ? cbtApplyUI(c.cid, baseDmg, atk.tipo, preLoc, roll) : '';
+  cbtLog(`<span class="lt-rnd">R${COMBATE.rodada}</span><em>${esc(c.nome)}</em> → <b>${esc(atk.nome)}</b>${efeitoLoc} `+
+    `d% <span class="lt-roll">${roll}</span>/${alvo} → <span class="tier-${band.tier}">${band.rotulo}</span>`+
+    (acertou?` · base <b>${baseDmg}</b>${tierTxt}`:'')+(applyUI?`<div class="cbt-apply">${applyUI}</div>`:''));
 }
-function cbtTargetSelect(atacanteCid, dmgObj){
-  const opts=COMBATE.combatentes.filter(c=>c.cid!==atacanteCid && c.status!=='morto')
+/* ── UI de apply no log: alvo + local de acerto + botão ── */
+let _applyN=0;
+function cbtApplyUI(atacanteCid, baseDmg, tipoArma, preLoc, roll){
+  const uid='ca'+(++_applyN);
+  const targetOpts=COMBATE.combatentes.filter(c=>c.cid!==atacanteCid && c.status!=='morto')
     .map(c=>`<option value="${c.cid}">${esc(c.nome)} · P${c.postura_atual}/V${c.vigor_atual}/HP${c.hp_atual}</option>`).join('');
-  if(!opts) return '';
-  const payload=encodeURIComponent(JSON.stringify(dmgObj));
-  return `<span class="cbt-mini">▸ aplicar <b>${dmgObj.amount}</b> em:</span> `+
-    `<select class="cbt-sel" onchange="if(this.value)cbtApplyDamage(this.value,'${payload}')">`+
-    `<option value="">— alvo —</option>${opts}</select>`;
+  if(!targetOpts) return '<span class="cbt-mini">(sem alvos ativos)</span>';
+  const locOpts=cbtLocais().map(l=>`<option value="${l.id}"${l.id===preLoc?' selected':''}>${esc(l.rotulo)}</option>`).join('');
+  return `<span class="cbt-mini">▸ base <b>${baseDmg}</b></span>`+
+    ` <select class="cbt-sel" id="${uid}_t"><option value="">— alvo —</option>${targetOpts}</select>`+
+    ` <select class="cbt-sel loc" id="${uid}_l" title="local de acerto">${locOpts}</select>`+
+    ` <button class="cbt-btn tiny" onclick="cbtApplyFromEl('${uid}',${baseDmg},'${tipoArma}','${atacanteCid}',${roll})">Aplicar ✓</button>`;
+}
+
+/* ── aplica dano com local escolhido no log ── */
+function cbtApplyFromEl(uid, baseDmg, tipoArma, atacanteCid, roll){
+  const tgt=document.getElementById(uid+'_t');
+  const loc=document.getElementById(uid+'_l');
+  if(!tgt||!loc){ cbtToast('UI expirou — role novamente.'); return; }
+  const targetCid=tgt.value; const localId=loc.value||'tronco';
+  if(!targetCid){ cbtToast('Selecione o alvo.'); return; }
+  const ignPost=(localId==='cabeca'||localId==='coracao');
+  const ignVig=(localId==='coracao');
+  const ignArm=(localId==='cabeca');
+  const insta=(localId==='cabeca'&&roll<=5);
+  let amount=baseDmg;
+  if(localId==='cabeca') amount*=2;
+  const local=cbtLocais().find(l=>l.id===localId)||{rotulo:localId,efeito:''};
+  // log do local escolhido
+  const lbl=localId!=='tronco'?` <span class="cbt-mini">[${esc(local.rotulo)}]</span>`:'';
+  if(insta){
+    const c=cbtGet(targetCid); if(c){ c.hp_atual=0; c.status='morto'; }
+    cbtLog(`<span class="lt-rnd">R${COMBATE.rodada}</span>Cabeça + rolar ≤5${lbl} → <span class="tier-falha_critica">MORTE INSTANTÂNEA: ${esc((cbtGet(targetCid)||{}).nome||'?')}</span>`);
+    cbtSave(); renderCombate(); return;
+  }
+  const efeito=local.efeito&&localId!=='tronco'?` · <em>${esc(local.efeito)}</em>`:'';
+  cbtLog(`<span class="lt-rnd">R${COMBATE.rodada}</span>Aplicando <b>${amount}</b>${lbl}${efeito} em ${esc((cbtGet(targetCid)||{}).nome||'?')}`);
+  cbtApplyDamage(targetCid, encodeURIComponent(JSON.stringify({amount,ignPost,ignVig,ignArm,insta:false,tipoArma})));
 }
 
 /* ── APLICAÇÃO DE DANO EM CAMADAS ── */
