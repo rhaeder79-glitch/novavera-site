@@ -6,7 +6,7 @@
     "confidencial": "Documento Confidencial · Uso Interno do Mestre",
     "temporada": 1,
     "episodio_atual": 2,
-    "versao": "5.0.0",
+    "versao": "5.1.0",
     "epigrafe": [
       "O tempo não passa. O tempo cobra.",
       "A primeira dívida nunca foi paga. Tudo que veio depois é consequência."
@@ -122,8 +122,8 @@
       "nome": "Ezequiel",
       "epiteto": "O Profeta Conselheiro · O Operador",
       "localizacao": "Brasília",
-      "resumo": "O braço operacional de Messiah. Não acredita do mesmo jeito que Armindo — Ezequiel **sabe muito mais** sobre o plano real. É ele quem opera ameaças veladas (a ligação para o Dr. Meireles às 15h32 do dia 18, descrevendo a família do médico em vez de fazer ameaça explícita), contrata investigadores particulares (Heitor Furtado), e coordena a rede de fiéis ativos entre as células.",
-      "no_ep1": "Off-screen no Episódio 1 — aparece apenas como **número de Goiânia no papel do Dr. Meireles** e como contratante invisível de Heitor Furtado. Será o antagonista principal da Temporada 2.",
+      "resumo": "O braço operacional de Messiah. Não acredita do mesmo jeito que Armindo — Ezequiel **sabe muito mais** sobre o plano real. É ele quem opera ameaças veladas (a ligação para o Dr. Meireles às 15h32 do dia 18, descrevendo a família do médico em vez de fazer ameaça explícita), contrata investigadores particulares (Reinaldo Furtado), e coordena a rede de fiéis ativos entre as células.",
+      "no_ep1": "Off-screen no Episódio 1 — aparece apenas como **número de Goiânia no papel do Dr. Meireles** e como contratante invisível de Reinaldo Furtado. Será o antagonista principal da Temporada 2.",
       "em_reconstrucao": false
     }
   },
@@ -1140,7 +1140,7 @@
         "Que matou Roberto Faria em 2016 (e plantou a versão \"voltou para São Paulo\")",
         "Que Valdecir era espião tardio e que a Casa o silenciou",
         "A existência de Ezequiel em Brasília — chama de \"o Operador\" em pensamento",
-        "Que Heitor Furtado está em Novavera operando para Ezequiel",
+        "Que Reinaldo Furtado está em Novavera operando para Ezequiel",
         "A oferta de Ezequiel: silenciar os quatro custaria caro; contê-los é melhor negócio"
       ],
       "nao_sabe": [
@@ -1232,8 +1232,8 @@
       }
     },
     {
-      "id": "heitor-furtado",
-      "nome": "Heitor Furtado",
+      "id": "reinaldo-furtado",
+      "nome": "Reinaldo Furtado",
       "role": "O Agente em Campo",
       "tag": "Investigador particular profissional · operador físico de Ezequiel",
       "sigil": "fracture",
@@ -1269,7 +1269,7 @@
       "monologos": [
         "Posso ajudar em alguma coisa? ... Não estava seguindo ninguém. Estou voltando pro hotel."
       ],
-      "nota_mestre": "Heitor Furtado é a **peça invisível** do Ep1 — o operador físico de Ezequiel. A função dele aqui é dupla: (1) confirmar que existe poder maior por trás de Armindo, (2) plantar a porta dos fundos destrancada que paga no clímax (Saída C, Dona Cida entra pela cozinha). Reaparece pequeno em todo Ep2. **Não é vilão de cinema** — é trabalho. Não tem agenda emocional. Se os PCs forem espertos, podem acabar virando-o aliado em alguma sessão futura — ele é mercenário, e mercenários trocam de lado se o preço for melhor.",
+      "nota_mestre": "Reinaldo Furtado é a **peça invisível** do Ep1 — o operador físico de Ezequiel. A função dele aqui é dupla: (1) confirmar que existe poder maior por trás de Armindo, (2) plantar a porta dos fundos destrancada que paga no clímax (Saída C, Dona Cida entra pela cozinha). Reaparece pequeno em todo Ep2. **Não é vilão de cinema** — é trabalho. Não tem agenda emocional. Se os PCs forem espertos, podem acabar virando-o aliado em alguma sessão futura — ele é mercenário, e mercenários trocam de lado se o preço for melhor.",
       "sabe": [
         "Que existem quatro forasteiros e por que estão em Novavera (mais ou menos)",
         "Que foi contratado para observar e reportar",
@@ -1559,7 +1559,7 @@
         "A profundidade teológica do projeto de Caim (não é fiel da doutrina cosmológica)",
         "Os detalhes da Operação dos 33 — sabe que existiu, não viveu",
         "Que os PCs viram os 33 hoje à noite",
-        "Que Heitor Furtado é da rede (Furtado é mais baixo na cadeia)"
+        "Que Reinaldo Furtado é da rede (Furtado é mais baixo na cadeia)"
       ],
       "aparicoes": [
         {
@@ -1973,55 +1973,159 @@
     }
   },
   "combate": {
-    "intro": "Tracker de combate do Mestre. Os 4 PCs entram com atributos reais da ficha; NPCs do banco e combatentes avulsos entram com stats provisórios que o Mestre ajusta na hora. Tudo persiste no navegador (localStorage) — dá pra pausar e retomar entre sessões.",
+    "intro": "Tracker de combate fiel ao sistema (Cap. 9). Saúde em TRÊS camadas — Postura → Vigor → HP. O ataque é absorvido camada a camada; locais de acerto furam camadas. PCs entram com atributos reais; NPCs e avulsos entram provisórios e o Mestre ajusta. Tudo persiste no navegador.",
     "formulas": {
-      "hp": "HP = Corpo + Alma",
-      "vigor": "Vigor = Corpo × 5",
-      "postura": "Postura = Reflexos ÷ 5 (arredonda pra baixo)",
-      "esquiva": "Esquiva = Reflexos ÷ 2 (arredonda pra baixo)",
-      "sanidade": "Sanidade Inicial = Alma",
-      "iniciativa": "Ordem por Reflexos (maior primeiro); empate desempata por Postura, depois nome"
+      "hp": "HP = (Corpo + Alma) ÷ 10 (arredonda pra cima) · vida bruta, última camada",
+      "vigor": "Vigor = Corpo ÷ 5 · resistência física, segunda camada",
+      "postura": "Postura = Reflexos ÷ 5 · resposta ativa, primeira camada (absorve metade do dano)",
+      "iniciativa": "Iniciativa = Reflexos (valor direto, sem rolagem). Maior age primeiro."
     },
+    "camadas": "ATAQUE → POSTURA (absorve metade + gasta 1 ponto) → VIGOR → HP → AGONIA → MORTE. Postura reseta ao fim da cena. Vigor recupera devagar (1d4/descanso). HP recupera muito devagar (hospital).",
     "faixas": [
       {
-        "tier": "critico",
-        "rotulo": "Crítico",
-        "regra": "d% = 01"
+        "tier": "extremo",
+        "rotulo": "Sucesso Extremo",
+        "regra": "d% ≤ perícia ÷ 5",
+        "dano": "dano MÁXIMO da arma"
       },
       {
-        "tier": "extremo",
-        "rotulo": "Extremo",
-        "regra": "d% ≤ perícia ÷ 5"
+        "tier": "bom",
+        "rotulo": "Sucesso Bom",
+        "regra": "d% ≤ perícia ÷ 2",
+        "dano": "+1 no dano"
       },
       {
         "tier": "normal",
-        "rotulo": "Sucesso",
-        "regra": "d% ≤ perícia"
+        "rotulo": "Sucesso Normal",
+        "regra": "d% ≤ perícia",
+        "dano": "dano normal"
       },
       {
         "tier": "falha",
         "rotulo": "Falha",
-        "regra": "d% > perícia"
+        "regra": "d% > perícia",
+        "dano": "—"
       },
       {
-        "tier": "fumble",
-        "rotulo": "Fumble",
-        "regra": "d% = 100 (ou 96–100 se perícia < 50)"
+        "tier": "falha_critica",
+        "rotulo": "Falha Crítica",
+        "regra": "d% = 100 (ou 96–99 se perícia < 50)",
+        "dano": "—"
       }
     ],
-    "dano_critico": "Em Extremo ou Crítico, os dados de dano são rolados em dobro (impale). O modificador fixo entra uma vez.",
+    "locais_acerto": [
+      {
+        "id": "tronco",
+        "rotulo": "Tronco",
+        "fator": 1.0,
+        "penalidade": "Nenhuma",
+        "efeito": "Dano normal nas camadas"
+      },
+      {
+        "id": "pernas",
+        "rotulo": "Pernas",
+        "fator": 0.5,
+        "penalidade": "Difícil (≤ metade)",
+        "efeito": "Dano normal + alvo perde mobilidade na próxima rodada"
+      },
+      {
+        "id": "bracos",
+        "rotulo": "Braços",
+        "fator": 0.5,
+        "penalidade": "Difícil (≤ metade)",
+        "efeito": "Dano normal + alvo perde a ação seguinte ou solta o que segurava"
+      },
+      {
+        "id": "cabeca",
+        "rotulo": "Cabeça",
+        "fator": 0.2,
+        "penalidade": "Extrema (≤ um quinto)",
+        "efeito": "Ignora Postura e armadura. Dano DOBRA. Rolar 01–05 = morte instantânea"
+      },
+      {
+        "id": "coracao",
+        "rotulo": "Coração / órgão vital",
+        "fator": 0.2,
+        "penalidade": "Extrema (≤ um quinto)",
+        "efeito": "Ignora Postura E Vigor. Vai direto no HP"
+      }
+    ],
+    "bd_tabela": [
+      {
+        "min": 15,
+        "max": 30,
+        "bd": "-1"
+      },
+      {
+        "min": 35,
+        "max": 50,
+        "bd": "0"
+      },
+      {
+        "min": 55,
+        "max": 70,
+        "bd": "1d4"
+      },
+      {
+        "min": 75,
+        "max": 90,
+        "bd": "1d6"
+      }
+    ],
+    "bd_nota": "Bônus de Dano Corporal: só em mãos limpas / armas brancas. Armas de fogo NÃO recebem.",
+    "armaduras": [
+      {
+        "id": "nenhuma",
+        "rotulo": "Nenhuma",
+        "fogo": 0,
+        "branca": 0,
+        "obs": ""
+      },
+      {
+        "id": "roupa_pesada",
+        "rotulo": "Roupa pesada / casaco grosso",
+        "fogo": 0,
+        "branca": 1,
+        "obs": "Não cobre armas de fogo"
+      },
+      {
+        "id": "colete_leve",
+        "rotulo": "Colete tático leve",
+        "fogo": 2,
+        "branca": 1,
+        "obs": "Reduz só calibre baixo"
+      },
+      {
+        "id": "colete_pesado",
+        "rotulo": "Colete tático pesado",
+        "fogo": 4,
+        "branca": 2,
+        "obs": "-1 Reflexos p/ Postura"
+      },
+      {
+        "id": "militar",
+        "rotulo": "Armadura militar corporal",
+        "fogo": 6,
+        "branca": 3,
+        "obs": "Muito restritiva. Não cobre cabeça"
+      }
+    ],
     "status_list": [
       {
         "id": "ativo",
         "rotulo": "Ativo"
       },
       {
-        "id": "ferido",
-        "rotulo": "Ferido"
+        "id": "descontrolado",
+        "rotulo": "Descontrolado (Postura 0)"
       },
       {
-        "id": "ko",
-        "rotulo": "Fora de combate"
+        "id": "ferido_grave",
+        "rotulo": "Ferido grave (Vigor 0)"
+      },
+      {
+        "id": "agonizando",
+        "rotulo": "Agonizando (HP 0)"
       },
       {
         "id": "possuido",
@@ -2033,78 +2137,150 @@
       }
     ],
     "pericia_padrao": 50,
-    "nota_npc_stats": "Os NPCs do banco não têm atributos numéricos canônicos — a Bíblia guarda só a camada narrativa. Ao adicionar um NPC, ele entra com um padrão provisório (50 em tudo) marcado com ⚠ pra você ajustar na hora. Uma onda futura pode gravar blocos de combate canônicos por NPC, se você quiser.",
+    "nota_npc_stats": "NPCs do banco não têm atributos numéricos canônicos — a Bíblia guarda só a camada narrativa. Entram provisórios (50 em tudo, ⚠) pra você ajustar na hora.",
     "armas_base": [
       {
-        "nome": "Desarmado (soco/briga)",
+        "nome": "Soco",
         "tipo": "cac",
         "base_attr": "corpo",
-        "dano": "1d3+BD",
+        "dano": "1d3",
         "alcance": "Corpo a corpo",
+        "bd": true,
+        "obs": "Briga / Mãos Limpas"
+      },
+      {
+        "nome": "Chute",
+        "tipo": "cac",
+        "base_attr": "corpo",
+        "dano": "1d4",
+        "alcance": "Corpo a corpo",
+        "bd": true,
         "obs": "Briga"
       },
       {
-        "nome": "Faca / canivete",
-        "tipo": "branca",
+        "nome": "Cabeçada",
+        "tipo": "cac",
         "base_attr": "corpo",
-        "dano": "1d4+BD",
+        "dano": "1d4",
         "alcance": "Corpo a corpo",
-        "obs": "Lâmina curta"
+        "bd": true,
+        "obs": "-1 Postura do próprio atacante"
       },
       {
-        "nome": "Facão",
+        "nome": "Objeto improvisado leve",
         "tipo": "branca",
         "base_attr": "corpo",
-        "dano": "1d6+BD",
+        "dano": "1d4",
         "alcance": "Corpo a corpo",
+        "bd": true,
+        "obs": "Pode quebrar após uso"
+      },
+      {
+        "nome": "Objeto improvisado pesado (cadeira, taco)",
+        "tipo": "branca",
+        "base_attr": "corpo",
+        "dano": "1d6",
+        "alcance": "Corpo a corpo",
+        "bd": true,
+        "obs": "-10% na rolagem"
+      },
+      {
+        "nome": "Canivete",
+        "tipo": "branca",
+        "base_attr": "reflexos",
+        "dano": "1d4",
+        "alcance": "Corpo a corpo",
+        "bd": true,
+        "obs": "Lutar Faca"
+      },
+      {
+        "nome": "Faca de cozinha / facão",
+        "tipo": "branca",
+        "base_attr": "reflexos",
+        "dano": "1d6",
+        "alcance": "Corpo a corpo",
+        "bd": true,
+        "obs": "Lutar Faca"
+      },
+      {
+        "nome": "Faca de combate / punhal",
+        "tipo": "branca",
+        "base_attr": "reflexos",
+        "dano": "1d6+1",
+        "alcance": "Corpo a corpo",
+        "bd": true,
+        "obs": "Lutar Faca"
+      },
+      {
+        "nome": "Machado pequeno",
+        "tipo": "branca",
+        "base_attr": "reflexos",
+        "dano": "1d8",
+        "alcance": "Corpo a corpo",
+        "bd": true,
+        "obs": "Lento (-5 iniciativa)"
+      },
+      {
+        "nome": "Pistola pequena (.22)",
+        "tipo": "fogo",
+        "base_attr": "reflexos",
+        "dano": "1d6",
+        "alcance": "15 m",
+        "bd": false,
         "obs": ""
       },
       {
-        "nome": "Pedaço de pau / cacetete",
-        "tipo": "branca",
-        "base_attr": "corpo",
-        "dano": "1d6+BD",
-        "alcance": "Corpo a corpo",
-        "obs": "Improvisada"
-      },
-      {
-        "nome": "Garrafa quebrada",
-        "tipo": "branca",
-        "base_attr": "corpo",
-        "dano": "1d4+BD",
-        "alcance": "Corpo a corpo",
-        "obs": "Improvisada · quebra no uso"
-      },
-      {
-        "nome": "Pistola 9mm (Glock G19)",
+        "nome": "Pistola média (.38 / 9mm)",
         "tipo": "fogo",
         "base_attr": "reflexos",
         "dano": "1d10",
-        "alcance": "15 m",
-        "obs": "Semiautomática"
+        "alcance": "20 m",
+        "bd": false,
+        "obs": "Glock G19 entra aqui"
       },
       {
-        "nome": "Revólver .38",
+        "nome": "Pistola alta (.45 / .357)",
         "tipo": "fogo",
         "base_attr": "reflexos",
-        "dano": "1d10",
-        "alcance": "15 m",
+        "dano": "1d10+2",
+        "alcance": "25 m",
+        "bd": false,
         "obs": ""
       },
       {
-        "nome": "Espingarda (calibre 12)",
+        "nome": "Revólver",
         "tipo": "fogo",
         "base_attr": "reflexos",
-        "dano": "2d6+4",
-        "alcance": "10 m",
-        "obs": "Dano cai com a distância"
+        "dano": "1d10",
+        "alcance": "20 m",
+        "bd": false,
+        "obs": ""
       },
       {
-        "nome": "Rifle / carabina",
+        "nome": "Espingarda cal. 12 (perto)",
         "tipo": "fogo",
         "base_attr": "reflexos",
-        "dano": "2d6+4",
-        "alcance": "90 m",
+        "dano": "4d6",
+        "alcance": "5 m",
+        "bd": false,
+        "obs": "1d6 se longe (até 30 m)"
+      },
+      {
+        "nome": "Rifle de caça",
+        "tipo": "fogo",
+        "base_attr": "reflexos",
+        "dano": "2d6+2",
+        "alcance": "200 m",
+        "bd": false,
+        "obs": ""
+      },
+      {
+        "nome": "Rifle de precisão (.308)",
+        "tipo": "fogo",
+        "base_attr": "reflexos",
+        "dano": "2d10",
+        "alcance": "500 m+",
+        "bd": false,
         "obs": ""
       }
     ],
@@ -2115,45 +2291,50 @@
           "tipo": "fogo",
           "base_attr": "reflexos",
           "dano": "1d10",
-          "alcance": "15 m",
-          "obs": "Equipamento de ficha"
+          "alcance": "20 m",
+          "bd": false,
+          "obs": "Pistola 9mm · ficha"
         },
         {
-          "nome": "Desarmado",
+          "nome": "Soco",
           "tipo": "cac",
           "base_attr": "corpo",
-          "dano": "1d3+BD",
+          "dano": "1d3",
           "alcance": "Corpo a corpo",
+          "bd": true,
           "obs": ""
         }
       ],
       "floriano": [
         {
-          "nome": "Desarmado",
+          "nome": "Soco",
           "tipo": "cac",
           "base_attr": "corpo",
-          "dano": "1d3+BD",
+          "dano": "1d3",
           "alcance": "Corpo a corpo",
-          "obs": "Sem arma — a valise de exorcismo não fere"
+          "bd": true,
+          "obs": "Sem arma"
         }
       ],
       "vinicius": [
         {
-          "nome": "Desarmado",
+          "nome": "Soco",
           "tipo": "cac",
           "base_attr": "corpo",
-          "dano": "1d3+BD",
+          "dano": "1d3",
           "alcance": "Corpo a corpo",
-          "obs": "Chega sem arma"
+          "bd": true,
+          "obs": "Sem arma"
         }
       ],
       "gyeno": [
         {
-          "nome": "Desarmado (treino militar)",
+          "nome": "Soco (treino militar)",
           "tipo": "cac",
           "base_attr": "corpo",
-          "dano": "1d3+BD",
+          "dano": "1d3",
           "alcance": "Corpo a corpo",
+          "bd": true,
           "obs": "Veterano"
         }
       ]
@@ -2310,7 +2491,7 @@
       "titulo": "As Rãs",
       "status": "em_curso",
       "subtitulo": "A praga 2 cai sobre a praga 1 — e o amigo vira carcereiro",
-      "gancho": "Continuação direta do Ep1. O dia 19 começa com a casa de Valdecir lacrada pela polícia e a notícia da morte de Dona Cida ainda fresca. Ronaldo abre a delegacia para os PCs como \"amigo\" — e oferece o trato: a corregedoria pelo Roberto em troca de ajuda. Marisa Mendes entrega três fichas criminais antigas (Sebastião, Honório, Joaquim — quadros bíblicos). O caderno do Ep1, ainda fechado, aponta para a Natalina como guardiã da chave. No café, ela destrava o caderno — os 33, o ritual, os fragmentos, o bilhete vermelho. Vão ao hospital tarde demais: o Dr. Meireles acabou de ser levado num Corolla preto, o mesmo que levou Valdecir. Corrida para a Área Verde — clímax. Cemitério sem lápides. Fragmentos do Valdecir. Os 33 reconhecem Gyeno como lâmina. Duelo curto com Heitor Furtado. Floriano vê Valdecir livre chorando sangue. Ronaldo chega primeiro, encobre os quatro — Dom Josias desce de carro preto na casa de Natalina.",
+      "gancho": "Continuação direta do Ep1. O dia 19 começa com a casa de Valdecir lacrada pela polícia e a notícia da morte de Dona Cida ainda fresca. Ronaldo abre a delegacia para os PCs como \"amigo\" — e oferece o trato: a corregedoria pelo Roberto em troca de ajuda. Marisa Mendes entrega três fichas criminais antigas (Sebastião, Honório, Joaquim — quadros bíblicos). O caderno do Ep1, ainda fechado, aponta para a Natalina como guardiã da chave. No café, ela destrava o caderno — os 33, o ritual, os fragmentos, o bilhete vermelho. Vão ao hospital tarde demais: o Dr. Meireles acabou de ser levado num Corolla preto, o mesmo que levou Valdecir. Corrida para a Área Verde — clímax. Cemitério sem lápides. Fragmentos do Valdecir. Os 33 reconhecem Gyeno como lâmina. Duelo curto com Reinaldo Furtado. Floriano vê Valdecir livre chorando sangue. Ronaldo chega primeiro, encobre os quatro — Dom Josias desce de carro preto na casa de Natalina.",
       "data_in_game": "19 de março de 2025 · tarde → noite",
       "praga": "Praga 2 — Rãs · vítima: Dr. Cláudio Meireles",
       "foco": "Desenvolve os núcleos de **Sergie** (o tio Roberto, Gabriel, o trato) e **Gyeno** (a imunidade, os 33, Pirassuá). Floriano leva a pincelada da Natalina. Vinicius, um toque com a carta de SP.",
@@ -3135,8 +3316,8 @@
       "palavras": 1
     },
     {
-      "termo": "Heitor Furtado",
-      "ref": "npc:heitor-furtado",
+      "termo": "Reinaldo Furtado",
+      "ref": "npc:reinaldo-furtado",
       "palavras": 1
     },
     {
@@ -3301,7 +3482,7 @@
     },
     {
       "termo": "Furtado",
-      "ref": "npc:heitor-furtado",
+      "ref": "npc:reinaldo-furtado",
       "palavras": 1
     },
     {
@@ -3601,7 +3782,7 @@
       "vitima": "Dr. Cláudio Meireles",
       "quando": "~20h do dia 19 de março de 2025",
       "como": "Afogado na água da cova fresca preparada por Adílson Ribeiro, na Área Verde. Rãs reais ao redor (a praga é a forma). **Forma e função:** silenciar Meireles E executar o segundo sinal — o culto dobra a necessidade.",
-      "mao_de": "Heitor Furtado (tirou Meireles do hospital num Corolla preto); Adílson Ribeiro (preparou a cova); Armindo (presidiu)",
+      "mao_de": "Reinaldo Furtado (tirou Meireles do hospital num Corolla preto); Adílson Ribeiro (preparou a cova); Armindo (presidiu)",
       "status": "em_curso",
       "sinal_publico": "Vai ser encontrado no clímax do Ep2; o laudo será forjado depois (por outro médico, dado que Meireles é o próprio falsificador morto)",
       "eco_ep1": "A presença das rãs no terreno como detalhe atmosférico no clímax (que os PCs não viram porque pularam direto pro ritual)."
@@ -4207,7 +4388,7 @@
           "tipo": "narracao",
           "ordem": 15,
           "titulo": "A marca de mão no capô",
-          "texto": "Ao voltar ao carro: sobre a poeira do dia de estrada, uma marca de mão. Pequena. Apoiada por um momento, como quem se inclinou para olhar dentro pela janela do passageiro. Dedos e palma nítidos. Fresca — dez minutos, no máximo. Não há ninguém na praça. [GM: foi o investigador particular, Heitor Furtado.]"
+          "texto": "Ao voltar ao carro: sobre a poeira do dia de estrada, uma marca de mão. Pequena. Apoiada por um momento, como quem se inclinou para olhar dentro pela janela do passageiro. Dedos e palma nítidos. Fresca — dez minutos, no máximo. Não há ninguém na praça. [GM: foi o investigador particular, Reinaldo Furtado.]"
         },
         {
           "tipo": "escolha",
@@ -4224,7 +4405,7 @@
       "destrava_para": [
         "cena:velorio-chegada"
       ],
-      "mestre_only": "A marca de mão no capô é de Heitor Furtado, investigador particular contratado por Ezequiel. A cal atrás do prédio foi pintada por Adílson Ribeiro (núcleo duro da Casa) há ~10 dias, manutenção do sigilo. O 'Padre Armindo Vasconcellos' assinou A.V. a autorização da diligência de Roberto em 2016 — sabia que Roberto vinha investigar e organizou a execução fora de Novavera."
+      "mestre_only": "A marca de mão no capô é de Reinaldo Furtado, investigador particular contratado por Ezequiel. A cal atrás do prédio foi pintada por Adílson Ribeiro (núcleo duro da Casa) há ~10 dias, manutenção do sigilo. O 'Padre Armindo Vasconcellos' assinou A.V. a autorização da diligência de Roberto em 2016 — sabia que Roberto vinha investigar e organizou a execução fora de Novavera."
     },
     {
       "id": "chegada-floriano",
@@ -4630,7 +4811,7 @@
           "tipo": "narracao",
           "ordem": 19,
           "titulo": "O Gol prata",
-          "texto": "Parado na rua lateral, a 50m, vidros fechados. Se Vinicius andar na direção dele, o motor liga e o carro sai sem pressa. [GM: Heitor Furtado, o investigador particular.]"
+          "texto": "Parado na rua lateral, a 50m, vidros fechados. Se Vinicius andar na direção dele, o motor liga e o carro sai sem pressa. [GM: Reinaldo Furtado, o investigador particular.]"
         },
         {
           "tipo": "observacao_mestre",
@@ -5104,7 +5285,7 @@
         "cena:investigacao-meireles",
         "cena:casa-valdecir-1"
       ],
-      "mestre_only": "Heitor Furtado (investigador particular) está na praça, no carro Gol prata, anotando quem sai da Igreja, em que ordem, com quem conversa. Não age. Reporta a Ezequiel via WhatsApp depois."
+      "mestre_only": "Reinaldo Furtado (investigador particular) está na praça, no carro Gol prata, anotando quem sai da Igreja, em que ordem, com quem conversa. Não age. Reporta a Ezequiel via WhatsApp depois."
     },
     {
       "id": "investigacao-meireles",
@@ -5233,7 +5414,7 @@
       "arco": "investigacao",
       "arco_titulo": "Investigação Pós-Velório (21h00–22h00)",
       "arco_ordem": 2,
-      "titulo": "O Seguidor — Heitor Furtado",
+      "titulo": "O Seguidor — Reinaldo Furtado",
       "subtitulo": "Em qualquer momento do deslocamento noturno",
       "duracao_estimada": "5-8 min",
       "local_ref": "local:centro-civico-praca",
@@ -5280,19 +5461,19 @@
           "atributo": "Observação",
           "dificuldade": 45,
           "contexto": "Comparar com o motorista do Gol prata do posto",
-          "o_que_destrava": "Mesmo porte. Mesmo carro. Mesmo homem. (GM: Heitor Furtado. Observa e reporta — não age fisicamente neste episódio.)"
+          "o_que_destrava": "Mesmo porte. Mesmo carro. Mesmo homem. (GM: Reinaldo Furtado. Observa e reporta — não age fisicamente neste episódio.)"
         },
         {
           "tipo": "observacao_mestre",
           "ordem": 6,
           "titulo": "LINHA VERMELHA do Ep1",
-          "texto": "A ÚNICA presença hostil humana em campo é Heitor Furtado, e ele OBSERVA, NÃO AGE. Sem capangas, sem ataques. Se os PCs forem agressivos, ele se retira. Se cercarem, ele recusa conversa. Heitor Furtado é o motivo visual que fecha o episódio (a pegada de calçado de homem indo PARA DENTRO da Área Verde sem nenhuma saindo — foi ele, na tarde, no reconhecimento). E é também quem destrancou o ferrolho da cozinha de Valdecir às 14h."
+          "texto": "A ÚNICA presença hostil humana em campo é Reinaldo Furtado, e ele OBSERVA, NÃO AGE. Sem capangas, sem ataques. Se os PCs forem agressivos, ele se retira. Se cercarem, ele recusa conversa. Reinaldo Furtado é o motivo visual que fecha o episódio (a pegada de calçado de homem indo PARA DENTRO da Área Verde sem nenhuma saindo — foi ele, na tarde, no reconhecimento). E é também quem destrancou o ferrolho da cozinha de Valdecir às 14h."
         }
       ],
       "destrava_para": [
         "cena:casa-valdecir-1"
       ],
-      "mestre_only": "Heitor Furtado, 44, investigador particular contratado por Ezequiel via 'advogado de Brasília'. Ele reconhece o sobrenatural pelas evidências mas não acredita — relata para Ezequiel como 'forasteiros agindo de forma errática'. Ezequiel é quem entende o que o relatório significa. Heitor Furtado NÃO é vilão pessoal — é profissional. Não tortura, não machuca, não atira. Faz vigilância e fotografia. No Ep2 vai escalar a missão dele se os PCs ficarem em Novavera; nos Eps 5+ pode virar aliado dúbio."
+      "mestre_only": "Reinaldo Furtado, 44, investigador particular contratado por Ezequiel via 'advogado de Brasília'. Ele reconhece o sobrenatural pelas evidências mas não acredita — relata para Ezequiel como 'forasteiros agindo de forma errática'. Ezequiel é quem entende o que o relatório significa. Reinaldo Furtado NÃO é vilão pessoal — é profissional. Não tortura, não machuca, não atira. Faz vigilância e fotografia. No Ep2 vai escalar a missão dele se os PCs ficarem em Novavera; nos Eps 5+ pode virar aliado dúbio."
     },
     {
       "id": "casa-valdecir-1",
@@ -5320,7 +5501,7 @@
           "atributo": "Percepção",
           "dificuldade": 50,
           "contexto": "Na cozinha",
-          "o_que_destrava": "O ferrolho da porta dos fundos está DESTRAVADO POR DENTRO, em posição que ninguém deixa por descuido. [GM: Heitor Furtado, 14h. Paga no clímax — Saída C, ele pode entrar por aqui.]"
+          "o_que_destrava": "O ferrolho da porta dos fundos está DESTRAVADO POR DENTRO, em posição que ninguém deixa por descuido. [GM: Reinaldo Furtado, 14h. Paga no clímax — Saída C, ele pode entrar por aqui.]"
         },
         {
           "tipo": "narracao",
@@ -5644,7 +5825,7 @@
           "atributo": "Observação",
           "dificuldade": 30,
           "contexto": "Saída — a pegada",
-          "o_que_destrava": "Meia pegada recente perto do muro, calçado masculino, das últimas três ou quatro horas. INDO PARA DENTRO DO TERRENO. NENHUMA SAINDO. [GM: Heitor Furtado, no reconhecimento da tarde. Primeira aparição do motivo visual que fecha o episódio.]"
+          "o_que_destrava": "Meia pegada recente perto do muro, calçado masculino, das últimas três ou quatro horas. INDO PARA DENTRO DO TERRENO. NENHUMA SAINDO. [GM: Reinaldo Furtado, no reconhecimento da tarde. Primeira aparição do motivo visual que fecha o episódio.]"
         }
       ],
       "destrava_para": [
@@ -5878,7 +6059,7 @@
           "tipo": "escolha",
           "ordem": 6,
           "titulo": "Saída B — Não abrem / ignoram",
-          "texto": "Ela insiste, preocupada de verdade; depois dá a volta e acha a porta dos fundos destrancada (Heitor Furtado, 14h): Da cozinha, a voz dela: 'Gente? A porta de trás tava aberta... o Seu Valdecir nunca deixava essa porta aberta...' Já está dentro, fora do círculo, no escuro. A próxima vez que a virem, NÃO É MAIS ELA."
+          "texto": "Ela insiste, preocupada de verdade; depois dá a volta e acha a porta dos fundos destrancada (Reinaldo Furtado, 14h): Da cozinha, a voz dela: 'Gente? A porta de trás tava aberta... o Seu Valdecir nunca deixava essa porta aberta...' Já está dentro, fora do círculo, no escuro. A próxima vez que a virem, NÃO É MAIS ELA."
         },
         {
           "tipo": "escolha",
@@ -6090,25 +6271,31 @@
           "tipo": "fala",
           "ordem": 2,
           "titulo": "Ronaldo — abertura cálida",
-          "texto": "*\"Vocês. Não dormi pensando na noite de ontem. (serve café sem perguntar) Senta. Antes de qualquer papel: eu acredito em vocês. O que aconteceu com a Dona Cida não foi o que vai estar escrito naquele laudo, e nós dois sabemos.\"*"
+          "texto": "*\"Vocês. Não dormi pensando na noite de ontem. (serve café sem perguntar) Senta. Antes de qualquer papel: eu acredito em vocês. O que aconteceu com a Dona Cida não foi o que vai estar escrito naquele laudo, e nós dois sabemos.\"*",
+          "npc_ref": "npc:ronaldo"
         },
         {
           "tipo": "fala",
           "ordem": 3,
           "titulo": "Ronaldo — a montagem do trato",
-          "texto": "*\"Eu tô sozinho nisso há tempo demais. Não posso mexer pra cima. Mas vocês não são daqui — vocês podem ir onde eu não posso. Me ajudem a montar o caso contra a igreja, fora dos autos, meu, e eu abro o que eu tenho.\"*"
+          "texto": "*\"Eu tô sozinho nisso há tempo demais. Não posso mexer pra cima. Mas vocês não são daqui — vocês podem ir onde eu não posso. Me ajudem a montar o caso contra a igreja, fora dos autos, meu, e eu abro o que eu tenho.\"*",
+          "npc_ref": "npc:ronaldo"
         },
         {
           "tipo": "teste",
           "ordem": 4,
           "titulo": "Psicologia 50",
-          "texto": "Quem testar percebe: **caloroso demais, ansioso.** Ele mede o quanto eles sabem. Anote — **não confirme.** A camada de Mestre: ele não tem nada para entregar. Está fisgando."
+          "texto": "Quem testar percebe: **caloroso demais, ansioso.** Ele mede o quanto eles sabem. Anote — **não confirme.** A camada de Mestre: ele não tem nada para entregar. Está fisgando.",
+          "atributo": "Psicologia",
+          "dificuldade": "50",
+          "o_que_destrava": "Percebe: caloroso demais, ansioso. Ele mede o quanto os PCs sabem. Anote — **não confirme**. Camada do Mestre: ele não tem nada para entregar; está fisgando. [→ T2]"
         },
         {
           "tipo": "fala",
           "ordem": 5,
           "titulo": "O trato — núcleo do Sergie",
-          "texto": "*\"Faria. Eu puxei seu nome por reflexo. Tem um Roberto Faria num registro interno daqui — 2016, com uma autorização assinada 'A.V.'. Seu parente? (espera) Ele passou por Novavera, e não foi turismo. O arquivo dele não tá comigo — subiu pra corregedoria faz tempo. Eu peço formalmente hoje. Com sorte chega em um, dois dias. Se você topar me ajudar, eu corro com isso.\"*"
+          "texto": "*\"Faria. Eu puxei seu nome por reflexo. Tem um Roberto Faria num registro interno daqui — 2016, com uma autorização assinada 'A.V.'. Seu parente? (espera) Ele passou por Novavera, e não foi turismo. O arquivo dele não tá comigo — subiu pra corregedoria faz tempo. Eu peço formalmente hoje. Com sorte chega em um, dois dias. Se você topar me ajudar, eu corro com isso.\"*",
+          "npc_ref": "npc:ronaldo"
         },
         {
           "tipo": "observacao_mestre",
@@ -6126,25 +6313,32 @@
           "tipo": "fala",
           "ordem": 8,
           "titulo": "Marisa — abordagem nervosa",
-          "texto": "*\"Eu... vocês vieram do Sr. Ronaldo? Posso falar com vocês um minuto? (olha ao redor) Não aqui. No corredor de fora. Por favor.\"*"
+          "texto": "*\"Eu... vocês vieram do Sr. Ronaldo? Posso falar com vocês um minuto? (olha ao redor) Não aqui. No corredor de fora. Por favor.\"*",
+          "npc_ref": "npc:marisa"
         },
         {
           "tipo": "fala",
           "ordem": 9,
           "titulo": "Marisa — o motivo do sumiço",
-          "texto": "*\"Eu tirei uns dias. Depois da semana passada eu não tava conseguindo dormir. (baixo) Eu não sou de me meter. Mas eu trabalho no arquivo há doze anos, e tem uma coisa que me pesa. O Seu Valdecir pediu esses três, várias vezes, nos últimos tempos. Ficava olhando como quem reza. Eu fiz cópia, não sei nem por quê.\"*"
+          "texto": "*\"Eu tirei uns dias. Depois da semana passada eu não tava conseguindo dormir. (baixo) Eu não sou de me meter. Mas eu trabalho no arquivo há doze anos, e tem uma coisa que me pesa. O Seu Valdecir pediu esses três, várias vezes, nos últimos tempos. Ficava olhando como quem reza. Eu fiz cópia, não sei nem por quê.\"*",
+          "npc_ref": "npc:marisa"
         },
         {
           "tipo": "prop",
           "ordem": 10,
           "titulo": "Entrega das três fichas",
-          "texto": "Marisa entrega as três fichas (props 16, 17, 18): **Sebastião Quirino do Carmo** (Crucificação, 19/04/2019), **Honório Vilela Sobrinho** (Judas, 31/03/2021), **Joaquim Telles Ferreira** (Coré soterrado, 05/04/2023). *\"Se vocês vão terminar o que ele começou, levem. Eu não posso ser a pessoa que entregou isso aqui. Vocês não são daqui — vocês podem. Eu não.\"*"
+          "texto": "Marisa entrega as três fichas (props 16, 17, 18): **Sebastião Quirino do Carmo** (Crucificação, 19/04/2019), **Honório Vilela Sobrinho** (Judas, 31/03/2021), **Joaquim Telles Ferreira** (Coré soterrado, 05/04/2023). *\"Se vocês vão terminar o que ele começou, levem. Eu não posso ser a pessoa que entregou isso aqui. Vocês não são daqui — vocês podem. Eu não.\"*",
+          "prop_ref": "prop:p16-ficha-sebastiao",
+          "contexto": "Marisa entrega as três fichas (props 16 → p18). Sebastião Quirino (Crucificação, 19/04/2019), Honório Vilela Sobrinho (Judas, 31/03/2021), Joaquim Telles Ferreira (Coré soterrado, 05/04/2023). \"Se vocês vão terminar o que ele começou, levem.\""
         },
         {
           "tipo": "teste",
           "ordem": 11,
           "titulo": "Observação/Investigar 40 — cruzar as fichas",
-          "texto": "**A mesma mão.** Quem cruzar percebe: (1) **Meireles** assina as três → ele é o fio; (2) **Benedito** aparece sem álibi em uma; (3) **Natalina** aparece nas três em três formas diferentes (vigia, vizinha, Sra. N. Braga) → a vigia = a chave; (4) **Adílson Ribeiro** responsável pela obra na ficha 3 → atalho para a Área Verde; (5) datas na **Semana Santa**; ficha 3 colada à **Área Verde**."
+          "texto": "**A mesma mão.** Quem cruzar percebe: (1) **Meireles** assina as três → ele é o fio; (2) **Benedito** aparece sem álibi em uma; (3) **Natalina** aparece nas três em três formas diferentes (vigia, vizinha, Sra. N. Braga) → a vigia = a chave; (4) **Adílson Ribeiro** responsável pela obra na ficha 3 → atalho para a Área Verde; (5) datas na **Semana Santa**; ficha 3 colada à **Área Verde**.",
+          "atributo": "Observação / Investigar",
+          "dificuldade": "40",
+          "o_que_destrava": "Os detalhes impossíveis são a mesma mão. O **Meireles assina as três** — ele é o fio [→ hospital]. A **Natalina** aparece nas três em formas diferentes [→ café]. O **Adílson Ribeiro** é responsável pela obra na ficha 3, colada à Área Verde [→ atalho]. Datas: sempre Semana Santa."
         },
         {
           "tipo": "observacao_mestre",
@@ -6156,7 +6350,9 @@
           "tipo": "prop",
           "ordem": 13,
           "titulo": "O caderno examinado de perto — o cartão",
-          "texto": "Em algum momento (provavelmente ao sair da Delegacia carregando as fichas + o caderno), alguém examina o caderno trancado de perto pela primeira vez com calma. Encontra um **cartão preso por dentro da capa** (prop 23): *\"A chave ficou com uma das poucas pessoas em quem eu ainda confio nesta cidade. Ela sabe quem vocês são.\"* → **Natalina.**"
+          "texto": "Em algum momento (provavelmente ao sair da Delegacia carregando as fichas + o caderno), alguém examina o caderno trancado de perto pela primeira vez com calma. Encontra um **cartão preso por dentro da capa** (prop 23): *\"A chave ficou com uma das poucas pessoas em quem eu ainda confio nesta cidade. Ela sabe quem vocês são.\"* → **Natalina.**",
+          "prop_ref": "prop:p23-cartao-chave",
+          "contexto": "Virando o caderno, gravado no couro do verso: \"A chave ficou com uma das poucas pessoas em quem eu ainda confio nesta cidade. Ela sabe quem vocês são.\" [→ Natalina]"
         }
       ],
       "destrava_para": [
@@ -6190,19 +6386,23 @@
           "tipo": "fala",
           "ordem": 1,
           "titulo": "Gabriel — reconhecimento",
-          "texto": "*\"Você é o homem que pergunta. (mostra o desenho sem pedirem) Já veio outro homem que perguntava igualzinho. Sentava do mesmo jeito que você. Ele também não acreditava em mim.\"*"
+          "texto": "*\"Você é o homem que pergunta. (mostra o desenho sem pedirem) Já veio outro homem que perguntava igualzinho. Sentava do mesmo jeito que você. Ele também não acreditava em mim.\"*",
+          "npc_ref": "npc:gabriel"
         },
         {
           "tipo": "prop",
           "ordem": 2,
           "titulo": "Desenho atual + desenho antigo",
-          "texto": "O desenho de hoje: um **terreno visto de cima**, fundações no centro, uma figura de pé na água. Numa página atrás, **um homem mais velho, de costas, andando para dentro do terreno — e não saindo**. Letra torta: *\"o home que num voltô\"* (prop 27)."
+          "texto": "O desenho de hoje: um **terreno visto de cima**, fundações no centro, uma figura de pé na água. Numa página atrás, **um homem mais velho, de costas, andando para dentro do terreno — e não saindo**. Letra torta: *\"o home que num voltô\"* (prop 27).",
+          "prop_ref": "prop:p27-desenho-gabriel-home",
+          "contexto": "Desenho de hoje: terreno visto de cima, fundações no centro, figura de pé na água rasa. Numa página atrás: homem mais velho de costas entrando no terreno — não saindo. Letra torta: \"o home que num voltô.\" (GM: o Roberto, 2016.)"
         },
         {
           "tipo": "fala",
           "ordem": 3,
           "titulo": "Gabriel — a frase que gela",
-          "texto": "*\"Esse é antigo. Eu era pequeno. Mas eu lembro dele. Ele tinha a sua cara, moço.\"*"
+          "texto": "*\"Esse é antigo. Eu era pequeno. Mas eu lembro dele. Ele tinha a sua cara, moço.\"*",
+          "npc_ref": "npc:gabriel"
         },
         {
           "tipo": "observacao_mestre",
@@ -6214,7 +6414,8 @@
           "tipo": "fala",
           "ordem": 5,
           "titulo": "Carmem chega — corta o acesso",
-          "texto": "*\"Gabriel. Não enche os moços. (para os PCs, dura) Ele desenha coisa que assusta. Não liguem.\"*"
+          "texto": "*\"Gabriel. Não enche os moços. (para os PCs, dura) Ele desenha coisa que assusta. Não liguem.\"*",
+          "npc_ref": "npc:carmem"
         },
         {
           "tipo": "observacao_mestre",
@@ -6254,7 +6455,8 @@
           "tipo": "fala",
           "ordem": 1,
           "titulo": "Natalina — a chave",
-          "texto": "*\"Ele me deu faz três anos. 'Guarda longe da casa, e entrega pra quem vier perguntar pelos quatro.' Vocês são quatro. Demorou.\"*"
+          "texto": "*\"Ele me deu faz três anos. 'Guarda longe da casa, e entrega pra quem vier perguntar pelos quatro.' Vocês são quatro. Demorou.\"*",
+          "npc_ref": "npc:natalina"
         },
         {
           "tipo": "mecanica",
@@ -6266,43 +6468,56 @@
           "tipo": "prop",
           "ordem": 3,
           "titulo": "Leitura — (I) Os 33",
-          "texto": "Prop 20, etapa I. Os fatos: 1972, operação, trinta e três fiéis convictos, gente que confiava, morta num descampado. Cidade erguida em cima dois anos depois. *\"Novavera é uma lápide. Eu morei a vida inteira sobre uma cova e chamei de casa.\"* **Etapa 1 — fatos.** A visceral fica para a Área Verde."
+          "texto": "Prop 20, etapa I. Os fatos: 1972, operação, trinta e três fiéis convictos, gente que confiava, morta num descampado. Cidade erguida em cima dois anos depois. *\"Novavera é uma lápide. Eu morei a vida inteira sobre uma cova e chamei de casa.\"* **Etapa 1 — fatos.** A visceral fica para a Área Verde.",
+          "prop_ref": "prop:p20-pagina-caderno-33",
+          "contexto": "1972: trinta e três fiéis, gente de confiança, morta num descampado. Novavera erguida dois anos depois. \"Novavera é uma lápide. Eu morei a vida inteira sobre uma cova e chamei de casa.\""
         },
         {
           "tipo": "prop",
           "ordem": 4,
           "titulo": "Leitura — (II) O Ritual",
-          "texto": "Prop 20, etapa II. *\"As mortes não são acasos. São feitas — em formas exatas, antigas, cada uma um sinal...\"* + *\"Eu não entendo como escolhem. Sei que algumas são levadas à força, e que outras caminham até lá por livre e espontânea vontade, como quem atende um chamado.\"* + *\"Está recomeçando. Eu sinto o ritmo de novo. Eu cheguei tarde da última vez. Não cheguem.\"*"
+          "texto": "Prop 20, etapa II. *\"As mortes não são acasos. São feitas — em formas exatas, antigas, cada uma um sinal...\"* + *\"Eu não entendo como escolhem. Sei que algumas são levadas à força, e que outras caminham até lá por livre e espontânea vontade, como quem atende um chamado.\"* + *\"Está recomeçando. Eu sinto o ritmo de novo. Eu cheguei tarde da última vez. Não cheguem.\"*",
+          "prop_ref": "prop:p20-pagina-caderno-33",
+          "contexto": "\"As mortes não são acasos. São feitas — em formas exatas, antigas, cada uma um sinal, todas com um propósito. Há uma conta sendo paga, e a forma importa mais que a vítima.\" E: \"Está recomeçando. Eu sinto o ritmo de novo, como antes. Não cheguem tarde.\""
         },
         {
           "tipo": "prop",
           "ordem": 5,
           "titulo": "Leitura — (III) A Confissão \"eu fui um deles\"",
-          "texto": "Prop 20, etapa III. *\"Eu fui um deles. Por anos, eu vi e não vi — escolhi não ver. Até a noite em que vi de verdade. Depois disso, não dá pra desver.\"* → ele era do culto; cego até um evento; ponte para a cena 5.5 (Marlene)."
+          "texto": "Prop 20, etapa III. *\"Eu fui um deles. Por anos, eu vi e não vi — escolhi não ver. Até a noite em que vi de verdade. Depois disso, não dá pra desver.\"* → ele era do culto; cego até um evento; ponte para a cena 5.5 (Marlene).",
+          "prop_ref": "prop:p20-pagina-caderno-33",
+          "contexto": "\"Eu fui um deles. Por anos, eu vi e não vi — escolhi não ver. Até a noite em que vi de verdade. Depois disso, não dá pra desver.\""
         },
         {
           "tipo": "prop",
           "ordem": 6,
           "titulo": "Leitura — (IV) Os Fragmentos · Cifra · Sueli",
-          "texto": "Prop 20, etapa IV. *\"Eles levaram o resto. Eu sabia que levariam, então parti em pedaços e deixei cada pedaço com alguém que confio.\"* + cifra: *\"PROCUREM QUEM GUARDA O NASCIMENTO. O TEMPO COBRA.\"* → **Sueli Nascimento**, senha *\"o tempo cobra\"*. + *\"FILHOS DA PRIMEIRA TERRA. OUTRAS CIDADES. O VERDADEIRO MESSIAS VIRÁ.\"* → a rede, T2."
+          "texto": "Prop 20, etapa IV. *\"Eles levaram o resto. Eu sabia que levariam, então parti em pedaços e deixei cada pedaço com alguém que confio.\"* + cifra: *\"PROCUREM QUEM GUARDA O NASCIMENTO. O TEMPO COBRA.\"* → **Sueli Nascimento**, senha *\"o tempo cobra\"*. + *\"FILHOS DA PRIMEIRA TERRA. OUTRAS CIDADES. O VERDADEIRO MESSIAS VIRÁ.\"* → a rede, T2.",
+          "prop_ref": "prop:p20-pagina-caderno-33",
+          "contexto": "\"Eles levaram o resto. Parti em pedaços e deixei cada pedaço com alguém que confio. Quem juntar os pedaços, junta a verdade. Procurem quem guarda.\" Cifra Kardec: **PROCUREM QUEM GUARDA O NASCIMENTO. O TEMPO COBRA.** [→ Sueli Nascimento; a rede; T2]"
         },
         {
           "tipo": "prop",
           "ordem": 7,
           "titulo": "Página dos Quatro",
-          "texto": "Prop 22. *\"Eu procuro gente marcada pelo culto...\"* + 4 linhas: *o sobrinho do que perguntou demais · o padre de Pirassuá · o que já derramou o sangue deles · o soldado que a marca não levou*. **No Ep2 só a do Sergie se decifra** (com o trato + Roberto = \"o que perguntou demais\"). Os outros ficam enigma — um por episódio."
+          "texto": "Prop 22. *\"Eu procuro gente marcada pelo culto...\"* + 4 linhas: *o sobrinho do que perguntou demais · o padre de Pirassuá · o que já derramou o sangue deles · o soldado que a marca não levou*. **No Ep2 só a do Sergie se decifra** (com o trato + Roberto = \"o que perguntou demais\"). Os outros ficam enigma — um por episódio.",
+          "prop_ref": "prop:p22-pagina-dos-quatro",
+          "contexto": "\"Eu procuro gente marcada pelo culto.\" Quatro linhas: \"o sobrinho do que perguntou demais\" · \"o padre de Pirassuá\" · \"o que já derramou o sangue deles\" · \"o soldado que a marca não levou\". No Ep2 só o do Sergie se decifra. Os outros ficam enigma — um por episódio."
         },
         {
           "tipo": "prop",
           "ordem": 8,
           "titulo": "Bilhete Vermelho — push para o hospital",
-          "texto": "Entre as páginas do caderno, uma **folha solta em caneta vermelha** (prop 21): *\"Devo checar isto de perto com o Meireles. Ele sabe mais do que assina. Se ele falar, cai tudo. POSTO DE SAÚDE DE NOVAVERA. AGORA.\"* → **O Meireles é o fio vivo. Vão ao hospital.**"
+          "texto": "Entre as páginas do caderno, uma **folha solta em caneta vermelha** (prop 21): *\"Devo checar isto de perto com o Meireles. Ele sabe mais do que assina. Se ele falar, cai tudo. POSTO DE SAÚDE DE NOVAVERA. AGORA.\"* → **O Meireles é o fio vivo. Vão ao hospital.**",
+          "prop_ref": "prop:p21-bilhete-vermelho",
+          "contexto": "Folha solta, caneta vermelha, letra apressada: \"Devo checar isto de perto com o Meireles. Ele sabe mais do que assina. Se ele falar, cai tudo.\" [→ hospital, agora]"
         },
         {
           "tipo": "fala",
           "ordem": 9,
           "titulo": "Floriano ↔ Natalina — pincelada",
-          "texto": "A sós, ela serve mais café só a ele: *\"Você foi padre. (não é pergunta) E parou de rezar de verdade num dia exato. Tem um menino em você que você não conseguiu segurar.\"* Se ele deixar: *\"A culpa que não vira nada é desperdício. A sua tem um lugar pra ir. Você só ainda não sabe qual é.\"*"
+          "texto": "A sós, ela serve mais café só a ele: *\"Você foi padre. (não é pergunta) E parou de rezar de verdade num dia exato. Tem um menino em você que você não conseguiu segurar.\"* Se ele deixar: *\"A culpa que não vira nada é desperdício. A sua tem um lugar pra ir. Você só ainda não sabe qual é.\"*",
+          "npc_ref": "npc:natalina"
         },
         {
           "tipo": "mecanica",
@@ -6314,7 +6529,8 @@
           "tipo": "fala",
           "ordem": 11,
           "titulo": "Marlene — a confissão",
-          "texto": "Mais fundo: Em 2006, o Valdecir **viu** e não impediu — uma mulher, Marlene, levada ao terreno. Foi a noite em que ele parou de ser cego. Passou dezoito anos pagando essa conta montando o caderno. *\"Eu fui covarde uma vez. Estou tentando não ser duas.\"*"
+          "texto": "Mais fundo: Em 2006, o Valdecir **viu** e não impediu — uma mulher, Marlene, levada ao terreno. Foi a noite em que ele parou de ser cego. Passou dezoito anos pagando essa conta montando o caderno. *\"Eu fui covarde uma vez. Estou tentando não ser duas.\"*",
+          "contexto": "Narração do caderno. Em 2006, o Valdecir viu e não impediu: uma mulher, Marlene, levada ao terreno. Foi a noite em que ele parou de ser cego. Passou dezoito anos pagando essa conta. \"Eu fui covarde uma vez. Estou tentando não ser duas.\""
         }
       ],
       "destrava_para": [
@@ -6344,7 +6560,8 @@
           "tipo": "fala",
           "ordem": 1,
           "titulo": "Recepcionista — chegada",
-          "texto": "*\"O doutor? Saiu com um homem agorinha, faz uns quinze minutos. Um carro preto esperava ele lá fora — um Corolla. Ele nem desligou o computador. Disse que já voltava.\"*"
+          "texto": "\"O doutor? Saiu com um homem agorinha, faz uns quinze minutos. Um carro preto esperava ele lá fora — um Corolla. Ele nem desligou o computador. Disse que já voltava.\"",
+          "contexto": "A sala do Meireles: luz acesa, cadeira afastada às pressas, café pela metade ainda morno, jaleco no gancho, celular esquecido vibrando."
         },
         {
           "tipo": "narracao",
@@ -6356,19 +6573,24 @@
           "tipo": "teste",
           "ordem": 3,
           "titulo": "Observação/Percepção 35 — laudo escondido",
-          "texto": "Quem revistar a mesa percebe: fundo falso de gaveta, ou atrás de um quadro. Dentro: **o arquivo escondido do Meireles** (prop 19) — último ato de consciência."
+          "texto": "Quem revistar a mesa percebe: fundo falso de gaveta, ou atrás de um quadro. Dentro: **o arquivo escondido do Meireles** (prop 19) — último ato de consciência.",
+          "atributo": "Observação / Percepção",
+          "dificuldade": "35",
+          "o_que_destrava": "Fundo falso de gaveta ou atrás de um quadro — o arquivo escondido do Meireles. Laudo verdadeiro do Valdecir: marcas no pulso direito como se puxado; terra e sangue compatíveis com a Área Verde; \"Sueli Nascimento viu o Valdecir num Corolla preto subindo pra Área Verde de madrugada\"; e no rodapé trêmulo: \"Se isso vazar, eu acho que vêm atrás de mim.\""
         },
         {
           "tipo": "prop",
           "ordem": 4,
           "titulo": "Laudo real do Valdecir",
-          "texto": "Prop 19. As 4 anomalias + **\"marcas no pulso direito\"** (foi puxado) + **\"terra e sangue compatíveis com a Área Verde\"** (foi morto lá) + **\"a vizinha — Sueli Nascimento — disse ter visto o Valdecir num Corolla preto subindo pra Área Verde de madrugada. Anotei e não pus no laudo.\"** + rodapé tremido: **\"Se isso vazar, eu acho que vêm atrás de mim.\"**"
+          "texto": "Prop 19. As 4 anomalias + **\"marcas no pulso direito\"** (foi puxado) + **\"terra e sangue compatíveis com a Área Verde\"** (foi morto lá) + **\"a vizinha — Sueli Nascimento — disse ter visto o Valdecir num Corolla preto subindo pra Área Verde de madrugada. Anotei e não pus no laudo.\"** + rodapé tremido: **\"Se isso vazar, eu acho que vêm atrás de mim.\"**",
+          "prop_ref": "prop:p19-laudo-valdecir-real",
+          "contexto": "Arquivo escondido do Meireles, último ato de consciência. Laudo com anotações de próprio punho: 4 anomalias, pulso puxado, Área Verde, Sueli/Corolla, \"vêm atrás de mim\"."
         },
         {
           "tipo": "momento_pavor",
           "ordem": 5,
           "titulo": "O estalo",
-          "texto": "O **Corolla preto que levou Valdecir para morrer na Área Verde é o mesmo que acabou de levar o Meireles.** Mesmo carro. Mesma direção. Mesmo destino. **Deixe a mesa montar.**"
+          "texto": "O Corolla preto que levou o Valdecir para morrer na Área Verde é **o mesmo** que acabou de levar o Meireles. Mesmo carro. Mesma direção. Mesmo destino. (GM: deixe a mesa montar. Aí fica louco.)"
         },
         {
           "tipo": "observacao_mestre",
@@ -6380,7 +6602,7 @@
           "tipo": "mecanica",
           "ordem": 7,
           "titulo": "A corrida — agora",
-          "texto": "Não há hora marcada — o que aperta é a **imediatez**. O Meireles está vivo agora — sendo levado para o mesmo terreno onde mataram Valdecir, no mesmo carro. **Quinze minutos de vantagem.** Três caminhos para a Área Verde: o caderno (o altar); o Adílson (a obra); a direção do Corolla (a recepcionista aponta). **A corrida começa.**"
+          "texto": "Três caminhos para a Área Verde — nenhum gargalo: o caderno (o altar / a cova fresca); o Adílson (a obra — segui-lo é o caminho mais curto); a direção do Corolla (a recepcionista aponta). O Meireles está vivo — levado há quinze minutos. A corrida começa. Agora."
         }
       ],
       "destrava_para": [
@@ -6400,7 +6622,7 @@
       "local_ref": "local:area-verde",
       "pc_focal_ref": "pc:gyeno",
       "npcs_presentes": [
-        "heitor-furtado",
+        "reinaldo-furtado",
         "adilson"
       ],
       "props_refs": [
@@ -6415,61 +6637,73 @@
           "tipo": "narracao",
           "ordem": 1,
           "titulo": "Meireles afogado — praga 2",
-          "texto": "O Dr. Meireles está morto, afogado em **quinze centímetros de água** sobre a terra preta, de joelhos. As rãs sobem por ele como se ele fosse parte do terreno. **Ninguém se afoga assim sozinho.** A segunda praga, encenada."
+          "texto": "O chão está encharcado. No centro das fundações há água rasa que não estava ali. E nela, de bruços, um vulto de jaleco branco: o Dr. Meireles, afogado em **quinze centímetros de água** sobre a terra preta, de joelhos. As rãs sobem por ele como se ele fosse parte do terreno. Ninguém se afoga assim sozinho. A segunda praga, encenada."
         },
         {
           "tipo": "narracao",
           "ordem": 2,
           "titulo": "O cemitério — Área Verde revelada",
-          "texto": "Aqui a Área Verde deixa de ser um terreno e se mostra pelo que é: **um cemitério sem lápides**. À luz fraca, vocês veem que o chão é coberto de marcas leves, retangulares, regulares — covas. E, meio enterrados, abafados pela terra, **papéis**: alguns rasgados, alguns guardados em latas, fragmentos que o Valdecir escondeu aqui ao longo dos anos. O culto enterra a obra; o Valdecir enterrou a verdade no mesmo chão."
+          "texto": "À luz fraca, vocês percebem: o chão é coberto de marcas leves, retangulares, regulares. Covas. E meio enterrados, abafados pela terra, **papéis** — fragmentos que o Valdecir escondeu aqui ao longo dos anos. O culto enterra a obra; o Valdecir enterrou a verdade no mesmo chão. **A Área Verde é um cemitério sem lápides.**"
         },
         {
           "tipo": "teste",
           "ordem": 3,
           "titulo": "Achar os fragmentos — 3 vias",
-          "texto": "Três pistas para encontrar: (1) **cavar** ativamente; (2) **Observação 35**; (3) usar o **desenho do Gabriel** (que aponta o ponto exato)."
+          "texto": "Três pistas para encontrar: (1) **cavar** ativamente; (2) **Observação 35**; (3) usar o **desenho do Gabriel** (que aponta o ponto exato).",
+          "atributo": "Cavar / Observação / Desenho do Gabriel",
+          "dificuldade": "35",
+          "o_que_destrava": "Três achados entre os fragmentos: **item do Roberto Faria** (Sergie) · **fragmento de Pirassuá** (Gyeno) · **carta da rede de SP** (Vinicius). Regra das três pistas — três caminhos para cada achado."
         },
         {
           "tipo": "prop",
           "ordem": 4,
           "titulo": "Item do Roberto — núcleo do Sergie",
-          "texto": "Prop 24. Meio enterrado, inconfundível: algo do tio Roberto Faria — a caderneta de investigador dele, ou a identidade funcional, ou o isqueiro gravado. Como se ele tivesse estado **de pé aqui** e nunca tivesse saído. **Sanidade −1d3.** A camada do Mestre: o Roberto morreu neste ponto, em 2016, pela mão do Ronaldo. Sergie ainda não sabe quem — só sente que o tio terminou aqui. Cruza com o desenho do Gabriel: *\"o home que num voltô\"*."
+          "texto": "Prop 24. Meio enterrado, inconfundível: algo do tio Roberto Faria — a caderneta de investigador dele, ou a identidade funcional, ou o isqueiro gravado. Como se ele tivesse estado **de pé aqui** e nunca tivesse saído. **Sanidade −1d3.** A camada do Mestre: o Roberto morreu neste ponto, em 2016, pela mão do Ronaldo. Sergie ainda não sabe quem — só sente que o tio terminou aqui. Cruza com o desenho do Gabriel: *\"o home que num voltô\"*.",
+          "prop_ref": "prop:p24-fragmento-roberto",
+          "contexto": "Meio enterrado, inconfundível: algo do tio Roberto Faria — caderneta de investigador, identidade funcional ou isqueiro gravado. Como se ele tivesse estado de pé aqui e nunca tivesse saído. **Sanidade −1d3.** Cruza com o desenho do Gabriel (\"o home que num voltô\"). [→ T2: Ronaldo matou o Roberto aqui, em 2016]"
         },
         {
           "tipo": "prop",
           "ordem": 5,
           "titulo": "Fragmento de Pirassuá — núcleo do Gyeno",
-          "texto": "Prop 25. *\"Pirassuá. Os que fugiram foram marcados de longe. A marca os encontrou onde estivessem — e os fez se marcar e morrer. Todos, menos os que a marca não pega.\"* O Gyeno reconhece: os cinco desertores, o gesto da Dona Cida, o sinal na própria pele dos companheiros. E ele, vivo."
+          "texto": "Prop 25. *\"Pirassuá. Os que fugiram foram marcados de longe. A marca os encontrou onde estivessem — e os fez se marcar e morrer. Todos, menos os que a marca não pega.\"* O Gyeno reconhece: os cinco desertores, o gesto da Dona Cida, o sinal na própria pele dos companheiros. E ele, vivo.",
+          "prop_ref": "prop:p25-fragmento-pirassua",
+          "contexto": "\"Pirassuá. Os que fugiram foram marcados de longe. A marca os encontrou onde estivessem — e os fez se marcar e morrer. Todos, menos os que a marca não pega.\" O Gyeno reconhece: os cinco desertores, o gesto da Dona Cida, o sinal na pele dos companheiros. E ele, vivo. [→ a natureza dele]"
         },
         {
           "tipo": "prop",
           "ordem": 6,
           "titulo": "Carta da rede SP — toque do Vinicius",
-          "texto": "Prop 26. Cópia de carta de operador da rede para superior, sobre julgamento em SP. **Três socos:** (1) o sistema que ele perdeu foi comprado; (2) o homem que ele matou (Otávio) era a rede; (3) **a rede já sabia o nome dele**. Chegada dele a Novavera deixa de ser acaso. **Não explique mais. Deixe o peso.**"
+          "texto": "Prop 26. Cópia de carta de operador da rede para superior, sobre julgamento em SP. **Três socos:** (1) o sistema que ele perdeu foi comprado; (2) o homem que ele matou (Otávio) era a rede; (3) **a rede já sabia o nome dele**. Chegada dele a Novavera deixa de ser acaso. **Não explique mais. Deixe o peso.**",
+          "prop_ref": "prop:p26-carta-rede-sp",
+          "contexto": "Cópia de carta de operador da rede a superior, sobre julgamento em SP: \"...fui ao julgamento para fechar o assunto do jornalista. O problema é o defensor público — um tal de Vinícius Fonseca. O Otávio fica de prontidão se o dinheiro não bastar...\" Para o Vinicius: o sistema que ele perdeu não falhou — foi comprado. O Otávio era a rede. Ela já sabia o nome dele antes de Novavera."
         },
         {
           "tipo": "teste",
           "ordem": 7,
           "titulo": "A cobrança — POD 50 / POD 55",
-          "texto": "Ao entrar na Área Verde: **POD 50.** Falha = Memória +1, sensação de ser olhado por algo que te conhece por outro nome. +5 min depois: **POD 55.** Falha = Memória +1d3, sobreposição temporal. **Fragmentos por PC:** Sergie (mão assinando + voz dizendo o sobrenome dele), Floriano (criança que ele não segurou), Vinicius (próprios passos correndo de algo que ele já fez), **Gyeno: NADA.** Silêncio absoluto enquanto os três vacilam — e desta vez ele **percebe**. Ele é o único que pode andar até o centro sem afundar na própria memória."
+          "texto": "Ao entrar na Área Verde: **POD 50.** Falha = Memória +1, sensação de ser olhado por algo que te conhece por outro nome. +5 min depois: **POD 55.** Falha = Memória +1d3, sobreposição temporal. **Fragmentos por PC:** Sergie (mão assinando + voz dizendo o sobrenome dele), Floriano (criança que ele não segurou), Vinicius (próprios passos correndo de algo que ele já fez), **Gyeno: NADA.** Silêncio absoluto enquanto os três vacilam — e desta vez ele **percebe**. Ele é o único que pode andar até o centro sem afundar na própria memória.",
+          "atributo": "Permanência (POD)",
+          "dificuldade": "50 / 55",
+          "o_que_destrava": "Falha POD 50: Memória +1, sensação de ser olhado por algo que te conhece por outro nome. Falha POD 55: Memória +1d3, sobreposição temporal, fragmentos por PC (Sergie: mão assinando; Floriano: criança; Vinicius: passos correndo). **Gyeno: nada.** Silêncio absoluto enquanto os outros vacilam — desta vez ele percebe."
         },
         {
           "tipo": "momento_pavor",
           "ordem": 8,
           "titulo": "Os 33 + reconhecimento do Gyeno",
-          "texto": "O coaxar para de repente. No silêncio, você **sente** — não ouve — que o chão está cheio. Que sob seus pés há gente, muita, consciente, com raiva há cinquenta e três anos. As vozes de ontem vinham **daqui**. Vocês estão de pé sobre os trinta e três."
+          "texto": "O coaxar para de repente. No silêncio, você **sente** — não ouve — que o chão está cheio. Que sob seus pés há gente, muita, consciente, com raiva há cinquenta e três anos. As vozes de ontem vinham **daqui**. Vocês estão de pé sobre os trinta e três. Para o Gyeno: não é peso — é **reconhecimento**. Algo embaixo da terra o trata não como presa, mas como **lâmina**. [→ Alma Jovem; não explicar ainda]"
         },
         {
           "tipo": "mecanica",
           "ordem": 9,
           "titulo": "Sanidade −1d4 — exceto Gyeno",
-          "texto": "Quem ficar: **San −1d4.** Para o Gyeno **não é peso — é reconhecimento.** Como ontem, quando ele perguntou e eles responderam. Algo embaixo da terra o trata não como presa, mas como **lâmina** — um dos que ficaram de pé. Cruzando com o fragmento de Pirassuá e a página do caderno (*\"o soldado que a marca não levou\"*), a mesma verdade: ele não sobreviveu por sorte. **É diferente, de um jeito que ainda não tem nome.** *(Não explique a Alma Jovem.)*"
+          "texto": "**Sanidade −1d4** a quem ficar sobre as covas e sentir o peso — **exceto o Gyeno**. Para ele não é custo: é confirmação. A imunidade deixa de ser sorte; começa a ter nome. Não diga mais nada."
         },
         {
           "tipo": "narracao",
           "ordem": 10,
-          "titulo": "O duelo — Heitor Furtado",
-          "texto": "Um homem de meia-idade, calmo, recuando do centro. Vê vocês. Não corre — calcula. *\"Vocês não deviam estar aqui.\"* **Perigoso mas sobrevivível.** Ele quer fugir, não massacrar (matar 4 forasteiros aqui é o barulho que o culto não paga). Tiro de aviso, coronhada, e some. Se confrontado: *\"Eu encontrei ele assim. E é isso que o laudo vai dizer.\"*"
+          "titulo": "O duelo — Reinaldo Furtado",
+          "texto": "Um homem de meia-idade, calmo, recuando do centro. Vê vocês. Não corre — calcula. *\"Vocês não deviam estar aqui.\"* Perigoso mas sobrevivível: ele quer fugir, não massacrar. Tiro de aviso, coronhada, e some. Se confrontado: *\"Eu encontrei ele assim. E é isso que o laudo vai dizer.\"* **Não use o combate para matar PC** — use para dar rosto à ameaça humana. [→ agente da rede; T2]"
         },
         {
           "tipo": "observacao_mestre",
@@ -6481,13 +6715,13 @@
           "tipo": "momento_pavor",
           "ordem": 12,
           "titulo": "Floriano vê Valdecir — pico emocional",
-          "texto": "**Só para o Floriano** (o de maior Sanidade): por um instante, sobre o corpo do Meireles, há outro homem ajoelhado. Velho, de terno simples, chorando — e as lágrimas descem **vermelhas**, trilhas de ferrugem dos dois olhos. Ele olha para Floriano sem acusação. Só cansaço e uma gentileza terrível. Balança a cabeça devagar — *eu sei. eu também cheguei tarde, uma vez.* E some. *(GM: o Valdecir, livre, chorando a primeira praga sobre a vítima da segunda. O vínculo do Floriano com o morto que ajuda.)*"
+          "texto": "Só para o Floriano (o de maior Sanidade): por um instante, sobre o corpo do Meireles, há outro homem ajoelhado. Velho, de terno simples, chorando — e as lágrimas descem **vermelhas**, trilhas de ferrugem dos dois olhos. Ele olha para você sem acusação. Só cansaço e uma gentileza terrível. Balança a cabeça devagar — *\"eu sei. eu também cheguei tarde, uma vez.\"* E some. (GM: o Valdecir, livre, chorando a primeira praga sobre a vítima da segunda.) [→ vínculo Floriano↔Valdecir; tema: o morto ajuda]"
         }
       ],
       "destrava_para": [
         "cena:ep2-cliffhanger"
       ],
-      "mestre_only": "Esta é a cena mais densa do Ep2. Conduzir como **cinco frentes em paralelo**: (1) Meireles afogado em quinze centímetros — confirmação visceral da praga 2; (2) cemitério revelado — Área Verde deixa de ser terreno; (3) fragmentos pessoais — três pílulas de revelação direcionadas aos PCs; (4) cobrança / os 33 / reconhecimento do Gyeno como lâmina (Alma Jovem confirmada); (5) duelo Heitor Furtado — sobrevivente, dá rosto à ameaça humana. O Valdecir livre chorando sangue para o Floriano é o **pico emocional** — o morto que ajuda contra o vivo que trai."
+      "mestre_only": "Esta é a cena mais densa do Ep2. Conduzir como **cinco frentes em paralelo**: (1) Meireles afogado em quinze centímetros — confirmação visceral da praga 2; (2) cemitério revelado — Área Verde deixa de ser terreno; (3) fragmentos pessoais — três pílulas de revelação direcionadas aos PCs; (4) cobrança / os 33 / reconhecimento do Gyeno como lâmina (Alma Jovem confirmada); (5) duelo Reinaldo Furtado — sobrevivente, dá rosto à ameaça humana. O Valdecir livre chorando sangue para o Floriano é o **pico emocional** — o morto que ajuda contra o vivo que trai."
     },
     {
       "id": "cena-ep2-cliffhanger",
@@ -6507,13 +6741,14 @@
       ],
       "props_refs": [],
       "secao_dossie": "§8 do Guia v3 do Ep2",
-      "atmosfera_abertura": "Sirenes ao longe. Os PCs estão de pé sobre o corpo do Dr. Meireles na água rasa. Heitor Furtado sumiu. Os fragmentos estão guardados. E então — luzes de carro. Não viatura. Carro comum. **Ronaldo está saindo dele, sozinho.**",
+      "atmosfera_abertura": "Sirenes ao longe. Os PCs estão de pé sobre o corpo do Dr. Meireles na água rasa. Reinaldo Furtado sumiu. Os fragmentos estão guardados. E então — luzes de carro. Não viatura. Carro comum. **Ronaldo está saindo dele, sozinho.**",
       "beats": [
         {
           "tipo": "fala",
           "ordem": 1,
           "titulo": "Ronaldo — primeiro no lugar",
-          "texto": "*\"Vocês acham que eu deixo vocês saírem caçando no meio da noite sem saber pra onde foram? Eu pedi pra trabalharem comigo. Isso inclui eu saber onde vocês estão. (olha o corpo) E ainda bem que eu soube.\"*"
+          "texto": "\"Vocês acham que eu deixo vocês saírem caçando no meio da noite sem saber pra onde foram? Eu pedi pra trabalharem comigo. Isso inclui eu saber onde vocês estão. (olha o corpo) E ainda bem que eu soube.\"",
+          "npc_ref": "npc:ronaldo"
         },
         {
           "tipo": "observacao_mestre",
@@ -6525,7 +6760,8 @@
           "tipo": "fala",
           "ordem": 3,
           "titulo": "Ronaldo — o encobrimento",
-          "texto": "*\"Saiam daqui. AGORA. (baixo, rápido) Quatro forasteiros parados sobre o corpo de um médico, no mesmo terreno onde acharam o Valdecir? Vocês são os suspeitos óbvios. Vão presos, e aí acabou — não sobra ninguém pra parar isso, e eu não alcanço vocês de dentro de uma cela. Sumam. Vão pra casa da Natalina e não saíram de lá a noite toda. O corpo é meu problema. Eu cuido disso. Eu sempre cuido.\"*"
+          "texto": "\"Saiam daqui. AGORA. (baixo, rápido) Quatro forasteiros parados sobre o corpo de um médico, no mesmo terreno onde acharam o Valdecir? Vocês são os suspeitos óbvios. Vão presos, e aí acabou. Sumam. Vão pra casa da Natalina e não saíram de lá a noite toda. O corpo é meu problema. Eu cuido disso. Eu sempre cuido.\"",
+          "npc_ref": "npc:ronaldo"
         },
         {
           "tipo": "observacao_mestre",
@@ -6537,25 +6773,30 @@
           "tipo": "teste",
           "ordem": 5,
           "titulo": "Psicologia 55 (no calor do alívio)",
-          "texto": "Quem testar pensa: *\"que delegado decente faz um corpo sumir e limpa 4 forasteiros sem piscar?\"* Na hora, gratidão. Depois, arrepio. *(GM: ele acabou de mostrar do que é capaz — e a favor de quem.)*"
+          "texto": "Quem testar pensa: *\"que delegado decente faz um corpo sumir e limpa 4 forasteiros sem piscar?\"* Na hora, gratidão. Depois, arrepio. *(GM: ele acabou de mostrar do que é capaz — e a favor de quem.)*",
+          "atributo": "Psicologia",
+          "dificuldade": "55",
+          "o_que_destrava": "Que delegado decente faz um corpo sumir e limpa quatro forasteiros sem piscar? Na hora, gratidão. Depois — **arrepio**. (GM: ele acabou de mostrar do que é capaz, e a favor de quem.) [→ T2: o carcereiro]"
         },
         {
           "tipo": "narracao",
           "ordem": 6,
           "titulo": "Lugar seguro — casa da Natalina",
-          "texto": "Eles terminam a noite escondidos. A Natalina abre a porta, pega o casaco molhado de cada um, sem perguntar. Serve café preto. Acende uma vela. Não fala. Sabe que o tempo veio. **O porto seguro é a casa dela** — e por enquanto ainda é seguro."
+          "texto": "A casa da Natalina, de novo. O café ainda morno. Quatro pessoas que viram um médico morto, numa poça impossível, cercado de rãs. Que perderam um suspeito que era uma vítima. Que estão vivos porque um delegado fez um corpo desaparecer. O porto seguro é o único lugar que sobrou — e ele já não parece porto nenhum."
         },
         {
           "tipo": "momento_pavor",
           "ordem": 7,
           "titulo": "Dom Josias chega",
-          "texto": "E então, na rua, um **carro preto oficial** para em frente à casa de Natalina. Desce um homem de batina e anel — idoso, imponente. Para o Floriano, é **um soco no estômago**: **Dom Josias Montes.** O bispo que o formou. O homem mais próximo de um pai que ele teve. Aqui. Esta noite. **O porto seguro deixa de ser seguro.**"
+          "texto": "Na rua, um carro preto oficial para. Desce um homem de batina e anel — idoso, imponente, com o andar de quem chega onde foi convidado. **Dom Josias Montes.** O bispo que formou o Floriano. O homem mais próximo de um pai que ele teve. Aqui. Esta noite. Na mesma rua. Olhando para a casa."
         },
         {
           "tipo": "fala",
           "ordem": 8,
           "titulo": "Dom Josias — primeira fala",
-          "texto": "*\"Florianinho. Bem te quero. Você não respondeu o telefone — e quando o telefone do meu filho fica mudo, eu venho. Soube de um padre de Pirassuá perdido em Novavera. Vim conferir com os meus olhos. (à Natalina) Tudo bem se eu entrar, senhora? Foi uma viagem longa.\"*"
+          "texto": "*\"Florianinho. Bem te quero. Você não respondeu o telefone — e quando o telefone do meu filho fica mudo, eu venho. Soube de um padre de Pirassuá perdido em Novavera. Vim conferir com os meus olhos. (à Natalina) Tudo bem se eu entrar, senhora? Foi uma viagem longa.\"*",
+          "npc_ref": "npc:dom-josias",
+          "contexto": "Para o Floriano, é um soco no estômago: Dom Josias Montes. O bispo que o formou. O homem mais próximo de um pai que ele teve. Aqui. Esta noite. O porto seguro deixa de ser seguro. Corta. [→ Ep3; núcleo do Floriano]"
         },
         {
           "tipo": "observacao_mestre",
@@ -6667,7 +6908,7 @@
     },
     {
       "nome": "Ezequiel Drummond Cavalcanti",
-      "texto": "Profeta Conselheiro · O Operador · coordenador da rede em Brasília. Braço operacional de Messiah. **No Ep1, é a voz da ligação das 15h32 ao Dr. Meireles.** **No Ep2, é quem aciona Heitor Furtado** para a execução do Meireles. Contratou Furtado meses antes para observação dos PCs. Antagonista principal da T2."
+      "texto": "Profeta Conselheiro · O Operador · coordenador da rede em Brasília. Braço operacional de Messiah. **No Ep1, é a voz da ligação das 15h32 ao Dr. Meireles.** **No Ep2, é quem aciona Reinaldo Furtado** para a execução do Meireles. Contratou Furtado meses antes para observação dos PCs. Antagonista principal da T2."
     },
     {
       "nome": "Davi Marques",
