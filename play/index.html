@@ -213,6 +213,13 @@ select option { background: #1a1410; }
   min-width: 42px; text-align: center; font-family: 'Cinzel', serif;
   font-size: 14px; color: var(--parch);
 }
+.escopo-input {
+  display: block; margin-top: 3px; width: 100%; max-width: 180px;
+  background: rgba(0,0,0,0.25); border: 1px solid var(--border);
+  border-radius: 2px; padding: 2px 6px; color: var(--gold);
+  font-family: 'Cormorant Garamond', serif; font-size: 13px; font-style: italic;
+}
+.escopo-input::placeholder { color: var(--ash); opacity: 0.6; }
 /* ── SUB-TABS (within a page) ─────────────────────────────────────────────── */
 .subtabs { display: flex; gap: 0; margin-bottom: 16px; border-bottom: 1px solid var(--border); }
 .subtab {
@@ -656,7 +663,7 @@ select option { background: #1a1410; }
       <div class="field-row">
         <div class="field-group">
           <label class="field-label">Virtude Recorrente (+5% em uma perícia)</label>
-          <input type="text" id="c-virtude-rec" placeholder="Ex: Protetor recorrente → +5% Persuasão (defesa)">
+          <input type="text" id="c-virtude-rec" placeholder="Ex: Protetor recorrente → +5% Convencer (defesa)">
         </div>
         <div class="field-group">
           <label class="field-label">Vício Recorrente (gancho narrativo)</label>
@@ -1269,16 +1276,16 @@ const ATTRS = [
 const OCUPACOES = {
   investigador_particular: {
     label:'Investigador Particular', credito:[10,40], dominio:'Mundo do crime e ilegalidade',
-    pericias:['Achados','Psicologia','Persuasão','Lábia','Furtividade','Dirigir Automóvel','Armas de Fogo (Pistola)','Biblioteconomia'],
+    pericias:['Notar','Psicologia','Convencer','Furtividade','Dirigir Automóvel','Armas de Fogo (Pistola)','Biblioteconomia','Investigar','Interrogar','Pesquisa'],
     item_nome:'Caderno de Casos',
     item_desc:'Uma vez por sessão, consultar o caderno (Biblioteconomia livre). Sucesso: o Mestre fornece pista de "caso antigo". Custo: rolagem de San 1/1d3 por reviver memórias.',
-    capacidade:'Rede de Informantes — 3 informantes (delegacia, rua, submundo). Uma vez por sessão: Persuasão/Lábia para informação. Custo: débito que eventualmente cobra.',
+    capacidade:'Rede de Informantes — 3 informantes (delegacia, rua, submundo). Uma vez por sessão: Convencer para informação. Custo: débito que eventualmente cobra.',
     equip:'Gravador de voz, caderno e caneta, pistola registrada, carro velho, lanterna, kit de arrombamento simples.',
     gancho:'Um cliente pagou em dinheiro para você encontrar a esposa desaparecida. Você encontrou. Ela não estava mais inteira.'
   },
   policial: {
     label:'Policial / Detetive de Polícia', credito:[20,50], dominio:'Estado e poder público',
-    pericias:['Achados','Psicologia','Intimidar','Armas de Fogo (Pistola)','Lutar (Briga)','Dirigir Automóvel','Direito','Primeiros Socorros'],
+    pericias:['Notar','Psicologia','Intimidar','Armas de Fogo (Pistola)','Lutar (Briga)','Dirigir Automóvel','Direito','Primeiros Socorros','Investigar','Interrogar','Conhecimento Local'],
     item_nome:'Placa e Autoridade',
     item_desc:'Ignora barreiras de acesso normais (hospitais, câmeras, registros). Sem rolagem social quando a placa resolve. Custo: cada uso fora do dever acumula pontos contra o personagem → corregedoria.',
     capacidade:'Acesso ao Sistema — uma vez por sessão, arquivo de polícia sem rolagem. Custo: consultas deixam trilha digital.',
@@ -1287,7 +1294,7 @@ const OCUPACOES = {
   },
   detetive_aposentado: {
     label:'Detetive Aposentado', credito:[15,45], dominio:'Estado e poder público',
-    pericias:['Achados','Psicologia','Intimidar','Persuasão','Armas de Fogo (Pistola)','Dirigir Automóvel','Lutar (Briga)','Biblioteconomia'],
+    pericias:['Notar','Psicologia','Intimidar','Convencer','Armas de Fogo (Pistola)','Dirigir Automóvel','Lutar (Briga)','Biblioteconomia','Investigar','Interrogar'],
     item_nome:'Arma de Serviço Antiga',
     item_desc:'+10% Armas de Fogo (Pistola) com esta arma. Em tensão extrema: +5% resistência à San enquanto empunha. Custo: arma ilegal — se descoberto, preso por porte ilegal.',
     capacidade:'Ex-Colegas Leais — 2-3 ex-colegas ativos que devem favores. Uma vez por sessão: pequena ajuda sem rolagem. Custo: favores pesados acabam com o crédito.',
@@ -1296,7 +1303,7 @@ const OCUPACOES = {
   },
   advogado: {
     label:'Advogado', credito:[40,80], dominio:'Mundo profissional liberal',
-    pericias:['Direito','Persuasão','Psicologia','Lábia','Biblioteconomia','Achados','História','Computadores'],
+    pericias:['Direito','Convencer','Psicologia','Biblioteconomia','Notar','História','Computadores','Investigar','Pesquisa'],
     item_nome:'Pasta de Processos',
     item_desc:'Redige documentos legais críveis em horas. Direito (Difícil) abre portas "oficiais". Custo: documentos forjados podem custar a carteira da OAB.',
     capacidade:'Sigilo Profissional — acesso a suspeitos/presos sob alegação de representação. Custo: abuso é processado pela OAB.',
@@ -1305,7 +1312,7 @@ const OCUPACOES = {
   },
   perito_forense: {
     label:'Perito Forense', credito:[30,60], dominio:'Estado e poder público',
-    pericias:['Ciência (Forense)','Ciência (Biologia)','Ciência (Química)','Medicina','Achados','Fotografar','Biblioteconomia','Psicologia'],
+    pericias:['Ciência (Forense)','Ciência (Biologia)','Ciência (Química)','Medicina','Notar','Fotografar','Biblioteconomia','Psicologia','Investigar'],
     item_nome:'Kit Forense Portátil',
     item_desc:'Análise de cena em campo sem laboratório. Ciência (Forense): causa de morte, tempo de morte, vestígios, DNA. Custo: 5 usos completos antes de repor.',
     capacidade:'Acesso ao IML — examina corpos sob jurisdição oficial. Exames adicionais não-solicitados. Custo: abusos = demissão.',
@@ -1314,7 +1321,7 @@ const OCUPACOES = {
   },
   medico: {
     label:'Médico', credito:[40,80], dominio:'Mundo profissional liberal',
-    pericias:['Medicina','Primeiros Socorros','Ciência (Biologia)','Ciência (Farmacologia)','Psicologia','Persuasão','Achados','Biblioteconomia'],
+    pericias:['Medicina','Primeiros Socorros','Ciência (Biologia)','Ciência (Farmacologia)','Psicologia','Convencer','Notar','Biblioteconomia','Pesquisa'],
     item_nome:'Maleta Médica Completa',
     item_desc:'Estabiliza HP zerado sem hospital (Medicina). Entre cenas: +1d4 HP/dia em alguém sob cuidado. Custo: medicamentos limitados, sem cirurgia.',
     capacidade:'Acesso a Prontuários — consulta prontuários com credencial. Custo: acessos não-autorizados = processo ético.',
@@ -1323,7 +1330,7 @@ const OCUPACOES = {
   },
   psiquiatra: {
     label:'Psiquiatra', credito:[40,80], dominio:'Mundo profissional liberal',
-    pericias:['Medicina','Psicologia','Ciência (Farmacologia)','Ciência (Neurologia)','Primeiros Socorros','Persuasão','Escutar','Biblioteconomia'],
+    pericias:['Medicina','Psicologia','Ciência (Farmacologia)','Ciência (Neurologia)','Primeiros Socorros','Convencer','Notar','Biblioteconomia'],
     item_nome:'Estojo do Psiquiatra',
     item_desc:'Calmante de Sanidade (3 doses): recupera 1d6 San imediatamente, calma por 2h. Custo: próximas perdas de San são dobradas; −10% Reflexos durante o efeito.',
     capacidade:'Sessão Clínica — Psicologia (Difícil): lê camadas profundas, recupera 1d4 San do paciente, identifica possessão/mediunidade. Custo: +1 Marca ao ouvir algo sobrenatural real.',
@@ -1332,7 +1339,7 @@ const OCUPACOES = {
   },
   enfermeiro: {
     label:'Enfermeiro / Paramédico', credito:[15,40], dominio:'Mundo profissional liberal',
-    pericias:['Primeiros Socorros','Medicina','Ciência (Farmacologia)','Psicologia','Persuasão','Dirigir Automóvel','Achados','Atletismo'],
+    pericias:['Primeiros Socorros','Medicina','Ciência (Farmacologia)','Psicologia','Convencer','Dirigir Automóvel','Notar','Atletismo'],
     item_nome:'Mochila de Emergência',
     item_desc:'Estabiliza HP zerado com Primeiros Socorros (sem precisar Medicina). Adrenalina: Primeiros Socorros (Difícil) → inconsciente volta com 1 HP por 1 cena.',
     capacidade:'Acesso a Materiais Médicos — reposição de medicamentos básicos via hospital sem muita burocracia.',
@@ -1341,7 +1348,7 @@ const OCUPACOES = {
   },
   assistente_social: {
     label:'Assistente Social', credito:[10,35], dominio:'Comunidade local / Bairro',
-    pericias:['Direito','Escutar','Psicologia','Primeiros Socorros','Persuasão','Biblioteconomia','Charme','Achados'],
+    pericias:['Direito','Notar','Psicologia','Primeiros Socorros','Convencer','Biblioteconomia','Conhecimento Local'],
     item_nome:'Pasta de Caso',
     item_desc:'Uma vez por sessão: acessar histórico de atendimento de pessoa em situação de vulnerabilidade — endereços, família, situação de saúde. Custo: viola sigilo profissional.',
     capacidade:'Rede de Serviços — conhece serviços sociais, abrigos, delegacias de proteção. Acesso a pessoas marginalizadas sem rolagem social.',
@@ -1350,7 +1357,7 @@ const OCUPACOES = {
   },
   academico: {
     label:'Acadêmico / Pesquisador', credito:[20,50], dominio:'Universidade e instituições do saber',
-    pericias:['Biblioteconomia','História','Antropologia','Idioma (outro)','Ocultismo','Computadores','Arqueologia','Persuasão'],
+    pericias:['Biblioteconomia','História','Antropologia','Idioma (outro)','Ocultismo','Computadores','Arqueologia','Convencer','Pesquisa','Investigar'],
     item_nome:'Arquivo de Pesquisa',
     item_desc:'Anos de pesquisa acumulada. Biblioteconomia: "você pesquisou isso e tem o material". Mestre fornece informação de pesquisa anterior. Custo: se acessado por outros, revela toda a investigação.',
     capacidade:'Credencial Acadêmica — acesso a arquivos restritos como pesquisador convidado. Custo: assina termos de sigilo que comprometem investigações não-oficiais.',
@@ -1359,7 +1366,7 @@ const OCUPACOES = {
   },
   bibliotecario: {
     label:'Bibliotecário', credito:[15,40], dominio:'Universidade e instituições do saber',
-    pericias:['Biblioteconomia','História','Computadores','Idioma (outro)','Arqueologia','Persuasão','Achados','Ocultismo'],
+    pericias:['Biblioteconomia','História','Computadores','Idioma (outro)','Arqueologia','Convencer','Notar','Ocultismo','Pesquisa','Investigar'],
     item_nome:'Acesso às Reservas Técnicas',
     item_desc:'Acesso a documentos raros, fora de circulação, em depósitos institucionais. Uma vez por sessão: Biblioteconomia (Normal) → item raro encontrado. Custo: remoção não-autorizada é crime.',
     capacidade:'Memória Institucional — lembra de qualquer documento consultado na biblioteca. Identifica quem consultou o quê e quando.',
@@ -1368,16 +1375,16 @@ const OCUPACOES = {
   },
   jornalista: {
     label:'Jornalista / Repórter', credito:[20,55], dominio:'Imprensa, mídia e cultura',
-    pericias:['Arte/Ofício (Escrita)','Achados','Escutar','História','Psicologia','Computadores','Charme','Persuasão'],
+    pericias:['Arte/Ofício (Escrita)','Notar','História','Psicologia','Computadores','Convencer','Investigar','Interrogar','Pesquisa','Conhecimento Local'],
     item_nome:'Gravador e Credencial de Imprensa',
     item_desc:'Com a credencial, acesso a áreas de imprensa, fontes oficiais, e declarações que civis não conseguem. Uma vez por sessão: publicar algo. Custo: publicar expõe investigação — alguém errado lerá.',
-    capacidade:'Rede de Fontes — 3 fontes em áreas distintas (governo, empresa, margem). Escutar/Persuasão para informação confidencial.',
+    capacidade:'Rede de Fontes — 3 fontes em áreas distintas (governo, empresa, margem). Notar/Convencer para informação confidencial.',
     equip:'Gravador digital, smartphone, notebook, credencial de imprensa, câmera.',
     gancho:'Você estava cobrindo uma matéria de rotina. O que gravou no campo não é o que está na gravação agora.'
   },
   escritor: {
     label:'Escritor / Pesquisador Independente', credito:[15,55], dominio:'Imprensa, mídia e cultura',
-    pericias:['Biblioteconomia','Persuasão','Psicologia','Achados','Computadores','Lábia','Idioma (outro)','História'],
+    pericias:['Biblioteconomia','Convencer','Psicologia','Notar','Computadores','Idioma (outro)','História','Pesquisa'],
     item_nome:'Arquivo Pessoal de Pesquisa',
     item_desc:'Biblioteconomia: "você pesquisou isso e tem o material". Mestre fornece info de pesquisa anterior. Custo: acesso externo revela toda investigação passada, podendo colocar fontes em perigo.',
     capacidade:'Pseudônimo e Anonimato — investiga como personagem público e privado separadamente. Custo: identidades cruzadas uma vez quebradas, ficam quebradas.',
@@ -1386,7 +1393,7 @@ const OCUPACOES = {
   },
   tradutor: {
     label:'Tradutor / Linguista', credito:[20,50], dominio:'Mundo profissional liberal',
-    pericias:['Idioma (outro)','Idioma (outro 2)','Biblioteconomia','Antropologia','História','Computadores','Achados','Persuasão'],
+    pericias:['Idioma (outro)','Idioma (outro 2)','Biblioteconomia','Antropologia','História','Computadores','Notar','Convencer'],
     item_nome:'Biblioteca de Referência Multilíngue',
     item_desc:'Traduz qualquer texto de idioma conhecido, mesmo arcaico. Sucesso Bom/Extremo: contexto cultural e nuances. Custo: biblioteca fica em casa — textos complexos exigem presença.',
     capacidade:'Acesso a Textos Restritos — chamado para traduzir confidenciais (governamentais, religiosos, históricos). Custo: sigilo profissional que se violado gera processo.',
@@ -1395,7 +1402,7 @@ const OCUPACOES = {
   },
   padre_pastor: {
     label:'Padre / Pastor / Líder Religioso', credito:[15,60], dominio:'Comunidade religiosa',
-    pericias:['Ocultismo','Psicologia','Persuasão','História','Biblioteconomia','Escutar','Idioma (Latim ou Hebraico)','Primeiros Socorros'],
+    pericias:['Ocultismo','Psicologia','Convencer','História','Biblioteconomia','Notar','Idioma (Latim ou Hebraico)','Primeiros Socorros','Conhecimento Local'],
     item_nome:'Objeto Sagrado Consagrado',
     item_desc:'Objeto pessoal de poder espiritual (crucifixo, terço, objeto de Exu). Uma vez por sessão: apresentá-lo a entidade menor (Nível 1-2) força Alma vs. Alma da entidade — sucesso a afasta. Custo: +1 Marca. Não funciona contra entidades Nível 3+.',
     capacidade:'Autoridade Espiritual — pessoas religiosas falam mais abertamente. Em comunidade de fé, não precisa rolar social básico. Custo: expectativa de comportamento exemplar — escândalos destroem a base.',
@@ -1404,7 +1411,7 @@ const OCUPACOES = {
   },
   medico_oculto: {
     label:'Estudante do Oculto', credito:[5,25], dominio:'Comunidade religiosa',
-    pericias:['Ocultismo','Biblioteconomia','Práticas Espíritas','História','Antropologia','Idioma (outro)','Achados','Psicologia'],
+    pericias:['Ocultismo','Biblioteconomia','Práticas Espíritas','História','Antropologia','Idioma (outro)','Notar','Psicologia','Pesquisa'],
     item_nome:'Coleção de Tomos',
     item_desc:'Acervo de textos sobre o oculto. Uma vez por sessão: pesquisa Biblioteconomia (Normal) → +1d3% temporário em Ocultismo para a cena. Custo: ao consultar o pior livro, +1 Conhecimento Proibido.',
     capacidade:'Pode comprar Práticas Espíritas na criação (com aprovação do Mestre) — começa sabendo rituais.',
@@ -1413,7 +1420,7 @@ const OCUPACOES = {
   },
   medium: {
     label:'Médium / Curandeiro', credito:[5,30], dominio:'Comunidade religiosa',
-    pericias:['Ocultismo','Práticas Espíritas','Psicologia','Escutar','Charme','Persuasão','Primeiros Socorros','Achados'],
+    pericias:['Ocultismo','Práticas Espíritas','Psicologia','Notar','Convencer','Primeiros Socorros'],
     item_nome:'Mesa Espírita / Objetos de Trabalho',
     item_desc:'Ambiente preparado para mediunidade. Quando trabalha em local adequado: dado de Vantagem em Práticas Espíritas e Mediunidade (quando destravar). Custo: o ambiente atrai — entidades chegam mesmo sem convite.',
     capacidade:'Pode comprar Práticas Espíritas na criação. Almas em transição percebem sua presença — NPCs mortos recentes tentam se comunicar.',
@@ -1422,7 +1429,7 @@ const OCUPACOES = {
   },
   coveiro: {
     label:'Coveiro / Agente Funerário', credito:[5,25], dominio:'Comunidade local / Bairro',
-    pericias:['Medicina','Primeiros Socorros','Psicologia','Escutar','Achados','Atletismo','Ocultismo','Persuasão'],
+    pericias:['Medicina','Primeiros Socorros','Psicologia','Notar','Atletismo','Ocultismo','Convencer','Conhecimento Local'],
     item_nome:'Chave do Cemitério',
     item_desc:'Acesso irrestrito ao cemitério em qualquer horário. Conhece cada túmulo, cada família. Custo: alguém está acompanhando os seus horários noturnos — e não é humano.',
     capacidade:'O morto te fala — passivamente, sem rolagem, o coveiro percebe quando algo está errado num velório (corpo preparado de forma incomum, família mentindo, morto com Marcas visíveis).',
@@ -1431,7 +1438,7 @@ const OCUPACOES = {
   },
   hacker: {
     label:'Hacker / Especialista em TI', credito:[10,45], dominio:'Universidade e instituições do saber',
-    pericias:['Computadores','Eletrônica','Achados','Biblioteconomia','Furtividade','Psicologia','Lábia','Ciência (Matemática)'],
+    pericias:['Computadores','Eletrônica','Notar','Biblioteconomia','Furtividade','Psicologia','Convencer','Ciência (Matemática)','Pesquisa'],
     item_nome:'Estação de Trabalho',
     item_desc:'Setup próprio de alto desempenho. Computadores (Normal): acessa sistemas remotos sem rastro básico. Sucesso Bom: sem rastro algum. Sucesso Extremo: planta backdoor. Custo: hardware específico, difícil de transportar.',
     capacidade:'Rastro Digital — identifica quem acessou o quê online, IP, dispositivo, horário. Uma vez por sessão: Computadores (Difícil) → informação digital sobre pessoa ou organização.',
@@ -1440,7 +1447,7 @@ const OCUPACOES = {
   },
   medico_emergencia: {
     label:'Médico de Emergência', credito:[40,80], dominio:'Mundo profissional liberal',
-    pericias:['Medicina','Primeiros Socorros','Ciência (Farmacologia)','Psicologia','Reflexos (derivada)','Dirigir Automóvel','Achados','Atletismo'],
+    pericias:['Medicina','Primeiros Socorros','Ciência (Farmacologia)','Psicologia','Reflexos (derivada)','Dirigir Automóvel','Notar','Atletismo'],
     item_nome:'Kit de Trauma Avançado',
     item_desc:'Estabiliza lesão grave sem hospital — mantém paciente vivo por 1d6 horas mesmo sem recursos. Uma vez por sessão: +1d6 HP em alguém que custaria tempo de UTI.',
     capacidade:'Frieza sob Pressão — em cenas de horror com feridos, não precisa rolar San por ver sangue/mutilação (desde que seja ferimento, não manifestação sobrenatural).',
@@ -1449,7 +1456,7 @@ const OCUPACOES = {
   },
   piloto: {
     label:'Piloto de Carro / Corredor', credito:[20,50], dominio:'Mundo profissional liberal',
-    pericias:['Dirigir Automóvel','Mecânica','Atletismo','Furtividade','Achados','Persuasão','Lábia','Reflexos (derivada)'],
+    pericias:['Dirigir Automóvel','Mecânica','Atletismo','Furtividade','Notar','Convencer','Reflexos (derivada)'],
     item_nome:'Carro Modificado Próprio',
     item_desc:'+15% Dirigir Automóvel com este carro específico. Permite manobras impossíveis para veículos normais. Custo: chama atenção, manutenção cara, cada batida séria custa muito.',
     capacidade:'Rede do Automobilismo — conhece pista, oficinas, corrida de rua, transporte. Pode conseguir veículo específico ou motorista para fuga.',
@@ -1458,7 +1465,7 @@ const OCUPACOES = {
   },
   mecanico: {
     label:'Mecânico / Restaurador', credito:[15,40], dominio:'Comunidade local / Bairro',
-    pericias:['Mecânica','Eletrônica','Achados','Dirigir Automóvel','Operar Maquinário','Persuasão','Lábia','Atletismo'],
+    pericias:['Mecânica','Eletrônica','Notar','Dirigir Automóvel','Convencer','Atletismo'],
     item_nome:'Oficina (Própria ou Acessível)',
     item_desc:'Diagnostica, restaura, modifica qualquer veículo. Mecânica: identificar problemas ocultos, restaurar "mortos", modificar discretamente. Custo: trabalho leva horas/dias; adulterações são crime.',
     capacidade:'Olho Treinado — ao observar veículo, Mecânica para identificar: ano, sinais de uso, modificações, quem provavelmente é o dono.',
@@ -1467,7 +1474,7 @@ const OCUPACOES = {
   },
   bombeiro: {
     label:'Bombeiro', credito:[15,40], dominio:'Estado e poder público',
-    pericias:['Atletismo','Primeiros Socorros','Mecânica','Achados','Dirigir Automóvel','Lutar (Briga)','Persuasão','Ciência (Química)'],
+    pericias:['Atletismo','Primeiros Socorros','Mecânica','Notar','Dirigir Automóvel','Lutar (Briga)','Convencer','Ciência (Química)','Conhecimento Local'],
     item_nome:'Equipamento de Resgate',
     item_desc:'Acesso a machado, marreta, pé-de-cabra, cordas, máscara. Atletismo: forçar entrada em qualquer lugar em tempo recorde. Custo: uso fora do dever é crime grave.',
     capacidade:'Autoridade de Emergência — em emergência ativa, civis obedecem e polícia respeita. Custo: só vale em contexto real de emergência.',
@@ -1476,25 +1483,25 @@ const OCUPACOES = {
   },
   dono_bar: {
     label:'Dono de Bar / Restaurante', credito:[15,45], dominio:'Comunidade local / Bairro',
-    pericias:['Persuasão','Psicologia','Lábia','Escutar','Achados','Intimidar','Direito','Ciência (Gastronomia)'],
+    pericias:['Convencer','Psicologia','Notar','Intimidar','Direito','Ciência (Gastronomia)','Conhecimento Local'],
     item_nome:'O Bar Como Território',
     item_desc:'Dentro do bar: Vantagem em qualquer rolagem social com clientes conhecidos. Controla o ambiente para manter pessoas (oferecer bebida, mudar música). Custo: uso excessivo — clientela percebe e some.',
-    capacidade:'Rede de Boatos — ouve tudo pela fofoca dos clientes. Psicologia/Persuasão: descobre rumor relevante de semanas atrás.',
+    capacidade:'Rede de Boatos — ouve tudo pela fofoca dos clientes. Psicologia/Convencer: descobre rumor relevante de semanas atrás.',
     equip:'Roupa casual, chaves do bar, smartphone, taco de baseball, agenda de pedidos.',
     gancho:'Um cliente regular parou de aparecer há um mês. A namorada dele veio te procurar. Você lembra da última noite dele no bar.'
   },
   influencer: {
     label:'Influenciador / Criador de Conteúdo', credito:[20,70], dominio:'Imprensa, mídia e cultura',
-    pericias:['Persuasão','Charme','Computadores','Lábia','Psicologia','Atuação','Achados','Idioma (Inglês)'],
+    pericias:['Convencer','Computadores','Psicologia','Atuação','Notar','Idioma (Inglês)','Pesquisa'],
     item_nome:'Audiência e Alcance',
-    item_desc:'Uma vez por sessão: Persuasão para mobilizar audiência. Normal: informação/dicas. Bom: mobiliza ativamente. Extremo: viralização — pressão pública e atenção da imprensa. Custo: exposição crescente — pessoas erradas percebem.',
+    item_desc:'Uma vez por sessão: Convencer para mobilizar audiência. Normal: informação/dicas. Bom: mobiliza ativamente. Extremo: viralização — pressão pública e atenção da imprensa. Custo: exposição crescente — pessoas erradas percebem.',
     capacidade:'Identidade Pública — reconhecido em locais públicos. Acesso facilitado a eventos, pessoas, locações. Custo: não consegue passar despercebido.',
     equip:'Smartphone topo de linha, câmera, microfone lapela, laptop, ring light, óculos escuros.',
     gancho:'Um vídeo seu que viralizou mostra algo no fundo que você não notou na edição. Os comentários estão ficando estranhos.'
   },
   motorista_app: {
     label:'Motorista de Aplicativo', credito:[5,25], dominio:'Comunidade local / Bairro',
-    pericias:['Dirigir Automóvel','Achados','Escutar','Psicologia','Persuasão','Lábia','Charme','Computadores'],
+    pericias:['Dirigir Automóvel','Notar','Psicologia','Convencer','Computadores','Conhecimento Local'],
     item_nome:'O Carro Como Confessionário Móvel',
     item_desc:'Uma vez por sessão: declarar que "ouviu algo relevante recentemente" — Mestre fornece rumor/informação parcial ligada ao caso. Custo: passageiros percebem que foram ouvidos.',
     capacidade:'Rede de Motoristas — grupos de WhatsApp/Telegram da cidade. Localiza carro específico, rastreia alguém. Custo: perguntas viram fofoca pública.',
@@ -1503,7 +1510,7 @@ const OCUPACOES = {
   },
   militar_reformado: {
     label:'Militar Reformado / Veterano', credito:[20,50], dominio:'Estado e poder público',
-    pericias:['Armas de Fogo (Pistola)','Lutar (Briga)','Atletismo','Primeiros Socorros','Furtividade','Mecânica','Dirigir Automóvel','Intimidar'],
+    pericias:['Armas de Fogo (Pistola)','Lutar (Briga)','Atletismo','Primeiros Socorros','Furtividade','Mecânica','Dirigir Automóvel','Intimidar','Conhecimento Local'],
     item_nome:'Arma Pessoal Guardada',
     item_desc:'+15% Armas de Fogo (especialização) com esta arma específica. Dispara rápido e com confiança. Custo: arma sem registro é crime; histórico militar chama atenção de organizações que sabem o que ele fez.',
     capacidade:'Treinamento Tático — +10% em Atletismo/Furtividade/Lutar ao aplicar protocolo militar. Sabe avaliar terreno, cobertura, linha de fogo. Custo: reações automáticas incluem flashbacks de guerra.',
@@ -1512,16 +1519,16 @@ const OCUPACOES = {
   },
   agente_saude: {
     label:'Agente Comunitário de Saúde', credito:[5,25], dominio:'Comunidade local / Bairro',
-    pericias:['Primeiros Socorros','Psicologia','Persuasão','Escutar','Achados','Atletismo','Charme','Biblioteconomia'],
+    pericias:['Primeiros Socorros','Psicologia','Convencer','Notar','Atletismo','Biblioteconomia','Conhecimento Local'],
     item_nome:'Crachá e Ficha de Visita',
-    item_desc:'Entra em qualquer casa da área de atuação sem questionar. Vantagem automática em Persuasão dentro da comunidade. Custo: visitas registradas criam rastro do que o agente sabe.',
+    item_desc:'Entra em qualquer casa da área de atuação sem questionar. Vantagem automática em Convencer dentro da comunidade. Custo: visitas registradas criam rastro do que o agente sabe.',
     capacidade:'Invisibilidade Social — como agente de saúde, é "esperado" no bairro. Vantagem automática em Furtividade social dentro da área de atuação.',
     equip:'Crachá funcional, bolsa de visita, smartphone, caderno de fichas, uniforme.',
     gancho:'Você está visitando uma família regularmente há meses. Ontem, a criança te perguntou quando você vai parar de trazer "o outro".'
   },
   servidor_publico: {
     label:'Servidor Público', credito:[20,50], dominio:'Estado e poder público',
-    pericias:['Direito','Contabilidade','Achados','História','Computadores','Biblioteconomia','Persuasão','Psicologia'],
+    pericias:['Direito','Contabilidade','Notar','História','Computadores','Biblioteconomia','Convencer','Psicologia','Pesquisa'],
     item_nome:'Acesso aos Sistemas',
     item_desc:'Acesso a bancos de dados governamentais, cadastros, registros públicos. Computadores (Normal): qualquer registro oficial sobre pessoa ou propriedade. Custo: consultas deixam log — investigações internas podem surgir.',
     capacidade:'Burocracia como Ferramenta — navega labirintos administrativos com facilidade. Obtém documentos, autorizações, certidões em tempo recorde.',
@@ -1530,7 +1537,7 @@ const OCUPACOES = {
   },
   professor: {
     label:'Professor / Educador', credito:[15,40], dominio:'Universidade e instituições do saber',
-    pericias:['História','Psicologia','Persuasão','Biblioteconomia','Idioma (outro)','Charme','Computadores','Ocultismo'],
+    pericias:['História','Psicologia','Convencer','Biblioteconomia','Idioma (outro)','Computadores','Ocultismo','Pesquisa','Investigar'],
     item_nome:'Caderno de Aulas e Referências',
     item_desc:'Uma vez por sessão: Biblioteconomia (Normal) → fornece contexto histórico ou cultural sobre evento/local investigado. Mestre entrega informação relevante de "pesquisa de aula".',
     capacidade:'Autoridade Pedagógica — estudantes e ex-alunos falam abertamente. Acesso facilitado a arquivos de instituições de ensino.',
@@ -1539,7 +1546,7 @@ const OCUPACOES = {
   },
   antiquario: {
     label:'Antiquário / Colecionador', credito:[15,55], dominio:'Classe alta tradicional',
-    pericias:['Arqueologia','História','Avaliação','Ocultismo','Biblioteconomia','Charme','Persuasão','Achados'],
+    pericias:['Arqueologia','História','Avaliação','Ocultismo','Biblioteconomia','Convencer','Notar','Pesquisa'],
     item_nome:'Coleção Particular',
     item_desc:'Objetos de valor histórico e espiritual que o Mestre pode ativar. Uma vez por sessão: Arqueologia/História (Normal) → identifica objeto, origem, possível carga espiritual. Custo: coleção atrai compradores — e entidades ligadas aos objetos.',
     capacidade:'Rede de Colecionadores — conhece outros antiquários, museus, leiloeiros internacionais. Informação sobre propriedades específicas e linhagens familiares.',
@@ -1550,35 +1557,37 @@ const OCUPACOES = {
 
 const SKILLS_LIST = [
   {cat:'Investigação e Percepção', skills:[
-    {key:'Achados',base:25},{key:'Escutar',base:20},{key:'Psicologia',base:10},
-    {key:'Rastrear',base:10},{key:'Antropologia',base:1},{key:'Arqueologia',base:1},
+    {key:'Notar',base:25},{key:'Investigar',base:15},{key:'Pesquisa',base:20},
+    {key:'Conhecimento Local',base:0,derivado:'Mente',divisor:2,escopo:true},
+    {key:'Rastrear',base:10},{key:'Psicologia',base:10},
+    {key:'Antropologia',base:5},{key:'Arqueologia',base:5},
     {key:'Biblioteconomia',base:20},
   ]},
   {cat:'Combate', skills:[
     {key:'Lutar (Briga)',base:25},{key:'Lutar (Faca)',base:20},
-    {key:'Mãos Limpas',base:25},{key:'Armas de Fogo (Pistola)',base:20},
+    {key:'Armas de Fogo (Pistola)',base:20},
     {key:'Armas de Fogo (Espingarda)',base:25},{key:'Armas de Fogo (Rifle)',base:25},
   ]},
   {cat:'Corpo e Movimento', skills:[
-    {key:'Atletismo',base:20},{key:'Furtividade',base:20},{key:'Nadar',base:20},
-    {key:'Dirigir Automóvel',base:20},{key:'Cavalgar',base:5},
+    {key:'Atletismo',base:20},{key:'Furtividade',base:20},
+    {key:'Dirigir Automóvel',base:20},
     {key:'Primeiros Socorros',base:30},{key:'Medicina',base:1},
   ]},
   {cat:'Social', skills:[
-    {key:'Lábia',base:5},{key:'Persuasão',base:10},{key:'Intimidar',base:15},
-    {key:'Charme',base:15},{key:'Atuação',base:5},{key:'Disfarce',base:5},
+    {key:'Convencer',base:15},{key:'Interrogar',base:10},
+    {key:'Intimidar',base:15},{key:'Atuação',base:10},{key:'Disfarce',base:10},
   ]},
   {cat:'Conhecimento', skills:[
-    {key:'Ciência (Biologia)',base:1},{key:'Ciência (Química)',base:1},
-    {key:'Ciência (Farmacologia)',base:1},{key:'Ciência (Forense)',base:1},
-    {key:'Ciência (Outros)',base:1},{key:'História',base:5},
+    {key:'Ciência (Biologia)',base:5},{key:'Ciência (Química)',base:5},
+    {key:'Ciência (Farmacologia)',base:5},{key:'Ciência (Forense)',base:5},
+    {key:'Ciência (Outros)',base:5},{key:'História',base:10},
     {key:'Idioma (Próprio)',base:0,derivado:'Saber'},
-    {key:'Idioma (Inglês)',base:1},{key:'Idioma (Outro)',base:1},
-    {key:'Direito',base:5},{key:'Ocultismo',base:5},
+    {key:'Idioma (Inglês)',base:5},{key:'Idioma (Outro)',base:5},
+    {key:'Direito',base:10},{key:'Ocultismo',base:10},
   ]},
   {cat:'Técnico', skills:[
-    {key:'Mecânica',base:10},{key:'Eletrônica',base:1},
-    {key:'Computadores',base:5},{key:'Operar Maquinário',base:10},
+    {key:'Mecânica',base:15},{key:'Eletrônica',base:5},
+    {key:'Computadores',base:10},
   ]},
   {cat:'Espiritual e Ritualística', skills:[
     {key:'Práticas Espíritas',base:0,special:true},
@@ -1678,18 +1687,18 @@ const ITEMS_REF = [
   {icon:'▣',nome:'Armadura Militar Corporal',cat:'armadura',tipo:'armadura',usos:1,unidade:'item',
    desc:'−6 fogo, −3 brancas, −2 Reflexos, −5 Atletismo. Posse civil é problema sério.'},
   {icon:'▣',nome:'Capacete',cat:'armadura',tipo:'armadura',usos:1,unidade:'item',
-   desc:'Única proteção da cabeça (cobre tiros mirados). −1 Achados, −1 Escutar quando usado.'},
+   desc:'Única proteção da cabeça (cobre tiros mirados). −1 Notar quando usado.'},
   // ───────────────────── APARELHOS DE INVESTIGAÇÃO ESPIRITUAL ─────────────────────
   {icon:'◉',nome:'Gravador Analógico (EVP)',cat:'aparelho',tipo:'aparelho',usos:1,unidade:'item',
-   desc:'Captura vozes/ruídos anômalos para escuta posterior. Achados (Normal) para identificar. Funciona em qualquer Despertar.'},
+   desc:'Captura vozes/ruídos anômalos para escuta posterior. Notar (Normal) para identificar. Funciona em qualquer Despertar.'},
   {icon:'◉',nome:'Fones Amplificados (tempo real)',cat:'aparelho',tipo:'aparelho',usos:1,unidade:'item',
    desc:'Ouvir a entidade durante a sessão — só Despertar 2+. Custa −1 San Atual por sessão.'},
   {icon:'◉',nome:'Caderno de Comunicação (psicografia)',cat:'aparelho',tipo:'aparelho',usos:1,unidade:'item',
    desc:'A entidade escreve pela mão do voluntário. Mente (Normal) para o estado; Alma (Difícil) ao fim. Funciona em D0.'},
   {icon:'◉',nome:'Medidor EMF / Bússola Espiritual',cat:'aparelho',tipo:'aparelho',usos:1,unidade:'item',
-   desc:'Detecta direção e intensidade de presença. Achados (Normal) para ler. Falso positivo perto de fiação.'},
+   desc:'Detecta direção e intensidade de presença. Notar (Normal) para ler. Falso positivo perto de fiação.'},
   {icon:'◉',nome:'Termômetro Espiritual',cat:'aparelho',tipo:'aparelho',usos:1,unidade:'item',
-   desc:'Queda de 5°C+ sem causa = entidade ouvindo; 10°C+ = proximidade focada. Achados para distinguir do natural.'},
+   desc:'Queda de 5°C+ sem causa = entidade ouvindo; 10°C+ = proximidade focada. Notar para distinguir do natural.'},
   {icon:'◉',nome:'Conjunto de 7 Velas (por virtude)',cat:'aparelho',tipo:'componente',usos:7,unidade:'vela',
    desc:'Branca (neutra) + 6 coloridas. A vela que apaga indica a natureza da entidade. Saber (Normal) para ler.'},
   {icon:'◉',nome:'Kit de Círculo de Proteção',cat:'aparelho',tipo:'componente',usos:3,unidade:'uso',
@@ -1742,7 +1751,7 @@ const ITEMS_REF = [
   {icon:'✚',nome:'Adrenalina (epinefrina)',cat:'medico',tipo:'consumivel',usos:2,unidade:'dose',
    desc:'Primeiros Socorros (Difícil): inconsciente volta com 1 HP por 1 cena, depois desmaia.'},
   {icon:'✚',nome:'Analgésico Forte',cat:'medico',tipo:'consumivel',usos:4,unidade:'dose',
-   desc:'Ignora penalidade de dor por uma cena. Embota a percepção (−10% Achados/Escutar).'},
+   desc:'Ignora penalidade de dor por uma cena. Embota a percepção (−10% Notar).'},
   // ───────────────────── COMPONENTES RITUAIS ─────────────────────
   {icon:'❖',nome:'Sal Grosso',cat:'componente',tipo:'componente',usos:5,unidade:'uso',
    desc:'Marca círculos protetores, purifica, bane espíritos menores. Saco de 1kg dura várias execuções.'},
@@ -1881,9 +1890,9 @@ const ITEMS_REF = [
   {icon:'⌗',nome:'Algemas',cat:'ferramenta',tipo:'ferramenta',usos:1,unidade:'par',
    desc:'Imobiliza um alvo. Escapar exige Chaveiro ou Força (Difícil).'},
   {icon:'⌗',nome:'Colete Salva-Vidas',cat:'ferramenta',tipo:'ferramenta',usos:1,unidade:'item',
-   desc:'Flutuação. +20% Nadar para não afogar em emergência.'},
+   desc:'Flutuação. +20% Atletismo para não afogar em emergência.'},
   {icon:'⌗',nome:'Máscara contra Gás',cat:'armadura',tipo:'armadura',usos:1,unidade:'item',
-   desc:'Protege contra fumaça, gás e esporos. Reduz penalidade em ambientes tóxicos. −1 Escutar.'},
+   desc:'Protege contra fumaça, gás e esporos. Reduz penalidade em ambientes tóxicos. −1 Notar.'},
   {icon:'⌗',nome:'Extintor de Incêndio',cat:'ferramenta',tipo:'ferramenta',usos:2,unidade:'carga',
    desc:'Apaga fogo pequeno. Improvisado: spray ofuscante ou objeto contundente (1d6).'},
   {icon:'⌗',nome:'Power Bank / Bateria Externa',cat:'aparelho',tipo:'aparelho',usos:4,unidade:'carga',
@@ -2045,14 +2054,14 @@ const PATRONO_CAPS = {
       {nome:'Iluminação (convocação)', tipo:'Convocação · 1×/Despertar', custo:'+2 Marcas, −1d4 San',
        efeito:'Diante de decisão crucial com informação insuficiente, invoca Gabriel. Por uma cena percebe verdades da situação: quem mente, o que está oculto, qual o real risco. A verdade machuca quando expõe o que se preferiria não saber.'},
       {nome:'Compulsão por Verdade (custo contínuo)', tipo:'Custo contínuo', custo:'Permanente',
-       efeito:'Desconforto físico ao mentir significativamente. Mentiras grandes causam mal-estar real: −15% em Lábia/Atuação para grandes mentiras.'},
+       efeito:'Desconforto físico ao mentir significativamente. Mentiras grandes causam mal-estar real: −15% em Convencer (Enganar)/Atuação para grandes mentiras.'},
     ]},
   'Cura': {patrono:'Rafael', polaridade:'Luz', arquetipo:'Cura · Restauração · Proteção dos vulneráveis',
     caps:[
       {nome:'Sensibilidade ao Sofrimento (passiva)', tipo:'Passiva', custo:'Sempre ativa',
        efeito:'Percebe dor física e espiritual em outros — sente quem está ferido, adoecido ou em colapso emocional, mesmo sem sinais visíveis.'},
       {nome:'Cura de Sanidade em Outros (ativa)', tipo:'Ativa · 1×/sessão', custo:'+1 Marca',
-       efeito:'Em cena de cuidado real (15+ min in-game), role Psicologia ou Persuasão. Sucesso restaura 1d4 San Atual em outro personagem; bom 1d6; extremo 1d8.'},
+       efeito:'Em cena de cuidado real (15+ min in-game), role Psicologia ou Convencer. Sucesso restaura 1d4 San Atual em outro personagem; bom 1d6; extremo 1d8.'},
       {nome:'Proteção Espiritual de Vulneráveis (ativa)', tipo:'Ativa · 1×/sessão', custo:'+1 Marca',
        efeito:'Declara um vulnerável (criança, idoso, doente, ferido) sob proteção. Por toda a sessão, ele tem efetivamente +2 Permanência em resistência espiritual. Limite: 1 vulnerável por sessão.'},
       {nome:'Mão do Curador (convocação)', tipo:'Convocação · 1×/Despertar', custo:'+2 Marcas, −1d6 San própria, −1 Permanência',
@@ -2072,7 +2081,7 @@ const PATRONO_CAPS = {
       {nome:'Leitura de Desejo (passiva)', tipo:'Passiva', custo:'Sempre ativa',
        efeito:'Percebe o que as pessoas mais desejam — o ponto fraco, a fome secreta, o que as moveria a agir contra o próprio juízo.'},
       {nome:'Persuasão Amplificada (ativa)', tipo:'Ativa · 1×/sessão', custo:'+1 Marca, −1 San',
-       efeito:'Ao oferecer a alguém o que essa pessoa secretamente deseja: +20% em Persuasão/Charme na cena. O custo espiritual cresce se usado para manipular.'},
+       efeito:'Ao oferecer a alguém o que essa pessoa secretamente deseja: +20% em Convencer (Encantar) na cena. O custo espiritual cresce se usado para manipular.'},
       {nome:'Manifestação de Asmodeus (convocação)', tipo:'Convocação · 1×/Despertar', custo:'+2 Marcas, −1d4 San, −1 Permanência',
        efeito:'Invoca a fome do Patrono. Por uma cena, a vontade do vinculado se impõe sobre o ambiente — mas alimenta o padrão kármico, escalando o ciclo.'},
     ]},
@@ -2330,7 +2339,7 @@ function renderSkillWizard() {
   SKILLS_LIST.forEach(cat => cat.skills.forEach(s => {
     if(state.wizard.skills[s.key]===undefined) {
       let base = s.base;
-      if(s.derivado==='Saber') base = a.Saber||0;
+      if(s.derivado) base = Math.floor((a[s.derivado]||0)/(s.divisor||1));
       if(s.key==='Nível de Crédito') base = credMin;
       state.wizard.skills[s.key] = base;
     }
@@ -2340,7 +2349,7 @@ function renderSkillWizard() {
 
   function skillBase(s) {
     if(s.key==='Nível de Crédito') return credMin;
-    if(s.derivado==='Saber') return a.Saber||0;
+    if(s.derivado) return Math.floor((a[s.derivado]||0)/(s.divisor||1));
     return s.base||0;
   }
 
@@ -2377,6 +2386,7 @@ function renderSkillWizard() {
           ${isOcc?'<span style="font-size:11px;color:var(--gold)"> ★</span>':''}
           ${special?`<span style="font-size:11px;color:var(--ash)"> (${s.destrava})</span>`:''}
           ${isCredit?`<span style="font-size:11px;color:var(--ash)"> (${occ.dominio})</span>`:''}
+          ${s.escopo?`<input class="escopo-input" placeholder="escopo (ex: Novavera)" value="${(state.wizard.skills[s.key+'_escopo']||'').replace(/"/g,'&quot;')}" oninput="state.wizard.skills['${keyEsc}_escopo']=this.value">`:''}
         </div>
         ${special ? `<span class="tag" style="border-color:var(--ash);color:var(--ash);font-size:7px">bloqueada</span>` :
           `<div class="stepper">
@@ -2774,13 +2784,15 @@ function renderPericias() {
   list.innerHTML=SKILLS_LIST.map(cat=>`
     <div class="skill-cat-header">${cat.cat}</div>
     ${cat.skills.map(s=>{
-      const val=f.skills[s.key]||(s.derivado==='Saber'?f.attrs.Saber:s.base)||0;
+      const derivedBase = s.derivado ? Math.floor((f.attrs[s.derivado]||0)/(s.divisor||1)) : s.base;
+      const val=f.skills[s.key]||derivedBase||0;
       const marked=f.skills[s.key+'_marked']||false;
       const special=s.special&&s.destrava;
       const unlocked=!special||(f.skills[s.key]>0);
+      const escopo = s.escopo ? (f.skills[s.key+'_escopo']||'') : null;
       return `<div class="skill-item" style="${!unlocked?'opacity:0.4':''}">
         <div class="skill-mark ${marked?'checked':''}" onclick="toggleMark('${s.key}')" title="Marcar uso com sucesso"></div>
-        <div class="skill-name">${s.key}${special?` <span style="font-size:10px;color:var(--ash)">(${unlocked?'ativa':s.destrava})</span>`:''}</div>
+        <div class="skill-name">${s.key}${special?` <span style="font-size:10px;color:var(--ash)">(${unlocked?'ativa':s.destrava})</span>`:''}${s.escopo?`<input class="escopo-input" placeholder="escopo (ex: Novavera)" value="${escopo.replace(/"/g,'&quot;')}" oninput="updateEscopo('${s.key.replace(/'/g,"\\'")}',this.value)">`:''}</div>
         <div style="display:flex;align-items:center;gap:6px">
           <span style="font-family:'Cinzel',serif;font-size:8px;color:var(--ash);white-space:nowrap" title="Difícil (metade) · Extremo (um quinto)">½ ${Math.floor(val/2)} · ⅕ ${Math.floor(val/5)}</span>
           <input class="skill-input" type="number" min="0" max="99" value="${val}"
@@ -2790,6 +2802,10 @@ function renderPericias() {
       </div>`;
     }).join('')}`).join('');
   renderMelhoriaList();
+}
+function updateEscopo(key, val) {
+  if(!state.ficha) return;
+  state.ficha.skills[key+'_escopo'] = val;
 }
 function toggleMark(key) {
   if(!state.ficha) return;
@@ -3323,7 +3339,7 @@ const RULES = [
 <p><strong>Resistências:</strong> algumas situações pedem rolagem contra um <em>atributo</em> em vez de perícia. Funciona da mesma forma: role abaixo do atributo.</p>
 <div style="background:rgba(184,122,40,0.08);border-left:2px solid var(--gold);padding:10px 14px;margin-top:10px;border-radius:3px">
 <strong style="color:var(--gold)">Exemplo de rolagem</strong><br>
-Ana tem <strong>Achados 60%</strong> e vasculha um escritório. O Mestre pede um teste.<br>
+Ana tem <strong>Notar 60%</strong> e vasculha um escritório. O Mestre pede um teste.<br>
 • Ela rola <strong>1d100</strong> e tira <strong>27</strong>. Como 27 ≤ 30 (metade de 60), é um <strong>Sucesso Bom</strong> — acha o que procurava <em>e</em> uma pista extra.<br>
 • Se tivesse tirado <strong>12</strong> (≤ 12, um quinto de 60), seria <strong>Extremo</strong>.<br>
 • <strong>55</strong> seria Sucesso Normal; <strong>61+</strong>, fracasso; <strong>100</strong>, Falha Crítica.<br>
@@ -3421,16 +3437,16 @@ Uma <strong>pistola</strong> não recebe esse bônus — arma de fogo causa só 
 <p><strong>Conversa Investigativa (Cap 10b):</strong> cena coletiva com equipamento — qualquer Despertar pode participar. 5 momentos:</p>
 <table class="rule-table">
 <tr><th>Momento</th><th>Perícia</th></tr>
-<tr><td>1. Preparar ambiente</td><td>Saber ou Achados</td></tr>
-<tr><td>2. Calibrar / detectar</td><td>Achados ou Eletrônica/Mecânica</td></tr>
-<tr><td>3. Iniciar comunicação</td><td>Persuasão (ou Práticas Espíritas 30%+)</td></tr>
-<tr><td>4. Conduzir conversa</td><td>Psicologia / Persuasão (entidades podem mentir)</td></tr>
+<tr><td>1. Preparar ambiente</td><td>Saber ou Notar</td></tr>
+<tr><td>2. Calibrar / detectar</td><td>Notar ou Eletrônica/Mecânica</td></tr>
+<tr><td>3. Iniciar comunicação</td><td>Convencer (ou Práticas Espíritas 30%+)</td></tr>
+<tr><td>4. Conduzir conversa</td><td>Psicologia / Convencer (entidades podem mentir)</td></tr>
 <tr><td>5. Encerrar com segurança</td><td>Saber ou Práticas Espíritas</td></tr>
 </table>
 <p><strong>Equipamento:</strong> gravador EVP (todos), fones amplificados (D2+, −1 San), caderno de psicografia (D0+), medidor EMF, termômetro, 7 velas por virtude, kit de círculo de proteção. Não encerrar bem é a causa mais comum de "presença que ficou".</p>`},
   {id:'investigacao',title:'⌖ Investigação', content:`
 <p>Karma Eterno é jogo de <strong>investigação</strong> antes de tudo. A maioria das sessões não tem combate.</p>
-<p><strong>Perícias-chave:</strong> Achados (pistas físicas), Psicologia (ler pessoas, detectar mentira), Persuasão/Intimidar/Charme (extrair informação), Saber (decifrar referências), Computadores (pesquisa digital), Conhecimento Proibido (esoterismo — nunca comprado).</p>
+<p><strong>Perícias-chave:</strong> Notar (perceber o ambiente), Investigar (conectar pistas), Pesquisa (fontes externas), Psicologia (ler pessoas), Convencer/Interrogar/Intimidar (lidar com pessoas), Ocultismo (tradições), Conhecimento Proibido (verdade cósmica — nunca comprado).</p>
 <p><strong>Princípios:</strong></p>
 <table class="rule-table">
 <tr><th>Princípio</th><th>Como aplicar</th></tr>
@@ -3440,6 +3456,53 @@ Uma <strong>pistola</strong> não recebe esse bônus — arma de fogo causa só 
 <tr><td>Investigação espiritual</td><td>Leitura Kármica e Eco do Lugar revelam camadas que perícias mundanas não alcançam — sempre com custo.</td></tr>
 </table>
 <p><strong>Memória mecânica:</strong> personagens esquecem (San caindo, tempo passando). Um diário bem mantido permite consultar notas antigas — uma vez por sessão, o Mestre fornece informação registrada que o jogador esqueceu.</p>`},
+  {id:'fluxo',title:'⌥ Fluxo do Mestre — qual perícia pedir', content:`
+<p>Quando o jogador descreve uma ação ambígua, use este fluxo rápido para decidir <strong>qual perícia</strong> rolar:</p>
+<table class="rule-table">
+<tr><th>O jogador quer...</th><th>Peça...</th></tr>
+<tr><td>Perceber algo no ambiente</td><td><strong>Notar</strong></td></tr>
+<tr><td>Conectar pistas que já tem</td><td><strong>Investigar</strong></td></tr>
+<tr><td>Buscar info em fontes externas (internet, arquivos comuns, contatos)</td><td><strong>Pesquisa</strong></td></tr>
+<tr><td>Buscar em arquivos históricos profundos, coleções raras</td><td><strong>Biblioteconomia</strong></td></tr>
+<tr><td>Hackear, contornar sistema, programar</td><td><strong>Computadores</strong></td></tr>
+<tr><td>Seguir trilha física (pegadas, rastro)</td><td><strong>Rastrear</strong></td></tr>
+<tr><td>Ler intenção/emoção de uma pessoa</td><td><strong>Psicologia</strong></td></tr>
+<tr><td>Saber sobre o lugar (bairro, cidade, rede)</td><td><strong>Conhecimento Local</strong></td></tr>
+<tr><td>Saber sobre cultura, povo, costume amplo</td><td><strong>Antropologia</strong></td></tr>
+<tr><td>Saber sobre evento histórico</td><td><strong>História</strong></td></tr>
+<tr><td>Saber sobre lei, processo legal</td><td><strong>Direito</strong></td></tr>
+<tr><td>Saber sobre tradição espiritual humana</td><td><strong>Ocultismo</strong></td></tr>
+<tr><td>Saber sobre verdade cosmológica</td><td><strong>Conhecimento Proibido</strong> (custa San)</td></tr>
+<tr><td>Convencer alguém (sem violência)</td><td><strong>Convencer</strong> (Enganar/Persuadir/Encantar)</td></tr>
+<tr><td>Extrair info contra resistência</td><td><strong>Interrogar</strong></td></tr>
+<tr><td>Forçar com medo/pressão</td><td><strong>Intimidar</strong></td></tr>
+<tr><td>Fingir ser outra pessoa por tempo</td><td><strong>Atuação</strong></td></tr>
+<tr><td>Mudar a aparência física</td><td><strong>Disfarce</strong></td></tr>
+<tr><td>Executar ritual conhecido</td><td><strong>Práticas Espíritas</strong></td></tr>
+<tr><td>Esforço físico (correr, pular, escalar, nadar)</td><td><strong>Atletismo</strong></td></tr>
+</table>
+<p>Se a ação for <strong>combinada</strong> (várias perícias), escolha a <strong>mais central</strong> para a rolagem e use as outras como <strong>Vantagem ou Peso</strong>.</p>
+<div style="background:rgba(184,122,40,0.08);border-left:2px solid var(--gold);padding:10px 14px;margin:8px 0;border-radius:3px">
+<strong style="color:var(--gold)">Exemplo combinado</strong><br>
+"Quero entrar disfarçado de policial na delegacia para falar com a testemunha." → <strong>Disfarce</strong> para entrar (rolagem central), com Vantagem se o Nível de Crédito ajudar; depois <strong>Atuação</strong> para sustentar a conversa. Se o Disfarce falha, não chega à segunda rolagem.
+</div>`},
+  {id:'espiritual',title:'❖ Ocultismo · Práticas · Proibido', content:`
+<p>As três perícias espirituais confundem porque parecem cobrir "o sobrenatural" inteiro. A fronteira é clara quando você pensa na <strong>pergunta que cada uma responde</strong>:</p>
+<table class="rule-table">
+<tr><th>Perícia</th><th>Pergunta que responde</th><th>Custo</th></tr>
+<tr><td>Ocultismo</td><td>"O que isso significa? Que tradição é essa?"</td><td>Comum, normal</td></tr>
+<tr><td>Práticas Espíritas</td><td>"Como faço isso? Posso executar este ritual?"</td><td>Sobe ao aprender rituais</td></tr>
+<tr><td>Conhecimento Proibido</td><td>"O que isso É de verdade? Por que funciona?"</td><td>−1 San Máxima por ponto</td></tr>
+</table>
+<p style="font-style:italic;color:var(--gold)">Ocultismo é o que humanos acreditam e fazem. Práticas Espíritas é fazer de fato. Conhecimento Proibido é saber a verdade cósmica por trás.</p>
+<p><strong>Exemplo — pentagrama em sangue numa cena de crime:</strong></p>
+<table class="rule-table">
+<tr><td>"Que tradição é essa?"</td><td><strong>Ocultismo</strong> — revela que é sincretismo moderno, apropriação híbrida.</td></tr>
+<tr><td>"Quero replicar esse símbolo num ritual."</td><td><strong>Práticas Espíritas</strong> — se conhece o ritual associado.</td></tr>
+<tr><td>"O que esse símbolo realmente abre?"</td><td><strong>Conhecimento Proibido</strong> — revela o portal/entidade. Custa San.</td></tr>
+</table>
+<p><strong>Não se substituem:</strong> Ocultismo 80% + Práticas 0% = sabe descrever rituais em detalhe mas <em>não executa nenhum</em>. Conhecimento Proibido 60% sabe que o pentagrama abre portal para a entidade X, mas pode não saber qual tradição humana o usou (Ocultismo) nem como fechá-lo (Práticas).</p>
+<p><strong>Como cada uma sobe:</strong> Ocultismo por uso (marca-e-rola). Práticas Espíritas <em>só</em> ao aprender rituais novos (+5% a +15% cada). Conhecimento Proibido nunca é comprado — sobe por exposição, e cada ponto custa 1 de Sanidade Máxima permanente.</p>`},
   {id:'san',title:'☉ Sanidade e Acessos', content:`
 <p><strong>Sanidade Inicial = Alma.</strong> Sanidade Máxima começa em 99 e cai com Conhecimento Proibido (−1 por ponto, permanente).</p>
 <p>Ao confrontar horror: role 1d100 contra sua San atual. A perda vem em notação <strong>X/Y</strong> — o menor número (X) é o que você perde se <strong>passar</strong> no teste, o maior (Y) se <strong>falhar</strong>.</p>
