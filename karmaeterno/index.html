@@ -1026,6 +1026,137 @@ body.props-modo-jogador .prop-uso-txt{display:none}
   .dia18-timeline::before{left:60px}
   .dia18-hora{left:-80px;width:55px;font-size:12px}
 }
+
+/* ═══════════════════════════════════════════════════════════
+   TRACKER DE COMBATE — Onda 5
+   ═══════════════════════════════════════════════════════════ */
+.combate-shell{padding:28px 38px 80px;max-width:1280px;margin:0 auto}
+.cbt-hd{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:14px;border-bottom:1px solid rgba(154,122,42,.25);padding-bottom:16px;margin-bottom:20px}
+.cbt-hd .cbt-eyebrow{font-family:"Cinzel",serif;font-size:9px;letter-spacing:5px;text-transform:uppercase;color:var(--gold-lt);opacity:.8;margin-bottom:6px}
+.cbt-hd h2{font-family:"Cinzel Decorative",serif;font-size:30px;color:var(--blood-lt);letter-spacing:1px;line-height:1}
+.cbt-hd .cbt-sub{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--parch-deep);font-size:15px;margin-top:6px;max-width:560px}
+.cbt-actions{display:flex;flex-wrap:wrap;gap:8px}
+.cbt-btn{font-family:"Cinzel",serif;font-size:12px;letter-spacing:.6px;padding:9px 14px;border-radius:3px;cursor:pointer;border:1px solid rgba(154,122,42,.4);background:rgba(154,122,42,.08);color:var(--gold-lt);transition:all .18s}
+.cbt-btn:hover{background:rgba(154,122,42,.18);border-color:var(--gold)}
+.cbt-btn.blood{border-color:rgba(125,18,18,.55);color:#e09a9a;background:rgba(125,18,18,.12)}
+.cbt-btn.blood:hover{background:rgba(125,18,18,.24)}
+.cbt-btn.tiny{font-size:10.5px;padding:5px 9px;letter-spacing:.4px}
+.cbt-btn.ghost{background:none;border-color:rgba(154,122,42,.28);opacity:.85}
+
+/* barra de iniciativa / turno */
+.cbt-turnbar{display:flex;flex-wrap:wrap;align-items:center;gap:12px;background:linear-gradient(180deg,rgba(20,12,6,.6),rgba(13,8,4,.6));border:1px solid rgba(154,122,42,.25);border-radius:5px;padding:12px 16px;margin-bottom:18px}
+.cbt-turnbar .rnd{font-family:"Cinzel",serif;font-size:13px;letter-spacing:1px;color:var(--gold-lt)}
+.cbt-turnbar .rnd b{color:var(--parch);font-size:18px}
+.cbt-initiative{display:flex;flex-wrap:wrap;gap:6px;flex:1;min-width:200px}
+.cbt-init-chip{font-family:"Cormorant Garamond",serif;font-size:13px;padding:4px 10px;border-radius:30px;border:1px solid rgba(154,122,42,.3);color:var(--parch-deep);background:rgba(0,0,0,.18);white-space:nowrap}
+.cbt-init-chip .ini{font-family:"Cinzel",serif;font-size:10px;color:var(--gold-dim);margin-left:5px}
+.cbt-init-chip.now{border-color:var(--blood-lt);color:var(--parch);background:rgba(125,18,18,.22);box-shadow:0 0 0 1px rgba(168,32,32,.4)}
+.cbt-init-chip.dead{opacity:.4;text-decoration:line-through}
+
+/* grade de combatentes */
+.cbt-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:16px;margin-bottom:26px}
+.cbt-card{background:linear-gradient(180deg,#f4ead8,#e9dcc2);color:var(--ink);border:1px solid rgba(90,74,48,.45);border-radius:6px;padding:0;overflow:hidden;box-shadow:0 6px 22px rgba(0,0,0,.4);position:relative}
+.cbt-card.is-now{box-shadow:0 0 0 2px var(--blood),0 6px 22px rgba(0,0,0,.5)}
+.cbt-card.t-pc{border-top:4px solid var(--gold)}
+.cbt-card.t-npc{border-top:4px solid var(--blood)}
+.cbt-card.t-avulso{border-top:4px solid var(--ash)}
+.cbt-card.st-morto,.cbt-card.st-ko{filter:grayscale(.55) brightness(.92)}
+.cbt-cardhd{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;padding:12px 14px 8px;border-bottom:1px solid rgba(90,74,48,.22)}
+.cbt-cardhd .nm{font-family:"Cinzel",serif;font-size:17px;font-weight:700;color:var(--blood-deep);line-height:1.1;letter-spacing:.3px}
+.cbt-cardhd .rl{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:13px;color:var(--ink-soft);margin-top:2px}
+.cbt-badge{font-family:"Cinzel",serif;font-size:8.5px;letter-spacing:1px;text-transform:uppercase;padding:3px 7px;border-radius:3px;white-space:nowrap}
+.cbt-badge.pc{background:rgba(184,146,46,.22);color:#6b5212;border:1px solid rgba(160,120,37,.5)}
+.cbt-badge.npc{background:rgba(125,18,18,.14);color:var(--blood-deep);border:1px solid rgba(125,18,18,.4)}
+.cbt-badge.avulso{background:rgba(90,74,48,.16);color:var(--ash);border:1px solid rgba(90,74,48,.4)}
+.cbt-warn{display:inline-block;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:11px;color:#8a2b0b;margin:2px 14px 0}
+
+.cbt-stats{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:rgba(90,74,48,.2);margin:8px 0}
+.cbt-stat{background:#efe3cb;padding:6px 2px;text-align:center}
+.cbt-stat label{display:block;font-family:"Cinzel",serif;font-size:8px;letter-spacing:1px;color:var(--ash);text-transform:uppercase}
+.cbt-stat input{width:100%;border:none;background:none;text-align:center;font-family:"Cinzel",serif;font-size:16px;font-weight:700;color:var(--ink);outline:none;-moz-appearance:textfield}
+.cbt-stat input::-webkit-outer-spin-button,.cbt-stat input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.cbt-stat input:focus{background:rgba(184,146,46,.18)}
+
+.cbt-derived{display:flex;flex-wrap:wrap;gap:6px;padding:8px 14px}
+.cbt-der{font-family:"Cormorant Garamond",serif;font-size:12.5px;color:var(--ink-soft);background:rgba(90,74,48,.08);border:1px solid rgba(90,74,48,.18);border-radius:3px;padding:3px 8px}
+.cbt-der b{font-family:"Cinzel",serif;font-size:12px;color:var(--blood-deep)}
+
+/* barras hp / san */
+.cbt-bars{padding:6px 14px 10px}
+.cbt-barrow{display:flex;align-items:center;gap:8px;margin:5px 0}
+.cbt-barrow .lab{font-family:"Cinzel",serif;font-size:9px;letter-spacing:1px;color:var(--ash);width:46px;text-transform:uppercase}
+.cbt-bar{flex:1;height:13px;background:rgba(90,74,48,.22);border-radius:7px;overflow:hidden;position:relative}
+.cbt-bar>span{position:absolute;inset:0;border-radius:7px;transition:width .25s}
+.cbt-bar.hp>span{background:linear-gradient(90deg,#7d1212,#a82020)}
+.cbt-bar.san>span{background:linear-gradient(90deg,#5a4a30,#b8922e)}
+.cbt-barval{font-family:"Cinzel",serif;font-size:11px;color:var(--ink);min-width:62px;text-align:right;white-space:nowrap}
+.cbt-barval input{width:32px;border:none;background:rgba(0,0,0,.05);border-radius:3px;text-align:center;font-family:"Cinzel",serif;font-size:11px;color:var(--ink);outline:none}
+.cbt-step{cursor:pointer;border:1px solid rgba(90,74,48,.3);background:rgba(90,74,48,.06);color:var(--ink-soft);width:18px;height:18px;border-radius:3px;font-size:12px;line-height:1;padding:0;font-family:serif}
+.cbt-step:hover{background:rgba(125,18,18,.14)}
+
+/* status + marcas */
+.cbt-rowctl{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:0 14px 10px}
+.cbt-sel{font-family:"Cormorant Garamond",serif;font-size:13px;padding:4px 7px;border:1px solid rgba(90,74,48,.35);border-radius:3px;background:#efe3cb;color:var(--ink);outline:none}
+.cbt-mini{font-family:"Cormorant Garamond",serif;font-size:12px;color:var(--ink-soft);display:flex;align-items:center;gap:4px}
+.cbt-mini input{width:36px;border:1px solid rgba(90,74,48,.3);border-radius:3px;text-align:center;font-family:"Cinzel",serif;font-size:12px;padding:2px;background:#efe3cb;color:var(--ink)}
+
+/* resistências */
+.cbt-res{display:flex;flex-wrap:wrap;gap:6px;padding:0 14px 10px}
+.cbt-resbtn{font-family:"Cinzel",serif;font-size:10px;letter-spacing:.4px;padding:5px 9px;border-radius:3px;cursor:pointer;border:1px solid rgba(90,74,48,.4);background:rgba(90,74,48,.07);color:var(--ink-soft);transition:all .15s}
+.cbt-resbtn:hover{background:rgba(184,146,46,.2);border-color:var(--gold-dim)}
+
+/* ataques */
+.cbt-atks{border-top:1px solid rgba(90,74,48,.22);padding:8px 14px 12px;background:rgba(90,74,48,.04)}
+.cbt-atks-h{font-family:"Cinzel",serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--ash);margin-bottom:6px;display:flex;justify-content:space-between;align-items:center}
+.cbt-atk{display:flex;align-items:center;gap:6px;margin:5px 0;flex-wrap:wrap}
+.cbt-atk .atk-fire{flex:1;text-align:left;font-family:"Cormorant Garamond",serif;font-size:14px;padding:6px 9px;border-radius:3px;cursor:pointer;border:1px solid rgba(125,18,18,.35);background:rgba(125,18,18,.06);color:var(--blood-deep);transition:all .15s;min-width:150px}
+.cbt-atk .atk-fire:hover{background:rgba(125,18,18,.16)}
+.cbt-atk .atk-fire b{font-family:"Cinzel",serif;font-size:13px}
+.cbt-atk .atk-meta{font-style:italic;font-size:12px;color:var(--ink-soft)}
+.cbt-atk .atk-x{cursor:pointer;border:none;background:none;color:rgba(125,18,18,.5);font-size:15px;padding:0 4px}
+.cbt-atk .atk-x:hover{color:var(--blood)}
+.cbt-atkedit{display:grid;grid-template-columns:1.4fr .7fr .9fr .7fr;gap:5px;margin-top:7px}
+.cbt-atkedit input,.cbt-atkedit select{font-family:"Cormorant Garamond",serif;font-size:12px;padding:4px 5px;border:1px solid rgba(90,74,48,.3);border-radius:3px;background:#efe3cb;color:var(--ink);outline:none;min-width:0}
+
+.cbt-cardfoot{display:flex;justify-content:flex-end;gap:6px;padding:8px 12px;border-top:1px solid rgba(90,74,48,.18)}
+.cbt-cardfoot .cbt-btn{font-size:10px;padding:5px 9px}
+
+/* log */
+.cbt-logwrap{background:linear-gradient(180deg,rgba(20,12,6,.55),rgba(13,8,4,.55));border:1px solid rgba(154,122,42,.25);border-radius:6px;padding:14px 18px}
+.cbt-logwrap h3{font-family:"Cinzel",serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-lt);margin-bottom:10px;display:flex;justify-content:space-between;align-items:center}
+.cbt-log{max-height:340px;overflow-y:auto;font-family:"Cormorant Garamond",serif}
+.cbt-logline{font-size:14.5px;color:var(--parch-deep);padding:6px 0;border-bottom:1px dotted rgba(154,122,42,.15);line-height:1.4}
+.cbt-logline .lt-rnd{font-family:"Cinzel",serif;font-size:9px;letter-spacing:1px;color:var(--gold-dim);margin-right:8px}
+.cbt-logline .lt-roll{font-family:"Cinzel",serif;font-weight:700}
+.cbt-logline em{color:var(--parch);font-style:italic}
+.tier-critico,.tier-extremo{color:var(--gold-lt)!important}
+.tier-normal{color:#7ea86a!important}
+.tier-falha{color:var(--ash)!important}
+.tier-fumble{color:var(--blood-lt)!important}
+.cbt-empty{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--parch-deep);opacity:.7;padding:30px;text-align:center}
+
+/* modal de seleção de npc */
+.cbt-pick-overlay{position:fixed;inset:0;background:rgba(5,3,1,.78);z-index:400;display:none;align-items:center;justify-content:center;padding:20px}
+.cbt-pick-overlay.show{display:flex}
+.cbt-pick{background:linear-gradient(180deg,#120c06,#0d0804);border:1px solid rgba(154,122,42,.35);border-radius:8px;max-width:560px;width:100%;max-height:80vh;overflow:hidden;display:flex;flex-direction:column}
+.cbt-pick h3{font-family:"Cinzel",serif;font-size:15px;letter-spacing:1px;color:var(--gold-lt);padding:16px 20px;border-bottom:1px solid rgba(154,122,42,.2)}
+.cbt-pick-list{overflow-y:auto;padding:8px}
+.cbt-pick-item{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 14px;border-radius:4px;cursor:pointer;transition:background .15s}
+.cbt-pick-item:hover{background:rgba(154,122,42,.1)}
+.cbt-pick-item .pn{font-family:"Cinzel",serif;font-size:14px;color:var(--parch)}
+.cbt-pick-item .pt{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:13px;color:var(--parch-deep);text-align:right;max-width:300px}
+.cbt-pick-foot{padding:12px 20px;border-top:1px solid rgba(154,122,42,.2);text-align:right}
+
+.nav-item.nav-combate .nav-icon{color:var(--blood-lt)}
+
+@media(max-width:760px){
+  .combate-shell{padding:18px 14px 70px}
+  .cbt-hd h2{font-size:23px}
+  .cbt-grid{grid-template-columns:1fr}
+  .cbt-atkedit{grid-template-columns:1fr 1fr}
+  .cbt-hd{flex-direction:column;align-items:flex-start}
+}
+
 </style>
 <body>
 
@@ -1058,6 +1189,7 @@ body.props-modo-jogador .prop-uso-txt{display:none}
 
     <div class="nav-section">A Investigação</div>
     <button class="nav-item nav-narrar" data-page="narrar"><span class="nav-icon">▶</span>Modo Narrar</button>
+    <button class="nav-item nav-combate" data-page="combate"><span class="nav-icon">⚔</span>Combate</button>
     <button class="nav-item" data-page="temporadas"><span class="nav-icon">❧</span>Temporadas</button>
     <button class="nav-item" data-page="pragas"><span class="nav-icon">☣</span>As 10 Pragas</button>
     <button class="nav-item" data-page="props"><span class="nav-icon">❦</span>Props do Ep1</button>
@@ -1163,6 +1295,11 @@ body.props-modo-jogador .prop-uso-txt{display:none}
   <!-- MODO NARRAR -->
   <section class="page" id="page-narrar">
     <div class="narrar-shell" id="narrarShell"></div>
+  </section>
+
+  <!-- TRACKER DE COMBATE -->
+  <section class="page" id="page-combate">
+    <div class="combate-shell" id="combateShell"></div>
   </section>
 
   <!-- AS 10 PRAGAS -->
@@ -1492,6 +1629,7 @@ function initApp(){
   // renderNotasMestre() removido — dados purgados, reescrever Onda 2
   // renderDocumentos();
   // renderNotasMestre();
+  renderCombate();
   loadNotes();
   handleHash();
 }
@@ -3512,18 +3650,20 @@ function renderPeekLocal(id){
 function renderPeekPraga(id){
   const p = (DATA.pragas||[]).find(x=>x.id===id);
   if(!p) return `<p>Praga não encontrada.</p>`;
-  let h = `<div class="peek-tipo">Praga #${p.numero}</div>
+  const st = p.status||'planejada';
+  const stLabel = st==='cumprida'?'cumprida':(st==='em_curso'?'em curso':'planejada');
+  const foraDoControle = p.numero===7 || p.numero===9;
+  const maoLabel = foraDoControle ? 'O Nó (fora do controle)' : (p.numero===10 ? 'Armindo (sobre si mesmo)' : 'Armindo');
+  let h = `<div class="peek-tipo">Praga #${p.numero} · Episódio ${p.episodio_alvo||p.numero}</div>
     <div class="peek-nome">${esc(p.nome)}</div>
-    <div class="peek-sub">Mão: ${esc(p.mao||'-')} · Status: ${esc(p.status||'-')}</div>`;
-  if(p.vitima) h += `<div class="peek-secao"><div class="peek-secao-lbl">Vítima / Sinal</div><p class="peek-p">${fmtInlinePeek(p.vitima)}</p></div>`;
-  if(p.disfarce) h += `<div class="peek-secao"><div class="peek-secao-lbl">Disfarce</div><p class="peek-p">${fmtInlinePeek(p.disfarce)}</p></div>`;
-  if(p.assinatura_oculta) h += `<div class="peek-secao"><div class="peek-secao-lbl">Assinatura oculta</div><p class="peek-p">${fmtInlinePeek(p.assinatura_oculta)}</p></div>`;
-  if(p.escalas){
-    h += `<div class="peek-secao"><div class="peek-secao-lbl">Escalas</div>`;
-    p.escalas.forEach(e=>{ h += `<div class="peek-fala"><div class="peek-fala-ctx">${esc(e.escala)}</div>${fmtInlinePeek(e.sinal)}</div>`; });
-    h += `</div>`;
-  }
-  if(p.vetores_descoberta){ h += `<div class="peek-secao"><div class="peek-secao-lbl">Vetores de descoberta</div><ul class="peek-ul">${p.vetores_descoberta.map(v=>`<li>${fmtInlinePeek(v)}</li>`).join('')}</ul></div>`; }
+    <div class="peek-sub">Mão: ${esc(maoLabel)} · Status: ${stLabel}</div>`;
+  if(p.subtitulo) h += `<div class="peek-secao"><div class="peek-secao-lbl">${esc(p.subtitulo)}</div></div>`;
+  if(p.vitima) h += `<div class="peek-secao"><div class="peek-secao-lbl">Vítima</div><p class="peek-p">${fmtInlinePeek(p.vitima)}</p></div>`;
+  if(p.quando) h += `<div class="peek-secao"><div class="peek-secao-lbl">Quando</div><p class="peek-p">${fmtInlinePeek(p.quando)}</p></div>`;
+  if(p.como) h += `<div class="peek-secao"><div class="peek-secao-lbl">Como</div><p class="peek-p">${fmtInlinePeek(p.como)}</p></div>`;
+  if(p.mao_de) h += `<div class="peek-secao"><div class="peek-secao-lbl">Mão de</div><p class="peek-p">${fmtInlinePeek(p.mao_de)}</p></div>`;
+  if(p.sinal_publico) h += `<div class="peek-secao"><div class="peek-secao-lbl">Sinal público</div><p class="peek-p">${fmtInlinePeek(p.sinal_publico)}</p></div>`;
+  if(p.eco_ep1) h += `<div class="peek-secao"><div class="peek-secao-lbl">Eco no jogo</div><p class="peek-p">${fmtInlinePeek(p.eco_ep1)}</p></div>`;
   return h;
 }
 
@@ -3603,29 +3743,34 @@ function renderPragas(){
   if(!root || !DATA.pragas) return;
   let h = `<div class="pragas-wrap">
     <div style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;font-style:italic;line-height:1.65;color:var(--parch);max-width:780px;margin:6px 0 8px">
-      Dez sinais semeados por <a class="auto-link" onclick="captureOrigin();goRef('page:profetas')">Armindo Vasconcellos</a> ao longo de meses, lidos pelos PCs como mortes naturais isoladas — e que só revelam o padrão quando vistos em sequência. A sétima fratura o método: ali, o sigilo acorda além do controle do profeta. A décima é o próprio Armindo dissolvendo no fechamento do nó.
+      <strong>Dez pragas = dez episódios.</strong> Uma por episódio, no presente (2025), aceleradas rumo à Vigília Final.<br>
+      Cada uma encenada como a praga bíblica correspondente — <em>a forma é a função</em>: a encenação é o feitiço, o laudo forjado por Meireles é só a capa. O culto <em>dobra as necessidades</em>: silencia ameaças (Valdecir, Meireles) como as próximas pragas.<br>
+      A sétima fratura o método (vem do nó). A nona transborda (a serva aberta). A décima fecha o ciclo — sobre o próprio <a class="auto-link" onclick="captureOrigin();goRef('npc:armindo')">Armindo</a>, o primogênito.
     </div>
     <div class="pragas-grid">`;
   DATA.pragas.forEach(p=>{
-    const maoClass = (p.mao||'').toLowerCase().replace(/[ó+]/g,'').replace(/\s+/g,'-').replace('armindo-(sobre-si-mesmo)','armindo-sobre-si').replace('o-n','no');
-    const maoNorm = p.mao==='O Nó' ? 'no' : p.mao==='Nó + Armindo' ? 'no' : p.mao==='Ambígua' ? 'ambigua' : p.mao==='Armindo (sobre si mesmo)' ? 'armindo-sobre-si' : 'armindo';
-    h += `<div class="praga-card" onclick="goRefPeek('praga:${p.id}')">
+    // status: 'cumprida' (verde), 'em_curso' (vermelho ativo), 'planejada' (apagado)
+    const st = p.status||'planejada';
+    const stLabel = st==='cumprida'?'CUMPRIDA':(st==='em_curso'?'EM CURSO':'PLANEJADA');
+    // mão fora do controle = a partir da 7
+    const foraDoControle = p.numero===7 || p.numero===9;
+    const maoNorm = foraDoControle ? 'no' : (p.numero===10 ? 'armindo-sobre-si' : 'armindo');
+    const maoLabel = foraDoControle ? 'O Nó' : (p.numero===10 ? 'Armindo (sobre si mesmo)' : 'Armindo');
+    h += `<div class="praga-card status-${st}" onclick="goRefPeek('praga:${p.id}')">
       <div class="praga-numero">${p.numero}</div>
-      <div class="praga-status ${p.status||'pendente'}">${esc(p.status||'pendente')}</div>
+      <div class="praga-status ${st}">${stLabel}</div>
       <div class="praga-card-hdr">
         <div class="praga-nome">${esc(p.nome)}</div>
-        <div class="praga-mao ${maoNorm}">Mão: ${esc(p.mao)}</div>
+        <div class="praga-mao ${maoNorm}">Mão: ${esc(maoLabel)}</div>
       </div>
       <div class="praga-card-body">`;
-    if(p.vitima) h += `<div class="praga-vitima">${fmtInline(p.vitima)}</div>`;
-    if(p.disfarce){ h += `<div class="praga-secao"><div class="praga-secao-lbl">Disfarce</div><div class="praga-secao-txt">${fmtInline(p.disfarce)}</div></div>`; }
-    if(p.assinatura_oculta){ h += `<div class="praga-secao"><div class="praga-secao-lbl">Assinatura oculta</div><div class="praga-secao-txt">${fmtInline(p.assinatura_oculta)}</div></div>`; }
-    if(p.escalas && p.escalas.length){
-      h += `<div class="praga-secao"><div class="praga-secao-lbl">Três escalas</div><div class="praga-escalas">`;
-      p.escalas.forEach(e=>{ h += `<div class="praga-escala"><div class="praga-escala-nome">${esc(e.escala)}</div><div class="praga-escala-sinal">${fmtInline(e.sinal)}</div></div>`; });
-      h += `</div></div>`;
-    }
-    if(p.sessao_apresentacao) h += `<div class="praga-sessao">Apresentação: Sessão ${p.sessao_apresentacao}${p.sessao_descoberta_completa?` · Descoberta completa: Sessão ${p.sessao_descoberta_completa}`:''}${p.sessao_resolucao?` · Resolução: Sessão ${p.sessao_resolucao}`:''}</div>`;
+    h += `<div class="praga-epitito" style="font-family:'Cinzel',serif;font-size:11px;letter-spacing:2px;color:var(--gold-lt);text-transform:uppercase;margin-bottom:6px">Episódio ${p.episodio_alvo}${p.subtitulo?' · '+esc(p.subtitulo):''}</div>`;
+    if(p.vitima) h += `<div class="praga-vitima">Vítima: ${fmtInline(p.vitima)}</div>`;
+    if(p.quando) h += `<div class="praga-secao"><div class="praga-secao-lbl">Quando</div><div class="praga-secao-txt">${fmtInline(p.quando)}</div></div>`;
+    if(p.como) h += `<div class="praga-secao"><div class="praga-secao-lbl">Como</div><div class="praga-secao-txt">${fmtInline(p.como)}</div></div>`;
+    if(p.mao_de) h += `<div class="praga-secao"><div class="praga-secao-lbl">Mão de</div><div class="praga-secao-txt">${fmtInline(p.mao_de)}</div></div>`;
+    if(p.sinal_publico) h += `<div class="praga-secao"><div class="praga-secao-lbl">Sinal público</div><div class="praga-secao-txt">${fmtInline(p.sinal_publico)}</div></div>`;
+    if(p.eco_ep1) h += `<div class="praga-secao" style="border-color:var(--gold-dim)"><div class="praga-secao-lbl" style="color:var(--gold)">Eco no jogo</div><div class="praga-secao-txt">${fmtInline(p.eco_ep1)}</div></div>`;
     h += `</div></div>`;
   });
   h += `</div></div>`;
@@ -3710,10 +3855,10 @@ function renderArmindo(){
   if(!root) return;
   const armindo = DATA.profetas?.armindo;
   if(!armindo){ root.innerHTML='<div style="padding:36px;color:var(--ash)">Dados do Armindo não encontrados em DATA.profetas.armindo</div>'; return; }
-  // pragas que ele assina diretamente
-  const minhasPragas = (DATA.pragas||[]).filter(pr=>pr.mao && pr.mao.toLowerCase().includes('armindo') && !pr.mao.toLowerCase().includes('nó'));
-  // pragas em que ele NÃO assina (Nó / Ambígua / Co-mão)
-  const outrasPragas = (DATA.pragas||[]).filter(pr=>!minhasPragas.includes(pr));
+  // Schema novo: pragas 7 e 9 são fora da mão (vêm do nó); 10 é Armindo sobre si mesmo
+  const minhasPragas = (DATA.pragas||[]).filter(pr=>pr.numero !== 7 && pr.numero !== 9);
+  // pragas em que ele NÃO assina (7, 9 — fora do controle)
+  const outrasPragas = (DATA.pragas||[]).filter(pr=>pr.numero === 7 || pr.numero === 9);
 
   let h = `<div class="armindo-wrap">
     <div class="armindo-hero">
@@ -3759,7 +3904,7 @@ function renderArmindo(){
     <div class="armindo-pane-ttl">As pragas fora da mão dele</div>
     <div class="armindo-pragas-mao">`;
   outrasPragas.forEach(pr=>{
-    h += `<div class="armindo-praga-pill" style="background:rgba(154,122,42,.12);border-color:var(--gold-dim)" onclick="goRefPeek('praga:${pr.id}')">#${pr.numero} · ${esc(pr.nome)} <span style="color:var(--gold-dim);font-size:8.5px;margin-left:4px">(${esc(pr.mao)})</span></div>`;
+    h += `<div class="armindo-praga-pill" style="background:rgba(154,122,42,.12);border-color:var(--gold-dim)" onclick="goRefPeek('praga:${pr.id}')">#${pr.numero} · ${esc(pr.nome)} <span style="color:var(--gold-dim);font-size:8.5px;margin-left:4px">(O Nó)</span></div>`;
   });
   h += `</div>
     <div class="armindo-pane-txt" style="margin-top:10px;font-style:italic;color:var(--ash);font-size:14.5px">A sétima e a nona são onde o método dele racha — sinais de que o sigilo acordou além do controle.</div>
@@ -3812,7 +3957,7 @@ function renderDia18(){
     { hora: '05:00', nivel:'major', tags:['descoberta'], titulo:'Valdecir é encontrado morto', desc:'Dona Neuza Aparecida, em caminhada matinal, encontra o corpo encostado no muro externo da Área Verde. Mãos viradas para dentro do terreno. Frio impossível.' },
     { hora: '~08:00', nivel:'normal', tags:['oculto'], titulo:'Dr. Meireles examina o corpo', desc:'Quatro anomalias: temperatura 4°C abaixo do normal, terra preta nas mãos segurada ativamente, expressão de reconhecimento, lágrimas de sangue. Ele apaga a quarta do laudo.' },
     { hora: '~09:00', nivel:'normal', tags:[], titulo:'Seu João leva o corpo à funerária', desc:'Quando vai buscar, Meireles ainda está sentado olhando para Valdecir. "Médico vê morto todo dia. Não fica sentado olhando."' },
-    { hora: '14:00', nivel:'normal', tags:['oculto'], titulo:'Reinaldo Furtado faz reconhecimento', desc:'Investigador particular contratado por Ezequiel. Destranca o ferrolho da cozinha de Valdecir por dentro. Deixa pegada perto do muro da Área Verde — indo para dentro.' },
+    { hora: '14:00', nivel:'normal', tags:['oculto'], titulo:'Heitor Furtado faz reconhecimento', desc:'Investigador particular contratado por Ezequiel. Destranca o ferrolho da cozinha de Valdecir por dentro. Deixa pegada perto do muro da Área Verde — indo para dentro.' },
     { hora: '14:00', nivel:'normal', tags:[], titulo:'Caixão entregue por Seu João', desc:'Funerária deixa o caixão na Igreja de Santo Antônio. Sai por volta das 17h30.' },
     { hora: '15:32', nivel:'major', tags:['oculto'], titulo:'Ezequiel liga para Dr. Meireles', desc:'Chip pré-pago descartável de Goiânia. Descreve a família do médico sem fazer ameaça explícita. Meireles edita o laudo. O papel com o número fica na gaveta.' },
     { hora: '~16:00', nivel:'normal', tags:['SP'], titulo:'Lucas Andrade é condenado em SP', desc:'Sentença lida diante de Vinicius Fonseca. Otávio Drumond — o assassino real — sorri no fundo da sala.' },
@@ -3865,6 +4010,424 @@ document.addEventListener('keydown', e=>{
 window.addEventListener('DOMContentLoaded',()=>{
   loadData().then(()=>{ SEARCH_IDX=buildSearchIndex(); });
 });
+
+
+/* ═══════════════════════════════════════════════════════════
+   TRACKER DE COMBATE — Onda 5
+   Conteúdo de regra vem de DATA.combate; PCs do DATA.pcs;
+   NPCs do DATA.npcs. Estado persiste em localStorage.
+   ═══════════════════════════════════════════════════════════ */
+const CBT_KEY = 'ke_combate_v1';
+let COMBATE = { combatentes:[], rodada:1, turnoIdx:0, log:[] };
+
+/* ── persistência ── */
+function cbtSave(){ try{ localStorage.setItem(CBT_KEY, JSON.stringify(COMBATE)); }catch(e){} }
+function cbtLoad(){
+  try{ const raw=localStorage.getItem(CBT_KEY); if(raw){ const s=JSON.parse(raw); if(s&&s.combatentes){ COMBATE=s; if(!COMBATE.log)COMBATE.log=[]; } } }catch(e){}
+}
+
+/* ── dados / dado ── */
+function cbtD(s){ return Math.floor(Math.random()*s)+1; }
+function cbtCfg(){ return (DATA && DATA.combate) || {}; }
+
+/* ── fórmulas derivadas ── */
+function cbtHpMax(c){ return Math.max(1,(Number(c.corpo)||0)+(Number(c.alma)||0)); }
+function cbtVigor(c){ return (Number(c.corpo)||0)*5; }
+function cbtPostura(c){ return Math.floor((Number(c.reflexos)||0)/5); }
+function cbtEsquiva(c){ return Math.floor((Number(c.reflexos)||0)/2); }
+
+/* ── faixa de acerto ── */
+function cbtFaixa(roll, pericia){
+  pericia = Number(pericia)||0;
+  const fumbleFloor = pericia<50 ? 96 : 100;
+  if(roll>=fumbleFloor) return {tier:'fumble', rotulo:'Fumble', sucesso:false};
+  if(roll===1)          return {tier:'critico', rotulo:'Crítico', sucesso:true};
+  if(roll<=Math.floor(pericia/5)) return {tier:'extremo', rotulo:'Extremo', sucesso:true};
+  if(roll<=pericia)     return {tier:'normal', rotulo:'Sucesso', sucesso:true};
+  return {tier:'falha', rotulo:'Falha', sucesso:false};
+}
+
+/* ── parser/rolagem de dano (token BD) ── */
+function cbtParseDano(expr, bd){
+  bd = Number(bd)||0;
+  expr = String(expr||'').toLowerCase().replace(/\s+/g,'').replace(/bd/g,(bd>=0?('+'+bd):('-'+Math.abs(bd))));
+  expr = expr.replace(/\+\++/g,'+').replace(/\+-/g,'-').replace(/-\+/g,'-');
+  const dice=[]; let mod=0; const re=/([+-]?)(\d*)d(\d+)|([+-]?\d+)/g; let m;
+  while((m=re.exec(expr))){
+    if(m[3]){ const sign=m[1]==='-'?-1:1; const n=m[2]===''?1:parseInt(m[2],10); dice.push({n,sides:parseInt(m[3],10),sign}); }
+    else if(m[4]!==undefined){ mod+=parseInt(m[4],10); }
+  }
+  return {dice,mod};
+}
+function cbtRollDano(expr, bd, dobrar){
+  const {dice,mod}=cbtParseDano(expr,bd); let total=0; const det=[]; const passes=dobrar?2:1;
+  for(let p=0;p<passes;p++) for(const g of dice) for(let i=0;i<g.n;i++){ const r=cbtD(g.sides); total+=r*g.sign; det.push(r); }
+  total+=mod; total=Math.max(0,total);
+  return {total, det, mod, dobrado:!!dobrar};
+}
+
+/* ── criação de combatentes ── */
+function cbtUid(){ return 'c'+Date.now().toString(36)+Math.floor(Math.random()*1e4).toString(36); }
+function cbtAtkPericia(c, atk){
+  if(atk.pericia!=null && atk.pericia!=='') return Number(atk.pericia)||0;
+  const ba=atk.base_attr;
+  if(ba && c[ba]!=null) return Number(c[ba])||0;
+  return Number((cbtCfg().pericia_padrao)||50);
+}
+
+function cbtNovoFromPC(pc){
+  const a=pc.atributos||{};
+  const seed=((cbtCfg().pcs_ataques_seed)||{})[pc.id]||[];
+  const c={ cid:cbtUid(), tipo:'pc', ref:pc.id, nome:pc.nome, papel:pc.epiteto||pc.ocupacao||'',
+    corpo:a.corpo||0, reflexos:a.reflexos||0, mente:a.mente||0, saber:a.saber||0, alma:a.alma||0,
+    san_max:pc.sanidade_inicial||a.alma||0, san_atual:(pc.sanidade_atual!=null?pc.sanidade_atual:(pc.sanidade_inicial||a.alma||0)),
+    marcas:pc.marcas_iniciais||0, bd:0, status:'ativo', provisorio:false, ataques:[] };
+  c.hp_max=cbtHpMax(c); c.hp_atual=c.hp_max;
+  c.ataques=seed.map(s=>({nome:s.nome,tipo:s.tipo,base_attr:s.base_attr||null,pericia:(s.base_attr?null:(s.pericia!=null?s.pericia:50)),dano:s.dano,alcance:s.alcance||'',obs:s.obs||''}));
+  return c;
+}
+function cbtNovoFromNPC(npc){
+  const c={ cid:cbtUid(), tipo:'npc', ref:npc.id, nome:npc.nome, papel:npc.tag||npc.funcao||npc.role||'',
+    corpo:50, reflexos:50, mente:50, saber:50, alma:50,
+    san_max:50, san_atual:50, marcas:0, bd:0, status:'ativo', provisorio:true, ataques:[] };
+  c.hp_max=cbtHpMax(c); c.hp_atual=c.hp_max;
+  c.ataques=[{nome:'Desarmado',tipo:'cac',base_attr:'corpo',pericia:null,dano:'1d3+BD',alcance:'Corpo a corpo',obs:''}];
+  return c;
+}
+function cbtNovoAvulso(){
+  const c={ cid:cbtUid(), tipo:'avulso', ref:null, nome:'Combatente avulso', papel:'',
+    corpo:50, reflexos:50, mente:50, saber:50, alma:50,
+    san_max:50, san_atual:50, marcas:0, bd:0, status:'ativo', provisorio:true, ataques:[] };
+  c.hp_max=cbtHpMax(c); c.hp_atual=c.hp_max;
+  c.ataques=[{nome:'Desarmado',tipo:'cac',base_attr:'corpo',pericia:null,dano:'1d3+BD',alcance:'Corpo a corpo',obs:''}];
+  return c;
+}
+
+/* ── adicionar/remover ── */
+function cbtAddPC(){
+  const have=new Set(COMBATE.combatentes.filter(c=>c.tipo==='pc').map(c=>c.ref));
+  let added=0;
+  (DATA.pcs||[]).forEach(pc=>{ if(!have.has(pc.id)){ COMBATE.combatentes.push(cbtNovoFromPC(pc)); added++; } });
+  if(added===0) cbtToast('Os 4 PCs já estão no combate.');
+  cbtSave(); renderCombate();
+}
+function cbtAddAvulso(){ COMBATE.combatentes.push(cbtNovoAvulso()); cbtSave(); renderCombate(); }
+function cbtRemove(cid){
+  const c=cbtGet(cid); if(!c) return;
+  if(!confirm('Remover '+c.nome+' do combate?')) return;
+  COMBATE.combatentes=COMBATE.combatentes.filter(x=>x.cid!==cid);
+  if(COMBATE.turnoIdx>=COMBATE.combatentes.length) COMBATE.turnoIdx=0;
+  cbtSave(); renderCombate();
+}
+function cbtNovoCombate(){
+  if(!confirm('Encerrar este combate e zerar tudo (combatentes, rodadas e log)?')) return;
+  COMBATE={combatentes:[],rodada:1,turnoIdx:0,log:[]}; cbtSave(); renderCombate();
+}
+function cbtGet(cid){ return COMBATE.combatentes.find(c=>c.cid===cid); }
+
+/* ── seletor de NPC ── */
+function cbtOpenNpcPicker(){
+  const list=document.getElementById('cbtPickList'); if(!list) return;
+  const npcs=DATA.npcs||[];
+  list.innerHTML = npcs.map(n=>`<div class="cbt-pick-item" onclick="cbtPickNpc('${n.id}')">
+    <span class="pn">${esc(n.nome)}</span><span class="pt">${esc(n.tag||n.funcao||n.role||'')}</span></div>`).join('');
+  document.getElementById('cbtPickOverlay').classList.add('show');
+}
+function cbtCloseNpcPicker(){ const o=document.getElementById('cbtPickOverlay'); if(o)o.classList.remove('show'); }
+function cbtPickNpc(id){
+  const npc=(DATA.npcs||[]).find(n=>n.id===id); if(npc){ COMBATE.combatentes.push(cbtNovoFromNPC(npc)); cbtSave(); }
+  cbtCloseNpcPicker(); renderCombate();
+}
+
+/* ── edição de campos ── */
+function cbtSetAttr(cid, attr, val){
+  const c=cbtGet(cid); if(!c) return;
+  c[attr]=Math.max(0,parseInt(val,10)||0);
+  if(c.provisorio && c.tipo!=='avulso') c.provisorio=false; // mestre ajustou
+  const novoMax=cbtHpMax(c);
+  if(c.hp_atual>novoMax || c.hp_atual===c.hp_max) c.hp_atual=Math.min(c.hp_atual,novoMax);
+  c.hp_max=novoMax;
+  if(attr==='alma'){ c.san_max=Math.max(c.san_max, c.alma); }
+  cbtSave(); renderCombate();
+}
+function cbtSetHP(cid, val){ const c=cbtGet(cid); if(!c)return; c.hp_atual=Math.max(0,Math.min(c.hp_max,parseInt(val,10)||0)); cbtAutoStatus(c); cbtSave(); renderCombate(); }
+function cbtStepHP(cid, d){ const c=cbtGet(cid); if(!c)return; c.hp_atual=Math.max(0,Math.min(c.hp_max,c.hp_atual+d)); cbtAutoStatus(c); cbtSave(); renderCombate(); }
+function cbtSetSan(cid, val){ const c=cbtGet(cid); if(!c)return; c.san_atual=Math.max(0,Math.min(c.san_max,parseInt(val,10)||0)); cbtSave(); renderCombate(); }
+function cbtStepSan(cid, d){ const c=cbtGet(cid); if(!c)return; c.san_atual=Math.max(0,Math.min(c.san_max,c.san_atual+d)); cbtSave(); renderCombate(); }
+function cbtSetMarcas(cid, val){ const c=cbtGet(cid); if(!c)return; c.marcas=Math.max(0,parseInt(val,10)||0); cbtSave(); }
+function cbtSetBD(cid, val){ const c=cbtGet(cid); if(!c)return; c.bd=parseInt(val,10)||0; cbtSave(); }
+function cbtSetStatus(cid, val){ const c=cbtGet(cid); if(!c)return; c.status=val; cbtSave(); renderCombate(); }
+function cbtSetNome(cid, val){ const c=cbtGet(cid); if(!c)return; c.nome=val||c.nome; cbtSave(); }
+function cbtAutoStatus(c){
+  if(c.status==='morto'||c.status==='possuido') return;
+  if(c.hp_atual<=0) c.status='ko';
+  else if(c.hp_atual<=Math.ceil(c.hp_max/2)) c.status='ferido';
+  else c.status='ativo';
+}
+
+/* ── ataques: editar / add / remover ── */
+function cbtAddAtk(cid){ const c=cbtGet(cid); if(!c)return;
+  c.ataques.push({nome:'Novo ataque',tipo:'cac',base_attr:null,pericia:50,dano:'1d4',alcance:'',obs:''}); cbtSave(); renderCombate(); }
+function cbtRemoveAtk(cid, i){ const c=cbtGet(cid); if(!c)return; c.ataques.splice(i,1); cbtSave(); renderCombate(); }
+function cbtEditAtk(cid, i, field, val){ const c=cbtGet(cid); if(!c||!c.ataques[i])return;
+  if(field==='pericia'){ c.ataques[i].pericia=(val===''?null:(parseInt(val,10)||0)); c.ataques[i].base_attr=null; }
+  else c.ataques[i][field]=val;
+  cbtSave(); renderCombate(); }
+function cbtAddBaseArma(cid, idx){ const c=cbtGet(cid); if(!c)return;
+  const arma=((cbtCfg().armas_base)||[])[idx]; if(!arma)return;
+  c.ataques.push({nome:arma.nome,tipo:arma.tipo,base_attr:arma.base_attr||null,pericia:(arma.base_attr?null:(arma.pericia!=null?arma.pericia:50)),dano:arma.dano,alcance:arma.alcance||'',obs:arma.obs||''});
+  cbtSave(); renderCombate(); }
+
+/* ── ROLAGEM DE ATAQUE ── */
+function cbtAtkRoll(cid, i){
+  const c=cbtGet(cid); if(!c)return; const atk=c.ataques[i]; if(!atk)return;
+  const per=cbtAtkPericia(c,atk);
+  const roll=cbtD(100);
+  const f=cbtFaixa(roll,per);
+  let danoTxt='', danoVal=0;
+  if(f.sucesso){
+    const dobrar=(f.tier==='extremo'||f.tier==='critico');
+    const dr=cbtRollDano(atk.dano,c.bd,dobrar);
+    danoVal=dr.total;
+    danoTxt=` · dano <b>${dr.total}</b>${dobrar?' (dobrado)':''}`;
+  }
+  const alvoSel = (f.sucesso && danoVal>0) ? cbtTargetSelect(cid, danoVal) : '';
+  const linha = `<span class="lt-rnd">R${COMBATE.rodada}</span><em>${esc(c.nome)}</em> ataca com <b>${esc(atk.nome)}</b> — `+
+    `d% <span class="lt-roll">${roll}</span> vs ${per} → <span class="tier-${f.tier}">${f.rotulo}</span>${danoTxt}`+
+    (alvoSel ? `<div class="cbt-apply">${alvoSel}</div>` : '');
+  cbtLog(linha);
+}
+function cbtTargetSelect(atacanteCid, dano){
+  const opts=COMBATE.combatentes.filter(c=>c.cid!==atacanteCid && c.status!=='morto')
+    .map(c=>`<option value="${c.cid}">${esc(c.nome)} · HP ${c.hp_atual}</option>`).join('');
+  if(!opts) return '';
+  return `<span class="cbt-mini">▸ aplicar <b>${dano}</b> em:</span> `+
+    `<select class="cbt-sel" onchange="if(this.value)cbtApplyDamage(this.value,${dano})">`+
+    `<option value="">— alvo —</option>${opts}</select>`;
+}
+
+/* aplicação de dano por seleção no log */
+function cbtApplyDamage(targetCid, amount){
+  const c=cbtGet(targetCid); if(!c)return;
+  c.hp_atual=Math.max(0,c.hp_atual-amount); cbtAutoStatus(c);
+  cbtLog(`<span class="lt-rnd">R${COMBATE.rodada}</span><em>${esc(c.nome)}</em> sofre <b>${amount}</b> de dano → HP ${c.hp_atual}/${c.hp_max}${c.status==='ko'?' · <span class="tier-fumble">FORA DE COMBATE</span>':''}`);
+  cbtSave(); renderCombate();
+}
+
+/* ── RESISTÊNCIAS ── */
+function cbtResist(cid, kind){
+  const c=cbtGet(cid); if(!c)return;
+  let alvo=0, nome='';
+  if(kind==='esquiva'){ alvo=cbtEsquiva(c); nome='Esquiva'; }
+  else if(kind==='vigor'){ alvo=cbtVigor(c); nome='Vigor'; }
+  else if(kind==='san'){ alvo=c.san_atual; nome='Sanidade'; }
+  const roll=cbtD(100); const f=cbtFaixa(roll,alvo);
+  cbtLog(`<span class="lt-rnd">R${COMBATE.rodada}</span><em>${esc(c.nome)}</em> · teste de ${nome} — d% <span class="lt-roll">${roll}</span> vs ${alvo} → <span class="tier-${f.tier}">${f.rotulo}</span>`);
+}
+
+/* ── INICIATIVA / TURNO ── */
+function cbtOrdem(){
+  return COMBATE.combatentes.slice().sort((a,b)=>{
+    if((b.reflexos||0)!==(a.reflexos||0)) return (b.reflexos||0)-(a.reflexos||0);
+    if(cbtPostura(b)!==cbtPostura(a)) return cbtPostura(b)-cbtPostura(a);
+    return String(a.nome).localeCompare(String(b.nome));
+  });
+}
+function cbtNextTurn(){
+  const ordem=cbtOrdem(); const vivos=ordem.filter(c=>c.status!=='morto');
+  if(!vivos.length) return;
+  COMBATE.turnoIdx++;
+  if(COMBATE.turnoIdx>=vivos.length){ COMBATE.turnoIdx=0; COMBATE.rodada++; cbtLog(`<span class="lt-rnd">R${COMBATE.rodada}</span>— início da rodada ${COMBATE.rodada} —`); }
+  cbtSave(); renderCombate();
+}
+function cbtCurrentCid(){
+  const vivos=cbtOrdem().filter(c=>c.status!=='morto');
+  return vivos.length ? (vivos[Math.min(COMBATE.turnoIdx,vivos.length-1)]||{}).cid : null;
+}
+
+/* ── LOG ── */
+function cbtLog(html){ COMBATE.log.push({t:Date.now(), html}); cbtSave(); cbtRenderLog(); }
+function cbtClearLog(){ if(!confirm('Limpar o log do combate?'))return; COMBATE.log=[]; cbtSave(); cbtRenderLog(); }
+function cbtRenderLog(){
+  const el=document.getElementById('cbtLog'); if(!el)return;
+  if(!COMBATE.log.length){ el.innerHTML='<div class="cbt-empty">Nenhuma ação registrada ainda.</div>'; return; }
+  el.innerHTML=COMBATE.log.map(l=>`<div class="cbt-logline">${l.html}</div>`).join('');
+  el.scrollTop=el.scrollHeight;
+}
+
+/* ── toast simples ── */
+function cbtToast(msg){
+  let t=document.getElementById('cbtToast');
+  if(!t){ t=document.createElement('div'); t.id='cbtToast';
+    t.style.cssText='position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#120c06;border:1px solid rgba(154,122,42,.5);color:#ddb94e;font-family:Cinzel,serif;font-size:13px;padding:10px 18px;border-radius:5px;z-index:500;box-shadow:0 6px 20px rgba(0,0,0,.5)';
+    document.body.appendChild(t); }
+  t.textContent=msg; t.style.opacity='1';
+  clearTimeout(t._to); t._to=setTimeout(()=>{t.style.opacity='0';},2200);
+}
+
+/* ── RENDER PRINCIPAL ── */
+function renderCombate(){
+  const shell=document.getElementById('combateShell'); if(!shell)return;
+  const cfg=cbtCfg();
+  const ordem=cbtOrdem();
+  const curCid=cbtCurrentCid();
+
+  const initChips = ordem.length ? ordem.map(c=>{
+    const dead=c.status==='morto';
+    return `<span class="cbt-init-chip${c.cid===curCid?' now':''}${dead?' dead':''}">${esc(c.nome)}<span class="ini">R${c.reflexos||0}</span></span>`;
+  }).join('') : '<span class="cbt-mini" style="color:var(--parch-deep);opacity:.7">sem combatentes</span>';
+
+  const cards = COMBATE.combatentes.length ? COMBATE.combatentes.map(c=>cbtCardHTML(c, c.cid===curCid)).join('')
+    : `<div class="cbt-empty" style="grid-column:1/-1">Combate vazio. Use <b>+ PCs</b>, <b>+ NPC</b> ou <b>+ Avulso</b> para montar a cena.</div>`;
+
+  shell.innerHTML = `
+  <div class="cbt-hd">
+    <div>
+      <div class="cbt-eyebrow">O Mestre · Tracker de Combate</div>
+      <h2>Combate</h2>
+      <div class="cbt-sub">${esc(cfg.intro||'')}</div>
+    </div>
+    <div class="cbt-actions">
+      <button class="cbt-btn" onclick="cbtAddPC()">+ PCs</button>
+      <button class="cbt-btn" onclick="cbtOpenNpcPicker()">+ NPC</button>
+      <button class="cbt-btn ghost" onclick="cbtAddAvulso()">+ Avulso</button>
+      <button class="cbt-btn blood" onclick="cbtNovoCombate()">Novo combate</button>
+    </div>
+  </div>
+
+  <div class="cbt-turnbar">
+    <div class="rnd">Rodada <b>${COMBATE.rodada}</b></div>
+    <div class="cbt-initiative">${initChips}</div>
+    <button class="cbt-btn" onclick="cbtNextTurn()">Próximo turno ▸</button>
+  </div>
+
+  <div class="cbt-grid">${cards}</div>
+
+  <div class="cbt-logwrap">
+    <h3>Log do Combate <button class="cbt-btn tiny ghost" onclick="cbtClearLog()">limpar</button></h3>
+    <div class="cbt-log" id="cbtLog"></div>
+  </div>
+
+  <div style="margin-top:18px;font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--parch-deep);font-size:13px;opacity:.85;line-height:1.5">
+    <b style="font-family:Cinzel,serif;font-size:10px;letter-spacing:1px;color:var(--gold-lt)">FÓRMULAS</b><br>
+    ${Object.values(cfg.formulas||{}).map(esc).join(' · ')}<br>
+    <span style="font-size:12px">${esc(cfg.dano_critico||'')} ${esc(cfg.nota_npc_stats||'')}</span>
+  </div>
+
+  <div class="cbt-pick-overlay" id="cbtPickOverlay">
+    <div class="cbt-pick">
+      <h3>Adicionar NPC ao combate</h3>
+      <div class="cbt-pick-list" id="cbtPickList"></div>
+      <div class="cbt-pick-foot"><button class="cbt-btn ghost" onclick="cbtCloseNpcPicker()">Fechar</button></div>
+    </div>
+  </div>`;
+
+  cbtRenderLog();
+}
+
+function cbtStatusLabel(id){
+  const s=((cbtCfg().status_list)||[]).find(x=>x.id===id); return s?s.rotulo:id;
+}
+
+function cbtCardHTML(c, isNow){
+  const hpPct=Math.max(0,Math.min(100, c.hp_max? (c.hp_atual/c.hp_max*100):0));
+  const sanPct=Math.max(0,Math.min(100, c.san_max? (c.san_atual/c.san_max*100):0));
+  const badge = c.tipo==='pc'?'<span class="cbt-badge pc">PC</span>': c.tipo==='npc'?'<span class="cbt-badge npc">NPC</span>':'<span class="cbt-badge avulso">Avulso</span>';
+  const warn = c.provisorio ? `<div class="cbt-warn">⚠ stats provisórias — ajuste os atributos</div>` : '';
+
+  const statusOpts=((cbtCfg().status_list)||[]).map(s=>`<option value="${s.id}"${c.status===s.id?' selected':''}>${esc(s.rotulo)}</option>`).join('');
+
+  const armasBase=(cbtCfg().armas_base)||[];
+  const armaOpts=armasBase.map((a,i)=>`<option value="${i}">${esc(a.nome)}</option>`).join('');
+
+  const ataques = c.ataques.map((atk,i)=>{
+    const per=cbtAtkPericia(c,atk);
+    return `<div class="cbt-atk">
+      <button class="atk-fire" onclick="cbtAtkRoll('${c.cid}',${i})">
+        <b>${esc(atk.nome)}</b> · ${per}% · ${esc(atk.dano)}${atk.alcance?` <span class="atk-meta">(${esc(atk.alcance)})</span>`:''}
+      </button>
+      <button class="atk-x" title="remover" onclick="cbtRemoveAtk('${c.cid}',${i})">×</button>
+      <div class="cbt-atkedit">
+        <input value="${esc(atk.nome)}" placeholder="nome" onchange="cbtEditAtk('${c.cid}',${i},'nome',this.value)">
+        <input value="${atk.pericia!=null?atk.pericia:''}" placeholder="${per}%" title="perícia % (vazio = usa atributo)" onchange="cbtEditAtk('${c.cid}',${i},'pericia',this.value)">
+        <input value="${esc(atk.dano)}" placeholder="ex 1d10 / 1d4+BD" onchange="cbtEditAtk('${c.cid}',${i},'dano',this.value)">
+        <input value="${esc(atk.alcance||'')}" placeholder="alcance" onchange="cbtEditAtk('${c.cid}',${i},'alcance',this.value)">
+      </div>
+    </div>`;
+  }).join('');
+
+  return `<div class="cbt-card t-${c.tipo} st-${c.status}${isNow?' is-now':''}">
+    <div class="cbt-cardhd">
+      <div>
+        <div class="nm" contenteditable="true" onblur="cbtSetNome('${c.cid}',this.textContent.trim())">${esc(c.nome)}</div>
+        ${c.papel?`<div class="rl">${esc(c.papel)}</div>`:''}
+      </div>
+      ${badge}
+    </div>
+    ${warn}
+
+    <div class="cbt-stats">
+      ${['corpo','reflexos','mente','saber','alma'].map(at=>`
+      <div class="cbt-stat"><label>${at.slice(0,3)}</label>
+        <input type="number" value="${c[at]||0}" onchange="cbtSetAttr('${c.cid}','${at}',this.value)"></div>`).join('')}
+    </div>
+
+    <div class="cbt-derived">
+      <span class="cbt-der">Vigor <b>${cbtVigor(c)}</b></span>
+      <span class="cbt-der">Postura <b>${cbtPostura(c)}</b></span>
+      <span class="cbt-der">Esquiva <b>${cbtEsquiva(c)}</b></span>
+      <span class="cbt-der">BD <input type="number" value="${c.bd||0}" style="width:34px;border:1px solid rgba(90,74,48,.3);border-radius:3px;text-align:center;font-family:Cinzel,serif;background:#efe3cb;color:var(--ink)" onchange="cbtSetBD('${c.cid}',this.value)"></span>
+    </div>
+
+    <div class="cbt-bars">
+      <div class="cbt-barrow">
+        <span class="lab">HP</span>
+        <button class="cbt-step" onclick="cbtStepHP('${c.cid}',-1)">−</button>
+        <div class="cbt-bar hp"><span style="width:${hpPct}%"></span></div>
+        <button class="cbt-step" onclick="cbtStepHP('${c.cid}',1)">+</button>
+        <span class="cbt-barval"><input type="number" value="${c.hp_atual}" onchange="cbtSetHP('${c.cid}',this.value)">/${c.hp_max}</span>
+      </div>
+      <div class="cbt-barrow">
+        <span class="lab">San</span>
+        <button class="cbt-step" onclick="cbtStepSan('${c.cid}',-1)">−</button>
+        <div class="cbt-bar san"><span style="width:${sanPct}%"></span></div>
+        <button class="cbt-step" onclick="cbtStepSan('${c.cid}',1)">+</button>
+        <span class="cbt-barval"><input type="number" value="${c.san_atual}" onchange="cbtSetSan('${c.cid}',this.value)">/${c.san_max}</span>
+      </div>
+    </div>
+
+    <div class="cbt-rowctl">
+      <select class="cbt-sel" onchange="cbtSetStatus('${c.cid}',this.value)">${statusOpts}</select>
+      <span class="cbt-mini">Marcas <input type="number" value="${c.marcas||0}" onchange="cbtSetMarcas('${c.cid}',this.value)"></span>
+    </div>
+
+    <div class="cbt-res">
+      <button class="cbt-resbtn" onclick="cbtResist('${c.cid}','esquiva')">Esquiva (${cbtEsquiva(c)})</button>
+      <button class="cbt-resbtn" onclick="cbtResist('${c.cid}','vigor')">Vigor (${cbtVigor(c)})</button>
+      <button class="cbt-resbtn" onclick="cbtResist('${c.cid}','san')">Sanidade (${c.san_atual})</button>
+    </div>
+
+    <div class="cbt-atks">
+      <div class="cbt-atks-h"><span>Ataques</span>
+        <span style="display:flex;gap:5px;align-items:center">
+          <select class="cbt-sel" style="font-size:11px;padding:2px 4px" onchange="if(this.value!==''){cbtAddBaseArma('${c.cid}',this.value);this.value=''}">
+            <option value="">+ arma base…</option>${armaOpts}
+          </select>
+          <button class="cbt-btn tiny ghost" onclick="cbtAddAtk('${c.cid}')">+ vazio</button>
+        </span>
+      </div>
+      ${ataques||'<div class="cbt-mini" style="opacity:.6">sem ataques</div>'}
+    </div>
+
+    <div class="cbt-cardfoot">
+      <button class="cbt-btn blood tiny" onclick="cbtRemove('${c.cid}')">remover</button>
+    </div>
+  </div>`;
+}
+
+/* carrega estado salvo ao iniciar o módulo */
+cbtLoad();
+
 </script>
 <!-- Peek empilhável: overlay + painel deslizante -->
 <div class="peek-overlay" id="peekOverlay" onclick="peekClose()"></div>
