@@ -1157,6 +1157,45 @@ body.props-modo-jogador .prop-uso-txt{display:none}
   .cbt-hd{flex-direction:column;align-items:flex-start}
 }
 
+
+/* combate v2 — 3 camadas + legenda */
+.cbt-bar.postura>span{background:linear-gradient(90deg,#5a4a30,#b8922e)}
+.cbt-bar.vigor>span{background:linear-gradient(90deg,#8a5a1e,#ddb94e)}
+.cbt-bar.hp>span{background:linear-gradient(90deg,#7d1212,#a82020)}
+.cbt-card.st-agonizando,.cbt-card.st-morto{filter:grayscale(.55) brightness(.9)}
+.cbt-card.st-ferido_grave{box-shadow:inset 0 0 0 1px rgba(125,18,18,.3),0 6px 22px rgba(0,0,0,.4)}
+.cbt-atk-fireline{display:flex;align-items:center;gap:6px}
+.cbt-sel.loc{font-size:11px;padding:4px 5px;max-width:104px;background:#efe3cb;border:1px solid rgba(90,74,48,.35);border-radius:3px;color:var(--ink);font-family:"Cormorant Garamond",serif}
+.cbt-legenda{margin-top:18px;font-family:"Cormorant Garamond",serif;color:var(--parch-deep);font-size:13px;line-height:1.6;opacity:.9}
+.cbt-legenda b{font-family:"Cinzel",serif;font-size:9.5px;letter-spacing:1px;color:var(--gold-lt);margin-right:6px}
+.tier-bom{color:#7ea86a!important}
+.tier-falha_critica{color:var(--blood-lt)!important;font-weight:700}
+.cbt-apply{margin-top:6px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+
+/* ── Modo Narrar: pré-sessão e controles de episódio ── */
+.narrar-presessao{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:70vh;gap:32px;padding:40px 20px}
+.narrar-presessao-ttl{font-family:"Cinzel",serif;font-size:28px;letter-spacing:3px;color:var(--parch);text-align:center}
+.narrar-presessao-sub{font-family:"Cormorant Garamond",serif;font-size:17px;color:var(--ash);text-align:center;margin-top:-20px}
+.narrar-ep-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;width:100%;max-width:780px}
+.narrar-ep-card{background:rgba(244,234,216,.06);border:1px solid rgba(154,122,42,.3);border-radius:8px;padding:24px 28px;cursor:pointer;transition:all .2s;position:relative;overflow:hidden}
+.narrar-ep-card:hover{background:rgba(154,122,42,.1);border-color:var(--gold);box-shadow:0 6px 24px rgba(0,0,0,.35)}
+.narrar-ep-card .ep-num{font-family:"Cinzel",serif;font-size:10px;letter-spacing:3px;color:var(--gold-dim);text-transform:uppercase;margin-bottom:6px}
+.narrar-ep-card .ep-ttl{font-family:"Cinzel",serif;font-size:20px;color:var(--parch);margin-bottom:4px}
+.narrar-ep-card .ep-sub{font-family:"Cormorant Garamond",serif;font-size:14px;color:var(--ash);line-height:1.5;margin-bottom:12px}
+.narrar-ep-card .ep-status{display:inline-block;font-family:"Cinzel",serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:3px 9px;border-radius:3px}
+.narrar-ep-card .ep-status.concluido{background:rgba(60,100,60,.25);color:#8aaa7a;border:1px solid rgba(60,100,60,.4)}
+.narrar-ep-card .ep-status.em_curso{background:rgba(125,18,18,.2);color:var(--blood-lt);border:1px solid rgba(125,18,18,.4)}
+.narrar-ep-card .ep-status.pendente{background:rgba(90,74,48,.2);color:var(--ash);border:1px solid rgba(90,74,48,.3)}
+.narrar-ep-card .ep-ncenas{font-family:"Cormorant Garamond",serif;font-size:12px;color:var(--ash);opacity:.7;margin-top:8px}
+.narrar-toc-ep-hdr{display:flex;flex-direction:column;gap:2px;padding:16px 14px 10px;border-bottom:1px solid rgba(154,122,42,.2)}
+.narrar-toc-ep-hdr .ep-label{font-family:"Cinzel",serif;font-size:9px;letter-spacing:2.5px;color:var(--gold-dim);text-transform:uppercase}
+.narrar-toc-ep-hdr .ep-name{font-family:"Cinzel",serif;font-size:14px;color:var(--parch);font-weight:700}
+.narrar-toc-trocar{display:block;width:100%;background:none;border:none;border-bottom:1px solid rgba(154,122,42,.15);padding:7px 14px;font-family:"Cormorant Garamond",serif;font-size:12px;color:var(--gold-dim);cursor:pointer;text-align:left;letter-spacing:.5px}
+.narrar-toc-trocar:hover{color:var(--gold);background:rgba(154,122,42,.07)}
+/* beat fallback para Ep2 (campos parciais) */
+.beat-titulo-fallback{font-family:"Cinzel",serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;opacity:.7;margin-bottom:4px}
+.beat.teste .beat-atributo:empty::after{content:attr(data-fallback);font-style:italic;opacity:.8}
+
 </style>
 <body>
 
@@ -3313,28 +3352,77 @@ function narrarVisitadas(){
   catch(e){ return []; }
 }
 
+
+/* ── Modo Narrar: episódio ── */
+function cenaEpisodio(c){ return (c.arco && c.arco.startsWith('ep2-')) ? 2 : 1; }
+function narrarSelecionarEp(num){
+  const state = narrarLoadState();
+  if(state.episodio !== num) state.cenaId = null; // troca de ep → reseta cena
+  state.episodio = num;
+  narrarSaveState(state);
+  renderNarrar();
+}
+function narrarVoltarPresessao(){
+  const state = narrarLoadState();
+  state.episodio = null; state.cenaId = null;
+  narrarSaveState(state);
+  renderNarrar();
+}
+
 function renderNarrar(){
   const shell = document.getElementById('narrarShell');
   if(!shell || !DATA.cenas || !DATA.cenas.length) return;
   const state = narrarLoadState();
-  const visitadas = narrarVisitadas();
-  // se body classlist tem modo-seguro coerente com state
+  // sem episódio selecionado → pré-sessão
+  if(!state.episodio){ shell.innerHTML = renderNarrarPresessao(); return; }
   document.body.classList.toggle('modo-seguro', !!state.modoSeguro);
-  // determina cena atual: do state OU primeira cena
-  const cenaAtualId = state.cenaId || DATA.cenas[0].id;
-  // renderiza TOC + main
-  shell.innerHTML = `${renderNarrarTOC(cenaAtualId, visitadas)}${renderNarrarMain(cenaAtualId)}`;
+  const cenas = DATA.cenas.filter(c=>cenaEpisodio(c)===state.episodio);
+  const cenaAtualId = state.cenaId || (cenas[0]||{}).id;
+  const visitadas = narrarVisitadas();
+  shell.innerHTML = `${renderNarrarTOC(cenaAtualId, visitadas, cenas, state.episodio)}${renderNarrarMain(cenaAtualId, cenas)}`;
 }
 
-function renderNarrarTOC(cenaAtualId, visitadas){
+
+function renderNarrarPresessao(){
+  const eps = (DATA.episodios||[]).slice(0,5); // mostra os primeiros (Ep1 concluído, Ep2 em curso)
+  const epCenas = num => DATA.cenas.filter(c=>cenaEpisodio(c)===num).length;
+  const statusLabel = {'concluido':'Concluído','em_curso':'Em Curso','pendente':'Pendente'};
+  const statusKey = s => statusLabel[s] || s;
+  const cards = eps.map(e=>{
+    const ncenas = epCenas(e.numero);
+    // só Ep1 e Ep2 têm cenas; os outros são pendentes
+    const temCenas = ncenas > 0;
+    const handler = temCenas ? `onclick="narrarSelecionarEp(${e.numero})"` : 'style="opacity:.45;pointer-events:none"';
+    return `<div class="narrar-ep-card" ${handler}>
+      <div class="ep-num">Episódio ${e.numero}</div>
+      <div class="ep-ttl">${esc(e.titulo||'')}</div>
+      <div class="ep-sub">${esc(e.subtitulo||'')}</div>
+      <span class="ep-status ${e.status||'pendente'}">${statusKey(e.status||'pendente')}</span>
+      ${temCenas?`<div class="ep-ncenas">${ncenas} ${ncenas===1?'cena':'cenas'} disponíveis</div>`:'<div class="ep-ncenas">Sem cenas ainda</div>'}
+    </div>`;
+  }).join('');
+  return `<div class="narrar-presessao">
+    <div class="narrar-presessao-ttl">Modo Narrar</div>
+    <div class="narrar-presessao-sub">Selecione o episódio que será conduzido nesta sessão</div>
+    <div class="narrar-ep-grid">${cards}</div>
+  </div>`;
+}
+
+function renderNarrarTOC(cenaAtualId, visitadas, cenas, epNum){
+  cenas = cenas || DATA.cenas;
+  const epInfo = (DATA.episodios||[]).find(e=>e.numero===epNum) || {};
   // agrupa por arco
   const arcos = {};
-  DATA.cenas.forEach(c=>{
+  cenas.forEach(c=>{
     if(!arcos[c.arco]) arcos[c.arco] = { titulo: c.arco_titulo, cenas: [] };
     arcos[c.arco].cenas.push(c);
   });
   let h = `<div class="narrar-toc">
-    <div class="narrar-toc-hdr">Episódio I · 19 Cenas</div>`;
+    <div class="narrar-toc-ep-hdr">
+      <div class="ep-label">Episódio ${epNum}</div>
+      <div class="ep-name">${esc(epInfo.titulo||'')}</div>
+    </div>
+    <button class="narrar-toc-trocar" onclick="narrarVoltarPresessao()">← Trocar episódio</button>`;
   Object.entries(arcos).forEach(([arcoId, arco])=>{
     h += `<div class="narrar-toc-arco">
       <div class="narrar-toc-arco-ttl">${esc(arco.titulo)}</div>`;
@@ -3352,13 +3440,14 @@ function renderNarrarTOC(cenaAtualId, visitadas){
   return h;
 }
 
-function renderNarrarMain(cenaId){
-  const cena = DATA.cenas.find(c=>c.id===cenaId);
+function renderNarrarMain(cenaId, cenas){
+  cenas = cenas || DATA.cenas;
+  const cena = cenas.find(c=>c.id===cenaId);
   if(!cena) return '<div class="narrar-main">Cena não encontrada</div>';
-  const idx = DATA.cenas.indexOf(cena);
-  const total = DATA.cenas.length;
-  const prev = idx>0 ? DATA.cenas[idx-1] : null;
-  const next = idx<total-1 ? DATA.cenas[idx+1] : null;
+  const idx = cenas.indexOf(cena);
+  const total = cenas.length;
+  const prev = idx>0 ? cenas[idx-1] : null;
+  const next = idx<total-1 ? cenas[idx+1] : null;
   const state = narrarLoadState();
   const modoSeguro = state.modoSeguro;
 
@@ -3426,30 +3515,45 @@ function renderBeat(b){
     </div>`;
   }
   if(tipo==='fala'){
-    const npc = b.npc_ref ? narrarRefLabel(b.npc_ref) : 'NPC';
+    // fallback: extrai nome do NPC do titulo ("Ronaldo — frase" → "Ronaldo")
+    const npcNome = b.npc_ref ? narrarRefLabel(b.npc_ref) : (b.titulo ? b.titulo.split(/\s*[—–-]\s*/)[0].trim() : 'NPC');
+    const npcLink = b.npc_ref ? `<a class="auto-link" onclick="goRefPeek('${b.npc_ref}')">${esc(npcNome)}</a>` : `<span>${esc(npcNome)}</span>`;
+    const contexto = b.contexto || (b.titulo && b.npc_ref==null ? '' : ''); // não duplica titulo se já foi usada como npc
     return `<div class="beat fala">
-      <div class="beat-npc">${b.npc_ref?`<a class="auto-link" onclick="goRefPeek('${b.npc_ref}')">${esc(npc)}</a>`:esc(npc)}</div>
-      ${b.contexto?`<div class="beat-contexto">${esc(b.contexto)}</div>`:''}
+      <div class="beat-npc">${npcLink}</div>
+      ${contexto?`<div class="beat-contexto">${esc(contexto)}</div>`:''}
       <div class="beat-texto">"${fmtInlinePeek(b.texto||'')}"</div>
     </div>`;
   }
   if(tipo==='teste'){
+    // fallback: titulo "Psicologia 50" → atributo + dificuldade; texto → o_que_destrava
+    let atrib = b.atributo || ''; let dif = b.dificuldade || '';
+    if(!atrib && b.titulo){
+      const m = b.titulo.match(/^(.+?)(?:\s+(\d+%?))?$/);
+      atrib = m ? (m[1]||b.titulo) : b.titulo; dif = m ? (m[2]||'') : '';
+    }
+    const destrava = b.o_que_destrava || b.texto || '';
+    const ctx = b.contexto || '';
     return `<div class="beat teste">
       <div class="beat-label">Teste / Rolagem</div>
       <div class="beat-teste-line">
-        <span class="beat-atributo">${esc(b.atributo||'')}</span>
-        <span class="beat-dificuldade">${esc(b.dificuldade||'')}</span>
+        <span class="beat-atributo">${esc(atrib)}</span>
+        ${dif?`<span class="beat-dificuldade">${esc(dif)}</span>`:''}
       </div>
-      ${b.contexto?`<div class="beat-contexto">${esc(b.contexto)}</div>`:''}
-      ${b.o_que_destrava?`<div class="beat-destrava">${fmtInlinePeek(b.o_que_destrava)}</div>`:''}
+      ${ctx?`<div class="beat-contexto">${esc(ctx)}</div>`:''}
+      ${destrava?`<div class="beat-destrava">${fmtInlinePeek(destrava)}</div>`:''}
     </div>`;
   }
   if(tipo==='prop'){
     const propRef = b.prop_ref;
     const prop = propRef ? (DATA.props||[]).find(p=>('prop:'+p.id)===propRef) : null;
-    return `<div class="beat prop" onclick="goRefPeek('${propRef||''}')">
-      <div class="beat-prop-tit">Prop · ${esc(prop?prop.nome:'Item')}</div>
-      ${b.contexto?`<div class="beat-prop-ctx">${fmtInlinePeek(b.contexto)}</div>`:''}
+    // fallback: titulo como nome do prop; texto como contexto
+    const propNome = prop ? prop.nome : (b.titulo || 'Item');
+    const ctx = b.contexto || (!propRef && b.texto ? b.texto : '');
+    const clickAttr = propRef ? `onclick="goRefPeek('${propRef}')"` : '';
+    return `<div class="beat prop" ${clickAttr} style="${!propRef?'cursor:default':''}">
+      <div class="beat-prop-tit">Prop · ${esc(propNome)}</div>
+      ${ctx?`<div class="beat-prop-ctx">${fmtInlinePeek(ctx)}</div>`:''}
     </div>`;
   }
   if(tipo==='escolha'){
@@ -3522,6 +3626,8 @@ function narrarAbrir(cenaId){
   const cena = DATA.cenas.find(c=>c.id===cenaId);
   if(!cena) return;
   const state = narrarLoadState();
+  // se a cena não é do episódio ativo, sincroniza o episódio
+  if(state.episodio && cenaEpisodio(cena)!==state.episodio) state.episodio = cenaEpisodio(cena);
   state.cenaId = cenaId;
   narrarSaveState(state);
   narrarMarcarVisitada(cenaId);
@@ -3957,7 +4063,7 @@ function renderDia18(){
     { hora: '05:00', nivel:'major', tags:['descoberta'], titulo:'Valdecir é encontrado morto', desc:'Dona Neuza Aparecida, em caminhada matinal, encontra o corpo encostado no muro externo da Área Verde. Mãos viradas para dentro do terreno. Frio impossível.' },
     { hora: '~08:00', nivel:'normal', tags:['oculto'], titulo:'Dr. Meireles examina o corpo', desc:'Quatro anomalias: temperatura 4°C abaixo do normal, terra preta nas mãos segurada ativamente, expressão de reconhecimento, lágrimas de sangue. Ele apaga a quarta do laudo.' },
     { hora: '~09:00', nivel:'normal', tags:[], titulo:'Seu João leva o corpo à funerária', desc:'Quando vai buscar, Meireles ainda está sentado olhando para Valdecir. "Médico vê morto todo dia. Não fica sentado olhando."' },
-    { hora: '14:00', nivel:'normal', tags:['oculto'], titulo:'Heitor Furtado faz reconhecimento', desc:'Investigador particular contratado por Ezequiel. Destranca o ferrolho da cozinha de Valdecir por dentro. Deixa pegada perto do muro da Área Verde — indo para dentro.' },
+    { hora: '14:00', nivel:'normal', tags:['oculto'], titulo:'Reinaldo Furtado faz reconhecimento', desc:'Investigador particular contratado por Ezequiel. Destranca o ferrolho da cozinha de Valdecir por dentro. Deixa pegada perto do muro da Área Verde — indo para dentro.' },
     { hora: '14:00', nivel:'normal', tags:[], titulo:'Caixão entregue por Seu João', desc:'Funerária deixa o caixão na Igreja de Santo Antônio. Sai por volta das 17h30.' },
     { hora: '15:32', nivel:'major', tags:['oculto'], titulo:'Ezequiel liga para Dr. Meireles', desc:'Chip pré-pago descartável de Goiânia. Descreve a família do médico sem fazer ameaça explícita. Meireles edita o laudo. O papel com o número fica na gaveta.' },
     { hora: '~16:00', nivel:'normal', tags:['SP'], titulo:'Lucas Andrade é condenado em SP', desc:'Sentença lida diante de Vinicius Fonseca. Otávio Drumond — o assassino real — sorri no fundo da sala.' },
@@ -4013,272 +4119,272 @@ window.addEventListener('DOMContentLoaded',()=>{
 
 
 /* ═══════════════════════════════════════════════════════════
-   TRACKER DE COMBATE — Onda 5
-   Conteúdo de regra vem de DATA.combate; PCs do DATA.pcs;
-   NPCs do DATA.npcs. Estado persiste em localStorage.
+   TRACKER DE COMBATE — v2 (modelo fiel ao Cap. 9)
+   Três camadas: POSTURA → VIGOR → HP. Locais de acerto.
+   Regra/armas/armadura vêm de DATA.combate. Persiste em localStorage.
    ═══════════════════════════════════════════════════════════ */
-const CBT_KEY = 'ke_combate_v1';
+const CBT_KEY = 'ke_combate_v2';
 let COMBATE = { combatentes:[], rodada:1, turnoIdx:0, log:[] };
 
-/* ── persistência ── */
 function cbtSave(){ try{ localStorage.setItem(CBT_KEY, JSON.stringify(COMBATE)); }catch(e){} }
-function cbtLoad(){
-  try{ const raw=localStorage.getItem(CBT_KEY); if(raw){ const s=JSON.parse(raw); if(s&&s.combatentes){ COMBATE=s; if(!COMBATE.log)COMBATE.log=[]; } } }catch(e){}
-}
-
-/* ── dados / dado ── */
+function cbtLoad(){ try{ const raw=localStorage.getItem(CBT_KEY); if(raw){ const s=JSON.parse(raw); if(s&&s.combatentes){ COMBATE=s; if(!COMBATE.log)COMBATE.log=[]; } } }catch(e){} }
 function cbtD(s){ return Math.floor(Math.random()*s)+1; }
 function cbtCfg(){ return (DATA && DATA.combate) || {}; }
 
-/* ── fórmulas derivadas ── */
-function cbtHpMax(c){ return Math.max(1,(Number(c.corpo)||0)+(Number(c.alma)||0)); }
-function cbtVigor(c){ return (Number(c.corpo)||0)*5; }
-function cbtPostura(c){ return Math.floor((Number(c.reflexos)||0)/5); }
-function cbtEsquiva(c){ return Math.floor((Number(c.reflexos)||0)/2); }
+/* ── derivados (modelo real) ── */
+function cbtHpMax(c){ return Math.max(1, Math.ceil(((Number(c.corpo)||0)+(Number(c.alma)||0))/10)); }
+function cbtVigorMax(c){ return Math.max(1, Math.round((Number(c.corpo)||0)/5)); }
+function cbtPosturaMax(c){ return Math.max(0, Math.round((Number(c.reflexos)||0)/5)); }
+function cbtIniciativa(c){ return Number(c.reflexos)||0; }
+function cbtEsquivar(c){ return Math.floor((Number(c.reflexos)||0)/2); }
+function cbtBdExpr(corpo){ corpo=Number(corpo)||0;
+  if(corpo<=30) return '-1'; if(corpo<=50) return '0'; if(corpo<=70) return '1d4'; return '1d6'; }
+function cbtBdAtual(c){ return (c.bd_override!=null && c.bd_override!=='') ? c.bd_override : cbtBdExpr(c.corpo); }
 
-/* ── faixa de acerto ── */
-function cbtFaixa(roll, pericia){
-  pericia = Number(pericia)||0;
-  const fumbleFloor = pericia<50 ? 96 : 100;
-  if(roll>=fumbleFloor) return {tier:'fumble', rotulo:'Fumble', sucesso:false};
-  if(roll===1)          return {tier:'critico', rotulo:'Crítico', sucesso:true};
-  if(roll<=Math.floor(pericia/5)) return {tier:'extremo', rotulo:'Extremo', sucesso:true};
-  if(roll<=pericia)     return {tier:'normal', rotulo:'Sucesso', sucesso:true};
+/* ── faixas de sucesso (Extremo/Bom/Normal/Falha/Falha Crítica) ── */
+function cbtBand(roll, per){
+  per=Number(per)||0;
+  const critFloor = per<50 ? 96 : 100;
+  if(roll>=critFloor) return {tier:'falha_critica', rotulo:'Falha Crítica', sucesso:false};
+  if(roll<=Math.floor(per/5)) return {tier:'extremo', rotulo:'Sucesso Extremo', sucesso:true};
+  if(roll<=Math.floor(per/2)) return {tier:'bom', rotulo:'Sucesso Bom', sucesso:true};
+  if(roll<=per) return {tier:'normal', rotulo:'Sucesso Normal', sucesso:true};
   return {tier:'falha', rotulo:'Falha', sucesso:false};
 }
 
-/* ── parser/rolagem de dano (token BD) ── */
-function cbtParseDano(expr, bd){
-  bd = Number(bd)||0;
-  expr = String(expr||'').toLowerCase().replace(/\s+/g,'').replace(/bd/g,(bd>=0?('+'+bd):('-'+Math.abs(bd))));
-  expr = expr.replace(/\+\++/g,'+').replace(/\+-/g,'-').replace(/-\+/g,'-');
+/* ── dados de dano ── */
+function cbtParse(expr){ expr=String(expr||'0').toLowerCase().replace(/\s+/g,'');
   const dice=[]; let mod=0; const re=/([+-]?)(\d*)d(\d+)|([+-]?\d+)/g; let m;
-  while((m=re.exec(expr))){
-    if(m[3]){ const sign=m[1]==='-'?-1:1; const n=m[2]===''?1:parseInt(m[2],10); dice.push({n,sides:parseInt(m[3],10),sign}); }
-    else if(m[4]!==undefined){ mod+=parseInt(m[4],10); }
-  }
-  return {dice,mod};
-}
-function cbtRollDano(expr, bd, dobrar){
-  const {dice,mod}=cbtParseDano(expr,bd); let total=0; const det=[]; const passes=dobrar?2:1;
-  for(let p=0;p<passes;p++) for(const g of dice) for(let i=0;i<g.n;i++){ const r=cbtD(g.sides); total+=r*g.sign; det.push(r); }
-  total+=mod; total=Math.max(0,total);
-  return {total, det, mod, dobrado:!!dobrar};
-}
+  while((m=re.exec(expr))){ if(m[3]){ const sign=m[1]==='-'?-1:1; const n=m[2]===''?1:parseInt(m[2],10); dice.push({n,sides:parseInt(m[3],10),sign}); }
+    else if(m[4]!==undefined){ mod+=parseInt(m[4],10); } } return {dice,mod}; }
+function cbtRollExpr(expr){ const {dice,mod}=cbtParse(expr); let t=0; const det=[];
+  for(const g of dice) for(let i=0;i<g.n;i++){ const r=cbtD(g.sides); t+=r*g.sign; det.push(r); } return {total:t+mod, det}; }
+function cbtMaxExpr(expr){ const {dice,mod}=cbtParse(expr); let t=mod; for(const g of dice) t+=g.n*g.sides*g.sign; return t; }
 
-/* ── criação de combatentes ── */
-function cbtUid(){ return 'c'+Date.now().toString(36)+Math.floor(Math.random()*1e4).toString(36); }
+/* ── perícia efetiva por ataque ── */
 function cbtAtkPericia(c, atk){
   if(atk.pericia!=null && atk.pericia!=='') return Number(atk.pericia)||0;
-  const ba=atk.base_attr;
-  if(ba && c[ba]!=null) return Number(c[ba])||0;
+  const ba=atk.base_attr; if(ba && c[ba]!=null) return Number(c[ba])||0;
   return Number((cbtCfg().pericia_padrao)||50);
 }
+function cbtIsMelee(atk){ return atk.tipo==='cac' || atk.tipo==='branca'; }
 
+/* ── criação ── */
+function cbtUid(){ return 'c'+Date.now().toString(36)+Math.floor(Math.random()*1e4).toString(36); }
+function cbtRecalc(c){ c.hp_max=cbtHpMax(c); c.vigor_max=cbtVigorMax(c); c.postura_max=cbtPosturaMax(c); }
 function cbtNovoFromPC(pc){
   const a=pc.atributos||{};
   const seed=((cbtCfg().pcs_ataques_seed)||{})[pc.id]||[];
   const c={ cid:cbtUid(), tipo:'pc', ref:pc.id, nome:pc.nome, papel:pc.epiteto||pc.ocupacao||'',
     corpo:a.corpo||0, reflexos:a.reflexos||0, mente:a.mente||0, saber:a.saber||0, alma:a.alma||0,
-    san_max:pc.sanidade_inicial||a.alma||0, san_atual:(pc.sanidade_atual!=null?pc.sanidade_atual:(pc.sanidade_inicial||a.alma||0)),
-    marcas:pc.marcas_iniciais||0, bd:0, status:'ativo', provisorio:false, ataques:[] };
-  c.hp_max=cbtHpMax(c); c.hp_atual=c.hp_max;
-  c.ataques=seed.map(s=>({nome:s.nome,tipo:s.tipo,base_attr:s.base_attr||null,pericia:(s.base_attr?null:(s.pericia!=null?s.pericia:50)),dano:s.dano,alcance:s.alcance||'',obs:s.obs||''}));
+    bd_override:null, armadura:'nenhuma', status:'ativo', provisorio:false, ataques:[] };
+  cbtRecalc(c); c.hp_atual=c.hp_max; c.vigor_atual=c.vigor_max; c.postura_atual=c.postura_max;
+  c.ataques=seed.map(s=>cbtCloneAtk(s));
   return c;
 }
-function cbtNovoFromNPC(npc){
-  const c={ cid:cbtUid(), tipo:'npc', ref:npc.id, nome:npc.nome, papel:npc.tag||npc.funcao||npc.role||'',
+function cbtCloneAtk(s){ return {nome:s.nome,tipo:s.tipo,base_attr:s.base_attr||null,
+  pericia:(s.base_attr?null:(s.pericia!=null?s.pericia:50)),dano:s.dano,alcance:s.alcance||'',
+  bd:(s.bd!=null?s.bd:cbtIsMelee(s)),obs:s.obs||''}; }
+function cbtNovoProvisorio(tipo, ref, nome, papel){
+  const c={ cid:cbtUid(), tipo, ref:ref||null, nome, papel:papel||'',
     corpo:50, reflexos:50, mente:50, saber:50, alma:50,
-    san_max:50, san_atual:50, marcas:0, bd:0, status:'ativo', provisorio:true, ataques:[] };
-  c.hp_max=cbtHpMax(c); c.hp_atual=c.hp_max;
-  c.ataques=[{nome:'Desarmado',tipo:'cac',base_attr:'corpo',pericia:null,dano:'1d3+BD',alcance:'Corpo a corpo',obs:''}];
-  return c;
-}
-function cbtNovoAvulso(){
-  const c={ cid:cbtUid(), tipo:'avulso', ref:null, nome:'Combatente avulso', papel:'',
-    corpo:50, reflexos:50, mente:50, saber:50, alma:50,
-    san_max:50, san_atual:50, marcas:0, bd:0, status:'ativo', provisorio:true, ataques:[] };
-  c.hp_max=cbtHpMax(c); c.hp_atual=c.hp_max;
-  c.ataques=[{nome:'Desarmado',tipo:'cac',base_attr:'corpo',pericia:null,dano:'1d3+BD',alcance:'Corpo a corpo',obs:''}];
+    bd_override:null, armadura:'nenhuma', status:'ativo', provisorio:true, ataques:[] };
+  cbtRecalc(c); c.hp_atual=c.hp_max; c.vigor_atual=c.vigor_max; c.postura_atual=c.postura_max;
+  c.ataques=[{nome:'Soco',tipo:'cac',base_attr:'corpo',pericia:null,dano:'1d3',alcance:'Corpo a corpo',bd:true,obs:''}];
   return c;
 }
 
-/* ── adicionar/remover ── */
 function cbtAddPC(){
   const have=new Set(COMBATE.combatentes.filter(c=>c.tipo==='pc').map(c=>c.ref));
-  let added=0;
-  (DATA.pcs||[]).forEach(pc=>{ if(!have.has(pc.id)){ COMBATE.combatentes.push(cbtNovoFromPC(pc)); added++; } });
+  let added=0; (DATA.pcs||[]).forEach(pc=>{ if(!have.has(pc.id)){ COMBATE.combatentes.push(cbtNovoFromPC(pc)); added++; } });
   if(added===0) cbtToast('Os 4 PCs já estão no combate.');
   cbtSave(); renderCombate();
 }
-function cbtAddAvulso(){ COMBATE.combatentes.push(cbtNovoAvulso()); cbtSave(); renderCombate(); }
-function cbtRemove(cid){
-  const c=cbtGet(cid); if(!c) return;
+function cbtAddAvulso(){ COMBATE.combatentes.push(cbtNovoProvisorio('avulso',null,'Combatente avulso','')); cbtSave(); renderCombate(); }
+function cbtRemove(cid){ const c=cbtGet(cid); if(!c) return;
   if(!confirm('Remover '+c.nome+' do combate?')) return;
   COMBATE.combatentes=COMBATE.combatentes.filter(x=>x.cid!==cid);
-  if(COMBATE.turnoIdx>=COMBATE.combatentes.length) COMBATE.turnoIdx=0;
-  cbtSave(); renderCombate();
-}
-function cbtNovoCombate(){
-  if(!confirm('Encerrar este combate e zerar tudo (combatentes, rodadas e log)?')) return;
-  COMBATE={combatentes:[],rodada:1,turnoIdx:0,log:[]}; cbtSave(); renderCombate();
-}
+  if(COMBATE.turnoIdx>=COMBATE.combatentes.length) COMBATE.turnoIdx=0; cbtSave(); renderCombate(); }
+function cbtNovoCombate(){ if(!confirm('Encerrar este combate e zerar tudo (combatentes, rodadas e log)?')) return;
+  COMBATE={combatentes:[],rodada:1,turnoIdx:0,log:[]}; cbtSave(); renderCombate(); }
 function cbtGet(cid){ return COMBATE.combatentes.find(c=>c.cid===cid); }
 
 /* ── seletor de NPC ── */
-function cbtOpenNpcPicker(){
-  const list=document.getElementById('cbtPickList'); if(!list) return;
-  const npcs=DATA.npcs||[];
-  list.innerHTML = npcs.map(n=>`<div class="cbt-pick-item" onclick="cbtPickNpc('${n.id}')">
+function cbtOpenNpcPicker(){ const list=document.getElementById('cbtPickList'); if(!list) return;
+  list.innerHTML=(DATA.npcs||[]).map(n=>`<div class="cbt-pick-item" onclick="cbtPickNpc('${n.id}')">
     <span class="pn">${esc(n.nome)}</span><span class="pt">${esc(n.tag||n.funcao||n.role||'')}</span></div>`).join('');
-  document.getElementById('cbtPickOverlay').classList.add('show');
-}
+  document.getElementById('cbtPickOverlay').classList.add('show'); }
 function cbtCloseNpcPicker(){ const o=document.getElementById('cbtPickOverlay'); if(o)o.classList.remove('show'); }
-function cbtPickNpc(id){
-  const npc=(DATA.npcs||[]).find(n=>n.id===id); if(npc){ COMBATE.combatentes.push(cbtNovoFromNPC(npc)); cbtSave(); }
-  cbtCloseNpcPicker(); renderCombate();
-}
+function cbtPickNpc(id){ const npc=(DATA.npcs||[]).find(n=>n.id===id);
+  if(npc){ COMBATE.combatentes.push(cbtNovoProvisorio('npc',npc.id,npc.nome,npc.tag||npc.funcao||npc.role||'')); cbtSave(); }
+  cbtCloseNpcPicker(); renderCombate(); }
 
-/* ── edição de campos ── */
-function cbtSetAttr(cid, attr, val){
-  const c=cbtGet(cid); if(!c) return;
-  c[attr]=Math.max(0,parseInt(val,10)||0);
-  if(c.provisorio && c.tipo!=='avulso') c.provisorio=false; // mestre ajustou
-  const novoMax=cbtHpMax(c);
-  if(c.hp_atual>novoMax || c.hp_atual===c.hp_max) c.hp_atual=Math.min(c.hp_atual,novoMax);
-  c.hp_max=novoMax;
-  if(attr==='alma'){ c.san_max=Math.max(c.san_max, c.alma); }
-  cbtSave(); renderCombate();
-}
-function cbtSetHP(cid, val){ const c=cbtGet(cid); if(!c)return; c.hp_atual=Math.max(0,Math.min(c.hp_max,parseInt(val,10)||0)); cbtAutoStatus(c); cbtSave(); renderCombate(); }
-function cbtStepHP(cid, d){ const c=cbtGet(cid); if(!c)return; c.hp_atual=Math.max(0,Math.min(c.hp_max,c.hp_atual+d)); cbtAutoStatus(c); cbtSave(); renderCombate(); }
-function cbtSetSan(cid, val){ const c=cbtGet(cid); if(!c)return; c.san_atual=Math.max(0,Math.min(c.san_max,parseInt(val,10)||0)); cbtSave(); renderCombate(); }
-function cbtStepSan(cid, d){ const c=cbtGet(cid); if(!c)return; c.san_atual=Math.max(0,Math.min(c.san_max,c.san_atual+d)); cbtSave(); renderCombate(); }
-function cbtSetMarcas(cid, val){ const c=cbtGet(cid); if(!c)return; c.marcas=Math.max(0,parseInt(val,10)||0); cbtSave(); }
-function cbtSetBD(cid, val){ const c=cbtGet(cid); if(!c)return; c.bd=parseInt(val,10)||0; cbtSave(); }
+/* ── edição ── */
+function cbtSetAttr(cid, attr, val){ const c=cbtGet(cid); if(!c) return;
+  c[attr]=Math.max(0,parseInt(val,10)||0); if(c.provisorio && c.tipo!=='avulso') c.provisorio=false;
+  const oldMaxH=c.hp_max,oldMaxV=c.vigor_max,oldMaxP=c.postura_max; cbtRecalc(c);
+  if(c.hp_atual===oldMaxH||c.hp_atual>c.hp_max) c.hp_atual=c.hp_max;
+  if(c.vigor_atual===oldMaxV||c.vigor_atual>c.vigor_max) c.vigor_atual=c.vigor_max;
+  if(c.postura_atual===oldMaxP||c.postura_atual>c.postura_max) c.postura_atual=c.postura_max;
+  cbtSave(); renderCombate(); }
+function cbtSetLayer(cid, layer, val){ const c=cbtGet(cid); if(!c)return;
+  const max=c[layer+'_max']; c[layer+'_atual']=Math.max(0,Math.min(max,parseInt(val,10)||0)); cbtAutoStatus(c); cbtSave(); renderCombate(); }
+function cbtStepLayer(cid, layer, d){ const c=cbtGet(cid); if(!c)return;
+  const max=c[layer+'_max']; c[layer+'_atual']=Math.max(0,Math.min(max,c[layer+'_atual']+d)); cbtAutoStatus(c); cbtSave(); renderCombate(); }
+function cbtSetBD(cid, val){ const c=cbtGet(cid); if(!c)return; c.bd_override=(val===''?null:val); cbtSave(); renderCombate(); }
+function cbtSetArmadura(cid, val){ const c=cbtGet(cid); if(!c)return; c.armadura=val; cbtSave(); }
 function cbtSetStatus(cid, val){ const c=cbtGet(cid); if(!c)return; c.status=val; cbtSave(); renderCombate(); }
 function cbtSetNome(cid, val){ const c=cbtGet(cid); if(!c)return; c.nome=val||c.nome; cbtSave(); }
 function cbtAutoStatus(c){
   if(c.status==='morto'||c.status==='possuido') return;
-  if(c.hp_atual<=0) c.status='ko';
-  else if(c.hp_atual<=Math.ceil(c.hp_max/2)) c.status='ferido';
+  if(c.hp_atual<=0) c.status='agonizando';
+  else if(c.vigor_atual<=0) c.status='ferido_grave';
+  else if(c.postura_atual<=0) c.status='descontrolado';
   else c.status='ativo';
 }
 
-/* ── ataques: editar / add / remover ── */
+/* ── ataques: gerência ── */
 function cbtAddAtk(cid){ const c=cbtGet(cid); if(!c)return;
-  c.ataques.push({nome:'Novo ataque',tipo:'cac',base_attr:null,pericia:50,dano:'1d4',alcance:'',obs:''}); cbtSave(); renderCombate(); }
+  c.ataques.push({nome:'Novo ataque',tipo:'cac',base_attr:null,pericia:50,dano:'1d4',alcance:'',bd:true,obs:''}); cbtSave(); renderCombate(); }
 function cbtRemoveAtk(cid, i){ const c=cbtGet(cid); if(!c)return; c.ataques.splice(i,1); cbtSave(); renderCombate(); }
 function cbtEditAtk(cid, i, field, val){ const c=cbtGet(cid); if(!c||!c.ataques[i])return;
   if(field==='pericia'){ c.ataques[i].pericia=(val===''?null:(parseInt(val,10)||0)); c.ataques[i].base_attr=null; }
-  else c.ataques[i][field]=val;
-  cbtSave(); renderCombate(); }
+  else if(field==='tipo'){ c.ataques[i].tipo=val; c.ataques[i].bd=cbtIsMelee({tipo:val}); }
+  else c.ataques[i][field]=val; cbtSave(); renderCombate(); }
 function cbtAddBaseArma(cid, idx){ const c=cbtGet(cid); if(!c)return;
-  const arma=((cbtCfg().armas_base)||[])[idx]; if(!arma)return;
-  c.ataques.push({nome:arma.nome,tipo:arma.tipo,base_attr:arma.base_attr||null,pericia:(arma.base_attr?null:(arma.pericia!=null?arma.pericia:50)),dano:arma.dano,alcance:arma.alcance||'',obs:arma.obs||''});
-  cbtSave(); renderCombate(); }
+  const a=((cbtCfg().armas_base)||[])[idx]; if(!a)return; c.ataques.push(cbtCloneAtk(a)); cbtSave(); renderCombate(); }
 
-/* ── ROLAGEM DE ATAQUE ── */
+/* ── ROLAGEM DE ATAQUE (com local de acerto) ── */
+function cbtLocais(){ return (cbtCfg().locais_acerto)||[{id:'tronco',rotulo:'Tronco',fator:1,efeito:'Dano normal'}]; }
 function cbtAtkRoll(cid, i){
   const c=cbtGet(cid); if(!c)return; const atk=c.ataques[i]; if(!atk)return;
+  const sel=document.getElementById('loc_'+c.cid+'_'+i);
+  const localId=sel?sel.value:'tronco';
+  const local=cbtLocais().find(l=>l.id===localId)||cbtLocais()[0];
   const per=cbtAtkPericia(c,atk);
+  const alvo=Math.max(1,Math.floor(per*(local.fator!=null?local.fator:1)));
   const roll=cbtD(100);
-  const f=cbtFaixa(roll,per);
-  let danoTxt='', danoVal=0;
-  if(f.sucesso){
-    const dobrar=(f.tier==='extremo'||f.tier==='critico');
-    const dr=cbtRollDano(atk.dano,c.bd,dobrar);
-    danoVal=dr.total;
-    danoTxt=` · dano <b>${dr.total}</b>${dobrar?' (dobrado)':''}`;
+  const band=cbtBand(roll,per);
+  const acertou = band.sucesso && roll<=alvo;
+
+  let danoTxt='', dmgObj=null;
+  if(acertou){
+    // dano base por nível
+    let base;
+    if(band.tier==='extremo') base=cbtMaxExpr(atk.dano); else { base=cbtRollExpr(atk.dano).total; if(band.tier==='bom') base+=1; }
+    // bônus de dano corporal (só melee/branca)
+    let bd=0; if(atk.bd){ const bde=cbtBdAtual(c); bd=(band.tier==='extremo')?cbtMaxExpr(bde):cbtRollExpr(bde).total; }
+    let total=Math.max(0, base+bd);
+    const ignPost = (localId==='cabeca'||localId==='coracao');
+    const ignVig  = (localId==='coracao');
+    const ignArm  = (localId==='cabeca');
+    if(localId==='cabeca') total*=2;
+    const insta = (localId==='cabeca' && roll<=5);
+    dmgObj={amount:total, ignPost, ignVig, ignArm, insta, tipoArma:atk.tipo};
+    danoTxt=` · dano <b>${total}</b>${band.tier==='extremo'?' (máx)':band.tier==='bom'?' (+1)':''}`+
+      (localId==='cabeca'?' ×2 fura Postura':'')+(localId==='coracao'?' direto no HP':'')+(insta?' · <b>MORTE</b>':'');
   }
-  const alvoSel = (f.sucesso && danoVal>0) ? cbtTargetSelect(cid, danoVal) : '';
-  const linha = `<span class="lt-rnd">R${COMBATE.rodada}</span><em>${esc(c.nome)}</em> ataca com <b>${esc(atk.nome)}</b> — `+
-    `d% <span class="lt-roll">${roll}</span> vs ${per} → <span class="tier-${f.tier}">${f.rotulo}</span>${danoTxt}`+
-    (alvoSel ? `<div class="cbt-apply">${alvoSel}</div>` : '');
-  cbtLog(linha);
+  const efeitoLoc = (localId!=='tronco') ? ` <span class="cbt-mini">[${esc(local.rotulo)}]</span>` : '';
+  const alvoSel = (acertou && dmgObj) ? cbtTargetSelect(cid, dmgObj) : '';
+  cbtLog(`<span class="lt-rnd">R${COMBATE.rodada}</span><em>${esc(c.nome)}</em> ataca com <b>${esc(atk.nome)}</b>${efeitoLoc} — `+
+    `d% <span class="lt-roll">${roll}</span> vs ${alvo} → <span class="tier-${band.tier}">${band.rotulo}</span>${danoTxt}`+
+    (alvoSel?`<div class="cbt-apply">${alvoSel}</div>`:''));
 }
-function cbtTargetSelect(atacanteCid, dano){
+function cbtTargetSelect(atacanteCid, dmgObj){
   const opts=COMBATE.combatentes.filter(c=>c.cid!==atacanteCid && c.status!=='morto')
-    .map(c=>`<option value="${c.cid}">${esc(c.nome)} · HP ${c.hp_atual}</option>`).join('');
+    .map(c=>`<option value="${c.cid}">${esc(c.nome)} · P${c.postura_atual}/V${c.vigor_atual}/HP${c.hp_atual}</option>`).join('');
   if(!opts) return '';
-  return `<span class="cbt-mini">▸ aplicar <b>${dano}</b> em:</span> `+
-    `<select class="cbt-sel" onchange="if(this.value)cbtApplyDamage(this.value,${dano})">`+
+  const payload=encodeURIComponent(JSON.stringify(dmgObj));
+  return `<span class="cbt-mini">▸ aplicar <b>${dmgObj.amount}</b> em:</span> `+
+    `<select class="cbt-sel" onchange="if(this.value)cbtApplyDamage(this.value,'${payload}')">`+
     `<option value="">— alvo —</option>${opts}</select>`;
 }
 
-/* aplicação de dano por seleção no log */
-function cbtApplyDamage(targetCid, amount){
+/* ── APLICAÇÃO DE DANO EM CAMADAS ── */
+function cbtArmorRed(c, tipoArma){
+  const arm=((cbtCfg().armaduras)||[]).find(a=>a.id===c.armadura); if(!arm) return 0;
+  return (tipoArma==='fogo') ? (arm.fogo||0) : (arm.branca||0);
+}
+function cbtApplyDamage(targetCid, payload){
   const c=cbtGet(targetCid); if(!c)return;
-  c.hp_atual=Math.max(0,c.hp_atual-amount); cbtAutoStatus(c);
-  cbtLog(`<span class="lt-rnd">R${COMBATE.rodada}</span><em>${esc(c.nome)}</em> sofre <b>${amount}</b> de dano → HP ${c.hp_atual}/${c.hp_max}${c.status==='ko'?' · <span class="tier-fumble">FORA DE COMBATE</span>':''}`);
+  let o; try{ o=JSON.parse(decodeURIComponent(payload)); }catch(e){ o={amount:Number(payload)||0}; }
+  if(o.insta){ c.hp_atual=0; c.status='morto'; cbtLog(`<span class="lt-rnd">R${COMBATE.rodada}</span><em>${esc(c.nome)}</em> — <span class="tier-falha_critica">MORTE INSTANTÂNEA</span> (tiro na cabeça)`); cbtSave(); renderCombate(); return; }
+  let dano=o.amount||0; const passos=[];
+  // 1) Postura: absorve metade + gasta 1 ponto
+  if(!o.ignPost && c.postura_atual>0){ c.postura_atual-=1; dano=Math.ceil(dano/2); passos.push('Postura −1, dano ÷2 → '+dano); }
+  else if(o.ignPost){ passos.push('ignora Postura'); }
+  // 2) Armadura
+  if(!o.ignArm){ const red=cbtArmorRed(c,o.tipoArma); if(red){ dano=Math.max(0,dano-red); passos.push('armadura −'+red+' → '+dano); } }
+  // 3) Vigor → HP (cascata)
+  if(o.ignVig){ c.hp_atual=Math.max(0,c.hp_atual-dano); passos.push('direto HP −'+dano); }
+  else {
+    if(c.vigor_atual>0){ const nv=c.vigor_atual-dano;
+      if(nv<0){ c.hp_atual=Math.max(0,c.hp_atual+nv); c.vigor_atual=0; passos.push('Vigor 0, transborda '+(-nv)+' no HP'); }
+      else { c.vigor_atual=nv; passos.push('Vigor → '+nv); } }
+    else { c.hp_atual=Math.max(0,c.hp_atual-dano); passos.push('Vigor já 0 → HP −'+dano); }
+  }
+  cbtAutoStatus(c);
+  cbtLog(`<span class="lt-rnd">R${COMBATE.rodada}</span><em>${esc(c.nome)}</em> sofre <b>${o.amount}</b>: ${passos.join('; ')} `+
+    `<span class="cbt-mini">→ P${c.postura_atual}/V${c.vigor_atual}/HP${c.hp_atual}</span>`+
+    (c.status==='agonizando'?' · <span class="tier-falha_critica">AGONIZANDO</span>':'')+
+    (c.status==='morto'?' · <span class="tier-falha_critica">MORTO</span>':''));
   cbtSave(); renderCombate();
 }
 
-/* ── RESISTÊNCIAS ── */
-function cbtResist(cid, kind){
-  const c=cbtGet(cid); if(!c)return;
-  let alvo=0, nome='';
-  if(kind==='esquiva'){ alvo=cbtEsquiva(c); nome='Esquiva'; }
-  else if(kind==='vigor'){ alvo=cbtVigor(c); nome='Vigor'; }
-  else if(kind==='san'){ alvo=c.san_atual; nome='Sanidade'; }
-  const roll=cbtD(100); const f=cbtFaixa(roll,alvo);
-  cbtLog(`<span class="lt-rnd">R${COMBATE.rodada}</span><em>${esc(c.nome)}</em> · teste de ${nome} — d% <span class="lt-roll">${roll}</span> vs ${alvo} → <span class="tier-${f.tier}">${f.rotulo}</span>`);
-}
+/* ── MANOBRAS DE DEFESA ── */
+function cbtEsquivarRoll(cid){ const c=cbtGet(cid); if(!c)return;
+  const alvo=cbtEsquivar(c); const roll=cbtD(100); const b=cbtBand(roll,alvo);
+  cbtLog(`<span class="lt-rnd">R${COMBATE.rodada}</span><em>${esc(c.nome)}</em> · Esquivar (Reflexos÷2) — d% <span class="lt-roll">${roll}</span> vs ${alvo} → <span class="tier-${b.tier}">${b.rotulo}</span>`); }
+function cbtManterPostura(cid){ const c=cbtGet(cid); if(!c)return;
+  const r=cbtD(4); const antes=c.postura_atual; c.postura_atual=Math.min(c.postura_max,c.postura_atual+r); const ganho=c.postura_atual-antes;
+  cbtAutoStatus(c); cbtSave();
+  cbtLog(`<span class="lt-rnd">R${COMBATE.rodada}</span><em>${esc(c.nome)}</em> · Manter Postura — recupera 1d4=${r} (+${ganho}) → Postura ${c.postura_atual}/${c.postura_max}`); renderCombate(); }
+function cbtContraAtacar(cid){ const c=cbtGet(cid); if(!c)return;
+  if(c.postura_atual<=0){ cbtToast('Sem Postura para Contra-Atacar.'); return; }
+  c.postura_atual-=1; cbtAutoStatus(c); cbtSave();
+  const atk=c.ataques.find(a=>cbtIsMelee(a))||c.ataques[0];
+  if(atk){ const per=cbtAtkPericia(c,atk); const roll=cbtD(100); const b=cbtBand(roll,per);
+    cbtLog(`<span class="lt-rnd">R${COMBATE.rodada}</span><em>${esc(c.nome)}</em> · Contra-Atacar (−1 Postura) com <b>${esc(atk.nome)}</b> — d% <span class="lt-roll">${roll}</span> vs ${per} → <span class="tier-${b.tier}">${b.rotulo}</span> <span class="cbt-mini">(disputa: maior nível conecta)</span>`); }
+  renderCombate(); }
 
 /* ── INICIATIVA / TURNO ── */
-function cbtOrdem(){
-  return COMBATE.combatentes.slice().sort((a,b)=>{
-    if((b.reflexos||0)!==(a.reflexos||0)) return (b.reflexos||0)-(a.reflexos||0);
-    if(cbtPostura(b)!==cbtPostura(a)) return cbtPostura(b)-cbtPostura(a);
-    return String(a.nome).localeCompare(String(b.nome));
-  });
-}
-function cbtNextTurn(){
-  const ordem=cbtOrdem(); const vivos=ordem.filter(c=>c.status!=='morto');
-  if(!vivos.length) return;
+function cbtOrdem(){ return COMBATE.combatentes.slice().sort((a,b)=>{
+  if(cbtIniciativa(b)!==cbtIniciativa(a)) return cbtIniciativa(b)-cbtIniciativa(a);
+  return String(a.nome).localeCompare(String(b.nome)); }); }
+function cbtNextTurn(){ const vivos=cbtOrdem().filter(c=>c.status!=='morto'); if(!vivos.length) return;
   COMBATE.turnoIdx++;
-  if(COMBATE.turnoIdx>=vivos.length){ COMBATE.turnoIdx=0; COMBATE.rodada++; cbtLog(`<span class="lt-rnd">R${COMBATE.rodada}</span>— início da rodada ${COMBATE.rodada} —`); }
-  cbtSave(); renderCombate();
-}
-function cbtCurrentCid(){
-  const vivos=cbtOrdem().filter(c=>c.status!=='morto');
-  return vivos.length ? (vivos[Math.min(COMBATE.turnoIdx,vivos.length-1)]||{}).cid : null;
-}
+  if(COMBATE.turnoIdx>=vivos.length){ COMBATE.turnoIdx=0; COMBATE.rodada++;
+    COMBATE.combatentes.forEach(c=>{ if(c.status!=='morto'&&c.status!=='possuido'){ /* Postura reseta só ao fim da cena, não por rodada */ } });
+    cbtLog(`<span class="lt-rnd">R${COMBATE.rodada}</span>— início da rodada ${COMBATE.rodada} —`); }
+  cbtSave(); renderCombate(); }
+function cbtCurrentCid(){ const vivos=cbtOrdem().filter(c=>c.status!=='morto');
+  return vivos.length ? (vivos[Math.min(COMBATE.turnoIdx,vivos.length-1)]||{}).cid : null; }
 
 /* ── LOG ── */
 function cbtLog(html){ COMBATE.log.push({t:Date.now(), html}); cbtSave(); cbtRenderLog(); }
 function cbtClearLog(){ if(!confirm('Limpar o log do combate?'))return; COMBATE.log=[]; cbtSave(); cbtRenderLog(); }
-function cbtRenderLog(){
-  const el=document.getElementById('cbtLog'); if(!el)return;
+function cbtRenderLog(){ const el=document.getElementById('cbtLog'); if(!el)return;
   if(!COMBATE.log.length){ el.innerHTML='<div class="cbt-empty">Nenhuma ação registrada ainda.</div>'; return; }
-  el.innerHTML=COMBATE.log.map(l=>`<div class="cbt-logline">${l.html}</div>`).join('');
-  el.scrollTop=el.scrollHeight;
-}
+  el.innerHTML=COMBATE.log.map(l=>`<div class="cbt-logline">${l.html}</div>`).join(''); el.scrollTop=el.scrollHeight; }
 
-/* ── toast simples ── */
-function cbtToast(msg){
-  let t=document.getElementById('cbtToast');
+function cbtToast(msg){ let t=document.getElementById('cbtToast');
   if(!t){ t=document.createElement('div'); t.id='cbtToast';
     t.style.cssText='position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#120c06;border:1px solid rgba(154,122,42,.5);color:#ddb94e;font-family:Cinzel,serif;font-size:13px;padding:10px 18px;border-radius:5px;z-index:500;box-shadow:0 6px 20px rgba(0,0,0,.5)';
     document.body.appendChild(t); }
-  t.textContent=msg; t.style.opacity='1';
-  clearTimeout(t._to); t._to=setTimeout(()=>{t.style.opacity='0';},2200);
-}
+  t.textContent=msg; t.style.opacity='1'; clearTimeout(t._to); t._to=setTimeout(()=>{t.style.opacity='0';},2200); }
 
-/* ── RENDER PRINCIPAL ── */
+/* ── RENDER ── */
 function renderCombate(){
   const shell=document.getElementById('combateShell'); if(!shell)return;
-  const cfg=cbtCfg();
-  const ordem=cbtOrdem();
-  const curCid=cbtCurrentCid();
-
+  const cfg=cbtCfg(); const ordem=cbtOrdem(); const curCid=cbtCurrentCid();
   const initChips = ordem.length ? ordem.map(c=>{
     const dead=c.status==='morto';
-    return `<span class="cbt-init-chip${c.cid===curCid?' now':''}${dead?' dead':''}">${esc(c.nome)}<span class="ini">R${c.reflexos||0}</span></span>`;
+    return `<span class="cbt-init-chip${c.cid===curCid?' now':''}${dead?' dead':''}">${esc(c.nome)}<span class="ini">Ini ${cbtIniciativa(c)}</span></span>`;
   }).join('') : '<span class="cbt-mini" style="color:var(--parch-deep);opacity:.7">sem combatentes</span>';
-
   const cards = COMBATE.combatentes.length ? COMBATE.combatentes.map(c=>cbtCardHTML(c, c.cid===curCid)).join('')
-    : `<div class="cbt-empty" style="grid-column:1/-1">Combate vazio. Use <b>+ PCs</b>, <b>+ NPC</b> ou <b>+ Avulso</b> para montar a cena.</div>`;
+    : `<div class="cbt-empty" style="grid-column:1/-1">Combate vazio. Use <b>+ PCs</b>, <b>+ NPC</b> ou <b>+ Avulso</b>.</div>`;
+
+  const faixasTxt=(cfg.faixas||[]).map(f=>`<b>${esc(f.rotulo)}</b> ${esc(f.regra)} — ${esc(f.dano)}`).join(' · ');
 
   shell.innerHTML = `
   <div class="cbt-hd">
@@ -4308,10 +4414,10 @@ function renderCombate(){
     <div class="cbt-log" id="cbtLog"></div>
   </div>
 
-  <div style="margin-top:18px;font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--parch-deep);font-size:13px;opacity:.85;line-height:1.5">
-    <b style="font-family:Cinzel,serif;font-size:10px;letter-spacing:1px;color:var(--gold-lt)">FÓRMULAS</b><br>
-    ${Object.values(cfg.formulas||{}).map(esc).join(' · ')}<br>
-    <span style="font-size:12px">${esc(cfg.dano_critico||'')} ${esc(cfg.nota_npc_stats||'')}</span>
+  <div class="cbt-legenda">
+    <b>CAMADAS</b> ${esc(cfg.camadas||'')}<br>
+    <b>FAIXAS</b> ${faixasTxt}<br>
+    <span class="cbt-mini">${esc(cfg.nota_npc_stats||'')}</span>
   </div>
 
   <div class="cbt-pick-overlay" id="cbtPickOverlay">
@@ -4321,37 +4427,50 @@ function renderCombate(){
       <div class="cbt-pick-foot"><button class="cbt-btn ghost" onclick="cbtCloseNpcPicker()">Fechar</button></div>
     </div>
   </div>`;
-
   cbtRenderLog();
 }
 
-function cbtStatusLabel(id){
-  const s=((cbtCfg().status_list)||[]).find(x=>x.id===id); return s?s.rotulo:id;
+function cbtStatusLabel(id){ const s=((cbtCfg().status_list)||[]).find(x=>x.id===id); return s?s.rotulo:id; }
+
+function cbtLayerBar(c, layer, cor, label){
+  const max=c[layer+'_max']||0, at=c[layer+'_atual']||0;
+  const pct=Math.max(0,Math.min(100, max? (at/max*100):0));
+  return `<div class="cbt-barrow">
+    <span class="lab">${label}</span>
+    <button class="cbt-step" onclick="cbtStepLayer('${c.cid}','${layer}',-1)">−</button>
+    <div class="cbt-bar ${cor}"><span style="width:${pct}%"></span></div>
+    <button class="cbt-step" onclick="cbtStepLayer('${c.cid}','${layer}',1)">+</button>
+    <span class="cbt-barval"><input type="number" value="${at}" onchange="cbtSetLayer('${c.cid}','${layer}',this.value)">/${max}</span>
+  </div>`;
 }
 
 function cbtCardHTML(c, isNow){
-  const hpPct=Math.max(0,Math.min(100, c.hp_max? (c.hp_atual/c.hp_max*100):0));
-  const sanPct=Math.max(0,Math.min(100, c.san_max? (c.san_atual/c.san_max*100):0));
   const badge = c.tipo==='pc'?'<span class="cbt-badge pc">PC</span>': c.tipo==='npc'?'<span class="cbt-badge npc">NPC</span>':'<span class="cbt-badge avulso">Avulso</span>';
   const warn = c.provisorio ? `<div class="cbt-warn">⚠ stats provisórias — ajuste os atributos</div>` : '';
-
   const statusOpts=((cbtCfg().status_list)||[]).map(s=>`<option value="${s.id}"${c.status===s.id?' selected':''}>${esc(s.rotulo)}</option>`).join('');
-
-  const armasBase=(cbtCfg().armas_base)||[];
-  const armaOpts=armasBase.map((a,i)=>`<option value="${i}">${esc(a.nome)}</option>`).join('');
+  const armaduraOpts=((cbtCfg().armaduras)||[]).map(a=>`<option value="${a.id}"${c.armadura===a.id?' selected':''}>${esc(a.rotulo)}</option>`).join('');
+  const armaOpts=((cbtCfg().armas_base)||[]).map((a,i)=>`<option value="${i}">${esc(a.nome)} (${esc(a.dano)})</option>`).join('');
+  const locOpts=cbtLocais().map(l=>`<option value="${l.id}">${esc(l.rotulo)}</option>`).join('');
 
   const ataques = c.ataques.map((atk,i)=>{
     const per=cbtAtkPericia(c,atk);
     return `<div class="cbt-atk">
-      <button class="atk-fire" onclick="cbtAtkRoll('${c.cid}',${i})">
-        <b>${esc(atk.nome)}</b> · ${per}% · ${esc(atk.dano)}${atk.alcance?` <span class="atk-meta">(${esc(atk.alcance)})</span>`:''}
-      </button>
-      <button class="atk-x" title="remover" onclick="cbtRemoveAtk('${c.cid}',${i})">×</button>
+      <div class="cbt-atk-fireline">
+        <button class="atk-fire" onclick="cbtAtkRoll('${c.cid}',${i})">
+          <b>${esc(atk.nome)}</b> · ${per}% · ${esc(atk.dano)}${atk.bd?'+BD':''}${atk.alcance?` <span class="atk-meta">(${esc(atk.alcance)})</span>`:''}
+        </button>
+        <select class="cbt-sel loc" id="loc_${c.cid}_${i}" title="local de acerto">${locOpts}</select>
+        <button class="atk-x" title="remover" onclick="cbtRemoveAtk('${c.cid}',${i})">×</button>
+      </div>
       <div class="cbt-atkedit">
         <input value="${esc(atk.nome)}" placeholder="nome" onchange="cbtEditAtk('${c.cid}',${i},'nome',this.value)">
-        <input value="${atk.pericia!=null?atk.pericia:''}" placeholder="${per}%" title="perícia % (vazio = usa atributo)" onchange="cbtEditAtk('${c.cid}',${i},'pericia',this.value)">
-        <input value="${esc(atk.dano)}" placeholder="ex 1d10 / 1d4+BD" onchange="cbtEditAtk('${c.cid}',${i},'dano',this.value)">
-        <input value="${esc(atk.alcance||'')}" placeholder="alcance" onchange="cbtEditAtk('${c.cid}',${i},'alcance',this.value)">
+        <select onchange="cbtEditAtk('${c.cid}',${i},'tipo',this.value)">
+          <option value="cac"${atk.tipo==='cac'?' selected':''}>corpo</option>
+          <option value="branca"${atk.tipo==='branca'?' selected':''}>branca</option>
+          <option value="fogo"${atk.tipo==='fogo'?' selected':''}>fogo</option>
+        </select>
+        <input value="${atk.pericia!=null?atk.pericia:''}" placeholder="${per}%" title="perícia (vazio=atributo)" onchange="cbtEditAtk('${c.cid}',${i},'pericia',this.value)">
+        <input value="${esc(atk.dano)}" placeholder="1d10" onchange="cbtEditAtk('${c.cid}',${i},'dano',this.value)">
       </div>
     </div>`;
   }).join('');
@@ -4373,45 +4492,33 @@ function cbtCardHTML(c, isNow){
     </div>
 
     <div class="cbt-derived">
-      <span class="cbt-der">Vigor <b>${cbtVigor(c)}</b></span>
-      <span class="cbt-der">Postura <b>${cbtPostura(c)}</b></span>
-      <span class="cbt-der">Esquiva <b>${cbtEsquiva(c)}</b></span>
-      <span class="cbt-der">BD <input type="number" value="${c.bd||0}" style="width:34px;border:1px solid rgba(90,74,48,.3);border-radius:3px;text-align:center;font-family:Cinzel,serif;background:#efe3cb;color:var(--ink)" onchange="cbtSetBD('${c.cid}',this.value)"></span>
+      <span class="cbt-der">Iniciativa <b>${cbtIniciativa(c)}</b></span>
+      <span class="cbt-der">Esquivar <b>${cbtEsquivar(c)}</b></span>
+      <span class="cbt-der">BD <input value="${esc(cbtBdAtual(c))}" style="width:46px;border:1px solid rgba(90,74,48,.3);border-radius:3px;text-align:center;font-family:Cinzel,serif;background:#efe3cb;color:var(--ink)" title="bônus de dano (auto pelo Corpo, editável)" onchange="cbtSetBD('${c.cid}',this.value)"></span>
     </div>
 
     <div class="cbt-bars">
-      <div class="cbt-barrow">
-        <span class="lab">HP</span>
-        <button class="cbt-step" onclick="cbtStepHP('${c.cid}',-1)">−</button>
-        <div class="cbt-bar hp"><span style="width:${hpPct}%"></span></div>
-        <button class="cbt-step" onclick="cbtStepHP('${c.cid}',1)">+</button>
-        <span class="cbt-barval"><input type="number" value="${c.hp_atual}" onchange="cbtSetHP('${c.cid}',this.value)">/${c.hp_max}</span>
-      </div>
-      <div class="cbt-barrow">
-        <span class="lab">San</span>
-        <button class="cbt-step" onclick="cbtStepSan('${c.cid}',-1)">−</button>
-        <div class="cbt-bar san"><span style="width:${sanPct}%"></span></div>
-        <button class="cbt-step" onclick="cbtStepSan('${c.cid}',1)">+</button>
-        <span class="cbt-barval"><input type="number" value="${c.san_atual}" onchange="cbtSetSan('${c.cid}',this.value)">/${c.san_max}</span>
-      </div>
+      ${cbtLayerBar(c,'postura','postura','Postura')}
+      ${cbtLayerBar(c,'vigor','vigor','Vigor')}
+      ${cbtLayerBar(c,'hp','hp','HP')}
     </div>
 
     <div class="cbt-rowctl">
       <select class="cbt-sel" onchange="cbtSetStatus('${c.cid}',this.value)">${statusOpts}</select>
-      <span class="cbt-mini">Marcas <input type="number" value="${c.marcas||0}" onchange="cbtSetMarcas('${c.cid}',this.value)"></span>
+      <select class="cbt-sel" title="armadura" onchange="cbtSetArmadura('${c.cid}',this.value)">${armaduraOpts}</select>
     </div>
 
     <div class="cbt-res">
-      <button class="cbt-resbtn" onclick="cbtResist('${c.cid}','esquiva')">Esquiva (${cbtEsquiva(c)})</button>
-      <button class="cbt-resbtn" onclick="cbtResist('${c.cid}','vigor')">Vigor (${cbtVigor(c)})</button>
-      <button class="cbt-resbtn" onclick="cbtResist('${c.cid}','san')">Sanidade (${c.san_atual})</button>
+      <button class="cbt-resbtn" onclick="cbtEsquivarRoll('${c.cid}')">Esquivar (${cbtEsquivar(c)})</button>
+      <button class="cbt-resbtn" onclick="cbtManterPostura('${c.cid}')">Manter Postura (+1d4)</button>
+      <button class="cbt-resbtn" onclick="cbtContraAtacar('${c.cid}')">Contra-Atacar (−1 Post.)</button>
     </div>
 
     <div class="cbt-atks">
       <div class="cbt-atks-h"><span>Ataques</span>
         <span style="display:flex;gap:5px;align-items:center">
           <select class="cbt-sel" style="font-size:11px;padding:2px 4px" onchange="if(this.value!==''){cbtAddBaseArma('${c.cid}',this.value);this.value=''}">
-            <option value="">+ arma base…</option>${armaOpts}
+            <option value="">+ arma…</option>${armaOpts}
           </select>
           <button class="cbt-btn tiny ghost" onclick="cbtAddAtk('${c.cid}')">+ vazio</button>
         </span>
