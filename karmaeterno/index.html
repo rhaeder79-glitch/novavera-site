@@ -3354,7 +3354,7 @@ function narrarVisitadas(){
 
 
 /* ── Modo Narrar: episódio ── */
-function cenaEpisodio(c){ return (c.arco && c.arco.startsWith('ep2-')) ? 2 : 1; }
+function cenaEpisodio(c){ if(c.arco){ if(c.arco.startsWith('ep3-')) return 3; if(c.arco.startsWith('ep2-')) return 2; } return 1; }
 function narrarSelecionarEp(num){
   const state = narrarLoadState();
   if(state.episodio !== num) state.cenaId = null; // troca de ep → reseta cena
