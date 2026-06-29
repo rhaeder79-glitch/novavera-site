@@ -6,7 +6,7 @@
     "confidencial": "Documento Confidencial · Uso Interno do Mestre",
     "temporada": 1,
     "episodio_atual": 3,
-    "versao": "5.3.0",
+    "versao": "5.3.1",
     "epigrafe": [
       "O tempo não passa. O tempo cobra.",
       "A primeira dívida nunca foi paga. Tudo que veio depois é consequência."
@@ -40,6 +40,14 @@
       "index.html: cenaEpisodio reconhece arcos ep3- → Ep3 aparece jogável na pré-sessão do Modo Narrar",
       "Enigma final da colheita: litania VALDECIR → MEIRELES → NATALINA → MARISA totalmente especificada",
       "Roberto-anomalia, Sueli, Benedito, Cícero, coroinhas, Dom Josias — dossiês do Guia Ep3 v2 refletidos nas cenas"
+    ],
+    "changelog_5_3_1": [
+      "Ep3 no Modo Narrar REESCRITO com fidelidade total ao Guia v2 (antes estava resumido/cru)",
+      "Narrações 🕯️ integrais pra ler em voz alta; falas completas dos NPCs; blocos [GM] como observacao_mestre",
+      "20 cenas (incl. a Boca do Túnel como cena própria), 90 beats, ~5.800 chars/cena",
+      "Transições explicadas: campo destrava_para agora traz o PORQUÊ de cada conexão (renderizado como Como seguir daqui)",
+      "BUG corrigido: destrava_para usava id parcial (cena:ep3-x) e o botão sumia deixando Esta cena destrava vazio — agora resolve id completo + fallback p/ Ep1/Ep2",
+      "renderizador do destrava reescrito (label Como seguir daqui + texto do porquê) + CSS"
     ]
   },
   "universo": {
@@ -7108,7 +7116,7 @@
       "arco_titulo": "Episódio 3 · Ato 0 — A Jaula (manhã)",
       "arco_ordem": 1,
       "titulo": "Dom Josias & o Jornal",
-      "subtitulo": "O bispo vem como pai — e é pai de verdade. Planta vínculo e dúvida; abre a janela do Armindo.",
+      "subtitulo": "O bispo procura o Floriano logo cedo. Vem como pai, não como suspeito — e é pai de verdade. Hoje plantamos o vínculo e a dúvida para a morte dele no Ep4.",
       "duracao_estimada": "~20 min",
       "local_ref": "local:praca-novavera",
       "pc_focal_ref": "pc:floriano",
@@ -7118,67 +7126,79 @@
       "props_refs": [
         "p28-jornal-pl33"
       ],
-      "secao_dossie": "§4 do Guia v2 do Ep3",
-      "atmosfera_abertura": "A manhã em Novavera vem cinza, sem ser fria. O sino não tocou hoje. O Dom Josias está sentado no único banco de praça que ainda tem encosto, de batina simples, um jornal dobrado no colo e dois cafés de posto ao lado.",
+      "secao_dossie": "§4 (Ato 0) do Guia v2 do Ep3",
+      "atmosfera_abertura": "A manhã em Novavera vem cinza, sem ser fria. O sino não tocou hoje. O Dom Josias está sentado no único banco de praça que ainda tem encosto, de batina simples, um jornal dobrado no colo e dois cafés de posto ao lado. Quando vê vocês, ele não sorri inteiro — sorri como quem dormiu mal. *\"Sentem. Eu trouxe pra dois, mas a gente divide.\"*",
       "beats": [
         {
-          "tipo": "fala",
+          "tipo": "observacao_mestre",
           "ordem": 1,
-          "npc_ref": "npc:dom-josias",
-          "contexto": "Quando vê os PCs. Não sorri inteiro — sorri como quem dormiu mal.",
-          "texto": "Sentem. Eu trouxe pra dois, mas a gente divide."
+          "titulo": "Como conduzir o Josias",
+          "texto": "O bispo é **bom de verdade** — não é suspeito, é pai. Toda a cena é colo e vínculo. A única semente é a **dúvida sobre a instituição** (não sobre ele): a Igreja é podre, e o Josias provavelmente não sabe. Não deixe a mesa transformá-lo em vilão. Ele **morre no Ep4**, antes de o Floriano conseguir respostas — esse é o peso que estamos plantando hoje."
         },
         {
           "tipo": "fala",
           "ordem": 2,
           "npc_ref": "npc:dom-josias",
-          "contexto": "O abraço — para o Floriano. Vem como pai, não como suspeito.",
-          "texto": "Eu vi o que você fez ontem, na igreja. Não vim te repreender. Vim porque, quando um filho meu dá um soco num homem de batina, é porque alguma coisa muito velha rachou dentro dele. E eu te conheço há tempo demais pra fingir que não sei o nome dela."
+          "contexto": "O abraço — direto para o Floriano. Não vem repreender; vem porque conhece o filho.",
+          "texto": "Eu vi o que você fez ontem, na igreja. (pausa) Não vim te repreender. Vim porque, quando um filho meu dá um soco num homem de batina, é porque alguma coisa muito velha rachou dentro dele. E eu te conheço há tempo demais pra fingir que não sei o nome dela."
         },
         {
           "tipo": "teste",
           "ordem": 3,
-          "atributo": "Floriano — secreto (abrir-se)",
-          "dificuldade": "roleplay",
-          "contexto": "Josias não cobra — oferece colo.",
-          "o_que_destrava": "Se o Floriano se abrir: **Sanidade +1d3**; o vínculo paterno aperta. Josias é **bom** — hoje só se planta o vínculo e a dúvida para a morte dele no Ep4."
-        },
-        {
-          "tipo": "prop",
-          "ordem": 4,
-          "prop_ref": "prop:p28-jornal-pl33",
-          "contexto": "Ele estende o jornal. Manchete grande demais para cidade tão pequena: **'FRONTEIRAS SOB REVISÃO'**. Abaixo: voos cancelados, PF em rotatividade reforçada, prefeituras 'orientadas a estudar toque de recolher'. E num canto de página interna: o **PL 33**, que revê o caráter laico do Estado."
-        },
-        {
-          "tipo": "observacao_mestre",
-          "ordem": 5,
-          "titulo": "Chão tremendo, não missão",
-          "texto": "Nada disso é missão. É frio, subindo um grau por episódio. **Não deixe os PCs 'resolverem a geopolítica'.** O número do PL (**33**) é um agrado pra quem reparar — não confirme nada."
-        },
-        {
-          "tipo": "fala",
-          "ordem": 6,
-          "npc_ref": "npc:dom-josias",
-          "contexto": "A convocação — o gancho que abre a janela.",
-          "texto": "E tem outra coisa que me pesa. Me chamaram a Brasília pra essa votação. A mim. Um bispo de interior, opinando sobre lei federal. Eu nem sei se vou. Mas o que me estranha é quem mais chamaram. O padre Armindo também foi. Ele vai. Sai hoje."
-        },
-        {
-          "tipo": "mecanica",
-          "ordem": 7,
-          "titulo": "A janela abre",
-          "texto": "Se os PCs perguntarem por aí (**Conhecimento Local** / a Marisa / um café), confirmam: **o Armindo pega a estrada para Brasília em poucas horas.** A igreja — e o fundo falso — fica livre."
+          "atributo": "Floriano — abrir-se (roleplay, sem rolagem)",
+          "dificuldade": "—",
+          "contexto": "Se o Floriano deixar, Josias não cobra — oferece colo.",
+          "o_que_destrava": "Se ele se abrir: **Sanidade +1d3**; o vínculo paterno aperta. Guarde a ternura — é o que vai doer no Ep4. [→ a dúvida e a morte do Josias no Ep4]"
         },
         {
           "tipo": "narracao",
+          "ordem": 4,
+          "titulo": "O jornal — ele estende a folha",
+          "texto": "Ele estende o jornal. A manchete é grande demais para uma cidade tão pequena: **\"FRONTEIRAS SOB REVISÃO: BRASIL ESTUDA RESTRIÇÃO DE TRÂNSITO ANTE ESCALADA EXTERNA.\"** Abaixo, em letra menor: tensão entre países, voos cancelados, a Polícia Federal em **rotatividade reforçada**, prefeituras \"orientadas a estudar **toque de recolher**\". E, num canto de página interna, quase sem importância: *\"Câmara pauta para esta semana o PL 33 — proposta que revê o caráter laico do Estado.\"*"
+        },
+        {
+          "tipo": "prop",
+          "ordem": 5,
+          "prop_ref": "prop:p28-jornal-pl33",
+          "contexto": "Entregue à mesa. É o chão tremendo do mundo — guerra, fronteiras, toque de recolher, e a nota pequena do PL 33."
+        },
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 6,
+          "titulo": "Chão tremendo, não missão",
+          "texto": "Nada disso é missão. É frio, burocrático, subindo um grau por episódio. **Não deixe os PCs \"resolverem a geopolítica\".** O número do PL (**33**) é um agrado pra quem reparar — não confirme nada."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 7,
+          "npc_ref": "npc:dom-josias",
+          "contexto": "A convocação — o que de fato abre a janela do episódio.",
+          "texto": "E tem outra coisa que me pesa. Me chamaram a Brasília pra essa votação. A mim. (ri sem graça) Um bispo de interior, opinando sobre lei federal. Eu nem sei se vou. Mas o que me estranha é quem mais chamaram. (baixo) O padre Armindo também foi. Ele vai. Sai hoje."
+        },
+        {
+          "tipo": "mecanica",
           "ordem": 8,
+          "titulo": "O gancho — a janela abre",
+          "texto": "Se os PCs perguntarem por aí (**Conhecimento Local** / a Marisa / um café), confirmam: **o Armindo pega a estrada para Brasília em poucas horas.** A igreja — e o fundo falso que viram ontem — fica **livre**. É essa janela que permite a masmorra de hoje."
+        },
+        {
+          "tipo": "narracao",
+          "ordem": 9,
           "titulo": "Fecho do Ato 0",
-          "texto": "Josias se levanta, junta a batina, e por um segundo olha vocês como quem decora um rosto. *'Façam o que vieram fazer. Mas façam rápido. Essa cidade tá com pressa de uma coisa, e eu não consigo ler qual.'* Ele vai. O café esfria. Em algum lugar, baixo, tem um coçar — não de unha, de **muita coisa pequena se mexendo ao mesmo tempo.**"
+          "texto": "Josias se levanta, junta a batina, e por um segundo olha vocês como quem decora um rosto. *\"Façam o que vieram fazer. Mas façam rápido. Essa cidade tá com pressa de uma coisa, e eu não consigo ler qual.\"* Ele vai. O café esfria. Em algum lugar, baixo, tem um coçar — não de unha, de **muita coisa pequena se mexendo ao mesmo tempo.**"
         }
       ],
       "destrava_para": [
-        "cena:ep3-necroterio-corpos"
+        {
+          "ref": "cena:cena-ep3-necroterio-corpos",
+          "porque": "Os PCs têm a chave do necrotério (pega no Ep2 e nunca usada) e a manhã livre. O necrotério municipal é o primeiro fio — e, com o Armindo de saída, é a hora de puxar tudo antes de descer na igreja."
+        },
+        {
+          "ref": "cena:cena-ep3-cicero",
+          "porque": "Encaixe opcional de respiro antes do necrotério: o Cícero (a briguinha de bar do Gyeno no Ep1) procura o Gyeno pra fazer as pazes."
+        }
       ],
-      "mestre_only": "Josias é BOM, não vilão. Hoje plantar só vínculo + dúvida (morte no Ep4). O jornal é tema, não tarefa. O gancho concreto: o Armindo sai hoje — é o que libera a igreja."
+      "mestre_only": "Josias é BOM, não vilão. Hoje só vínculo + dúvida (a instituição é podre; ele não sabe). O jornal é tema, não tarefa. O gancho concreto: o Armindo sai hoje — é o que libera a igreja para o Ato 2."
     },
     {
       "id": "cena-ep3-necroterio-corpos",
@@ -7187,7 +7207,7 @@
       "arco_titulo": "Episódio 3 · Ato 1 — O Necrotério (início da tarde)",
       "arco_ordem": 1,
       "titulo": "Os Corpos Anômalos — a estreia dos visitantes",
-      "subtitulo": "A chave do Ep2, enfim usada. O grotesco estreia frio, técnico, pé-no-chão.",
+      "subtitulo": "O necrotério municipal: anexo de concreto atrás do posto, com a chave do Ep2 nunca usada. Aqui o grotesco estreia — frio, técnico, pé-no-chão.",
       "duracao_estimada": "~20 min",
       "local_ref": "local:necroterio",
       "pc_focal_ref": "pc:vinicius",
@@ -7198,33 +7218,48 @@
         "p31-fichas-anomalias"
       ],
       "secao_dossie": "§5.1–5.2 do Guia v2 do Ep3",
-      "atmosfera_abertura": "A chave entra dura. Lá dentro, o ar é dez graus mais frio e cheira a formol e a algo doce por baixo que vocês vão preferir não nomear. Uma parede de gavetas de inox, números pintados à mão. Uma mesa de necropsia com a calha de escoamento manchada de marrom-velho. E, no silêncio, aquele coçar miúdo — agora vocês localizam: vem **de dentro de uma das gavetas.**",
+      "atmosfera_abertura": "A chave entra dura. Lá dentro, o ar é dez graus mais frio e cheira a formol e a algo doce por baixo que vocês vão preferir não nomear. Uma parede de gavetas de inox, números pintados à mão. Uma mesa de necropsia com a calha de escoamento manchada de marrom-velho. Um ventilador parado. E, no silêncio, de novo, aquele coçar miúdo — agora vocês localizam: vem **de dentro de uma das gavetas.**",
       "beats": [
         {
-          "tipo": "narracao",
+          "tipo": "observacao_mestre",
           "ordem": 1,
+          "titulo": "Três gavetas importam",
+          "texto": "Duas têm gente comum. **Uma não.** Deixe os PCs abrirem por conta — a curiosidade é o motor. Quando chegarem na errada, leia a narração abaixo devagar."
+        },
+        {
+          "tipo": "momento_pavor",
+          "ordem": 2,
           "titulo": "A gaveta errada",
-          "texto": "A gaveta corre com um gemido de metal. O corpo é **comprido demais** para o vão — os pés passam da borda. A pele tem a brancura de coisa que nunca pegou sol, quase azulada. Os dedos são longos, com **uma articulação a mais** do que deviam ter. A caixa torácica é alta, estreita, errada de um jeito que seu olho registra antes da sua cabeça. E em toda parte — **nenhum pelo.** Liso como cera. E há piolhos. Muitos. Andando numa pele fria há dias e mesmo assim **se movendo de leve**, como se respirasse."
+          "texto": "A gaveta corre com um gemido de metal. O corpo é **comprido demais** para o vão — os pés passam da borda. A pele tem a brancura de coisa que nunca pegou sol, quase azulada. Os dedos são longos, com **uma articulação a mais** do que deviam ter. A caixa torácica é alta, estreita, **errada** de um jeito que seu olho registra antes da sua cabeça. E na dobra do braço, na axila, em toda parte — **nenhum pelo.** Liso como cera. E há piolhos. Muitos. Andando numa pele fria há dias e mesmo assim **se movendo de leve**, como se respirasse."
         },
         {
           "tipo": "teste",
-          "ordem": 2,
+          "ordem": 3,
           "atributo": "Notar",
           "dificuldade": "40",
-          "contexto": "Quem examinar de perto.",
-          "o_que_destrava": "Os 'piolhos' não são comuns — miúdos demais, escuros demais, e **saem da terra preta** sob as unhas longas do corpo. A mesma terra da Área Verde. A infestação é a **praga 3 começando** — saindo do pó. Não diga. Deixe o estômago dos jogadores dizer."
+          "contexto": "Quem examinar de perto o corpo.",
+          "o_que_destrava": "Os \"piolhos\" não são comuns — miúdos demais, escuros demais, e **saem da terra preta** sob as unhas longas do corpo. A mesma terra da Área Verde. *(A infestação é a **praga 3** começando — saindo do pó. Não diga. Deixe o estômago dos jogadores dizer.)*"
+        },
+        {
+          "tipo": "prop",
+          "ordem": 4,
+          "prop_ref": "prop:p31-fichas-anomalias",
+          "contexto": "Se examinarem os outros corpos anômalos e cruzarem com a papelada, as fichas das anomalias (achadas depois, no Arquivo da igreja) confirmam o que estão vendo: corpos altos, sem pigmentação, sem pelo, ossatura longa — \"exemplares que andam, que vestem, que falam com a voz de quem foi\"."
         },
         {
           "tipo": "observacao_mestre",
-          "ordem": 3,
-          "titulo": "A estreia dos visitantes",
-          "texto": "Três gavetas importam. Duas têm gente comum. **Uma não.** Este é o primeiro contato dos PCs com as **anomalias** — altos, brancos, sem pelo, ossatura longa. Frio e técnico. O horror é o que ele implica."
+          "ordem": 5,
+          "titulo": "Os visitantes, sem nome ainda",
+          "texto": "Este é o primeiro contato com as **anomalias**. Não rotule — não diga \"visitante\", \"alienígena\", nada. A anatomia errada e a terra preta fazem o trabalho. O horror é o que ele implica."
         }
       ],
       "destrava_para": [
-        "cena:ep3-necroterio-deducao"
+        {
+          "ref": "cena:cena-ep3-necroterio-deducao",
+          "porque": "Com os corpos na mesa, a próxima coisa natural é a papelada do Meireles — cruzar laudos, fichas de entrada e o livro de óbitos para entender de onde vieram esses corpos."
+        }
       ],
-      "mestre_only": "O grotesco estreia aqui — pé-no-chão, de necropsia. Não explicar nada: a anatomia errada e a terra preta fazem o trabalho."
+      "mestre_only": "O grotesco estreia aqui — pé-no-chão, de necropsia. Não explicar nada: a anatomia errada e a terra preta fazem o trabalho. A praga 3 (piolhos) já está saindo do pó."
     },
     {
       "id": "cena-ep3-necroterio-deducao",
@@ -7233,32 +7268,35 @@
       "arco_titulo": "Episódio 3 · Ato 1 — O Necrotério (início da tarde)",
       "arco_ordem": 2,
       "titulo": "O Puzzle — a dedução acusa a igreja",
-      "subtitulo": "Cruzar a papelada do Meireles. Sem teste único — deixe a mesa montar.",
+      "subtitulo": "Cruzar a papelada do Meireles. Sem teste único — o jogador monta a verdade sozinho (Painscreek).",
       "duracao_estimada": "~15 min",
       "local_ref": "local:necroterio",
       "pc_focal_ref": "pc:vinicius",
       "npcs_presentes": [],
       "props_refs": [],
       "secao_dossie": "§5.3 do Guia v2 do Ep3",
-      "atmosfera_abertura": "Sobre a mesa, a papelada do Meireles: laudos, fichas de entrada, livro de óbitos.",
+      "atmosfera_abertura": "Sobre a mesa, a papelada do Meireles: laudos, fichas de entrada, livro de óbitos. Aqui não há uma rolagem que resolve — há papéis que, cruzados, acusam um lugar.",
       "beats": [
         {
           "tipo": "teste",
           "ordem": 1,
           "atributo": "Investigar / Pesquisa",
-          "dificuldade": "sem teste único",
-          "contexto": "Cruzando os papéis — deixe montar.",
-          "o_que_destrava": "**Os corpos anômalos deram entrada sem certidão, com 'extrema-unção' assinada** → quem assinou: **Pe. Armindo** → todos passaram pela igreja. **Lacre da paróquia** nos sacos (o posto não lacra; a igreja sim) → a igreja manuseia estes corpos. **Terra preta** nas unhas → bate com a Área Verde → a origem é o subsolo. **Datas batem com sumiços recentes** → não 'mudaram de cidade'; foram **plantados e devolvidos.**"
+          "dificuldade": "sem teste único — deixe cruzar",
+          "contexto": "Quatro pistas no papel. Deixe a mesa montar a conclusão.",
+          "o_que_destrava": "**(1)** Os corpos anômalos deram entrada **sem certidão**, com **\"extrema-unção\" assinada** — quem assinou: **Pe. Armindo** → todos passaram pela igreja antes de virem pra cá. **(2)** **Lacre da paróquia** nos sacos — o posto não lacra; a igreja sim → a igreja **manuseia** estes corpos. **(3)** **Terra preta** nas unhas dos três → bate com a Área Verde (Ep2) → a origem é o **subsolo**. **(4)** Datas de entrada batem com **sumiços recentes** — gente que \"mudou de cidade\" → não mudaram; foram **plantados** e devolvidos."
         },
         {
           "tipo": "observacao_mestre",
           "ordem": 2,
           "titulo": "O empurrão pra igreja",
-          "texto": "A paróquia recebe, lacra e 'abençoa' estes corpos antes do necrotério. **O caminho é a igreja.** E o Armindo, que assina tudo, sai hoje."
+          "texto": "A paróquia recebe, lacra e \"abençoa\" estes corpos antes do necrotério. **O caminho é a igreja.** E o Armindo, que assina tudo, **sai hoje.** Não fale a conclusão — deixe um PC dizer em voz alta. É o momento Painscreek."
         }
       ],
       "destrava_para": [
-        "cena:ep3-necroterio-parede-doc"
+        {
+          "ref": "cena:cena-ep3-necroterio-parede-doc",
+          "porque": "Antes de sair, vale revistar o fundo do necrotério — onde a última fileira de gavetas range diferente — e a pasta sem etiqueta junto dos laudos."
+        }
       ],
       "mestre_only": "Dedução Painscreek: o Mestre não revela, deixa cruzar. Tudo aponta pra igreja — e a janela do Armindo está se abrindo."
     },
@@ -7269,7 +7307,7 @@
       "arco_titulo": "Episódio 3 · Ato 1 — O Necrotério (início da tarde)",
       "arco_ordem": 3,
       "titulo": "A Parede Falsa & o Documento Militar",
-      "subtitulo": "Planta a fechadura 'pra trás' (Ep4) e o primeiro doc da Operação Semente.",
+      "subtitulo": "Planta a fechadura \"pra trás\" (Ep4) e o primeiro documento da Operação Semente.",
       "duracao_estimada": "~15 min",
       "local_ref": "local:necroterio",
       "pc_focal_ref": "pc:vinicius",
@@ -7286,26 +7324,26 @@
           "ordem": 1,
           "atributo": "Notar",
           "dificuldade": "40",
-          "contexto": "Empurrando a última fileira de gavetas.",
-          "o_que_destrava": "A parede inteira **cede meio centímetro** e para. Não é parede: é uma **porta de chapa**, rebocada por cima pra sumir. No batente, três discos de metal com símbolos gastos, e um encaixe — falta **uma peça**, do tamanho de uma medalha. Ar mais frio e cheiro de terra vêm de trás. Tem um cômodo ali. **Não abre. Não hoje.**"
+          "contexto": "Quem empurrar a última fileira de gavetas.",
+          "o_que_destrava": "A parede inteira **cede meio centímetro** e para. Não é parede: é uma **porta de chapa**, rebocada por cima pra sumir. No batente, três discos de metal com símbolos gastos, e um encaixe — falta **uma peça**, do tamanho de uma medalha. Por baixo da fresta vem ar **mais frio ainda**, e cheiro de terra. **Tem um cômodo ali atrás. Não abre. Não hoje.**"
         },
         {
           "tipo": "observacao_mestre",
           "ordem": 2,
-          "titulo": "Fechadura travada — plantar, não resolver",
-          "texto": "Não é chave que pegam aqui — é um **enigma travado**. A medalha que abre está na **casa do Armindo** (a fechadura 'pra frente', Ep4). Deixe a coceira. Mais tarde, na igreja, vão achar um **mapa do necrotério** mostrando uma sala que não estava lá — a confirmação fria de que esse cômodo sempre existiu, debaixo do nariz deles."
+          "titulo": "Enigma travado — plantar, não resolver",
+          "texto": "Não é chave que eles pegam aqui — é um **enigma travado**. A medalha que abre está **na casa do Armindo** (a fechadura \"pra frente\", Ep4). Deixe a coceira. *(Mais tarde, na igreja, vão achar um **mapa antigo do necrotério** mostrando uma **sala que não estava lá** quando estiveram — a confirmação fria de que esse cômodo sempre existiu, debaixo do nariz deles.)* [→ Ep4: a casa do Armindo abre a sala-fantasma]"
         },
         {
           "tipo": "prop",
           "ordem": 3,
           "prop_ref": "prop:p29-doc-semente-necroterio",
-          "contexto": "Numa pasta sem etiqueta, junto dos laudos: papel amarelo, datilografado — **OPERAÇÃO SEMENTE — CONFIDENCIAL.** 'espécimes recuperados do talhão norte', 'anomalia óssea', 'altura acima do padrão, pele sem pigmentação, ausência de pelos'. E embaixo: *'O coronel autoriza prosseguir com o plantio da fase dois.'*"
+          "contexto": "Numa pasta sem etiqueta, junto dos laudos: papel amarelo, datilografado, carimbo desbotado — **OPERAÇÃO SEMENTE — CONFIDENCIAL.** Fala de \"espécimes recuperados do talhão norte\", \"anomalia óssea compatível com registros anteriores\", \"altura acima do padrão, pele sem pigmentação, ausência de pelos\". Recomenda \"isolamento do material\". E embaixo: *\"O coronel autoriza prosseguir com o plantio da fase dois.\"*"
         },
         {
           "tipo": "observacao_mestre",
           "ordem": 4,
-          "titulo": "'Plantar gente' deixa de ser metáfora",
-          "texto": "Primeira vez que plantar gente vira literal. Não explique a linhagem — só deixe o documento existir."
+          "titulo": "\"Plantar gente\" deixa de ser metáfora",
+          "texto": "Primeira vez que plantar gente vira literal. Não explique a linhagem — só deixe o documento existir. [→ o Enigma 2, na igreja, usa um doc desta mesma família]"
         },
         {
           "tipo": "narracao",
@@ -7315,18 +7353,25 @@
         }
       ],
       "destrava_para": [
-        "cena:ep3-igreja-entrada"
+        {
+          "ref": "cena:cena-ep3-igreja-entrada",
+          "porque": "O necrotério aponta a igreja, e o carro do Armindo acabou de sumir na BR. Com o regente fora, os PCs voltam à igreja e descem pelo fundo falso de onde os coroinhas saíram no Ep2."
+        },
+        {
+          "ref": "cena:cena-ep3-canal",
+          "porque": "Ao longo do dia, mensagens do culto começam a chegar pelos meios errados — o Canal corre em paralelo a tudo daqui pra frente."
+        }
       ],
-      "mestre_only": "Duas fechaduras se amarram: a câmara do necrotério (pra trás) e a casa do Armindo (pra frente, Ep4). Não planeje o Ep4 — só plante."
+      "mestre_only": "Duas fechaduras se amarram: a câmara do necrotério (pra trás) e a casa do Armindo (pra frente, Ep4). Não planeje o Ep4 — só plante. O carro do Armindo sumindo é a deixa para a igreja."
     },
     {
       "id": "cena-ep3-canal",
       "ordem": 34,
       "arco": "ep3-canal",
-      "arco_titulo": "Episódio 3 · O Canal — Zodíaco + Morse (transversal)",
+      "arco_titulo": "Episódio 3 · O Canal — Zodíaco + Morse (corre o episódio inteiro)",
       "arco_ordem": 1,
       "titulo": "As Mensagens — o digital falha, o analógico chega",
-      "subtitulo": "Corre o episódio inteiro em três beats de pânico crescente. Entregar em segredo.",
+      "subtitulo": "Não é uma cena de uma vez só: corre o episódio inteiro, em três beats de pânico crescente. Entregue cada peça em segredo, no ritmo da tensão.",
       "duracao_estimada": "transversal",
       "local_ref": "local:novavera",
       "pc_focal_ref": "pc:vinicius",
@@ -7338,46 +7383,57 @@
         "p40-tabela-morse"
       ],
       "secao_dossie": "§6 do Guia v2 do Ep3",
-      "atmosfera_abertura": "O culto se comunica estilo Zodíaco: bilhetes, cifras, e hoje também Morse. O digital sempre falha (SMS cortado, fora de hora, de número que não existe). O analógico sempre chega.",
+      "atmosfera_abertura": "O culto se comunica estilo Zodíaco: bilhetes, cifras, e hoje também código Morse. O **digital sempre falha** (SMS cortado, fora de hora, de número que não existe); o **analógico sempre chega**. As provocações vêm assinadas \"A.V.\" ou \"O Profeta\".",
       "beats": [
         {
           "tipo": "prop",
           "ordem": 1,
           "prop_ref": "prop:p41-mensagens-culto",
-          "contexto": "**6.1 O teaser (cedo).** Assinada '— O Profeta' ou 'A.V.', chega pelo meio errado. Não nomeia ninguém — só planta a pergunta: *'OS QUE OUVIRAM VOLTAM À TERRA. FALTAM DUAS.'* A mesa fica com 'faltam duas — duas quem?' no bolso o episódio inteiro. **Não responda.**"
+          "contexto": "**6.1 O teaser (cedo — a pergunta).** Uma mensagem do culto chega pelo meio errado (um SMS cortado, fora de hora, de número inexistente; ou um bilhete já à espera). Não nomeia ninguém — só planta a pergunta: *\"OS QUE OUVIRAM VOLTAM À TERRA. FALTAM DUAS.\"*"
+        },
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 2,
+          "titulo": "Não responda — deixe no bolso deles",
+          "texto": "Isso prepara o terreno. A mesa fica com \"faltam duas — duas quem?\" no bolso o episódio inteiro. **Não responda.** A resposta vem em camadas: o caderno (Arquivo, sala C) → a carta-chave da Sueli (fechamento)."
         },
         {
           "tipo": "mecanica",
-          "ordem": 2,
+          "ordem": 3,
           "titulo": "6.2 As provocações (durante a masmorra)",
-          "texto": "Curtas, do culto, pelos meios errados: *'Vocês estão perto.'* — *'Ela ainda respira.'* — *'Não era pra terem vindo.'* — *'O profeta volta hoje.'* A coleira sem o Ronaldo aparecer; cada uma **aperta o relógio.**"
+          "texto": "Curtas, do culto, pelos meios errados. Solte uma a cada virada de tensão: *\"Vocês estão perto.\"* — *\"Ela ainda respira.\"* — *\"Não era pra terem vindo.\"* — *\"O profeta volta hoje.\"* É a coleira sem o Ronaldo aparecer; cada uma **aperta o relógio**."
         },
         {
           "tipo": "prop",
-          "ordem": 3,
+          "ordem": 4,
           "prop_ref": "prop:p40-tabela-morse",
-          "contexto": "**6.3 O Morse (no subsolo).** Um cano bate num ritmo, ou uma lâmpada pisca. É Morse — e é a **Sueli viva**, da cela, soletrando: **S.O.S.**, **NÃO ABRAM A 3** (aviso da cela do Roberto), **O TEMPO COBRA** (pra saberem que é ela)."
+          "contexto": "**6.3 O Morse (no subsolo).** Num ponto da masmorra, um **cano bate** num ritmo — ou uma **lâmpada pisca**. É Morse, e é a **Sueli viva**, da cela, soletrando, em sequências curtas: **\"S.O.S.\"**, **\"NÃO ABRAM A 3\"** (aviso da cela do Roberto-anomalia), **\"O TEMPO COBRA\"** (pra eles saberem que é ela). Entregue a tabela Morse à mesa."
         },
         {
           "tipo": "teste",
-          "ordem": 4,
+          "ordem": 5,
           "atributo": "Notar",
           "dificuldade": "30",
-          "contexto": "No subsolo, ao ouvir o cano.",
-          "o_que_destrava": "'Isso é proposital, é Morse.' Destrava a decodificação da Sueli."
+          "contexto": "No subsolo, ao ouvir o cano/ver a lâmpada.",
+          "o_que_destrava": "\"Isso é proposital, é Morse.\" Destrava a decodificação da Sueli — e o aviso de não abrir a cela 3 (o Roberto)."
         }
       ],
-      "destrava_para": [],
-      "mestre_only": "O canal corre o episódio inteiro. Digital sempre falha; analógico sempre chega. Entregar as tiras em segredo, no ritmo da tensão."
+      "destrava_para": [
+        {
+          "ref": "cena:cena-ep3-igreja-entrada",
+          "porque": "O Canal não tem destino próprio — ele alimenta a tensão das cenas da igreja. Volte ao fio principal: a entrada da masmorra."
+        }
+      ],
+      "mestre_only": "O canal corre o episódio inteiro. Digital sempre falha; analógico sempre chega. Entregue as tiras em segredo, no ritmo. O Morse no subsolo é a Sueli — e o aviso \"NÃO ABRAM A 3\" é o que pode salvar o grupo do Roberto."
     },
     {
       "id": "cena-ep3-igreja-entrada",
       "ordem": 35,
       "arco": "ep3-ato2",
-      "arco_titulo": "Episódio 3 · Ato 2 — A Igreja (masmorra de stealth)",
+      "arco_titulo": "Episódio 3 · Ato 2 — A Igreja (a masmorra de stealth)",
       "arco_ordem": 1,
-      "titulo": "A Entrada — Enigma 1, 'O Hino'",
-      "subtitulo": "Com o Armindo na estrada, descem pelo fundo falso. Daqui em diante é furtividade.",
+      "titulo": "A Entrada — Enigma 1, \"O Hino\"",
+      "subtitulo": "Com o Armindo na estrada, os PCs voltam e descem pelo fundo falso de onde os coroinhas saíram no Ep2. Daqui em diante é furtividade.",
       "duracao_estimada": "~10 min",
       "local_ref": "local:igreja-santo-antonio",
       "pc_focal_ref": "pc:floriano",
@@ -7386,31 +7442,34 @@
         "p36-hino-semente"
       ],
       "secao_dossie": "§7.1 do Guia v2 do Ep3",
-      "atmosfera_abertura": "A igreja vazia é pior que cheia. As velas do altar estão acesas — alguém esteve aqui agora. Atrás do altar-mor, o painel de madeira que vocês viram se abrir ontem.",
+      "atmosfera_abertura": "A igreja vazia é pior que cheia. As velas do altar estão acesas — alguém esteve aqui agora. Atrás do altar-mor, o painel de madeira que vocês viram se abrir ontem. Por perto, num quadro de avisos paroquiais, um **hino emoldurado** que ninguém canta há anos. Lá de baixo, quando o painel abrir, o coçar dos piolhos sobe pela parede.",
       "beats": [
         {
           "tipo": "prop",
           "ordem": 1,
           "prop_ref": "prop:p36-hino-semente",
-          "contexto": "Num quadro de avisos paroquiais, um **hino emoldurado** que ninguém canta há anos. As iniciais dos versos soletram a senha."
+          "contexto": "O hino emoldurado no quadro de avisos. Sete versos: *\"Sob a terra dorme a promessa. / Em cada cova, uma raiz. / Mãos que plantam não tremem. / Eis o que o profeta semeou. / Nada que enterramos se perde. / Tudo retorna em sua estação. / Espera — e a colheita virá.\"*"
         },
         {
           "tipo": "teste",
           "ordem": 2,
-          "atributo": "Investigar / Notar (Enigma 1)",
+          "atributo": "Notar / Investigar (Enigma 1)",
           "dificuldade": "empurrão só se travar",
-          "contexto": "O acróstico do hino.",
-          "o_que_destrava": "As iniciais dos sete versos: **S-E-M-E-N-T-E.** Abre o painel **e** entrega a palavra-mãe do culto. Travou? 'As iniciais saltam.'"
+          "contexto": "O acróstico do hino abre o painel.",
+          "o_que_destrava": "As iniciais dos sete versos: **S-E-M-E-N-T-E.** Abre o painel **e** entrega a palavra-mãe do culto. Travou? \"As iniciais saltam.\""
         },
         {
           "tipo": "narracao",
           "ordem": 3,
           "titulo": "A descida",
-          "texto": "O painel corre, e uma **escada de pedra desce** para um ar de vela, mofo e terra. Lá de baixo, o coçar dos piolhos sobe pela parede. **Daqui em diante é furtividade.**"
+          "texto": "O painel corre, e uma **escada de pedra desce** para um ar de vela, mofo e terra. Lá de baixo, o coçar dos piolhos sobe pela parede. **Daqui em diante é furtividade** — ameaça constante de duelo, o duelo em si raro. Vocês vão se machucar por ambiente, sobrenatural e quase-pego, não por luta."
         }
       ],
       "destrava_para": [
-        "cena:ep3-antessala"
+        {
+          "ref": "cena:cena-ep3-antessala",
+          "porque": "A escada termina numa sala redonda — a Antessala, o hub do subsolo, de onde partem todos os caminhos."
+        }
       ],
       "mestre_only": "A entrada da masmorra. Enigma 1 dá a senha SEMENTE de graça pra quem reparar. A partir daqui, stealth: ameaça constante, contato raro."
     },
@@ -7418,10 +7477,10 @@
       "id": "cena-ep3-antessala",
       "ordem": 36,
       "arco": "ep3-ato2",
-      "arco_titulo": "Episódio 3 · Ato 2 — A Igreja (masmorra de stealth)",
+      "arco_titulo": "Episódio 3 · Ato 2 — A Igreja (a masmorra de stealth)",
       "arco_ordem": 2,
       "titulo": "A · Antessala — o hub",
-      "subtitulo": "O símbolo no chão. E o casaco do Roberto, fora de lugar — o gelo no Sergie.",
+      "subtitulo": "O símbolo no chão e o casaco do Roberto, fora de lugar — o gelo no Sergie antes de descer.",
       "duracao_estimada": "~10 min",
       "local_ref": "local:subsolo-igreja",
       "pc_focal_ref": "pc:sergie",
@@ -7433,36 +7492,42 @@
         {
           "tipo": "narracao",
           "ordem": 1,
-          "titulo": "O símbolo e as saídas",
-          "texto": "No centro do chão, gasto pelos pés de décadas, o **símbolo** — três círculos concêntricos, o do meio aberto pro **nordeste** (a direção do túnel / Área Verde). Três saídas: à esquerda (luz de vela trêmula, passos), à frente (uma porta de chapa fechada), e a escada atrás de vocês."
+          "titulo": "O símbolo e as três saídas",
+          "texto": "No centro do chão, gasto pelos pés de décadas, o **símbolo** — três círculos concêntricos, o do meio aberto pro **nordeste**. Três saídas: à esquerda (luz de vela trêmula, passos), à frente (uma porta de chapa fechada), e a escada atrás de vocês. Nas paredes, ganchos com **batinas de coroinha** e, fora de lugar, **um casaco de couro velho** que não é de igreja nenhuma."
         },
         {
           "tipo": "momento_pavor",
           "ordem": 2,
           "titulo": "O casaco do Roberto",
-          "texto": "Nas paredes, ganchos com batinas de coroinha e, **fora de lugar, um casaco de couro velho** que não é de igreja nenhuma. Cheira a fumo. No bolso, um **isqueiro gravado**. É do **Roberto** — o tio do Sergie. Planta o gelo antes de descer."
+          "texto": "O casaco é isca: cheira a fumo, tem um **isqueiro gravado** no bolso. É do **Roberto** — o tio do Sergie. Planta o gelo no Sergie antes de descer. *(O Sergie não tem como saber ainda que o tio está aqui embaixo — só sente que algo dele ficou.)*"
         },
         {
           "tipo": "observacao_mestre",
           "ordem": 3,
-          "titulo": "O hub",
-          "texto": "A antessala é o **centro de distribuição** — tudo passa por aqui. Crucial na fuga (§8). O símbolo aponta a direção do túnel."
+          "titulo": "O hub — importa na fuga",
+          "texto": "A antessala é o **centro de distribuição** — tudo passa por aqui. O símbolo aponta a direção do túnel/Área Verde (nordeste). Lembre da geografia: na fuga (§8), todo mundo volta por aqui."
         }
       ],
       "destrava_para": [
-        "cena:ep3-galeria",
-        "cena:ep3-arquivo"
+        {
+          "ref": "cena:cena-ep3-galeria",
+          "porque": "À esquerda, a luz de vela trêmula e os passos: a Galeria das Fotos, onde o primeiro vigia acende velas. É onde o stealth começa."
+        },
+        {
+          "ref": "cena:cena-ep3-arquivo",
+          "porque": "Pela porta de chapa à frente / pelo corredor: o Arquivo, onde o culto guarda a memória dele — e o caderno-chave do episódio."
+        }
       ],
-      "mestre_only": "Hub da masmorra. O isqueiro gravado é isca emocional pro Sergie — planta o Roberto antes da cela."
+      "mestre_only": "Hub da masmorra. O isqueiro gravado é isca emocional pro Sergie — planta o Roberto antes da cela. Memorize a geografia: a fuga volta por aqui."
     },
     {
       "id": "cena-ep3-galeria",
       "ordem": 37,
       "arco": "ep3-ato2",
-      "arco_titulo": "Episódio 3 · Ato 2 — A Igreja (masmorra de stealth)",
+      "arco_titulo": "Episódio 3 · Ato 2 — A Igreja (a masmorra de stealth)",
       "arco_ordem": 3,
-      "titulo": "B · Galeria das Fotos — coroinha #1 (stealth começa)",
-      "subtitulo": "O corredor das vítimas. As fotos são os mortos. E o primeiro vigia.",
+      "titulo": "B · Galeria das Fotos — coroinha #1 (o stealth começa)",
+      "subtitulo": "O corredor das vítimas. As fotos são os mortos. E o primeiro vigia, de costas, acendendo velas.",
       "duracao_estimada": "~10 min",
       "local_ref": "local:subsolo-igreja",
       "pc_focal_ref": "pc:sergie",
@@ -7471,51 +7536,57 @@
       ],
       "props_refs": [],
       "secao_dossie": "§7.3 (B) e §7.4 do Guia v2 do Ep3",
-      "atmosfera_abertura": "Um corredor longo, baixo, ladeado de nichos onde antes houve ossos e agora há velas e fotografias — dezenas de rostos, gente comum, cada foto com uma data e um nome riscado.",
+      "atmosfera_abertura": "Um corredor longo, baixo, ladeado de nichos onde antes houve ossos e agora há **velas e fotografias** — dezenas de rostos, gente comum, cada foto com uma data e um nome riscado. No fim, de costas, **um rapaz enorme de batina** acende velas uma a uma, cantarolando. Ele não viu vocês. Ainda.",
       "beats": [
         {
-          "tipo": "narracao",
-          "ordem": 1,
-          "titulo": "As vítimas na parede",
-          "texto": "No fim, de costas, **um rapaz enorme de batina** acende velas uma a uma, cantarolando. Ele não viu vocês. Ainda."
-        },
-        {
           "tipo": "teste",
-          "ordem": 2,
+          "ordem": 1,
           "atributo": "Notar",
           "dificuldade": "—",
           "contexto": "Quem cruzar as fotos com as fichas do Ep2.",
-          "o_que_destrava": "As fotos são vítimas — reconhecem **Sebastião Quirino do Carmo, Honório Vilela Sobrinho, Joaquim Telles Ferreira**. E **uma foto recente demais, sem data ainda.**"
+          "o_que_destrava": "As fotos são vítimas — quem cruzar reconhece **Sebastião Quirino do Carmo, Honório Vilela Sobrinho, Joaquim Telles Ferreira** (as três fichas do Ep2). E **uma foto recente demais, sem data ainda** — alguém que ainda vai morrer."
+        },
+        {
+          "tipo": "mecanica",
+          "ordem": 2,
+          "titulo": "As regras de stealth (§7.4)",
+          "texto": "**Detecção em camadas.** Cada vigia tem um **cone de atenção** (pra onde olha) e um **alcance de ruído**. Devagar, na sombra, longe da vela = seguro. Pressa, luz, barulho = **teste de Reflexos** (ou Furtividade) contra a atenção do vigia. **O Holofote aperta:** cada vacilo gasta um passo rumo a \"fomos vistos\". Cheio o medidor, o vigia **percebe** — e o desafio não é lutar, é **sumir** (apagar a vela, entrar num nicho, prender a respiração enquanto ele passa a um palmo)."
         },
         {
           "tipo": "teste",
           "ordem": 3,
           "atributo": "Reflexos (ou Furtividade)",
-          "dificuldade": "vs. atenção do vigia",
-          "contexto": "Passar pelo coroinha #1.",
-          "o_que_destrava": "Devagar, na sombra, longe da vela = seguro. Pressa, luz, barulho = teste contra a atenção dele. Cada vacilo gasta **um passo** no Holofote rumo a 'fomos vistos'."
+          "dificuldade": "vs. atenção do coroinha #1",
+          "contexto": "Passar pelo vigia que acende as velas.",
+          "o_que_destrava": "Sucesso: passa quieto. Falha: Holofote +1 (quase-pego). Quase-pego = **HP por estresse/contusão**, não por troca de golpes."
         },
         {
           "tipo": "observacao_mestre",
           "ordem": 4,
-          "titulo": "O stealth começa de verdade",
-          "texto": "O coroinha #1 não é boss — é o motivo de andar quieto. Quase-pego = HP por estresse/contusão, não por troca de golpes. O duelo é evitável, caro e barulhento."
+          "titulo": "O duelo é evitável, não obrigatório",
+          "texto": "Derrubar um coroinha é **possível, mas caro e barulhento**: alerta os outros e acende o subsolo, empurrando direto pra fuga (§8). Pela ficção: estes três são o **motivo de andar quieto**, não o \"boss\". A régua é: **ameaça constante, contato raro.**"
         }
       ],
       "destrava_para": [
-        "cena:ep3-arquivo",
-        "cena:ep3-porta-lacrada"
+        {
+          "ref": "cena:cena-ep3-arquivo",
+          "porque": "Passando o coroinha #1, o corredor leva ao Arquivo — a sala onde o culto guarda os documentos e o caderno \"OS QUE OUVIRAM\"."
+        },
+        {
+          "ref": "cena:cena-ep3-porta-lacrada",
+          "porque": "Do eixo da antessala, a porta de chapa à frente: a Porta Lacrada, que trava a descida ao nível -2."
+        }
       ],
-      "mestre_only": "Primeiro vigia. Regra: ameaça constante, contato raro. Derrubar o coroinha acende o subsolo e empurra pra fuga."
+      "mestre_only": "Primeiro vigia. Regra: ameaça constante, contato raro. Derrubar o coroinha acende o subsolo e empurra pra fuga. As fotos pagam o reconhecimento das fichas do Ep2."
     },
     {
       "id": "cena-ep3-arquivo",
       "ordem": 38,
       "arco": "ep3-ato2",
-      "arco_titulo": "Episódio 3 · Ato 2 — A Igreja (masmorra de stealth)",
+      "arco_titulo": "Episódio 3 · Ato 2 — A Igreja (a masmorra de stealth)",
       "arco_ordem": 4,
-      "titulo": "C · Arquivo — os documentos & o caderno 'OS QUE OUVIRAM'",
-      "subtitulo": "Onde a temporada escala. Leitura, não exposição. A mesa sai com mais perguntas que respostas.",
+      "titulo": "C · Arquivo — os documentos & o caderno \"OS QUE OUVIRAM\"",
+      "subtitulo": "Onde a temporada escala. Leitura, não exposição. A mesa sai com mais perguntas que respostas — e com a nuca arrepiada com \"Caim\".",
       "duracao_estimada": "~15 min",
       "local_ref": "local:subsolo-igreja",
       "pc_focal_ref": "pc:vinicius",
@@ -7530,70 +7601,89 @@
         "p38-caderno-os-que-ouviram"
       ],
       "secao_dossie": "§7.3 (C) do Guia v2 do Ep3",
-      "atmosfera_abertura": "Uma sala forrada de prateleiras e arquivos de aço, uma mesa com luminária de banca. Cheira a papel velho e a vela. Aqui o culto guarda a memória dele — e foi descuidado, porque ninguém devia chegar até aqui.",
+      "atmosfera_abertura": "Uma sala forrada de prateleiras e arquivos de aço, uma mesa com luminária de banca. Cheira a papel velho e a vela. Aqui o culto **guarda a memória dele** — e foi descuidado, porque ninguém devia chegar até aqui. Há mais do que vocês conseguem ler numa noite. Peguem o que puderem.",
       "beats": [
         {
-          "tipo": "prop",
+          "tipo": "observacao_mestre",
           "ordem": 1,
-          "prop_ref": "prop:p30-doc-semente-arquivo",
-          "contexto": "Mais **Operação Semente**: relatórios dos 'espécimes', do 'plantio', da 'fase dois'. Um destes é a base do **Enigma 2** (a cifra → RAIZ)."
+          "titulo": "Distribua, não despeje",
+          "texto": "Esta sala é onde a temporada **escala** — mas é leitura, não exposição. Solte os achados aos poucos. Deixe a mesa sair com mais perguntas que respostas."
         },
         {
           "tipo": "prop",
           "ordem": 2,
-          "prop_ref": "prop:p31-fichas-anomalias",
-          "contexto": "**As anomalias / os visitantes:** fichas com desenhos anatômicos — corpos altos, brancos, sem pelo; anotações sobre 'exemplares que andam', 'que vestem', 'que falam com a voz de quem foi'. Insinua possessão e os rostos falsos."
+          "prop_ref": "prop:p30-doc-semente-arquivo",
+          "contexto": "**Mais Operação Semente:** relatórios dos \"espécimes\", do \"plantio\", da \"fase dois\". Um destes é a base do **Enigma 2** (a cifra de coordenadas → RAIZ)."
         },
         {
           "tipo": "prop",
           "ordem": 3,
-          "prop_ref": "prop:p32-doc-liturgico-caim",
-          "contexto": "**O Profeta em destaque:** um documento litúrgico que eleva o Profeta acima do padre — e, riscado à margem, uma única palavra: **CAIM.** (Vilão da T3; só levantar a pergunta.)"
+          "prop_ref": "prop:p31-fichas-anomalias",
+          "contexto": "**As anomalias / os visitantes:** fichas com desenhos anatômicos — corpos altos, brancos, sem pelo; anotações sobre \"exemplares que andam\", \"que vestem\", \"que falam com a voz de quem foi\". Insinua possessão e os rostos falsos. *(Confirma o que viram no necrotério.)*"
         },
         {
           "tipo": "prop",
           "ordem": 4,
-          "prop_ref": "prop:p33-manifesto",
-          "contexto": "**O manifesto:** 'quando a semente cobrir o país', 'a lei que devolve o altar ao Estado', 'uma só fé sobre a terra'. Liga o PL/jornal ao culto sem dizer como."
+          "prop_ref": "prop:p32-doc-liturgico-caim",
+          "contexto": "**O Profeta em destaque:** um documento litúrgico que **eleva o Profeta acima do padre** — e, riscado à margem, uma única palavra: **CAIM.**"
         },
         {
-          "tipo": "prop",
+          "tipo": "observacao_mestre",
           "ordem": 5,
-          "prop_ref": "prop:p34-mapa-pirassua",
-          "contexto": "**Mapa Novavera = Pirassuá:** uma planta antiga onde Novavera aparece como um **setor de um projeto maior chamado PIRASSUÁ.** Sem peso mecânico hoje."
+          "titulo": "CAIM — só a pergunta",
+          "texto": "Não explique nada sobre Caim. É o vilão da T3. A função de hoje é só **levantar a pergunta** e arrepiar a nuca. [→ T3]"
         },
         {
           "tipo": "prop",
           "ordem": 6,
-          "prop_ref": "prop:p35-mapa-necroterio",
-          "contexto": "**Mapa do necrotério com a sala a mais** — a confirmação da câmara lacrada que viram no Ato 1."
+          "prop_ref": "prop:p33-manifesto",
+          "contexto": "**O manifesto (bem por cima):** um papel quase profético — \"quando a semente cobrir o país\", \"a lei que devolve o altar ao Estado\", \"uma só fé sobre a terra\". Liga o PL/jornal ao culto sem dizer como. [→ T2/T3]"
         },
         {
           "tipo": "prop",
           "ordem": 7,
+          "prop_ref": "prop:p34-mapa-pirassua",
+          "contexto": "**Mapa Novavera = Pirassuá:** uma planta antiga onde **Novavera aparece como um setor de um projeto maior chamado PIRASSUÁ.** Sem peso mecânico hoje. [→ Pirassuá; Gyeno/Floriano; T2]"
+        },
+        {
+          "tipo": "prop",
+          "ordem": 8,
+          "prop_ref": "prop:p35-mapa-necroterio",
+          "contexto": "**Mapa do necrotério com a sala a mais** — a confirmação fria de que a câmara lacrada que viram no Ato 1 sempre existiu. [→ fechadura \"pra trás\"; Ep4]"
+        },
+        {
+          "tipo": "prop",
+          "ordem": 9,
           "prop_ref": "prop:p38-caderno-os-que-ouviram",
-          "contexto": "**★ O CADERNO 'OS QUE OUVIRAM'** — o achado-chave. A lista do culto: os que souberam demais, 'devolvidos à terra' um a um. Cinco riscados (✝) + **dois sem riscar: Natalina Braga e Marisa Mendes.** Metade do enigma final (§9.2)."
+          "contexto": "**★ O CADERNO \"OS QUE OUVIRAM\"** — o achado-chave do episódio. A lista do culto: os que souberam demais, \"devolvidos à terra\" um a um. Cinco riscados (✝): Sebastião, Honório, Joaquim, **Valdecir, Meireles**. E **dois sem riscar: Natalina Braga e Marisa Mendes.** *\"Quando o pai voltar, fecham-se as duas. A semente cobre o campo.\"* É metade do enigma final."
         },
         {
           "tipo": "observacao_mestre",
-          "ordem": 8,
-          "titulo": "Onde a temporada escala",
-          "texto": "Leitura, não exposição. Distribua, não despeje tudo. Deixe a mesa sair com mais perguntas que respostas — e com a nuca arrepiada com 'Caim'. Introduz a **Marisa** nos papéis pela primeira vez."
+          "ordem": 10,
+          "titulo": "O caderno é ★ — introduz a Marisa",
+          "texto": "Sozinho já é um soco: cinco mortos riscados (o recap — inclusive os que eles enterraram) e **dois nomes ainda sem riscar.** Introduz a **Marisa** nos papéis pela primeira vez. Mas no caos da masmorra eles podem não processar — é a **carta-chave** (no fechamento) que faz a moeda cair."
         }
       ],
       "destrava_para": [
-        "cena:ep3-porta-lacrada"
+        {
+          "ref": "cena:cena-ep3-porta-lacrada",
+          "porque": "Com os papéis na mochila, o caminho pra baixo passa pela Porta Lacrada — e um dos relatórios da Semente é justamente a chave da cifra dela."
+        },
+        {
+          "ref": "cena:cena-ep3-capela",
+          "porque": "Aberta a porta (Enigma 2), o eixo do nível -2 leva à Capela Invertida, onde o rito está sendo armado."
+        }
       ],
-      "mestre_only": "A sala-cofre da lore. CAIM e Pirassuá entram aqui, só como nome/pergunta. O caderno é ★ — metade do cliffhanger."
+      "mestre_only": "A sala-cofre da lore. CAIM e Pirassuá entram aqui, só como nome/pergunta. O caderno é ★ — metade do cliffhanger. Não despeje tudo; deixe a mesa garimpar."
     },
     {
       "id": "cena-ep3-porta-lacrada",
       "ordem": 39,
       "arco": "ep3-ato2",
-      "arco_titulo": "Episódio 3 · Ato 2 — A Igreja (masmorra de stealth)",
+      "arco_titulo": "Episódio 3 · Ato 2 — A Igreja (a masmorra de stealth)",
       "arco_ordem": 5,
-      "titulo": "D · Porta Lacrada — Enigma 2, 'O Relatório'",
-      "subtitulo": "A cifra de coordenadas no relatório militar. Senha: RAIZ.",
+      "titulo": "D · Porta Lacrada — Enigma 2, \"O Relatório\"",
+      "subtitulo": "A cifra de coordenadas no relatório militar. Linha:Palavra:Letra → RAIZ. Trava a descida pro nível -2.",
       "duracao_estimada": "~10 min",
       "local_ref": "local:subsolo-igreja",
       "pc_focal_ref": "pc:vinicius",
@@ -7609,29 +7699,32 @@
           "ordem": 1,
           "atributo": "Investigar / Pesquisa (Enigma 2)",
           "dificuldade": "empurrão só se travar",
-          "contexto": "Os números riscados = Linha : Palavra : Letra no relatório.",
+          "contexto": "Os números riscados na porta = Linha : Palavra : Letra no relatório aberto na banca.",
           "o_que_destrava": "`1:1:1`=**R** · `4:1:1`=**A** · `3:1:7`=**I** · `5:7:1`=**Z** → **RAIZ.** Abre a porta + entrega a lore das anomalias."
         },
         {
           "tipo": "narracao",
           "ordem": 2,
-          "titulo": "O estalo",
-          "texto": "A porta destrava com um estalo que ecoa fundo demais. Daqui pra baixo é a camada militar — concreto, frio, a instalação enterrada."
+          "titulo": "O estalo fundo demais",
+          "texto": "A porta destrava com um estalo que ecoa **fundo demais** — e o eco volta com atraso. Daqui pra baixo a igreja vira outra coisa: o tijolo dá lugar ao concreto, o ar esfria, é a **camada militar** enterrada. O coçar dos piolhos fica mais denso."
         }
       ],
       "destrava_para": [
-        "cena:ep3-capela"
+        {
+          "ref": "cena:cena-ep3-capela",
+          "porque": "A porta abre no eixo do nível -2 — e o primeiro cômodo é a Capela Invertida, de onde já vêm velas pretas e o coçar ensurdecedor."
+        }
       ],
-      "mestre_only": "Enigma 2. A senha RAIZ trava a descida do -1 pro -2. O prazer é deduzir — empurrão só se travar."
+      "mestre_only": "Enigma 2. A senha RAIZ trava a descida do -1 pro -2. O prazer é deduzir — empurrão só se travar. A partir daqui, a camada militar: mais frio, mais perigoso."
     },
     {
       "id": "cena-ep3-capela",
       "ordem": 40,
       "arco": "ep3-ato2",
-      "arco_titulo": "Episódio 3 · Ato 2 — A Igreja (masmorra de stealth)",
+      "arco_titulo": "Episódio 3 · Ato 2 — A Igreja (a masmorra de stealth)",
       "arco_ordem": 6,
       "titulo": "E · Capela Invertida — o sacrifício duplo sendo armado",
-      "subtitulo": "Benedito + dois coroinhas. Dois lugares no altar. O relógio.",
+      "subtitulo": "Benedito + dois coroinhas. Dois lugares no altar. A prova de que o Benedito se adiantou sem o Armindo.",
       "duracao_estimada": "~15 min",
       "local_ref": "local:subsolo-igreja",
       "pc_focal_ref": "pc:floriano",
@@ -7641,49 +7734,56 @@
       ],
       "props_refs": [],
       "secao_dossie": "§7.3 (E) do Guia v2 do Ep3",
-      "atmosfera_abertura": "A porta abre numa capela que é uma blasfêmia de capela: bancos voltados pro lado errado, um altar de pedra crua com a terra preta encharcando a base, velas pretas, e o coçar dos piolhos é ensurdecedor aqui — eles cobrem as paredes como uma sombra viva.",
+      "atmosfera_abertura": "A porta abre numa capela que é uma blasfêmia de capela: bancos voltados pro lado errado, um altar de pedra crua com a terra preta encharcando a base, velas pretas, e o **coçar dos piolhos é ensurdecedor aqui** — eles cobrem as paredes como uma sombra viva.",
       "beats": [
         {
           "tipo": "momento_pavor",
           "ordem": 1,
           "titulo": "Os dois lugares no altar",
-          "texto": "No altar, **dois lugares preparados.** Duas cordas. Dois panos. A prova de que o **sacrifício duplo** está sendo armado."
+          "texto": "No altar, **dois lugares preparados.** Duas cordas. Dois panos. A marca pesa (Sanidade) perto do altar. *(Não há vítima no altar ainda — elas serão buscadas. Os dois panos são o relógio.)*"
         },
         {
           "tipo": "fala",
           "ordem": 2,
           "npc_ref": "npc:benedito",
-          "contexto": "De costas, ajeitando tudo com um capricho horrível, ensaiando.",
+          "contexto": "De costas, ajeitando tudo com um capricho horrível, ensaiando — não viu vocês.",
           "texto": "O senhor vai voltar e vai ver que eu soube cuidar. Duas, padre. Eu trouxe duas."
         },
         {
           "tipo": "observacao_mestre",
           "ordem": 3,
-          "titulo": "O Benedito se adiantou",
-          "texto": "A prova de que o Benedito se adiantou sem o Armindo. Os dois panos/cordas são o **relógio**. **Não há vítima no altar ainda** — Natalina e Marisa serão buscadas (é o Ep4). Stealth máximo: três vigias (Benedito + coroinhas #2 e #3)."
+          "titulo": "O Benedito se adiantou — por que isso importa",
+          "texto": "A prova de que o **sacrifício duplo** está sendo armado e de que o **Benedito se adiantou** sem o Armindo. É **ganância amadora** — e fazer o rito com pressa **trinca a forma**. *(É por isso que os PCs vão conseguir chegar a tempo no Ep4: não porque ficaram fortes — porque o culto vacilou sem o regente.)* **Não há vítima no altar ainda.** Stealth máximo aqui: três vigias (Benedito + coroinhas #2 e #3)."
         },
         {
           "tipo": "teste",
           "ordem": 4,
           "atributo": "Reflexos (ou Furtividade)",
           "dificuldade": "vs. três vigias",
-          "contexto": "Atravessar a capela.",
-          "o_que_destrava": "Devagar, na sombra: passa. Vacilo: Holofote +1. Derrubar um vigia **alerta os outros** e acende o subsolo → fuga antecipada."
+          "contexto": "Atravessar a capela rumo à escada para o nível -3.",
+          "o_que_destrava": "Devagar, na sombra: passa. Vacilo: Holofote +1. Derrubar um vigia **alerta os outros** e acende o subsolo → fuga antecipada (§8)."
         }
       ],
       "destrava_para": [
-        "cena:ep3-celas"
+        {
+          "ref": "cena:cena-ep3-celas",
+          "porque": "Atrás do altar, ao fundo, a escada desce ao nível -3 — o Bloco de Celas, onde está a Sueli (e o que não se deve abrir)."
+        },
+        {
+          "ref": "cena:cena-ep3-roberto",
+          "porque": "Se o stealth quebrar aqui ou no fundo, o barulho pode despertar cedo o Roberto-anomalia."
+        }
       ],
-      "mestre_only": "A prova do sacrifício duplo + a ganância do Benedito. As vítimas NÃO estão aqui — isso é o Ep4. Hoje é a constatação, não o resgate delas."
+      "mestre_only": "A prova do sacrifício duplo + a ganância do Benedito (que explica por que dá pra chegar a tempo). As vítimas NÃO estão aqui — isso é o Ep4. Hoje é a constatação, não o resgate delas."
     },
     {
       "id": "cena-ep3-celas",
       "ordem": 41,
       "arco": "ep3-ato2",
-      "arco_titulo": "Episódio 3 · Ato 2 — A Igreja (masmorra de stealth)",
+      "arco_titulo": "Episódio 3 · Ato 2 — A Igreja (a masmorra de stealth)",
       "arco_ordem": 7,
       "titulo": "F · Bloco de Celas — Enigma 3 & a Sueli",
-      "subtitulo": "Achar a Sueli real sem abrir a cela errada. O Morse vem daqui.",
+      "subtitulo": "Achar a Sueli real sem abrir a cela errada. O Morse vem daqui. E uma das celas é a do Roberto.",
       "duracao_estimada": "~15 min",
       "local_ref": "local:subsolo-igreja",
       "pc_focal_ref": "pc:vinicius",
@@ -7693,52 +7793,108 @@
       ],
       "props_refs": [
         "p37-livro-celas",
-        "p39-carta-chave-sueli"
+        "p40-tabela-morse"
       ],
-      "secao_dossie": "§7.3 (F), §7.5, §11 do Guia v2 do Ep3",
-      "atmosfera_abertura": "Um corredor de seis nichos fechados por grades enferrujadas — celas. De cada uma, um som diferente: um cantarolar, um arranhar, um silêncio pior que tudo, e, de uma, batidas ritmadas num cano (o Morse).",
+      "secao_dossie": "§7.3 (F), §7.5, §7.7, §11 do Guia v2 do Ep3",
+      "atmosfera_abertura": "Um corredor de seis nichos fechados por grades enferrujadas — celas. De cada uma, um som diferente: um cantarolar, um arranhar, um silêncio pior que tudo, e, de uma, **batidas ritmadas num cano**. Numa parede, pendurado, o **livro de registro** do culto — uma lista de \"hóspedes\", cada um por um traço.",
       "beats": [
         {
           "tipo": "prop",
           "ordem": 1,
           "prop_ref": "prop:p37-livro-celas",
-          "contexto": "Numa parede, pendurado, o **livro de registro** do culto — uma lista de 'hóspedes', cada um por um traço enigmático. É o Enigma 3."
+          "contexto": "O livro descreve seis \"hóspedes\", cada um por um traço enigmático: *\"a que vê o que não está\"* (médium/serva), *\"o que veio de longe e não voltou\"* (terra fresca, isqueiro gravado), *\"a que guarda a voz do morto\"* (fitas cassete e caderno), *\"o que reza ao contrário\"* (repete uma frase igual), *\"a semente que não brotou\"* (anomalia inerte), *\"o que ainda chama pela mãe\"* (peão)."
         },
         {
           "tipo": "teste",
           "ordem": 2,
           "atributo": "Investigar (Enigma 3 — As Celas)",
-          "dificuldade": "sem teste se possível",
-          "contexto": "Cruzar o livro com as celas.",
-          "o_que_destrava": "A Sueli real é *'a que guarda a voz do morto'* = a cela das **fitas cassete**. A *'que reza ao contrário'* (repete uma frase igual, terra escorrendo dos punhos) é a **Sueli falsa** (serva isca). *'O que veio de longe e não voltou'* (terra fresca, isqueiro gravado) é o **Roberto — NÃO ABRIR.** O prazer é deduzir."
+          "dificuldade": "sem teste, se possível — o prazer é deduzir",
+          "contexto": "Cruzar o livro com o que se ouve/vê em cada cela.",
+          "o_que_destrava": "A Sueli real é *\"a que guarda a voz do morto\"* = a cela das **fitas cassete**. A *\"que reza ao contrário\"* (calma demais, **repete uma frase igualzinha**, a terra escorre dos punhos) é a **Sueli FALSA** (serva isca). *\"O que veio de longe e não voltou\"* (terra fresca, **isqueiro gravado**) é o **Roberto-anomalia — NÃO ABRIR.** A real está mais funda que a falsa."
+        },
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 3,
+          "titulo": "O Morse paga aqui",
+          "texto": "As batidas no cano são a **Sueli** soletrando (§6.3): S.O.S., **NÃO ABRAM A 3** (o Roberto), O TEMPO COBRA. Se a mesa decodificou o Morse, ela já sabe qual cela não tocar. Se não decodificou, o erro é vivo — e leva à cena do Roberto."
         },
         {
           "tipo": "fala",
-          "ordem": 3,
+          "ordem": 4,
           "npc_ref": "npc:sueli",
-          "contexto": "A Sueli real, achada certo. Não chora, não implora — avalia.",
+          "contexto": "A Sueli REAL, achada certo. Na cela das fitas, encostada na parede — uns trinta anos, miúda, com um rosto que você esperaria numa foto de rede social, não num porão de culto. Não chora, não implora: **avalia** vocês, calma, e quando fala é seca e exata. Olha a marca no rosto do Sergie.",
           "texto": "Vocês demoraram. E pagaram caro pra chegar aqui. Então não vamos desperdiçar. Me tirem antes que aquilo termine de contar — e eu tenho uma coisa que vocês precisam ver."
         },
         {
           "tipo": "observacao_mestre",
-          "ordem": 4,
+          "ordem": 5,
           "titulo": "A carta só sai fora dali",
-          "texto": "A Sueli só entrega a **carta-chave** (no forro da gola) **fora do subsolo**, no seguro (§9.2). Se abriram a cela ERRADA (a falsa), ver §11 — a real está mais funda. Achar a certa é o Enigma 3."
+          "texto": "A Sueli só entrega a **carta-chave** (escondida no forro da gola) **fora do subsolo**, no seguro (fechamento). Aqui ela só promete e pede pra sair. Se abriram a cela ERRADA (a falsa, com a cara dela): a falsa é **calma demais**, repete uma frase igual, e a terra escorre dos punhos — a real está mais funda. Achar a certa é o Enigma 3."
         }
       ],
       "destrava_para": [
-        "cena:ep3-roberto"
+        {
+          "ref": "cena:cena-ep3-roberto",
+          "porque": "Achar a Sueli é deduzir qual cela é qual — e a cela \"que veio de longe\" (terra fresca, isqueiro gravado) é o Roberto. Abri-la, ou o pico da tensão, desperta a cena pesada."
+        },
+        {
+          "ref": "cena:cena-ep3-boca-tunel",
+          "porque": "No fim do corredor das celas, o piso desce numa rampa de barro — a boca do túnel, vista de relance."
+        }
       ],
-      "mestre_only": "Enigma 3 sem rolagem se der — deduzir é o prêmio. O aviso Morse 'NÃO ABRAM A 3' paga aqui. Abrir a do Roberto desperta a cena pesada."
+      "mestre_only": "Enigma 3 sem rolagem se der — deduzir é o prêmio. O aviso Morse \"NÃO ABRAM A 3\" paga aqui. Abrir a do Roberto desperta a cena pesada. A Sueli avalia, não implora — é o oposto que vai estabilizar o Vinicius."
+    },
+    {
+      "id": "cena-ep3-boca-tunel",
+      "ordem": 42,
+      "arco": "ep3-ato2",
+      "arco_titulo": "Episódio 3 · Ato 2 — A Igreja (a masmorra de stealth)",
+      "arco_ordem": 8,
+      "titulo": "G · A Boca do Túnel — a prova, não o atalho",
+      "subtitulo": "Igreja e cova são o mesmo subsolo. Mostra a rota das vítimas ao altar — sem deixar atravessar hoje.",
+      "duracao_estimada": "~5 min",
+      "local_ref": "local:subsolo-igreja",
+      "pc_focal_ref": "pc:gyeno",
+      "npcs_presentes": [],
+      "props_refs": [],
+      "secao_dossie": "§7.3 (G) do Guia v2 do Ep3",
+      "atmosfera_abertura": "No fim de tudo, o piso desce numa rampa de barro até uma **boca de túnel** escorada com madeira velha, larga o bastante pra arrastar um corpo.",
+      "beats": [
+        {
+          "tipo": "narracao",
+          "ordem": 1,
+          "titulo": "O túnel que vocês conhecem",
+          "texto": "Ar de cova vem de dentro. Na lama, **sulcos paralelos** — coisas arrastadas, muitas, por muito tempo. O túnel corre reto, na direção que vocês conhecem: **a Área Verde.** Mas a água sobe pela canela ali na frente, e mais fundo há **luz de vela se movendo** — tem gente lá. Não dá pra passar. Não hoje."
+        },
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 2,
+          "titulo": "Prova, não caminho",
+          "texto": "A prova de que **igreja e cova são o mesmo subsolo** — a Operação Semente em planta baixa. Mostra a **rota** das vítimas ao altar. O túnel é **intransitável hoje** (alagado/guardado), senão entrega o endgame. É prova, não atalho. [→ T3]"
+        },
+        {
+          "tipo": "mecanica",
+          "ordem": 3,
+          "titulo": "Se quiserem entrar mesmo assim",
+          "texto": "A água sobe, a luz de vela se aproxima (tem gente), o teto cede — o **ambiente** os expulsa. Prova, não caminho. Hoje."
+        }
+      ],
+      "destrava_para": [
+        {
+          "ref": "cena:cena-ep3-roberto",
+          "porque": "Com a Sueli em mãos e o túnel barrado, o único caminho é voltar — e é na volta (ou ao abrir a cela errada) que o Roberto desperta."
+        }
+      ],
+      "mestre_only": "A prova de que igreja e cova são o mesmo corpo enterrado. Intransitável de propósito — é a rota das vítimas, não um atalho dos PCs."
     },
     {
       "id": "cena-ep3-roberto",
-      "ordem": 42,
+      "ordem": 43,
       "arco": "ep3-ato2",
-      "arco_titulo": "Episódio 3 · Ato 2 — A Igreja (masmorra de stealth)",
-      "arco_ordem": 8,
+      "arco_titulo": "Episódio 3 · Ato 2 — A Igreja (a masmorra de stealth)",
+      "arco_ordem": 9,
       "titulo": "O Roberto-anomalia — rosto falso → grotesco → fuga",
-      "subtitulo": "Comece humano. Termine monstro. Nunca vire duelo. Marca o Sergie pra sempre.",
+      "subtitulo": "Começa humano. Termina monstro. Nunca vire duelo. Marca o Sergie pra sempre. É horror a escapar, não a vencer.",
       "duracao_estimada": "~15 min",
       "local_ref": "local:subsolo-igreja",
       "pc_focal_ref": "pc:sergie",
@@ -7747,26 +7903,26 @@
       ],
       "props_refs": [],
       "secao_dossie": "§7.6 do Guia v2 do Ep3",
-      "atmosfera_abertura": "Quando abrirem a cela errada, ou no pico da tensão — o Roberto acorda. É o corpo real do tio do Sergie, plantado em 2016, devolvido pela terra como anomalia.",
+      "atmosfera_abertura": "Quando abrirem a cela errada, ou no pico da tensão — **o Roberto acorda.** É o corpo real do tio do Sergie, plantado em 2016, devolvido pela terra como anomalia. Comece humano. Termine monstro.",
       "beats": [
         {
           "tipo": "fala",
           "ordem": 1,
           "npc_ref": "npc:roberto-anomalia",
-          "contexto": "O rosto falso. Voz rouca, cansada, conhecida. Pela fresta, o rosto do tio do Sergie.",
-          "texto": "Sergie? Sergie, é você, moleque? Graças a Deus. Eu tô aqui. Tira eu daqui, eu sabia que você vinha. Vem cá. Deixa eu te ver."
+          "contexto": "O rosto falso. Da cela mais funda vem um arranhar de unhas na grade — devagar, paciente. E uma voz: rouca, cansada, **conhecida**. Pela fresta, o rosto do tio do Sergie, do jeito que ele lembra. Estende a mão por entre as barras.",
+          "texto": "Sergie? (a grade range) Sergie, é você, moleque? Graças a Deus. Eu tô aqui. Tira eu daqui, eu sabia que você vinha. Vem cá. Deixa eu te ver."
         },
         {
           "tipo": "momento_pavor",
           "ordem": 2,
-          "titulo": "A podridão",
-          "texto": "Se alguém se aproxima ou abre: a mão que segura a sua é **fria e mole demais**, e cede sob seus dedos como fruta passada. De perto, o cheiro chega — **terra remexida e doce-podre**. O abraço te puxa, forte, e a voz racha no meio de uma palavra, como rádio perdendo sinal: *'...que bom que você ve—vei—'* E aí a coluna dele **estala.** Uma vértebra, duas. Ele cresce contra você, alto demais, o queixo se alongando, os olhos descendo fundo nas órbitas. A coisa range a luz do nicho, **arranha o fio**, e o subsolo inteiro **apaga.**"
+          "titulo": "A podridão — se alguém se aproxima ou abre",
+          "texto": "A mão que segura a sua é **fria e mole demais**, e cede sob seus dedos como fruta passada. De perto, o cheiro chega — não de gente, de **terra remexida e doce-podre**. O abraço te puxa, forte, e por cima do seu ombro a voz dele racha no meio de uma palavra, como rádio perdendo sinal: *\"...que bom que você ve—vei—\"* E aí a coluna dele **estala.** Uma vértebra, duas. Ele cresce contra você, alto demais, o queixo se alongando, os olhos descendo fundo nas órbitas. A coisa que era seu tio range a luz do nicho, **arranha o fio**, e o subsolo inteiro **apaga.**"
         },
         {
           "tipo": "momento_pavor",
           "ordem": 3,
-          "titulo": "O escuro — a marca permanente do Sergie",
-          "texto": "Breu. Só o coçar dos piolhos e a respiração de vocês. E **a coisa se movendo** — rápido demais. Vocês não veem. Só dá pra reagir (→ teste de **Reflexos**: quem falha leva um golpe). E ela fala enquanto caça, com pedaços da voz do Roberto: *'você não veio em 2016. ninguém veio. eu chamei e ninguém—'* Um baque. **Dê o golpe cinematográfico no Sergie — uma garra rasgando o rosto. Marca permanente:** uma cicatriz grande, do supercílio ao maxilar. Não é 'tomou X numa troca' — é a cidade marcando ele pra sempre."
+          "titulo": "O escuro — e a marca permanente do Sergie",
+          "texto": "Breu. Só o coçar dos piolhos e a respiração de vocês. E **a coisa se movendo** — rápido demais, batendo numa parede aqui, raspando uma grade ali. Vocês **não veem.** Só dá pra reagir. E ela **fala enquanto caça**, com pedaços da voz do Roberto e pedaços de outra coisa: *\"você não veio em 2016. ninguém veio. eu chamei e ninguém—\"* Um baque. Alguém é jogado contra a parede."
         },
         {
           "tipo": "teste",
@@ -7774,35 +7930,38 @@
           "atributo": "Reflexos",
           "dificuldade": "no escuro",
           "contexto": "Reagir à coisa que não se vê.",
-          "o_que_destrava": "Quem falha leva um golpe (HP por ambiente/garra, não por duelo). O golpe cinematográfico vai no **Sergie** — a cicatriz permanente."
+          "o_que_destrava": "Quem falha leva um golpe (HP por garra/ambiente, não por duelo). **Dê o golpe cinematográfico no Sergie** — uma garra rasgando o rosto. **Marca permanente:** uma cicatriz grande, do supercílio ao maxilar. Não é \"tomou X numa troca\" — é a **cidade marcando ele pra sempre.**"
         },
         {
           "tipo": "fala",
           "ordem": 5,
           "npc_ref": "npc:roberto-anomalia",
-          "contexto": "O ultimato — a deixa da fuga. Agora mais dela do que do Roberto.",
+          "contexto": "O ultimato — a deixa da fuga. A coisa para. No escuro, a respiração fica quase calma. E a voz — agora mais dela do que do Roberto — enche o cômodo.",
           "texto": "Eu vou ser justo. Vou contar até dez. Corram. Quando eu acabar, eu vou atrás — e eu arranco o coração de vocês, um por um, igual fizeram comigo. Um... dois..."
         },
         {
           "tipo": "observacao_mestre",
           "ordem": 6,
-          "titulo": "Horror a escapar, não a vencer",
-          "texto": "O Roberto **não é inimigo a vencer — é horror a escapar.** Não ofereça iniciativa de combate. Ofereça **a corrida** (§8). As anomalias vestem (ou são) os mortos que o alvo carrega — leem a culpa e usam de isca pra fazer o PC parar, chorar, se aproximar = stealth quebrado. Função mecânica, não só susto. E é o corpo **real** — a Semente em pessoa."
+          "titulo": "Por que o rosto do Roberto — função, não só susto",
+          "texto": "As anomalias vestem (ou *são*) os mortos que aquele alvo **carrega** — leem a culpa e usam de isca, pra fazer o PC **parar, chorar, se aproximar** = **stealth quebrado.** Função mecânica, não só susto. E é o corpo **real** — a Semente em pessoa. O Roberto **não é inimigo a vencer — é horror a escapar.** Não ofereça iniciativa de combate. Ofereça **a corrida.** [→ Sergie até a T3]"
         }
       ],
       "destrava_para": [
-        "cena:ep3-fuga"
+        {
+          "ref": "cena:cena-ep3-fuga",
+          "porque": "A contagem do Roberto é a deixa: a perseguição começa agora. Não é duelo — é a corrida de volta à superfície, com a Sueli."
+        }
       ],
-      "mestre_only": "A cena de grotesco do episódio (uma, no máximo). Começa humano, termina monstro. Nunca duelo. O Sergie sai marcado pra sempre — núcleo dele até a T3."
+      "mestre_only": "A cena de grotesco do episódio (uma, no máximo). Começa humano, termina monstro. NUNCA duelo — ofereça a corrida. O Sergie sai marcado pra sempre: núcleo dele até a T3."
     },
     {
       "id": "cena-ep3-fuga",
-      "ordem": 43,
+      "ordem": 44,
       "arco": "ep3-climax",
-      "arco_titulo": "Episódio 3 · Clímax — A Fuga",
+      "arco_titulo": "Episódio 3 · Clímax — O Sacrifício Duplo Interrompido + A Fuga",
       "arco_ordem": 1,
       "titulo": "A Perseguição — sair vivo, com a Sueli e a verdade",
-      "subtitulo": "Não é batalha. É a corrida. O alívio é a luz do dia; a coisa não atravessa.",
+      "subtitulo": "O clímax é a constatação (o que o Benedito arma) + a corrida (o Roberto atrás). Não é batalha. É sair vivo.",
       "duracao_estimada": "~30 min",
       "local_ref": "local:subsolo-igreja",
       "pc_focal_ref": "pc:sergie",
@@ -7813,54 +7972,63 @@
       ],
       "props_refs": [],
       "secao_dossie": "§8 do Guia v2 do Ep3",
-      "atmosfera_abertura": "O clímax é a constatação (o que o Benedito arma) + a corrida (o Roberto atrás). Não é batalha. É sair vivo, com a Sueli e com a verdade.",
+      "atmosfera_abertura": "O clímax não é uma batalha. É **a corrida** de volta pela espinha da masmorra (Celas → Capela → Porta → Galeria/Arquivo → Antessala → Escada → Igreja), com o Roberto atrás e os coroinhas agora alertas. É sair vivo, com a Sueli e com a verdade.",
       "beats": [
         {
           "tipo": "mecanica",
           "ordem": 1,
           "titulo": "A regra da perseguição — trechos, não rodadas",
-          "texto": "A fuga tem **TRECHOS** (estações), não rodadas de soco. Cada trecho é um obstáculo do caminho de volta (Celas → Capela → Porta → Galeria/Arquivo → Antessala → Escada → Igreja): a água do túnel, a capela com os três coroinhas agora **alertas**, a porta que precisa fechar atrás, a escada íngreme no escuro."
+          "texto": "A fuga tem **TRECHOS** (estações), não rodadas de soco. Cada trecho é um **obstáculo** do caminho de volta: a água do túnel, a capela com os três coroinhas agora **alertas**, a porta que precisa fechar atrás, a escada íngreme no escuro. Use a mecânica de perseguição do sistema."
         },
         {
           "tipo": "teste",
           "ordem": 2,
-          "atributo": "Reflexos / Vigor / Notar",
-          "dificuldade": "por trecho",
-          "contexto": "Cada trecho = uma escolha + um teste.",
-          "o_que_destrava": "O grupo decide *como* passa (correr reto / barulho pra desviar o vigia / apagar tudo / arrombar). **Convencer não serve** — não dá pra negociar com aquilo. Sucesso afasta o Roberto um passo; falha o aproxima e **custa HP** (ambiente: bater, cair, cortar) — nunca por troca de golpes."
+          "atributo": "Reflexos / Vigor / Notar (um por trecho)",
+          "dificuldade": "varia por trecho",
+          "contexto": "Cada trecho = uma escolha + um teste. O grupo decide *como* passa.",
+          "o_que_destrava": "Correr reto (**Reflexos**) / fazer barulho pra desviar o vigia / apagar tudo (**Notar** acha a saída no escuro) / forçar/arrombar (**Vigor**). **Convencer não serve** — não dá pra negociar com aquilo. Sucesso afasta o Roberto um passo; falha o aproxima e **custa HP** (ambiente: bater, cair, cortar) — nunca por troca de golpes."
         },
         {
           "tipo": "mecanica",
           "ordem": 3,
           "titulo": "A Pressão é o caçador",
-          "texto": "Um medidor de distância. Se zerar (ele alcança), **não mate**: ele arranca mais um pedaço (HP/Sanidade), agarra um PC por um instante, e o grupo tem **uma última chance** de soltá-lo e disparar pra luz."
+          "texto": "Um **medidor de distância**: sucesso afasta o Roberto um passo; falha o aproxima. Se zerar (ele alcança), **não mate**: ele **arranca mais um pedaço** (HP/Sanidade), agarra um PC por um instante, e o grupo tem **uma última chance** de soltá-lo e disparar pra luz."
         },
         {
           "tipo": "narracao",
           "ordem": 4,
           "titulo": "A saída — o alívio é a superfície",
-          "texto": "Vocês cospem pra fora do painel, pra dentro da nave vazia, e a porta da igreja está aberta — **luz de fim de tarde** no chão de pedra. Atrás de vocês, na boca preta da escada, a coisa **para.** E, num último fiapo da voz do seu tio: *'...eu sabia que você vinha...'* Silêncio. **A coisa é do subsolo — não atravessa a luz.**"
+          "texto": "Vocês cospem pra fora do painel, pra dentro da nave vazia, e a porta da igreja está aberta — **luz de fim de tarde** no chão de pedra. Atrás de vocês, na boca preta da escada, a coisa **para.** Vocês ouvem a respiração dela recuando. E, num último fiapo da voz do seu tio: *\"...eu sabia que você vinha...\"* Silêncio. O sino não toca. Vocês estão na rua, arrebentados, com a Sueli, com papéis na mão e sangue no rosto. **Vivos. Os quatro.**"
         },
         {
           "tipo": "observacao_mestre",
           "ordem": 5,
           "titulo": "A regra da imunidade, do avesso",
-          "texto": "A anomalia não pega a luz nem o lado de fora — a mesma regra da imunidade do Gyeno, do avesso. Plante isso. **Ninguém morreu — a primeira vez na temporada.** Vitória rara e frágil: o culto vacilou sem o regente. E o regente está voltando."
+          "texto": "A coisa é do **subsolo** — quando o último PC cruza pra dentro da igreja e a **luz do dia** entra, o Roberto **para na escuridão da escada** e não atravessa. A anomalia não pega a luz nem o lado de fora — a mesma regra da imunidade do Gyeno, **do avesso**. Plante isso. E o saldo: **ninguém morreu — a primeira vez na temporada.** Vitória rara e frágil: o culto vacilou sem o regente. *(E o regente está voltando.)*"
+        },
+        {
+          "tipo": "narracao",
+          "ordem": 6,
+          "titulo": "O que sai daqui",
+          "texto": "A **Sueli viva**; os papéis do Arquivo (Semente, anomalias, \"Caim\", o manifesto, o mapa Pirassuá, o mapa do necrotério, **e o caderno \"OS QUE OUVIRAM\"**); e o **Sergie marcado**. A urgência agora precisa de direção — e o ponto seguro que conhecem é a casa da Natalina."
         }
       ],
       "destrava_para": [
-        "cena:ep3-natalina"
+        {
+          "ref": "cena:cena-ep3-natalina",
+          "porque": "Arrebentados e com a Sueli, os PCs correm pro único ponto seguro que conhecem — a casa da Natalina — que é também (eles vão descobrir agora) alvo."
+        }
       ],
-      "mestre_only": "Não é batalha — é escapar. Nenhum teste 'derrota' o horror. Eles fogem, deduzem e pagam. Saem com a Sueli viva, os papéis, e o Sergie marcado."
+      "mestre_only": "Não é batalha — é escapar. Nenhum teste \"derrota\" o horror; eles fogem, deduzem e pagam. Saem com a Sueli viva, os papéis, e o Sergie marcado. Ninguém morreu — frágil e raro."
     },
     {
       "id": "cena-ep3-natalina",
-      "ordem": 44,
+      "ordem": 45,
       "arco": "ep3-fechamento",
       "arco_titulo": "Episódio 3 · Fechamento — Casa da Natalina (noite)",
       "arco_ordem": 1,
       "titulo": "O Refúgio",
-      "subtitulo": "Correm pro ponto seguro — que é também (vão descobrir) alvo.",
+      "subtitulo": "Correm pro ponto seguro que conhecem — a casa da Natalina — que é também, eles vão descobrir agora, alvo.",
       "duracao_estimada": "~5 min",
       "local_ref": "local:casa-natalina",
       "pc_focal_ref": "pc:floriano",
@@ -7876,24 +8044,36 @@
           "tipo": "fala",
           "ordem": 1,
           "npc_ref": "npc:natalina",
-          "contexto": "Ela olha o rosto do Sergie, olha a moça nova.",
+          "contexto": "Ela olha o rosto do Sergie, olha a moça nova, e só diz isto.",
           "texto": "Senta. Tem café. E vocês têm uma coisa pra ler — eu sinto daqui."
+        },
+        {
+          "tipo": "observacao_mestre",
+          "ordem": 2,
+          "titulo": "O porto seguro que é alvo",
+          "texto": "A urgência precisa de direção — por isso correm pro ponto seguro. Mas a casa da Natalina é também (eles vão descobrir no enigma) o lugar de **uma das duas próximas vítimas**. A velha já sabe; só não disse ainda. Deixe a cena respirar antes do soco."
         }
       ],
       "destrava_para": [
-        "cena:ep3-sueli-vinicius",
-        "cena:ep3-enigma-colheita"
+        {
+          "ref": "cena:cena-ep3-sueli-vinicius",
+          "porque": "Enquanto os outros respiram, a Sueli senta perto do Vinicius — o respiro que desenvolve o vínculo dos dois."
+        },
+        {
+          "ref": "cena:cena-ep3-enigma-colheita",
+          "porque": "Quando o grupo espalhar os papéis na mesa, a Sueli puxa a carta-chave e começa o enigma final — a colheita."
+        }
       ],
-      "mestre_only": "O porto seguro — que o enigma vai revelar como alvo. A Natalina já sabe."
+      "mestre_only": "O porto seguro — que o enigma vai revelar como alvo. A Natalina já sabe. Deixe respirar antes do golpe."
     },
     {
       "id": "cena-ep3-sueli-vinicius",
-      "ordem": 45,
+      "ordem": 46,
       "arco": "ep3-fechamento",
       "arco_titulo": "Episódio 3 · Fechamento — Casa da Natalina (noite)",
       "arco_ordem": 2,
       "titulo": "Sueli ↔ Vinicius — o vínculo",
-      "subtitulo": "Ela baixa a fervura dele sem julgar. O oposto que estabiliza.",
+      "subtitulo": "Ela baixa a fervura dele sem julgar — o oposto que estabiliza. O fio do Vinicius da temporada.",
       "duracao_estimada": "~5 min",
       "local_ref": "local:casa-natalina",
       "pc_focal_ref": "pc:vinicius",
@@ -7902,39 +8082,42 @@
       ],
       "props_refs": [],
       "secao_dossie": "§9.1 do Guia v2 do Ep3",
-      "atmosfera_abertura": "A Sueli — trinta anos, miúda, com aquela cara de quem se subestima — não é o que parece, e é exatamente isso que alcança o Vinicius. Enquanto os outros respiram, ela senta perto dele.",
+      "atmosfera_abertura": "A Sueli — trinta anos, miúda, com aquela cara de quem se subestima — **não é o que parece**, e é exatamente isso que alcança o Vinicius. Enquanto os outros respiram, ela senta perto dele.",
       "beats": [
         {
           "tipo": "fala",
           "ordem": 1,
           "npc_ref": "npc:sueli",
           "contexto": "Não é pergunta.",
-          "texto": "Você é o defensor. Dá pra ver — você olha pra um quarto e conta as saídas e os culpados antes de sentar. Eu te observei lá embaixo. Você tava com tanta raiva que ia estragar a fuga. Sorte que respirou."
+          "texto": "Você é o defensor. Dá pra ver — você olha pra um quarto e conta as saídas e os culpados antes de sentar. Eu te observei lá embaixo. Você tava com tanta raiva que ia estragar a fuga. (meio sorriso) Sorte que respirou."
         },
         {
           "tipo": "fala",
           "ordem": 2,
           "npc_ref": "npc:sueli",
-          "contexto": "Se ele deixar, ela faz o que ninguém fez por ele desde SP — baixa a fervura sem julgar.",
+          "contexto": "E, se ele deixar, ela faz o que ninguém fez por ele desde SP — baixa a fervura sem julgar.",
           "texto": "A raiva que você carrega tem endereço certo. Só que não é aqui, não é agora, e não é aquela coisa que marcou o seu amigo. Guarda. A gente vai precisar dela inteira, mais pra frente, no lugar certo."
         },
         {
           "tipo": "teste",
           "ordem": 3,
-          "atributo": "Vinicius — secreto (abrir-se)",
-          "dificuldade": "roleplay",
+          "atributo": "Vinicius — abrir-se (roleplay, sem rolagem)",
+          "dificuldade": "—",
           "contexto": "Se ele se abrir.",
-          "o_que_destrava": "**Sanidade +1d3**; a Sueli vira a pessoa que o **acalma** — o oposto que estabiliza. O fio Sueli↔Vinicius. (T2)"
+          "o_que_destrava": "**Sanidade +1d3**; a Sueli vira a pessoa que o **acalma** — o oposto que estabiliza. [→ o fio Sueli↔Vinicius; T2]"
         }
       ],
       "destrava_para": [
-        "cena:ep3-enigma-colheita"
+        {
+          "ref": "cena:cena-ep3-enigma-colheita",
+          "porque": "Passado o respiro, o grupo volta aos papéis na mesa — e a Sueli puxa do forro da gola a carta-chave do Valdecir."
+        }
       ],
-      "mestre_only": "O fio do Vinicius. Sueli é o oposto que estabiliza — fria o suficiente pra ele confiar."
+      "mestre_only": "O fio do Vinicius. Sueli é o oposto que estabiliza — fria o suficiente pra ele confiar. Não force; é um respiro."
     },
     {
       "id": "cena-ep3-enigma-colheita",
-      "ordem": 46,
+      "ordem": 47,
       "arco": "ep3-fechamento",
       "arco_titulo": "Episódio 3 · Fechamento — Casa da Natalina (noite)",
       "arco_ordem": 3,
@@ -7956,55 +8139,58 @@
         "p18-ficha-joaquim"
       ],
       "secao_dossie": "§9.2 do Guia v2 do Ep3",
-      "atmosfera_abertura": "O cliffhanger não é uma cena — é a ficha caindo na cabeça do jogador. Eles remontam, com os próprios papéis, a lista das vítimas até hoje, e descobrem com as próprias mãos que as duas próximas são gente que amam. A resposta sempre esteve com eles.",
+      "atmosfera_abertura": "O cliffhanger não é uma cena — é **a ficha caindo na cabeça do jogador**. Eles remontam, com os próprios papéis, a lista das vítimas até hoje, e descobrem com as próprias mãos que as duas próximas são gente que amam. A resposta sempre esteve com eles.",
       "beats": [
         {
           "tipo": "prop",
           "ordem": 1,
           "prop_ref": "prop:p39-carta-chave-sueli",
-          "contexto": "No seguro, a Sueli puxa do **forro da gola** um papel fino, dobrado em quatro, na letra do Valdecir. Quatro pistas: *o nome no alto do meu laudo* · *a mão que assinou como 'parada cardíaca'* · *a testemunha que se repete nas três fichas* · *o nome novo no caderno deles*."
+          "contexto": "No seguro, a Sueli puxa do **forro da gola** um papel fino, dobrado em quatro, na **letra do Valdecir**: *\"Os nomes que eles vão colher estão TODOS nas SUAS mãos, espalhados nos papéis que você já carrega. Eles colhem na ordem em que cada um ouviu demais.\"* Quatro pistas: *o PRIMEIRO — o nome no alto do meu laudo* · *o SEGUNDO — a mão que assinou aquele laudo como 'parada cardíaca'* · *o TERCEIRO — a testemunha que se repete nas três fichas* · *o QUARTO — o nome novo no caderno deles.*"
         },
         {
           "tipo": "teste",
           "ordem": 2,
-          "atributo": "Investigar + cruzar os props",
+          "atributo": "Investigar + cruzar os props na mesa",
           "dificuldade": "—",
-          "contexto": "Cruzar a carta com os papéis que já têm na mesa.",
-          "o_que_destrava": "**O PRIMEIRO** = nome no alto do laudo do Valdecir → **VALDECIR.** **O SEGUNDO** = a mão que assinou ('Dr. C. Meireles', 'parada cardíaca') → **MEIRELES.** **O TERCEIRO** = a testemunha das três fichas (Natalina Braga, 71, Rua das Acácias) → **NATALINA.** **O QUARTO** = o nome novo no caderno ('Marisa Mendes — a que guarda no arquivo') → **MARISA.**"
+          "contexto": "Não é matemática — é \"onde está cada nome\". Cada pista aponta um documento que eles já têm. Deixe-os acharem cada nome.",
+          "o_que_destrava": "**O PRIMEIRO** = \"Examinado: **Valdecir** Conceição\", no alto do laudo → **VALDECIR.** **O SEGUNDO** = \"Perito: Dr. C. **Meireles**\" / \"Causa: parada cardíaca\" → **MEIRELES.** **O TERCEIRO** = a testemunha das três fichas (\"Sra. **Natalina** Braga, 71, Rua das Acácias\" / \"vizinha da Rua das Acácias\" / \"Sra. N. Braga\") → **NATALINA.** **O QUARTO** = o nome novo no caderno (\"**Marisa Mendes** — a que guarda no arquivo\") → **MARISA.**"
         },
         {
           "tipo": "narracao",
           "ordem": 3,
           "titulo": "A litania da colheita",
-          "texto": "Vocês espalham os papéis na mesa da Natalina. Uma a uma, vocês acham as palavras nos seus próprios papéis — no laudo, nas fichas, no caderno que pegaram lá embaixo. E os quatro nomes se enfileiram na sua frente: **VALDECIR → MEIRELES → NATALINA → MARISA.** Dois já estão riscados. Os outros dois estão sentados nesta cidade, vivos. **Um deles está em pé na porta da cozinha, servindo o seu café.**"
+          "texto": "Vocês espalham os papéis na mesa da Natalina. A Sueli aponta a carta. *\"Não é matemática. É 'onde está cada nome'. O Valdecir escrevia assim quando tinha medo de ser lido — espalhava a verdade pra que ninguém pudesse queimar tudo de uma vez.\"* Uma a uma, vocês acham as palavras nos seus próprios papéis — no laudo, nas fichas, no caderno que pegaram lá embaixo. E os quatro nomes se enfileiram na sua frente: **VALDECIR → MEIRELES → NATALINA → MARISA.** Dois já estão riscados. Os outros dois estão sentados nesta cidade, vivos. **Um deles está em pé na porta da cozinha, servindo o seu café.**"
         },
         {
           "tipo": "fala",
           "ordem": 4,
           "npc_ref": "npc:natalina",
-          "contexto": "Ela leu o medo no rosto deles. Só confirma baixo.",
+          "contexto": "Ela leu o medo no rosto deles. Deixe o silêncio cair antes. Só confirma baixo.",
           "texto": "Sou eu, não sou. E a moça do arquivo."
         },
         {
           "tipo": "observacao_mestre",
           "ordem": 5,
           "titulo": "Lost media / Zodíaco no osso",
-          "texto": "A resposta sempre esteve com eles. O Valdecir escrevia espalhado pra que ninguém pudesse queimar tudo de uma vez. Deixe o silêncio cair. O caderno introduz a **Marisa**; a carta faz a moeda cair."
+          "texto": "A resposta sempre esteve com eles. O caderno (achado hoje) introduz a **Marisa**; a carta-chave faz a moeda cair. **Não dê a resposta** — deixe-os acharem cada nome nos próprios props. A **Sueli viva dá a leitura** (é o pagamento de salvá-la); a **Natalina confirma** no fim. Deixe o silêncio cair."
         }
       ],
       "destrava_para": [
-        "cena:ep3-armindo-volta"
+        {
+          "ref": "cena:cena-ep3-armindo-volta",
+          "porque": "Fechada a litania, a Sueli aponta o caminho do Ep4 (a casa do Armindo) — e o telefone da Natalina toca: o regente voltou."
+        }
       ],
       "mestre_only": "O coração do episódio. Não dê a resposta — deixe-os acharem cada nome nos próprios props. A Sueli viva dá a leitura (pagamento de salvá-la); a Natalina confirma."
     },
     {
       "id": "cena-ep3-armindo-volta",
-      "ordem": 47,
+      "ordem": 48,
       "arco": "ep3-fechamento",
       "arco_titulo": "Episódio 3 · Fechamento — Casa da Natalina (noite)",
       "arco_ordem": 4,
       "titulo": "O Armindo Volta — a última imagem",
-      "subtitulo": "O amador acabou. O regente voltou. E ele sabe quem o Benedito não pegou.",
+      "subtitulo": "O amador acabou. O regente voltou. E ele agora sabe exatamente quem o Benedito não conseguiu pegar.",
       "duracao_estimada": "~5 min",
       "local_ref": "local:casa-natalina",
       "pc_focal_ref": "pc:floriano",
@@ -8017,26 +8203,26 @@
         "p39-carta-chave-sueli"
       ],
       "secao_dossie": "§9.3–9.4 do Guia v2 do Ep3",
-      "atmosfera_abertura": "Encerrada a litania, a noite ainda não acabou.",
+      "atmosfera_abertura": "Encerrada a litania, a noite ainda não acabou. A Sueli fecha a ponte para o próximo episódio — e o telefone toca.",
       "beats": [
         {
           "tipo": "fala",
           "ordem": 1,
           "npc_ref": "npc:sueli",
-          "contexto": "A Sueli fecha a ponte pro Ep4 — a fechadura 'pra frente'.",
+          "contexto": "A fechadura \"pra frente\" — o gancho do Ep4.",
           "texto": "O culto levou quase tudo o que o Valdecir tinha. Isto aqui eu escondi na gola antes de me pegarem. O resto — os cadernos, os mapas, o que ele guardava de mais perigoso — eu acho que levaram pra casa do padre. Se vocês querem saber como impedir isso, é lá. E é antes dele desfazer as malas."
         },
         {
           "tipo": "observacao_mestre",
           "ordem": 2,
           "titulo": "As duas fechaduras se amarram",
-          "texto": "Aponta a **casa do Armindo** (Ep4) — onde está, entre outras coisas, a **medalha** que abre a parede falsa do necrotério. Necrotério ↔ casa do Armindo."
+          "texto": "Isso aponta a **casa do Armindo** (Ep4) — onde está, entre outras coisas, a **medalha** que abre a parede falsa do necrotério. As duas fechaduras (necrotério ↔ casa do Armindo) se amarram. [→ Ep4]"
         },
         {
           "tipo": "narracao",
           "ordem": 3,
           "titulo": "A última imagem",
-          "texto": "O telefone da Natalina toca. Uma vez. Ela atende, escuta, não diz nada, desliga devagar. *'Era da paróquia. O padre Armindo... voltou de Brasília mais cedo. Já tá na igreja.'* Lá fora, na noite, um carro velho passa devagar pela rua — sem parar — e segue na direção da igreja. E vocês entendem, todos ao mesmo tempo, sem ninguém dizer: **o amador acabou. O regente voltou. E ele agora sabe exatamente quem o Benedito não conseguiu pegar.** Duas mulheres. E vocês entre elas e ele."
+          "texto": "O telefone da Natalina toca. Uma vez. Ela atende, escuta, não diz nada, desliga devagar. *\"Era da paróquia. O padre Armindo... voltou de Brasília mais cedo. Já tá na igreja.\"* Lá fora, na noite, um carro velho passa devagar pela rua — sem parar — e segue na direção da igreja. E vocês entendem, todos ao mesmo tempo, sem ninguém dizer: **o amador acabou. O regente voltou. E ele agora sabe exatamente quem o Benedito não conseguiu pegar.** Duas mulheres. E vocês entre elas e ele."
         },
         {
           "tipo": "escolha",
@@ -8046,22 +8232,22 @@
             "Sergie: aquilo era mesmo o tio? (era — e era a Semente.) Quem o plantou?",
             "Floriano: a Igreja inteira é isso? E o Josias — sabia? (a dúvida, sem resposta.)",
             "Vinicius: a máquina de SP e o culto são a mesma? (a carta de SP diz que sim.)",
-            "Todos: o que é 'Caim'? Por que o número do PL é 33? E como impedir a colheita das duas?"
+            "Todos: o que é \"Caim\"? Por que o número do PL é 33? E como impedir a colheita das duas?"
           ],
-          "observacao": "O cliffhanger fica de pé: a vontade dos PCs de salvar Natalina e Marisa vira **relógio**, não resolução. O Ep4 é onde elas são buscadas."
+          "observacao": "O cliffhanger fica de pé: a vontade dos PCs de salvar Natalina e Marisa vira **relógio**, não resolução. O Ep4 é onde elas são buscadas (hoje o Benedito só armava)."
         }
       ],
       "destrava_para": [],
-      "mestre_only": "CORTA — fim do Ep3. O regente voltou. Não resolva: transforme a vontade de salvar as duas em urgência pro Ep4."
+      "mestre_only": "CORTA — fim do Ep3. O regente voltou. Não resolva: transforme a vontade de salvar as duas em urgência pro Ep4. As duas fechaduras (necrotério + casa do Armindo) puxam o próximo episódio."
     },
     {
       "id": "cena-ep3-cicero",
-      "ordem": 48,
+      "ordem": 49,
       "arco": "ep3-vinculos",
       "arco_titulo": "Episódio 3 · Respiro — O Vínculo (Gyeno ↔ Cícero)",
       "arco_ordem": 1,
       "titulo": "Cícero — o ex-praça",
-      "subtitulo": "Encaixe num respiro (antes do necrotério, ou entre necrotério e igreja). Sem culto, sem missão.",
+      "subtitulo": "Encaixe num respiro (antes do necrotério, ou entre o necrotério e a igreja, num boteco/posto). Sem culto, sem missão.",
       "duracao_estimada": "~10 min",
       "local_ref": "local:boteco-novavera",
       "pc_focal_ref": "pc:gyeno",
@@ -8070,32 +8256,43 @@
       ],
       "props_refs": [],
       "secao_dossie": "§10.1 do Guia v2 do Ep3",
-      "atmosfera_abertura": "Cícero é o homem com quem o Gyeno se estranhou no Ep1 (a briguinha de bar). Ex-praça, mais velho, marcado pela própria guerra. Volta com uma garrafa e um pedido de desculpa.",
+      "atmosfera_abertura": "Cícero é o homem com quem o Gyeno **se estranhou no Ep1** (a briguinha de bar). Ex-praça, mais velho, marcado pela própria guerra. Volta **com uma garrafa e um pedido de desculpa.**",
       "beats": [
         {
-          "tipo": "fala",
+          "tipo": "narracao",
           "ordem": 1,
+          "titulo": "Ele para na frente do Gyeno",
+          "texto": "Um homem de uns quarenta e poucos, ombros caídos de quem carregou peso a vida toda, para na frente do Gyeno com uma garrafa pela metade e a cara de quem ensaiou isto."
+        },
+        {
+          "tipo": "fala",
+          "ordem": 2,
           "npc_ref": "npc:cicero",
-          "contexto": "Para na frente do Gyeno com uma garrafa pela metade e a cara de quem ensaiou isto.",
+          "contexto": "Estende a garrafa.",
           "texto": "Moço. Outro dia eu passei do ponto. A bebida e... essas coisas que a gente não conta. Você tem olho de quem também viu. Reconheci tarde. Aceita um gole de paz?"
         },
         {
           "tipo": "teste",
-          "ordem": 2,
-          "atributo": "Gyeno — secreto (conversar de verdade)",
-          "dificuldade": "roleplay",
+          "ordem": 3,
+          "atributo": "Gyeno — conversar de verdade (roleplay)",
+          "dificuldade": "—",
           "contexto": "Conversa curta de dois veteranos — sem culto, sem missão.",
-          "o_que_destrava": "**Sanidade +1d3** se conversar de verdade. Cícero **não sabe de nada sobrenatural** — é âncora de normalidade pro Gyeno (o único que o trata como gente, não como soldado nem como peça). Alguém vivo pra perder lá na frente."
+          "o_que_destrava": "**Sanidade +1d3** se conversar de verdade. Cícero **não sabe de nada sobrenatural** — é **âncora de normalidade** pro Gyeno (o único que o trata como gente, não como soldado nem como peça). [→ vínculo Gyeno↔Cícero; alguém vivo pra perder lá na frente]"
         },
         {
           "tipo": "observacao_mestre",
-          "ordem": 3,
+          "ordem": 4,
           "titulo": "Nome ajustável",
-          "texto": "Se na sua mesa o oponente do Gyeno no Ep1 tinha outro nome, use o nome real — só mantenha o 'ex-militar que volta pedindo desculpa'."
+          "texto": "Se na sua mesa o oponente do Gyeno no Ep1 tinha outro nome, use o nome real — só mantenha o \"ex-militar que volta pedindo desculpa\". Não envolver no sobrenatural: o valor do Cícero é exatamente **não saber de nada.**"
         }
       ],
-      "destrava_para": [],
-      "mestre_only": "Respiro de normalidade. Não envolver no sobrenatural — o valor do Cícero é exatamente não saber de nada."
+      "destrava_para": [
+        {
+          "ref": "cena:cena-ep3-necroterio-corpos",
+          "porque": "É um respiro — encaixe entre os atos. De volta ao fio: o necrotério, ou a descida na igreja."
+        }
+      ],
+      "mestre_only": "Respiro de normalidade. Não envolver no sobrenatural — o valor do Cícero é exatamente não saber de nada. Alguém vivo pra perder lá na frente."
     }
   ],
   "encarnacoes": [
