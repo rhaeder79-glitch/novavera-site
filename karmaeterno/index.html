@@ -1196,6 +1196,9 @@ body.props-modo-jogador .prop-uso-txt{display:none}
 .beat-titulo-fallback{font-family:"Cinzel",serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;opacity:.7;margin-bottom:4px}
 .beat.teste .beat-atributo:empty::after{content:attr(data-fallback);font-style:italic;opacity:.8}
 
+
+.narrar-destrava-item{margin-bottom:10px}
+.narrar-destrava-porque{font-family:"Cormorant Garamond",serif;font-size:14px;color:var(--ash);line-height:1.5;margin-top:4px;padding-left:4px;border-left:2px solid rgba(154,122,42,.3);padding-left:10px}
 </style>
 <body>
 
@@ -3479,16 +3482,27 @@ function renderNarrarMain(cenaId, cenas){
       <div class="narrar-mestre-only-txt">${fmtInlinePeek(cena.mestre_only)}</div>
     </div>`;
   }
-  // destrava — botões de navegação contextual
+  // destrava — para onde a cena leva, e por quê
   if(cena.destrava_para && cena.destrava_para.length){
     h += `<div class="narrar-destrava">
-      <div class="narrar-destrava-lbl">Esta cena destrava</div>
+      <div class="narrar-destrava-lbl">Como seguir daqui</div>
       <div class="narrar-destrava-list">`;
-    cena.destrava_para.forEach(ref=>{
+    cena.destrava_para.forEach(item=>{
+      const ref = (typeof item==='string') ? item : (item.ref||'');
+      const porque = (typeof item==='string') ? '' : (item.porque||'');
       const [tipo,id] = ref.split(':');
+      // aceita 'cena:cena-ep3-x' (id completo) e 'cena:ep3-x' (legado)
+      let target = null;
       if(tipo==='cena'){
-        const target = DATA.cenas.find(c=>c.id===id);
-        if(target){ h += `<button class="narrar-destrava-btn" onclick="narrarAbrir('${id}')">→ ${esc(target.titulo)}</button>`; }
+        target = DATA.cenas.find(c=>c.id===id) || DATA.cenas.find(c=>c.id===('cena-'+id));
+      }
+      if(target){
+        h += `<div class="narrar-destrava-item">
+          <button class="narrar-destrava-btn" onclick="narrarAbrir('${target.id}')">→ ${esc(target.titulo)}</button>
+          ${porque?`<div class="narrar-destrava-porque">${fmtInlinePeek(porque)}</div>`:''}
+        </div>`;
+      } else if(porque){
+        h += `<div class="narrar-destrava-item"><div class="narrar-destrava-porque">${fmtInlinePeek(porque)}</div></div>`;
       }
     });
     h += `</div></div>`;
